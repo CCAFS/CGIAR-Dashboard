@@ -1,0 +1,11 @@
+<section>
+  <div class="container">
+    <nav class="main-menu">
+      <ul>
+        {% for section in sections %}
+          <li class="{% if pageParams.currentSection == section.name %}active{% endif %}"> {{ section.name }} </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</section>

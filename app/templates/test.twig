@@ -1,0 +1,47 @@
+{% set pageParams = {
+    'title': 'Portfolio | CGIAR Program Results Dashboard',
+    'customCSS': [
+      'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
+    ],
+    'customJS': [
+      'https://code.jquery.com/jquery-3.3.1.slim.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js',
+      'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js',
+      "./js/libs/tableau/tableau-2.2.2.min.js"
+    ]
+  }
+%}
+
+{% include './pages/header.twig' with pageParams %}
+
+<h1>CGIAR Program Results Dashboard</h1>
+<div class="container">
+
+  <!-- Controls -->
+  <div id="controls" class="">
+    <h3 class="lead">Custom Controls:</h3>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="changeYear">Year:</label>
+        <select class="form-control" id="changeYear" onchange="yearFilter(value);">
+          <option value="">All</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+        </select>
+      </div>
+    </div>
+
+    <button id="getData" onclick="getUnderlyingData()" title="See Console" class="btn btn-success" disabled>Get Data</button>
+    <button onclick="clearCollegeSelection();" class="btn">Clear Selection</button>
+
+  </div>
+
+  <hr>
+  <!-- Workbook -->
+  <div class="">
+    <div id="vizContainer" ></div>
+  </div>
+</div>
+
+{% include './pages/footer.twig'  with pageParams %}

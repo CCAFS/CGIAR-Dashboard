@@ -1,0 +1,9 @@
+
+
+    {% for element in pageParams.customJS %}
+      <script type="text/javascript" src="{{ element }}"></script>
+    {% endfor %}
+
+    <script type="text/javascript" src="{{ base_url() }}/js/global.js" charset="utf-8"></script>
+  </body>
+</html>

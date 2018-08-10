@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{ pageParams.title }} </title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
+
+    {% for element in pageParams.customCSS %}
+      <link rel="stylesheet" href="{{ element }}" >
+    {% endfor %}
+
+    <link href='{{ base_url() }}/css/global.css' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h3 class="title pull-left">
+              <img src="{{ base_url() }}/images/cgiar_logo.png" alt="CGIAR Logo" width="90px">
+              <span>CGIAR Program Results Dashboard</span>
+            </h3>
+          </div>
+          <div class="col-md-5">
+            <!-- CRPs -->
+            <div class="filter-component">
+              <p class="filter-title">CRPs</p>
+              <ul class="filter-items">
+                {% for crp in crps %}
+                  <li> {{ crp.acronym }} </li>
+                {% endfor %}
+              </ul>
+            </div>
+            <!-- Flagships -->
+            <div class="filter-component">
+              <p class="filter-title">Flagships</p>
+              <ul class="filter-items">
+
+              </ul>
+            </div>
+            <!-- Year -->
+            <div class="filter-component">
+              <p class="filter-title">Years</p>
+              <ul class="filter-items">
+                {% for year in 2017..2022 %}
+                  <li> {{ year }} </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
