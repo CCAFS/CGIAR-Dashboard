@@ -1,0 +1,7 @@
+{% macro checkmark(name, value, label) %}
+  <label class="inputContainer">
+    <input id="{{ name }}" class="" type="checkbox" name="{{ name }}" value="{{ value }}" checked="checked">
+    <span class="checkmark"></span>
+    <span class="labelText ">{{ label }}</span>
+  </label>
+{% endmacro %}

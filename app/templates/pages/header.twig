@@ -1,3 +1,4 @@
+{% import "./macros/forms.twig" as forms %}
 <html>
   <head>
     <!-- Required meta tags -->
@@ -29,12 +30,12 @@
               <p class="filter-title">CRPs</p>
               <ul class="filter-items">
                 {% for crp in crps %}
-                  <li> {{ crp.acronym }} </li>
+                  <li> {{ forms.checkmark('crps', crp.acronym , crp.acronym) }} </li>
                 {% endfor %}
               </ul>
             </div>
             <!-- Flagships -->
-            <div class="filter-component">
+            <div class="filter-component disabled">
               <p class="filter-title">Flagships</p>
               <ul class="filter-items">
 
@@ -44,8 +45,8 @@
             <div class="filter-component">
               <p class="filter-title">Years</p>
               <ul class="filter-items">
-                {% for year in 2017..2022 %}
-                  <li> {{ year }} </li>
+                {% for year in 2017..2020 %}
+                  <li> {{ forms.checkmark('years', year, year) }} </li>
                 {% endfor %}
               </ul>
             </div>

@@ -3,12 +3,19 @@
     'currentSection': 'Portfolio',
     'customCSS': [
       'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
+      'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
+      './css/customInputsFlat.css'
     ],
     'customJS': [
-      'https://code.jquery.com/jquery-3.3.1.slim.min.js',
+      'https://code.jquery.com/jquery-3.3.1.min.js',
       'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js',
       'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js',
-      "./js/libs/tableau/tableau-2.2.2.min.js"
+      'https://www.amcharts.com/lib/3/amcharts.js',
+      'https://www.amcharts.com/lib/3/pie.js',
+      'https://www.amcharts.com/lib/3/themes/light.js',
+      "./js/libs/tableau/tableau-2.2.2.min.js",
+      "./js/libs/sly/sly.min.js",
+      "./js/portfolio.js"
     ]
   }
 %}
@@ -22,13 +29,62 @@
     <div class="breadcrumb">
       Portfolio
     </div>
-    <div class="row">
+    <div class="form-group row">
       <div class="col-md-7">
-        MAP
+        <h6 class="subTitle">Outcome / Impact on the Ground</h6>
+        <div class="map-container">
+          <img src="{{ base_url() }}/images/map-sample.png" alt="" width="100%">
+        </div>
       </div>
       <div class="col-md-5">
-        OISC Chart
+        <h6 class="subTitle">Progress Towards SLOs/SDGs</h6>
+        <div class="chart-container">
+          <div id="chartdiv" style="width: 100%; height: 380px; background-color: #FFFFFF;" ></div>
+        </div>
       </div>
+    </div>
+
+    <div class="form-group bot-block">
+
+      <div class="wrap">
+
+      	<div class="scrollbar">
+      		<div class="handle"><div class="mousearea"></div></div>
+      	</div>
+
+      	<div class="frame crazy" id="crazy">
+      		<ul class="clearfix">
+      			<li>
+              <h6 class="subTitle">Innovations</h6>
+              <img src="{{ base_url() }}/images/chart-sample.png" alt="" width="100%">
+            </li>
+            <li>
+              <h6 class="subTitle">Partnerships</h6>
+              <img src="{{ base_url() }}/images/chart-sample.png" alt="" width="100%">
+            </li>
+            <li>
+              <h6 class="subTitle">Trainees</h6>
+              <img src="{{ base_url() }}/images/chart-sample.png" alt="" width="100%">
+            </li>
+            <li>
+              <h6 class="subTitle">Peer-reviewed Papers</h6>
+              <img src="{{ base_url() }}/images/chart-sample.png" alt="" width="100%">
+            </li>
+            <li>
+              <h6 class="subTitle">Policies</h6>
+              <img src="{{ base_url() }}/images/chart-sample.png" alt="" width="100%">
+            </li>
+      		</ul>
+      	</div>
+
+      	<div class="controls center">
+      		<button class="btn prev"><i class="fas fa-angle-left"></i></button>
+      		<button class="btn next"><i class="fas fa-angle-right"></i> </button>
+      	</div>
+      </div>
+
+
+
     </div>
   </div>
 </div>

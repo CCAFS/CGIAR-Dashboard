@@ -29,7 +29,6 @@ $app->get('/', function ($request, $response, $args) {
     array('acronym' => 'GLDC')
   );
 
-
   /*
   try{
       // Get DB Object
