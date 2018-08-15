@@ -1,9 +1,11 @@
+var chart1;
+
 $(document).ready(init);
 
 
 function init() {
   console.log('Init - Portfolio');
-
+  /*
   AmCharts.makeChart("chartdiv",
   {
     "type": "pie",
@@ -46,15 +48,54 @@ function init() {
     ]
     }
   );
+  */
+
+  var containerDiv = document.getElementById("chart-1"),
+    //url = "https://public.tableau.com/views/progresstowardslos/MAP",
+    url = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug_1/OICS-Sheet",
+    options = {
+      "CRP Acronym": "",
+      "Year": "",
+      hideTabs: true,
+      hideToolbar: true,
+      width: '100%',
+      height: '100%',
+      onFirstInteractive: function () {
+        var sheet = chart1.getWorkbook().getActiveSheet();
+        console.log('onFirstInteractive', sheet);
+
+        //yearFilter(2018);
+
+      }
+  };
+  chart1 = new tableau.Viz(containerDiv, url, options);
+
+
+  $('input[type="checkbox"]').on('change', function(){
+    var filterType = $(this).attr('name');
+    var $checkedInputs = $("input[name='"+filterType+"']:checked");
+    var checkedValues = $.map($checkedInputs, function(e) {return e.value })
+    console.log(filterType, checkedValues);
+
+    var sheet = chart1.getWorkbook().getActiveSheet();
+
+    switch (filterType) {
+      case "crps":
+        sheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
+        break;
+      case "years":
+        sheet.applyFilterAsync("Year", 2018 , tableau.FilterUpdateType.REPLACE);
+        break;
+      default:
+    }
+  });
 
   // -------------------------------------------------------------
   //   Crazy
   // -------------------------------------------------------------
-
   var $frame  = $('#crazy');
   var $slidee = $frame.children('ul').eq(0);
   var $wrap   = $frame.parent();
-
   // Call Sly on frame
   $frame.sly({
   	horizontal: 1,
@@ -85,40 +126,38 @@ function init() {
   	nextPage: $wrap.find('.nextPage, .next')
   });
 
-  // To Start button
-  $wrap.find('.toStart').on('click', function () {
-  	var item = $(this).data('item');
-  	// Animate a particular item to the start of the frame.
-  	// If no item is provided, the whole content will be animated.
-  	$frame.sly('toStart', item);
+}
+
+
+
+/*************************** Tableau Functions *******************************/
+
+function yearFilter(year) {
+
+}
+
+function getUnderlyingData(){
+  //sheet = chart1.getWorkbook().getActiveSheet().getWorksheets().get("Storm Map Sheet");
+  // If the active sheet is not a dashboard, then you can just enter:
+  var sheet = chart1.getWorkbook().getActiveSheet();
+  var options = {
+      maxRows: 10, // Max rows to return. Use 0 to return all rows
+      ignoreAliases: false,
+      ignoreSelection: true,
+      includeAllColumns: false
+  };
+
+  sheet.getUnderlyingDataAsync(options).then(function(t){
+    table = t;
+    console.log(table.getData());
   });
+}
 
-  // To Center button
-  $wrap.find('.toCenter').on('click', function () {
-  	var item = $(this).data('item');
-  	// Animate a particular item to the center of the frame.
-  	// If no item is provided, the whole content will be animated.
-  	$frame.sly('toCenter', item);
-  });
+function clearCollegeSelection() {
+  var sheet = chart1.getWorkbook().getActiveSheet();
+  sheet.clearSelectedMarksAsync();
+}
 
-  // To End button
-  $wrap.find('.toEnd').on('click', function () {
-  	var item = $(this).data('item');
-  	// Animate a particular item to the end of the frame.
-  	// If no item is provided, the whole content will be animated.
-  	$frame.sly('toEnd', item);
-  });
-
-  // Add item
-  $wrap.find('.add').on('click', function () {
-  	$frame.sly('add', '<li>' + $slidee.children().length + '</li>');
-  });
-
-  // Remove item
-  $wrap.find('.remove').on('click', function () {
-  	$frame.sly('remove', -1);
-  });
-
-
-
+function errback(e){
+  console.log(e.tableauSoftwareErrorCode);
 }
