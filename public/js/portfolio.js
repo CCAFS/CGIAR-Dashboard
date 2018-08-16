@@ -52,7 +52,7 @@ function init() {
 
   var containerDiv = document.getElementById("chart-1"),
     //url = "https://public.tableau.com/views/progresstowardslos/MAP",
-    url = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug_1/OICS-Sheet",
+    url = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/OICS-Sheet",
     options = {
       "CRP Acronym": "",
       "Year": "",
@@ -84,7 +84,7 @@ function init() {
         sheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
         break;
       case "years":
-        sheet.applyFilterAsync("Year", 2018 , tableau.FilterUpdateType.REPLACE);
+        sheet.applyFilterAsync("Year", checkedValues , tableau.FilterUpdateType.REPLACE);
         break;
       default:
     }
