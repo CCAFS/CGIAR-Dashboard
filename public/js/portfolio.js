@@ -52,7 +52,8 @@ function init() {
 
   var containerDiv = document.getElementById("chart-1"),
     //url = "https://public.tableau.com/views/progresstowardslos/MAP",
-    url = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/OICS-Sheet",
+    //url = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/OICS-Sheet",
+    url = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_2SHOICSSLODonut",
     options = {
       "CRP Acronym": "",
       "Year": "",
