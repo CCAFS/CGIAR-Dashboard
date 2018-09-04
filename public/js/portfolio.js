@@ -63,6 +63,7 @@ function init() {
       height: '100%',
       onFirstInteractive: function () {
         var sheet = chart1.getWorkbook().getActiveSheet();
+        var sheetname =sheet.getName();
         console.log('onFirstInteractive', sheet);
 
         //yearFilter(2018);
@@ -79,21 +80,16 @@ function init() {
     console.log(filterType, checkedValues);
 
     var sheet = chart1.getWorkbook().getActiveSheet();
-    var mapsheet = map1.getWorkbook().getActiveSheet();
 
     switch (filterType) {
       case "crps":
-        if (checkedValues == 'All') {
-          sheet.clearFilterAsync("CRP Acronym");
-          mapsheet.clearFilterAsync("CRP Acronym");
-        } else {
-          sheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
-          mapsheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
-        }
+        if(checkedValues=='All'){
+         sheet.clearFilterAsync("CRP Acronym");
+        }else{
+        sheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);}
         break;
       case "years":
         sheet.applyFilterAsync("Year", checkedValues, tableau.FilterUpdateType.REPLACE);
-        mapsheet.applyFilterAsync("Year", checkedValues, tableau.FilterUpdateType.REPLACE);
         break;
       default:
     }
@@ -102,21 +98,20 @@ function init() {
   var mapcontainerDiv = document.getElementById("map-1"),
     mapurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_2_1SHOICSMap",
     mapoptions = {
-      "CRP Acronym": "",
-      "Year": "",
       hideTabs: true,
       hideToolbar: true,
       width: '100%',
       height: '100%',
       onFirstInteractive: function () {
         var mapsheet = map1.getWorkbook().getActiveSheet();
-        console.log("Interaction with map", mapsheet);
-        map1.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarks);
+        console.log("Interaction with map", mapsheet);   
+        map1.addEventListener(tableau.TableauEventName.MARKS_SELECTION,selectMarks);
       }
 
-
+    
     };
   map1 = new tableau.Viz(mapcontainerDiv, mapurl, mapoptions);
+
 
   // -------------------------------------------------------------
   //   Crazy
@@ -161,21 +156,20 @@ function init() {
 /*************************** Tableau Functions *******************************/
 
 function yearFilter(year) {
-
 }
 
-function getUnderlyingData() {
+function getUnderlyingData(){
   //sheet = chart1.getWorkbook().getActiveSheet().getWorksheets().get("Storm Map Sheet");
   // If the active sheet is not a dashboard, then you can just enter:
   var sheet = chart1.getWorkbook().getActiveSheet();
   var options = {
-    maxRows: 10, // Max rows to return. Use 0 to return all rows
-    ignoreAliases: false,
-    ignoreSelection: true,
-    includeAllColumns: false
+      maxRows: 10, // Max rows to return. Use 0 to return all rows
+      ignoreAliases: false,
+      ignoreSelection: true,
+      includeAllColumns: false
   };
 
-  sheet.getUnderlyingDataAsync(options).then(function (t) {
+  sheet.getUnderlyingDataAsync(options).then(function(t){
     table = t;
     console.log(table.getData());
   });
@@ -192,21 +186,10 @@ function errback(e) {
 
 function selectMarks(marksEvent) {
   var marksWorksheet = marksEvent.getWorksheet();
-  return marksEvent.getMarksAsync().then(reportSelectedMarks);
-
-}
-
-function reportSelectedMarks(marks) {
-  var sheet = chart1.getWorkbook().getActiveSheet();
-
-  for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-    var pairs = marks[markIndex].getPairs();
-    for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
-      var pair = pairs[pairIndex];
-      if (pair.fieldName == 'reg_wb_name') {
-        regValue = pair.formattedValue;
-          sheet.applyFilterAsync("reg_wb_name", regValue, tableau.FilterUpdateType.REPLACE);
-      }
-    }
-  }
+    marksWorksheet.getSelectedMarksAsync().then(function(m){
+      selectedmark = m;
+      console.log("Selected Marks");
+      console.log(selectedmark);
+  });
+  
 }
