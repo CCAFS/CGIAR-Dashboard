@@ -80,16 +80,21 @@ function init() {
     console.log(filterType, checkedValues);
 
     var sheet = chart1.getWorkbook().getActiveSheet();
+    var mapsheet = map1.getWorkbook().getActiveSheet();
 
     switch (filterType) {
       case "crps":
-        if(checkedValues=='All'){
-         sheet.clearFilterAsync("CRP Acronym");
-        }else{
-        sheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);}
+      if (checkedValues == 'All') {
+        sheet.clearFilterAsync("CRP Acronym");
+        mapsheet.clearFilterAsync("CRP Acronym");
+      } else {
+        sheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
+        mapsheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
+      }
         break;
       case "years":
         sheet.applyFilterAsync("Year", checkedValues, tableau.FilterUpdateType.REPLACE);
+        mapsheet.applyFilterAsync("Year", checkedValues, tableau.FilterUpdateType.REPLACE);
         break;
       default:
     }
@@ -186,10 +191,21 @@ function errback(e) {
 
 function selectMarks(marksEvent) {
   var marksWorksheet = marksEvent.getWorksheet();
-    marksWorksheet.getSelectedMarksAsync().then(function(m){
-      selectedmark = m;
-      console.log("Selected Marks");
-      console.log(selectedmark);
-  });
-  
+  return marksEvent.getMarksAsync().then(reportSelectedMarks);
+
+}
+
+function reportSelectedMarks(marks) {
+  var sheet = chart1.getWorkbook().getActiveSheet();
+
+  for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+    var pairs = marks[markIndex].getPairs();
+    for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+      var pair = pairs[pairIndex];
+      if (pair.fieldName == 'reg_wb_name') {
+        regValue = pair.formattedValue;
+          sheet.applyFilterAsync("reg_wb_name", regValue, tableau.FilterUpdateType.REPLACE);
+      }
+    }
+  }
 }
