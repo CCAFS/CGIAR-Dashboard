@@ -4,17 +4,17 @@ $app->get('/action', App\Action\BaseAction::class)->setName('action');
 
 $app->get('/', function ($request, $response, $args) {
   $sections = array(
-    array('name' => 'Portfolio'),
+    array('name' => 'Case Studies'),
     array('name' => 'Innovations'),
     array('name' => 'Partnerships'),
     array('name' => 'Trainees'),
     array('name' => 'Papers'),
     array('name' => 'Policies'),
-    array('name' => 'Almetrics'),
-    array('name' => 'Case Studies')
+    array('name' => 'Almetrics')
   );
 
   $crps = array(
+    array('acronym' => 'All'),
     array('acronym' => 'CCAFS'),
     array('acronym' => 'PIM'),
     array('acronym' => 'WLE'),

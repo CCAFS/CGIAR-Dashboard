@@ -25,28 +25,27 @@
             </h3>
           </div>
           <div class="col-md-5">
-            <!-- CRPs -->
-            <div class="filter-component">
-              <p class="filter-title">CRPs</p>
-              <ul class="filter-items">
-                {% for crp in crps %}
-                  <li> {{ forms.checkmark('crps', crp.acronym , crp.acronym) }} </li>
-                {% endfor %}
-              </ul>
-            </div>
-            <!-- Flagships -->
-            <div class="filter-component disabled">
-              <p class="filter-title">Flagships</p>
-              <ul class="filter-items">
-
-              </ul>
-            </div>
-            <!-- Year -->
+          <!-- Year -->
             <div class="filter-component">
               <p class="filter-title">Years</p>
               <ul class="filter-items">
                 {% for year in 2017..2018 %}
                   <li> {{ forms.checkmark('years', year, year) }} </li>
+                {% endfor %}
+              </ul>
+            </div>
+            <!-- Flagships -->
+            <!--<div class="filter-component disabled">
+              <p class="filter-title">Flagships</p>
+              <ul class="filter-items">
+              </ul>
+            </div>-->
+             <!-- CRPs -->
+            <div class="filter-component">
+              <p class="filter-title">Portfolio</p>
+              <ul class="filter-items">
+                {% for crp in crps %}
+                  <li> {{ forms.checkmark('crps', crp.acronym , crp.acronym) }} </li>
                 {% endfor %}
               </ul>
             </div>
