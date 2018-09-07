@@ -1,10 +1,11 @@
 {% set pageParams = {
-    'title': 'Case Studies | CGIAR Program Results Dashboard',
+    'title': 'CGIAR Program Results Dashboard',
     'currentSection': 'Case Studies',
     'customCSS': [
       'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
       'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
-      './css/customInputsFlat.css'
+      './css/customInputsFlat.css',
+      './css/global.css'
     ],
     'customJS': [
       'https://code.jquery.com/jquery-3.3.1.min.js',
@@ -23,10 +24,13 @@
 {% include './pages/header.twig' with pageParams %}
 
 
-
 {% include './pages/main-menu.twig' with pageParams %}
 <div class="container">
   <div class="main-content">
+  <div class="alert alert-dark selection">
+  <div class="checkedfilters clearfilters">Clear All Filters</div> <div class="checkedfilters checkedyears"></div> <div class="checkedfilters checkedcrps"></div> 
+  <div class="checkedfilters checkedregion"></div> <div class="checkedfilters checkedslo"></div> <div class="checkedfilters checkedcci"></div> 
+</div>
     <div class="form-group row">
       <div class="col-md-7">
         <h6 class="subTitle">Outcome / Impact on the Ground</h6>
@@ -45,46 +49,38 @@
     <div class="form-group bot-block">
 
       <div class="wrap">
-
-      	<div class="scrollbar">
-      		<div class="handle"><div class="mousearea"></div></div>
-      	</div>
-
-      	<div class="frame crazy" id="crazy">
-      		<ul class="clearfix">
-      			<li>
-              <h6 class="subTitle">Innovations</h6>
-              <img src="{{ base_url() }}/images/chart-sample.png" alt="" width="100%">
+        
+        <div class="case-container">
+           <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#general">General</a>
             </li>
-            <li>
-              <h6 class="subTitle">Partnerships</h6>
-              <img src="{{ base_url() }}/images/chart-sample.png" alt="" width="100%">
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#oicslist">OICS List</a>
             </li>
-            <li>
-              <h6 class="subTitle">Trainees</h6>
-              <img src="{{ base_url() }}/images/chart-sample.png" alt="" width="100%">
-            </li>
-            <li>
-              <h6 class="subTitle">Peer-reviewed Papers</h6>
-              <img src="{{ base_url() }}/images/chart-sample.png" alt="" width="100%">
-            </li>
-            <li>
-              <h6 class="subTitle">Policies</h6>
-              <img src="{{ base_url() }}/images/chart-sample.png" alt="" width="100%">
-            </li>
-      		</ul>
-      	</div>
-
-      	<div class="controls center">
-      		<button class="btn prev"><i class="fas fa-angle-left"></i></button>
-      		<button class="btn next"><i class="fas fa-angle-right"></i> </button>
-      	</div>
+            </ul>
+            <div class="tab-content">
+            <div class="tab-pane frame show active" id="general">
+             <ul class="clearfix"> 
+             <li><h6 class="subTitle">Number of OICS by cross-cutting</h6>
+               <img src="{{ base_url() }}/images/cross-cutting-sample.png" alt="" width="50%"></li>
+             <li><h6 class="subTitle">Number of OICS by SLO</h6>
+               <div class="case-chartcont">
+              <div id="chart-2"></div>
+             </div></li>
+             <li><h6 class="subTitle">Number of OICS by cross-cutting</h6>
+               <div class="case-chartcont">
+               <div id="cci"></div>
+               </div></li>
+               </ul>        
+             </div>
+              <div class="tab-pane frame show" id="oicslist">
+                     <div id="list-test"></div> 
+              </div>
+            </div>
+        </div>
       </div>
-
-
-
     </div>
   </div>
 </div>
-
 {% include './pages/footer.twig'  with pageParams %}

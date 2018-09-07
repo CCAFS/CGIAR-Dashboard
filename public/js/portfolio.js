@@ -5,8 +5,8 @@ $(document).ready(init);
 
 function init() {
   console.log('Init - Portfolio');
-  /*
-  AmCharts.makeChart("chartdiv",
+
+  /*AmCharts.makeChart("chartdiv",
   {
     "type": "pie",
     "balloonText": "[[value]]",
@@ -51,8 +51,6 @@ function init() {
   */
 
   var containerDiv = document.getElementById("chart-1"),
-    //url = "https://public.tableau.com/views/progresstowardslos/MAP",
-    //url = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/OICS-Sheet",
     url = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_2SHOICSSLODonut",
     options = {
       "CRP Acronym": "",
@@ -63,14 +61,31 @@ function init() {
       height: '100%',
       onFirstInteractive: function () {
         var sheet = chart1.getWorkbook().getActiveSheet();
-        var sheetname =sheet.getName();
         console.log('onFirstInteractive', sheet);
-
+        chart1.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSLOs);
         //yearFilter(2018);
-
       }
     };
   chart1 = new tableau.Viz(containerDiv, url, options);
+
+  var containerDiv = document.getElementById("chart-2"),
+  url = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_2SHOICSSLODonut",
+  options = {
+    "CRP Acronym": "",
+    "Year": "",
+    hideTabs: true,
+    hideToolbar: true,
+    width: '100%',
+    height: '100%',
+    onFirstInteractive: function () {
+      var sheet = chart2.getWorkbook().getActiveSheet();
+      console.log('onFirstInteractive', sheet);
+      chart2.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSLOs);
+      //yearFilter(2018);
+    }
+  };
+chart2 = new tableau.Viz(containerDiv, url, options);
+
 
 
   $('input[type="radio"]').on('change', function () {
@@ -81,20 +96,36 @@ function init() {
 
     var sheet = chart1.getWorkbook().getActiveSheet();
     var mapsheet = map1.getWorkbook().getActiveSheet();
+    var ccisheet = cci1.getWorkbook().getActiveSheet();
+    var listsheet = listtest1.getWorkbook().getActiveSheet();
 
     switch (filterType) {
       case "crps":
-      if (checkedValues == 'All') {
-        sheet.clearFilterAsync("CRP Acronym");
-        mapsheet.clearFilterAsync("CRP Acronym");
-      } else {
-        sheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
-        mapsheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
-      }
+        if (checkedValues == 'All') {
+          sheet.clearFilterAsync("CRP Acronym");
+          mapsheet.clearFilterAsync("CRP Acronym");
+          ccisheet.clearFilterAsync("CRP Acronym");
+          listsheet.clearFilterAsync("CRP Acronym");
+        } else {
+          sheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
+          mapsheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
+          ccisheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
+          listsheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
+        }
+        $(".checkedcrps").text("CRP: "+checkedValues);
+        $(".checkedcrps").show();
+        $(".checkedcrps").on('click', clearCRPfilters);
+        $(".clearfilters").on('click', clearCRPfilters);
         break;
       case "years":
         sheet.applyFilterAsync("Year", checkedValues, tableau.FilterUpdateType.REPLACE);
         mapsheet.applyFilterAsync("Year", checkedValues, tableau.FilterUpdateType.REPLACE);
+        ccisheet.applyFilterAsync("Year", checkedValues, tableau.FilterUpdateType.REPLACE);
+        listsheet.applyFilterAsync("Year", checkedValues, tableau.FilterUpdateType.REPLACE);
+        $(".checkedyears").text("Year: "+checkedValues);
+        $(".checkedyears").show();
+        $(".checkedyears").on('click', clearYearsfilters);
+        $(".clearfilters").on('click', clearYearsfilters);
         break;
       default:
     }
@@ -109,13 +140,40 @@ function init() {
       height: '100%',
       onFirstInteractive: function () {
         var mapsheet = map1.getWorkbook().getActiveSheet();
-        console.log("Interaction with map", mapsheet);   
-        map1.addEventListener(tableau.TableauEventName.MARKS_SELECTION,selectMarks);
+        console.log("Interaction with map", mapsheet);
+        map1.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarks);
       }
-
-    
     };
   map1 = new tableau.Viz(mapcontainerDiv, mapurl, mapoptions);
+
+  var ccicontainerDiv = document.getElementById("cci"),
+    cciurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_1SHCCIDonut",
+    ccioptions = {
+      hideTabs: true,
+      hideToolbar: true,
+      width: '100%',
+      height: '100%',
+      onFirstInteractive: function () {
+        var cci1sheet = cci1.getWorkbook().getActiveSheet();
+        console.log("Interaction with CCI Chart", cci1sheet);
+        cci1.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksCCI);
+      }
+    };
+  cci1 = new tableau.Viz(ccicontainerDiv, cciurl, ccioptions);
+
+  var listcontainerDiv = document.getElementById("list-test"),
+    listurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_3SHCCIDetail",
+    listoptions = {
+      hideTabs: true,
+      hideToolbar: true,
+      width: '100%',
+      height: '100%',
+      onFirstInteractive: function () {
+        var listsheet = listtest1.getWorkbook().getActiveSheet();
+        console.log("Interaction with List", listsheet);
+      }
+    };
+  listtest1 = new tableau.Viz(listcontainerDiv, listurl, listoptions);
 
 
   // -------------------------------------------------------------
@@ -163,18 +221,18 @@ function init() {
 function yearFilter(year) {
 }
 
-function getUnderlyingData(){
+function getUnderlyingData() {
   //sheet = chart1.getWorkbook().getActiveSheet().getWorksheets().get("Storm Map Sheet");
   // If the active sheet is not a dashboard, then you can just enter:
   var sheet = chart1.getWorkbook().getActiveSheet();
   var options = {
-      maxRows: 10, // Max rows to return. Use 0 to return all rows
-      ignoreAliases: false,
-      ignoreSelection: true,
-      includeAllColumns: false
+    maxRows: 10, // Max rows to return. Use 0 to return all rows
+    ignoreAliases: false,
+    ignoreSelection: true,
+    includeAllColumns: false
   };
 
-  sheet.getUnderlyingDataAsync(options).then(function(t){
+  sheet.getUnderlyingDataAsync(options).then(function (t) {
     table = t;
     console.log(table.getData());
   });
@@ -195,8 +253,24 @@ function selectMarks(marksEvent) {
 
 }
 
+function selectMarksSLOs(marksEvent) {
+  return marksEvent.getMarksAsync().then(selectedMarksSLOs);
+}
+
+function selectMarksCCI(marksEvent) {
+  return marksEvent.getMarksAsync().then(selectedMarksCCI);
+}
+
+
+// MAP FILTER
 function reportSelectedMarks(marks) {
   var sheet = chart1.getWorkbook().getActiveSheet();
+  var ccisheet = cci1.getWorkbook().getActiveSheet();
+  var listsheet = listtest1.getWorkbook().getActiveSheet();
+  sheet.clearFilterAsync("reg_wb_name");
+  ccisheet.clearFilterAsync("reg_wb_name");
+  listsheet.clearFilterAsync("reg_wb_name");
+  $(".checkedregion").hide();
 
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {
     var pairs = marks[markIndex].getPairs();
@@ -204,8 +278,142 @@ function reportSelectedMarks(marks) {
       var pair = pairs[pairIndex];
       if (pair.fieldName == 'reg_wb_name') {
         regValue = pair.formattedValue;
-          sheet.applyFilterAsync("reg_wb_name", regValue, tableau.FilterUpdateType.REPLACE);
+        sheet.applyFilterAsync("reg_wb_name", regValue, tableau.FilterUpdateType.REPLACE);
+        ccisheet.applyFilterAsync("reg_wb_name", regValue, tableau.FilterUpdateType.REPLACE);
+        listsheet.applyFilterAsync("reg_wb_name", regValue, tableau.FilterUpdateType.REPLACE);
+        $(".checkedregion").text("Region: "+regValue);
+        $(".checkedregion").show();
+        $(".checkedregion").on('click', clearRegionfilters);
+        $(".clearfilters").on('click', clearRegionfilters);
       }
     }
   }
 }
+
+
+//SLO FILTER
+
+function selectedMarksSLOs(marks) {
+  var mapsheet = map1.getWorkbook().getActiveSheet();
+  mapsheet.clearFilterAsync("SLO");
+  var listsheet = listtest1.getWorkbook().getActiveSheet();
+  listsheet.clearFilterAsync("SLO");
+  $(".checkedslo").hide();
+
+  for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+    var pairs = marks[markIndex].getPairs();
+    for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+      var pair = pairs[pairIndex];
+      if (pair.fieldName == 'SLO') {
+        sloValue = pair.formattedValue;
+        mapsheet.applyFilterAsync("SLO", sloValue, tableau.FilterUpdateType.REPLACE);
+        listsheet.applyFilterAsync("SLO", sloValue, tableau.FilterUpdateType.REPLACE);
+        $(".checkedslo").text("SLO: "+sloValue);
+        $(".checkedslo").show();
+        $(".checkedslo").on('click', clearSLOfilters);
+        $(".clearfilters").on('click', clearSLOfilters);
+      }
+    }
+  }
+}
+
+
+//CCI Filter
+function selectedMarksCCI(marks) {
+  var mapsheet = map1.getWorkbook().getActiveSheet();
+  mapsheet.clearFilterAsync("Cross-Cutting Issue");
+  var listsheet = listtest1.getWorkbook().getActiveSheet();
+  listsheet.clearFilterAsync("Cross-Cutting Issue");
+  $(".checkedcci").hide();
+  //var ccisheet = cc1.getWorkbook().getActiveSheet();
+  //ccisheet.clearFilterAsync("SLO");
+
+  for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+    var pairs = marks[markIndex].getPairs();
+    for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+      var pair = pairs[pairIndex];
+      if (pair.fieldName == 'Cross-Cutting Issue') {
+        cciValue = pair.formattedValue;
+        mapsheet.applyFilterAsync("Cross-Cutting Issue", cciValue, tableau.FilterUpdateType.REPLACE);
+        listsheet.applyFilterAsync("Cross-Cutting Issue", cciValue, tableau.FilterUpdateType.REPLACE);
+        $(".checkedcci").text("Cross-Cutting Issue: "+cciValue);
+        $(".checkedcci").show();
+        $(".checkedcci").on('click', clearCCIfilters);
+        $(".clearfilters").on('click', clearCCIfilters);
+      }
+    }
+  }
+}
+
+
+function clearCRPfilters(){
+  var sheet = chart1.getWorkbook().getActiveSheet();
+  var mapsheet = map1.getWorkbook().getActiveSheet();
+  var ccisheet = cci1.getWorkbook().getActiveSheet();
+  var listsheet = listtest1.getWorkbook().getActiveSheet();      
+  sheet.clearFilterAsync("CRP Acronym");
+  mapsheet.clearFilterAsync("CRP Acronym");
+  ccisheet.clearFilterAsync("CRP Acronym");
+  listsheet.clearFilterAsync("CRP Acronym");
+  $(".checkedcrps").hide();
+};
+
+
+function clearYearsfilters(){
+  var sheet = chart1.getWorkbook().getActiveSheet();
+  var mapsheet = map1.getWorkbook().getActiveSheet();
+  var ccisheet = cci1.getWorkbook().getActiveSheet();
+  var listsheet = listtest1.getWorkbook().getActiveSheet();      
+  sheet.clearFilterAsync("Year");
+  mapsheet.clearFilterAsync("Year");
+  ccisheet.clearFilterAsync("Year");
+  listsheet.clearFilterAsync("Year");
+  $(".checkedyears").hide();
+};
+
+function clearRegionfilters(){
+  var sheet = chart1.getWorkbook().getActiveSheet();
+  var ccisheet = cci1.getWorkbook().getActiveSheet();
+  var listsheet = listtest1.getWorkbook().getActiveSheet();      
+  sheet.clearFilterAsync("reg_wb_name");
+  ccisheet.clearFilterAsync("reg_wb_name");
+  listsheet.clearFilterAsync("reg_wb_name");
+  $(".checkedregion").hide();
+};
+
+
+function clearSLOfilters(){
+  var mapsheet = map1.getWorkbook().getActiveSheet();
+  var listsheet = listtest1.getWorkbook().getActiveSheet();   
+  mapsheet.clearFilterAsync("SLO");
+  listsheet.clearFilterAsync("SLO");
+  $(".checkedslo").hide();
+};
+
+function clearCCIfilters(){
+  var mapsheet = map1.getWorkbook().getActiveSheet();
+  var listsheet = listtest1.getWorkbook().getActiveSheet();   
+  mapsheet.clearFilterAsync("Cross-Cutting Issue");
+  listsheet.clearFilterAsync("Cross-Cutting Issue");
+  $(".checkedcci").hide();
+};
+
+/*
+function clearALLfilters(){
+  var sheet = chart1.getWorkbook().getActiveSheet();
+  var mapsheet = map1.getWorkbook().getActiveSheet();
+  var ccisheet = cci1.getWorkbook().getActiveSheet();
+  var listsheet = listtest1.getWorkbook().getActiveSheet(); 
+  sheet.clearFilterAsync("CRP Acronym");
+  mapsheet.clearFilterAsync("CRP Acronym");
+  ccisheet.clearFilterAsync("CRP Acronym");
+  listsheet.clearFilterAsync("CRP Acronym");
+  sheet.clearFilterAsync("Year");
+  mapsheet.clearFilterAsync("Year");
+  ccisheet.clearFilterAsync("Year");
+  listsheet.clearFilterAsync("Year");
+  mapsheet.clearFilterAsync("SLO");
+  listsheet.clearFilterAsync("SLO");
+  mapsheet.clearFilterAsync("Cross-Cutting Issue");
+  listsheet.clearFilterAsync("Cross-Cutting Issue");
+};*/
