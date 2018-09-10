@@ -20,13 +20,7 @@ $app->get('/', function ($request, $response, $args) {
     array('acronym' => 'WLE'),
     array('acronym' => 'A4NH'),
     array('acronym' => 'Livestock'),
-    array('acronym' => 'FTA'),
-    array('acronym' => 'Rice'),
-    array('acronym' => 'RTB'),
-    array('acronym' => 'Wheat'),
-    array('acronym' => 'Maize'),
-    array('acronym' => 'Fish'),
-    array('acronym' => 'GLDC')
+    array('acronym' => 'RTB')
   );
 
   /*

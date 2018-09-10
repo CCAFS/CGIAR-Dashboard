@@ -5,6 +5,8 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="icon" type="image/png" href="{{ base_url() }}/images/cgiar-tab.png"/>
+
     <title>{{ pageParams.title }} </title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
 
@@ -27,7 +29,7 @@
           <div class="col-md-5">
           <!-- Year -->
             <div class="filter-component">
-              <p class="filter-title">Year</p>
+              <p class="filter-title years">Year</p>
               <ul class="filter-items">
                 {% for year in 2017..2018 %}
                   <li> {{ forms.checkmark('years', year, year) }} </li>
@@ -36,7 +38,7 @@
             </div>
              <!-- CRPs -->
             <div class="filter-component">
-              <p class="filter-title">Portfolio</p>
+              <p class="filter-title portfolio">Portfolio</p>
               <ul class="filter-items">
                 {% for crp in crps %}
                   <li> {{ forms.checkmark('crps', crp.acronym , crp.acronym) }} </li>
