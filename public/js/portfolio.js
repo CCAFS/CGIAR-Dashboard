@@ -377,15 +377,19 @@ function clearRegionfilters(){
   ccisheet.clearFilterAsync("reg_wb_name");
   listsheet.clearFilterAsync("reg_wb_name");
   $(".checkedregion").hide();
+  var mapsheet = map1.getWorkbook().getActiveSheet();
+  mapsheet.clearSelectedMarksAsync();
 };
 
 
 function clearSLOfilters(){
   var mapsheet = map1.getWorkbook().getActiveSheet();
   var listsheet = listtest1.getWorkbook().getActiveSheet();   
+  var sheet = chart1.getWorkbook().getActiveSheet();
   mapsheet.clearFilterAsync("SLO");
   listsheet.clearFilterAsync("SLO");
   $(".checkedslo").hide();
+  sheet.clearSelectedMarksAsync();
 };
 
 function clearCCIfilters(){
@@ -394,24 +398,6 @@ function clearCCIfilters(){
   mapsheet.clearFilterAsync("Cross-Cutting Issue");
   listsheet.clearFilterAsync("Cross-Cutting Issue");
   $(".checkedcci").hide();
-};
-
-/*
-function clearALLfilters(){
-  var sheet = chart1.getWorkbook().getActiveSheet();
-  var mapsheet = map1.getWorkbook().getActiveSheet();
   var ccisheet = cci1.getWorkbook().getActiveSheet();
-  var listsheet = listtest1.getWorkbook().getActiveSheet(); 
-  sheet.clearFilterAsync("CRP Acronym");
-  mapsheet.clearFilterAsync("CRP Acronym");
-  ccisheet.clearFilterAsync("CRP Acronym");
-  listsheet.clearFilterAsync("CRP Acronym");
-  sheet.clearFilterAsync("Year");
-  mapsheet.clearFilterAsync("Year");
-  ccisheet.clearFilterAsync("Year");
-  listsheet.clearFilterAsync("Year");
-  mapsheet.clearFilterAsync("SLO");
-  listsheet.clearFilterAsync("SLO");
-  mapsheet.clearFilterAsync("Cross-Cutting Issue");
-  listsheet.clearFilterAsync("Cross-Cutting Issue");
-};*/
+  ccisheet.clearSelectedMarksAsync();
+};
