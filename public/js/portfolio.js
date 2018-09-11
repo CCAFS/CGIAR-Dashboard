@@ -240,7 +240,6 @@ function errback(e) {
 function selectMarks(marksEvent) {
   var marksWorksheet = marksEvent.getWorksheet();
   return marksEvent.getMarksAsync().then(reportSelectedMarks);
-
 }
 
 function selectMarksSLOs(marksEvent) {
