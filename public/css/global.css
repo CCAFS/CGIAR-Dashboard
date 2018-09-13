@@ -355,3 +355,11 @@ nav.main-menu ul li.active:after {
   background-image: url(../images/icons/close-icon.png);
   background-repeat: no-repeat;
  }
+
+ .itotal-container {
+  background-color: #f1f1f1;
+  width: 170px;
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}

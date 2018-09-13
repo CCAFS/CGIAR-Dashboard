@@ -1,0 +1,59 @@
+{% set pageParams = {
+    'title': 'CGIAR Program Results Dashboard',
+    'currentSection': 'Innovations',
+    'customCSS': [
+      'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
+      'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
+      './css/customInputsFlat.css',
+      './css/global.css'
+    ],
+    'customJS': [
+      'https://code.jquery.com/jquery-3.3.1.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js',
+      'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js',
+      'https://www.amcharts.com/lib/3/amcharts.js',
+      'https://www.amcharts.com/lib/3/pie.js',
+      'https://www.amcharts.com/lib/3/themes/light.js',
+      "./js/libs/tableau/tableau-2.2.2.min.js",
+      "./js/libs/sly/sly.min.js"
+    ]
+  }
+%}
+
+{% include './pages/header.twig' with pageParams %}
+{% include './pages/main-menu.twig' with pageParams %}
+<div class="container">
+  <div class="main-content">
+
+    <div class="form-group row">
+      <div class="col-md-2">
+        <h6 class="subTitle">Total Innovations</h6>
+        <div class="itotal-container">
+        345
+        </div>
+      </div>
+      <div class="col-md-7">
+        <h6 class="subTitle">Innovations by stage</h6>
+        <img src="{{ base_url() }}/images/innovations_by_stage_sample.png" alt="" width="100%">
+      </div>
+      <div class="col-sm-3">
+        <h6 class="subTitle">Innovations by type</h6>
+        <img src="{{ base_url() }}/images/innovations_by_type_sample.png" alt="" width="90%">
+      </div>
+    </div>
+
+    <div class="form-group row">
+       <div class="col-md-4">
+         <h6 class="subTitle">Innovations on the ground</h6>
+           <img src="{{ base_url() }}/images/innovations_on_the_ground_sample.png" alt="" width="100%">
+       </div>
+
+        <div class="col-md-8">
+         <h6 class="subTitle">Innovations list</h6>
+             <img src="{{ base_url() }}/images/list_of_innovations_sample.png" alt="" width="100%">
+        </div>
+    </div>
+    
+  </div>
+</div>
+{% include './pages/footer.twig'  with pageParams %}

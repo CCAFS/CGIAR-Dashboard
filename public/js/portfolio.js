@@ -295,8 +295,9 @@ function selectedMarksSLOs(marks) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
-      if (pair.fieldName == 'SLO') {
+      if (pair.fieldName == 'SLO') {        
         sloValue = pair.formattedValue;
+        if(sloValue!=null){
         mapsheet.applyFilterAsync("SLO", sloValue, tableau.FilterUpdateType.REPLACE);
         listsheet.applyFilterAsync("SLO", sloValue, tableau.FilterUpdateType.REPLACE);
         $(".checkedslo").text("SLO: "+sloValue).addClass("closebutton");
@@ -305,6 +306,7 @@ function selectedMarksSLOs(marks) {
         $(".checkedslo").show();
         $(".checkedslo").on('click', clearSLOfilters);
         $(".clearfilters").on('click', clearSLOfilters);
+       }
       }
     }
   }
@@ -327,6 +329,7 @@ function selectedMarksCCI(marks) {
       var pair = pairs[pairIndex];
       if (pair.fieldName == 'Cross-Cutting Issue') {
         cciValue = pair.formattedValue;
+        if(cciValue!=null){
         mapsheet.applyFilterAsync("Cross-Cutting Issue", cciValue, tableau.FilterUpdateType.REPLACE);
         listsheet.applyFilterAsync("Cross-Cutting Issue", cciValue, tableau.FilterUpdateType.REPLACE);
         $(".checkedcci").text("Cross-Cutting Issue: "+cciValue).addClass("closebutton");
@@ -335,6 +338,7 @@ function selectedMarksCCI(marks) {
         $(".checkedcci").show();
         $(".checkedcci").on('click', clearCCIfilters);
         $(".clearfilters").on('click', clearCCIfilters);
+        }
       }
     }
   }
