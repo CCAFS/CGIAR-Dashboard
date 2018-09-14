@@ -69,7 +69,7 @@ function init() {
       }
     };
   chart1 = new tableau.Viz(containerDiv, url, options);
-  
+
 
   $('input[type="radio"]').on('change', function () {
     var filterType = $(this).attr('name');
@@ -98,8 +98,6 @@ function init() {
           $('.portfolio').text(checkedValues);
         }
         $(".checkedcrps").text("CRP: "+checkedValues).addClass("closebutton");
-        $(".checkedcrps").css('margin-top', '3px');
-        $(".checkedcrps").css('margin-bottom', '3px');
         $(".checkedcrps").show();
         $(".checkedcrps").on('click', clearCRPfilters);
         $(".clearfilters").on('click', clearCRPfilters);
@@ -111,8 +109,6 @@ function init() {
         listsheet.applyFilterAsync("Year", checkedValues, tableau.FilterUpdateType.REPLACE);
         $('.years').text(checkedValues);
         $(".checkedyears").text("Years: "+checkedValues).addClass("closebutton");
-        $(".checkedyears").css('margin-top', '3px');
-        $(".checkedyears").css('margin-bottom', '3px');
         $(".checkedyears").show();
         $(".closebutton").on('click', clearYearsfilters);
         $(".clearfilters").on('click', clearYearsfilters);
@@ -271,8 +267,6 @@ function reportSelectedMarks(marks) {
         ccisheet.applyFilterAsync("reg_wb_name", regValue, tableau.FilterUpdateType.REPLACE);
         listsheet.applyFilterAsync("reg_wb_name", regValue, tableau.FilterUpdateType.REPLACE);
         $(".checkedregion").text("Region: "+regValue).addClass("closebutton");
-        $(".checkedregion").css('margin-top', '3px');
-        $(".checkedregion").css('margin-bottom', '3px');
         $(".checkedregion").show();
         $(".checkedregion").on('click', clearRegionfilters);
         $(".clearfilters").on('click', clearRegionfilters);
@@ -295,7 +289,7 @@ function selectedMarksSLOs(marks) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
-      if (pair.fieldName == 'SLO') {        
+      if (pair.fieldName == 'SLO') {
         sloValue = pair.formattedValue;
         if(sloValue!=null){
         mapsheet.applyFilterAsync("SLO", sloValue, tableau.FilterUpdateType.REPLACE);
@@ -349,7 +343,7 @@ function clearCRPfilters(){
   var sheet = chart1.getWorkbook().getActiveSheet();
   var mapsheet = map1.getWorkbook().getActiveSheet();
   var ccisheet = cci1.getWorkbook().getActiveSheet();
-  var listsheet = listtest1.getWorkbook().getActiveSheet();      
+  var listsheet = listtest1.getWorkbook().getActiveSheet();
   sheet.clearFilterAsync("CRP Acronym");
   mapsheet.clearFilterAsync("CRP Acronym");
   ccisheet.clearFilterAsync("CRP Acronym");
@@ -363,7 +357,7 @@ function clearYearsfilters(){
   var sheet = chart1.getWorkbook().getActiveSheet();
   var mapsheet = map1.getWorkbook().getActiveSheet();
   var ccisheet = cci1.getWorkbook().getActiveSheet();
-  var listsheet = listtest1.getWorkbook().getActiveSheet();      
+  var listsheet = listtest1.getWorkbook().getActiveSheet();
   sheet.clearFilterAsync("Year");
   mapsheet.clearFilterAsync("Year");
   ccisheet.clearFilterAsync("Year");
@@ -375,7 +369,7 @@ function clearYearsfilters(){
 function clearRegionfilters(){
   var sheet = chart1.getWorkbook().getActiveSheet();
   var ccisheet = cci1.getWorkbook().getActiveSheet();
-  var listsheet = listtest1.getWorkbook().getActiveSheet();      
+  var listsheet = listtest1.getWorkbook().getActiveSheet();
   sheet.clearFilterAsync("reg_wb_name");
   ccisheet.clearFilterAsync("reg_wb_name");
   listsheet.clearFilterAsync("reg_wb_name");
@@ -387,7 +381,7 @@ function clearRegionfilters(){
 
 function clearSLOfilters(){
   var mapsheet = map1.getWorkbook().getActiveSheet();
-  var listsheet = listtest1.getWorkbook().getActiveSheet();   
+  var listsheet = listtest1.getWorkbook().getActiveSheet();
   var sheet = chart1.getWorkbook().getActiveSheet();
   mapsheet.clearFilterAsync("SLO");
   listsheet.clearFilterAsync("SLO");
@@ -397,7 +391,7 @@ function clearSLOfilters(){
 
 function clearCCIfilters(){
   var mapsheet = map1.getWorkbook().getActiveSheet();
-  var listsheet = listtest1.getWorkbook().getActiveSheet();   
+  var listsheet = listtest1.getWorkbook().getActiveSheet();
   mapsheet.clearFilterAsync("Cross-Cutting Issue");
   listsheet.clearFilterAsync("Cross-Cutting Issue");
   $(".checkedcci").hide();

@@ -2,15 +2,19 @@
 
 $app->get('/action', App\Action\BaseAction::class)->setName('action');
 
-$app->get('/', function ($request, $response, $args) {
+$app->get('/[{actionName}]', function ($request, $response, $args) {
+
+  echo $args['actionName'];
+
+
   $sections = array(
-    array('name' => 'Case Studies'),
-    array('name' => 'Innovations'),
-    array('name' => 'Partnerships'),
-    array('name' => 'Trainees'),
-    array('name' => 'Papers'),
-    array('name' => 'Policies'),
-    array('name' => 'Almetrics')
+    array('name' => 'Case Studies',   'action' => 'caseStudies',  'active' => true ),
+    array('name' => 'Innovations',    'action' => 'innovations',  'active' => true ),
+    array('name' => 'Partnerships',   'action' => 'partnerships', 'active' => false ),
+    array('name' => 'Trainees',       'action' => 'trainees',     'active' => false ),
+    array('name' => 'Papers',         'action' => 'papers',       'active' => false ),
+    array('name' => 'Policies',       'action' => 'policies',     'active' => false ),
+    array('name' => 'Almetrics',      'action' => 'almetrics',    'active' => false )
   );
 
   $crps = array(
@@ -22,6 +26,8 @@ $app->get('/', function ($request, $response, $args) {
     array('acronym' => 'Livestock'),
     array('acronym' => 'RTB')
   );
+
+  $currentSection = (isset($args['actionName'])? $args['actionName'] : $sections[0][action]);
 
   /*
   try{
@@ -38,9 +44,10 @@ $app->get('/', function ($request, $response, $args) {
   }
   */
 
-  $this->view->render($response, 'home.twig', [
+  $this->view->render($response, $currentSection.'.twig', [
     'sections' => $sections,
-    'crps' => $crps
+    'crps' => $crps,
+    'currentSection' => $currentSection
   ]);
   return $response;
 })->setName('homepage');

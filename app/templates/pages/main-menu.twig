@@ -3,7 +3,9 @@
     <nav class="main-menu">
       <ul>
         {% for section in sections %}
-          <li class="{% if pageParams.currentSection == section.name %}active{% endif %}"> {{ section.name }} </li>
+          <li class="{% if currentSection == section.action %}active{% endif %}">
+            <a href="{% if section.active %}./{{ section.action }}{% else %}#{% endif %}" class="active-{{section.active}}"> {{ section.name }} </a>
+          </li>
         {% endfor %}
       </ul>
     </nav>
