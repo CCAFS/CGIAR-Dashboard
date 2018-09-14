@@ -1,5 +1,5 @@
 {% set pageParams = {
-    'title': 'CGIAR Program Results Dashboard',
+    'title': 'Innovations | CGIAR Program Results Dashboard',
     'customCSS': [
       'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
       'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
@@ -20,6 +20,8 @@
 %}
 
 {% include './pages/header.twig' with pageParams %}
+
+
 {% include './pages/main-menu.twig' with pageParams %}
 <div class="container">
   <div class="main-content">
@@ -52,7 +54,7 @@
              <img src="{{ base_url() }}/images/list_of_innovations_sample.png" alt="" width="100%">
         </div>
     </div>
-
   </div>
 </div>
+
 {% include './pages/footer.twig'  with pageParams %}

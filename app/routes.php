@@ -4,7 +4,7 @@ $app->get('/action', App\Action\BaseAction::class)->setName('action');
 
 $app->get('/[{actionName}]', function ($request, $response, $args) {
 
-  echo $args['actionName'];
+ // echo $args['actionName'];
 
 
   $sections = array(
