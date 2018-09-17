@@ -98,6 +98,8 @@ function init() {
           $('.portfolio').text(checkedValues);
         }
         $(".checkedcrps").text("CRP: "+checkedValues).addClass("closebutton");
+        $(".checkedcrps").css('margin-top', '3px');
+        $(".checkedcrps").css('margin-bottom', '3px');
         $(".checkedcrps").show();
         $(".checkedcrps").on('click', clearCRPfilters);
         $(".clearfilters").on('click', clearCRPfilters);
@@ -109,6 +111,8 @@ function init() {
         listsheet.applyFilterAsync("Year", checkedValues, tableau.FilterUpdateType.REPLACE);
         $('.years').text(checkedValues);
         $(".checkedyears").text("Years: "+checkedValues).addClass("closebutton");
+        $(".checkedyears").css('margin-top', '3px');
+        $(".checkedyears").css('margin-bottom', '3px');
         $(".checkedyears").show();
         $(".closebutton").on('click', clearYearsfilters);
         $(".clearfilters").on('click', clearYearsfilters);
@@ -160,6 +164,24 @@ function init() {
       }
     };
   listtest1 = new tableau.Viz(listcontainerDiv, listurl, listoptions);
+
+  var containerDiv2 = document.getElementById("chart-2"),
+    url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_4DBOICS-CCI-DoubleDonut",
+    options2 = {
+      "CRP Acronym": "",
+      "Year": "",
+      hideTabs: true,
+      hideToolbar: true,
+      width: '100%',
+      height: '100%',
+      onFirstInteractive: function () {
+        var sheet2 = chart2.getWorkbook().getActiveSheet();
+        console.log('Interaction with graph', sheet2);
+        chart2.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSLOs);
+        //yearFilter(2018);
+      }
+    };
+  chart2 = new tableau.Viz(containerDiv2, url2, options2);
 
 
   // -------------------------------------------------------------
@@ -252,21 +274,25 @@ function reportSelectedMarks(marks) {
   var sheet = chart1.getWorkbook().getActiveSheet();
   var ccisheet = cci1.getWorkbook().getActiveSheet();
   var listsheet = listtest1.getWorkbook().getActiveSheet();
-  sheet.clearFilterAsync("reg_wb_name");
-  ccisheet.clearFilterAsync("reg_wb_name");
-  listsheet.clearFilterAsync("reg_wb_name");
+  sheet.clearFilterAsync("Reg Un Name");
+  ccisheet.clearFilterAsync("Reg Un Name");
+  listsheet.clearFilterAsync("Reg Un Name");
   $(".checkedregion").hide();
 
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
-      if (pair.fieldName == 'reg_wb_name') {
+      console.log(pair);
+      if (pair.fieldName == 'Reg Un Name') {
         regValue = pair.formattedValue;
-        sheet.applyFilterAsync("reg_wb_name", regValue, tableau.FilterUpdateType.REPLACE);
-        ccisheet.applyFilterAsync("reg_wb_name", regValue, tableau.FilterUpdateType.REPLACE);
-        listsheet.applyFilterAsync("reg_wb_name", regValue, tableau.FilterUpdateType.REPLACE);
+        console.log(regValue);
+        sheet.applyFilterAsync("Reg Un Name", regValue, tableau.FilterUpdateType.REPLACE);
+        ccisheet.applyFilterAsync("Reg Un Name", regValue, tableau.FilterUpdateType.REPLACE);
+        listsheet.applyFilterAsync("Reg Un Name", regValue, tableau.FilterUpdateType.REPLACE);
         $(".checkedregion").text("Region: "+regValue).addClass("closebutton");
+        $(".checkedregion").css('margin-top', '3px');
+        $(".checkedregion").css('margin-bottom', '3px');
         $(".checkedregion").show();
         $(".checkedregion").on('click', clearRegionfilters);
         $(".clearfilters").on('click', clearRegionfilters);
@@ -310,9 +336,9 @@ function selectedMarksSLOs(marks) {
 //CCI Filter
 function selectedMarksCCI(marks) {
   var mapsheet = map1.getWorkbook().getActiveSheet();
-  mapsheet.clearFilterAsync("Cross-Cutting Issue");
+  mapsheet.clearFilterAsync("CCI");
   var listsheet = listtest1.getWorkbook().getActiveSheet();
-  listsheet.clearFilterAsync("Cross-Cutting Issue");
+  listsheet.clearFilterAsync("CCI");
   $(".checkedcci").hide();
   //var ccisheet = cc1.getWorkbook().getActiveSheet();
   //ccisheet.clearFilterAsync("SLO");
@@ -321,12 +347,12 @@ function selectedMarksCCI(marks) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
-      if (pair.fieldName == 'Cross-Cutting Issue') {
+      if (pair.fieldName == 'CCI') {
         cciValue = pair.formattedValue;
         if(cciValue!=null){
-        mapsheet.applyFilterAsync("Cross-Cutting Issue", cciValue, tableau.FilterUpdateType.REPLACE);
-        listsheet.applyFilterAsync("Cross-Cutting Issue", cciValue, tableau.FilterUpdateType.REPLACE);
-        $(".checkedcci").text("Cross-Cutting Issue: "+cciValue).addClass("closebutton");
+        mapsheet.applyFilterAsync("CCI", cciValue, tableau.FilterUpdateType.REPLACE);
+        listsheet.applyFilterAsync("CCI", cciValue, tableau.FilterUpdateType.REPLACE);
+        $(".checkedcci").text("CCI: "+cciValue).addClass("closebutton");
         $(".checkedcci").css('margin-top', '3px');
         $(".checkedcci").css('margin-bottom', '3px');
         $(".checkedcci").show();
@@ -370,9 +396,9 @@ function clearRegionfilters(){
   var sheet = chart1.getWorkbook().getActiveSheet();
   var ccisheet = cci1.getWorkbook().getActiveSheet();
   var listsheet = listtest1.getWorkbook().getActiveSheet();
-  sheet.clearFilterAsync("reg_wb_name");
-  ccisheet.clearFilterAsync("reg_wb_name");
-  listsheet.clearFilterAsync("reg_wb_name");
+  sheet.clearFilterAsync("Reg Un Name");
+  ccisheet.clearFilterAsync("Reg Un Name");
+  listsheet.clearFilterAsync("Reg Un Name");
   $(".checkedregion").hide();
   var mapsheet = map1.getWorkbook().getActiveSheet();
   mapsheet.clearSelectedMarksAsync();
@@ -392,8 +418,8 @@ function clearSLOfilters(){
 function clearCCIfilters(){
   var mapsheet = map1.getWorkbook().getActiveSheet();
   var listsheet = listtest1.getWorkbook().getActiveSheet();
-  mapsheet.clearFilterAsync("Cross-Cutting Issue");
-  listsheet.clearFilterAsync("Cross-Cutting Issue");
+  mapsheet.clearFilterAsync("CCI");
+  listsheet.clearFilterAsync("CCI");
   $(".checkedcci").hide();
   var ccisheet = cci1.getWorkbook().getActiveSheet();
   ccisheet.clearSelectedMarksAsync();

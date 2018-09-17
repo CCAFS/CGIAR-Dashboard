@@ -43,8 +43,8 @@
       </div>
       <div class="col-md-5">
         <h6 class="subTitle">Progress Towards SLOs/CCI</h6>
-        <div class="chart-container">
-          <img src="{{ base_url() }}/images/progress-sample.png" alt="" width="95%"></li>
+        <div class="donut-container">
+          <div id="chart-2"></div>
         </div>
       </div>
     </div>
@@ -54,36 +54,33 @@
       <div class="wrap">
 
         <div class="case-container">
-           <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#general">General</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#oicslist">OICS List</a>
-            </li>
-            </ul>
+          
             <div class="tab-content">
-            <div class="tab-pane frame show active" id="general">
-             <ul class="clearfix">
-             <li><h6 class="subTitle">Number of OICS by cross-cutting</h6>
-               <img src="{{ base_url() }}/images/cross-cutting-sample.png" alt="" width="50%"></li>
-             <li><h6 class="subTitle">Number of OICS by SLO</h6>
-               <div class="case-chartcont">
-              <div id="chart-1"></div>
-             </div></li>
-             <li><h6 class="subTitle">Number of OICS by cross-cutting</h6>
-               <div class="case-chartcont">
-               <div id="cci"></div>
-               </div></li>
-               </ul>
-             </div>
-              <div class="tab-pane frame show" id="oicslist">
-                     <div id="list-test"></div>
+              <div class="tab-pane frame show active" id="general">
+              <ul class="clearfix">
+              <li><h6 class="subTitle">Number of OICS by cross-cutting</h6>
+                <img src="{{ base_url() }}/images/cross-cutting-sample.png" alt="" width="50%"></li>
+              <li><h6 class="subTitle">Number of OICS by SLO</h6>
+                <div class="case-chartcont">
+                <div id="chart-1"></div>
+              </div></li>
+              <li><h6 class="subTitle">Number of OICS by cross-cutting</h6>
+                <div class="case-chartcont">
+                <div id="cci"></div>
+                </div></li>
+                </ul>
               </div>
-            </div>
+              </div>
         </div>
       </div>
     </div>
-  </div>
+
+    <div class="form-group bot-block">
+        <div class="case-container">          
+            <div class="list-content">
+              <div id="list-test"></div>
+            </div>
+      </div>
+     </div>
 </div>
 {% include './pages/footer.twig'  with pageParams %}

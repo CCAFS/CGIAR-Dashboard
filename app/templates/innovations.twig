@@ -13,8 +13,10 @@
       'https://www.amcharts.com/lib/3/amcharts.js',
       'https://www.amcharts.com/lib/3/pie.js',
       'https://www.amcharts.com/lib/3/themes/light.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js',
       "./js/libs/tableau/tableau-2.2.2.min.js",
-      "./js/libs/sly/sly.min.js"
+      "./js/libs/sly/sly.min.js",
+      "./js/innovations.js"
     ]
   }
 %}
@@ -35,7 +37,7 @@
       </div>
       <div class="col-md-7">
         <h6 class="subTitle">Innovations by stage</h6>
-        <img src="{{ base_url() }}/images/innovations_by_stage_sample.png" alt="" width="100%">
+        <canvas id="myChart"></canvas>
       </div>
       <div class="col-sm-3">
         <h6 class="subTitle">Innovations by type</h6>
@@ -51,7 +53,7 @@
 
         <div class="col-md-8">
          <h6 class="subTitle">Innovations list</h6>
-             <img src="{{ base_url() }}/images/list_of_innovations_sample.png" alt="" width="100%">
+            <img src="{{ base_url() }}/images/list_of_innovations_sample.png" alt="" width="100%">
         </div>
     </div>
   </div>

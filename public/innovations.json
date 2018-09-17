@@ -1,0 +1,2165 @@
+[
+	{
+		"innovation_id" : 26,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 31,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Biophysical Research",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 35,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 36,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 37,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 49,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 58,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 58,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 60,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 60,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 62,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 62,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 62,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 67,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 70,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 71,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 76,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 76,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 76,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 76,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 76,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 76,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 76,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 76,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 76,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 84,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 84,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 87,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 93,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 99,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 100,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 109,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 111,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 111,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 111,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 147,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 148,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 149,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 158,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 158,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 158,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 158,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 159,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 169,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 170,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 170,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 171,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 172,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 173,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 174,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 185,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 1: End of research phase (Discovery/Proof of Concept)"
+	},
+	{
+		"innovation_id" : 21,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 21,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 39,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 46,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 46,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 46,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 46,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 46,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 46,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 50,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 50,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 50,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 53,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 54,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 55,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 55,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 55,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 55,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 55,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 57,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 59,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Biophysical Research",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 59,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Biophysical Research",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 63,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 63,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 88,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 101,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 108,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 110,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 110,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 110,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 110,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 113,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 113,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 146,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 146,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 156,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 156,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 157,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 157,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 157,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 157,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 157,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 165,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 166,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 167,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 168,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 180,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 184,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 2: End of piloting phase"
+	},
+	{
+		"innovation_id" : 13,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 15,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 16,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 17,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 23,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 25,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 42,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 42,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 43,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 43,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 43,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 51,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 51,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 51,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 68,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 69,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 73,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 73,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 73,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 74,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 74,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 85,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 85,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 85,
+		"crp" : "Livestock",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 90,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 91,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 92,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 97,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 97,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 97,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 97,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 117,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 118,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 119,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 120,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 121,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 122,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 123,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 124,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 125,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 126,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 127,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 128,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 129,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 130,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 131,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 132,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 133,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 134,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 135,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 136,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 137,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 139,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 140,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 141,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 142,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 144,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 145,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 150,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Genetic (varieties and breeds)",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 153,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 153,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 154,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 154,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 154,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 154,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 155,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 155,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 155,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 160,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 161,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 161,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 162,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 163,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 164,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 176,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 177,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 178,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 179,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 182,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 183,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 186,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 187,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 3: Available for uptake"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 19,
+		"crp" : "PIM",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 32,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 32,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 75,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 75,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 75,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 78,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 78,
+		"crp" : "WLE",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 79,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 80,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 80,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 80,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 80,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 80,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 80,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 80,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 80,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 80,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 80,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 80,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 80,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 81,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 81,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 81,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 81,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 81,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 81,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 81,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 81,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 81,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 81,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 83,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 83,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 95,
+		"crp" : "CCAFS",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 143,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 143,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 143,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 143,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 143,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 143,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Research and Communication Methodologies and Tools",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 151,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 152,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 152,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 152,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 152,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 152,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 152,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Production systems and Management practices",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 175,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 175,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 175,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	},
+	{
+		"innovation_id" : 175,
+		"crp" : "A4NH",
+		"year" : 2017,
+		"inno_type" : "Social Science",
+		"stg_name" : "Stage 4: Uptake by next user"
+	}
+]
