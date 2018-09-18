@@ -89,7 +89,7 @@ function init() {
           mapsheet.clearFilterAsync("CRP Acronym");
           ccisheet.clearFilterAsync("CRP Acronym");
           listsheet.clearFilterAsync("CRP Acronym");
-          $('.portfolio').text(checkedValues+" CRPs");
+          $('.portfolio').text("Portfolio");
         } else {
           sheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
           mapsheet.applyFilterAsync("CRP Acronym", checkedValues, tableau.FilterUpdateType.REPLACE);
