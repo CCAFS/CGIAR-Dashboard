@@ -1,6 +1,6 @@
-{% macro checkmark(name, value, label) %}
+{% macro checkmark(name, value, label, checked) %}
   <label class="inputContainer">
-    <input id="{{ name }}" class="" type="radio" name="{{ name }}" value="{{ value }}">
+    <input id="{{ name }}" class="" type="radio" name="{{ name }}" value="{{ value }}" {% if checked|default(false) %}checked="checked"{% endif %}>
     <span class="checkmark"></span>
     <span class="labelText ">{{ label }}</span>
   </label>
