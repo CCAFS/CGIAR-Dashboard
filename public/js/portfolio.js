@@ -3,7 +3,7 @@ var FILTER_CRPS = "CRP Acronym";
 var FILTER_YEAR = "Year";
 var FILTER_REGION = "Reg Un Name";
 var FILTER_SLO = "SLO";
-var FILTER_CCI = "Cross-Cutting Issue";
+var FILTER_CCI = "CCI";
 
 $(document).ready(init);
 
@@ -57,7 +57,7 @@ function init() {
         } else {
           // Set filter to all sheets
           appyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValues);
-
+          $filterTitle.text(checkedValues);
           // Add filter tag
           $(".checkedyears").text("Years: "+checkedValues).addClass("closebutton");
           $(".checkedyears").css('margin-top', '3px').css('margin-bottom', '3px');
