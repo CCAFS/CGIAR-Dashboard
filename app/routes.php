@@ -18,7 +18,6 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
   );
 
   $crps = array(
-    array('acronym' => 'All'),
     array('acronym' => 'CCAFS'),
     array('acronym' => 'PIM'),
     array('acronym' => 'WLE'),
@@ -27,7 +26,9 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     array('acronym' => 'RTB')
   );
 
-  $currentSection = (isset($args['actionName'])? $args['actionName'] : $sections[0][action]);
+  $years = array( '2017', '2018');
+
+  $currentSection = (isset($args['actionName'])? $args['actionName'] : $sections[0]['action']);
 
   /*
   try{
@@ -47,6 +48,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
   $this->view->render($response, $currentSection.'.twig', [
     'sections' => $sections,
     'crps' => $crps,
+    'years' => $years,
     'currentSection' => $currentSection
   ]);
   return $response;
