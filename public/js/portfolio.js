@@ -1,9 +1,11 @@
 var chart1, map1, cci1, listtest1, chart2;
-var FILTER_CRPS = "CRP Acronym";
+var FILTER_CRPS = "CRP";
 var FILTER_YEAR = "Year";
 var FILTER_REGION = "Reg Un Name";
 var FILTER_SLO = "SLO";
 var FILTER_CCI = "CCI";
+var DONUT_SLO = "1.1.5 SH SLO Bar1";
+var DONUT_CCI = "1.1.5 SH CCI Bar2";
 
 $(document).ready(init);
 
@@ -23,6 +25,8 @@ function init() {
       map1.getWorkbook().getActiveSheet(),
       cci1.getWorkbook().getActiveSheet(),
       listtest1.getWorkbook().getActiveSheet(),
+      chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_SLO),
+      chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_CCI)
     ];
 
     switch (filterType) {
@@ -31,16 +35,15 @@ function init() {
           // Clear filter from all sheets
           clearDashboardFilter(sheetsArray, FILTER_CRPS);
 
-          $filterTitle.text(checkedValues+" CRPs");
+          $filterTitle.text(checkedValues + " CRPs");
           $(".checkedcrps").hide();
         } else {
           // Set filter to all sheets
           appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValues);
-
           $filterTitle.text(checkedValues);
-
+          console.log(map1.getWorkbook().getActiveSheet());
           // Add filter tag
-          $(".checkedcrps").text("CRP: "+checkedValues).addClass("closebutton");
+          $(".checkedcrps").text("CRP: " + checkedValues).addClass("closebutton");
           $(".checkedcrps").css('margin-top', '3px').css('margin-bottom', '3px');
           $(".checkedcrps").show();
           $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);
@@ -52,14 +55,14 @@ function init() {
           // Clear filter from all sheets
           clearDashboardFilter(sheetsArray, FILTER_YEAR);
 
-          $filterTitle.text(checkedValues+" Years");
+          $filterTitle.text(checkedValues + " Years");
           $(".checkedyears").hide();
         } else {
           // Set filter to all sheets
           appyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValues);
           $filterTitle.text(checkedValues);
           // Add filter tag
-          $(".checkedyears").text("Years: "+checkedValues).addClass("closebutton");
+          $(".checkedyears").text("Years: " + checkedValues).addClass("closebutton");
           $(".checkedyears").css('margin-top', '3px').css('margin-bottom', '3px');
           $(".checkedyears").show();
           $(".closebutton, .clearfilters").on('click', clearYearsfilters);
@@ -68,6 +71,7 @@ function init() {
       default:
     }
   });
+
 
   var containerDiv = document.getElementById("chart-1"),
     url = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_2SHOICSSLODonut",
@@ -130,7 +134,8 @@ function init() {
   listtest1 = new tableau.Viz(listcontainerDiv, listurl, listoptions);
 
   var containerDiv2 = document.getElementById("chart-2"),
-    url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_4DBOICS-CCI-DoubleDonut",
+  //  url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_4DBOICS-CCI-DoubleDonut",
+    url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_4DBSLO-CCIBars",
     options2 = {
       hideTabs: true,
       hideToolbar: true,
@@ -139,8 +144,9 @@ function init() {
       onFirstInteractive: function () {
         var sheet2 = chart2.getWorkbook().getActiveSheet();
         console.log('Interaction with graph', sheet2);
-        chart2.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSLOs);
-        //yearFilter(2018);
+        chart2.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSLOsBar);
+        chart2.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksCCIBar);
+        //console.log(sheet);
       }
     };
   chart2 = new tableau.Viz(containerDiv2, url2, options2);
@@ -152,13 +158,13 @@ function init() {
 
 /*************************** Tableau Functions *******************************/
 
-function appyDashboardFilter(sheetsArray, filterName, filterValues){
+function appyDashboardFilter(sheetsArray, filterName, filterValues) {
   $.each(sheetsArray, function (i, e) {
     e.applyFilterAsync(filterName, filterValues, tableau.FilterUpdateType.REPLACE);
   });
 }
 
-function clearDashboardFilter(sheetsArray, filterName){
+function clearDashboardFilter(sheetsArray, filterName) {
   $.each(sheetsArray, function (i, e) {
     e.clearFilterAsync(filterName);
   });
@@ -194,7 +200,6 @@ function errback(e) {
 }
 
 function selectMarks(marksEvent) {
-  var marksWorksheet = marksEvent.getWorksheet();
   return marksEvent.getMarksAsync().then(reportSelectedMarks);
 }
 
@@ -206,13 +211,22 @@ function selectMarksCCI(marksEvent) {
   return marksEvent.getMarksAsync().then(selectedMarksCCI);
 }
 
+function selectMarksCCIBar(marksEvent) {
+  return marksEvent.getMarksAsync().then(selectedMarksCCIBar);
+}
+
+function selectMarksSLOsBar(marksEvent) {
+  return marksEvent.getMarksAsync().then(selectedMarksSLOsBar);
+}
 
 // MAP FILTER
 function reportSelectedMarks(marks) {
   var sheetsArray = [
     chart1.getWorkbook().getActiveSheet(),
     cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet()
+    listtest1.getWorkbook().getActiveSheet(),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_SLO),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_CCI)
   ];
   clearDashboardFilter(sheetsArray, FILTER_REGION);
   $(".checkedregion").hide();
@@ -225,7 +239,7 @@ function reportSelectedMarks(marks) {
         regValue = pair.formattedValue;
         console.log(regValue);
         appyDashboardFilter(sheetsArray, FILTER_REGION, regValue);
-        $(".checkedregion").text("Region: "+regValue).addClass("closebutton");
+        $(".checkedregion").text("Region: " + regValue).addClass("closebutton");
         $(".checkedregion").css('margin-top', '3px').css('margin-bottom', '3px');
         $(".checkedregion").show();
         $(".checkedregion, .clearfilters").on('click', clearRegionfilters);
@@ -249,13 +263,13 @@ function selectedMarksSLOs(marks) {
       var pair = pairs[pairIndex];
       if (pair.fieldName == FILTER_SLO) {
         sloValue = pair.formattedValue;
-        if(sloValue!=null){
+        if (sloValue != null) {
           appyDashboardFilter(sheetsArray, FILTER_SLO, sloValue);
-          $(".checkedslo").text("SLO: "+sloValue).addClass("closebutton");
+          $(".checkedslo").text("SLO: " + sloValue).addClass("closebutton");
           $(".checkedslo").css('margin-top', '3px').css('margin-bottom', '3px');
           $(".checkedslo").show();
           $(".checkedslo, .clearfilters").on('click', clearSLOfilters);
-       }
+        }
       }
     }
   }
@@ -278,9 +292,9 @@ function selectedMarksCCI(marks) {
       var pair = pairs[pairIndex];
       if (pair.fieldName == FILTER_CCI) {
         cciValue = pair.formattedValue;
-        if(cciValue!=null){
+        if (cciValue != null) {
           appyDashboardFilter(sheetsArray, FILTER_CCI, cciValue);
-          $(".checkedcci").text("CCI: "+cciValue).addClass("closebutton");
+          $(".checkedcci").text("CCI: " + cciValue).addClass("closebutton");
           $(".checkedcci").css('margin-top', '3px').css('margin-bottom', '3px');
           $(".checkedcci").show();
           $(".checkedcci, .clearfilters").on('click', clearCCIfilters);
@@ -291,35 +305,102 @@ function selectedMarksCCI(marks) {
 }
 
 
-function clearCRPfilters(){
+//SLO BAR FILTER
+function selectedMarksSLOsBar(marks) {
+  var sheetsArray = [
+    map1.getWorkbook().getActiveSheet(),
+    listtest1.getWorkbook().getActiveSheet(),
+    chart1.getWorkbook().getActiveSheet()
+  ];
+  clearDashboardFilter(sheetsArray, FILTER_SLO);
+  $(".checkedslo").hide();
+  for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+    var pairs = marks[markIndex].getPairs();
+    for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+      var pair = pairs[pairIndex];
+      if (pair.fieldName == FILTER_SLO) {
+        sloValue = pair.formattedValue;
+        if (sloValue != null) {
+          appyDashboardFilter(sheetsArray, FILTER_SLO, sloValue);
+          $(".checkedslo").text("SLO: " + sloValue).addClass("closebutton");
+          $(".checkedslo").css('margin-top', '3px').css('margin-bottom', '3px');
+          $(".checkedslo").show();
+          $(".checkedslo, .clearfilters").on('click', clearSLOfilters);
+        }
+      }
+    }
+  }
+}
+
+//CCI BAR Filter
+function selectedMarksCCIBar(marks) {
+  var sheetsArray = [
+    map1.getWorkbook().getActiveSheet(),
+    listtest1.getWorkbook().getActiveSheet(),
+    cci1.getWorkbook().getActiveSheet()
+  ];
+  clearDashboardFilter(sheetsArray, FILTER_CCI);
+  $(".checkedcci").hide();
+  //var ccisheet = cc1.getWorkbook().getActiveSheet();
+  //ccisheet.clearFilterAsync("SLO");
+  for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+    var pairs = marks[markIndex].getPairs();
+    for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+      var pair = pairs[pairIndex];
+      if (pair.fieldName == FILTER_CCI) {
+        cciValue = pair.formattedValue;
+        if (cciValue != null) {
+          appyDashboardFilter(sheetsArray, FILTER_CCI, cciValue);
+          $(".checkedcci").text("CCI: " + cciValue).addClass("closebutton");
+          $(".checkedcci").css('margin-top', '3px').css('margin-bottom', '3px');
+          $(".checkedcci").show();
+          $(".checkedcci, .clearfilters").on('click', clearCCIfilters);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+function clearCRPfilters() {
   var sheetsArray = [
     chart1.getWorkbook().getActiveSheet(),
     map1.getWorkbook().getActiveSheet(),
     cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet()
+    listtest1.getWorkbook().getActiveSheet(),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_SLO),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_CCI)
   ];
   clearDashboardFilter(sheetsArray, FILTER_CRPS);
   $(".checkedcrps").hide();
   $('.portfolio').text('All CRPs');
 };
 
-function clearYearsfilters(){
+function clearYearsfilters() {
   var sheetsArray = [
     chart1.getWorkbook().getActiveSheet(),
     map1.getWorkbook().getActiveSheet(),
     cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet()
+    listtest1.getWorkbook().getActiveSheet(),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_SLO),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_CCI)
   ];
   clearDashboardFilter(sheetsArray, FILTER_YEAR);
   $('.years').text('All Years');
   $(".checkedyears").hide();
 };
 
-function clearRegionfilters(){
+function clearRegionfilters() {
   var sheetsArray = [
     map1.getWorkbook().getActiveSheet(),
     cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet()
+    listtest1.getWorkbook().getActiveSheet(),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_SLO),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_CCI)
   ];
   clearDashboardFilter(sheetsArray, FILTER_REGION);
   $(".checkedregion").hide();
@@ -328,7 +409,7 @@ function clearRegionfilters(){
 };
 
 
-function clearSLOfilters(){
+function clearSLOfilters() {
   var sheetsArray = [
     map1.getWorkbook().getActiveSheet(),
     listtest1.getWorkbook().getActiveSheet(),
@@ -339,7 +420,7 @@ function clearSLOfilters(){
   sheet.clearSelectedMarksAsync();
 };
 
-function clearCCIfilters(){
+function clearCCIfilters() {
   var sheetsArray = [
     map1.getWorkbook().getActiveSheet(),
     listtest1.getWorkbook().getActiveSheet(),
