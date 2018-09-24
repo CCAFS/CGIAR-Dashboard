@@ -73,6 +73,7 @@ function init() {
   });
 
 
+  //SLO donut
   var containerDiv = document.getElementById("chart-1"),
     url = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_2SHOICSSLODonut",
     options = {
@@ -89,6 +90,7 @@ function init() {
     };
   chart1 = new tableau.Viz(containerDiv, url, options);
 
+  //Regions map
   var mapcontainerDiv = document.getElementById("map-1"),
     mapurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_2_1SHOICSMap",
     mapoptions = {
@@ -104,6 +106,8 @@ function init() {
     };
   map1 = new tableau.Viz(mapcontainerDiv, mapurl, mapoptions);
 
+
+  //Cross-Cutting donut
   var ccicontainerDiv = document.getElementById("cci"),
     cciurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_1SHCCIDonut",
     ccioptions = {
@@ -119,6 +123,8 @@ function init() {
     };
   cci1 = new tableau.Viz(ccicontainerDiv, cciurl, ccioptions);
 
+
+  //OICs list
   var listcontainerDiv = document.getElementById("list-test"),
     listurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_3SHCCIDetail",
     listoptions = {
@@ -133,9 +139,10 @@ function init() {
     };
   listtest1 = new tableau.Viz(listcontainerDiv, listurl, listoptions);
 
+  //SLO + Cross-Cutting 
   var containerDiv2 = document.getElementById("chart-2"),
-  //  url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_4DBOICS-CCI-DoubleDonut",
-    url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_4DBSLO-CCIBars",
+    url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_4DBOICS-CCI-DoubleDonut",
+  //  url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_4DBSLO-CCIBars",
     options2 = {
       hideTabs: true,
       hideToolbar: true,
@@ -150,7 +157,6 @@ function init() {
       }
     };
   chart2 = new tableau.Viz(containerDiv2, url2, options2);
-
 
 }
 

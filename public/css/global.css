@@ -150,6 +150,30 @@ nav.main-menu ul li.active:after {
   height: 290px;
 }
 
+.istage-container {
+  background-color: #ffffff;
+  width: 480px;
+  height: 230px;
+}
+
+.itype-container {
+  background-color: #ffffff;
+  width: 330px;
+  height: 230px;
+}
+
+.imap-container {
+  background-color: #ffffff;
+  width: 332;
+  height: 368px;
+}
+
+.ilist-container {
+  background-color: #ffffff;
+  width: 694;
+  height: 368px;
+}
+
 .bot-chart {
   background: #fff;
   padding: 10px;
