@@ -375,9 +375,7 @@ function clearCRPfilters() {
     chart1.getWorkbook().getActiveSheet(),
     map1.getWorkbook().getActiveSheet(),
     cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet(),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_SLO),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_CCI)
+    listtest1.getWorkbook().getActiveSheet()
   ];
   clearDashboardFilter(sheetsArray, FILTER_CRPS);
   $(".checkedcrps").hide();
@@ -389,9 +387,7 @@ function clearYearsfilters() {
     chart1.getWorkbook().getActiveSheet(),
     map1.getWorkbook().getActiveSheet(),
     cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet(),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_SLO),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_CCI)
+    listtest1.getWorkbook().getActiveSheet()
   ];
   clearDashboardFilter(sheetsArray, FILTER_YEAR);
   $('.years').text('All Years');
@@ -402,9 +398,7 @@ function clearRegionfilters() {
   var sheetsArray = [
     map1.getWorkbook().getActiveSheet(),
     cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet(),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_SLO),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_CCI)
+    listtest1.getWorkbook().getActiveSheet()
   ];
   clearDashboardFilter(sheetsArray, FILTER_REGION);
   $(".checkedregion").hide();
