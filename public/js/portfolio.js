@@ -24,9 +24,7 @@ function init() {
       chart1.getWorkbook().getActiveSheet(),
       map1.getWorkbook().getActiveSheet(),
       cci1.getWorkbook().getActiveSheet(),
-      listtest1.getWorkbook().getActiveSheet(),
-      chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_SLO),
-      chart2.getWorkbook().getActiveSheet().getWorksheets().get(DONUT_CCI)
+      listtest1.getWorkbook().getActiveSheet()
     ];
 
     switch (filterType) {
