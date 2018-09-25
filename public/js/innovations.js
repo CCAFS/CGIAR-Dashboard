@@ -136,7 +136,7 @@ function init() {
 
     //Innovations by type
     var itypediv = document.getElementById("innovations-type"),
-        typeurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_1SHInnovbyStage",
+        typeurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_2InnovationbyType-pie",
         typeoptions = {
             hideTabs: true,
             hideToolbar: true,
