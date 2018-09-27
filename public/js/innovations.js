@@ -118,7 +118,7 @@ function init() {
 
     //Innovations by stage 
     var istagediv = document.getElementById("innovations-stage"),
-        stageurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_1SHInnovbyStage",
+        stageurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_2DBInnovbyStage",
         stageoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -129,6 +129,7 @@ function init() {
                 console.log('Interaction with innovations by stage', stagesheet);
                 //console.log(sheet);
                 istage.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksStage);
+                //graphSheets(stagesheet);
             }
         };
     istage = new tableau.Viz(istagediv, stageurl, stageoptions);
@@ -136,7 +137,7 @@ function init() {
 
     //Innovations by type
     var itypediv = document.getElementById("innovations-type"),
-        typeurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_2InnovationbyType-pie",
+        typeurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_3DBInnovbyType",
         typeoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -247,4 +248,21 @@ function selectedMarksType(marks) {
             }
         }
     }
+}
+
+function graphSheets(sheet){
+    switch (sheet.getSheetType()) {
+        case 'worksheet':
+        break;
+        case 'dashboard':
+        worksheets = sheet.getWorksheets();
+        for(i=0;i<worksheets.length;i++){
+         switch(worksheets[i].getName()){
+        case '2.1 SH Innov by Stage':
+        console.log("1");
+        break;
+        }
+        }
+        break;
+        }
 }

@@ -24,7 +24,8 @@ function init() {
       chart1.getWorkbook().getActiveSheet(),
       map1.getWorkbook().getActiveSheet(),
       cci1.getWorkbook().getActiveSheet(),
-      listtest1.getWorkbook().getActiveSheet()
+      //listtest1.getWorkbook().getActiveSheet()
+      listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail")
     ];
 
     switch (filterType) {
@@ -124,7 +125,7 @@ function init() {
 
   //OICs list
   var listcontainerDiv = document.getElementById("list-test"),
-    listurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_3SHCCIDetail",
+    listurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_4DBSLO-CCIDetail",
     listoptions = {
       hideTabs: true,
       hideToolbar: true,
@@ -139,8 +140,8 @@ function init() {
 
   //SLO + Cross-Cutting 
   var containerDiv2 = document.getElementById("chart-2"),
-    url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_4DBOICS-CCI-DoubleDonut",
-  //  url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_4DBSLO-CCIBars",
+    // url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_4DBOICS-CCI-DoubleDonut",
+    url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_2DBSLO-CCIBars",
     options2 = {
       hideTabs: true,
       hideToolbar: true,
@@ -228,7 +229,7 @@ function reportSelectedMarks(marks) {
   var sheetsArray = [
     chart1.getWorkbook().getActiveSheet(),
     cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet()
+    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail")
   ];
   clearDashboardFilter(sheetsArray, FILTER_REGION);
   $(".checkedregion").hide();
@@ -255,7 +256,7 @@ function reportSelectedMarks(marks) {
 function selectedMarksSLOs(marks) {
   var sheetsArray = [
     map1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet()
+    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail")
   ];
   clearDashboardFilter(sheetsArray, FILTER_SLO);
   $(".checkedslo").hide();
@@ -282,7 +283,7 @@ function selectedMarksSLOs(marks) {
 function selectedMarksCCI(marks) {
   var sheetsArray = [
     map1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet()
+    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail")
   ];
   clearDashboardFilter(sheetsArray, FILTER_CCI);
   $(".checkedcci").hide();
@@ -311,7 +312,7 @@ function selectedMarksCCI(marks) {
 function selectedMarksSLOsBar(marks) {
   var sheetsArray = [
     map1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet(),
+    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
     chart1.getWorkbook().getActiveSheet()
   ];
   clearDashboardFilter(sheetsArray, FILTER_SLO);
@@ -338,7 +339,7 @@ function selectedMarksSLOsBar(marks) {
 function selectedMarksCCIBar(marks) {
   var sheetsArray = [
     map1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet(),
+    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
     cci1.getWorkbook().getActiveSheet()
   ];
   clearDashboardFilter(sheetsArray, FILTER_CCI);
@@ -349,6 +350,7 @@ function selectedMarksCCIBar(marks) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
+      console.log(pair);
       if (pair.fieldName == FILTER_CCI) {
         cciValue = pair.formattedValue;
         if (cciValue != null) {

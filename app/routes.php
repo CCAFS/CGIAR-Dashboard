@@ -26,7 +26,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     array('acronym' => 'RTB')
   );
 
-  $years = array( '2017', '2018');
+  $years = array( '2017');
 
   $currentSection = (isset($args['actionName'])? $args['actionName'] : $sections[0]['action']);
 
