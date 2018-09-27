@@ -81,7 +81,7 @@ function init() {
         var sheetsArray = [
             istage.getWorkbook().getActiveSheet().getWorksheets().get("2.1 SH Innov by Stage"),
             itype.getWorkbook().getActiveSheet().getWorksheets().get("2.2 Innovation by Type -pie")
-           // itype.getWorkbook().getActiveSheet(),
+           // itype.getWorkbook().getActiveSheet()
            // ilist.getWorkbook().getActiveSheet(),
            // iground.getWorkbook().getActiveSheet()
         ];
@@ -130,7 +130,6 @@ function init() {
                 console.log('Interaction with innovations by stage', stagesheet);
                 //console.log(sheet);
                 istage.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksStage);
-                //graphSheets(stagesheet);
             }
         };
     istage = new tableau.Viz(istagediv, stageurl, stageoptions);

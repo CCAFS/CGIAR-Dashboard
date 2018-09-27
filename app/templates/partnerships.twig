@@ -1,0 +1,59 @@
+{% set pageParams = {
+    'title': 'Partnerships | CGIAR Program Results Dashboard',
+    'customCSS': [
+      'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
+      'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
+      './css/customInputsFlat.css',
+      './css/global.css'
+    ],
+    'customJS': [
+      'https://code.jquery.com/jquery-3.3.1.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js',
+      'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js',
+      'https://www.amcharts.com/lib/3/amcharts.js',
+      'https://www.amcharts.com/lib/3/pie.js',
+      'https://www.amcharts.com/lib/3/themes/light.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js',
+      "./js/libs/tableau/tableau-2.2.2.min.js",
+      "./js/libs/sly/sly.min.js"
+    ]
+  }
+%}
+
+{% include './pages/header.twig' with pageParams %}
+
+
+{% include './pages/main-menu.twig' with pageParams %}
+<div class="container">
+  <div class="main-content">
+      <div class="form-group row">
+          <div class="col-md-6">
+          <h6 class="subTitle">Partnerships by research phase</h6>
+          <div class="partnerships-container">
+          <img src="{{ base_url() }}/images/partnerships_by_phase_sample.png" alt="" width="100%">
+          </div><br>
+          <h6 class="subTitle">Key external partnerships</h6>
+          <div class="partnerships-container">
+          <img src="{{ base_url() }}/images/key_partnerships_sample.png" alt="" width="100%">
+          </div>
+        </div>
+         <div class="form-group row">
+          <div class="col-md-7">
+            <h6 class="subTitle">Partnerships by partner type</h6>
+            <div class="ptype-container"><br>
+            <img src="{{ base_url() }}/images/partner_type_sample.png" alt="" width="90%">
+            </div>
+          </div>
+      </div>
+      </div>
+     <div class="form-group bot-block">
+        <div class="case-container">          
+            <div class="ptable-content">
+              <img src="{{ base_url() }}/images/parnerships_table_sample.png" alt="" width="100%">
+            </div>
+      </div>
+     </div>
+   </div>
+</div>
+
+{% include './pages/footer.twig'  with pageParams %}
