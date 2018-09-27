@@ -79,10 +79,11 @@ function init() {
         console.log(filterType, checkedValues);
 
         var sheetsArray = [
-            istage.getWorkbook().getActiveSheet(),
-            itype.getWorkbook().getActiveSheet(),
-            ilist.getWorkbook().getActiveSheet(),
-            iground.getWorkbook().getActiveSheet()
+            istage.getWorkbook().getActiveSheet().getWorksheets().get("2.1 SH Innov by Stage"),
+            itype.getWorkbook().getActiveSheet().getWorksheets().get("2.2 Innovation by Type -pie")
+           // itype.getWorkbook().getActiveSheet(),
+           // ilist.getWorkbook().getActiveSheet(),
+           // iground.getWorkbook().getActiveSheet()
         ];
 
         switch (filterType) {
@@ -248,21 +249,4 @@ function selectedMarksType(marks) {
             }
         }
     }
-}
-
-function graphSheets(sheet){
-    switch (sheet.getSheetType()) {
-        case 'worksheet':
-        break;
-        case 'dashboard':
-        worksheets = sheet.getWorksheets();
-        for(i=0;i<worksheets.length;i++){
-         switch(worksheets[i].getName()){
-        case '2.1 SH Innov by Stage':
-        console.log("1");
-        break;
-        }
-        }
-        break;
-        }
 }

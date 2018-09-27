@@ -230,7 +230,8 @@ function reportSelectedMarks(marks) {
   var sheetsArray = [
     chart1.getWorkbook().getActiveSheet(),
     cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail")
+    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1")
   ];
   clearDashboardFilter(sheetsArray, FILTER_REGION);
   $(".checkedregion").hide();
@@ -297,7 +298,7 @@ function selectedMarksCCI(marks) {
       if (pair.fieldName == FILTER_CCI) {
         cciValue = pair.formattedValue;
         if (cciValue != null) {
-          appyDashboardFilter(sheetsArray, FILTER_CCI, cciValue);
+    //      appyDashboardFilter(sheetsArray, FILTER_CCI, cciValue);
           $(".checkedcci").text("CCI: " + cciValue).addClass("closebutton");
           $(".checkedcci").css('margin-top', '3px').css('margin-bottom', '3px');
           $(".checkedcci").show();
@@ -389,7 +390,8 @@ function clearYearsfilters() {
     chart1.getWorkbook().getActiveSheet(),
     map1.getWorkbook().getActiveSheet(),
     cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail")
+    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1")
   ];
   clearDashboardFilter(sheetsArray, FILTER_YEAR);
   $('.years').text('All Years');
@@ -400,7 +402,8 @@ function clearRegionfilters() {
   var sheetsArray = [
     map1.getWorkbook().getActiveSheet(),
     cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail")
+    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1")
   ];
   clearDashboardFilter(sheetsArray, FILTER_REGION);
   $(".checkedregion").hide();
