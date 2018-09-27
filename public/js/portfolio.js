@@ -25,7 +25,8 @@ function init() {
       map1.getWorkbook().getActiveSheet(),
       cci1.getWorkbook().getActiveSheet(),
       //listtest1.getWorkbook().getActiveSheet()
-      listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail")
+      listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
+      chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1")
     ];
 
     switch (filterType) {
