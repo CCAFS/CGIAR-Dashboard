@@ -27,6 +27,7 @@ function init() {
       //listtest1.getWorkbook().getActiveSheet()
       listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
       chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
+      chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH CCI Bar2"),
       ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count")
     ];
 
@@ -248,7 +249,8 @@ function reportSelectedMarks(marks) {
     chart1.getWorkbook().getActiveSheet(),
     cci1.getWorkbook().getActiveSheet(),
     listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1")
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH CCI Bar2")
   ];
   clearDashboardFilter(sheetsArray, FILTER_REGION);
   $(".checkedregion").hide();
@@ -315,7 +317,7 @@ function selectedMarksCCI(marks) {
       if (pair.fieldName == FILTER_CCI) {
         cciValue = pair.formattedValue;
         if (cciValue != null) {
-    //      appyDashboardFilter(sheetsArray, FILTER_CCI, cciValue);
+          appyDashboardFilter(sheetsArray, FILTER_CCI, cciValue);
           $(".checkedcci").text("CCI: " + cciValue).addClass("closebutton");
           $(".checkedcci").css('margin-top', '3px').css('margin-bottom', '3px');
           $(".checkedcci").show();
@@ -396,6 +398,7 @@ function clearCRPfilters() {
     cci1.getWorkbook().getActiveSheet(),
     listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH CCI Bar2"),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count")
   ];
   clearDashboardFilter(sheetsArray, FILTER_CRPS);
@@ -410,6 +413,7 @@ function clearYearsfilters() {
     cci1.getWorkbook().getActiveSheet(),
     listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH CCI Bar2"),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count")
   ];
   clearDashboardFilter(sheetsArray, FILTER_YEAR);
@@ -422,6 +426,7 @@ function clearRegionfilters() {
     map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
     cci1.getWorkbook().getActiveSheet(),
     listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH CCI Bar2"),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1")
   ];
   clearDashboardFilter(sheetsArray, FILTER_REGION);
