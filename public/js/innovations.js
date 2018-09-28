@@ -6,13 +6,13 @@ var FILTER_TYPE = "Innovation Types";
 
 $(document).ready(init);
 
-//jQuery.getJSON("innovations.json", handleJSON);
+//jQuery.getJSON("json/innovations.json", handleJSON);
 /*var jsonfile;
 var labels = ["Stage 1: End of research phase (Discovery/Proof of Concept)", "Stage 2: End of piloting phase", "Stage 3: Available for uptake", "Stage 4: Uptake by next user"];
 var innovationsdata = [];
 var stageone = 0, stagetwo = 0, stagethree = 0, stagefour = 0;
 
-$.getJSON("innovations.json", function (data) {
+$.getJSON("json/innovations.json", function (data) {
     jsonfile = data;
     console.log(jsonfile);
     for (var i = 0; i < jsonfile.length; i++) {
@@ -120,7 +120,7 @@ function init() {
 
 
 
-    //Innovations by stage 
+    //Innovations by stage
     var istagediv = document.getElementById("innovations-stage"),
         stageurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_2DBInnovbyStage",
         stageoptions = {
@@ -154,7 +154,7 @@ function init() {
         };
     itype = new tableau.Viz(itypediv, typeurl, typeoptions);
 
-    //Innovations on the ground 
+    //Innovations on the ground
     var igrounddiv = document.getElementById("innovations-map"),
         groundurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_6SHInnovationsMap",
         groundoptions = {
