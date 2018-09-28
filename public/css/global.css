@@ -150,6 +150,11 @@ nav.main-menu ul li.active:after {
   height: 290px;
 }
 
+.ccip-cont {
+  background-color: #ffffff;
+  height: 100px;
+}
+
 .istage-container {
   background-color: #ffffff;
   width: 480px;
@@ -342,7 +347,7 @@ nav.main-menu ul li.active:after {
 
 .tab-content {
   background-color: #ffffff;
-  height: 370px;
+  height: 400px;
   overflow: auto;
 }
 
@@ -357,7 +362,7 @@ nav.main-menu ul li.active:after {
   border-color: #c0c0c0;
   border-width: 3px;
   width: 98%;
-  height: 360px;
+  height: 390px;
   margin: auto;
 }
 

@@ -26,7 +26,8 @@ function init() {
       cci1.getWorkbook().getActiveSheet(),
       //listtest1.getWorkbook().getActiveSheet()
       listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-      chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1")
+      chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
+      ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count")
     ];
 
     switch (filterType) {
@@ -157,6 +158,22 @@ function init() {
       }
     };
   chart2 = new tableau.Viz(containerDiv2, url2, options2);
+
+
+    //Cross-Cutting %
+    var ccipdiv = document.getElementById("cci-p"),
+    ccipurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_3DBCross-Cutting",
+    ccipoptions = {
+      hideTabs: true,
+      hideToolbar: true,
+      width: '100%',
+      height: '100%',
+      onFirstInteractive: function () {
+        var ccipsheet = ccip.getWorkbook().getActiveSheet();
+        console.log('Interaction with %', ccipsheet);
+      }
+    };
+  ccip = new tableau.Viz(ccipdiv, ccipurl, ccipoptions);
 
 }
 
@@ -378,7 +395,8 @@ function clearCRPfilters() {
     map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
     cci1.getWorkbook().getActiveSheet(),
     listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1")
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count")
   ];
   clearDashboardFilter(sheetsArray, FILTER_CRPS);
   $(".checkedcrps").hide();
@@ -391,7 +409,8 @@ function clearYearsfilters() {
     map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
     cci1.getWorkbook().getActiveSheet(),
     listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1")
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count")
   ];
   clearDashboardFilter(sheetsArray, FILTER_YEAR);
   $('.years').text('All Years');

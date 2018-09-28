@@ -78,9 +78,12 @@ function init() {
         var checkedValues = $.map($checkedInputs, function (e) { return e.value })
         console.log(filterType, checkedValues);
 
+
         var sheetsArray = [
             istage.getWorkbook().getActiveSheet().getWorksheets().get("2.1 SH Innov by Stage"),
-            itype.getWorkbook().getActiveSheet().getWorksheets().get("2.2 Innovation by Type -pie")
+            itype.getWorkbook().getActiveSheet().getWorksheets().get("2.2 Innovation by Type -pie "),
+            ilist.getWorkbook().getActiveSheet()
+           // itype.getWorkbook().getActiveSheet().getWorksheets()
            // itype.getWorkbook().getActiveSheet()
            // ilist.getWorkbook().getActiveSheet(),
            // iground.getWorkbook().getActiveSheet()
@@ -207,15 +210,14 @@ function selectMarksType(marksEvent) {
 
 function selectedMarksStage(marks) {
     var sheetsArray = [
-        ilist.getWorkbook().getActiveSheet(),
-        iground.getWorkbook().getActiveSheet(),
-        itype.getWorkbook().getActiveSheet()
+        itype.getWorkbook().getActiveSheet().getWorksheets().get("2.2 Innovation by Type -pie ")
     ];
     clearDashboardFilter(sheetsArray, FILTER_STAGE);
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
         var pairs = marks[markIndex].getPairs();
         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
             var pair = pairs[pairIndex];
+            console.log(pair);
             if (pair.fieldName == FILTER_STAGE) {
                 stageValue = pair.formattedValue;
                 console.log(stageValue);
@@ -229,9 +231,7 @@ function selectedMarksStage(marks) {
 
 function selectedMarksType(marks) {
     var sheetsArray = [
-        ilist.getWorkbook().getActiveSheet(),
-        iground.getWorkbook().getActiveSheet(),
-        istage.getWorkbook().getActiveSheet()
+        istage.getWorkbook().getActiveSheet().getWorksheets().get("2.1 SH Innov by Stage")
     ];
     clearDashboardFilter(sheetsArray, FILTER_TYPE);
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
