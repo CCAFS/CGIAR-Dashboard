@@ -1,4 +1,4 @@
-var FILTER_CRPS = "CRP";
+var FILTER_CRPS = "CRP ";
 var FILTER_YEAR = "Year";
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
@@ -206,6 +206,7 @@ function selectMarksStage(marksEvent) {
 function selectMarksType(marksEvent) {
     return marksEvent.getMarksAsync().then(selectedMarksType);
 }
+
 
 
 function selectedMarksStage(marks) {
