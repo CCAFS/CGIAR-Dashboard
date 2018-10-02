@@ -84,7 +84,7 @@ function init() {
 
 
   //SLO donut
-  var containerDiv = document.getElementById("chart-1"),
+  /*var containerDiv = document.getElementById("chart-1"),
     url = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_2SHOICSSLODonut",
     options = {
       hideTabs: true,
@@ -98,7 +98,7 @@ function init() {
         //yearFilter(2018);
       }
     };
-  chart1 = new tableau.Viz(containerDiv, url, options);
+  chart1 = new tableau.Viz(containerDiv, url, options);*/
 
   //Regions map
   var mapcontainerDiv = document.getElementById("map-1"),
@@ -118,7 +118,7 @@ function init() {
 
 
   //Cross-Cutting donut
-  var ccicontainerDiv = document.getElementById("cci"),
+  /*var ccicontainerDiv = document.getElementById("cci"),
     cciurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_1SHCCIDonut",
     ccioptions = {
       hideTabs: true,
@@ -131,7 +131,7 @@ function init() {
         cci1.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksCCI);
       }
     };
-  cci1 = new tableau.Viz(ccicontainerDiv, cciurl, ccioptions);
+  cci1 = new tableau.Viz(ccicontainerDiv, cciurl, ccioptions);*/
 
 
   //OICs list
