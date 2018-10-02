@@ -1,13 +1,18 @@
-var chart1, map1, cci1, listtest1, chart2;
+var chart1, map1, cci1, oicslist, chart2;
 var FILTER_CRPS = "CRP";
 var FILTER_YEAR = "Year";
-var FILTER_REGION = "Reg Un Name";
+var FILTER_REGION = "Country Name";
 var FILTER_SLO = "SLO";
 var FILTER_CCI = "CCI";
 var FILTER_GENDER = "Gender Relevance";
 var FILTER_YOUTH = "Youth Relevance";
-var DONUT_SLO = "1.1.5 SH SLO Bar1";
-var DONUT_CCI = "1.1.5 SH CCI Bar2";
+var MAP_SHEET = "1.2.1 SH Map Option 2"
+var SLO_SHEET = "1.1.5 SH SLO Bar1";
+var CCI_SHEET = "1.1.5 SH CCI Bar2";
+var LIST_SHEET = "1.1.3 SH CCI Detail";
+var GENDER_SHEET = "1.1.8 Gender relevance count";
+var YOUTH_SHEET = "1.1.8 Youth relevance count ";
+var CAPDEV_SHEET = "1.1.9 CapDev relevance count";
 
 $(document).ready(init);
 
@@ -22,21 +27,19 @@ function init() {
     var checkedValues = $.map($checkedInputs, function (e) { return e.value })
     console.log(filterType, checkedValues);
 
-    var view = ccip.getWorkbook().getActiveSheet().getWorksheets();
-    worksheet = view[2];
-    console.log(worksheet);
+    /*var view = ccip.getWorkbook().getActiveSheet().getWorksheets();
+    worksheet = view[0];
+    console.log(worksheet);*/
+
 
     var sheetsArray = [
-      chart1.getWorkbook().getActiveSheet(),
-      map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
-      cci1.getWorkbook().getActiveSheet(),
-      //listtest1.getWorkbook().getActiveSheet()
-      listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-      chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
-      chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH CCI Bar2"),
-      ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count"),
-      ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Youth relevance count "),
-      ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.9 CapDev relevance count")
+      map1.getWorkbook().getActiveSheet().getWorksheets().get(MAP_SHEET),
+      oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+      chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+      chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+      ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+      ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+      ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
     ];
 
     switch (filterType) {
@@ -109,7 +112,7 @@ function init() {
       width: '100%',
       height: '100%',
       onFirstInteractive: function () {
-        var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map");
+        var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get(MAP_SHEET);
         console.log("Interaction with map", mapsheet);
         map1.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarks);
       }
@@ -143,15 +146,14 @@ function init() {
       width: '100%',
       height: '100%',
       onFirstInteractive: function () {
-        var listsheet = listtest1.getWorkbook().getActiveSheet();
+        var listsheet = oicslist.getWorkbook().getActiveSheet();
         console.log("Interaction with List", listsheet);
       }
     };
-  listtest1 = new tableau.Viz(listcontainerDiv, listurl, listoptions);
+  oicslist = new tableau.Viz(listcontainerDiv, listurl, listoptions);
 
   //SLO + Cross-Cutting 
   var containerDiv2 = document.getElementById("chart-2"),
-    // url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_4DBOICS-CCI-DoubleDonut",
     url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_2DBSLO-CCIBars",
     options2 = {
       hideTabs: true,
@@ -163,7 +165,6 @@ function init() {
         console.log('Interaction with graph', sheet2);
         chart2.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSLOsBar);
         chart2.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksCCIBar);
-        //console.log(sheet);
       }
     };
   chart2 = new tableau.Viz(containerDiv2, url2, options2);
@@ -205,31 +206,6 @@ function clearDashboardFilter(sheetsArray, filterName) {
   });
 }
 
-function yearFilter(year) {
-}
-
-function getUnderlyingData() {
-  //sheet = chart1.getWorkbook().getActiveSheet().getWorksheets().get("Storm Map Sheet");
-  // If the active sheet is not a dashboard, then you can just enter:
-  var sheet = chart1.getWorkbook().getActiveSheet();
-  var options = {
-    maxRows: 10, // Max rows to return. Use 0 to return all rows
-    ignoreAliases: false,
-    ignoreSelection: true,
-    includeAllColumns: false
-  };
-
-  sheet.getUnderlyingDataAsync(options).then(function (t) {
-    table = t;
-    console.log(table.getData());
-  });
-}
-
-function clearCollegeSelection() {
-  var sheet = chart1.getWorkbook().getActiveSheet();
-  sheet.clearSelectedMarksAsync();
-}
-
 function errback(e) {
   console.log(e.tableauSoftwareErrorCode);
 }
@@ -269,14 +245,12 @@ function selectMarksCD(marksEvent) {
 // MAP FILTER
 function reportSelectedMarks(marks) {
   var sheetsArray = [
-    chart1.getWorkbook().getActiveSheet(),
-    cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH CCI Bar2"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Youth relevance count "),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.9 CapDev relevance count")
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_REGION);
   $(".checkedregion").hide();
@@ -284,7 +258,7 @@ function reportSelectedMarks(marks) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
-      // console.log(pair);
+       console.log(pair);
       if (pair.fieldName == FILTER_REGION) {
         regValue = pair.formattedValue;
         //  console.log(regValue);
@@ -298,12 +272,12 @@ function reportSelectedMarks(marks) {
   }
 }
 
-
+/*
 //SLO FILTER
 function selectedMarksSLOs(marks) {
   var sheetsArray = [
     map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count"),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Youth relevance count "),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.9 CapDev relevance count")
@@ -332,8 +306,8 @@ function selectedMarksSLOs(marks) {
 //CCI Filter
 function selectedMarksCCI(marks) {
   var sheetsArray = [
-    map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
+    mapsheet,
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count"),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Youth relevance count "),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.9 CapDev relevance count")
@@ -359,17 +333,16 @@ function selectedMarksCCI(marks) {
     }
   }
 }
+*/
 
 
 //SLO BAR FILTER
 function selectedMarksSLOsBar(marks) {
   var sheetsArray = [
-    map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-    chart1.getWorkbook().getActiveSheet(),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Youth relevance count "),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.9 CapDev relevance count")
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_SLO);
   $(".checkedslo").hide();
@@ -394,12 +367,10 @@ function selectedMarksSLOsBar(marks) {
 //CCI BAR Filter
 function selectedMarksCCIBar(marks) {
   var sheetsArray = [
-    map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-    cci1.getWorkbook().getActiveSheet(),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Youth relevance count "),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.9 CapDev relevance count")
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_CCI);
   $(".checkedcci").hide();
@@ -428,7 +399,7 @@ function selectedMarksCCIBar(marks) {
 function selectedGR(marks) {
   var sheetsArray = [
     map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH CCI Bar2"),
     cci1.getWorkbook().getActiveSheet(),
@@ -448,10 +419,10 @@ function selectedGR(marks) {
         console.log(cciValue);
         if (cciValue != null) {
           appyDashboardFilter(sheetsArray, FILTER_GENDER, cciValue);
-    //      $(".checkedcci").text("CCI: " + cciValue).addClass("closebutton");
-     //     $(".checkedcci").css('margin-top', '3px').css('margin-bottom', '3px');
-      //    $(".checkedcci").show();
-      //    $(".checkedcci, .clearfilters").on('click', clearCCIfilters);
+          //      $(".checkedcci").text("CCI: " + cciValue).addClass("closebutton");
+          //     $(".checkedcci").css('margin-top', '3px').css('margin-bottom', '3px');
+          //    $(".checkedcci").show();
+          //    $(".checkedcci, .clearfilters").on('click', clearCCIfilters);
         }
       }
     }
@@ -461,12 +432,9 @@ function selectedGR(marks) {
 //Youth Relevance Filter
 function selectedYR(marks) {
   var sheetsArray = [
-    map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH CCI Bar2"),
-    cci1.getWorkbook().getActiveSheet(),
-    chart1.getWorkbook().getActiveSheet()
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
   ];
   clearDashboardFilter(sheetsArray, FILTER_GENDER);
   //$(".checkedcci").hide();
@@ -480,13 +448,13 @@ function selectedYR(marks) {
       if (pair.fieldName == FILTER_GENDER) {
         cciValue = pair.formattedValue;
         console.log(cciValue);
-    //    if (cciValue != null) {
-     //     appyDashboardFilter(sheetsArray, FILTER_GENDER, cciValue);
-    //      $(".checkedcci").text("CCI: " + cciValue).addClass("closebutton");
-     //     $(".checkedcci").css('margin-top', '3px').css('margin-bottom', '3px');
-      //    $(".checkedcci").show();
-      //    $(".checkedcci, .clearfilters").on('click', clearCCIfilters);
-     //   }
+        //    if (cciValue != null) {
+        //     appyDashboardFilter(sheetsArray, FILTER_GENDER, cciValue);
+        //      $(".checkedcci").text("CCI: " + cciValue).addClass("closebutton");
+        //     $(".checkedcci").css('margin-top', '3px').css('margin-bottom', '3px');
+        //    $(".checkedcci").show();
+        //    $(".checkedcci, .clearfilters").on('click', clearCCIfilters);
+        //   }
       }
     }
   }
@@ -498,15 +466,12 @@ function selectedYR(marks) {
 
 function clearCRPfilters() {
   var sheetsArray = [
-    chart1.getWorkbook().getActiveSheet(),
-    map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
-    cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH CCI Bar2"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Youth relevance count "),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.9 CapDev relevance count")
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_CRPS);
   $(".checkedcrps").hide();
@@ -515,15 +480,12 @@ function clearCRPfilters() {
 
 function clearYearsfilters() {
   var sheetsArray = [
-    chart1.getWorkbook().getActiveSheet(),
-    map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
-    cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH CCI Bar2"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Youth relevance count "),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.9 CapDev relevance count")
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_YEAR);
   $('.years').text('All Years');
@@ -532,14 +494,12 @@ function clearYearsfilters() {
 
 function clearRegionfilters() {
   var sheetsArray = [
-    map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
-    cci1.getWorkbook().getActiveSheet(),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH CCI Bar2"),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get("1.1.5 SH SLO Bar1"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Youth relevance count "),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.9 CapDev relevance count")
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_REGION);
   $(".checkedregion").hide();
@@ -550,28 +510,28 @@ function clearRegionfilters() {
 
 function clearSLOfilters() {
   var sheetsArray = [
-    map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Youth relevance count "),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.9 CapDev relevance count")
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_SLO);
   $(".checkedslo").hide();
-  var sheet = chart1.getWorkbook().getActiveSheet();
+  var sheet = chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET);
   sheet.clearSelectedMarksAsync();
 };
 
 function clearCCIfilters() {
   var sheetsArray = [
-    map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map"),
-    listtest1.getWorkbook().getActiveSheet().getWorksheets().get("1.1.3 SH CCI Detail"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Gender relevance count"),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.8 Youth relevance count "),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get("1.1.9 CapDev relevance count")
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_CCI);
   $(".checkedcci").hide();
-  var ccisheet = cci1.getWorkbook().getActiveSheet();
+  var ccisheet = chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET);
   ccisheet.clearSelectedMarksAsync();
 };

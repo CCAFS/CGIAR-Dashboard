@@ -1,8 +1,11 @@
-var FILTER_CRPS = "CRP ";
+var FILTER_CRPS = "CRP";
 var FILTER_YEAR = "Year";
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
-
+var ITYPE_SHEET = "2.2 Innovation by Type -pie ";
+var ISTAGE_SHEET = "2.1 SH Innov by Stage";
+var ILIST_SHEET = "2.5 Innov Detail ";
+var IMAP_SHEET = "2.6 SH Innovations Map";
 
 $(document).ready(init);
 
@@ -80,9 +83,9 @@ function init() {
 
 
         var sheetsArray = [
-            istage.getWorkbook().getActiveSheet().getWorksheets().get("2.1 SH Innov by Stage"),
-            itype.getWorkbook().getActiveSheet().getWorksheets().get("2.2 Innovation by Type -pie "),
-            ilist.getWorkbook().getActiveSheet()
+            istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+            itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
+            ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET)
            // itype.getWorkbook().getActiveSheet().getWorksheets()
            // itype.getWorkbook().getActiveSheet()
            // ilist.getWorkbook().getActiveSheet(),
@@ -171,7 +174,7 @@ function init() {
 
     //Innovations list
     var ilistdiv = document.getElementById("innovations-list"),
-        ilisturl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_5InnovDetail",
+        ilisturl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_5DBInnovDetail",
         ilistoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -211,7 +214,8 @@ function selectMarksType(marksEvent) {
 
 function selectedMarksStage(marks) {
     var sheetsArray = [
-        itype.getWorkbook().getActiveSheet().getWorksheets().get("2.2 Innovation by Type -pie ")
+        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
     ];
     clearDashboardFilter(sheetsArray, FILTER_STAGE);
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
@@ -232,7 +236,8 @@ function selectedMarksStage(marks) {
 
 function selectedMarksType(marks) {
     var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get("2.1 SH Innov by Stage")
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_TYPE);
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {

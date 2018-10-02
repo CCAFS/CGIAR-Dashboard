@@ -15,7 +15,8 @@
       'https://www.amcharts.com/lib/3/themes/light.js',
       'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js',
       "./js/libs/tableau/tableau-2.2.2.min.js",
-      "./js/libs/sly/sly.min.js"
+      "./js/libs/sly/sly.min.js",
+      "./js/partnerships.js"
     ]
   }
 %}
@@ -26,32 +27,37 @@
 {% include './pages/main-menu.twig' with pageParams %}
 <div class="container">
   <div class="main-content">
+  <div class="alert alert-dark selection">
+  <div class="checkedfilters clearfilters">Clear all filters</div>
+  </div>
       <div class="form-group row">
-          <div class="col-md-6">
-          <h6 class="subTitle">Partnerships by research phase</h6>
-          <div class="partnerships-container">
-          <img src="{{ base_url() }}/images/partnerships_by_phase_sample.png" alt="" width="100%">
-          </div><br>
-          <h6 class="subTitle">Key external partnerships</h6>
-          <div class="partnerships-container">
-          <img src="{{ base_url() }}/images/key_partnerships_sample.png" alt="" width="100%">
-          </div>
-        </div>
-         <div class="form-group row">
-          <div class="col-md-7">
-            <h6 class="subTitle">Partnerships by partner type</h6>
-            <div class="ptype-container"><br>
-            <img src="{{ base_url() }}/images/partner_type_sample.png" alt="" width="90%">
+          <div class="col-md-4">
+            <h6 class="subTitle">Partnerships by research phase</h6>
+            <div class="partnerships-container">
+             <div id="partnerships-phase"></div>
             </div>
           </div>
-      </div>
+          <div class="col-md-4">
+            <h6 class="subTitle">Key external partnerships by phase</h6>
+            <div class="partnerships-container">
+              <div id="keyp-phase"></div>
+            </div>
+           </div>        
+          <div class="col-md-4">
+            <h6 class="subTitle">Key external partnerships by partner type</h6>
+            <div class="ptype-container">
+              <div id="keyp-type"></div>
+            </div>
+          </div>
+          <br><br><br>
       </div>
      <div class="form-group bot-block">
-        <div class="case-container">          
-            <div class="ptable-content">
-              <img src="{{ base_url() }}/images/parnerships_table_sample.png" alt="" width="100%">
+        
+        <h6 class="subTitle">Key external partnerships by partner type</h6>        
+            <div class="ptable-container">
+              <div id="keyp-list"></div>
             </div>
-      </div>
+     
      </div>
    </div>
 </div>
