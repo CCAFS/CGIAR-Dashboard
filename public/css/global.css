@@ -157,20 +157,18 @@ nav.main-menu ul li.active:after {
 
 .istage-container {
   background-color: #ffffff;
-  width: 560px;
-  height: 400px;
+  height: 290px;
 }
 
 .itype-container {
   background-color: #ffffff;
-  width: 460px;
-  height: 400px;
+  height: 290px;
 }
 
 .imap-container {
   background-color: #ffffff;
-  width: 780;
-  height: 470px;
+  width:600px;
+  height: 390px;
 }
 
 .ilist-container {
@@ -425,7 +423,41 @@ nav.main-menu ul li.active:after {
 .itotal-container {
   background-color: #f1f1f1;
   width: 230px;
+  height: 70px;
   font-size: 50px;
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.iatotal-container {
+  background-color: #f1f1f1;
+  width: 170px;
+  height: 70px;
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.btn-light {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 8px;
+  float: right;
+  margin-right: 3px;
+  background-color: rgba(165, 165, 165, 0.562);
+  border: solid 0.5px #999999;
+  color: #565656;
+}
+
+
+.btn-light:hover {
+  background-color: rgba(133, 133, 133, 0.562);
+  color: #565656;
+}
+
+h9{
+  font-size: 16px;
   text-align: center;
 }

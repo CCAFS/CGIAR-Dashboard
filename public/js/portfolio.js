@@ -103,8 +103,8 @@ function init() {
     };
   chart1 = new tableau.Viz(containerDiv, url, options);*/
 
-  //Regions map
-  var mapcontainerDiv = document.getElementById("map-1"),
+  //Countries map
+ /* var mapcontainerDiv = document.getElementById("map-1"),
     mapurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1DBMap",
     mapoptions = {
       hideTabs: true,
@@ -117,7 +117,23 @@ function init() {
         map1.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarks);
       }
     };
-  map1 = new tableau.Viz(mapcontainerDiv, mapurl, mapoptions);
+  map1 = new tableau.Viz(mapcontainerDiv, mapurl, mapoptions);*/
+
+  //Regions map  
+  var rmapcontainerDiv = document.getElementById("map-2"),
+  rmapurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1DBMap-RegionScope",
+  rmapoptions = {
+    hideTabs: true,
+    hideToolbar: true,
+    width: '100%',
+    height: '100%',
+    onFirstInteractive: function () {
+     // var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get(MAP_SHEET);
+      console.log("Interaction with map");
+     // map1.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarks);
+    }
+  };
+rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);
 
 
   //Cross-Cutting donut
@@ -263,7 +279,7 @@ function reportSelectedMarks(marks) {
         regValue = pair.formattedValue;
         //  console.log(regValue);
         appyDashboardFilter(sheetsArray, FILTER_REGION, regValue);
-        $(".checkedregion").text("Region: " + regValue).addClass("closebutton");
+        $(".checkedregion").text("Country: " + regValue).addClass("closebutton");
         $(".checkedregion").css('margin-top', '3px').css('margin-bottom', '3px');
         $(".checkedregion").show();
         $(".checkedregion, .clearfilters").on('click', clearRegionfilters);
@@ -535,3 +551,4 @@ function clearCCIfilters() {
   var ccisheet = chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET);
   ccisheet.clearSelectedMarksAsync();
 };
+
