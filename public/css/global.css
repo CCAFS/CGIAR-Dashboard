@@ -157,11 +157,13 @@ nav.main-menu ul li.active:after {
 
 .istage-container {
   background-color: #ffffff;
+  width: 500px;
   height: 290px;
 }
 
 .itype-container {
   background-color: #ffffff;
+  width: 526px;
   height: 290px;
 }
 
@@ -423,7 +425,7 @@ nav.main-menu ul li.active:after {
 .itotal-container {
   background-color: #f1f1f1;
   width: 230px;
-  height: 70px;
+  height: 100px;
   font-size: 50px;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
@@ -434,7 +436,7 @@ nav.main-menu ul li.active:after {
 .iatotal-container {
   background-color: #f1f1f1;
   width: 170px;
-  height: 70px;
+  height: 100px;
   font-size: 50px;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
