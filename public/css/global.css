@@ -181,14 +181,20 @@ nav.main-menu ul li.active:after {
 
 .ptype-container {
   background-color: #ffffff;
-  width: 330px;
+  width: 100%;
   height: 330px;
 }
 
-.partnerships-container {
+.pstage-container {
   background-color: #ffffff;
-  width: 330px;
+  width: 100%;
   height: 330px;
+}
+
+.ptotal-container {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100px;
 }
 
 .ptable-container {

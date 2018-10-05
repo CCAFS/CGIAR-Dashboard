@@ -21,9 +21,9 @@ var stageone = 0, stagetwo = 0, stagethree = 0, stagefour = 0;
 
 $.getJSON("json/innovations.json", function (data) {
     jsonfile = data;
-    console.log(jsonfile);
+    //console.log(jsonfile);
     for (var i = 0; i < jsonfile.length; i++) {
-        console.log(jsonfile[i].stg_name);
+       // console.log(jsonfile[i].stg_name);
         switch (jsonfile[i].stg_name) {
             case "Stage 1: End of research phase (Discovery/Proof of Concept)":
                 stageone += 1;
