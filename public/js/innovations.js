@@ -364,7 +364,7 @@ function selectedMarksMap(marks) {
         totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
     ];
     clearDashboardFilter(sheetsArray, FILTER_MAP);
-   // $(".checkedstage").hide();
+    $(".checkedcountry").hide();
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
         var pairs = marks[markIndex].getPairs();
         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
@@ -375,10 +375,10 @@ function selectedMarksMap(marks) {
                 console.log(mapValue);
                 if (mapValue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_MAP, mapValue);
-               //     $(".checkedstage").text("Stage: " + stageValue).addClass("closebutton");
-                //    $(".checkedstage").css('margin-top', '3px').css('margin-bottom', '3px');
-                //    $(".checkedstage").show();
-                //    $(".checkedstage, .clearfilters").on('click', clearStagefilters);
+                    $(".checkedcountry").text("Country: " + mapValue).addClass("closebutton");
+                    $(".checkedcountry").css('margin-top', '3px').css('margin-bottom', '3px');
+                    $(".checkedcountry").show();
+                    $(".checkedcountry, .clearfilters").on('click', clearMapfilters);
                 }
             }
         }
@@ -443,4 +443,20 @@ function clearTypefilters() {
     $(".checkedtype").hide();
     var typesheet = itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET);
     typesheet.clearSelectedMarksAsync();
+};
+
+
+function clearMapfilters() {
+    var sheetsArray = [
+      //  istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+      ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+      itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
+      totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
+      totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
+      totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_MAP);
+    $(".checkedcountry").hide();
+    var mapsheet = iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET);
+    mapsheet.clearSelectedMarksAsync();
 };

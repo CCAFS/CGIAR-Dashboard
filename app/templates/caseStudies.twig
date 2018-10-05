@@ -39,11 +39,27 @@
 </div>
     <div class="form-group row">
       <div class="col-md-7">
-        <h6 class="subTitle">Outcome / Impact on the Ground</h6>
-        <div class="map-container">
-          <div class="region"><div id="map-1"></div></div>
-        </div>
-      </div>
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <li class="nav-item" id="mapbutton">
+                      <a class="nav-link active" id="countries-tab" data-toggle="pill" href="#countries" role="tab" aria-controls="pills-countries" aria-selected="true">Countries</a>
+                    </li>
+                    <li class="nav-item" id="mapbutton">
+                      <a class="nav-link" id="regions-tab" data-toggle="pill" href="#regions" role="tab" aria-controls="pills-regions" aria-selected="false">Regions</a>
+                    </li>
+                   </ul><h6 class="subTitle">Outcome / Impact on the Ground</h6>
+                  <div class="tab-content oics-maps" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="countries" role="tabpanel" aria-labelledby="countries-tab">
+                      <div class="map-container">
+                        <div id="map-1"></div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="regions" role="tabpanel" aria-labelledby="regions-tab">
+                      <div class="map-container">
+                          <div id="map-2"></div>
+                      </div>
+                    </div>
+                    </div>
+       </div>
       <div class="col-md-5">
         <h6 class="subTitle">Progress Towards SLOs/CCI</h6>
         <div class="donut-container">
@@ -57,7 +73,7 @@
       <div class="wrap">
 
         <div class="case-container">
-          <h6 class="subTitle">Cross-Cutting</h6>
+          <h6 class="subTitle">% of Cross-Cutting Dimension Relevance in the Outcome Impact Case Studies </h6>
             <div class="tab-content">
               <div class="tab-pane frame show active" id="general">
               <div class="ccip-cont">

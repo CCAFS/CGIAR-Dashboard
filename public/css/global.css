@@ -356,6 +356,10 @@ nav.main-menu ul li.active:after {
   height: 400px;
 }
 
+.tab-pane #mapa{
+  padding-top: 0;
+}
+
 .tab-pane {
   padding-top: 2%;
   background-color: #ffffff;
@@ -442,19 +446,23 @@ nav.main-menu ul li.active:after {
   text-align: center;
 }
 
-.btn-light {
+.buttonmap {
   font-family: Montserrat;
   font-weight: bold;
-  font-size: 8px;
+  font-size: 10px;
   float: right;
+  width: 60px;
+  height: 20px;
+  text-align: center;
   margin-right: 3px;
   background-color: rgba(165, 165, 165, 0.562);
   border: solid 0.5px #999999;
   color: #565656;
+  cursor: pointer;
 }
 
 
-.btn-light:hover {
+.buttonmap:hover {
   background-color: rgba(133, 133, 133, 0.562);
   color: #565656;
 }
@@ -462,4 +470,41 @@ nav.main-menu ul li.active:after {
 h9{
   font-size: 16px;
   text-align: center;
+}
+
+.oics-maps{
+  height: 390px;
+  width: 550px;
+  overflow: hidden;
+}
+
+ul#pills-tab{
+  float: right;
+  height: 20px;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+  font-size: 9px;
+  font-family: Montserrat;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 0%;
+}
+
+#pills-tabContent{
+  float: right;
+  width: 100%;
+}
+
+.nav-pills .nav-link.active{
+  background-color: #f1c40f;
+}
+
+.nav-pills .nav-link{
+  background-color: rgba(219, 213, 213, 0.562);
+  margin-left: 2px;
+  color: #565656;
 }

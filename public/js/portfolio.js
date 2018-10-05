@@ -1,12 +1,15 @@
 var chart1, map1, cci1, oicslist, chart2;
 var FILTER_CRPS = "CRP";
 var FILTER_YEAR = "Year";
-var FILTER_REGION = "Country Name";
+var FILTER_COUNTRY = "Country Name";
+var FILTER_REGION = "Reg Un Name (Dim Locations1)";
+var FILTER_GLOBAL = "Reg Un Name";
 var FILTER_SLO = "SLO";
 var FILTER_CCI = "CCI";
 var FILTER_GENDER = "Gender Relevance";
 var FILTER_YOUTH = "Youth Relevance";
 var FILTER_CAPACITY = "Capdev Relev";
+var GLOBAL_SHEET = "1.2.1 SH OICS Global Count";
 var CMAP_SHEET = "1.2.1 SH Map Option 2"
 var RMAP_SHEET = "1.2.1 SH OICS Map-Region"
 var SLO_SHEET = "1.1.5 SH SLO Bar1";
@@ -18,6 +21,8 @@ var CAPDEV_SHEET = "1.1.9 CapDev relevance count";
 var COUNT_SHEET = "1.1.3 SH - OICS Count";
 
 $(document).ready(init);
+
+
 
 function init() {
 
@@ -124,7 +129,7 @@ function init() {
   map1 = new tableau.Viz(mapcontainerDiv, mapurl, mapoptions);
 
   //Regions map  
-  /*var rmapcontainerDiv = document.getElementById("map-2"),
+  var rmapcontainerDiv = document.getElementById("map-2"),
   rmapurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1DBMap-RegionScope",
   rmapoptions = {
     hideTabs: true,
@@ -134,10 +139,10 @@ function init() {
     onFirstInteractive: function () {
      // var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get(MAP_SHEET);
       console.log("Interaction with map");
-     // map1.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarks);
+      rmap.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksRegions);
     }
   };
-rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);*/
+rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);
 
 
   //Cross-Cutting donut
@@ -211,6 +216,19 @@ rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);*/
 }
 
 
+/*$("#regions-tab").click(function() {
+  var sheetsArray = [
+    //oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
+  ];
+  appyDashboardFilter(sheetsArray, "Regional", "Regional");
+});*/
+
 
 /*************************** Tableau Functions *******************************/
 
@@ -262,6 +280,10 @@ function selectMarksCD(marksEvent) {
   return marksEvent.getMarksAsync().then(selectedCD);
 }
 
+function selectMarksRegions(marksEvent) {
+  return marksEvent.getMarksAsync().then(selectedRegions);
+}
+
 // MAP FILTER
 function reportSelectedMarks(marks) {
   var sheetsArray = [
@@ -273,21 +295,32 @@ function reportSelectedMarks(marks) {
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
   ];
-  clearDashboardFilter(sheetsArray, FILTER_REGION);
+  clearDashboardFilter(sheetsArray, FILTER_COUNTRY);
   $(".checkedregion").hide();
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
-       console.log(pair);
-      if (pair.fieldName == FILTER_REGION) {
+       //console.log(pair);
+      if (pair.fieldName == FILTER_COUNTRY) {
         regValue = pair.formattedValue;
         //  console.log(regValue);
-        appyDashboardFilter(sheetsArray, FILTER_REGION, regValue);
+        appyDashboardFilter(sheetsArray, FILTER_COUNTRY, regValue);
         $(".checkedregion").text("Country: " + regValue).addClass("closebutton");
         $(".checkedregion").css('margin-top', '3px').css('margin-bottom', '3px');
         $(".checkedregion").show();
-        $(".checkedregion, .clearfilters").on('click', clearRegionfilters);
+        $(".checkedregion, .clearfilters").on('click', clearCountryfilters);
+      } else  if (pair.fieldName == FILTER_GLOBAL) {
+        regValue = pair.formattedValue;
+        if(regValue == "Global"){
+          //onsole.log(regValue);
+          appyDashboardFilter(sheetsArray, FILTER_GLOBAL, regValue);
+          $(".checkedregion").text("Scope: " + regValue).addClass("closebutton");
+          $(".checkedregion").css('margin-top', '3px').css('margin-bottom', '3px');
+          $(".checkedregion").show();
+          $(".checkedregion, .clearfilters").on('click', clearGlobalfilters);
+        }
+        //  console.log(regValue);
       }
     }
   }
@@ -445,6 +478,37 @@ function selectedCD(marks) {
 }
 
 
+// REGIONAL MAP FILTER
+function selectedRegions(marks) {
+  var sheetsArray = [
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
+  ];
+  clearDashboardFilter(sheetsArray, FILTER_REGION);
+ // $(".checkedregion").hide();
+  for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+    var pairs = marks[markIndex].getPairs();
+    for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+      var pair = pairs[pairIndex];
+      // console.log(pair);
+      if (pair.fieldName == FILTER_REGION) {
+        regValue = pair.formattedValue;
+        console.log(regValue);
+        appyDashboardFilter(sheetsArray, FILTER_REGION, regValue);
+       // $(".checkedregion").text("Country: " + regValue).addClass("closebutton");
+      //  $(".checkedregion").css('margin-top', '3px').css('margin-bottom', '3px');
+      //  $(".checkedregion").show();
+      //  $(".checkedregion, .clearfilters").on('click', clearRegionfilters);
+      }
+    }
+  }
+}
+
 
 
 
@@ -481,7 +545,7 @@ function clearYearsfilters() {
   $(".checkedyears").hide();
 };
 
-function clearRegionfilters() {
+function clearCountryfilters() {
   var sheetsArray = [
     oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
@@ -491,9 +555,25 @@ function clearRegionfilters() {
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
   ];
-  clearDashboardFilter(sheetsArray, FILTER_REGION);
+  clearDashboardFilter(sheetsArray, FILTER_COUNTRY);
   $(".checkedregion").hide();
-  var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get("1.2.1 SH OICS Map");
+  var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET);
+  mapsheet.clearSelectedMarksAsync();
+};
+
+function clearGlobalfilters() {
+  var sheetsArray = [
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
+  ];
+  clearDashboardFilter(sheetsArray, FILTER_GLOBAL);
+  $(".checkedregion").hide();
+  var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET);
   mapsheet.clearSelectedMarksAsync();
 };
 
