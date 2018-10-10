@@ -521,6 +521,37 @@ ul#pills-tab{
   background-color: #f5f5f5;
 }
 
-.tab-toolbar{
-  visibility: hidden;
+.square {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  float: left;
+  margin-right: 2px; 
+}
+
+.squareuno {
+  background-color: #137bb7;
+}
+
+.squaredos {
+  background-color: #409dc1;
+}
+
+.squaretres {
+  background-color: #6eaecd;
+}
+
+.phases {
+  margin-bottom: 3px;
+  font-size: 11px;
+  color: #797979;
+  font-weight: normal;
+}
+
+.legend{
+  height: 110px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  color: #646464;
 }

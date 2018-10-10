@@ -4,7 +4,7 @@ var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
 var FILTER_MAP = "Country Name";
 var ITYPE_SHEET = "2.2 Innovation by Type -pie ";
-var ISTAGE_SHEET = "2.1 SH Innov by Stage";
+var ISTAGE_SHEET = "2.2 Innovation by Stage - pie";
 var ILIST_SHEET = "2.5 Innov Detail ";
 var IMAP_SHEET = "2.6 SH Innovations Map";
 var TI_SHEET = "2.3 SH Innov Count";
@@ -14,7 +14,7 @@ var TAI_SHEET = "2.7 SH Innov Count Percentage ";
 
 $(document).ready(init);
 
-//jQuery.getJSON("json/innovations.json", handleJSON);
+/*//jQuery.getJSON("json/innovations.json", handleJSON);
 var jsonfile;
 var labels = ["Stage 1: End of research phase (Discovery/Proof of Concept)", "Stage 2: End of piloting phase", "Stage 3: Available for uptake", "Stage 4: Uptake by next user"];
 var innovationsdata = [];
@@ -85,7 +85,7 @@ $.getJSON("json/innovations.json", function (data) {
 
     });
 
-});
+});*/
 
 function init() {
 
@@ -94,14 +94,14 @@ function init() {
         var $checkedInputs = $("input[name='" + filterType + "']:checked");
         var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
         var checkedValues = $.map($checkedInputs, function (e) { return e.value })
-        console.log(filterType, checkedValues);
+        //console.log(filterType, checkedValues);
 
-        var view = totalin.getWorkbook().getActiveSheet().getWorksheets();
+       /*var view = itype.getWorkbook().getActiveSheet().getWorksheets();
         worksheet = view[0];
-        console.log(worksheet);
+        console.log(worksheet);*/
 
         var sheetsArray = [
-         //   istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+            istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
             itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
             ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
             totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
@@ -153,7 +153,7 @@ function init() {
 
 
     //Innovations by stage
-    /*var istagediv = document.getElementById("innovations-stage"),
+    var istagediv = document.getElementById("innovations-stage"),
         stageurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_2DBInnovbyStage",
         stageoptions = {
             hideTabs: true,
@@ -161,13 +161,14 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                $('#innovations-stage iframe').attr("scrolling", "no");
+                $('#innovations-stage iframe').css('overflow', 'hidden');
                 var stagesheet = istage.getWorkbook().getActiveSheet();
-                console.log('Interaction with innovations by stage', stagesheet);
-                //console.log(sheet);
+                //console.log('Interaction with innovations by stage', stagesheet);
                 istage.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksStage);
             }
         };
-    istage = new tableau.Viz(istagediv, stageurl, stageoptions);*/
+    istage = new tableau.Viz(istagediv, stageurl, stageoptions);
 
 
     //Innovations by type
@@ -182,7 +183,7 @@ function init() {
                 $('#innovations-type iframe').attr("scrolling", "no");
                 $('#innovations-type iframe').css('overflow', 'hidden');
                 var typesheet = itype.getWorkbook().getActiveSheet();
-                console.log('Interaction with innovations by type', typesheet);
+               // console.log('Interaction with innovations by type', typesheet);
                 itype.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksType);
             }
         };
@@ -200,7 +201,7 @@ function init() {
                 $('#innovations-map iframe').attr("scrolling", "no");
                 $('#innovations-map iframe').css('overflow', 'hidden');
                 var groundsheet = iground.getWorkbook().getActiveSheet();
-                console.log('Interaction with innovations on the ground', groundsheet);
+              //  console.log('Interaction with innovations on the ground', groundsheet);
                 iground.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksMap);
             }
         };
@@ -218,7 +219,7 @@ function init() {
                 $('#innovations-list iframe').attr("scrolling", "no");
                 $('#innovations-list iframe').css('overflow', 'hidden');
                 var ilistsheet = ilist.getWorkbook().getActiveSheet();
-                console.log('Interaction with innovations on the ground', ilistsheet);
+               // console.log('Interaction with innovations on the ground', ilistsheet);
             }
         };
     ilist = new tableau.Viz(ilistdiv, ilisturl, ilistoptions);
@@ -236,7 +237,7 @@ function init() {
                 $('#total-innov iframe').attr("scrolling", "no");
                 $('#total-innov iframe').css('overflow', 'hidden');
                 var tisheet = totalin.getWorkbook().getActiveSheet();
-                console.log('Total Innovations', tisheet);
+              //  console.log('Total Innovations', tisheet);
             }
         };
     totalin = new tableau.Viz(tidiv, tiurl, tioptions);
@@ -254,7 +255,7 @@ function init() {
                 $('#adaptative-innov iframe').attr("scrolling", "no");
                 $('#adaptative-innov iframe').css('overflow', 'hidden');
                 var aisheet = totalain.getWorkbook().getActiveSheet();
-                console.log('Total Adaptative Innovations', aisheet);
+              //  console.log('Total Adaptative Innovations', aisheet);
             }
         };
     totalain = new tableau.Viz(aidiv, aiurl, aioptions);
@@ -318,10 +319,8 @@ function selectedMarksStage(marks) {
         var pairs = marks[markIndex].getPairs();
         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
             var pair = pairs[pairIndex];
-            console.log(pair);
             if (pair.fieldName == FILTER_STAGE) {
                 stageValue = pair.formattedValue;
-                console.log(stageValue);
                 if (stageValue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_STAGE, stageValue);
                     $(".checkedstage").text("Stage: " + stageValue).addClass("closebutton");
@@ -336,7 +335,7 @@ function selectedMarksStage(marks) {
 
 function selectedMarksType(marks) {
     var sheetsArray = [
-     //   istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
@@ -347,12 +346,10 @@ function selectedMarksType(marks) {
     $(".checkedtype").hide();
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
         var pairs = marks[markIndex].getPairs();
-        console.log(pairs);
         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
             var pair = pairs[pairIndex];
             if (pair.fieldName == FILTER_TYPE) {
                 typeValue = pair.formattedValue;
-                console.log(typeValue);
                 if (typeValue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_TYPE, typeValue);
                     $(".checkedtype").text("Type: " + typeValue).addClass("closebutton");
@@ -368,7 +365,7 @@ function selectedMarksType(marks) {
 
 function selectedMarksMap(marks) {
     var sheetsArray = [
-      //  istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
@@ -384,7 +381,6 @@ function selectedMarksMap(marks) {
             console.log(pair);
             if (pair.fieldName == FILTER_MAP) {
                 mapValue = pair.formattedValue;
-                console.log(mapValue);
                 if (mapValue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_MAP, mapValue);
                     $(".checkedcountry").text("Country: " + mapValue).addClass("closebutton");
@@ -399,7 +395,7 @@ function selectedMarksMap(marks) {
 
 function clearCRPfilters() {
     var sheetsArray = [
-      //  istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
         itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
@@ -414,7 +410,7 @@ function clearCRPfilters() {
 
 function clearYearsfilters() {
     var sheetsArray = [
-        //istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
         itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
@@ -444,7 +440,7 @@ function clearStagefilters() {
 
 function clearTypefilters() {
     var sheetsArray = [
-       // istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
@@ -460,7 +456,7 @@ function clearTypefilters() {
 
 function clearMapfilters() {
     var sheetsArray = [
-      //  istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+      istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
       ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
       itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
       totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
