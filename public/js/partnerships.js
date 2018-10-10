@@ -7,7 +7,7 @@ var FILTER_KTYPE = "Partner Type";
 var TP_SHEET = "3.4 Total Partnerships Count ";
 var TPPHASE_SHEET = "3.6 Total Partnerships Donut";
 var TPRP_SHEET = "3.5 Total Partnerships by Phase and CRP";
-var TKP_SHEET = "Partnerships Count";
+var TKP_SHEET = "Key Partnerships Count";
 var KPPHASE_SHEET = "3.3 SH Key Partnership by Type and Phase";
 var KPTYPE_SHEET = "3.1 SH Key Partnership by Type-Heatmap";
 var KPLIST_SHEET = "3.2 SH List of Key External Partnerships";
@@ -22,7 +22,6 @@ function init() {
         var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
         var checkedValues = $.map($checkedInputs, function (e) { return e.value })
         console.log(filterType, checkedValues);
-
 
         var sheetsArray = [
             totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
@@ -270,7 +269,7 @@ function selectedTphasep(marks) {
 //Key partnerships by phase filter
 function selectedKphase(marks) {
 
-   var sheetsArray = [
+    var sheetsArray = [
         totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
         kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
         kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
@@ -296,23 +295,23 @@ function selectedKphase(marks) {
 function selectedKtype(marks) {
 
     var sheetsArray = [
-         totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
-         keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
-         kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
-     ];
-     clearDashboardFilter(sheetsArray, FILTER_KTYPE);
- 
-     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-         var pairs = marks[markIndex].getPairs();
-         console.log(pairs);
-         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
-             var pair = pairs[pairIndex];
-             if (pair.fieldName == FILTER_KTYPE) {
-                 ktvalue = pair.formattedValue;
-                 if (ktvalue != null) {
-                     appyDashboardFilter(sheetsArray, FILTER_KTYPE, ktvalue);
-                 }
-             }
-         }
-     }
- }
+        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
+        keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
+        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_KTYPE);
+
+    for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+        var pairs = marks[markIndex].getPairs();
+        console.log(pairs);
+        for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+            var pair = pairs[pairIndex];
+            if (pair.fieldName == FILTER_KTYPE) {
+                ktvalue = pair.formattedValue;
+                if (ktvalue != null) {
+                    appyDashboardFilter(sheetsArray, FILTER_KTYPE, ktvalue);
+                }
+            }
+        }
+    }
+}

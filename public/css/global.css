@@ -133,73 +133,73 @@ nav.main-menu ul li.active:after {
 }
 
 .map-container {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   padding: 0.5em;
   height: 390px;
 }
 
 .donut-container {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   height: 390px;
   width: 422px;
 }
 
 .case-chartcont {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   width: 325px;
   height: 290px;
 }
 
 .ccip-cont {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   height: 100px;
 }
 
 .istage-container {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   width: 500px;
   height: 290px;
 }
 
 .itype-container {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   width: 526px;
   height: 290px;
 }
 
 .imap-container {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   width:600px;
   height: 390px;
 }
 
 .ilist-container {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   width: 1050px;
   height: 400px;
 }
 
 .ptype-container {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   width: 100%;
   height: 330px;
 }
 
 .pstage-container {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   width: 100%;
   height: 330px;
 }
 
 .ptotal-container {
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   width: 100%;
   height: 100px;
 }
 
 .ptable-container {
-  background-color: #ffffff;
-  width: 1055px;
+  background-color: #f5f5f5;
+  width: 1057px;
   height: 350px;
 }
 
@@ -218,7 +218,8 @@ nav.main-menu ul li.active:after {
 }
 
 .case-container {
-  overflow: auto;
+  overflow: hidden;
+  background-color: #f5f5f5;
 }
 
 /* Frame */
@@ -352,13 +353,13 @@ nav.main-menu ul li.active:after {
 }
 
 .tab-content {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   height: 150px;
   overflow: auto;
 }
 
 .list-content {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   height: 400px;
 }
 
@@ -368,7 +369,7 @@ nav.main-menu ul li.active:after {
 
 .tab-pane {
   padding-top: 2%;
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   border-color: #c0c0c0;
   border-width: 3px;
   width: 98%;
@@ -445,11 +446,12 @@ nav.main-menu ul li.active:after {
 
 .iatotal-container {
   background-color: #f1f1f1;
-  width: 180px;
+  width: 300px;
   height: 100px;
   font-size: 50px;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
+  margin: auto;
 }
 
 .buttonmap {
@@ -513,4 +515,8 @@ ul#pills-tab{
   background-color: rgba(219, 213, 213, 0.562);
   margin-left: 2px;
   color: #565656;
+}
+
+.list-content{
+  background-color: #f5f5f5;
 }

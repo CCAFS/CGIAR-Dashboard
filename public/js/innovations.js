@@ -8,8 +8,9 @@ var ISTAGE_SHEET = "2.1 SH Innov by Stage";
 var ILIST_SHEET = "2.5 Innov Detail ";
 var IMAP_SHEET = "2.6 SH Innovations Map";
 var TI_SHEET = "2.3 SH Innov Count";
-var TAI_SHEET = "2.4 SH Innov Count Adaptative";
-var TNI_SHEET = "2.5 SH Innov Count Novel";
+//var TAI_SHEET = "2.4 SH Innov Count Adaptative";
+var TAI_SHEET = "2.7 SH Innov Count Percentage ";
+//var TNI_SHEET = "2.5 SH Innov Count Novel";
 
 $(document).ready(init);
 
@@ -105,7 +106,7 @@ function init() {
             ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
             totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
             totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-            totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
+           // totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
             iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
         ];
 
@@ -234,7 +235,8 @@ function init() {
 
     //Total Adaptative Innovations
     var aidiv = document.getElementById("adaptative-innov"),
-        aiurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_4DBInnovAdaptativeCount",
+    //    aiurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_4DBInnovAdaptativeCount",
+        aiurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_7DBInnovAdapPercentage",
         aioptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -247,7 +249,7 @@ function init() {
         };
     totalain = new tableau.Viz(aidiv, aiurl, aioptions);
 
-    //Total Novel Innovations
+   /* //Total Novel Innovations
     var nidiv = document.getElementById("novel-innov"),
         niurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_5DBInnovNovelCount",
         nioptions = {
@@ -260,7 +262,7 @@ function init() {
                 console.log('Total Novel Innovations', nisheet);
             }
         };
-    totalnin = new tableau.Viz(nidiv, niurl, nioptions);
+    totalnin = new tableau.Viz(nidiv, niurl, nioptions);*/
 }
 
 
@@ -297,7 +299,7 @@ function selectedMarksStage(marks) {
         itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
+      //  totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_STAGE);
@@ -328,7 +330,7 @@ function selectedMarksType(marks) {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
+    //    totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_TYPE);
@@ -361,7 +363,7 @@ function selectedMarksMap(marks) {
         itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
+     //   totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
     ];
     clearDashboardFilter(sheetsArray, FILTER_MAP);
     $(".checkedcountry").hide();
@@ -392,7 +394,7 @@ function clearCRPfilters() {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
+     //   totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
@@ -407,7 +409,7 @@ function clearYearsfilters() {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
+     //   totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
@@ -421,7 +423,7 @@ function clearStagefilters() {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
+      //  totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_STAGE);
@@ -436,7 +438,7 @@ function clearTypefilters() {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
+    //    totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_TYPE);
@@ -453,7 +455,7 @@ function clearMapfilters() {
       itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
       totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
       totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-      totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
+     // totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
     ];
     clearDashboardFilter(sheetsArray, FILTER_MAP);
     $(".checkedcountry").hide();
