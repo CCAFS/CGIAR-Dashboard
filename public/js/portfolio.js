@@ -121,6 +121,8 @@ function init() {
       width: '100%',
       height: '100%',
       onFirstInteractive: function () {
+        $('#map-1 iframe').attr("scrolling", "no");
+        $('#map-1 iframe').css('overflow', 'hidden');
         var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET);
         console.log("Interaction with map", mapsheet);
         map1.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarks);
@@ -137,6 +139,8 @@ function init() {
     width: '100%',
     height: '100%',
     onFirstInteractive: function () {
+      $('#map-2 iframe').attr("scrolling", "no");
+      $('#map-2 iframe').css('overflow', 'hidden');
      // var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get(MAP_SHEET);
       console.log("Interaction with map");
       rmap.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksRegions);
@@ -171,6 +175,8 @@ rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);
       width: '100%',
       height: '100%',
       onFirstInteractive: function () {
+        $('#list-test iframe').attr("scrolling", "no");
+        $('#list-test iframe').css('overflow', 'hidden');
         var listsheet = oicslist.getWorkbook().getActiveSheet();
         console.log("Interaction with List", listsheet);
       }
@@ -186,6 +192,9 @@ rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);
       width: '100%',
       height: '100%',
       onFirstInteractive: function () {
+        $('#chart-2 iframe').attr("scrolling", "no");
+        $('#chart-2 iframe').css('overflow', 'hidden');
+        $("#chart-2 iframe").prop( "scrolling", "no");
         var sheet2 = chart2.getWorkbook().getActiveSheet();
         console.log('Interaction with graph', sheet2);
         chart2.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSLOsBar);
@@ -204,6 +213,8 @@ rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);
       width: '100%',
       height: '100%',
       onFirstInteractive: function () {
+        $('#cci-p iframe').attr("scrolling", "no");
+        $('#cci-p iframe').css('overflow', 'hidden');
         var ccipsheet = ccip.getWorkbook().getActiveSheet();
         console.log('Interaction with %', ccipsheet);
         ccip.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksGR);

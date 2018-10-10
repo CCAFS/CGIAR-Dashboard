@@ -179,6 +179,8 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                $('#innovations-type iframe').attr("scrolling", "no");
+                $('#innovations-type iframe').css('overflow', 'hidden');
                 var typesheet = itype.getWorkbook().getActiveSheet();
                 console.log('Interaction with innovations by type', typesheet);
                 itype.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksType);
@@ -195,6 +197,8 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                $('#innovations-map iframe').attr("scrolling", "no");
+                $('#innovations-map iframe').css('overflow', 'hidden');
                 var groundsheet = iground.getWorkbook().getActiveSheet();
                 console.log('Interaction with innovations on the ground', groundsheet);
                 iground.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksMap);
@@ -211,6 +215,8 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                $('#innovations-list iframe').attr("scrolling", "no");
+                $('#innovations-list iframe').css('overflow', 'hidden');
                 var ilistsheet = ilist.getWorkbook().getActiveSheet();
                 console.log('Interaction with innovations on the ground', ilistsheet);
             }
@@ -227,6 +233,8 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                $('#total-innov iframe').attr("scrolling", "no");
+                $('#total-innov iframe').css('overflow', 'hidden');
                 var tisheet = totalin.getWorkbook().getActiveSheet();
                 console.log('Total Innovations', tisheet);
             }
@@ -243,6 +251,8 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                $('#adaptative-innov iframe').attr("scrolling", "no");
+                $('#adaptative-innov iframe').css('overflow', 'hidden');
                 var aisheet = totalain.getWorkbook().getActiveSheet();
                 console.log('Total Adaptative Innovations', aisheet);
             }

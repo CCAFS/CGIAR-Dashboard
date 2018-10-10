@@ -73,6 +73,8 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                $('#total-partnerships iframe').attr("scrolling", "no");
+                $('#total-partnerships iframe').css('overflow', 'hidden');
                 var totalpsheet = totalp.getWorkbook().getActiveSheet();
                 console.log('Interaction with Formal Partnerships by Phase', totalpsheet);
                 //console.log(sheet);
@@ -90,6 +92,8 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                $('#tp-phase iframe').attr("scrolling", "no");
+                $('#tp-phase iframe').css('overflow', 'hidden');
                 var tpphasesheet = tpphase.getWorkbook().getActiveSheet();
                 console.log('Interaction with Key partnerships phase', tpphasesheet);
                 tpphase.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksTphase);
@@ -106,6 +110,8 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                $('#total-prp iframe').attr("scrolling", "no");
+                $('#total-prp iframe').css('overflow', 'hidden');
                 var tprpsheet = tprp.getWorkbook().getActiveSheet();
                 console.log('Interaction with Key partnerships phase', tprpsheet);
                 tprp.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksTphasep);
@@ -123,6 +129,8 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                $('#total-keyp iframe').attr("scrolling", "no");
+                $('#total-keyp iframe').css('overflow', 'hidden');
                 var totalkpsheet = totalkp.getWorkbook().getActiveSheet();
                 console.log('Interaction with Key partnerships phase', totalkp);
             }
@@ -139,6 +147,8 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                $('#keyp-phase iframe').attr("scrolling", "no");
+                $('#keyp-phase iframe').css('overflow', 'hidden');
                 var keypphasesheet = keypphase.getWorkbook().getActiveSheet();
                 console.log('Interaction with Key partnerships phase', keypphasesheet);
                 keypphase.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksKphase);
@@ -156,6 +166,8 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                $('#keyp-type iframe').attr("scrolling", "no");
+                $('#keyp-type iframe').css('overflow', 'hidden');
                 var kptypesheet = kptype.getWorkbook().getActiveSheet();
                 console.log('Interaction with Key partnerships phase', kptypesheet);
                 kptype.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksKtype);
@@ -173,6 +185,8 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                $('#keyp-list iframe').attr("scrolling", "no");
+                $('#keyp-list iframe').css('overflow', 'hidden');
                 var kplistsheet = kplist.getWorkbook().getActiveSheet();
                 console.log('Interaction with Key partnerships phase', kplistsheet);
             }

@@ -520,3 +520,7 @@ ul#pills-tab{
 .list-content{
   background-color: #f5f5f5;
 }
+
+.tab-toolbar{
+  visibility: hidden;
+}
