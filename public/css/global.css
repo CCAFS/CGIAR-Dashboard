@@ -158,13 +158,13 @@ nav.main-menu ul li.active:after {
 .istage-container {
   background-color: #f5f5f5;
   width: 500px;
-  height: 290px;
+  height: 230px;
 }
 
 .itype-container {
   background-color: #f5f5f5;
   width: 526px;
-  height: 290px;
+  height: 230px;
 }
 
 .imap-container {
@@ -534,11 +534,11 @@ ul#pills-tab{
 }
 
 .squaredos {
-  background-color: #409dc1;
+  background-color: #6eaecd;
 }
 
 .squaretres {
-  background-color: #6eaecd;
+  background-color: #a4dbea;
 }
 
 .phases {
