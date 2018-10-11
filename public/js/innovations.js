@@ -8,9 +8,7 @@ var ISTAGE_SHEET = "2.2 Innovation by Stage - pie";
 var ILIST_SHEET = "2.5 Innov Detail ";
 var IMAP_SHEET = "2.6 SH Innovations Map";
 var TI_SHEET = "2.3 SH Innov Count";
-//var TAI_SHEET = "2.4 SH Innov Count Adaptative";
 var TAI_SHEET = "2.7 SH Innov Count Percentage ";
-//var TNI_SHEET = "2.5 SH Innov Count Novel";
 
 $(document).ready(init);
 
@@ -94,7 +92,6 @@ function init() {
         var $checkedInputs = $("input[name='" + filterType + "']:checked");
         var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
         var checkedValues = $.map($checkedInputs, function (e) { return e.value })
-        //console.log(filterType, checkedValues);
 
        /*var view = itype.getWorkbook().getActiveSheet().getWorksheets();
         worksheet = view[0];
@@ -106,7 +103,6 @@ function init() {
             ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
             totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
             totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-           // totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
             iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
         ];
 
@@ -163,8 +159,6 @@ function init() {
             onFirstInteractive: function () {
                 $('#innovations-stage iframe').attr("scrolling", "no");
                 $('#innovations-stage iframe').css('overflow', 'hidden');
-                var stagesheet = istage.getWorkbook().getActiveSheet();
-                //console.log('Interaction with innovations by stage', stagesheet);
                 istage.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksStage);
             }
         };
@@ -182,8 +176,6 @@ function init() {
             onFirstInteractive: function () {
                 $('#innovations-type iframe').attr("scrolling", "no");
                 $('#innovations-type iframe').css('overflow', 'hidden');
-                var typesheet = itype.getWorkbook().getActiveSheet();
-               // console.log('Interaction with innovations by type', typesheet);
                 itype.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksType);
             }
         };
@@ -200,8 +192,6 @@ function init() {
             onFirstInteractive: function () {
                 $('#innovations-map iframe').attr("scrolling", "no");
                 $('#innovations-map iframe').css('overflow', 'hidden');
-                var groundsheet = iground.getWorkbook().getActiveSheet();
-              //  console.log('Interaction with innovations on the ground', groundsheet);
                 iground.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksMap);
             }
         };
@@ -218,8 +208,6 @@ function init() {
             onFirstInteractive: function () {
                 $('#innovations-list iframe').attr("scrolling", "no");
                 $('#innovations-list iframe').css('overflow', 'hidden');
-                var ilistsheet = ilist.getWorkbook().getActiveSheet();
-               // console.log('Interaction with innovations on the ground', ilistsheet);
             }
         };
     ilist = new tableau.Viz(ilistdiv, ilisturl, ilistoptions);
@@ -236,15 +224,12 @@ function init() {
             onFirstInteractive: function () {
                 $('#total-innov iframe').attr("scrolling", "no");
                 $('#total-innov iframe').css('overflow', 'hidden');
-                var tisheet = totalin.getWorkbook().getActiveSheet();
-              //  console.log('Total Innovations', tisheet);
             }
         };
     totalin = new tableau.Viz(tidiv, tiurl, tioptions);
 
     //Total Adaptative Innovations
     var aidiv = document.getElementById("adaptative-innov"),
-    //    aiurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_4DBInnovAdaptativeCount",
         aiurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_7DBInnovAdapPercentage",
         aioptions = {
             hideTabs: true,
@@ -254,26 +239,9 @@ function init() {
             onFirstInteractive: function () {
                 $('#adaptative-innov iframe').attr("scrolling", "no");
                 $('#adaptative-innov iframe').css('overflow', 'hidden');
-                var aisheet = totalain.getWorkbook().getActiveSheet();
-              //  console.log('Total Adaptative Innovations', aisheet);
             }
         };
     totalain = new tableau.Viz(aidiv, aiurl, aioptions);
-
-   /* //Total Novel Innovations
-    var nidiv = document.getElementById("novel-innov"),
-        niurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_5DBInnovNovelCount",
-        nioptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-                var nisheet = totalnin.getWorkbook().getActiveSheet();
-                console.log('Total Novel Innovations', nisheet);
-            }
-        };
-    totalnin = new tableau.Viz(nidiv, niurl, nioptions);*/
 }
 
 
@@ -310,7 +278,6 @@ function selectedMarksStage(marks) {
         itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-      //  totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_STAGE);
@@ -339,7 +306,6 @@ function selectedMarksType(marks) {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-    //    totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_TYPE);
@@ -369,8 +335,7 @@ function selectedMarksMap(marks) {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
-        totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-     //   totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
+        totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_MAP);
     $(".checkedcountry").hide();
@@ -378,7 +343,6 @@ function selectedMarksMap(marks) {
         var pairs = marks[markIndex].getPairs();
         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
             var pair = pairs[pairIndex];
-            console.log(pair);
             if (pair.fieldName == FILTER_MAP) {
                 mapValue = pair.formattedValue;
                 if (mapValue != null) {
@@ -400,7 +364,6 @@ function clearCRPfilters() {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-     //   totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
@@ -415,7 +378,6 @@ function clearYearsfilters() {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-     //   totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
@@ -429,7 +391,6 @@ function clearStagefilters() {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-      //  totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_STAGE);
@@ -444,7 +405,6 @@ function clearTypefilters() {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-    //    totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_TYPE);
@@ -460,8 +420,7 @@ function clearMapfilters() {
       ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
       itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
       totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
-      totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-     // totalnin.getWorkbook().getActiveSheet().getWorksheets().get(TNI_SHEET),
+      totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_MAP);
     $(".checkedcountry").hide();

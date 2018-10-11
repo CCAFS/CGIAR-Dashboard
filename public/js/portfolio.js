@@ -35,9 +35,9 @@ function init() {
     var checkedValues = $.map($checkedInputs, function (e) { return e.value })
     console.log(filterType, checkedValues);
 
-    var view = map1.getWorkbook().getActiveSheet().getWorksheets();
+    /*var view = map1.getWorkbook().getActiveSheet().getWorksheets();
     worksheet = view[0];
-    console.log(worksheet);
+    console.log(worksheet);*/
 
 
     var sheetsArray = [
@@ -87,30 +87,13 @@ function init() {
           $(".checkedyears").text("Years: " + checkedValues).addClass("closebutton");
           $(".checkedyears").css('margin-top', '3px').css('margin-bottom', '3px');
           $(".checkedyears").show();
-          $(".closebutton, .clearfilters").on('click', clearYearsfilters);
+          $(".checkedyears, .clearfilters").on('click', clearYearsfilters);
         }
         break;
       default:
     }
   });
 
-
-  //SLO donut
-  /*var containerDiv = document.getElementById("chart-1"),
-    url = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_2SHOICSSLODonut",
-    options = {
-      hideTabs: true,
-      hideToolbar: true,
-      width: '100%',
-      height: '100%',
-      onFirstInteractive: function () {
-        var sheet = chart1.getWorkbook().getActiveSheet();
-        console.log('onFirstInteractive', sheet);
-        chart1.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSLOs);
-        //yearFilter(2018);
-      }
-    };
-  chart1 = new tableau.Viz(containerDiv, url, options);*/
 
   //Countries map
   var mapcontainerDiv = document.getElementById("map-1"),
@@ -141,29 +124,11 @@ function init() {
     onFirstInteractive: function () {
       $('#map-2 iframe').attr("scrolling", "no");
       $('#map-2 iframe').css('overflow', 'hidden');
-     // var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get(MAP_SHEET);
       console.log("Interaction with map");
       rmap.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksRegions);
     }
   };
 rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);
-
-
-  //Cross-Cutting donut
-  /*var ccicontainerDiv = document.getElementById("cci"),
-    cciurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1_1SHCCIDonut",
-    ccioptions = {
-      hideTabs: true,
-      hideToolbar: true,
-      width: '100%',
-      height: '100%',
-      onFirstInteractive: function () {
-        var cci1sheet = cci1.getWorkbook().getActiveSheet();
-        console.log("Interaction with CCI Chart", cci1sheet);
-        cci1.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksCCI);
-      }
-    };
-  cci1 = new tableau.Viz(ccicontainerDiv, cciurl, ccioptions);*/
 
 
   //OICs list
@@ -225,21 +190,6 @@ rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);
   ccip = new tableau.Viz(ccipdiv, ccipurl, ccipoptions);
 
 }
-
-
-/*$("#regions-tab").click(function() {
-  var sheetsArray = [
-    //oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
-  ];
-  appyDashboardFilter(sheetsArray, "Regional", "Regional");
-});*/
-
 
 /*************************** Tableau Functions *******************************/
 
@@ -506,7 +456,7 @@ function selectedRegions(marks) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
-      // console.log(pair);
+      console.log(pair);
       if (pair.fieldName == FILTER_REGION) {
         regValue = pair.formattedValue;
         console.log(regValue);
