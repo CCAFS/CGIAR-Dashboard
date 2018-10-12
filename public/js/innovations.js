@@ -3,6 +3,7 @@ var FILTER_YEAR = "Year";
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
 var FILTER_MAP = "Country Name";
+var FILTER_DEGREE = "Degree of Innovation";
 var ITYPE_SHEET = "2.2 Innovation by Type -pie ";
 var ISTAGE_SHEET = "2.2 Innovation by Stage - pie";
 var ILIST_SHEET = "2.5 Innov Detail ";
@@ -242,14 +243,57 @@ function init() {
             }
         };
     totalain = new tableau.Viz(aidiv, aiurl, aioptions);
+
+    $("#novelinnovations").click(function() {
+        console.log("Novel Innovations");
+    });
+
+    $("#adaptiveinnovations").click(function() {
+        var sheetsArray = [
+            istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+            ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+            totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
+            iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+        ];
+
+        appyDashboardFilter(sheetsArray, "Degree of Innovation", "Adaptive");
+
+    });
+
+    $("#novelinnovations").click(function() {
+        var sheetsArray = [
+            istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+            ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+            totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
+            iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+        ];
+
+        appyDashboardFilter(sheetsArray, "Degree of Innovation", "Novel");
+
+    });
+
+
+    var input = document.getElementById("myText");
+        input.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        var value = document.getElementById("myText").value;
+        var name = value.toString();
+        if (event.keyCode === 13) {
+          console.log(name);
+          searchTitle(value);
+        }
+    });
+
 }
 
+/*************************** Tableau Functions *******************************/
 
 function appyDashboardFilter(sheetsArray, filterName, filterValues) {
     $.each(sheetsArray, function (i, e) {
         e.applyFilterAsync(filterName, filterValues, tableau.FilterUpdateType.REPLACE);
     });
 }
+
 
 function clearDashboardFilter(sheetsArray, filterName) {
     $.each(sheetsArray, function (i, e) {
@@ -270,7 +314,14 @@ function selectMarksMap(marksEvent) {
     return marksEvent.getMarksAsync().then(selectedMarksMap);
 }
 
+function searchTitle(value){
+    var v = value;
+    var sheetsArray = [
+        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET)
+    ];
 
+    appyDashboardFilter(sheetsArray, "Title of Innovation", v);
+}
 
 function selectedMarksStage(marks) {
     var sheetsArray = [

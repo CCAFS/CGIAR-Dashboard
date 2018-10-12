@@ -11,7 +11,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     array('name' => 'Case Studies',   'action' => 'caseStudies',  'active' => true ),
     array('name' => 'Innovations',    'action' => 'innovations',  'active' => true ),
     array('name' => 'Partnerships',   'action' => 'partnerships', 'active' => true ),
-    array('name' => 'Papers',         'action' => 'papers',       'active' => true )
+    array('name' => 'Publications',   'action' => 'publications', 'active' => true )
   );
 
   $crps = array(
