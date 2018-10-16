@@ -3,10 +3,13 @@ var FILTER_YEAR = "Year";
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
 var FILTER_MAP = "Country Name";
+var FILTER_OA = "Open Access?";
+var FILTER_ISI = "ISI Journal?";
 var TP_SHEET = "5.1 SH Total Papers";
 var OA_SHEET = "5.4 SH Percent of OA ";
 var ISI_SHEET = "5.5 SH Percent of ISI";
-var OAISI_SHEET = "5.3 SH Bar Chart of Paper Totals CRP";
+var OABAR_SHEET = "5.4.1 Publications OA Bar";
+var ISIBAR_SHEET = "5.4.2 Publications ISI Bar";
 var LIST_SHEET = "5.2 SH Papers Detail";
 
 $(document).ready(init);
@@ -23,9 +26,11 @@ function init() {
             totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
             oapapers.getWorkbook().getActiveSheet().getWorksheets().get(OA_SHEET),
             isipapers.getWorkbook().getActiveSheet().getWorksheets().get(ISI_SHEET),
-            oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OAISI_SHEET),
+            oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OABAR_SHEET),
+            oaisi.getWorkbook().getActiveSheet().getWorksheets().get(ISIBAR_SHEET),
             plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
         ];
+
 
         switch (filterType) {
             case "crps":
@@ -77,7 +82,6 @@ function init() {
             onFirstInteractive: function () {
                 $('#total-papers iframe').attr("scrolling", "no");
                 $('#total-papers iframe').css('overflow', 'hidden');
-                console.log('Holi');
             }
         };
     totalpapers = new tableau.Viz(papersdiv, papersurl, papersoptions);
@@ -93,7 +97,6 @@ function init() {
             onFirstInteractive: function () {
                 $('#oa-papers iframe').attr("scrolling", "no");
                 $('#oa-papers iframe').css('overflow', 'hidden');
-                console.log('Holi 1');
             }
         };
     oapapers = new tableau.Viz(oadiv, oaurl, oaoptions);
@@ -109,7 +112,6 @@ function init() {
             onFirstInteractive: function () {
                 $('#isi-papers iframe').attr("scrolling", "no");
                 $('#isi-papers iframe').css('overflow', 'hidden');
-                console.log('Holi 2');
             }
         };
     isipapers = new tableau.Viz(isidiv, isiurl, isioptions);
@@ -125,7 +127,8 @@ function init() {
             onFirstInteractive: function () {
                 $('#oa-isi iframe').attr("scrolling", "no");
                 $('#oa-isi iframe').css('overflow', 'hidden');
-                console.log('Holi 3');
+                oaisi.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksOABar);
+                oaisi.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksISIBar);
             }
         };
     oaisi = new tableau.Viz(oaisidiv, oaisiurl, oaisioptions);
@@ -142,7 +145,6 @@ function init() {
             onFirstInteractive: function () {
                 $('#papers-list iframe').attr("scrolling", "no");
                 $('#papers-list iframe').css('overflow', 'hidden');
-                console.log('Holi 4');
             }
         };
     plist = new tableau.Viz(papersldiv, paperslurl, papersloptions);
@@ -164,9 +166,63 @@ function clearDashboardFilter(sheetsArray, filterName) {
     });
 }
 
+/**** Selection functions ****/
+function selectMarksOABar(marksEvent) {
+    return marksEvent.getMarksAsync().then(selectedOABar);
+}
+
+function selectMarksISIBar(marksEvent) {
+    return marksEvent.getMarksAsync().then(selectedISIBar);
+}
 
 
-// Clear functions 
+//Select OA bar 
+function selectedOABar(marks) {
+    var sheetsArray = [
+        totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
+        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(ISIBAR_SHEET),
+        plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_OA);
+    for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+        var pairs = marks[markIndex].getPairs();
+        for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+            var pair = pairs[pairIndex];
+            if (pair.fieldName == FILTER_OA) {
+                oaValue = pair.formattedValue;
+                if (oaValue != null) {
+                    appyDashboardFilter(sheetsArray, FILTER_OA, oaValue);
+                }
+            }
+        }
+    }
+}
+
+//Select ISI bar 
+function selectedISIBar(marks) {
+    var sheetsArray = [
+        totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
+        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OABAR_SHEET),
+        plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_ISI);
+    for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+        var pairs = marks[markIndex].getPairs();
+        for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+            var pair = pairs[pairIndex];
+            console.log(pair);
+            if (pair.fieldName == FILTER_ISI) {
+                isiValue = pair.formattedValue;
+                if (isiValue != null) {
+                    appyDashboardFilter(sheetsArray, FILTER_ISI, isiValue);
+                }
+            }
+        }
+    }
+}
+
+
+/**** Clear functions ****/
 
 //   Clear CRP
 function clearCRPfilters() {
@@ -174,13 +230,14 @@ function clearCRPfilters() {
         totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
         oapapers.getWorkbook().getActiveSheet().getWorksheets().get(OA_SHEET),
         isipapers.getWorkbook().getActiveSheet().getWorksheets().get(ISI_SHEET),
-        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OAISI_SHEET),
+        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OABAR_SHEET),
+        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(ISIBAR_SHEET),
         plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
     $('.portfolio').text('All CRPs');
-  };
+};
 
 
 //   Clear Year  
@@ -189,10 +246,11 @@ function clearYearsfilters() {
         totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
         oapapers.getWorkbook().getActiveSheet().getWorksheets().get(OA_SHEET),
         isipapers.getWorkbook().getActiveSheet().getWorksheets().get(ISI_SHEET),
-        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OAISI_SHEET),
+        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OABAR_SHEET),
+        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(ISIBAR_SHEET),
         plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
     $('.years').text('All Years');
     $(".checkedyears").hide();
-  };
+};

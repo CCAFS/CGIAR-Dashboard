@@ -230,6 +230,7 @@ function selectedTphase(marks) {
         tprp.getWorkbook().getActiveSheet().getWorksheets().get(TPRP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_TSTAGE);
+    $(".checkedtphase").hide();
 
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
         var pairs = marks[markIndex].getPairs();
@@ -239,6 +240,10 @@ function selectedTphase(marks) {
                 tpvalue = pair.formattedValue;
                 if (tpvalue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_TSTAGE, tpvalue);
+                    $(".checkedtphase").text("Total Partnerships - Research Phase: " + tpvalue).addClass("closebutton");
+                    $(".checkedtphase").css('margin-top', '3px').css('margin-bottom', '3px');
+                    $(".checkedtphase").show();
+                    $(".checkedtphase, .clearfilters").on('click', clearTphase);
                 }
             }
         }
@@ -280,6 +285,7 @@ function selectedKphase(marks) {
         kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_KPHASE);
+    $(".checkedkphase").hide();
 
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
         var pairs = marks[markIndex].getPairs();
@@ -289,6 +295,10 @@ function selectedKphase(marks) {
                 kpvalue = pair.formattedValue;
                 if (kpvalue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_KPHASE, kpvalue);
+                    $(".checkedkphase").text("Key Partnerships - Research Phase: " + kpvalue).addClass("closebutton");
+                    $(".checkedkphase").css('margin-top', '3px').css('margin-bottom', '3px');
+                    $(".checkedkphase").show();
+                    $(".checkedkphase, .clearfilters").on('click', clearKphase);
                 }
             }
         }
@@ -304,6 +314,7 @@ function selectedKtype(marks) {
         kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_KTYPE);
+    $(".checkedktype").hide();
 
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
         var pairs = marks[markIndex].getPairs();
@@ -313,6 +324,10 @@ function selectedKtype(marks) {
                 ktvalue = pair.formattedValue;
                 if (ktvalue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_KTYPE, ktvalue);
+                    $(".checkedktype").text("Key Partnerships - Partner Type: " + ktvalue).addClass("closebutton");
+                    $(".checkedktype").css('margin-top', '3px').css('margin-bottom', '3px');
+                    $(".checkedktype").show();
+                    $(".checkedktype, .clearfilters").on('click', clearKtype);
                 }
             }
         }
@@ -326,31 +341,66 @@ function selectedKtype(marks) {
 function clearCRPfilters() {
     var sheetsArray = [
         totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-            tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET),
-            tprp.getWorkbook().getActiveSheet().getWorksheets().get(TPRP_SHEET),
-            totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
-            keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
-            kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-            kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
+        tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET),
+        tprp.getWorkbook().getActiveSheet().getWorksheets().get(TPRP_SHEET),
+        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
+        keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
+        kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
+        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
     $('.portfolio').text('All CRPs');
-  };
+};
 
 
 //   Clear Year  
 function clearYearsfilters() {
     var sheetsArray = [
         totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-            tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET),
-            tprp.getWorkbook().getActiveSheet().getWorksheets().get(TPRP_SHEET),
-            totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
-            keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
-            kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-            kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
+        tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET),
+        tprp.getWorkbook().getActiveSheet().getWorksheets().get(TPRP_SHEET),
+        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
+        keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
+        kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
+        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
     $('.years').text('All Years');
     $(".checkedyears").hide();
-  };
+};
+
+function clearTphase() {
+    var sheetsArray = [
+        totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
+        tprp.getWorkbook().getActiveSheet().getWorksheets().get(TPRP_SHEET)
+    ];
+    var sheet = tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET);
+    sheet.clearSelectedMarksAsync();
+    clearDashboardFilter(sheetsArray, FILTER_TSTAGE);
+    $(".checkedtphase").hide();
+};
+
+function clearKphase() {
+    var sheetsArray = [
+        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
+        kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
+        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
+    ];
+    var sheet = keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET);
+    sheet.clearSelectedMarksAsync();
+    clearDashboardFilter(sheetsArray, FILTER_KPHASE);
+    $(".checkedkphase").hide();
+};
+
+function clearKtype() {
+    var sheetsArray = [
+        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
+        keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
+        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
+    ];
+    var sheet = kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET);
+    sheet.clearSelectedMarksAsync();
+    clearDashboardFilter(sheetsArray, FILTER_KTYPE);
+    $(".checkedktype").hide();
+};

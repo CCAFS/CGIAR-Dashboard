@@ -257,6 +257,10 @@ function init() {
         ];
 
         appyDashboardFilter(sheetsArray, "Degree of Innovation", "Adaptive");
+        $(".checkeddegree").text("Degree of Innovation: " + "Adaptive").addClass("closebutton");
+        $(".checkeddegree").css('margin-top', '3px').css('margin-bottom', '3px');
+        $(".checkeddegree").show();
+        $(".checkeddegree, .clearfilters").on('click', clearAdaptativefilters);
 
     });
 
@@ -269,6 +273,10 @@ function init() {
         ];
 
         appyDashboardFilter(sheetsArray, "Degree of Innovation", "Novel");
+        $(".checkeddegree").text("Degree of Innovation: " + "Novel").addClass("closebutton");
+        $(".checkeddegree").css('margin-top', '3px').css('margin-bottom', '3px');
+        $(".checkeddegree").show();
+        $(".checkeddegree, .clearfilters").on('click', clearNovelfilters);
 
     });
 
@@ -477,4 +485,28 @@ function clearMapfilters() {
     $(".checkedcountry").hide();
     var mapsheet = iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET);
     mapsheet.clearSelectedMarksAsync();
+};
+
+
+function clearNovelfilters() {
+    var sheetsArray = [
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+        totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+    ];
+    clearDashboardFilter(sheetsArray, "Degree of Innovation");
+    $(".checkeddegree").hide();
+};
+
+
+function clearAdaptativefilters() {
+    var sheetsArray = [
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+        totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+    ];
+    clearDashboardFilter(sheetsArray, "Degree of Innovation");
+    $(".checkeddegree").hide();
 };
