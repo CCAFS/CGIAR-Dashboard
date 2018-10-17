@@ -16,7 +16,7 @@
       'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js',
       "./js/libs/tableau/tableau-2.2.2.min.js",
       "./js/libs/sly/sly.min.js",
-      "./js/papers.js"
+      "./js/papers.js?20181017"
     ]
   }
 %}
@@ -27,6 +27,12 @@
 {% include './pages/main-menu.twig' with pageParams %}
 <div class="container">
   <div class="main-content">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    This section contains CCAFS Publications <b>only</b> for now.
+    </div>
       <div class="alert alert-dark selection">
       <div class="checkedfilters clearfilters">Clear all filters</div>
       <div class="checkedfilters checkedyears"></div>

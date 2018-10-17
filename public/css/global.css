@@ -621,3 +621,9 @@ ul#pills-tab{
   font-size: 12px;
   width: 230px;
 }
+
+.alert-warning {
+  color: #c0ae90;
+  background-color: #faf5e7;
+  border-color: #ece8da;
+}
