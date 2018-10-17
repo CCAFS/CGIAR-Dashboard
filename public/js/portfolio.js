@@ -115,7 +115,7 @@ function init() {
   map1 = new tableau.Viz(mapcontainerDiv, mapurl, mapoptions);
 
   //Regions map  
-  var rmapcontainerDiv = document.getElementById("map-2"),
+ /* var rmapcontainerDiv = document.getElementById("map-2"),
     rmapurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1DBMap-RegionScope",
     rmapoptions = {
       hideTabs: true,
@@ -128,7 +128,7 @@ function init() {
         rmap.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksRegions);
       }
     };
-  rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);
+  rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);*/
 
 
   //OICs list

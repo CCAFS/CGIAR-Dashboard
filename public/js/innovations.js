@@ -281,7 +281,7 @@ function init() {
     });
 
 
-    /*var input = document.getElementById("myText");
+    var input = document.getElementById("myText");
         input.addEventListener("keyup", function(event) {
         event.preventDefault();
         var value = document.getElementById("myText").value;
@@ -290,13 +290,19 @@ function init() {
           console.log(name);
           searchTitle(value);
         }
-    });*/
+    });
 
 }
 
 /*************************** Tableau Functions *******************************/
 
 function appyDashboardFilter(sheetsArray, filterName, filterValues) {
+    $.each(sheetsArray, function (i, e) {
+        e.applyFilterAsync(filterName, filterValues, tableau.FilterUpdateType.REPLACE);
+    });
+}
+
+function appySearchFilter(sheetsArray, filterName, filterValues) {
     $.each(sheetsArray, function (i, e) {
         e.applyFilterAsync(filterName, filterValues, tableau.FilterUpdateType.REPLACE);
     });
@@ -322,14 +328,14 @@ function selectMarksMap(marksEvent) {
     return marksEvent.getMarksAsync().then(selectedMarksMap);
 }
 
-function searchTitle(value){
+/*function searchTitle(value){
     var v = value;
     var sheetsArray = [
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET)
     ];
 
-    appyDashboardFilter(sheetsArray, "Title of Innovation", v);
-}
+    appySearchFilter(sheetsArray, "Title of Innovation", v);
+}*/
 
 function selectedMarksStage(marks) {
     var sheetsArray = [
