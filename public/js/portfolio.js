@@ -28,8 +28,6 @@ $(document).ready(init);
 
 function init() {
 
-  $(".close").hide();
-
   $('input[type="radio"]').on('change', function () {
     var filterType = $(this).attr('name');
     var $checkedInputs = $("input[name='" + filterType + "']:checked");

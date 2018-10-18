@@ -281,7 +281,7 @@ function init() {
     });
 
 
-    var input = document.getElementById("myText");
+   /* var input = document.getElementById("myText");
         input.addEventListener("keyup", function(event) {
         event.preventDefault();
         var value = document.getElementById("myText").value;
@@ -290,7 +290,7 @@ function init() {
           console.log(name);
           searchTitle(value);
         }
-    });
+    });*/
 
 }
 

@@ -26,6 +26,7 @@
 {% include './pages/main-menu.twig' with pageParams %}
 <div class="container">
   <div class="main-content">
+  {% include './pages/message.twig' %}
   <div class="alert alert-dark selection">
   <div class="checkedfilters clearfilters">Clear all filters</div>
   <div class="checkedfilters checkedyears"></div>
@@ -46,7 +47,7 @@
                       </div>
        </div>
       <div class="col-md-5">
-        <h6 class="subTitle">Progress Towards SLOs/CCI</h6>
+        <h6 class="subTitle">Progress Towards CGIAR Objectives</h6>
         <div class="donut-container">
           <div id="chart-2"></div>
         </div>
