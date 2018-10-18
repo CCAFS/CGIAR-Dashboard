@@ -155,7 +155,6 @@ function init() {
       onFirstInteractive: function () {
         $('#chart-2 iframe').attr("scrolling", "no");
         $('#chart-2 iframe').css('overflow', 'hidden');
-        $("#chart-2 iframe").prop("scrolling", "no");
         chart2.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSLOsBar);
         chart2.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksCCIBar);
       }

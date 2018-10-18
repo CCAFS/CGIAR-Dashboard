@@ -3,8 +3,8 @@ var FILTER_YEAR = "Year";
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
 var FILTER_MAP = "Country Name";
-var FILTER_OA = "Open Access?";
-var FILTER_ISI = "ISI Journal?";
+var FILTER_OA = "Open Access ? ";
+var FILTER_ISI = "ISI Journal ? ";
 var TP_SHEET = "5.1 SH Total Papers";
 var OA_SHEET = "5.4 SH Percent of OA ";
 var ISI_SHEET = "5.5 SH Percent of ISI";
@@ -31,6 +31,9 @@ function init() {
             plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
         ];
 
+        var view = oaisi.getWorkbook().getActiveSheet().getWorksheets();
+        worksheet = view[0];
+        console.log(worksheet);
 
         switch (filterType) {
             case "crps":
@@ -184,6 +187,7 @@ function selectedOABar(marks) {
         plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_OA);
+    $(".checkedoa").hide();
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
         var pairs = marks[markIndex].getPairs();
         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
@@ -192,6 +196,10 @@ function selectedOABar(marks) {
                 oaValue = pair.formattedValue;
                 if (oaValue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_OA, oaValue);
+                    $(".checkedoa").text("Open Acces Publications").addClass("closebutton");
+                    $(".checkedoa").css('margin-top', '3px').css('margin-bottom', '3px');
+                    $(".checkedoa").show();
+                    $(".checkedoa, .clearfilters").on('click', clearOAfilters);
                 }
             }
         }
@@ -205,16 +213,20 @@ function selectedISIBar(marks) {
         oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OABAR_SHEET),
         plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
     ];
+    $(".checkedisi").hide();
     clearDashboardFilter(sheetsArray, FILTER_ISI);
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
         var pairs = marks[markIndex].getPairs();
         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
             var pair = pairs[pairIndex];
-            console.log(pair);
             if (pair.fieldName == FILTER_ISI) {
                 isiValue = pair.formattedValue;
                 if (isiValue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_ISI, isiValue);
+                    $(".checkedisi").text("ISI Publications").addClass("closebutton");
+                    $(".checkedisi").css('margin-top', '3px').css('margin-bottom', '3px');
+                    $(".checkedisi").show();
+                    $(".checkedisi, .clearfilters").on('click', clearISIfilters);
                 }
             }
         }
@@ -253,4 +265,31 @@ function clearYearsfilters() {
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
     $('.years').text('All Years');
     $(".checkedyears").hide();
+};
+
+//Clear OA
+function clearOAfilters() {
+    var sheetsArray = [
+        totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
+        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(ISIBAR_SHEET),
+        plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_OA);
+    $(".checkedoa").hide();
+    var oasheet = oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OABAR_SHEET);
+    oasheet.clearSelectedMarksAsync();
+};
+
+
+//Clear ISI
+function clearISIfilters() {
+    var sheetsArray = [
+        totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
+        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OABAR_SHEET),
+        plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_ISI);
+    $(".checkedisi").hide();
+    var isisheet = oaisi.getWorkbook().getActiveSheet().getWorksheets().get(ISIBAR_SHEET);
+    isisheet.clearSelectedMarksAsync();
 };
