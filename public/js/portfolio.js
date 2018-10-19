@@ -767,6 +767,6 @@ function clearSDGfilters() {
   ];
   clearDashboardFilter(sheetsArray, FILTER_SDG);
   $(".checkedsdg").hide();
-  var sdgsheet = sdgs.getWorkbook().getActiveSheet().getWorksheets().get(FILTER_SDG);
+  var sdgsheet = sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET);
   sdgsheet.clearSelectedMarksAsync();
 };
