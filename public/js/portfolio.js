@@ -9,7 +9,8 @@ var FILTER_CCI = "CCI";
 var FILTER_GENDER = "Gender Relevance";
 var FILTER_YOUTH = "Youth Relevance";
 var FILTER_CAPACITY = "Capdev Relev";
-var FILTER_MATURITY = "Maturities Stage";
+var FILTER_MATURITY = "Stage of Maturity";
+var FILTER_SDG = "Sdg Short Name";
 var GLOBAL_SHEET = "1.2.1 SH OICS Global Count";
 var CMAP_SHEET = "1.2.1 SH Map Option 2"
 var RMAP_SHEET = "1.2.1 SH OICS Map-Region"
@@ -21,6 +22,7 @@ var YOUTH_SHEET = "1.1.8 Youth relevance count ";
 var CAPDEV_SHEET = "1.1.9 CapDev relevance count";
 var COUNT_SHEET = "1.1.3 SH - OICS Count";
 var MATURITY_SHEET = "1.1.10 SH OICS by Maturity";
+var SDGS_SHEET = "1.11 SH OICS SDG Perc";
 
 $(document).ready(init);
 
@@ -49,7 +51,8 @@ function init() {
       ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
       ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
       ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
-      mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET)
+      mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
+      sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
     ];
 
     switch (filterType) {
@@ -113,20 +116,20 @@ function init() {
   map1 = new tableau.Viz(mapcontainerDiv, mapurl, mapoptions);
 
   //Regions map  
- /* var rmapcontainerDiv = document.getElementById("map-2"),
-    rmapurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1DBMap-RegionScope",
-    rmapoptions = {
-      hideTabs: true,
-      hideToolbar: true,
-      width: '100%',
-      height: '100%',
-      onFirstInteractive: function () {
-        $('#map-2 iframe').attr("scrolling", "no");
-        $('#map-2 iframe').css('overflow', 'hidden');
-        rmap.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksRegions);
-      }
-    };
-  rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);*/
+  /* var rmapcontainerDiv = document.getElementById("map-2"),
+     rmapurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1DBMap-RegionScope",
+     rmapoptions = {
+       hideTabs: true,
+       hideToolbar: true,
+       width: '100%',
+       height: '100%',
+       onFirstInteractive: function () {
+         $('#map-2 iframe').attr("scrolling", "no");
+         $('#map-2 iframe').css('overflow', 'hidden');
+         rmap.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksRegions);
+       }
+     };
+   rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);*/
 
 
   //OICs list
@@ -208,7 +211,7 @@ function init() {
       onFirstInteractive: function () {
         $('#sdg-s iframe').attr("scrolling", "no");
         $('#sdg-s iframe').css('overflow', 'hidden');
-        //sdgs.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksMaturity);
+        sdgs.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSDGs);
       }
     };
   sdgs = new tableau.Viz(msdiv, mspurl, msoptions);
@@ -275,6 +278,10 @@ function selectMarksMaturity(marksEvent) {
   return marksEvent.getMarksAsync().then(selectedMaturity);
 }
 
+function selectMarksSDGs(marksEvent) {
+  return marksEvent.getMarksAsync().then(selectedSDG);
+}
+
 // MAP FILTER
 function reportSelectedMarks(marks) {
   var sheetsArray = [
@@ -285,7 +292,8 @@ function reportSelectedMarks(marks) {
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
-    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET)
+    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
+    sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_COUNTRY);
   $(".checkedregion").hide();
@@ -324,7 +332,8 @@ function selectedMarksSLOsBar(marks) {
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
-    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET)
+    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
+    sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_SLO);
   $(".checkedslo").hide();
@@ -336,7 +345,7 @@ function selectedMarksSLOsBar(marks) {
         sloValue = pair.formattedValue;
         if (sloValue != null) {
           appyDashboardFilter(sheetsArray, FILTER_SLO, sloValue);
-          $(".checkedslo").text("SLO: " + sloValue).addClass("closebutton");
+          $(".checkedslo").text("System Level Outcome: " + sloValue).addClass("closebutton");
           $(".checkedslo").css('margin-top', '3px').css('margin-bottom', '3px');
           $(".checkedslo").show();
           $(".checkedslo, .clearfilters").on('click', clearSLOfilters);
@@ -355,7 +364,8 @@ function selectedMarksCCIBar(marks) {
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
-    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET)
+    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
+    sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_CCI);
   $(".checkedcci").hide();
@@ -369,7 +379,7 @@ function selectedMarksCCIBar(marks) {
         cciValue = pair.formattedValue;
         if (cciValue != null) {
           appyDashboardFilter(sheetsArray, FILTER_CCI, cciValue);
-          $(".checkedcci").text("CCI: " + cciValue).addClass("closebutton");
+          $(".checkedcci").text("Cross-Cutting Issue: " + cciValue).addClass("closebutton");
           $(".checkedcci").css('margin-top', '3px').css('margin-bottom', '3px');
           $(".checkedcci").show();
           $(".checkedcci, .clearfilters").on('click', clearCCIfilters);
@@ -387,7 +397,8 @@ function selectedGR(marks) {
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
-    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET)
+    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
+    sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_GENDER);
   $(".checkedgender").hide();
@@ -417,7 +428,8 @@ function selectedYR(marks) {
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
-    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET)
+    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
+    sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_YOUTH);
   $(".checkedyouth").hide();
@@ -447,7 +459,8 @@ function selectedCD(marks) {
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
-    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET)
+    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
+    sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_CAPACITY);
   $(".checkedcapdev").hide();
@@ -511,7 +524,8 @@ function selectedMaturity(marks) {
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET)
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
+    sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_MATURITY);
   $(".chceckedmatstage").hide();
@@ -524,10 +538,45 @@ function selectedMaturity(marks) {
         msValue = pair.formattedValue;
         if (msValue != null) {
           appyDashboardFilter(sheetsArray, FILTER_MATURITY, msValue);
-            $(".chceckedmatstage").text("Maturity Stage: " + msValue).addClass("closebutton");
-            $(".chceckedmatstage").css('margin-top', '3px').css('margin-bottom', '3px');
-            $(".chceckedmatstage").show();
-            $(".chceckedmatstage, .clearfilters").on('click', clearMStagefilters);
+          $(".chceckedmatstage").text("Maturity Stage: " + msValue).addClass("closebutton");
+          $(".chceckedmatstage").css('margin-top', '3px').css('margin-bottom', '3px');
+          $(".chceckedmatstage").show();
+          $(".chceckedmatstage, .clearfilters").on('click', clearMStagefilters);
+        }
+      }
+    }
+  }
+}
+
+
+//SDG FILTER
+function selectedSDG(marks) {
+  var sheetsArray = [
+    map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET),
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
+    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET)
+  ];
+  clearDashboardFilter(sheetsArray, FILTER_SDG);
+  $(".checkedsdg").hide();
+
+  for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+    var pairs = marks[markIndex].getPairs();
+    for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+      var pair = pairs[pairIndex];
+      if (pair.fieldName == FILTER_SDG) {
+        sdgValue = pair.formattedValue;
+        if (sdgValue != null) {
+          appyDashboardFilter(sheetsArray, FILTER_SDG, sdgValue);
+          $(".checkedsdg").text("Sustainable Development: " + sdgValue).addClass("closebutton");
+          $(".checkedsdg").css('margin-top', '3px').css('margin-bottom', '3px');
+          $(".checkedsdg").show();
+          $(".checkedsdg, .clearfilters").on('click', clearSDGfilters);
         }
       }
     }
@@ -702,4 +751,22 @@ function clearMStagefilters() {
   $(".chceckedmatstage").hide();
   var msheet = mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET);
   msheet.clearSelectedMarksAsync();
+};
+
+function clearSDGfilters() {
+  var sheetsArray = [
+    map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET),
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
+    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET)
+  ];
+  clearDashboardFilter(sheetsArray, FILTER_SDG);
+  $(".checkedsdg").hide();
+  var sdgsheet = sdgs.getWorkbook().getActiveSheet().getWorksheets().get(FILTER_SDG);
+  sdgsheet.clearSelectedMarksAsync();
 };
