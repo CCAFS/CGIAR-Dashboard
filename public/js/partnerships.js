@@ -6,7 +6,6 @@ var FILTER_KPHASE = "Name (Dim Research Phases)";
 var FILTER_KTYPE = "Partner Type";
 var TP_SHEET = "3.4 Total Partnerships Count ";
 var TPPHASE_SHEET = "3.6 Total Partnerships Donut";
-var TPRP_SHEET = "3.5 Total Partnerships by Phase and CRP";
 var TKP_SHEET = "Key Partnerships Count";
 var KPPHASE_SHEET = "3.3 SH Key Partnership by Type and Phase";
 var KPTYPE_SHEET = "3.1 SH Key Partnership by Type-Heatmap";
@@ -25,7 +24,6 @@ function init() {
         var sheetsArray = [
             totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
             tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET),
-            tprp.getWorkbook().getActiveSheet().getWorksheets().get(TPRP_SHEET),
             totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
             keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
             kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
@@ -103,22 +101,6 @@ function init() {
             }
         };
     tpphase = new tableau.Viz(tpphasediv, tpphaseurl, tpphaseoptions);
-
-    //Total Partnerships by research program
-    var tprpdiv = document.getElementById("total-prp"),
-        tprpurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/3_3DBTotalPartbyStageandProgramType",
-        tprpoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-                $('#total-prp iframe').attr("scrolling", "no");
-                $('#total-prp iframe').css('overflow', 'hidden');
-                tprp.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksTphasep);
-            }
-        };
-    tprp = new tableau.Viz(tprpdiv, tprpurl, tprpoptions);
 
 
     //Total Key Partnerships
@@ -209,10 +191,6 @@ function selectMarksTphase(marksEvent) {
     return marksEvent.getMarksAsync().then(selectedTphase);
 }
 
-function selectMarksTphasep(marksEvent) {
-    return marksEvent.getMarksAsync().then(selectedTphasep);
-}
-
 function selectMarksKphase(marksEvent) {
     return marksEvent.getMarksAsync().then(selectedKphase);
 }
@@ -227,7 +205,6 @@ function selectedTphase(marks) {
 
     var sheetsArray = [
         totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-        tprp.getWorkbook().getActiveSheet().getWorksheets().get(TPRP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_TSTAGE);
     $(".checkedtphase").hide();
@@ -244,31 +221,6 @@ function selectedTphase(marks) {
                     $(".checkedtphase").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedtphase").show();
                     $(".checkedtphase, .clearfilters").on('click', clearTphase);
-                }
-            }
-        }
-    }
-}
-
-
-
-//Total partnerships phase and program filter
-function selectedTphasep(marks) {
-
-    var sheetsArray = [
-        totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-        tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET)
-    ];
-    clearDashboardFilter(sheetsArray, FILTER_TSTAGEP);
-
-    for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-        var pairs = marks[markIndex].getPairs();
-        for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
-            var pair = pairs[pairIndex];
-            if (pair.fieldName == FILTER_TSTAGEP) {
-                tppvalue = pair.formattedValue;
-                if (tppvalue != null) {
-                    appyDashboardFilter(sheetsArray, FILTER_TSTAGEP, tppvalue);
                 }
             }
         }
@@ -342,7 +294,6 @@ function clearCRPfilters() {
     var sheetsArray = [
         totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
         tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET),
-        tprp.getWorkbook().getActiveSheet().getWorksheets().get(TPRP_SHEET),
         totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
         keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
         kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
@@ -359,7 +310,6 @@ function clearYearsfilters() {
     var sheetsArray = [
         totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
         tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET),
-        tprp.getWorkbook().getActiveSheet().getWorksheets().get(TPRP_SHEET),
         totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
         keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
         kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
@@ -373,7 +323,6 @@ function clearYearsfilters() {
 function clearTphase() {
     var sheetsArray = [
         totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-        tprp.getWorkbook().getActiveSheet().getWorksheets().get(TPRP_SHEET)
     ];
     var sheet = tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET);
     sheet.clearSelectedMarksAsync();
