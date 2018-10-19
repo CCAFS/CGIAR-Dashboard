@@ -42,6 +42,10 @@
   background-color: #a4dbea;
 }
 
+.squarecuatro {
+  background-color: #d1e5eb;
+}
+
 .phases {
   margin-bottom: 6px;
   font-size: 11px;
@@ -56,6 +60,7 @@
   font-size: 14px;
   font-weight: 500;
   color: #646464;
+  margin-bottom: 10px;
 }
 
 
