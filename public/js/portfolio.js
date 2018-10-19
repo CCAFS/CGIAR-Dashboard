@@ -197,6 +197,22 @@ function init() {
     };
   mstage = new tableau.Viz(msdiv, mspurl, msoptions);
 
+  //SDGs
+  var msdiv = document.getElementById("sdg-s"),
+    mspurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_11DBOICSSDGPerc",
+    msoptions = {
+      hideTabs: true,
+      hideToolbar: true,
+      width: '100%',
+      height: '100%',
+      onFirstInteractive: function () {
+        $('#sdg-s iframe').attr("scrolling", "no");
+        $('#sdg-s iframe').css('overflow', 'hidden');
+        //sdgs.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksMaturity);
+      }
+    };
+  sdgs = new tableau.Viz(msdiv, mspurl, msoptions);
+
 }
 
 /*************************** Tableau Functions *******************************/

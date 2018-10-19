@@ -1,0 +1,61 @@
+.ptype-container {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 330px;
+}
+
+.pstage-container {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 330px;
+}
+
+.ptotal-container {
+  background-color: #f1f1f1;
+  width: 100%;
+  height: 100px;
+}
+
+.ptable-container {
+  background-color: #f5f5f5;
+  width: 1057px;
+  height: 350px;
+}
+
+.square {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  float: left;
+  margin-right: 2px; 
+}
+
+.squareuno {
+  background-color: #137bb7;
+}
+
+.squaredos {
+  background-color: #6eaecd;
+}
+
+.squaretres {
+  background-color: #a4dbea;
+}
+
+.phases {
+  margin-bottom: 6px;
+  font-size: 11px;
+  color: #797979;
+  font-weight: normal;
+  margin-top: -3px;
+}
+
+.legend{
+  height: 90px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  color: #646464;
+}
+
+

@@ -1,0 +1,43 @@
+.map-container {
+    background-color: #f5f5f5;
+    padding: 0.5em;
+    height: 390px;
+}
+  
+.donut-container {
+    background-color: #f5f5f5;
+    height: 390px;
+    width: 422px;
+}
+  
+.maturity-container {
+    background-color: #f5f5f5;
+    height: 330px;
+    width: 422px;
+}
+  
+.cross-container {
+    background-color: #f5f5f5;
+    height: 330px;
+}
+  
+.case-chartcont {
+    background-color: #f5f5f5;
+    width: 325px;
+    height: 290px;
+}
+
+.ccip-cont {
+    background-color: #f5f5f5;
+    height: 100px;
+}
+
+.sdg-container {
+    background-color: #f5f5f5;
+    height: 135px;
+}
+
+.list-content {
+    background-color: #f5f5f5;
+    height: 400px;
+  }
