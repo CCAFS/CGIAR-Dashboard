@@ -2,7 +2,7 @@ var chart1, map1, cci1, oicslist, chart2;
 var FILTER_CRPS = "CRP";
 var FILTER_YEAR = "Year";
 var FILTER_COUNTRY = "Country Name";
-var FILTER_REGION = "Reg Un Name (Dim Locations1)";
+var FILTER_REGION = "Name (Dim Geo Scopes)";
 var FILTER_GLOBAL = "Reg Un Name";
 var FILTER_SLO = "SLO";
 var FILTER_CCI = "CCI";
@@ -12,6 +12,7 @@ var FILTER_CAPACITY = "Capdev Relev";
 var FILTER_MATURITY = "Stage of Maturity";
 var FILTER_SDG = "Sdg Short Name";
 var GLOBAL_SHEET = "1.2.1 SH OICS Global Count";
+var REGIONAL_SHEET = "1.2.1 SH OICS Regional Count";
 var CMAP_SHEET = "1.2.1 SH Map Option 2"
 var RMAP_SHEET = "1.2.1 SH OICS Map-Region"
 var SLO_SHEET = "1.1.5 SH SLO Bar1";
@@ -37,13 +38,15 @@ function init() {
     var checkedValues = $.map($checkedInputs, function (e) { return e.value })
     console.log(filterType, checkedValues);
 
-    /*var view = mstage.getWorkbook().getActiveSheet().getWorksheets();
-    worksheet = view[0];
+    /*var view = map1.getWorkbook().getActiveSheet().getWorksheets();
+    worksheet = view[2];
     console.log(worksheet);*/
 
 
     var sheetsArray = [
       map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET),
+      map1.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+      map1.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
       oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
       chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
       chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
@@ -301,6 +304,7 @@ function reportSelectedMarks(marks) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
+      console.log(pair);
       if (pair.fieldName == FILTER_COUNTRY) {
         regValue = pair.formattedValue;
         appyDashboardFilter(sheetsArray, FILTER_COUNTRY, regValue);
@@ -316,6 +320,15 @@ function reportSelectedMarks(marks) {
           $(".checkedregion").css('margin-top', '3px').css('margin-bottom', '3px');
           $(".checkedregion").show();
           $(".checkedregion, .clearfilters").on('click', clearGlobalfilters);
+        }
+      } else if (pair.fieldName == FILTER_REGION) {
+        regValue = pair.formattedValue;
+        if (regValue == "Regional") {
+          appyDashboardFilter(sheetsArray, FILTER_REGION, regValue);
+          $(".checkedregion").text("Scope: " + regValue).addClass("closebutton");
+          $(".checkedregion").css('margin-top', '3px').css('margin-bottom', '3px');
+          $(".checkedregion").show();
+          $(".checkedregion, .clearfilters").on('click', clearRegionalfilters);
         }
       }
     }
@@ -483,7 +496,7 @@ function selectedCD(marks) {
 }
 
 
-// REGIONAL MAP FILTER
+/*// REGIONAL MAP FILTER
 function selectedRegions(marks) {
   var sheetsArray = [
     oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
@@ -512,7 +525,7 @@ function selectedRegions(marks) {
       }
     }
   }
-}
+}*/
 
 
 
@@ -658,6 +671,25 @@ function clearGlobalfilters() {
   $(".checkedregion").hide();
   var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET);
   mapsheet.clearSelectedMarksAsync();
+};
+
+
+function clearRegionalfilters() {
+  var sheetsArray = [
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
+    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
+    sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
+  ];
+  clearDashboardFilter(sheetsArray, FILTER_REGION);
+  $(".checkedregion").hide();
+  var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET);
+   mapsheet.clearSelectedMarksAsync();
 };
 
 
