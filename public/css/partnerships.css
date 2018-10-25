@@ -54,13 +54,15 @@
   margin-top: -3px;
 }
 
-.legend{
+.legend {
   height: 90px;
   font-family: Montserrat;
   font-size: 14px;
   font-weight: 500;
   color: #646464;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-
+.legend-title {
+  margin-bottom: 5px; 
+}
