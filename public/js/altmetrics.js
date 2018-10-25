@@ -1,3 +1,15 @@
+var FILTER_CRPS = "CRP";
+var FILTER_YEAR = "Year";
+var TOTAL_SHEET = "6.0 SH Altmetrics Total Titles";
+var MENDELEY_SHEET = "6.3 SH Altm Mendeley";
+var TWITTER_SHEET = "6.3 SH Altm Twitter";
+var FACEBOOK_SHEET = "6.3 SH Altm Facebook";
+var BLOG_SHEET = "6.3 SH Altm Blogs";
+var NEWS_SHEET = "6.3 SH Altm News";
+var POLICIES_SHEET = "6.3 SH Altm Policy";
+var TOPTEN_SHEET = "6.2 SH Altmetric Detail - Top10";
+var LIST_SHEET = "6.1 SH Altmetric Detail";
+
 $(document).ready(init);
 
 function init() {
@@ -9,11 +21,19 @@ function init() {
         var checkedValues = $.map($checkedInputs, function (e) { return e.value })
 
         var sheetsArray = [
-        ];
+            totalalt.getWorkbook().getActiveSheet().getWorksheets().get(TOTAL_SHEET),
+            altmen.getWorkbook().getActiveSheet().getWorksheets().get(MENDELEY_SHEET),
+            altmen.getWorkbook().getActiveSheet().getWorksheets().get(TWITTER_SHEET),
+            altmen.getWorkbook().getActiveSheet().getWorksheets().get(FACEBOOK_SHEET),
+            altmen.getWorkbook().getActiveSheet().getWorksheets().get(BLOG_SHEET),
+            altmen.getWorkbook().getActiveSheet().getWorksheets().get(NEWS_SHEET),
+            altmen.getWorkbook().getActiveSheet().getWorksheets().get(POLICIES_SHEET),
+            allaltmetrcis.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
+        ]; 
 
         switch (filterType) {
             case "crps":
-                /*if (checkedValues == 'All') {
+                if (checkedValues == 'All') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_CRPS);
                     $filterTitle.text(checkedValues + " CRPs");
@@ -27,11 +47,11 @@ function init() {
                     $(".checkedcrps").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedcrps").show();
                     $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);
-                }*/
+                }
 
                 break;
             case "years":
-                /*if (checkedValues == 'All') {
+                if (checkedValues == 'All') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_YEAR);
                     $filterTitle.text(checkedValues + " Years");
@@ -45,7 +65,7 @@ function init() {
                     $(".checkedyears").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedyears").show();
                     $(".closebutton, .clearfilters").on('click', clearYearsfilters);
-                }*/
+                }
                 break;
             default:
         }
@@ -64,7 +84,6 @@ function init() {
             onFirstInteractive: function () {
                 $('#total-altmetrics iframe').attr("scrolling", "no");
                 $('#total-altmetrics iframe').css('overflow', 'hidden');
-                //totalalt.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksStage);
             }
         };
     totalalt = new tableau.Viz(taltdiv, talturl, taltoptions);
@@ -81,7 +100,6 @@ function init() {
             onFirstInteractive: function () {
                 $('#altmetrics-mentions iframe').attr("scrolling", "no");
                 $('#altmetrics-mentions iframe').css('overflow', 'hidden');
-                //altmen.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksStage);
             }
         };
     altmen = new tableau.Viz(altmdiv, altmurl, altmoptions);
@@ -97,7 +115,6 @@ function init() {
             onFirstInteractive: function () {
                 $('#topten-alt iframe').attr("scrolling", "no");
                 $('#topten-alt iframe').css('overflow', 'hidden');
-                //toptenalt.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksStage);
             }
         };
     toptenalt = new tableau.Viz(tenaltdiv, tenalturl, tenaltoptions);
@@ -114,12 +131,53 @@ function init() {
             onFirstInteractive: function () {
                 $('#all-altmetrics iframe').attr("scrolling", "no");
                 $('#all-altmetrics iframe').css('overflow', 'hidden');
-                //allaltmetrcis.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksStage);
             }
         };
     allaltmetrcis = new tableau.Viz(allaltdiv, allalturl, allaltoptions);
 
-
-
-
 }
+
+
+/*************************** Tableau Functions *******************************/
+
+//Apply filters
+function appyDashboardFilter(sheetsArray, filterName, filterValues) {
+    $.each(sheetsArray, function (i, e) {
+        e.applyFilterAsync(filterName, filterValues, tableau.FilterUpdateType.REPLACE);
+    });
+}
+
+//Clear filters 
+function clearDashboardFilter(sheetsArray, filterName) {
+    $.each(sheetsArray, function (i, e) {
+        e.clearFilterAsync(filterName);
+    });
+}
+
+function clearCRPfilters() {
+    var sheetsArray = [
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
+        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+        totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
+        totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_CRPS);
+    $(".checkedcrps").hide();
+    $('.portfolio').text('All CRPs');
+};
+
+function clearYearsfilters() {
+    var sheetsArray = [
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
+        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+        totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
+        totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_YEAR);
+    $('.years').text('All Years');
+    $(".checkedyears").hide();
+};
