@@ -6,11 +6,18 @@ header .title {
 
 .filter-component {
   float: right;
-  width: 145px;
   margin-top: 25px;
   margin-left: 11px;
   position: relative;
   z-index: 10;
+}
+
+.fyear {
+  width: 145px;
+}
+
+.fprogram {
+  width: 200px;
 }
 
 .filter-component .filter-title {

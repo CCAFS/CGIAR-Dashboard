@@ -28,8 +28,8 @@
           </div>
           <div class="col-md-5">
           <!-- Year -->
-            <div class="filter-component">
-              <p class="filter-title years">All Years</p>
+            <div class="filter-component fyear">
+              <p class="filter-title years">Years</p>
               <ul class="filter-items">
                 <li> {{ forms.checkmark('years', 'All' , 'All', true) }} </li>
                 {% for year in years %}
@@ -38,8 +38,8 @@
               </ul>
             </div>
              <!-- CRPs -->
-            <div class="filter-component">
-              <p class="filter-title portfolio">All CRPs</p>
+            <div class="filter-component fprogram">
+              <p class="filter-title portfolio">Research Program</p>
               <ul class="filter-items">
                 <li> {{ forms.checkmark('crps', 'All' , 'All', true) }} </li>
                 {% for crp in crps %}

@@ -616,7 +616,7 @@ function clearCRPfilters() {
   ];
   clearDashboardFilter(sheetsArray, FILTER_CRPS);
   $(".checkedcrps").hide();
-  $('.portfolio').text('All CRPs');
+  $('.portfolio').text('Research Program');
 };
 
 function clearYearsfilters() {

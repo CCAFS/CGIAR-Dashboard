@@ -52,6 +52,8 @@
   color: #797979;
   font-weight: normal;
   margin-top: -3px;
+  float: left;
+  margin-right: 20px; 
 }
 
 .legend {
@@ -59,10 +61,10 @@
   font-family: Montserrat;
   font-size: 14px;
   font-weight: 500;
-  color: #646464;
-  margin-bottom: 15px;
+  margin-bottom: -10px;
 }
 
 .legend-title {
+  color: #797979;
   margin-bottom: 5px; 
 }

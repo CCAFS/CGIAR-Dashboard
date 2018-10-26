@@ -156,26 +156,30 @@ function clearDashboardFilter(sheetsArray, filterName) {
 
 function clearCRPfilters() {
     var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
-        totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+        totalalt.getWorkbook().getActiveSheet().getWorksheets().get(TOTAL_SHEET),
+        altmen.getWorkbook().getActiveSheet().getWorksheets().get(MENDELEY_SHEET),
+        altmen.getWorkbook().getActiveSheet().getWorksheets().get(TWITTER_SHEET),
+        altmen.getWorkbook().getActiveSheet().getWorksheets().get(FACEBOOK_SHEET),
+        altmen.getWorkbook().getActiveSheet().getWorksheets().get(BLOG_SHEET),
+        altmen.getWorkbook().getActiveSheet().getWorksheets().get(NEWS_SHEET),
+        altmen.getWorkbook().getActiveSheet().getWorksheets().get(POLICIES_SHEET),
+        allaltmetrcis.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
-    $('.portfolio').text('All CRPs');
+    $('.portfolio').text('Research Program');
 };
 
 function clearYearsfilters() {
     var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
-        totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+        totalalt.getWorkbook().getActiveSheet().getWorksheets().get(TOTAL_SHEET),
+        altmen.getWorkbook().getActiveSheet().getWorksheets().get(MENDELEY_SHEET),
+        altmen.getWorkbook().getActiveSheet().getWorksheets().get(TWITTER_SHEET),
+        altmen.getWorkbook().getActiveSheet().getWorksheets().get(FACEBOOK_SHEET),
+        altmen.getWorkbook().getActiveSheet().getWorksheets().get(BLOG_SHEET),
+        altmen.getWorkbook().getActiveSheet().getWorksheets().get(NEWS_SHEET),
+        altmen.getWorkbook().getActiveSheet().getWorksheets().get(POLICIES_SHEET),
+        allaltmetrcis.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
     $('.years').text('All Years');
