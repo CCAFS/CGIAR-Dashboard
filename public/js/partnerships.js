@@ -8,7 +8,7 @@ var TP_SHEET = "3.4 Total Partnerships Count ";
 var TPPHASE_SHEET = "3.6 Total Partnerships Donut";
 var TKP_SHEET = "Key Partnerships Count";
 var KPPHASE_SHEET = "3.3 SH Key Partnership by Type and Phase";
-var KPTYPE_SHEET = "3.1 SH Key Partnership by Type-Heatmap";
+var KPTYPE_SHEET = "3.1 SH Key Partnership by Type-Bar chart";
 var KPLIST_SHEET = "3.2 SH List of Key External Partnerships";
 
 $(document).ready(init);
@@ -35,13 +35,13 @@ function init() {
                 if (checkedValues == 'All') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_CRPS);
-                    $filterTitle.text(checkedValues + " CRPs");
+                    $filterTitle.text(checkedValues + " Programs");
                     $(".checkedcrps").hide();
                 } else {
                     // Set filter to all sheets
                     appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValues);
                     $filterTitle.text(checkedValues);
-                    $(".checkedcrps").text("CRP: " + checkedValues).addClass("closebutton");
+                    $(".checkedcrps").text("Research Program: " + checkedValues).addClass("closebutton");
                     $(".checkedcrps").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedcrps").show();
                     $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);

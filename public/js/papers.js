@@ -40,13 +40,13 @@ function init() {
                 if (checkedValues == 'All') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_CRPS);
-                    $filterTitle.text(checkedValues + " CRPs");
+                    $filterTitle.text(checkedValues + " Programs");
                     $(".checkedcrps").hide();
                 } else {
                     // Set filter to all sheets
                     appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValues);
                     $filterTitle.text(checkedValues);
-                    $(".checkedcrps").text("CRP: " + checkedValues).addClass("closebutton");
+                    $(".checkedcrps").text("Research Program: " + checkedValues).addClass("closebutton");
                     $(".checkedcrps").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedcrps").show();
                     $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);
