@@ -43,10 +43,11 @@
               <ul class="filter-items">
                 <li> {{ forms.checkmark('crps', 'All' , 'All', true) }} </li>
                 {% for crp in crps %}
-                  <li> {{ forms.checkmark('crps', crp.acronym , crp.acronym) }} </li>
+                  <li> {{ forms.checkmark('crps', crp.acronym , crp.name) }} </li>
                 {% endfor %}
               </ul>
-            </div>
+            </div>            
+            <a href="https://www.cgiar.org/research/research-portfolio/" target="_blank"><div class="info-tooltip" title="About CGIAR Research Programs">?</div></a>
           </div>
         </div>
       </div>
