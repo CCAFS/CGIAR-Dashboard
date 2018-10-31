@@ -618,6 +618,7 @@ function clearCRPfilters() {
   clearDashboardFilter(sheetsArray, FILTER_CRPS);
   $(".checkedcrps").hide();
   $('.portfolio').text('Research Program');
+  $('input[name=crps]').prop('checked', false);
 };
 
 function clearYearsfilters() {
@@ -636,6 +637,7 @@ function clearYearsfilters() {
   clearDashboardFilter(sheetsArray, FILTER_YEAR);
   $('.years').text('All Years');
   $(".checkedyears").hide();
+  $('input[name=years]').prop('checked', false);
 };
 
 function clearCountryfilters() {

@@ -32,7 +32,7 @@
             <div class="filter-component fyear">
               <p class="filter-title years">Years</p>
               <ul class="filter-items">
-                <li> {{ forms.checkmark('years', 'All' , 'All', true) }} </li>
+                <li> {{ forms.checkmark('years', 'All' , 'All', false) }} </li>
                 {% for year in years %}
                   <li> {{ forms.checkmark('years', year, year) }} </li>
                 {% endfor %}
