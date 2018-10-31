@@ -36,7 +36,7 @@ function init() {
     var $checkedInputs = $("input[name='" + filterType + "']:checked");
     var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
     var checkedValues = $.map($checkedInputs, function (e) { return e.value })
-    console.log(filterType, checkedValues);
+    //console.log(filterType, checkedValues);
 
     /*var view = map1.getWorkbook().getActiveSheet().getWorksheets();
     worksheet = view[2];
@@ -220,6 +220,7 @@ function init() {
   sdgs = new tableau.Viz(msdiv, mspurl, msoptions);
 
 }
+
 
 /*************************** Tableau Functions *******************************/
 

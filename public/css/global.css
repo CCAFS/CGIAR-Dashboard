@@ -464,17 +464,15 @@ ul#pills-tab{
   font-size: 14px;
 }
 
-.info-tooltip {
-  background-color: #c2c1c1;
-  height: 15px;
-  width: 15px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  font-size: 60%;
-  text-align: center;
-  color: #ffffff;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-top: 8%;
-  margin-left: 50px; 
+.filterscont {
+  max-width: 100%;
+  position: fixed;
+  z-index: 1;
+  float: right;
+  margin-left: 75;
+}
+
+.filter-component{
+  background-color: #ffffff85;
+  padding: 3px;
 }
