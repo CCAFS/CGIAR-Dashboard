@@ -12,10 +12,10 @@ function init() {
 const showMsg = sessionStorage.getItem('showMsg');
 
 if(showMsg === 'false'){
-  $('.alert-dismissible').hide();
+  $('.page-disclaimer').hide();
 }
 
 $('.close').on('click', function(){
-  $('.alert-dismissible').fadeOut('slow');
+  $('.page-disclaimer').fadeOut('slow');
   sessionStorage.setItem('showMsg', 'false');
 });
