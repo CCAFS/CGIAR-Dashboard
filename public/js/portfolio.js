@@ -118,22 +118,6 @@ function init() {
     };
   map1 = new tableau.Viz(mapcontainerDiv, mapurl, mapoptions);
 
-  //Regions map  
-  /* var rmapcontainerDiv = document.getElementById("map-2"),
-     rmapurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1DBMap-RegionScope",
-     rmapoptions = {
-       hideTabs: true,
-       hideToolbar: true,
-       width: '100%',
-       height: '100%',
-       onFirstInteractive: function () {
-         $('#map-2 iframe').attr("scrolling", "no");
-         $('#map-2 iframe').css('overflow', 'hidden');
-         rmap.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksRegions);
-       }
-     };
-   rmap = new tableau.Viz(rmapcontainerDiv, rmapurl, rmapoptions);*/
-
 
   //OICs list
   var listcontainerDiv = document.getElementById("list-test"),
@@ -274,10 +258,6 @@ function selectMarksCD(marksEvent) {
   return marksEvent.getMarksAsync().then(selectedCD);
 }
 
-function selectMarksRegions(marksEvent) {
-  return marksEvent.getMarksAsync().then(selectedRegions);
-}
-
 function selectMarksMaturity(marksEvent) {
   return marksEvent.getMarksAsync().then(selectedMaturity);
 }
@@ -305,7 +285,6 @@ function reportSelectedMarks(marks) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
-      console.log(pair);
       if (pair.fieldName == FILTER_COUNTRY) {
         regValue = pair.formattedValue;
         appyDashboardFilter(sheetsArray, FILTER_COUNTRY, regValue);
@@ -383,8 +362,6 @@ function selectedMarksCCIBar(marks) {
   ];
   clearDashboardFilter(sheetsArray, FILTER_CCI);
   $(".checkedcci").hide();
-  //var ccisheet = cc1.getWorkbook().getActiveSheet();
-  //ccisheet.clearFilterAsync("SLO");
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
@@ -495,40 +472,6 @@ function selectedCD(marks) {
     }
   }
 }
-
-
-/*// REGIONAL MAP FILTER
-function selectedRegions(marks) {
-  var sheetsArray = [
-    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
-    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET)
-  ];
-  clearDashboardFilter(sheetsArray, FILTER_REGION);
-  // $(".checkedregion").hide();
-  for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-    var pairs = marks[markIndex].getPairs();
-    for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
-      var pair = pairs[pairIndex];
-      if (pair.fieldName == FILTER_REGION) {
-        regValue = pair.formattedValue;
-        console.log(regValue);
-        appyDashboardFilter(sheetsArray, FILTER_REGION, regValue);
-        // $(".checkedregion").text("Country: " + regValue).addClass("closebutton");
-        //  $(".checkedregion").css('margin-top', '3px').css('margin-bottom', '3px');
-        //  $(".checkedregion").show();
-        //  $(".checkedregion, .clearfilters").on('click', clearRegionfilters);
-      }
-    }
-  }
-}*/
-
-
 
 //MATURITY DONUT FILTER
 function selectedMaturity(marks) {
