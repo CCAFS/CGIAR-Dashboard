@@ -30,7 +30,7 @@
           <div class="filterscont">
           <!-- Year -->
             <div class="filter-component fyear">
-              <p class="filter-title years">Years</p>
+              <p id="filtertitley" class="filter-title years">Years</p>
               <ul class="filter-items">
                 <li> {{ forms.checkmark('years', 'All' , 'All', false) }} </li>
                 {% for year in years %}
@@ -40,7 +40,7 @@
             </div>
              <!-- CRPs -->
             <div class="filter-component fprogram">
-              <p class="filter-title portfolio">Research Program</p>
+              <p id="filtertitlec" class="filter-title portfolio">Research Program</p>
               <ul class="filter-items">
                 <li> {{ forms.checkmark('crps', 'All' , 'All', true) }} </li>
                 {% for crp in crps %}
