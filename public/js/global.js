@@ -24,8 +24,12 @@ setTimeout(enableinputs, 9000);
 // Close blue disclaimer in all sections 
 const showMsg = sessionStorage.getItem('showMsg');
 
+$('.page-disclaimer').hide();
+
 if(showMsg == 'false'){
   $('.page-disclaimer').hide();
+} else {
+  $('.page-disclaimer').show();
 }
 
 $('.close').on('click', function(){
