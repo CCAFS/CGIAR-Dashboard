@@ -1,3 +1,5 @@
+var LOADED = 0;
+
 var FILTER_CRPS = "CRP";
 var FILTER_YEAR = "Year";
 var TOTAL_SHEET = "6.0 SH Altmetrics Total Titles";
@@ -29,7 +31,7 @@ function init() {
             altmen.getWorkbook().getActiveSheet().getWorksheets().get(NEWS_SHEET),
             altmen.getWorkbook().getActiveSheet().getWorksheets().get(POLICIES_SHEET),
             allaltmetrcis.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
-        ]; 
+        ];
 
         switch (filterType) {
             case "crps":
@@ -82,8 +84,12 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#total-altmetrics iframe').attr("scrolling", "no");
                 $('#total-altmetrics iframe').css('overflow', 'hidden');
+
+                loaded();
             }
         };
     totalalt = new tableau.Viz(taltdiv, talturl, taltoptions);
@@ -98,8 +104,12 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#altmetrics-mentions iframe').attr("scrolling", "no");
                 $('#altmetrics-mentions iframe').css('overflow', 'hidden');
+
+                loaded();
             }
         };
     altmen = new tableau.Viz(altmdiv, altmurl, altmoptions);
@@ -113,8 +123,12 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#topten-alt iframe').attr("scrolling", "no");
                 $('#topten-alt iframe').css('overflow', 'hidden');
+
+                loaded();
             }
         };
     toptenalt = new tableau.Viz(tenaltdiv, tenalturl, tenaltoptions);
@@ -129,14 +143,26 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#all-altmetrics iframe').attr("scrolling", "no");
                 $('#all-altmetrics iframe').css('overflow', 'hidden');
+
+                loaded();
             }
         };
     allaltmetrcis = new tableau.Viz(allaltdiv, allalturl, allaltoptions);
 
 }
 
+//Hide "loading" when all charts have loaded 
+function loaded() {
+    LOADED += 1;
+    if (LOADED == 4) {
+        console.log(LOADED);
+        $("#loadingModal").modal('hide');
+    }
+}
 
 /*************************** Tableau Functions *******************************/
 

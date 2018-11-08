@@ -1,3 +1,5 @@
+var LOADED = 0;
+
 var FILTER_CRPS = "CRP";
 var FILTER_YEAR = "Year";
 var FILTER_STAGE = "Stage of Innovation";
@@ -30,10 +32,6 @@ function init() {
             oaisi.getWorkbook().getActiveSheet().getWorksheets().get(ISIBAR_SHEET),
             plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
         ];
-
-        var view = oaisi.getWorkbook().getActiveSheet().getWorksheets();
-        worksheet = view[0];
-        console.log(worksheet);
 
         switch (filterType) {
             case "crps":
@@ -83,8 +81,12 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                
+                //Hide scrollbars - disable scroll 
                 $('#total-papers iframe').attr("scrolling", "no");
                 $('#total-papers iframe').css('overflow', 'hidden');
+                
+                loaded();
             }
         };
     totalpapers = new tableau.Viz(papersdiv, papersurl, papersoptions);
@@ -98,8 +100,12 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#oa-papers iframe').attr("scrolling", "no");
                 $('#oa-papers iframe').css('overflow', 'hidden');
+                
+                loaded();
             }
         };
     oapapers = new tableau.Viz(oadiv, oaurl, oaoptions);
@@ -113,8 +119,12 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#isi-papers iframe').attr("scrolling", "no");
                 $('#isi-papers iframe').css('overflow', 'hidden');
+
+                loaded();
             }
         };
     isipapers = new tableau.Viz(isidiv, isiurl, isioptions);
@@ -128,10 +138,16 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#oa-isi iframe').attr("scrolling", "no");
                 $('#oa-isi iframe').css('overflow', 'hidden');
+
+                //Get selections and apply filters
                 oaisi.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksOABar);
                 oaisi.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksISIBar);
+
+                loaded();
             }
         };
     oaisi = new tableau.Viz(oaisidiv, oaisiurl, oaisioptions);
@@ -146,14 +162,27 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#papers-list iframe').attr("scrolling", "no");
                 $('#papers-list iframe').css('overflow', 'hidden');
+
+                loaded();
             }
         };
     plist = new tableau.Viz(papersldiv, paperslurl, papersloptions);
 
 }
 
+
+//Hide "loading" when all charts have loaded 
+function loaded() {
+    LOADED += 1;
+    if (LOADED == 5) {
+        console.log(LOADED);
+        $("#loadingModal").modal('hide');
+    }
+}
 
 /*************************** Tableau Functions *******************************/
 

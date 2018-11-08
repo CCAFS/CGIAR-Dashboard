@@ -6,22 +6,10 @@ function init() {
 
 }
 
-// Disable inputs until charts have loaded
-$("input").prop('disabled', true);
-
-// Enable inputs after 9 seconds
-function enableinputs() {
-  $("input").prop('disabled', false); 
-  $("#loadingModal").modal('hide');
-}
-
 $("#loadingModal").modal('show');
 
 
-// Wait 9 seconds while charts are loading
-setTimeout(enableinputs, 9000);
-
-// Close blue disclaimer in all sections 
+// Close blue disclaimer in all sections after closing it once
 const showMsg = sessionStorage.getItem('showMsg');
 
 $('.page-disclaimer').hide();
