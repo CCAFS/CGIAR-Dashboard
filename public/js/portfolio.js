@@ -607,7 +607,7 @@ function clearCRPfilters() {
   clearDashboardFilter(sheetsArray, FILTER_CRPS);
   $(".checkedcrps").hide();
   $('.portfolio').text('Research Program');
-  //$('input[value="All Programs"]').prop('checked', true);
+  $('input[value="All Programs"]').prop('checked', true);
 };
 
 function clearYearsfilters() {
