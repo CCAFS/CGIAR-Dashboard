@@ -110,10 +110,10 @@ function init() {
 
         switch (filterType) {
             case "crps":
-                if (checkedValues == 'All') {
+                if (checkedValues == 'All Programs') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_CRPS);
-                    $filterTitle.text(checkedValues + " Programs");
+                    $filterTitle.text(checkedValues);
                     $(".checkedcrps").hide();
                 } else {
                     // Set filter to all sheets
@@ -128,10 +128,10 @@ function init() {
 
                 break;
             case "years":
-                if (checkedValues == 'All') {
+                if (checkedValues == 'All Years') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_YEAR);
-                    $filterTitle.text(checkedValues + " Years");
+                    $filterTitle.text(checkedValues);
                     $(".checkedyears").hide();
                 } else {
                     // Set filter to all sheets
@@ -141,7 +141,7 @@ function init() {
                     $(".checkedyears").text("Years: " + checkedValues).addClass("closebutton");
                     $(".checkedyears").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedyears").show();
-                    $(".closebutton, .clearfilters").on('click', clearYearsfilters);
+                    $(".checkedyears, .clearfilters").on('click', clearYearsfilters);
                 }
                 break;
             default:
@@ -458,6 +458,7 @@ function clearCRPfilters() {
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
     $('.portfolio').text('Research Program');
+    $('input[value="All Programs"]').prop('checked', true);
 };
 
 function clearYearsfilters() {
@@ -470,8 +471,9 @@ function clearYearsfilters() {
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
-    $('.years').text('All Years');
+    $('.years').text('Years');
     $(".checkedyears").hide();
+    $('input[value="All Years"]').prop('checked', true);
 };
 
 function clearStagefilters() {

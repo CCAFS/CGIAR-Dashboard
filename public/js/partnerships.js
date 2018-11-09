@@ -37,7 +37,7 @@ function init() {
 
         switch (filterType) {
             case "crps":
-                if (checkedValues == 'All') {
+                if (checkedValues == 'All Programs') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_CRPS);
                     $filterTitle.text(checkedValues + " Programs");
@@ -54,10 +54,10 @@ function init() {
 
                 break;
             case "years":
-                if (checkedValues == 'All') {
+                if (checkedValues == 'All Years') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_YEAR);
-                    $filterTitle.text(checkedValues + " Years");
+                    $filterTitle.text(checkedValues);
                     $(".checkedyears").hide();
                 } else {
                     // Set filter to all sheets
@@ -344,6 +344,7 @@ function clearCRPfilters() {
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
     $('.portfolio').text('Research Program');
+    $('input[value="All Programs"]').prop('checked', true);
 };
 
 
@@ -358,8 +359,9 @@ function clearYearsfilters() {
         kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
-    $('.years').text('All Years');
+    $('.years').text('Years');
     $(".checkedyears").hide();
+    $('input[value="All Years"]').prop('checked', true);
 };
 
 function clearTphase() {
