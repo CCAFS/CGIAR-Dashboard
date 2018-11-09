@@ -315,7 +315,6 @@ function init() {
 function loaded() {
     LOADED += 1;
     if (LOADED == 6) {
-        console.log(LOADED);
         $("#loadingModal").modal('hide');
     }
 }

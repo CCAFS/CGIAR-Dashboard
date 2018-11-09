@@ -159,7 +159,6 @@ function init() {
 function loaded() {
     LOADED += 1;
     if (LOADED == 4) {
-        console.log(LOADED);
         $("#loadingModal").modal('hide');
     }
 }

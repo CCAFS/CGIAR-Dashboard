@@ -88,7 +88,7 @@ function init() {
                 //Hide scrollbars - disable scroll 
                 $('#total-partnerships iframe').attr("scrolling", "no");
                 $('#total-partnerships iframe').css('overflow', 'hidden');
-                
+
                 loaded();
             }
         };
@@ -211,7 +211,6 @@ function init() {
 function loaded() {
     LOADED += 1;
     if (LOADED == 6) {
-        console.log(LOADED);
         $("#loadingModal").modal('hide');
     }
 }

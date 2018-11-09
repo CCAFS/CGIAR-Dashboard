@@ -179,7 +179,6 @@ function init() {
 function loaded() {
     LOADED += 1;
     if (LOADED == 5) {
-        console.log(LOADED);
         $("#loadingModal").modal('hide');
     }
 }

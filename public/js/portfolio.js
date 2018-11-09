@@ -19,7 +19,6 @@ var FILTER_SDG = "Sdg Short Name";
 var GLOBAL_SHEET = "1.2.1 SH OICS Global Count";
 var REGIONAL_SHEET = "1.2.1 SH OICS Regional Count";
 var CMAP_SHEET = "1.2.1 SH Map Option 2"
-var RMAP_SHEET = "1.2.1 SH OICS Map-Region"
 var SLO_SHEET = "1.1.5 SH SLO Bar1";
 var CCI_SHEET = "1.1.5 SH CCI Bar2";
 var LIST_SHEET = "1.1.3 SH CCI Detail";
@@ -67,7 +66,6 @@ function init() {
         if (checkedValues == 'All Programs') {
           // Clear filter from all sheets
           clearDashboardFilter(sheetsArray, FILTER_CRPS);
-
           $filterTitle.text(checkedValues);
           $(".checkedcrps").hide();
         } else {
@@ -248,7 +246,6 @@ function init() {
 function loaded() {
   LOADED += 1;
   if (LOADED == 6) {
-    console.log(LOADED);
     $("#loadingModal").modal('hide');
   }
 }
@@ -595,6 +592,8 @@ function selectedSDG(marks) {
 function clearCRPfilters() {
   var sheetsArray = [
     map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET),
+    map1.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+    map1.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
     oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
@@ -614,6 +613,8 @@ function clearCRPfilters() {
 function clearYearsfilters() {
   var sheetsArray = [
     map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET),
+    map1.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+    map1.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
     oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
