@@ -258,6 +258,12 @@ function appyDashboardFilter(sheetsArray, filterName, filterValues) {
   });
 }
 
+function applyDoubleFilter(sheetsArray, filterName, filterValues) {
+  $.each(sheetsArray, function (i, e) {
+    e.applyFilterAsync(filterName, filterValues, tableau.FilterUpdateType.ADD);
+  });
+}
+
 function clearDashboardFilter(sheetsArray, filterName) {
   $.each(sheetsArray, function (i, e) {
     e.clearFilterAsync(filterName);
@@ -366,14 +372,15 @@ function selectedMarksSLOsBar(marks) {
     map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET),
     oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
     mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
     sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
   ];
-  clearDashboardFilter(sheetsArray, FILTER_SLO);
-  $(".checkedslo").hide();
+  //clearDashboardFilter(sheetsArray, FILTER_SLO);
+  //$(".checkedslo").hide();
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
@@ -381,7 +388,7 @@ function selectedMarksSLOsBar(marks) {
       if (pair.fieldName == FILTER_SLO) {
         sloValue = pair.formattedValue;
         if (sloValue != null) {
-          appyDashboardFilter(sheetsArray, FILTER_SLO, sloValue);
+          applyDoubleFilter(sheetsArray, FILTER_SLO, sloValue);
           $(".checkedslo").text("System Level Outcome: " + sloValue).addClass("closebutton");
           $(".checkedslo").css('margin-top', '3px').css('margin-bottom', '3px');
           $(".checkedslo").show();
@@ -398,14 +405,15 @@ function selectedMarksCCIBar(marks) {
     map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET),
     oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
     chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
     ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
     mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
     sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
   ];
-  clearDashboardFilter(sheetsArray, FILTER_CCI);
-  $(".checkedcci").hide();
+  //clearDashboardFilter(sheetsArray, FILTER_CCI);
+ // $(".checkedcci").hide();
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
@@ -413,7 +421,7 @@ function selectedMarksCCIBar(marks) {
       if (pair.fieldName == FILTER_CCI) {
         cciValue = pair.formattedValue;
         if (cciValue != null) {
-          appyDashboardFilter(sheetsArray, FILTER_CCI, cciValue);
+          applyDoubleFilter(sheetsArray, FILTER_CCI, cciValue);
           $(".checkedcci").text("Cross-Cutting Issue: " + cciValue).addClass("closebutton");
           $(".checkedcci").css('margin-top', '3px').css('margin-bottom', '3px');
           $(".checkedcci").show();
