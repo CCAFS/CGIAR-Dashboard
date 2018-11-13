@@ -281,6 +281,7 @@ function init() {
     $("#adaptiveinnovations").click(function () {
         var sheetsArray = [
             istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+            itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
             ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
             totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
             iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
@@ -297,6 +298,7 @@ function init() {
     $("#novelinnovations").click(function () {
         var sheetsArray = [
             istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+            itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
             ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
             totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
             iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
@@ -523,6 +525,7 @@ function clearMapfilters() {
 function clearNovelfilters() {
     var sheetsArray = [
         istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
@@ -535,6 +538,7 @@ function clearNovelfilters() {
 function clearAdaptativefilters() {
     var sheetsArray = [
         istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
