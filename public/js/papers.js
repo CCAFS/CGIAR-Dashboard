@@ -261,6 +261,19 @@ function selectedISIBar(marks) {
     }
 }
 
+const showMsgP = sessionStorage.getItem('showMsgP');
+
+if(showMsgP == 'false'){
+  $('.publications-disclaimer').hide();
+} else {
+  $('.publications-disclaimer').show();
+}
+
+$('.close').on('click', function(){
+  $('.publications-disclaimer').fadeOut('slow');
+  sessionStorage.setItem('showMsgP', 'false');
+});
+
 
 /**** Clear functions ****/
 
