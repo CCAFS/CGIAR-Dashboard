@@ -183,6 +183,24 @@ function loaded() {
     }
 }
 
+
+// Close yellow disclaimer in all sections after closing it once
+const showMsgP = sessionStorage.getItem('showMsgP');
+
+if(showMsgP == 'false'){
+  $('.publications-disclaimer').hide();
+} else {
+  $('.publications-disclaimer').show();
+}
+
+$('.closep').on('click', function(){
+  $('.publications-disclaimer').fadeOut('slow');
+  sessionStorage.setItem('showMsgP', 'false');
+});
+
+//Disable CRP filters.
+$("input[name=crps]").prop('disabled', true);
+
 /*************************** Tableau Functions *******************************/
 
 function appyDashboardFilter(sheetsArray, filterName, filterValues) {
@@ -260,21 +278,6 @@ function selectedISIBar(marks) {
         }
     }
 }
-
-// Close yellow disclaimer in all sections after closing it once
-const showMsgP = sessionStorage.getItem('showMsgP');
-
-if(showMsgP == 'false'){
-  $('.publications-disclaimer').hide();
-} else {
-  $('.publications-disclaimer').show();
-}
-
-$('.closep').on('click', function(){
-  $('.publications-disclaimer').fadeOut('slow');
-  sessionStorage.setItem('showMsgP', 'false');
-});
-
 
 
 /**** Clear functions ****/
