@@ -261,6 +261,7 @@ function selectedISIBar(marks) {
     }
 }
 
+// Close yellow disclaimer in all sections after closing it once
 const showMsgP = sessionStorage.getItem('showMsgP');
 
 if(showMsgP == 'false'){
@@ -269,10 +270,11 @@ if(showMsgP == 'false'){
   $('.publications-disclaimer').show();
 }
 
-$('.close').on('click', function(){
+$('.closep').on('click', function(){
   $('.publications-disclaimer').fadeOut('slow');
   sessionStorage.setItem('showMsgP', 'false');
 });
+
 
 
 /**** Clear functions ****/

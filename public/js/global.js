@@ -19,7 +19,7 @@ if(showMsg == 'false'){
   $('.page-disclaimer').show();
 }
 
-$('.close').on('click', function(){
+$('.closem').on('click', function(){
   $('.page-disclaimer').fadeOut('slow');
   sessionStorage.setItem('showMsg', 'false');
 });
