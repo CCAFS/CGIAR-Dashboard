@@ -1,0 +1,88 @@
+{% set pageParams = {
+    'title': 'Policies | CGIAR Program Results Dashboard',
+    'customCSS': [
+      'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
+      'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
+      './css/customInputsFlat.css',
+      './css/global.css',
+      './css/policies.css'
+    ],
+    'customJS': [
+      'https://code.jquery.com/jquery-3.3.1.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js',
+      'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js',
+      'https://www.amcharts.com/lib/3/amcharts.js',
+      'https://www.amcharts.com/lib/3/pie.js',
+      'https://www.amcharts.com/lib/3/themes/light.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js',
+      "./js/libs/tableau/tableau-2.2.2.min.js",
+      "./js/libs/sly/sly.min.js",
+      "./js/policies.js"
+    ]
+  }
+%}
+
+{% include './pages/header.twig' with pageParams %}
+
+
+{% include './pages/main-menu.twig' with pageParams %}
+<div class="container">
+  <div class="main-content">
+  {% include './pages/message.twig' %}
+   <div class="alert alert-warning alert-dismissible policies-disclaimer fade show">
+      <button type="button" class="close closepolicies" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+        This section contains PIM Policies <b>only</b> for now.
+    </div>
+  <div class="alert alert-dark selection">
+  <div class="checkedfilters clearfilters">Clear all filters</div>
+      <div class="checkedfilters checkedyears"></div>
+      <div class="checkedfilters checkedcrps"></div>
+      <div class="checkedfilters checkedgeo"></div>
+      <div class="checkedfilters checkedmap"></div>
+      <div class="checkedfilters checkedstage"></div>
+      <div class="checkedfilters checkeditype"></div>
+  </div>
+      <div class="form-group row">   
+          <div class="col-md-5">
+            <h6 class="subTitle">Total Policies by Geographic Scope</h6>
+            <div class="policies-map">    
+              <div id="policies-geoscope"></div>             
+            </div>
+          </div>        
+          <div class="col-md-7">
+            <h6 class="subTitle">Policies on the Ground</h6>
+            <div class="policies-map">  
+              <div id="policies-ground"></div>            
+            </div>
+          </div>
+          <br><br><br>
+      </div>
+      <div class="form-group row">
+          <div class="col-md-6">
+            <h6 class="subTitle">Policies by Stage in Process </h6>
+            <div class="geo-scope">
+              <div id="policies-stage"></div>
+            </div>
+           </div>        
+          <div class="col-md-6">
+            <h6 class="subTitle">Policies by Geographic Scope and Investment Type</h6>
+            <div class="investment-type">
+              <div id="policies-investype"></div>
+            </div>
+          </div>
+          <br><br><br>
+      </div>
+     <div class="form-group bot-block">
+        
+        <h6 class="subTitle">List of Policies</h6>        
+            <div class="policies-table">
+              <div id="policies-list"></div>
+            </div>
+     
+     </div>
+   </div>
+</div>
+
+{% include './pages/footer.twig'  with pageParams %}

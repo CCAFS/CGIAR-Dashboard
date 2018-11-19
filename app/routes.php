@@ -12,6 +12,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     array('name' => 'Innovations',    'action' => 'innovations',  'active' => true ),
     array('name' => 'Partnerships',   'action' => 'partnerships', 'active' => true ),
     array('name' => 'Publications',   'action' => 'publications', 'active' => true ),
+    array('name' => 'Policies',       'action' => 'policies',     'active' => true ),
     array('name' => 'Altmetric',      'action' => 'altmetrics',   'active' => true )
   );
 
