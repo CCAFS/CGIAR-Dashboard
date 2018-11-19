@@ -456,7 +456,7 @@ function clearStage() {
 function cleariType() {
     
     var sheetsArray = [
-        policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
+        policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
         policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
         policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
         policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
