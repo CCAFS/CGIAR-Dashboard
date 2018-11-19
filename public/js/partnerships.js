@@ -7,6 +7,7 @@ var FILTER_TSTAGE = "Name (Dim Research Phases)";
 var FILTER_TSTAGEP = "CRP Type";
 var FILTER_KPHASE = "Name (Dim Research Phases)";
 var FILTER_KTYPE = "Partner Type";
+var FILTER_PMAP = "Country Name";
 
 //Sheets
 var TP_SHEET = "3.4 Total Partnerships Count ";
@@ -15,6 +16,7 @@ var TKP_SHEET = "Key Partnerships Count";
 var KPPHASE_SHEET = "3.3 SH Key Partnership by Type and Phase";
 var KPTYPE_SHEET = "3.1 SH Key Partnership by Type-Bar chart";
 var KPLIST_SHEET = "3.2 SH List of Key External Partnerships";
+var PMAP_SHEET = "3.4 SH Key Partnerships map "
 
 $(document).ready(init);
 
@@ -30,6 +32,7 @@ function init() {
             totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
             tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET),
             totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
+            pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
             keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
             kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
             kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
@@ -117,6 +120,28 @@ function init() {
         };
     tpphase = new tableau.Viz(tpphasediv, tpphaseurl, tpphaseoptions);
 
+    //Key Partnerships on the Ground
+    var pmapdiv = document.getElementById("partnerships-map"),
+        pmapurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/3_4DBKeyPartnershipsmap",
+        pmapoptions = {
+            hideTabs: true,
+            hideToolbar: true,
+            width: '100%',
+            height: '100%',
+            onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
+                $('#partnerships-map iframe').attr("scrolling", "no");
+                $('#partnerships-map iframe').css('overflow', 'hidden');
+
+                //Get selections and apply filters
+                pmap.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksPmap);
+
+                loaded();
+            }
+        };
+    pmap = new tableau.Viz(pmapdiv, pmapurl, pmapoptions);
+
 
     //Total Key Partnerships
     var tkpdiv = document.getElementById("total-keyp"),
@@ -154,7 +179,7 @@ function init() {
 
                 //Get selections and apply filters
                 keypphase.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksKphase);
-                
+
                 loaded();
             }
         };
@@ -177,7 +202,7 @@ function init() {
 
                 //Get selections and apply filters
                 kptype.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksKtype);
-                
+
                 loaded();
             }
         };
@@ -210,7 +235,7 @@ function init() {
 //Hide "loading" when all charts have loaded 
 function loaded() {
     LOADED += 1;
-    if (LOADED == 6) {
+    if (LOADED == 7) {
         $("#loadingModal").modal('hide');
     }
 }
@@ -239,6 +264,10 @@ function selectMarksKphase(marksEvent) {
 
 function selectMarksKtype(marksEvent) {
     return marksEvent.getMarksAsync().then(selectedKtype);
+}
+
+function selectMarksPmap(marksEvent) {
+    return marksEvent.getMarksAsync().then(selectedPmap);
 }
 
 
@@ -276,7 +305,8 @@ function selectedKphase(marks) {
     var sheetsArray = [
         totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
         kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
+        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET), 
+        pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_KPHASE);
     $(".checkedkphase").hide();
@@ -305,7 +335,8 @@ function selectedKtype(marks) {
     var sheetsArray = [
         totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
         keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
+        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
+        pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_KTYPE);
     $(".checkedktype").hide();
@@ -328,6 +359,36 @@ function selectedKtype(marks) {
     }
 }
 
+//Key partnerships on the ground
+function selectedPmap(marks) {
+
+    var sheetsArray = [
+        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
+        keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
+        kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
+        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_PMAP);
+    $(".checkedkpground").hide();
+
+    for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+        var pairs = marks[markIndex].getPairs();
+        for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+            var pair = pairs[pairIndex];
+            if (pair.fieldName == FILTER_PMAP) {
+                mapvalue = pair.formattedValue;
+                if (mapvalue != null) {
+                    appyDashboardFilter(sheetsArray, FILTER_PMAP, mapvalue);
+                    $(".checkedkpground").text("Key Partnerships - Country: " + mapvalue).addClass("closebutton");
+                    $(".checkedkpground").css('margin-top', '3px').css('margin-bottom', '3px');
+                    $(".checkedkpground").show();
+                    $(".checkedkpground, .clearfilters").on('click', clearPMap);
+                }
+            }
+        }
+    }
+}
+
 
 // Clear functions 
 
@@ -339,7 +400,8 @@ function clearCRPfilters() {
         totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
         keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
         kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
+        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
+        pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
@@ -356,7 +418,8 @@ function clearYearsfilters() {
         totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
         keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
         kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
+        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
+        pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
     $('.years').text('Years');
@@ -378,7 +441,8 @@ function clearKphase() {
     var sheetsArray = [
         totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
         kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
+        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
+        pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET)
     ];
     var sheet = keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET);
     sheet.clearSelectedMarksAsync();
@@ -390,10 +454,24 @@ function clearKtype() {
     var sheetsArray = [
         totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
         keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
+        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
+        pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET)
     ];
     var sheet = kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET);
     sheet.clearSelectedMarksAsync();
     clearDashboardFilter(sheetsArray, FILTER_KTYPE);
     $(".checkedktype").hide();
+};
+
+function clearPMap() {
+    var sheetsArray = [
+        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
+        keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
+        kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
+        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
+    ];
+    var sheet = pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET);
+    sheet.clearSelectedMarksAsync();
+    clearDashboardFilter(sheetsArray, FILTER_PMAP);
+    $(".checkedkpground").hide();
 };
