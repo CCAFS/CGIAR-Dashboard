@@ -42,3 +42,13 @@ function msieversion() {
 
   return false;
 }
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    $('#pageheader').addClass('scrolled-header');
+  } else {
+    $('#pageheader').removeClass('scrolled-header');
+  }
+}

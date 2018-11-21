@@ -11,6 +11,7 @@ var FILTER_PITYPE = "Policy Investment Types";
 //Sheets
 var PGEO_SHEET = "7.5 SH Policies by Geo Scope";
 var PMAP_SHEET = "7.4 SH Policies map";
+var GMAP_SHEET = "7.4 SH Policies Global";
 var PSTAGE_SHEET = "7.3 SH Policies by Stage Process";
 var PITYPE_SHEET = "7.2 SH Policies by Geo Scope & Investment Type";
 var PLIST_SHEET = "7.1 SH Policy Detail";
@@ -429,7 +430,9 @@ function clearPMap() {
     $(".checkedmap").hide();
 
     var sheet = policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET);
+    var globalsheet = policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(GMAP_SHEET);
     sheet.clearSelectedMarksAsync();
+    globalsheet.clearSelectedMarksAsync();
     clearDashboardFilter(sheetsArray, FILTER_PMAP);
 };
 

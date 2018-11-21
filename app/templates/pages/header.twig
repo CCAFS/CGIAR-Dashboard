@@ -28,39 +28,6 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7">
-            <h3 class="title pull-left">
-              <a href="https://www.cgiar.org/research/research-portfolio/" target="_blank"><img src="{{ base_url() }}/images/cgiar_logo.png" alt="CGIAR Logo" width="90px"></a>
-              <span>CGIAR Program Results Dashboard</span>
-            </h3>
-          </div>
-          <div class="col-md-5">
-          <div class="filterscont">
-          <!-- Year -->
-            <div class="filter-component fyear">
-              <p id="filtertitley" class="filter-title years">Years</p>
-              <ul class="filter-items">
-                <li> {{ forms.checkmark('years', 'All Years' , 'All Years', true) }} </li>
-                {% for year in years %}
-                  <li> {{ forms.checkmark('years', year, year) }} </li>
-                {% endfor %}
-              </ul>
-            </div>
-             <!-- CRPs -->
-            <div class="filter-component fprogram">
-              <p id="filtertitlec" class="filter-title portfolio">Research Program</p>
-              <ul class="filter-items">
-                <li> {{ forms.checkmark('crps', 'All Programs' , 'All Programs', true) }} </li>
-                {% for crp in crps %}
-                  <li> {{ forms.checkmark('crps', crp.acronym , crp.name) }} </li>
-                {% endfor %}
-              </ul>
-            </div>            
-          </div>
-          </div>
-        </div>
 
         <!-- Modal -->
         <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
@@ -87,5 +54,38 @@
           </div>
         </div>
 
-      </div>
+        <div id="pageheader">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7">
+                <h3 class="title pull-left">
+                  <a href="https://www.cgiar.org/research/research-portfolio/" target="_blank"><img src="{{ base_url() }}/images/cgiar_logo.png" alt="CGIAR Logo" width="14%"></a>
+                  <span>CGIAR Program Results Dashboard</span>
+                </h3>
+              </div>
+              <div class="col-md-5">
+              <!-- Year -->
+                <div class="filter-component fyear">
+                  <p id="filtertitley" class="filter-title years">Years</p>
+                  <ul class="filter-items">
+                    <li> {{ forms.checkmark('years', 'All Years' , 'All Years', true) }} </li>
+                    {% for year in years %}
+                      <li> {{ forms.checkmark('years', year, year) }} </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                <!-- CRPs -->
+                <div class="filter-component fprogram">
+                  <p id="filtertitlec" class="filter-title portfolio">Research Program</p>
+                  <ul class="filter-items">
+                    <li> {{ forms.checkmark('crps', 'All Programs' , 'All Programs', true) }} </li>
+                    {% for crp in crps %}
+                      <li> {{ forms.checkmark('crps', crp.acronym , crp.name) }} </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </header>
