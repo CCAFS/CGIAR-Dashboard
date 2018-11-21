@@ -41,6 +41,7 @@
   margin-right: 47%;
   border-radius: 50%;
   cursor: pointer;
+  z-index: 4;
 }
 
 .publications-tooltip .tooltiptext {

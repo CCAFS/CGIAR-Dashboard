@@ -43,10 +43,11 @@ function msieversion() {
   return false;
 }
 
+//Change header when scrolling. 
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 70) {
+  if (document.body.scrollTop > 45) {
     $('#pageheader').addClass('scrolled-header');
   } else {
     $('#pageheader').removeClass('scrolled-header');

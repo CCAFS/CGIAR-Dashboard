@@ -14,7 +14,7 @@ header .title {
   margin-top: 25px;
   margin-left: 11px;
   position: relative;
-  z-index: 10;
+  z-index: 1;
 }
 
 .fyear {
