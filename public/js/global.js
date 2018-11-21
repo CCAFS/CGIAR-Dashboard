@@ -46,10 +46,14 @@ function msieversion() {
 //Change header when scrolling. 
 window.onscroll = function() {scrollFunction()};
 
+height = document.body.scrollHeight;
+
 function scrollFunction() {
-  if (document.body.scrollTop > 45) {
-    $('#pageheader').addClass('scrolled-header');
-  } else {
-    $('#pageheader').removeClass('scrolled-header');
+  if(height > 1000 ){
+    if (document.body.scrollTop > 45 || document.documentElement.scrollTop > 45) {
+      $('#pageheader').addClass('scrolled-header');
+    } else {
+      $('#pageheader').removeClass('scrolled-header');
+    } 
   }
 }
