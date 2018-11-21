@@ -44,16 +44,16 @@ function msieversion() {
 }
 
 //Change header when scrolling. 
-window.onscroll = function() {scrollFunction()};
-
-height = document.body.scrollHeight;
 
 function scrollFunction() {
-  if(height > 1000 ){
-    if (document.body.scrollTop > 45 || document.documentElement.scrollTop > 45) {
-      $('#pageheader').addClass('scrolled-header');
-    } else {
-      $('#pageheader').removeClass('scrolled-header');
-    } 
+  const distanceY = window.pageYOffset || document.body.scrollTop,
+  shrinkOn = 50;
+  
+  if (distanceY > shrinkOn) {
+    $('#pageheader').addClass("scrolled-header");
+  } else {
+    $('#pageheader').removeClass("scrolled-header");
   }
 }
+
+window.addEventListener('scroll', scrollFunction);
