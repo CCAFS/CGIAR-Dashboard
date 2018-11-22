@@ -54,6 +54,7 @@ function scrollFunction() {
   } else {
     $('#pageheader').removeClass("scrolled-header");
   }
+
 }
 
 window.addEventListener('scroll', scrollFunction);
