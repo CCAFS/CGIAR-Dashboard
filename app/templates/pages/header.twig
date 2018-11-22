@@ -78,7 +78,7 @@
                 <div class="filter-component fprogram">
                   <p id="filtertitlec" class="filter-title portfolio">Research Program</p>
                   <ul class="filter-items">
-                    <li> {{ forms.checkmark('crps', 'All Programs' , 'All Programs', true) }} </li>
+                    <li> {{ forms.checkmark('crps', 'All' , 'All Programs', true) }} </li>
                     {% for crp in crps %}
                       <li> {{ forms.checkmark('crps', crp.acronym , crp.name) }} </li>
                     {% endfor %}

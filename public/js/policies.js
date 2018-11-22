@@ -37,28 +37,28 @@ function init() {
 
         switch (filterType) {
             case "crps":
-                if (checkedValues == 'All Programs') {
+                if (checkedValues == 'All') {
                     // Clear filter from all sheets
-                    // clearDashboardFilter(sheetsArray, FILTER_CRPS);
-                    // $filterTitle.text(checkedValues + " Programs");
-                    // $(".checkedcrps").hide();
+                    clearDashboardFilter(sheetsArray, FILTER_CRPS);
+                    $filterTitle.text(checkedValues + " Programs");
+                    $(".checkedcrps").hide();
                 } else {
                     // Set filter to all sheets
-                    // appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValues);
-                    // $filterTitle.text(checkedValues);
-                    /*  $(".checkedcrps").text("Research Program: " + checkedValues).addClass("closebutton");
-                      $(".checkedcrps").css('margin-top', '3px').css('margin-bottom', '3px');
-                      $(".checkedcrps").show();
-                      $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);*/
+                    appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValues);
+                    $filterTitle.text(checkedValues);
+                    $(".checkedcrps").text("Research Program: " + checkedValues).addClass("closebutton");
+                    $(".checkedcrps").css('margin-top', '3px').css('margin-bottom', '3px');
+                    $(".checkedcrps").show();
+                    $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);
                 }
 
                 break;
             case "years":
                 if (checkedValues == 'All Years') {
                     // Clear filter from all sheets
-                    //clearDashboardFilter(sheetsArray, FILTER_YEAR);
-                    // $filterTitle.text(checkedValues);
-                    //  $(".checkedyears").hide();
+                    clearDashboardFilter(sheetsArray, FILTER_YEAR);
+                    $filterTitle.text(checkedValues);
+                    $(".checkedyears").hide();
                 } else {
                     // Set filter to all sheets
                     appyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValues);
@@ -207,6 +207,11 @@ $('.closepolicies').on('click', function () {
 
 //Disable CRP filters.
 $("input[name=crps]").prop('disabled', true);
+
+//Enable All Programs, CCAFS and PIM filters.
+$("input[value=CCAFS]").prop('disabled', false);
+$("input[value=PIM]").prop('disabled', false);
+$("input[value=All]").prop('disabled', false);
 
 /*************************** Tableau Functions *******************************/
 
@@ -380,7 +385,7 @@ function clearCRPfilters() {
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
     $('.portfolio').text('Research Program');
-    $('input[value="All Programs"]').prop('checked', true);
+    $('input[value="All"]').prop('checked', true);
 };
 
 

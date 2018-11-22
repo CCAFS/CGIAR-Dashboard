@@ -40,7 +40,7 @@ function init() {
 
         switch (filterType) {
             case "crps":
-                if (checkedValues == 'All Programs') {
+                if (checkedValues == 'All') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_CRPS);
                     $filterTitle.text(checkedValues + " Programs");
@@ -406,7 +406,7 @@ function clearCRPfilters() {
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
     $('.portfolio').text('Research Program');
-    $('input[value="All Programs"]').prop('checked', true);
+    $('input[value="All"]').prop('checked', true);
 };
 
 
