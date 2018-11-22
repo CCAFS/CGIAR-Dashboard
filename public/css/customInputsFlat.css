@@ -73,3 +73,7 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+.inputContainer input:disabled ~ .checkmark{
+    background-color: rgba(190, 205, 219, 0.493);
+}

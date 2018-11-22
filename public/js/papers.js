@@ -201,6 +201,9 @@ $('.closep').on('click', function(){
 //Disable CRP filters.
 $("input[name=crps]").prop('disabled', true);
 
+//Enable All Programs filter.
+$("input[value=All]").prop('disabled', false);
+
 /*************************** Tableau Functions *******************************/
 
 function appyDashboardFilter(sheetsArray, filterName, filterValues) {
