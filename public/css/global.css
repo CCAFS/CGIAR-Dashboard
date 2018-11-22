@@ -357,7 +357,7 @@ nav.main-menu ul li.active:after {
   position: fixed;
   z-index: 1;
   top: -1px;
-  padding-top: 3px; 
+  padding-top: 4px; 
   border-bottom: 1px solid rgba(131, 131, 131, 0.075);
 }
 
@@ -366,9 +366,15 @@ nav.main-menu ul li.active:after {
 }
 
 .scrolled-header h3 {
-  font-size: 1.2em;
+  font-size: 1.2em !important;
 }
 
 .scrolled-header .filter-component{
   margin-top: 5px;
+}
+
+@media (max-width:1200px) {
+  #pageheader h3 {
+    font-size: 1.6em;
+  }
 }

@@ -297,7 +297,11 @@ function selectedMap(marks) {
                 mapvalue = pair.formattedValue;
                 if (mapvalue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_PMAP, mapvalue);
-                    $(".checkedmap").text("Country: " + mapvalue).addClass("closebutton");
+                    if(mapvalue == "Global"){
+                        $(".checkedmap").text("Scope: " + mapvalue).addClass("closebutton");
+                    } else {
+                        $(".checkedmap").text("Country: " + mapvalue).addClass("closebutton");
+                    }
                     $(".checkedmap").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedmap").show();
                     $(".checkedmap, .clearfilters").on('click', clearPMap);
