@@ -362,7 +362,7 @@ nav.main-menu ul li.active:after {
 }
 
 .scrolled-header img {
- width: 6%;
+ width: 40px;
 }
 
 .scrolled-header h3 {
@@ -374,7 +374,9 @@ nav.main-menu ul li.active:after {
 }
 
 @media (max-width:1200px) {
-  #pageheader h3 {
-    font-size: 1.6em;
+  #pageheader h3 span {
+    display: none;
   }
+  
 }
+
