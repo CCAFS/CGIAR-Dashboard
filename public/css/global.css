@@ -96,7 +96,7 @@ nav.main-menu ul li {
 
 nav.main-menu ul li a {
   background: #f1f1f1;
-  padding: 8px 31px !important;
+  padding: 7px 31px !important;
   color: #8a8a8a;
   text-decoration: none;
 }
@@ -381,6 +381,20 @@ nav.main-menu ul li.active:after {
 
 @media (max-width:991px) {
   #pageheader h3 span {
+    display: none;
+  }  
+}
+
+@media (max-width:456px) {
+  h3 img {
+    width:40px;
+    position: fixed;
+    top: 20px;
+  }  
+}
+
+@media (max-width:375px) {
+  h3 img {
     display: none;
   }  
 }
