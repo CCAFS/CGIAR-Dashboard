@@ -17,7 +17,7 @@
       'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js',
       "./js/libs/tableau/tableau-2.2.2.min.js",
       "./js/libs/sly/sly.min.js",
-      "./js/partnerships.js"
+      "./js/partnerships.js?112218"
     ]
   }
 %}
@@ -33,6 +33,7 @@
   <div class="checkedfilters clearfilters">Clear all filters</div>
       <div class="checkedfilters checkedyears"></div>
       <div class="checkedfilters checkedcrps"></div>
+      <div class="checkedfilters checkedkpground"></div>
       <div class="checkedfilters checkedtphase"></div>
       <div class="checkedfilters checkedkphase"></div>
       <div class="checkedfilters checkedktype"></div>
@@ -58,9 +59,9 @@
             </div>
            </div>        
           <div class="col-md-6">
-            <h6 class="subTitle">Total Partnerships by Phase and Research Program Type</h6>
+            <h6 class="subTitle">Key Partnerships on the Ground</h6>
             <div class="ptype-container">
-              <img src="{{ base_url() }}/images/mapa.png" width="100%">
+              <div id="partnerships-map"></div>
             </div>
           </div>
           <br><br><br>

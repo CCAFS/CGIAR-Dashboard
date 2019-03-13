@@ -1,10 +1,12 @@
+var LOADED = 0;
+
 var FILTER_CRPS = "CRP";
 var FILTER_YEAR = "Year";
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
 var FILTER_MAP = "Country Name";
-var FILTER_OA = "Open Access ? ";
-var FILTER_ISI = "ISI Journal ? ";
+var FILTER_OA = "Open Access   ";
+var FILTER_ISI = "ISI Journal   ";
 var TP_SHEET = "5.1 SH Total Papers";
 var OA_SHEET = "5.4 SH Percent of OA ";
 var ISI_SHEET = "5.5 SH Percent of ISI";
@@ -31,22 +33,18 @@ function init() {
             plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
         ];
 
-        var view = oaisi.getWorkbook().getActiveSheet().getWorksheets();
-        worksheet = view[0];
-        console.log(worksheet);
-
         switch (filterType) {
             case "crps":
                 if (checkedValues == 'All') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_CRPS);
-                    $filterTitle.text(checkedValues + " CRPs");
+                    $filterTitle.text(checkedValues + " Programs");
                     $(".checkedcrps").hide();
                 } else {
                     // Set filter to all sheets
                     appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValues);
                     $filterTitle.text(checkedValues);
-                    $(".checkedcrps").text("CRP: " + checkedValues).addClass("closebutton");
+                    $(".checkedcrps").text("Research Program: " + checkedValues).addClass("closebutton");
                     $(".checkedcrps").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedcrps").show();
                     $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);
@@ -54,10 +52,10 @@ function init() {
 
                 break;
             case "years":
-                if (checkedValues == 'All') {
+                if (checkedValues == 'All Years') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_YEAR);
-                    $filterTitle.text(checkedValues + " Years");
+                    $filterTitle.text(checkedValues);
                     $(".checkedyears").hide();
                 } else {
                     // Set filter to all sheets
@@ -83,8 +81,12 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+                
+                //Hide scrollbars - disable scroll 
                 $('#total-papers iframe').attr("scrolling", "no");
                 $('#total-papers iframe').css('overflow', 'hidden');
+                
+                loaded();
             }
         };
     totalpapers = new tableau.Viz(papersdiv, papersurl, papersoptions);
@@ -98,8 +100,12 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#oa-papers iframe').attr("scrolling", "no");
                 $('#oa-papers iframe').css('overflow', 'hidden');
+                
+                loaded();
             }
         };
     oapapers = new tableau.Viz(oadiv, oaurl, oaoptions);
@@ -113,8 +119,12 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#isi-papers iframe').attr("scrolling", "no");
                 $('#isi-papers iframe').css('overflow', 'hidden');
+
+                loaded();
             }
         };
     isipapers = new tableau.Viz(isidiv, isiurl, isioptions);
@@ -128,10 +138,16 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#oa-isi iframe').attr("scrolling", "no");
                 $('#oa-isi iframe').css('overflow', 'hidden');
+
+                //Get selections and apply filters
                 oaisi.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksOABar);
                 oaisi.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksISIBar);
+
+                loaded();
             }
         };
     oaisi = new tableau.Viz(oaisidiv, oaisiurl, oaisioptions);
@@ -146,14 +162,47 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#papers-list iframe').attr("scrolling", "no");
                 $('#papers-list iframe').css('overflow', 'hidden');
+
+                loaded();
             }
         };
     plist = new tableau.Viz(papersldiv, paperslurl, papersloptions);
 
 }
 
+
+//Hide "loading" when all charts have loaded 
+function loaded() {
+    LOADED += 1;
+    if (LOADED == 5) {
+        $("#loadingModal").modal('hide');
+    }
+}
+
+
+// Close yellow disclaimer in all sections after closing it once
+const showMsgP = sessionStorage.getItem('showMsgP');
+
+if(showMsgP == 'false'){
+  $('.publications-disclaimer').hide();
+} else {
+  $('.publications-disclaimer').show();
+}
+
+$('.closep').on('click', function(){
+  $('.publications-disclaimer').fadeOut('slow');
+  sessionStorage.setItem('showMsgP', 'false');
+});
+
+//Disable CRP filters.
+$("input[name=crps]").prop('disabled', true);
+
+//Enable All Programs filter.
+$("input[value=All]").prop('disabled', false);
 
 /*************************** Tableau Functions *******************************/
 
@@ -249,6 +298,7 @@ function clearCRPfilters() {
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
     $('.portfolio').text('Research Program');
+    $('input[value="All"]').prop('checked', true);
 };
 
 
@@ -263,8 +313,9 @@ function clearYearsfilters() {
         plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
-    $('.years').text('All Years');
+    $('.years').text('Years');
     $(".checkedyears").hide();
+    $('input[value="All Years"]').prop('checked', true);
 };
 
 //Clear OA

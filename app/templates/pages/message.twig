@@ -1,10 +1,28 @@
-<div class="alert alert-info alert-dismissible fade show" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<div class="browser-message" style="display:none">This Dashboard works best with
+    <ul>
+        <li>
+            <a href="https://www.google.com/chrome/" class="infotool" target="_blank" title="Google Chrome">
+                <img src="{{ base_url() }}/images/browser_chrome.svg" width="30px" height="30px">
+            </a>
+        </li> 
+        <li>
+            <a href="https://www.mozilla.org/en-US/firefox/new/" class="infotool" target="_blank" title="Firefox">
+                <img src="{{ base_url() }}/images/browser_firefox.svg" width="30px" height="30px">
+            </a>
+        </li> 
+        <li>
+            <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48126" class="infotool" target="_blank" title="Microsoft Edge">
+                <img src="{{ base_url() }}/images/browser_edge.svg" width="30px" height="30px">
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="alert alert-info alert-dismissible page-disclaimer fade show">
+    <button type="button" class="close closem" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
     This Dashboard includes a sub-set of the 2017 Annual Report data from 6 CRP's for demonstration purposes. Data has
     been extracted directly from Management Information Systems (MARLO) and annual reports for 2017. Some of the data
     for the prototype has not undergone quality checks.
-    <br>
-    <strong>Note:</strong> If the charts are not filtering, please refresh the page 'F5' and wait until all charts have loaded.<br> <i>This Dashboard works best with Chrome or Firefox.</i> 
 </div>

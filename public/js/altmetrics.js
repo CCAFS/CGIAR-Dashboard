@@ -1,3 +1,5 @@
+var LOADED = 0;
+
 var FILTER_CRPS = "CRP";
 var FILTER_YEAR = "Year";
 var TOTAL_SHEET = "6.0 SH Altmetrics Total Titles";
@@ -29,21 +31,21 @@ function init() {
             altmen.getWorkbook().getActiveSheet().getWorksheets().get(NEWS_SHEET),
             altmen.getWorkbook().getActiveSheet().getWorksheets().get(POLICIES_SHEET),
             allaltmetrcis.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
-        ]; 
+        ];
 
         switch (filterType) {
             case "crps":
                 if (checkedValues == 'All') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_CRPS);
-                    $filterTitle.text(checkedValues + " CRPs");
+                    $filterTitle.text(checkedValues + " Programs");
                     $(".checkedcrps").hide();
                 } else {
                     // Set filter to all sheets
                     appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValues);
                     $filterTitle.text(checkedValues);
                     // Add filter tag
-                    $(".checkedcrps").text("CRP: " + checkedValues).addClass("closebutton");
+                    $(".checkedcrps").text("Research Program: " + checkedValues).addClass("closebutton");
                     $(".checkedcrps").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedcrps").show();
                     $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);
@@ -51,10 +53,10 @@ function init() {
 
                 break;
             case "years":
-                if (checkedValues == 'All') {
+                if (checkedValues == 'All Years') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_YEAR);
-                    $filterTitle.text(checkedValues + " Years");
+                    $filterTitle.text(checkedValues);
                     $(".checkedyears").hide();
                 } else {
                     // Set filter to all sheets
@@ -64,7 +66,7 @@ function init() {
                     $(".checkedyears").text("Years: " + checkedValues).addClass("closebutton");
                     $(".checkedyears").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedyears").show();
-                    $(".closebutton, .clearfilters").on('click', clearYearsfilters);
+                    $(".checkedyears, .clearfilters").on('click', clearYearsfilters);
                 }
                 break;
             default:
@@ -82,8 +84,12 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#total-altmetrics iframe').attr("scrolling", "no");
                 $('#total-altmetrics iframe').css('overflow', 'hidden');
+
+                loaded();
             }
         };
     totalalt = new tableau.Viz(taltdiv, talturl, taltoptions);
@@ -98,8 +104,12 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#altmetrics-mentions iframe').attr("scrolling", "no");
                 $('#altmetrics-mentions iframe').css('overflow', 'hidden');
+
+                loaded();
             }
         };
     altmen = new tableau.Viz(altmdiv, altmurl, altmoptions);
@@ -113,8 +123,12 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#topten-alt iframe').attr("scrolling", "no");
                 $('#topten-alt iframe').css('overflow', 'hidden');
+
+                loaded();
             }
         };
     toptenalt = new tableau.Viz(tenaltdiv, tenalturl, tenaltoptions);
@@ -129,14 +143,25 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
                 $('#all-altmetrics iframe').attr("scrolling", "no");
                 $('#all-altmetrics iframe').css('overflow', 'hidden');
+
+                loaded();
             }
         };
     allaltmetrcis = new tableau.Viz(allaltdiv, allalturl, allaltoptions);
 
 }
 
+//Hide "loading" when all charts have loaded 
+function loaded() {
+    LOADED += 1;
+    if (LOADED == 4) {
+        $("#loadingModal").modal('hide');
+    }
+}
 
 /*************************** Tableau Functions *******************************/
 
@@ -168,6 +193,7 @@ function clearCRPfilters() {
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
     $('.portfolio').text('Research Program');
+    $('input[value="All"]').prop('checked', true);
 };
 
 function clearYearsfilters() {
@@ -182,6 +208,7 @@ function clearYearsfilters() {
         allaltmetrcis.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
-    $('.years').text('All Years');
+    $('.years').text('Years');
     $(".checkedyears").hide();
+    $('input[value="All Years"]').prop('checked', true);
 };

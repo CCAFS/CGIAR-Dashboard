@@ -17,7 +17,7 @@
       'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js',
       "./js/libs/tableau/tableau-2.2.2.min.js",
       "./js/libs/sly/sly.min.js",
-      "./js/papers.js?20181017"
+      "./js/papers.js?112218"
     ]
   }
 %}
@@ -29,18 +29,18 @@
 <div class="container">
   <div class="main-content">
   {% include './pages/message.twig' %}
-  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <div class="alert alert-warning alert-dismissible publications-disclaimer fade show" style="display:none">
+  <button type="button" class="close closep" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
     This section contains CCAFS Publications <b>only</b> for now.
     </div>
       <div class="alert alert-dark selection">
-      <div class="checkedfilters clearfilters">Clear all filters</div>
-      <div class="checkedfilters checkedyears"></div>
-      <div class="checkedfilters checkedcrps"></div>
-      <div class="checkedfilters checkedoa"></div>
-      <div class="checkedfilters checkedisi"></div>
+        <div class="checkedfilters clearfilters">Clear all filters</div>
+        <div class="checkedfilters checkedyears"></div>
+        <div class="checkedfilters checkedcrps"></div>
+        <div class="checkedfilters checkedoa"></div>
+        <div class="checkedfilters checkedisi"></div>
       </div>
       <div class="form-group row">
         <div class="col-md-6">
@@ -50,7 +50,7 @@
           </div></center>
           <div class="row justify-content-md-center">
           <div class="col-md-7">
-          <center><img src="{{ base_url() }}/images/oapicons.svg" width="10.3%">
+          <center><img src="{{ base_url() }}/images/oapicons.svg" width="30px">
           <h6 class="subTitle">% of Open Access Publications</h6>
             <div class="oatotal-container">
               <div id="oa-papers"></div>
@@ -58,7 +58,7 @@
           </center>
           </div>
           <div class="col-md-5">
-            <center><img src="{{ base_url() }}/images/isipicons.svg" width="15%">
+            <center><img src="{{ base_url() }}/images/isipicons.svg" width="30px">
             <h6 class="subTitle">% of ISI Publications</h6>
             <div class="oatotal-container">
              <div id="isi-papers"></div>
@@ -81,12 +81,10 @@
         </div>
       </div>
       <div class="form-group bot-block">
-      <div class="col-md-8">
         <h6 class="subTitle">List of Publications</h6>
           <div class="plist-container">
             <div id="papers-list"></div>
           </div>
-        </div>
       </div>
   </div>
 </div>

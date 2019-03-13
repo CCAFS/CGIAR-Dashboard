@@ -1,13 +1,18 @@
 <section>
   <div class="container">
-    <nav class="main-menu">
-      <ul>
+    <nav class="main-menu navbar-expand-lg">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> 
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav mr-auto mt-lg-0 mb-2">
         {% for section in sections %}
-          <li class="{% if currentSection == section.action %}active{% endif %}">
-            <a href="{% if section.active %}./{{ section.action }}{% else %}#{% endif %}" class="active-{{section.active}}"> {{ section.name }} </a>
+          <li class="{% if currentSection == section.action %}active{% endif %} nav-item mr-1">
+            <a href="{% if section.active %}./{{ section.action }}{% else %}#{% endif %}" class="active-{{section.active}} nav-link"> {{ section.name }} </a>
           </li>
         {% endfor %}
       </ul>
+      </div>
     </nav>
   </div>
 </section>

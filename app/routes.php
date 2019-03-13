@@ -8,20 +8,21 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
 
 
   $sections = array(
-    array('name' => 'Case Studies',   'action' => 'caseStudies',  'active' => true ),
+    array('name' => 'Outcome Case Studies',   'action' => 'caseStudies',  'active' => true ),
     array('name' => 'Innovations',    'action' => 'innovations',  'active' => true ),
     array('name' => 'Partnerships',   'action' => 'partnerships', 'active' => true ),
     array('name' => 'Publications',   'action' => 'publications', 'active' => true ),
-    array('name' => 'Altmetric',     'action' => 'altmetrics',   'active' => true )
+    array('name' => 'Policies',       'action' => 'policies',     'active' => true ),
+    array('name' => 'Altmetric',      'action' => 'altmetrics',   'active' => true )
   );
 
   $crps = array(
-    array('acronym' => 'CCAFS'),
-    array('acronym' => 'PIM'),
-    array('acronym' => 'WLE'),
-    array('acronym' => 'A4NH'),
-    array('acronym' => 'Livestock'),
-    array('acronym' => 'RTB')
+    array('acronym' => 'A4NH',      'name' => 'A4NH - Agriculture for Nutrition and Health'), 
+    array('acronym' => 'CCAFS',     'name' => 'CCAFS - Climate Change, Agriculture and Food Security'), 
+    array('acronym' => 'Livestock', 'name' => 'Livestock'), 
+    array('acronym' => 'PIM',       'name' => 'PIM - Policies, Institutions, and Markets'), 
+    array('acronym' => 'RTB',       'name' => 'RTB - Roots, Tubers and Bananas'), 
+    array('acronym' => 'WLE',       'name' => 'WLE - Water, Land and Ecosystems') 
   );
 
   $years = array( '2017');
