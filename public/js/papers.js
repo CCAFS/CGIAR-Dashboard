@@ -198,11 +198,6 @@ $('.closep').on('click', function(){
   sessionStorage.setItem('showMsgP', 'false');
 });
 
-//Disable CRP filters.
-$("input[name=crps]").prop('disabled', true);
-
-//Enable All Programs filter.
-$("input[value=All]").prop('disabled', false);
 
 /*************************** Tableau Functions *******************************/
 
