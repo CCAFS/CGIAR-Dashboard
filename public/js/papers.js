@@ -5,13 +5,15 @@ var FILTER_YEAR = "Year";
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
 var FILTER_MAP = "Country Name";
-var FILTER_OA = "Open Access   ";
-var FILTER_ISI = "ISI Journal   ";
+var FILTER_OA = "Open Access";
+var FILTER_ISI = "ISI Journal";
+var FILTER_TOTAL = "Total Publications";
 var TP_SHEET = "5.1 SH Total Papers";
 var OA_SHEET = "5.4 SH Percent of OA ";
 var ISI_SHEET = "5.5 SH Percent of ISI";
-var OABAR_SHEET = "5.4.1 Publications OA Bar";
-var ISIBAR_SHEET = "5.4.2 Publications ISI Bar";
+var OABAR_SHEET = "5.4 SH Papers Bar OA and ISI";
+var OATOTAL_SHEET= "5.4 SH Papers Circle OA";
+var ISITOTAL_SHEET= "5.5 SH Papers Circle ISI";
 var LIST_SHEET = "5.2 SH Papers Detail";
 
 $(document).ready(init);
@@ -22,14 +24,14 @@ function init() {
         var filterType = $(this).attr('name');
         var $checkedInputs = $("input[name='" + filterType + "']:checked");
         var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
-        var checkedValues = $.map($checkedInputs, function (e) { return e.value })
+        var checkedValues = $.map($checkedInputs, function (e) { return e.value });
 
         var sheetsArray = [
             totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
             oapapers.getWorkbook().getActiveSheet().getWorksheets().get(OA_SHEET),
             isipapers.getWorkbook().getActiveSheet().getWorksheets().get(ISI_SHEET),
-            oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OABAR_SHEET),
-            oaisi.getWorkbook().getActiveSheet().getWorksheets().get(ISIBAR_SHEET),
+            totaloa.getWorkbook().getActiveSheet().getWorksheets().get(OATOTAL_SHEET),
+            totalisi.getWorkbook().getActiveSheet().getWorksheets().get(ISITOTAL_SHEET),
             plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
         ];
 
@@ -130,7 +132,7 @@ function init() {
     isipapers = new tableau.Viz(isidiv, isiurl, isioptions);
 
     //OA-ISI by Research Program
-    var oaisidiv = document.getElementById("oa-isi"),
+   /* var oaisidiv = document.getElementById("oa-isi"),
         oaisiurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/5_4DBPapersBarOAandISI",
         oaisioptions = {
             hideTabs: true,
@@ -150,7 +152,49 @@ function init() {
                 loaded();
             }
         };
-    oaisi = new tableau.Viz(oaisidiv, oaisiurl, oaisioptions);
+    oaisi = new tableau.Viz(oaisidiv, oaisiurl, oaisioptions);*/
+
+    //Total ISI Publications
+    var totalisidiv = document.getElementById("total-isi"),
+        totalisiurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/5_5DBPapersCircleISI",
+        totalisioptions = {
+            hideTabs: true,
+            hideToolbar: true,
+            width: '100%',
+            height: '100%',
+            onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
+                $('#total-isi iframe').attr("scrolling", "no");
+                $('#total-isi iframe').css('overflow', 'hidden');
+
+                //Get selections and apply filters
+                totalisi.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksISIBar);
+
+            }
+        };
+    totalisi = new tableau.Viz(totalisidiv, totalisiurl, totalisioptions);
+
+    //Total OA Publications
+    var totaloadiv = document.getElementById("total-oa"),
+        totaloaurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/5_4DBPapersCircleOA",
+        totaloaoptions = {
+            hideTabs: true,
+            hideToolbar: true,
+            width: '100%',
+            height: '100%',
+            onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
+                $('#total-oa iframe').attr("scrolling", "no");
+                $('#total-oa iframe').css('overflow', 'hidden');
+
+                //Get selections and apply filters
+                totaloa.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksOABar);
+
+            }
+        };
+    totaloa = new tableau.Viz(totaloadiv, totaloaurl, totaloaoptions);
 
 
     //Papers List
@@ -178,7 +222,7 @@ function init() {
 //Hide "loading" when all charts have loaded 
 function loaded() {
     LOADED += 1;
-    if (LOADED == 5) {
+    if (LOADED == 4) {
         $("#loadingModal").modal('hide');
     }
 }
@@ -215,19 +259,21 @@ function clearDashboardFilter(sheetsArray, filterName) {
 
 /**** Selection functions ****/
 function selectMarksOABar(marksEvent) {
-    return marksEvent.getMarksAsync().then(selectedOABar);
+    return marksEvent.getMarksAsync().then(selectedOA);
 }
 
 function selectMarksISIBar(marksEvent) {
-    return marksEvent.getMarksAsync().then(selectedISIBar);
+    return marksEvent.getMarksAsync().then(selectedISI);
 }
 
 
-//Select OA bar 
-function selectedOABar(marks) {
+//Select OA 
+function selectedOA (marks) {
     var sheetsArray = [
         totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(ISIBAR_SHEET),
+        oapapers.getWorkbook().getActiveSheet().getWorksheets().get(OA_SHEET),
+        isipapers.getWorkbook().getActiveSheet().getWorksheets().get(ISI_SHEET),
+        totalisi.getWorkbook().getActiveSheet().getWorksheets().get(ISITOTAL_SHEET),
         plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_OA);
@@ -238,27 +284,30 @@ function selectedOABar(marks) {
             var pair = pairs[pairIndex];
             if (pair.fieldName == FILTER_OA) {
                 oaValue = pair.formattedValue;
+                console.log(oaValue);
                 if (oaValue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_OA, oaValue);
                     $(".checkedoa").text("Open Acces Publications").addClass("closebutton");
                     $(".checkedoa").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedoa").show();
-                    $(".checkedoa, .clearfilters").on('click', clearOAfilters);
+                    $(".checkedoa, .clearfilters").on('click', clearOAfilters);                    
                 }
-            }
+            } 
         }
     }
 }
 
-//Select ISI bar 
-function selectedISIBar(marks) {
+//Select ISI
+function selectedISI (marks) {
     var sheetsArray = [
         totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OABAR_SHEET),
+        oapapers.getWorkbook().getActiveSheet().getWorksheets().get(OA_SHEET),
+        isipapers.getWorkbook().getActiveSheet().getWorksheets().get(ISI_SHEET),
+        totaloa.getWorkbook().getActiveSheet().getWorksheets().get(OATOTAL_SHEET),
         plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
     ];
-    $(".checkedisi").hide();
     clearDashboardFilter(sheetsArray, FILTER_ISI);
+    $(".checkedisi").hide();
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
         var pairs = marks[markIndex].getPairs();
         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
@@ -270,13 +319,12 @@ function selectedISIBar(marks) {
                     $(".checkedisi").text("ISI Publications").addClass("closebutton");
                     $(".checkedisi").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedisi").show();
-                    $(".checkedisi, .clearfilters").on('click', clearISIfilters);
+                    $(".checkedisi, .clearfilters").on('click', clearISIfilters);                    
                 }
-            }
+            } 
         }
     }
 }
-
 
 /**** Clear functions ****/
 
@@ -285,9 +333,9 @@ function clearCRPfilters() {
     var sheetsArray = [
         totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
         oapapers.getWorkbook().getActiveSheet().getWorksheets().get(OA_SHEET),
-        isipapers.getWorkbook().getActiveSheet().getWorksheets().get(ISI_SHEET),
-        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OABAR_SHEET),
-        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(ISIBAR_SHEET),
+        isipapers.getWorkbook().getActiveSheet().getWorksheets().get(ISI_SHEET),        
+        totaloa.getWorkbook().getActiveSheet().getWorksheets().get(OATOTAL_SHEET),
+        totalisi.getWorkbook().getActiveSheet().getWorksheets().get(ISITOTAL_SHEET),
         plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
@@ -302,9 +350,9 @@ function clearYearsfilters() {
     var sheetsArray = [
         totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
         oapapers.getWorkbook().getActiveSheet().getWorksheets().get(OA_SHEET),
-        isipapers.getWorkbook().getActiveSheet().getWorksheets().get(ISI_SHEET),
-        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OABAR_SHEET),
-        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(ISIBAR_SHEET),
+        isipapers.getWorkbook().getActiveSheet().getWorksheets().get(ISI_SHEET),        
+        totaloa.getWorkbook().getActiveSheet().getWorksheets().get(OATOTAL_SHEET),
+        totalisi.getWorkbook().getActiveSheet().getWorksheets().get(ISITOTAL_SHEET),
         plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
@@ -317,12 +365,12 @@ function clearYearsfilters() {
 function clearOAfilters() {
     var sheetsArray = [
         totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(ISIBAR_SHEET),
-        plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
+        plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+        totalisi.getWorkbook().getActiveSheet().getWorksheets().get(ISITOTAL_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_OA);
     $(".checkedoa").hide();
-    var oasheet = oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OABAR_SHEET);
+    var oasheet = totaloa.getWorkbook().getActiveSheet().getWorksheets().get(OATOTAL_SHEET);
     oasheet.clearSelectedMarksAsync();
 };
 
@@ -331,11 +379,11 @@ function clearOAfilters() {
 function clearISIfilters() {
     var sheetsArray = [
         totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-        oaisi.getWorkbook().getActiveSheet().getWorksheets().get(OABAR_SHEET),
+        totaloa.getWorkbook().getActiveSheet().getWorksheets().get(OATOTAL_SHEET),
         plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_ISI);
     $(".checkedisi").hide();
-    var isisheet = oaisi.getWorkbook().getActiveSheet().getWorksheets().get(ISIBAR_SHEET);
+    var isisheet = totalisi.getWorkbook().getActiveSheet().getWorksheets().get(ISITOTAL_SHEET);
     isisheet.clearSelectedMarksAsync();
 };
