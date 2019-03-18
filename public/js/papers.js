@@ -171,6 +171,8 @@ function init() {
                 //Get selections and apply filters
                 totalisi.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksISIBar);
 
+                loaded();
+
             }
         };
     totalisi = new tableau.Viz(totalisidiv, totalisiurl, totalisioptions);
@@ -191,6 +193,8 @@ function init() {
 
                 //Get selections and apply filters
                 totaloa.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksOABar);
+
+                loaded();
 
             }
         };
@@ -222,7 +226,7 @@ function init() {
 //Hide "loading" when all charts have loaded 
 function loaded() {
     LOADED += 1;
-    if (LOADED == 4) {
+    if (LOADED == 6) {
         $("#loadingModal").modal('hide');
     }
 }
@@ -231,7 +235,7 @@ function loaded() {
 // Close yellow disclaimer in all sections after closing it once
 const showMsgP = sessionStorage.getItem('showMsgP');
 
-if(showMsgP == 'false'){
+if(showMsgP == 'false'){        
   $('.publications-disclaimer').hide();
 } else {
   $('.publications-disclaimer').show();
@@ -284,7 +288,6 @@ function selectedOA (marks) {
             var pair = pairs[pairIndex];
             if (pair.fieldName == FILTER_OA) {
                 oaValue = pair.formattedValue;
-                console.log(oaValue);
                 if (oaValue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_OA, oaValue);
                     $(".checkedoa").text("Open Acces Publications").addClass("closebutton");
