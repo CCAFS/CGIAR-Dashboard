@@ -322,6 +322,13 @@ nav.main-menu ul li.active:after {
   display: none;
 }
 
+.alert-danger {
+  color: #d0aaae;
+  background-color: #ffeaec;
+  border-color: #ead9db;
+  font-size: 14px;
+}
+
 .browser-message {
   margin: 0 auto;
   width: 180px;

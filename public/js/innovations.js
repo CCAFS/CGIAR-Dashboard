@@ -6,6 +6,8 @@ var FILTER_YEAR = "Year";
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
 var FILTER_MAP = "Country Name";
+var FILTER_REGION = "Geographic Scope ";
+var FILTER_GLOBAL = "Reg Un Name";
 var FILTER_DEGREE = "Degree of Innovation";
 
 //Sheets
@@ -15,6 +17,8 @@ var ILIST_SHEET = "2.5 Innov Detail ";
 var IMAP_SHEET = "2.6 SH Innovations Map";
 var TI_SHEET = "2.3 SH Innov Count";
 var TAI_SHEET = "2.7 SH Innov Count Percentage ";
+var GLOBAL_SHEET = "2.7 SH Innovations Map Global";
+var REGIONAL_SHEET = "2.8 SH Innovations Map Regional";
 
 $(document).ready(init);
 
@@ -105,7 +109,9 @@ function init() {
             ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
             totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
             totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-            iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+            iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+            iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+            iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
         ];
 
         switch (filterType) {
@@ -284,7 +290,9 @@ function init() {
             itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
             ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
             totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
-            iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+            iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+            iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+            iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
         ];
 
         appyDashboardFilter(sheetsArray, "Degree of Innovation", "Adaptive");
@@ -301,7 +309,9 @@ function init() {
             itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
             ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
             totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
-            iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+            iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+            iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+            iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
         ];
 
         appyDashboardFilter(sheetsArray, "Degree of Innovation", "Novel");
@@ -370,7 +380,9 @@ function selectedMarksStage(marks) {
         itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_STAGE);
     $(".checkedstage").hide();
@@ -398,7 +410,9 @@ function selectedMarksType(marks) {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_TYPE);
     $(".checkedtype").hide();
@@ -443,6 +457,24 @@ function selectedMarksMap(marks) {
                     $(".checkedcountry").show();
                     $(".checkedcountry, .clearfilters").on('click', clearMapfilters);
                 }
+            } else if (pair.fieldName == FILTER_REGION) {
+                mapValue = pair.formattedValue;
+                if (mapValue == "Regional") {
+                    appyDashboardFilter(sheetsArray, FILTER_REGION, mapValue);
+                    $(".checkedcountry").text("Scope: " + mapValue).addClass("closebutton");
+                    $(".checkedcountry").css('margin-top', '3px').css('margin-bottom', '3px');
+                    $(".checkedcountry").show();
+                    $(".checkedcountry, .clearfilters").on('click', clearRegionalfilter);
+                }
+            } else if (pair.fieldName == FILTER_GLOBAL) {
+                mapValue = pair.formattedValue;
+                if (mapValue == "Global") {
+                    appyDashboardFilter(sheetsArray, FILTER_GLOBAL, mapValue);
+                    $(".checkedcountry").text("Scope: " + mapValue).addClass("closebutton");
+                    $(".checkedcountry").css('margin-top', '3px').css('margin-bottom', '3px');
+                    $(".checkedcountry").show();
+                    $(".checkedcountry, .clearfilters").on('click', clearGlobalfilters);
+                }
             }
         }
     }
@@ -455,7 +487,9 @@ function clearCRPfilters() {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
@@ -470,7 +504,9 @@ function clearYearsfilters() {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
     $('.years').text('Years');
@@ -484,7 +520,9 @@ function clearStagefilters() {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_STAGE);
     $(".checkedstage").hide();
@@ -498,7 +536,9 @@ function clearTypefilters() {
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_TYPE);
     $(".checkedtype").hide();
@@ -521,6 +561,34 @@ function clearMapfilters() {
     mapsheet.clearSelectedMarksAsync();
 };
 
+function clearRegionalfilter() {
+    var sheetsArray = [
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
+        totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
+        totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET)
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_REGION);
+    $(".checkedcountry").hide();
+    var mapsheet = iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET);
+    mapsheet.clearSelectedMarksAsync();
+};
+
+function clearGlobalfilters() {
+    var sheetsArray = [
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
+        totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
+        totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET)
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_GLOBAL);
+    $(".checkedcountry").hide();
+    var mapsheet = iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET);
+    mapsheet.clearSelectedMarksAsync();
+};
+
 
 function clearNovelfilters() {
     var sheetsArray = [
@@ -528,7 +596,9 @@ function clearNovelfilters() {
         itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
     ];
     clearDashboardFilter(sheetsArray, "Degree of Innovation");
     $(".checkeddegree").hide();
@@ -541,7 +611,9 @@ function clearAdaptativefilters() {
         itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
         ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
         totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET)
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
     ];
     clearDashboardFilter(sheetsArray, "Degree of Innovation");
     $(".checkeddegree").hide();
