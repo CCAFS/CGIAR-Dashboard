@@ -29,7 +29,7 @@ header .title {
   padding: 7px 24px 7px 0;
   margin: 0;
   cursor: pointer;
-  background-color: #3498db;
+  background-color: #00a0b0;
   color: #fff;
   font-size: 0.9em;
   border-radius: 1px;
@@ -38,7 +38,7 @@ header .title {
 }
 
 .filter-component:hover .filter-title {
-  background-color: #2e8ac7;
+  background-color: #037781;
 }
 
 .filter-component.disabled .filter-title {

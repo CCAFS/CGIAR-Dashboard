@@ -38,15 +38,15 @@
 
 /* When the checkbox is checked, add a blue background */
 .inputContainer input:checked ~ .checkmark {
-    background-color: #2196F3;
-    border-color: #1b91ef;
+    background-color: #00a0b0;
+    border-color: #0493a0;
     -webkit-transition: all 350ms ease;
     transition: all 350ms ease;
 }
 
 .inputContainer:hover input:checked ~ .checkmark {
-    background-color: #60adea;
-    border-color: #60adea;
+    background-color: #19bdcc;
+    border-color: #19bdcc;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
