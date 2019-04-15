@@ -1,0 +1,22 @@
+.capDevTotals {
+    margin: auto;
+}
+
+.totalsCap {
+    color: #585858;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin-top: -10;
+}
+
+.totalmen {
+    height: 100px;
+}
+
+.participants-container {
+    height: 240px;
+}
+  
+.trainees-container {
+    height: 240px;
+}

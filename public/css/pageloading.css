@@ -19,7 +19,7 @@
     margin: 0 auto;
     width: 15%;
     height: 15%;
-    background-color: #f1c40f;
+    background-color: #ffa600;
     border-radius: 100%;
     -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
     animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
@@ -168,6 +168,6 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     font-weight: 800;
-    color: #f1c40f;
+    color: #ffa600;
     text-transform: uppercase;
 }

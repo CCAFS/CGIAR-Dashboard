@@ -5,10 +5,17 @@ function init() {
 
   console.log('Init');
   msieversion();
-
+  isZoomed()
+  
 }
 
+
+$( window ).resize(function() {
+  isZoomed();
+});
+
 $("#loadingModal").modal('show');
+
 
 // Close blue disclaimer in all sections after closing it once
 const showMsg = sessionStorage.getItem('showMsg');
@@ -73,3 +80,13 @@ function scrollFunction() {
 }
 
 window.addEventListener('scroll', scrollFunction); 
+
+function isZoomed() {
+  var wsize = $( window ).width(); 
+  var hsize = $( window ).height(); 
+  if(wsize < hsize) {
+    $('.filter-items').addClass( "zoomedSize" );
+  } else {
+    $('.filter-items').removeClass( "zoomedSize" );
+  }
+}

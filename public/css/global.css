@@ -422,3 +422,8 @@ nav.main-menu ul li.active:after {
 .navbar-toggler-icon {
   background-image: url(../images/icons/navbar-icon.svg);
 }
+
+.zoomedSize {
+  height: 450px;
+  overflow: auto;
+}
