@@ -41,6 +41,21 @@ function msieversion() {
   return false;
 }
 
+$('.fprogram').change(function () {
+
+  var id = [];
+  $(".text-messages").find(".crp-messages").each(function () { id.push(this.id); });
+  var checkedValue = $('#crps:checked').val();
+  for (var i = 0; i <= id.length; i++) {
+    if (id[i] == checkedValue) {
+      $(".text-messages").find("#" + id[i]).show();
+      console.log(i);
+    } else {
+      $(".text-messages").find("#" + id[i]).hide();
+    }
+  }
+
+});
 
 
 //Change header when scrolling. 

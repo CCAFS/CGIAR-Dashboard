@@ -1,0 +1,82 @@
+[
+  {
+    "id": "0",
+    "year": "2017",
+    "crp": "CCAFS",
+    "indicator": "caseStudies",
+    "level": "warning",
+    "message": "CCAFS OICS Warn Test message"
+  },
+  {
+    "id": "1",
+    "year": "2017",
+    "crp": "CCAFS",
+    "indicator": "caseStudies",
+    "level": "warning",
+    "message": "CCAFS OICS Warn Test message 2"
+  },
+  {
+    "id": "2",
+    "year": "2017",
+    "crp": "Genebank",
+    "indicator": "caseStudies",
+    "level": "INFO",
+    "message": "Genebank OICS Info Test message"
+  },
+  {
+    "id": "3",
+    "year": "2017",
+    "crp": "CCAFS",
+    "indicator": "caseStudies",
+    "level": "danger",
+    "message": "CCAFS OICS Error Test message"
+  },
+  {
+    "id": "4",
+    "year": "2017",
+    "crp": "CCAFS",
+    "indicator": "innovations",
+    "level": "danger",
+    "message": "CCAFS Innovations Error Test message"
+  },
+  {
+    "id": "5",
+    "year": "2017",
+    "crp": "CCAFS",
+    "indicator": "partnerships",
+    "level": "danger",
+    "message": "CCAFS Partnerships Error Test message"
+  },
+  {
+    "id": "6",
+    "year": "2017",
+    "crp": "CCAFS",
+    "indicator": "publications",
+    "level": "damger",
+    "message": "CCAFS Publications Error Test message"
+  },
+  {
+    "id": "7",
+    "year": "2017",
+    "crp": "CCAFS",
+    "indicator": "policies",
+    "level": "danger",
+    "message": "CCAFS Policies Error Test message"
+  },
+  {
+    "id": "8",
+    "year": "2017",
+    "crp": "Livestock",
+    "indicator": "altmetrics",
+    "level": "danger",
+    "message": "Livestock Policies Info Test message"
+  },
+  {
+    "id": "9",
+    "year": "2017",
+    "crp": "RTB",
+    "indicator": "altmetrics",
+    "level": "danger",
+    "message": "RTB Altmetrics Test message"
+  }
+]

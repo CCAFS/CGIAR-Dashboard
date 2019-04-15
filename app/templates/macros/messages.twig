@@ -1,0 +1,13 @@
+
+{% macro message(id, crp, year, indicator, message, type) %}
+
+<div id="message-{{ id }}" class="text-messages">
+    <div id="{{ crp }}" class="alert alert-{{ type }} crp-messages alert-dismissible animate fadeIn fade show" role="alert" style="display:none">
+        {{ message }}
+        <button type="button" id="{{ id }}" class="close closeCrpMessage" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>  
+</div> 
+    
+{% endmacro %}

@@ -36,6 +36,10 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
 
   $currentSection = (isset($args['actionName'])? $args['actionName'] : $sections[0]['action']);
 
+  //Get CRP messages
+  $messagesJSON = file_get_contents('data/messages.json', FILE_USE_INCLUDE_PATH);
+  $messagesArray = json_decode($messagesJSON, true);
+  
   /*
   try{
       // Get DB Object
@@ -55,6 +59,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     'sections' => $sections,
     'crps' => $crps,
     'years' => $years,
+    'messagesArray' => $messagesArray,
     'currentSection' => $currentSection
   ]);
   return $response;

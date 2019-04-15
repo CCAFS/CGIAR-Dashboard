@@ -5,9 +5,9 @@ var FILTER_CRPS = "CRP";
 var FILTER_YEAR = "Year";
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
-var FILTER_MAP = "Country Name";
+var FILTER_MAP = "Country Name -To use";
 var FILTER_REGION = "Geographic Scope ";
-var FILTER_GLOBAL = "Reg Un Name";
+var FILTER_GLOBAL = "Country Name -To use";
 var FILTER_DEGREE = "Degree of Innovation";
 
 //Sheets

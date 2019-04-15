@@ -1,3 +1,5 @@
+{% import "./macros/messages.twig" as messages %}
+
 <div class="browser-message" style="display:none">This Dashboard works best with
     <ul>
         <li>
@@ -22,7 +24,14 @@
     <button type="button" class="close closem" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
+    <span class="glyphicon glyphicon-info-sign"></span>
     This Dashboard includes a sub-set of the 2017 Annual Report data from 6 CRP's for demonstration purposes. Data has
     been extracted directly from Management Information Systems (MARLO) and annual reports for 2017. Some of the data
     for the prototype has not undergone quality checks.
 </div>
+
+{% for message in messagesArray %}
+    {% if currentSection == message.indicator %}
+        {{ messages.message(message.id, message.crp, message.year, message.indicator, message.message, message.level) }}
+    {% endif %}    
+{% endfor %}
