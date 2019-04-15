@@ -92,6 +92,7 @@ nav.main-menu ul li {
   display: inline-block;
   position: relative;
   cursor: pointer;
+  font-size: 0.96rem;
 }
 
 nav.main-menu ul li a {
@@ -111,7 +112,7 @@ nav.main-menu ul li:hover a {
 }
 
 nav.main-menu ul li.active a {
-  background-color: #f1c40f;
+  background-color: #ffa600;
   color: #fff;
   font-weight: bold;
 }
@@ -127,7 +128,7 @@ nav.main-menu ul li.active:after , nav.main-menu ul li.active:before {
 }
 
 nav.main-menu ul li.active:after {
-  border-top-color: #f1c40f;
+  border-top-color: #ffa600;
   border-width: 17px 31px 0 35px;
   margin-left: -32px;
 }
@@ -384,6 +385,9 @@ nav.main-menu ul li.active:after {
   #pageheader h3 span {
     font-size: 0.8em;
   }  
+  nav.main-menu ul li {
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width:991px) {
