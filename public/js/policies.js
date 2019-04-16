@@ -205,14 +205,6 @@ $('.closepolicies').on('click', function () {
     sessionStorage.setItem('showMsgPolicies', 'false');
 });
 
-//Disable CRP filters.
-$("input[name=crps]").prop('disabled', true);
-
-//Enable All Programs, CCAFS and PIM filters.
-$("input[value=CCAFS]").prop('disabled', false);
-$("input[value=PIM]").prop('disabled', false);
-$("input[value=All]").prop('disabled', false);
-
 /*************************** Tableau Functions *******************************/
 
 function appyDashboardFilter(sheetsArray, filterName, filterValues) {

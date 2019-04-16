@@ -320,7 +320,6 @@ nav.main-menu ul li.active:after {
   border-color: #d0e2ee;
   text-align: justify;
   font-size: 14px;
-  display: none;
 }
 
 .alert-danger {

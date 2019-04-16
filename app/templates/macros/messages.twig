@@ -1,9 +1,21 @@
 
 {% macro message(id, crp, year, indicator, message, type) %}
 
+{% set messageIcon %}
+
+    {% if type == "INFO" %}
+        <i class="fas fa-info-circle"></i>
+    {% elseif type == "danger" %}
+        <i class="fas fa-exclamation-triangle"></i>
+    {% elseif type == "warning" %}
+        <i class="fas fa-exclamation-circle"></i>
+    {% endif %}
+
+{% endset %}
+
 <div id="message-{{ id }}" class="text-messages">
     <div id="{{ crp }}" class="alert alert-{{ type }} crp-messages alert-dismissible animate fadeIn fade show" role="alert" style="display:none">
-        {{ message }}
+         {{ messageIcon }} {{ message }}
         <button type="button" id="{{ id }}" class="close closeCrpMessage" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
