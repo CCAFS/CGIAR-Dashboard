@@ -84,8 +84,8 @@ function isZoomed() {
   var wsize = $( window ).width(); 
   var hsize = $( window ).height(); 
   if(wsize < hsize) {
-    $('.filter-items').addClass( "zoomedSize" );
+    $('.items-programs').addClass( "zoomedSize" );
   } else {
-    $('.filter-items').removeClass( "zoomedSize" );
+    $('.items-programs').removeClass( "zoomedSize" );
   }
 }
