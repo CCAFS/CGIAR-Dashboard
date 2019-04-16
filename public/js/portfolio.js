@@ -330,6 +330,8 @@ function reportSelectedMarks(marks) {
     sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
   ];
   clearDashboardFilter(sheetsArray, FILTER_COUNTRY);
+  clearDashboardFilter(sheetsArray, FILTER_GLOBAL);
+  clearDashboardFilter(sheetsArray, FILTER_REGION);
   $(".checkedregion").hide();
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {
     var pairs = marks[markIndex].getPairs();
@@ -379,8 +381,8 @@ function selectedMarksSLOsBar(marks) {
     mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
     sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
   ];
-  //clearDashboardFilter(sheetsArray, FILTER_SLO);
-  //$(".checkedslo").hide();
+  clearDashboardFilter(sheetsArray, FILTER_SLO);
+  $(".checkedslo").hide();
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
@@ -412,8 +414,8 @@ function selectedMarksCCIBar(marks) {
     mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
     sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
   ];
-  //clearDashboardFilter(sheetsArray, FILTER_CCI);
- // $(".checkedcci").hide();
+  clearDashboardFilter(sheetsArray, FILTER_CCI);
+  $(".checkedcci").hide();
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
