@@ -32,13 +32,13 @@
 .publications-tooltip {
   background-color: #c2c1c1;
   float: right;
-  width: 14px;
+  width: 15px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 60%;
   text-align: center;
   color: #ffffff;
-  margin-right: 53%;
+  margin-right: 56%;
   border-radius: 50%;
   cursor: pointer;
   z-index: 4;

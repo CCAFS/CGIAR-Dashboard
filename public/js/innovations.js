@@ -7,7 +7,7 @@ var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
 var FILTER_MAP = "Country Name -To use";
 var FILTER_REGION = "Geographic Scope ";
-var FILTER_GLOBAL = "Country Name -To use";
+var FILTER_GLOBAL = "Geographic Scope ";
 var FILTER_DEGREE = "Degree of Innovation";
 
 //Sheets
@@ -443,6 +443,8 @@ function selectedMarksMap(marks) {
         totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_MAP);
+    clearDashboardFilter(sheetsArray, FILTER_REGION);
+    clearDashboardFilter(sheetsArray, FILTER_GLOBAL);
     $(".checkedcountry").hide();
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
         var pairs = marks[markIndex].getPairs();
@@ -465,17 +467,14 @@ function selectedMarksMap(marks) {
                     $(".checkedcountry").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedcountry").show();
                     $(".checkedcountry, .clearfilters").on('click', clearRegionalfilter);
-                }
-            } else if (pair.fieldName == FILTER_GLOBAL) {
-                mapValue = pair.formattedValue;
-                if (mapValue == "Global") {
+                } else if (mapValue == "Global") {
                     appyDashboardFilter(sheetsArray, FILTER_GLOBAL, mapValue);
                     $(".checkedcountry").text("Scope: " + mapValue).addClass("closebutton");
                     $(".checkedcountry").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedcountry").show();
                     $(".checkedcountry, .clearfilters").on('click', clearGlobalfilters);
                 }
-            }
+            } 
         }
     }
 }
