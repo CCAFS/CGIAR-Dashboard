@@ -11,6 +11,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     array('name' => 'Outcome Case Studies',   'action' => 'caseStudies',  'active' => true ),
     array('name' => 'Innovations',    'action' => 'innovations',  'active' => true ),
     array('name' => 'Partnerships',   'action' => 'partnerships', 'active' => true ),
+    array('name' => 'Capacity Development',   'action' => 'capDev', 'active' => true ),
     array('name' => 'Publications',   'action' => 'publications', 'active' => true ),
     array('name' => 'Policies',       'action' => 'policies',     'active' => true ),
     array('name' => 'Altmetric',      'action' => 'altmetrics',   'active' => true )
@@ -21,6 +22,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     array('acronym' => 'BigData',      'name' => 'BigData - Big Data in Agriculture'), 
     array('acronym' => 'CCAFS',     'name' => 'CCAFS - Climate Change, Agriculture and Food Security'),
     array('acronym' => 'EiB',      'name' => 'EiB - Excellence in Breeding'), 
+    array('acronym' => 'Fish',       'name' => 'Fish'),
     array('acronym' => 'FTA',       'name' => 'FTA - Forests, Trees and Agroforestry'),
     array('acronym' => 'Genebank', 'name' => 'Genebank'), 
     array('acronym' => 'Livestock', 'name' => 'Livestock'), 
