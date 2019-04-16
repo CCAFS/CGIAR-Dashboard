@@ -11,7 +11,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     array('name' => 'Outcome Case Studies',   'action' => 'caseStudies',  'active' => true ),
     array('name' => 'Innovations',    'action' => 'innovations',  'active' => true ),
     array('name' => 'Partnerships',   'action' => 'partnerships', 'active' => true ),
-    array('name' => 'Capacity Development',   'action' => 'capDev', 'active' => true ),
+    array('name' => 'Capacity Development',   'action' => 'capDev', 'active' => false ),
     array('name' => 'Publications',   'action' => 'publications', 'active' => true ),
     array('name' => 'Policies',       'action' => 'policies',     'active' => true ),
     array('name' => 'Altmetric',      'action' => 'altmetrics',   'active' => true )

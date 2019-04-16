@@ -56,7 +56,6 @@ $('.fprogram').change(function () {
   for (var i = 0; i <= id.length; i++) {
     if (id[i] == checkedValue) {
       $(".text-messages").find("#" + id[i]).show();
-      console.log(i);
     } else {
       $(".text-messages").find("#" + id[i]).hide();
     }
