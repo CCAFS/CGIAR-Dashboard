@@ -6,11 +6,11 @@
     color: #585858;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    margin-top: -10;
+    margin-top: -5;
 }
 
-.totalmen {
-    height: 100px;
+.totalCapDev {
+    height: 80px;
 }
 
 .participants-container {
@@ -19,4 +19,12 @@
   
 .trainees-container {
     height: 240px;
+}
+
+.capDevTitles {
+    margin-bottom: 0.1rem !important;
+}
+
+.tparticipants {
+    margin-bottom:10px;
 }
