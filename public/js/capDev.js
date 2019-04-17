@@ -9,10 +9,13 @@ var TOTALP_SHEET = "4.2 SH CapDev Total Participants";
 var TOTALT_SHEET = "4.3 SH CapDev Total Trainees ";
 var TOTALW_SHEET = "4.4 SH Total Women Part & Trainees Total";
 var TOTALM_SHEET = "4.5 SH Total Men Part & Trainees Total";
+var PARTICIPANTS_SHEET = "4.0 SH Participants Dual Axis chart";
+var TRAINEES_SHEET = "4.1 SH Trainees Dual Axis chart";
 
 $(document).ready(init);
 
 function init() {
+
 
     $('input[type="radio"]').on('change', function () {
         var filterType = $(this).attr('name');
@@ -24,7 +27,9 @@ function init() {
             totalparticipants.getWorkbook().getActiveSheet().getWorksheets().get(TOTALP_SHEET),
             totaltrainees.getWorkbook().getActiveSheet().getWorksheets().get(TOTALT_SHEET),
             totalwomen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALW_SHEET),
-            totalmen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALM_SHEET)
+            totalmen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALM_SHEET),
+            participantsUser.getWorkbook().getActiveSheet().getWorksheets().get(PARTICIPANTS_SHEET),
+            traineesTerm.getWorkbook().getActiveSheet().getWorksheets().get(TRAINEES_SHEET)
         ];
 
         switch (filterType) {
@@ -145,8 +150,8 @@ function init() {
 
 
     //Participants women-men 
-    /*var participantsdiv = document.getElementById("participants-user"),
-        participantsurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/4_2SHParticipantsDualAxischart",
+    var participantsdiv = document.getElementById("participants-user"),
+        participantsurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/4_0DBParticipantsDualAxischart",
         participantsoption = {
             hideTabs: true,
             hideToolbar: true,
@@ -165,7 +170,7 @@ function init() {
 
     //Trainees women-men 
     var traineesdiv = document.getElementById("trainees-term"),
-        traineesurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/4_1SHTraineesDualAxischart",
+        traineesurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/4_1DBTraineesDualAxischart",
         traineesoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -180,7 +185,7 @@ function init() {
                 loaded();
             }
         };
-    traineesTerm = new tableau.Viz(traineesdiv, traineesurl, traineesoptions);*/
+    traineesTerm = new tableau.Viz(traineesdiv, traineesurl, traineesoptions);
 
 }
 
@@ -188,7 +193,7 @@ function init() {
 //Hide "loading" when all charts have loaded 
 function loaded() {
     LOADED += 1;
-    if (LOADED == 4) {
+    if (LOADED == 6) {
         $("#loadingModal").modal('hide');
     }
 }
@@ -222,7 +227,9 @@ function clearCRPfilters() {
         totalparticipants.getWorkbook().getActiveSheet().getWorksheets().get(TOTALP_SHEET),
         totaltrainees.getWorkbook().getActiveSheet().getWorksheets().get(TOTALT_SHEET),
         totalwomen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALW_SHEET),
-        totalmen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALM_SHEET)
+        totalmen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALM_SHEET),
+        participantsUser.getWorkbook().getActiveSheet().getWorksheets().get(PARTICIPANTS_SHEET),
+        traineesTerm.getWorkbook().getActiveSheet().getWorksheets().get(TRAINEES_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
@@ -237,7 +244,9 @@ function clearYearsfilters() {
         totalparticipants.getWorkbook().getActiveSheet().getWorksheets().get(TOTALP_SHEET),
         totaltrainees.getWorkbook().getActiveSheet().getWorksheets().get(TOTALT_SHEET),
         totalwomen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALW_SHEET),
-        totalmen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALM_SHEET)
+        totalmen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALM_SHEET),
+        participantsUser.getWorkbook().getActiveSheet().getWorksheets().get(PARTICIPANTS_SHEET),
+        traineesTerm.getWorkbook().getActiveSheet().getWorksheets().get(TRAINEES_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
     $('.years').text('Years');
