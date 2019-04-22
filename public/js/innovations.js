@@ -119,14 +119,14 @@ function init() {
                 if (checkedValues == 'All') {
                     // Clear filter from all sheets
                     clearDashboardFilter(sheetsArray, FILTER_CRPS);
-                    $filterTitle.text(checkedValues + " Programs");
+                    $filterTitle.text(checkedValues + " Portfolio");
                     $(".checkedcrps").hide();
                 } else {
                     // Set filter to all sheets
                     appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValues);
                     $filterTitle.text(checkedValues);
                     // Add filter tag
-                    $(".checkedcrps").text("Research Program: " + checkedValues).addClass("closebutton");
+                    $(".checkedcrps").text("Research Portfolio: " + checkedValues).addClass("closebutton");
                     $(".checkedcrps").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedcrps").show();
                     $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);
@@ -492,7 +492,7 @@ function clearCRPfilters() {
     ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
-    $('.portfolio').text('Research Program');
+    $('.portfolio').text('Research Portfolio');
     $('input[value="All"]').prop('checked', true);
 };
 
