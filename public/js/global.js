@@ -5,7 +5,8 @@ function init() {
 
   console.log('Init');
   msieversion();
-  isZoomed()
+  isZoomed();
+  $('input[value="All Years"]').attr('disabled', true);
   
 }
 

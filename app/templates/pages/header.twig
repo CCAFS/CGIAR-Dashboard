@@ -71,7 +71,7 @@
                   <div class="filter-component fyear">
                     <p id="filtertitley" class="filter-title years">Years</p>
                     <ul class="filter-items items-years">
-                      <li> {{ forms.checkmark('years', 'All Years' , 'All Years', true) }} </li>
+                      <li> {{ forms.checkmark('years', 'All Years' , 'All Years', false) }} </li>
                       {% for year in years %}
                         <li> {{ forms.checkmark('years', year, year) }} </li>
                       {% endfor %}
