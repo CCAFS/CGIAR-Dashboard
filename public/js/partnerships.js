@@ -80,7 +80,7 @@ function init() {
 
     //Total Partnerships
     var tpdiv = document.getElementById("total-partnerships"),
-        tpurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/3_1DBTotalPartnerships_1",
+        tpurl = appConfig.tableauView + "/3_1DBTotalPartnerships_1",
         tpoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -100,7 +100,7 @@ function init() {
 
     //Total Partnerships by phase
     var tpphasediv = document.getElementById("tp-phase"),
-        tpphaseurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/3_2DBTotalPartbyStage",
+        tpphaseurl = appConfig.tableauView + "/3_2DBTotalPartbyStage",
         tpphaseoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -122,7 +122,7 @@ function init() {
 
     //Key Partnerships on the Ground
     var pmapdiv = document.getElementById("partnerships-map"),
-        pmapurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/3_4DBKeyPartnershipsmap",
+        pmapurl = appConfig.tableauView + "/3_4DBKeyPartnershipsmap",
         pmapoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -145,7 +145,7 @@ function init() {
 
     //Total Key Partnerships
     var tkpdiv = document.getElementById("total-keyp"),
-        tkpurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/3_4DBKeyPartnerships",
+        tkpurl = appConfig.tableauView + "/3_4DBKeyPartnerships",
         tkpoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -165,7 +165,7 @@ function init() {
 
     //Key Partnerships by phase
     var kppdiv = document.getElementById("keyp-phase"),
-        kppurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/3_5DBKeyPartbyStage",
+        kppurl = appConfig.tableauView + "/3_5DBKeyPartbyStage",
         kppoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -188,7 +188,7 @@ function init() {
 
     //Key Partnerships by type 
     var kptdiv = document.getElementById("keyp-type"),
-        kpturl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/3_6DBKeyPartbyStageandProgramType2",
+        kpturl = appConfig.tableauView + "/3_6DBKeyPartbyStageandProgramType2",
         kptoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -211,7 +211,7 @@ function init() {
 
     //List of key partnerships
     var kpldiv = document.getElementById("keyp-list"),
-        kplurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/3_7DBKeyPartnersDetails",
+        kplurl = appConfig.tableauView + "/3_7DBKeyPartnersDetails",
         kploptions = {
             hideTabs: true,
             hideToolbar: true,

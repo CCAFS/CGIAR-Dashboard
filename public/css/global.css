@@ -364,7 +364,7 @@ nav.main-menu ul li.active:after {
   position: fixed;
   z-index: 1;
   top: -1px;
-  padding-top: 4px; 
+  padding-top: 4px;
   border-bottom: 1px solid rgba(131, 131, 131, 0.075);
 }
 
@@ -383,7 +383,7 @@ nav.main-menu ul li.active:after {
 @media (max-width:1199px) {
   #pageheader h3 span {
     font-size: 0.8em;
-  }  
+  }
   nav.main-menu ul li {
     font-size: 0.7rem;
   }
@@ -392,7 +392,7 @@ nav.main-menu ul li.active:after {
 @media (max-width:991px) {
   #pageheader h3 span {
     display: none;
-  }  
+  }
 }
 
 @media (max-width:456px) {
@@ -400,13 +400,13 @@ nav.main-menu ul li.active:after {
     width:40px;
     position: fixed;
     top: 20px;
-  }  
+  }
 }
 
 @media (max-width:375px) {
   h3 img {
     display: none;
-  }  
+  }
 }
 
 .navbar-toggler {
@@ -425,4 +425,9 @@ nav.main-menu ul li.active:after {
 .zoomedSize {
   height: 450px;
   overflow: auto;
+}
+
+.testingMessage {
+  background-color: #6c757d;
+  padding: 5px 0;
 }

@@ -76,7 +76,7 @@ function init() {
 
     //Total papers
     var papersdiv = document.getElementById("total-papers"),
-        papersurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/5_1DBTotalPapers",
+        papersurl = appConfig.tableauView + "/5_1DBTotalPapers",
         papersoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -95,7 +95,7 @@ function init() {
 
     //OA %
     var oadiv = document.getElementById("oa-papers"),
-        oaurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/5_2DBPapersOAPerc",
+        oaurl = appConfig.tableauView + "/5_2DBPapersOAPerc",
         oaoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -114,7 +114,7 @@ function init() {
 
     //ISI %
     var isidiv = document.getElementById("isi-papers"),
-        isiurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/5_3DBPapersISIPerc",
+        isiurl = appConfig.tableauView + "/5_3DBPapersISIPerc",
         isioptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -133,7 +133,7 @@ function init() {
 
     //OA-ISI by Research Program
    /* var oaisidiv = document.getElementById("oa-isi"),
-        oaisiurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/5_4DBPapersBarOAandISI",
+        oaisiurl = appConfig.tableauView + "/5_4DBPapersBarOAandISI",
         oaisioptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -156,7 +156,7 @@ function init() {
 
     //Total ISI Publications
     var totalisidiv = document.getElementById("total-isi"),
-        totalisiurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/5_5DBPapersCircleISI",
+        totalisiurl = appConfig.tableauView + "/5_5DBPapersCircleISI",
         totalisioptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -179,7 +179,7 @@ function init() {
 
     //Total OA Publications
     var totaloadiv = document.getElementById("total-oa"),
-        totaloaurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/5_4DBPapersCircleOA",
+        totaloaurl = appConfig.tableauView + "/5_4DBPapersCircleOA",
         totaloaoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -203,7 +203,7 @@ function init() {
 
     //Papers List
     var papersldiv = document.getElementById("papers-list"),
-        paperslurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/5_5DBPapersDetail",
+        paperslurl = appConfig.tableauView + "/5_5DBPapersDetail",
         papersloptions = {
             hideTabs: true,
             hideToolbar: true,

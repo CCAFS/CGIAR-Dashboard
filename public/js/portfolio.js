@@ -40,7 +40,7 @@ function init() {
     var checkedValues = $.map($checkedInputs, function (e) { return e.value })
     //console.log(filterType, checkedValues);
 
-    //Get sheets names 
+    //Get sheets names
     /* var view = map1.getWorkbook().getActiveSheet().getWorksheets();
     worksheet = view[2];
     console.log(worksheet);*/
@@ -105,7 +105,7 @@ function init() {
 
   //Countries map
   var mapcontainerDiv = document.getElementById("map-1"),
-    mapurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_1DBMap",
+    mapurl = appConfig.tableauView + "/1_1DBMap",
     mapoptions = {
       hideTabs: true,
       hideToolbar: true,
@@ -113,7 +113,7 @@ function init() {
       height: '100%',
       onFirstInteractive: function () {
 
-        //Hide scrollbars - disable scroll 
+        //Hide scrollbars - disable scroll
         $('#map-1 iframe').attr("scrolling", "no");
         $('#map-1 iframe').css('overflow', 'hidden');
 
@@ -128,7 +128,7 @@ function init() {
 
   //OICs list
   var listcontainerDiv = document.getElementById("list-test"),
-    listurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_4DBSLO-CCIDetail",
+    listurl = appConfig.tableauView + "/1_4DBSLO-CCIDetail",
     listoptions = {
       hideTabs: true,
       hideToolbar: true,
@@ -136,7 +136,7 @@ function init() {
       height: '100%',
       onFirstInteractive: function () {
 
-        //Hide scrollbars - disable scroll 
+        //Hide scrollbars - disable scroll
         $('#list-test iframe').attr("scrolling", "no");
         $('#list-test iframe').css('overflow', 'hidden');
 
@@ -146,9 +146,9 @@ function init() {
     };
   oicslist = new tableau.Viz(listcontainerDiv, listurl, listoptions);
 
-  //SLO + Cross-Cutting 
+  //SLO + Cross-Cutting
   var containerDiv2 = document.getElementById("chart-2"),
-    url2 = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_2DBSLO-CCIBars",
+    url2 = appConfig.tableauView + "/1_2DBSLO-CCIBars",
     options2 = {
       hideTabs: true,
       hideToolbar: true,
@@ -156,7 +156,7 @@ function init() {
       height: '100%',
       onFirstInteractive: function () {
 
-        //Hide scrollbars - disable scroll 
+        //Hide scrollbars - disable scroll
         $('#chart-2 iframe').attr("scrolling", "no");
         $('#chart-2 iframe').css('overflow', 'hidden');
 
@@ -172,7 +172,7 @@ function init() {
 
   //Cross-Cutting %
   var ccipdiv = document.getElementById("cci-p"),
-    ccipurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_3DBCross-CuttingPercent-Final",
+    ccipurl = appConfig.tableauView + "/1_3DBCross-CuttingPercent-Final",
     ccipoptions = {
       hideTabs: true,
       hideToolbar: true,
@@ -180,7 +180,7 @@ function init() {
       height: '100%',
       onFirstInteractive: function () {
 
-        //Hide scrollbars - disable scroll 
+        //Hide scrollbars - disable scroll
         $('#cci-p iframe').attr("scrolling", "no");
         $('#cci-p iframe').css('overflow', 'hidden');
 
@@ -197,7 +197,7 @@ function init() {
 
   //Maturity Stage
   var msdiv = document.getElementById("m-stage"),
-    mspurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_10DBOICSbyStageofMaturity",
+    mspurl = appConfig.tableauView + "/1_10DBOICSbyStageofMaturity",
     msoptions = {
       hideTabs: true,
       hideToolbar: true,
@@ -205,7 +205,7 @@ function init() {
       height: '100%',
       onFirstInteractive: function () {
 
-        //Hide scrollbars - disable scroll 
+        //Hide scrollbars - disable scroll
         $('#m-stage iframe').attr("scrolling", "no");
         $('#m-stage iframe').css('overflow', 'hidden');
 
@@ -219,7 +219,7 @@ function init() {
 
   //SDGs
   var msdiv = document.getElementById("sdg-s"),
-    mspurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/1_11DBOICSSDGPerc",
+    mspurl = appConfig.tableauView + "/1_11DBOICSSDGPerc",
     msoptions = {
       hideTabs: true,
       hideToolbar: true,
@@ -227,7 +227,7 @@ function init() {
       height: '100%',
       onFirstInteractive: function () {
 
-        //Hide scrollbars - disable scroll 
+        //Hide scrollbars - disable scroll
         $('#sdg-s iframe').attr("scrolling", "no");
         $('#sdg-s iframe').css('overflow', 'hidden');
 
@@ -242,7 +242,7 @@ function init() {
 }
 
 
-//Hide "loading" when all charts have loaded 
+//Hide "loading" when all charts have loaded
 function loaded() {
   LOADED += 1;
   if (LOADED == 6) {

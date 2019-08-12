@@ -158,7 +158,7 @@ function init() {
 
     //Innovations by stage
     var istagediv = document.getElementById("innovations-stage"),
-        stageurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_2DBInnovbyStage",
+        stageurl = appConfig.tableauView + "/2_2DBInnovbyStage",
         stageoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -181,7 +181,7 @@ function init() {
 
     //Innovations by type
     var itypediv = document.getElementById("innovations-type"),
-        typeurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_3DBInnovbyType",
+        typeurl = appConfig.tableauView + "/2_3DBInnovbyType",
         typeoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -203,7 +203,7 @@ function init() {
 
     //Innovations on the ground
     var igrounddiv = document.getElementById("innovations-map"),
-        groundurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_6DBInnovMap",
+        groundurl = appConfig.tableauView + "/2_6DBInnovMap",
         groundoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -225,7 +225,7 @@ function init() {
 
     //Innovations list
     var ilistdiv = document.getElementById("innovations-list"),
-        ilisturl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_5DBInnovDetail",
+        ilisturl = appConfig.tableauView + "/2_5DBInnovDetail",
         ilistoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -245,7 +245,7 @@ function init() {
 
     //Total Innovations
     var tidiv = document.getElementById("total-innov"),
-        tiurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_1DBInnovCount",
+        tiurl = appConfig.tableauView + "/2_1DBInnovCount",
         tioptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -264,7 +264,7 @@ function init() {
 
     //Total Adaptative Innovations
     var aidiv = document.getElementById("adaptative-innov"),
-        aiurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/2_7DBInnovAdapPercentage",
+        aiurl = appConfig.tableauView + "/2_7DBInnovAdapPercentage",
         aioptions = {
             hideTabs: true,
             hideToolbar: true,

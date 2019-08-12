@@ -74,7 +74,7 @@ function init() {
 
     //Total participants 
     var tparticipantsdiv = document.getElementById("total-participants"),
-        tparticipantsurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/4_2DBCapDevTotalParticipants",
+        tparticipantsurl = appConfig.tableauView + "/4_2DBCapDevTotalParticipants",
         tparticipantsoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -93,7 +93,7 @@ function init() {
 
     //Total trainees 
     var totaltraineesdiv = document.getElementById("total-trainees"),
-        totaltraineesurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/4_3DBCapDevTotalTrainees",
+        totaltraineesurl = appConfig.tableauView + "/4_3DBCapDevTotalTrainees",
         totaltraineesoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -112,7 +112,7 @@ function init() {
 
     //Total women 
     var totalwomendiv = document.getElementById("total-women"),
-        totalwomenurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/4_4DBCapDevTotalWomen",
+        totalwomenurl = appConfig.tableauView + "/4_4DBCapDevTotalWomen",
         totalwomenoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -131,7 +131,7 @@ function init() {
 
     //Total men 
     var totalmendiv = document.getElementById("total-men"),
-        totalmenurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/4_5DBCapDevTotalMen",
+        totalmenurl = appConfig.tableauView + "/4_5DBCapDevTotalMen",
         totalmenoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -151,7 +151,7 @@ function init() {
 
     //Participants women-men 
     var participantsdiv = document.getElementById("participants-user"),
-        participantsurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/4_0DBParticipantsDualAxischart",
+        participantsurl = appConfig.tableauView + "/4_0DBParticipantsDualAxischart",
         participantsoption = {
             hideTabs: true,
             hideToolbar: true,
@@ -170,7 +170,7 @@ function init() {
 
     //Trainees women-men 
     var traineesdiv = document.getElementById("trainees-term"),
-        traineesurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/4_1DBTraineesDualAxischart",
+        traineesurl = appConfig.tableauView + "/4_1DBTraineesDualAxischart",
         traineesoptions = {
             hideTabs: true,
             hideToolbar: true,

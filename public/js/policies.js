@@ -75,7 +75,7 @@ function init() {
 
     //Total Policies by Geographic Scope
     var policiesgeodiv = document.getElementById("policies-geoscope"),
-        policiesgeourl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/7_5DBPoliciesDonut",
+        policiesgeourl = appConfig.tableauView + "/7_5DBPoliciesDonut",
         policiesgeodoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -96,7 +96,7 @@ function init() {
 
     //Policies on the Ground 
     var policiesmapdiv = document.getElementById("policies-ground"),
-        policiesmapurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/7_4DBPoliciesMap",
+        policiesmapurl = appConfig.tableauView + "/7_4DBPoliciesMap",
         policiesmapoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -117,7 +117,7 @@ function init() {
 
     //Policies by Stage in Process 
     var policiesstagediv = document.getElementById("policies-stage"),
-        policiesstageurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/7_3DBPoliciesbyStageinProcess",
+        policiesstageurl = appConfig.tableauView + "/7_3DBPoliciesbyStageinProcess",
         policiesstageoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -140,7 +140,7 @@ function init() {
 
     //Policies by Geographic Scope and Investment Type
     var policiesitdiv = document.getElementById("policies-investype"),
-        policiesiturl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/7_2DBPoliciesbyGeoandInvType",
+        policiesiturl = appConfig.tableauView + "/7_2DBPoliciesbyGeoandInvType",
         policiesitoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -162,7 +162,7 @@ function init() {
 
     //List of Policies
     var policieslistdiv = document.getElementById("policies-list"),
-        policieslisturl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/7_1DBPoliciesdetail",
+        policieslisturl = appConfig.tableauView + "/7_1DBPoliciesdetail",
         policieslistoptions = {
             hideTabs: true,
             hideToolbar: true,

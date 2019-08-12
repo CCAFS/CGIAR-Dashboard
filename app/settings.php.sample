@@ -30,6 +30,11 @@ return [
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
+        ],
+
+        'appConfig' => [
+            'production' => true,
+            'tableauView' => 'https://public.tableau.com/views/TABLEAU_VIEW'
         ]
     ],
 ];
