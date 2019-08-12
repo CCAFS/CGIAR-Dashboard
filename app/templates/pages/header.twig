@@ -26,10 +26,19 @@
 
         gtag('config', 'UA-128966130-1');
       </script>
+
+      <script type="text/javascript">
+        var appConfig = {
+          production : {{ appConfig.production |json_encode() }},
+          tableauView : '{{ appConfig.tableauView  }}',
+        };
+      </script>
   </head>
   <body>
+    {% if not appConfig.production %}
+      <div class="testingMessage text-center"><span class="badge badge-secondary">Testing Environment</span></div>
+    {% endif %}
     <header>
-
         <!-- Modal -->
         <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
           <div class="modal-dialog modal-dialog-centered" role="document">

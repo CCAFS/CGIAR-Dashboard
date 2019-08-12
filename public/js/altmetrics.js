@@ -77,7 +77,7 @@ function init() {
 
     //Total Publications with Altmetrics Attention Score
     var taltdiv = document.getElementById("total-altmetrics"),
-        talturl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/6_0DBAltmetricTotalPubs",
+        talturl = appConfig.tableauView + "/6_0DBAltmetricTotalPubs",
         taltoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -97,7 +97,7 @@ function init() {
 
     //Total Mentions / Readers Tracked by Altmetrics
     var altmdiv = document.getElementById("altmetrics-mentions"),
-        altmurl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/6_3DBAltmetricSocialMediatotals",
+        altmurl = appConfig.tableauView + "/6_3DBAltmetricSocialMediatotals",
         altmoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -116,7 +116,7 @@ function init() {
 
     //Top 10 Altmetric Attention Scores in the Portfolio Year
     var tenaltdiv = document.getElementById("topten-alt"),
-        tenalturl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/6_2DBAltmetricTop10",
+        tenalturl = appConfig.tableauView + "/6_2DBAltmetricTop10",
         tenaltoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -136,7 +136,7 @@ function init() {
 
     //All Publications with Altmetrics Attention Score 
     var allaltdiv = document.getElementById("all-altmetrics"),
-        allalturl = "https://public.tableau.com/views/CGIARResultsDashboard2018-Aug/6_1DBAltmetricDetail",
+        allalturl = appConfig.tableauView + "/6_1DBAltmetricDetail",
         allaltoptions = {
             hideTabs: true,
             hideToolbar: true,

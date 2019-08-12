@@ -1,47 +1,47 @@
 <?php
+$container = $app->getContainer();
+$settings = $container->get('settings');
 
 $app->get('/action', App\Action\BaseAction::class)->setName('action');
 
 $app->get('/[{actionName}]', function ($request, $response, $args) {
-
- // echo $args['actionName'];
-
+  global $settings;
 
   $sections = array(
     array('name' => 'Outcome Case Studies',   'action' => 'caseStudies',  'active' => true ),
-    array('name' => 'Innovations',    'action' => 'innovations',  'active' => true ),
-    array('name' => 'Partnerships',   'action' => 'partnerships', 'active' => true ),
-    array('name' => 'Capacity Development',   'action' => 'capDev', 'active' => true ),
-    array('name' => 'Publications',   'action' => 'publications', 'active' => true ),
-    array('name' => 'Policies',       'action' => 'policies',     'active' => true ),
-    array('name' => 'Altmetric',      'action' => 'altmetrics',   'active' => true )
+    array('name' => 'Innovations',            'action' => 'innovations',  'active' => true ),
+    array('name' => 'Partnerships',           'action' => 'partnerships', 'active' => true ),
+    array('name' => 'Capacity Development',   'action' => 'capDev',       'active' => true ),
+    array('name' => 'Publications',           'action' => 'publications', 'active' => true ),
+    array('name' => 'Policies',               'action' => 'policies',     'active' => true ),
+    array('name' => 'Altmetric',              'action' => 'altmetrics',   'active' => true )
   );
 
   $crps = array(
     array('acronym' => 'A4NH',      'name' => 'A4NH - Agriculture for Nutrition and Health'),
-    array('acronym' => 'BigData',      'name' => 'BigData - Big Data in Agriculture'), 
+    array('acronym' => 'BigData',   'name' => 'BigData - Big Data in Agriculture'),
     array('acronym' => 'CCAFS',     'name' => 'CCAFS - Climate Change, Agriculture and Food Security'),
-    array('acronym' => 'EiB',      'name' => 'EiB - Excellence in Breeding'), 
-    array('acronym' => 'Fish',       'name' => 'Fish'),
+    array('acronym' => 'EiB',       'name' => 'EiB - Excellence in Breeding'),
+    array('acronym' => 'Fish',      'name' => 'Fish'),
     array('acronym' => 'FTA',       'name' => 'FTA - Forests, Trees and Agroforestry'),
-    array('acronym' => 'Genebank', 'name' => 'Genebank'), 
-    array('acronym' => 'Livestock', 'name' => 'Livestock'), 
-    array('acronym' => 'Maize',       'name' => 'Maize'),
+    array('acronym' => 'Genebank',  'name' => 'Genebank'),
+    array('acronym' => 'Livestock', 'name' => 'Livestock'),
+    array('acronym' => 'Maize',     'name' => 'Maize'),
     array('acronym' => 'PIM',       'name' => 'PIM - Policies, Institutions, and Markets'),
-    array('acronym' => 'Rice',       'name' => 'Rice'),
+    array('acronym' => 'Rice',      'name' => 'Rice'),
     array('acronym' => 'RTB',       'name' => 'RTB - Roots, Tubers and Bananas'),
-    array('acronym' => 'Wheat',       'name' => 'Wheat'),
-    array('acronym' => 'WLE',       'name' => 'WLE - Water, Land and Ecosystems') 
+    array('acronym' => 'Wheat',     'name' => 'Wheat'),
+    array('acronym' => 'WLE',       'name' => 'WLE - Water, Land and Ecosystems')
   );
 
-  $years = array( '2017');
+  $years = array( '2017' );
 
   $currentSection = (isset($args['actionName'])? $args['actionName'] : $sections[0]['action']);
 
   //Get CRP messages
   $messagesJSON = file_get_contents('data/messages.json', FILE_USE_INCLUDE_PATH);
   $messagesArray = json_decode($messagesJSON, true);
-  
+
   /*
   try{
       // Get DB Object
@@ -62,7 +62,8 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     'crps' => $crps,
     'years' => $years,
     'messagesArray' => $messagesArray,
-    'currentSection' => $currentSection
+    'currentSection' => $currentSection,
+    'appConfig' => $settings['appConfig']
   ]);
   return $response;
 })->setName('homepage');
