@@ -8,6 +8,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
   global $settings;
 
   $sections = array(
+    array('name' => 'Home',                   'action' => 'home',         'active' => true ),
     array('name' => 'Outcome Case Studies',   'action' => 'caseStudies',  'active' => true ),
     array('name' => 'Innovations',            'action' => 'innovations',  'active' => true ),
     array('name' => 'Partnerships',           'action' => 'partnerships', 'active' => true ),
@@ -34,7 +35,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     array('acronym' => 'WLE',       'name' => 'WLE - Water, Land and Ecosystems')
   );
 
-  $years = array( '2017' );
+  $years = array( '2018','2017' );
 
   $currentSection = (isset($args['actionName'])? $args['actionName'] : $sections[0]['action']);
 
