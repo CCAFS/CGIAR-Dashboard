@@ -36,7 +36,9 @@
   </head>
   <body>
     {% if not appConfig.production %}
+      {% if not embed %}
       <div class="testingMessage text-center"><span class="badge badge-secondary">Testing Environment</span></div>
+      {% endif %}
     {% endif %}
     <header>
         <!-- Modal -->
@@ -64,6 +66,7 @@
           </div>
         </div>
 
+        {% if not embed %}
         <div class="pageheader-wrapper" style="height:110px;">
         <div id="pageheader">
           <div class="container">
@@ -75,31 +78,32 @@
                 </h3>
               </div>
               <div class="col-auto">
-              <div class="filters">
-                  <!-- Year -->
-                  <div class="filter-component fyear">
-                    <p id="filtertitley" class="filter-title years">Years</p>
-                    <ul class="filter-items items-years">
-                      <li> {{ forms.checkmark('years', 'All Years' , 'All Years', false) }} </li>
-                      {% for year in years %}
-                        <li> {{ forms.checkmark('years', year, year, true) }} </li>
-                      {% endfor %}
-                    </ul>
-                  </div>
-                  <!-- CRPs -->
-                  <div class="filter-component fprogram">
-                    <p id="filtertitlec" class="filter-title portfolio">Research Portfolio</p>
-                    <ul class="filter-items items-programs">
-                      <li> {{ forms.checkmark('crps', 'All' , 'All', true) }} </li>
-                      {% for crp in crps %}
-                        <li> {{ forms.checkmark('crps', crp.acronym , crp.name) }} </li>
-                      {% endfor %}
-                    </ul>
-                  </div>
-              </div>
+                <div class="filters">
+                    <!-- Year -->
+                    <div class="filter-component fyear">
+                      <p id="filtertitley" class="filter-title years">Years</p>
+                      <ul class="filter-items items-years">
+                        <li> {{ forms.checkmark('years', 'All Years' , 'All Years', false) }} </li>
+                        {% for year in years %}
+                          <li> {{ forms.checkmark('years', year, year, true) }} </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                    <!-- CRPs -->
+                    <div class="filter-component fprogram">
+                      <p id="filtertitlec" class="filter-title portfolio">Research Portfolio</p>
+                      <ul class="filter-items items-programs">
+                        <li> {{ forms.checkmark('crps', 'All' , 'All', true) }} </li>
+                        {% for crp in crps %}
+                          <li> {{ forms.checkmark('crps', crp.acronym , crp.name) }} </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                </div>
               </div>
             </div>
           </div>
           </div>
         </div>
+        {% endif %}
     </header>

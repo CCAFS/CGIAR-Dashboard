@@ -43,6 +43,9 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
   $messagesJSON = file_get_contents('data/messages.json', FILE_USE_INCLUDE_PATH);
   $messagesArray = json_decode($messagesJSON, true);
 
+  // Embeding
+  $embed = ($request->getQueryParam('embed')? true : false);
+
   /*
   try{
       // Get DB Object
@@ -64,6 +67,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     'years' => $years,
     'messagesArray' => $messagesArray,
     'currentSection' => $currentSection,
+    'embed' => $embed,
     'appConfig' => $settings['appConfig']
   ]);
   return $response;
