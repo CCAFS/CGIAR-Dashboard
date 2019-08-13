@@ -9,7 +9,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
 
   $sections = array(
     array('name' => 'Home',                   'action' => 'home',         'active' => true ),
-    array('name' => 'Outcome Case Studies',   'action' => 'caseStudies',  'active' => true ),
+    array('name' => 'Outcome Case Reports',   'action' => 'caseReports',  'active' => true ),
     array('name' => 'Innovations',            'action' => 'innovations',  'active' => true ),
     array('name' => 'Partnerships',           'action' => 'partnerships', 'active' => true ),
     array('name' => 'Capacity Development',   'action' => 'capDev',       'active' => true ),

@@ -39,60 +39,47 @@
       <div class="checkedfilters checkeddegree"></div>
       </div>
       <div class="form-group row">
-        <div class="col-md-5">
-          <center><img src="./images/total_innovations.svg" width="20%"><h6 class="subTitle">Total Innovations</h6>
-          <div class="itotal-container">
-            <div id="total-innov"></div>
-          </div></center>
-          <div class="row justify-content-md-center">
-            <div class="col-md-4">
-              <center><div class="degreei" id="adaptiveinnovations"><img src="./images/adaptive.svg" width="60px"></div>
-              <h6 class="subTitle">Adaptive<br> Innovations</h6>
-              </center>
-            </div>
-            <div class="col-md-4">
-              <center><div class="degreei" id="novelinnovations"><img src="./images/novel.svg" width="60px"></div>
-              <h6 class="subTitle"> Novel<br> Innovations</h6>
-            </div>
-            <div class="col">
-              <div class="iatotal-container">
-                <div id="adaptative-innov"></div>
-              </div>
-            </div></center>
-          </div>
-        </div>
-        <div class="col">
+        <div class="col-md-7">
           <h6 class="subTitle">Innovations on the Ground</h6>
           <div class="imap-container">
             <div id="innovations-map"></div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <h6 class="subTitle">Innovations by Type</h6>
+          <div class="itype-container">
+          <div id="innovations-type"></div>
           </div>
         </div>
       </div>
       <br>
     
     <div class="form-group row">
-      <div class="col">
+      <div class="col-md-4">
         <h6 class="subTitle">Innovations by Stage</h6>
         <div class="istage-container">
           <div id="innovations-stage"></div>
         </div>
-        </div>
-        <div class="col">
-          <h6 class="subTitle">Innovations by Type</h6>
-          <div class="itype-container">
-          <div id="innovations-type"></div>
-          </div>
-          <br>
+      </div>
+      <div class="col-md-4">
+        <h6 class="subTitle">Top 5 non-CGIAR Lead Organizations</h6>
+        <div class="istage-container">
         </div>
       </div>
+      <div class="col-md-4">
+        <h6 class="subTitle">Top 5 non-CGIAR Contributing Organizations</h6>
+        <div class="istage-container">
+        </div>
+      </div>
+    </div>
       
-      <div class="form-group bot-block">
+     <div class="form-group bot-block">
         <h6 class="subTitle">List of Innovations</h6>
           <div class="ilist-container">
             <div id="innovations-list"></div>
-          </div>
-      </div>
+        </div>
     </div>
+</div>
 </div>
 
 {% include './pages/footer.twig'  with pageParams %}

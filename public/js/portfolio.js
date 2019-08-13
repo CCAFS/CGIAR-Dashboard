@@ -239,6 +239,29 @@ function init() {
     };
   sdgs = new tableau.Viz(msdiv, mspurl, msoptions);
 
+
+  //Number of contributing partners
+  /*var partnersdiv = document.getElementById("contributing-partners"),
+    partnersurl = appConfig.tableauView + "/1_1_12SHOICSTotalPartners",
+    partnersoptions = {
+      hideTabs: true,
+      hideToolbar: true,
+      width: '100%',
+      height: '100%',
+      onFirstInteractive: function () {
+
+        //Hide scrollbars - disable scroll
+        $('#contributing-partners iframe').attr("scrolling", "no");
+        $('#contributing-partners iframe').css('overflow', 'hidden');
+
+        //Get selections and apply filters
+        //sdgs.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSDGs);
+
+       // loaded();
+      }
+    };
+  partners = new tableau.Viz(partnersdiv, partnersurl, partnersoptions);*/
+
 }
 
 

@@ -42,3 +42,12 @@
     margin-top: -10px;
     color: #585858;
 }
+
+.contributingPartners-container {
+    height: 100px;
+}
+
+.topPartners-container {
+    height: 222px;
+    background-color: #f5f5f5;
+}

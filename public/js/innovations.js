@@ -243,45 +243,6 @@ function init() {
     ilist = new tableau.Viz(ilistdiv, ilisturl, ilistoptions);
 
 
-    //Total Innovations
-    var tidiv = document.getElementById("total-innov"),
-        tiurl = appConfig.tableauView + "/2_1DBInnovCount",
-        tioptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll 
-                $('#total-innov iframe').attr("scrolling", "no");
-                $('#total-innov iframe').css('overflow', 'hidden');
-
-                loaded();
-            }
-        };
-    totalin = new tableau.Viz(tidiv, tiurl, tioptions);
-
-    //Total Adaptative Innovations
-    var aidiv = document.getElementById("adaptative-innov"),
-        aiurl = appConfig.tableauView + "/2_7DBInnovAdapPercentage",
-        aioptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll 
-                $('#adaptative-innov iframe').attr("scrolling", "no");
-                $('#adaptative-innov iframe').css('overflow', 'hidden');
-
-                loaded();
-            }
-        };
-    totalain = new tableau.Viz(aidiv, aiurl, aioptions);
-
-
     //Filter Novel and Adaptive Innovations
 
     $("#adaptiveinnovations").click(function () {
@@ -326,7 +287,7 @@ function init() {
 //Hide "loading" when all charts have loaded 
 function loaded() {
     LOADED += 1;
-    if (LOADED == 6) {
+    if (LOADED == 3) {
         $("#loadingModal").modal('hide');
     }
 }
