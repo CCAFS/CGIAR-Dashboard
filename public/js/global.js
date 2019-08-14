@@ -7,7 +7,11 @@ function init() {
   msieversion();
   isZoomed();
   $('input[value="All Years"]').attr('disabled', true);
-  
+
+  // for the embedding
+  window.parent.postMessage({
+    height: $( window ).height()
+  }, '*');
 }
 
 
@@ -32,7 +36,7 @@ $('.closem').on('click', function () {
   sessionStorage.setItem('showMsg', 'false');
 });
 
-//Add a message in Internet Explorer 
+//Add a message in Internet Explorer
 function msieversion() {
   var ua = window.navigator.userAgent;
   var msie = ua.indexOf("MSIE ");
@@ -41,7 +45,7 @@ function msieversion() {
   {
     $('.browser-message').show();
   }
-  else  //Hide message in other browsers 
+  else  //Hide message in other browsers
   {
     $('.browser-message').hide();
   }
@@ -65,7 +69,7 @@ $('.fprogram').change(function () {
 });
 
 
-//Change header when scrolling. 
+//Change header when scrolling.
 
 function scrollFunction() {
   const distanceY = window.pageYOffset || document.body.scrollTop,
@@ -79,11 +83,11 @@ function scrollFunction() {
 
 }
 
-window.addEventListener('scroll', scrollFunction); 
+window.addEventListener('scroll', scrollFunction);
 
 function isZoomed() {
-  var wsize = $( window ).width(); 
-  var hsize = $( window ).height(); 
+  var wsize = $( window ).width();
+  var hsize = $( window ).height();
   if(wsize < hsize) {
     $('.items-programs').addClass( "zoomedSize" );
   } else {
