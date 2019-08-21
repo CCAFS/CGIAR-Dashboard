@@ -11,6 +11,7 @@ class ControlListService {
 
     $this->sections = array(
       array('name' => 'Home',                   'action' => 'home',         'active' => true ),
+      array('name' => 'System Level Outcomes',   'action' => 'systemLevelOutcomes',  'active' => true ),
       array('name' => 'Outcome Case Reports',   'action' => 'caseReports',  'active' => true ),
       array('name' => 'Innovations',            'action' => 'innovations',  'active' => true ),
       array('name' => 'Partnerships',           'action' => 'partnerships', 'active' => true ),
