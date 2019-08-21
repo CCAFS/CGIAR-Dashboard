@@ -159,6 +159,24 @@ function init() {
         };
     policiesitype = new tableau.Viz(policiesitdiv, policiesiturl, policiesitoptions);
 
+    // Contribution to SDGs
+    var policiesitdiv = document.getElementById("policies-sdgs"),
+        policiesiturl = appConfig.tableauView + "/7_6DBPoliciesSDG",
+        policiesitoptions = {
+            hideTabs: true,
+            hideToolbar: true,
+            width: '100%',
+            height: '100%',
+            onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll 
+                $('#policies-sdgs iframe').attr("scrolling", "no");
+                $('#policies-sdgs iframe').css('overflow', 'hidden');
+
+            }
+        };
+    policiesitype = new tableau.Viz(policiesitdiv, policiesiturl, policiesitoptions);
+
 
     //List of Policies
     var policieslistdiv = document.getElementById("policies-list"),
@@ -289,7 +307,7 @@ function selectedMap(marks) {
                 mapvalue = pair.formattedValue;
                 if (mapvalue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_PMAP, mapvalue);
-                    if(mapvalue == "Global"){
+                    if (mapvalue == "Global") {
                         $(".checkedmap").text("Scope: " + mapvalue).addClass("closebutton");
                     } else {
                         $(".checkedmap").text("Country: " + mapvalue).addClass("closebutton");
@@ -306,7 +324,7 @@ function selectedMap(marks) {
 // Policies by Stage in Process 
 function selectedStage(marks) {
 
-        var sheetsArray = [
+    var sheetsArray = [
         policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
         policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
         policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET),
@@ -402,7 +420,7 @@ function clearYearsfilters() {
 
 //   Clear GeoScope  
 function clearGeoScope() {
-    
+
     var sheetsArray = [
         policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
         policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
@@ -420,7 +438,7 @@ function clearGeoScope() {
 
 //   Clear Map
 function clearPMap() {
-    
+
     var sheetsArray = [
         policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
         policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
@@ -440,7 +458,7 @@ function clearPMap() {
 
 //   Clear Stage
 function clearStage() {
-    
+
     var sheetsArray = [
         policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
         policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
@@ -458,7 +476,7 @@ function clearStage() {
 
 //   Clear Investment Type
 function cleariType() {
-    
+
     var sheetsArray = [
         policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
         policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),

@@ -242,46 +242,44 @@ function init() {
         };
     ilist = new tableau.Viz(ilistdiv, ilisturl, ilistoptions);
 
+    // Top 5 non-CGIAR Lead Organizations 
+    var top5Leaddiv = document.getElementById("itop5Lead-org"),
+        top5Leadurl = appConfig.tableauView + "/2_8DBInnovTop5Leadorg",
+        top5Leadoptions = {
+            hideTabs: true,
+            hideToolbar: true,
+            width: '100%',
+            height: '100%',
+            onFirstInteractive: function () {
 
-    //Filter Novel and Adaptive Innovations
+                //Hide scrollbars - disable scroll 
+                $('#top5Lead-org iframe').attr("scrolling", "no");
+                $('#top5Lead-org iframe').css('overflow', 'hidden');
 
-    $("#adaptiveinnovations").click(function () {
-        var sheetsArray = [
-            istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-            itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-            ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-            totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
-            iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-            iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-            iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
-        ];
+            //    loaded();
+            }
+        };
+    top5lead = new tableau.Viz(top5Leaddiv, top5Leadurl, top5Leadoptions);
 
-        appyDashboardFilter(sheetsArray, "Degree of Innovation", "Adaptive");
-        $(".checkeddegree").text("Degree of Innovation: " + "Adaptive").addClass("closebutton");
-        $(".checkeddegree").css('margin-top', '3px').css('margin-bottom', '3px');
-        $(".checkeddegree").show();
-        $(".checkeddegree, .clearfilters").on('click', clearAdaptativefilters);
+    // Top 5 non-CGIAR Contributing Organizations 
+    var top5Contdiv = document.getElementById("itop5Contributing-org"),
+        top5Conturl = appConfig.tableauView + "/2_9DBInnovTop5Controrg",
+        top5Contoptions = {
+            hideTabs: true,
+            hideToolbar: true,
+            width: '100%',
+            height: '100%',
+            onFirstInteractive: function () {
 
-    });
+                //Hide scrollbars - disable scroll 
+                $('#top5Contributing-org iframe').attr("scrolling", "no");
+                $('#top5Contributing-org iframe').css('overflow', 'hidden');
 
-    $("#novelinnovations").click(function () {
-        var sheetsArray = [
-            istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-            itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-            ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-            totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
-            iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-            iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-            iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
-        ];
+            //    loaded();
+            }
+        };
+    top5contributing = new tableau.Viz(top5Contdiv, top5Conturl, top5Contoptions);
 
-        appyDashboardFilter(sheetsArray, "Degree of Innovation", "Novel");
-        $(".checkeddegree").text("Degree of Innovation: " + "Novel").addClass("closebutton");
-        $(".checkeddegree").css('margin-top', '3px').css('margin-bottom', '3px');
-        $(".checkeddegree").show();
-        $(".checkeddegree, .clearfilters").on('click', clearNovelfilters);
-
-    });
 }
 
 //Hide "loading" when all charts have loaded 

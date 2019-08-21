@@ -254,40 +254,16 @@ function init() {
         $('#contributing-partners iframe').css('overflow', 'hidden');
 
         //Get selections and apply filters
-        sdgs.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSDGs);
+        //sdgs.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSDGs);
 
-        loaded();
+        //loaded();
       }
     };
   sdgs = new tableau.Viz(msdiv, mspurl, msoptions);
 
-
-   //op contributing partners
-   var msdiv = document.getElementById("top-partners"),
-   mspurl = appConfig.tableauView + "/1_11DBOICRTopContributingPartners",
-   msoptions = {
-     hideTabs: true,
-     hideToolbar: true,
-     width: '100%',
-     height: '100%',
-     onFirstInteractive: function () {
-
-       //Hide scrollbars - disable scroll
-       $('#top-partners iframe').attr("scrolling", "no");
-       $('#top-partners iframe').css('overflow', 'hidden');
-
-       //Get selections and apply filters
-       sdgs.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSDGs);
-
-       loaded();
-     }
-   };
- sdgs = new tableau.Viz(msdiv, mspurl, msoptions);
-
-
   //Number of contributing partners
-  /*var partnersdiv = document.getElementById("contributing-partners"),
-    partnersurl = appConfig.tableauView + "/1_1_12SHOICSTotalPartners",
+  var partnersdiv = document.getElementById("top-partners"),
+    partnersurl = appConfig.tableauView + "/1_11DBOICRTopContributingPartners",
     partnersoptions = {
       hideTabs: true,
       hideToolbar: true,
@@ -296,8 +272,8 @@ function init() {
       onFirstInteractive: function () {
 
         //Hide scrollbars - disable scroll
-        $('#contributing-partners iframe').attr("scrolling", "no");
-        $('#contributing-partners iframe').css('overflow', 'hidden');
+        $('#top-partners iframe').attr("scrolling", "no");
+        $('#top-partners iframe').css('overflow', 'hidden');
 
         //Get selections and apply filters
         //sdgs.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSDGs);
@@ -305,7 +281,7 @@ function init() {
        // loaded();
       }
     };
-  partners = new tableau.Viz(partnersdiv, partnersurl, partnersoptions);*/
+  partners = new tableau.Viz(partnersdiv, partnersurl, partnersoptions);
 
 }
 
