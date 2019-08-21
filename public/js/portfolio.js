@@ -1,4 +1,4 @@
-var chart1, map1, cci1, oicslist, chart2;
+var chart1, map1, cci1, oicslist, chart2, sheetsArray;
 var LOADED = 0;
 
 //Filters
@@ -46,7 +46,7 @@ function init() {
     console.log(worksheet);*/
 
 
-    var sheetsArray = [
+    sheetsArray = [
       map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET),
       map1.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
       map1.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
@@ -238,6 +238,51 @@ function init() {
       }
     };
   sdgs = new tableau.Viz(msdiv, mspurl, msoptions);
+
+  //Total contributing partners
+  var msdiv = document.getElementById("contributing-partners"),
+    mspurl = appConfig.tableauView + "/1_12DBOICRTotalContributingPartners",
+    msoptions = {
+      hideTabs: true,
+      hideToolbar: true,
+      width: '100%',
+      height: '100%',
+      onFirstInteractive: function () {
+
+        //Hide scrollbars - disable scroll
+        $('#contributing-partners iframe').attr("scrolling", "no");
+        $('#contributing-partners iframe').css('overflow', 'hidden');
+
+        //Get selections and apply filters
+        sdgs.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSDGs);
+
+        loaded();
+      }
+    };
+  sdgs = new tableau.Viz(msdiv, mspurl, msoptions);
+
+
+   //op contributing partners
+   var msdiv = document.getElementById("top-partners"),
+   mspurl = appConfig.tableauView + "/1_11DBOICRTopContributingPartners",
+   msoptions = {
+     hideTabs: true,
+     hideToolbar: true,
+     width: '100%',
+     height: '100%',
+     onFirstInteractive: function () {
+
+       //Hide scrollbars - disable scroll
+       $('#top-partners iframe').attr("scrolling", "no");
+       $('#top-partners iframe').css('overflow', 'hidden');
+
+       //Get selections and apply filters
+       sdgs.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSDGs);
+
+       loaded();
+     }
+   };
+ sdgs = new tableau.Viz(msdiv, mspurl, msoptions);
 
 
   //Number of contributing partners
