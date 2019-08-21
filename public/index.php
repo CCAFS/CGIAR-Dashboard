@@ -10,6 +10,9 @@ require __DIR__ . '/../vendor/autoload.php';
 
 session_start();
 
+// Loading services
+require_once(__DIR__ . '/../app/services/ControlListService.php');
+
 // Instantiate the app
 $settings = require __DIR__ . '/../app/settings.php';
 $app = new \Slim\App($settings);

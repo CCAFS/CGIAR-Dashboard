@@ -8,10 +8,6 @@ function init() {
   isZoomed();
   $('input[value="All Years"]').attr('disabled', true);
 
-  // for the embedding
-  window.parent.postMessage({
-    height: $( window ).height()
-  }, '*');
 }
 
 

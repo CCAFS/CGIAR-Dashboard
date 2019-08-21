@@ -1,0 +1,66 @@
+(function(g){
+
+  g.resultsDashboardWidget = {
+    init: init,
+    changeSection: changeSection
+  }
+  var hostOrigin = window.location.origin;
+  var settings = {
+    production : {{ appConfig.production |json_encode() }},
+    baseUrl : '{{ baseURL  }}',
+    baseOrigin : '{{ baseOrigin  }}',
+  };
+
+  var iframe;
+
+  function init(params){
+    // Get element
+    var element = document.getElementById(params.el);
+    // Create Iframe item
+    iframe = document.createElement('iframe');
+    iframe.setAttribute('id', 'iframe-dashboardEmbed');
+    iframe.setAttribute('src', settings.baseUrl + '/'+ params.currentSection +'?embed=true&hostOrigin='+ hostOrigin);
+    iframe.style.width = "100%";
+    iframe.style.height = "100px";
+    iframe.frameBorder = 0;
+    // Add iframe item
+    element.appendChild(iframe);
+
+    // Listen to message from embed iframe window
+    bindEvent(window, 'message', function (e) {
+      if(e.origin == settings.baseOrigin){
+        console.log(e.data.eventName, e.data.data);
+        if (e.data.eventName == 'updateHeight'){
+          setIframeHeight(e.data.data);
+        }
+      }
+    });
+  }
+
+  function changeSection(section){
+    // iframe.contentWindow.postMessage({
+    //   eventName: 'changeSection',
+    //   data: section
+    // }, "*");
+
+    iframe.setAttribute('src', settings.baseUrl + '/'+ section +'?embed=true&hostOrigin='+ hostOrigin);
+
+  }
+
+  function getSections(){
+
+  }
+
+  function setIframeHeight(height){
+    iframe.style.height = height + 'px';
+  }
+
+  /****** FUNCTIONS ********/
+  function bindEvent(element, eventName, eventHandler) {
+      if (element.addEventListener){
+          element.addEventListener(eventName, eventHandler, false);
+      } else if (element.attachEvent) {
+          element.attachEvent('on' + eventName, eventHandler);
+      }
+  }
+})(window);

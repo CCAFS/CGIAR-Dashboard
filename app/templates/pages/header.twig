@@ -18,21 +18,22 @@
     <link href='./css/global.css' rel='stylesheet' type='text/css'>
     <link href='./css/pageloading.css' rel='stylesheet' type='text/css'>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128966130-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128966130-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        gtag('config', 'UA-128966130-1');
-      </script>
-
-      <script type="text/javascript">
-        var appConfig = {
-          production : {{ appConfig.production |json_encode() }},
-          tableauView : '{{ appConfig.tableauView  }}',
-        };
-      </script>
+      gtag('config', 'UA-128966130-1');
+    </script>
+    <!-- Application config parameters -->
+    <script type="text/javascript">
+      var appConfig = {
+        production : {{ appConfig.production |json_encode() }},
+        tableauView : '{{ appConfig.tableauView  }}',
+        hostOrigin: '{{ hostOrigin }}'
+      };
+    </script>
   </head>
   <body>
     {% if not appConfig.production %}
