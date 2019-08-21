@@ -253,8 +253,8 @@ function init() {
             onFirstInteractive: function () {
 
                 //Hide scrollbars - disable scroll 
-                $('#top5Lead-org iframe').attr("scrolling", "no");
-                $('#top5Lead-org iframe').css('overflow', 'hidden');
+                $('#itop5Lead-org iframe').attr("scrolling", "no");
+                $('#itop5Lead-org iframe').css('overflow', 'hidden');
 
             //    loaded();
             }
@@ -272,8 +272,8 @@ function init() {
             onFirstInteractive: function () {
 
                 //Hide scrollbars - disable scroll 
-                $('#top5Contributing-org iframe').attr("scrolling", "no");
-                $('#top5Contributing-org iframe').css('overflow', 'hidden');
+                $('#itop5Contributing-org iframe').attr("scrolling", "no");
+                $('#itop5Contributing-org iframe').css('overflow', 'hidden');
 
             //    loaded();
             }
