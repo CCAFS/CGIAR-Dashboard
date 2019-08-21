@@ -19,6 +19,8 @@ var TI_SHEET = "2.3 SH Innov Count";
 var TAI_SHEET = "2.7 SH Innov Count Percentage ";
 var GLOBAL_SHEET = "2.7 SH Innovations Map Global";
 var REGIONAL_SHEET = "2.8 SH Innovations Map Regional";
+var TOPLEAD_SHEET = "2.9 SH Innov Bar Top Lead-Org";
+var TOPCONTRIBUTING_SHEET = "2.10 SH Innov Bar Top Cont-Org";
 
 $(document).ready(init);
 
@@ -101,17 +103,17 @@ function init() {
         var filterType = $(this).attr('name');
         var $checkedInputs = $("input[name='" + filterType + "']:checked");
         var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
-        var checkedValues = $.map($checkedInputs, function (e) { return e.value })
+        var checkedValues = $.map($checkedInputs, function (e) { return e.value });
 
         var sheetsArray = [
             istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
             itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
             ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-            totalin.getWorkbook().getActiveSheet().getWorksheets().get(TI_SHEET),
-            totalain.getWorkbook().getActiveSheet().getWorksheets().get(TAI_SHEET),
             iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
             iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-            iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET)
+            iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
+            top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
+            top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
         ];
 
         switch (filterType) {
@@ -256,7 +258,7 @@ function init() {
                 $('#itop5Lead-org iframe').attr("scrolling", "no");
                 $('#itop5Lead-org iframe').css('overflow', 'hidden');
 
-            //    loaded();
+                //    loaded();
             }
         };
     top5lead = new tableau.Viz(top5Leaddiv, top5Leadurl, top5Leadoptions);
@@ -275,7 +277,7 @@ function init() {
                 $('#itop5Contributing-org iframe').attr("scrolling", "no");
                 $('#itop5Contributing-org iframe').css('overflow', 'hidden');
 
-            //    loaded();
+                //    loaded();
             }
         };
     top5contributing = new tableau.Viz(top5Contdiv, top5Conturl, top5Contoptions);
@@ -433,7 +435,7 @@ function selectedMarksMap(marks) {
                     $(".checkedcountry").show();
                     $(".checkedcountry, .clearfilters").on('click', clearGlobalfilters);
                 }
-            } 
+            }
         }
     }
 }
