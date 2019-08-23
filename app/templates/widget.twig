@@ -1,66 +1,114 @@
-(function(g){
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(global.ResultsDasboardWidget = factory());
+}(this, (function () { 'use strict';
 
-  g.resultsDashboardWidget = {
-    init: init,
-    changeSection: changeSection
+  var ResultsDasboardWidget = function ResultsDasboardWidget(element, userOptions) {
+    if ( userOptions === void 0 ) userOptions = {};
+
+    if (typeof element === 'string') {
+      // Get element
+      element = document.getElementById(element);
+    }
+
+    if (!element || !element.nodeName) {
+      throw new Error('no element is specified to initialize the CGIAR Dashboard');
+    }
+
+    this.element = element;
+    this.iframe;
+    this.userOptions = userOptions;
+    this.hostOrigin = document.location.origin;
+    this.parameters = {
+      baseUrl : '{{ baseURL }}',
+      baseOrigin : '{{ baseOrigin  }}',
+      sections: "{{ sectionsJson }}"
+    }
+    // Initialize
+    this.init();
   }
-  var hostOrigin = window.location.origin;
-  var settings = {
-    production : {{ appConfig.production |json_encode() }},
-    baseUrl : '{{ baseURL  }}',
-    baseOrigin : '{{ baseOrigin  }}',
+
+  // Init
+  ResultsDasboardWidget.prototype.init = function init () {
+    var widget = this;
+    var section = widget.userOptions.currentSection || '';
+    // Create Iframe
+    widget.createIframe(widget.parameters.baseUrl + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin);
+    // Show navigation Menu
+    widget.iframe.onload = function(){
+      if(widget.userOptions.displayNav){
+        widget.displayNav(true);
+      }
+    }
   };
 
-  var iframe;
+  // Change section
+  ResultsDasboardWidget.prototype.changeSection = function changeSection (section) {
+    var widget = this;
+    widget.iframe.setAttribute('src', widget.parameters.baseUrl + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin);
+  };
 
-  function init(params){
-    // Get element
-    var element = document.getElementById(params.el);
-    // Create Iframe item
-    iframe = document.createElement('iframe');
-    iframe.setAttribute('id', 'iframe-dashboardEmbed');
-    iframe.setAttribute('src', settings.baseUrl + '/'+ params.currentSection +'?embed=true&hostOrigin='+ hostOrigin);
-    iframe.style.width = "100%";
-    iframe.style.height = "100px";
-    iframe.frameBorder = 0;
+  // Display Navigation Menu
+  ResultsDasboardWidget.prototype.displayNav = function displayNav (state) {
+    sendIframeMessage(this.iframe, {
+      eventName: "displayNav",
+      data: state
+    });
+  };
+
+  // Create Iframe Item
+  ResultsDasboardWidget.prototype.createIframe = function createIframe (url) {
+    var widget = this;
+    widget.iframe = document.createElement('iframe');
+    widget.iframe.setAttribute('id', 'iframe-dashboardEmbed');
+    widget.iframe.setAttribute('src', url);
+    widget.iframe.style.width = "100%";
+    widget.iframe.style.height = "100%";
+    widget.iframe.frameBorder = 0;
     // Add iframe item
-    element.appendChild(iframe);
+    widget.element.appendChild(widget.iframe);
 
     // Listen to message from embed iframe window
-    bindEvent(window, 'message', function (e) {
-      if(e.origin == settings.baseOrigin){
-        console.log(e.data.eventName, e.data.data);
-        if (e.data.eventName == 'updateHeight'){
-          setIframeHeight(e.data.data);
+    bindEvent(window, 'message', function (e){
+      if(e.origin == widget.parameters.baseOrigin){
+        var o = e.data;
+        if (o.eventName == 'updateHeight'){
+          widget.setIframeHeight(o.data);
         }
       }
     });
+  };
+
+  // Get Sections
+  ResultsDasboardWidget.prototype.getSections = function getSections (height) {
+    return ("{{ sectionsJson }}").replace(/&quot;/g,'"');
+  };
+
+  // Update Element Height
+  ResultsDasboardWidget.prototype.setIframeHeight = function setIframeHeight (height) {
+    this.element.style.height = height +"px";
+  };
+
+  function sendIframeMessage(iframe, msg){
+    iframe.contentWindow.postMessage(msg, "*");
   }
 
-  function changeSection(section){
-    // iframe.contentWindow.postMessage({
-    //   eventName: 'changeSection',
-    //   data: section
-    // }, "*");
-
-    iframe.setAttribute('src', settings.baseUrl + '/'+ section +'?embed=true&hostOrigin='+ hostOrigin);
-
-  }
-
-  function getSections(){
-
-  }
-
-  function setIframeHeight(height){
-    iframe.style.height = height + 'px';
-  }
-
-  /****** FUNCTIONS ********/
   function bindEvent(element, eventName, eventHandler) {
-      if (element.addEventListener){
-          element.addEventListener(eventName, eventHandler, false);
-      } else if (element.attachEvent) {
-          element.attachEvent('on' + eventName, eventHandler);
-      }
+    if (element.addEventListener){
+        element.addEventListener(eventName, eventHandler, false);
+    } else if (element.attachEvent) {
+        element.attachEvent('on' + eventName, eventHandler);
+    }
   }
-})(window);
+
+  function unBindEvent(element, eventName, eventHandler) {
+    if (element.removeEventListener) {
+      element.removeEventListener(eventName, eventHandler);
+    } else if (x.detachEvent) {
+      element.detachEvent(eventName, eventHandler);
+    }
+  }
+
+  return ResultsDasboardWidget;
+})));

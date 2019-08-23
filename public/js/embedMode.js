@@ -1,25 +1,37 @@
-(function(){
+(function(window){
 
   $( document ).ready(function() {
-    window.parent.postMessage({
+
+    sendParentMessage({
       eventName: "updateHeight",
-      data: $('body').height()
-    }, '*');
-    console.log(appConfig.hostOrigin, $('body'));
+      data: $('.dashboardBody').height()
+    });
+
   });
 
   // Listen to messages from parent window
-  bindEvent(window, "message", function(e) {
+  bindEvent(window, "message", listenParentMessage);
+
+
+  function listenParentMessage(e){
     if(e.origin == appConfig.hostOrigin){
-      if (e.data.eventName == 'changeSection'){
-        changeSection(e.data.data);
+      if (e.data.eventName == 'displayNav'){
+        displayNav(e.data.data);
       }
     }
-  });
+  }
 
-  function changeSection(section){
-    console.log(section);
-    //$('.sectionAction-' + section)[0].click();
+  function sendParentMessage(msg){
+    window.parent.postMessage(msg, '*');
+  }
+
+  function displayNav(state){
+    var $navMenu = $('nav.main-menu');
+    if(state){
+      $navMenu.show();
+    }else{
+      $navMenu.hide();
+    }
   }
 
   // addEventListener support for IE8
@@ -30,4 +42,4 @@
       element.attachEvent("on" + eventName, eventHandler);
     }
   }
-})();
+})(window);

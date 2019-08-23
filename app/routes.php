@@ -33,6 +33,15 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
 $app->get('/widget/main.js', function ($request, $response, $args) {
   global $settings;
 
+  $controlList = new \services\ControlListService();
+
+  // Active sections
+  $sections = [];
+  foreach ($controlList->getSections() as $i => $section) {
+    if($section['active']){
+      $sections[] = $section['action'];
+    }
+  }
 
   $requestScheme = $this->get('environment')['REQUEST_SCHEME'];
   $httpHost = $this->get('environment')['HTTP_HOST'];
@@ -45,6 +54,7 @@ $app->get('/widget/main.js', function ($request, $response, $args) {
   // print_r($this->get('environment'));
 
   $this->view->render($response,  'widget.twig', [
+    'sectionsJson' => json_encode($sections),
     'baseOrigin' => $baseOrigin,
     'baseURL' => $baseURL,
     'appConfig' => $settings->get('appConfig')

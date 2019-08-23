@@ -15,7 +15,7 @@
       <link rel="stylesheet" href="{{ element }}" >
     {% endfor %}
 
-    <link href='./css/global.css' rel='stylesheet' type='text/css'>
+    <link href='./css/global.css?20190822' rel='stylesheet' type='text/css'>
     <link href='./css/pageloading.css' rel='stylesheet' type='text/css'>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128966130-1"></script>
@@ -35,7 +35,7 @@
       };
     </script>
   </head>
-  <body>
+  <body class="dashboardBody">
     {% if not appConfig.production %}
       {% if not embed %}
       <div class="testingMessage text-center"><span class="badge badge-secondary">Testing Environment</span></div>
@@ -55,41 +55,41 @@
 
         {% if not embed %}
         <div class="pageheader-wrapper" style="height:110px;">
-        <div id="pageheader">
-          <div class="container">
-            <div class="row justify-content-between">
-              <div class="col-auto">
-                <h3 class="title pull-left">
-                  <a href="https://www.cgiar.org/research/research-portfolio/" target="_blank"><img src="./images/cgiar_logo.png" alt="CGIAR Logo" width="90px"></a>
-                  <span>CGIAR Program Results Dashboard</span>
-                </h3>
-              </div>
-              <div class="col-auto">
-                <div class="filters">
-                    <!-- Year -->
-                    <div class="filter-component fyear">
-                      <p id="filtertitley" class="filter-title years">Years</p>
-                      <ul class="filter-items items-years">
-                        <li> {{ forms.checkmark('years', 'All Years' , 'All Years', false) }} </li>
-                        {% for year in years %}
-                          <li> {{ forms.checkmark('years', year, year, true) }} </li>
-                        {% endfor %}
-                      </ul>
-                    </div>
-                    <!-- CRPs -->
-                    <div class="filter-component fprogram">
-                      <p id="filtertitlec" class="filter-title portfolio">Research Portfolio</p>
-                      <ul class="filter-items items-programs">
-                        <li> {{ forms.checkmark('crps', 'All' , 'All', true) }} </li>
-                        {% for crp in crps %}
-                          <li> {{ forms.checkmark('crps', crp.acronym , crp.name) }} </li>
-                        {% endfor %}
-                      </ul>
-                    </div>
+          <div id="pageheader">
+            <div class="container">
+              <div class="row justify-content-between">
+                <div class="col-auto">
+                  <h3 class="title pull-left">
+                    <a href="https://www.cgiar.org/research/research-portfolio/" target="_blank"><img src="./images/cgiar_logo.png" alt="CGIAR Logo" width="90px"></a>
+                    <span>CGIAR Program Results Dashboard</span>
+                  </h3>
+                </div>
+                <div class="col-auto">
+                  <div class="filters">
+                      <!-- Year -->
+                      <div class="filter-component fyear">
+                        <p id="filtertitley" class="filter-title years">Years</p>
+                        <ul class="filter-items items-years">
+                          <li> {{ forms.checkmark('years', 'All Years' , 'All Years', false) }} </li>
+                          {% for year in years %}
+                            <li> {{ forms.checkmark('years', year, year, true) }} </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                      <!-- CRPs -->
+                      <div class="filter-component fprogram">
+                        <p id="filtertitlec" class="filter-title portfolio">Research Portfolio</p>
+                        <ul class="filter-items items-programs">
+                          <li> {{ forms.checkmark('crps', 'All' , 'All', true) }} </li>
+                          {% for crp in crps %}
+                            <li> {{ forms.checkmark('crps', crp.acronym , crp.name) }} </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           </div>
         </div>
         {% endif %}
