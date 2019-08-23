@@ -12,6 +12,7 @@ var FILTER_CCI = "CCI";
 var FILTER_GENDER = "Gender Relevance";
 var FILTER_YOUTH = "Youth Relevance";
 var FILTER_CAPACITY = "Capdev Relev";
+var FILTER_CLIMATE = "CLIMATE_RELEV";
 var FILTER_MATURITY = "Stage of Maturity";
 var FILTER_SDG = "Sdg Short Name";
 
@@ -194,6 +195,7 @@ function init() {
         ccip.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksGR);
         ccip.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksYR);
         ccip.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksCD);
+        ccip.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksCC);
 
         loaded();
       }
@@ -356,6 +358,10 @@ function selectMarksYR(marksEvent) {
 
 function selectMarksCD(marksEvent) {
   return marksEvent.getMarksAsync().then(selectedCD);
+}
+
+function selectMarksCC(marksEvent) {
+  return marksEvent.getMarksAsync().then(selectedCC);
 }
 
 function selectMarksMaturity(marksEvent) {
@@ -592,6 +598,40 @@ function selectedCD(marks) {
   }
 }
 
+//Climate Change Filter
+function selectedCC(marks) {
+  var sheetsArray = [
+    map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET),
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
+    sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET),
+    totalpartners.getWorkbook().getActiveSheet().getWorksheets().get(TOTALP_SHEET),
+    partners.getWorkbook().getActiveSheet().getWorksheets().get(TOPP_SHEET)
+  ];
+  clearDashboardFilter(sheetsArray, FILTER_CLIMATE);
+  $(".checkedcapdev").hide();
+  for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+    var pairs = marks[markIndex].getPairs();
+    for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+      var pair = pairs[pairIndex];
+      console.log(pair);
+      if (pair.fieldName == FILTER_CLIMATE) {
+        capacityValue = pair.formattedValue;
+        if (capacityValue != null) {
+          appyDashboardFilter(sheetsArray, FILTER_CLIMATE, capacityValue);
+          $(".checkedcapdev").text("Climate Change Relevance: " + capacityValue).addClass("closebutton");
+          $(".checkedcapdev").css('margin-top', '3px').css('margin-bottom', '3px');
+          $(".checkedcapdev").show();
+          $(".checkedcapdev, .clearfilters").on('click', clearClimateFilters);
+        }
+      }
+    }
+  }
+}
+
 //MATURITY DONUT FILTER
 function selectedMaturity(marks) {
   var sheetsArray = [
@@ -617,7 +657,7 @@ function selectedMaturity(marks) {
         msValue = pair.formattedValue;
         if (msValue != null) {
           appyDashboardFilter(sheetsArray, FILTER_MATURITY, msValue);
-          $(".chceckedmatstage").text("Maturity Stage: " + msValue).addClass("closebutton");
+          $(".chceckedmatstage").text("Level of Maturity: " + msValue).addClass("closebutton");
           $(".chceckedmatstage").css('margin-top', '3px').css('margin-bottom', '3px');
           $(".chceckedmatstage").show();
           $(".chceckedmatstage, .clearfilters").on('click', clearMStagefilters);
@@ -878,6 +918,24 @@ function clearCapdevfilters() {
   clearDashboardFilter(sheetsArray, FILTER_CAPACITY);
   $(".checkedcapdev").hide();
   var cdsheet = ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET);
+  cdsheet.clearSelectedMarksAsync();
+};
+
+function clearClimateFilters() {
+  var sheetsArray = [
+    map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET),
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
+    sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET),
+    totalpartners.getWorkbook().getActiveSheet().getWorksheets().get(TOTALP_SHEET),
+    partners.getWorkbook().getActiveSheet().getWorksheets().get(TOPP_SHEET)
+  ];
+  clearDashboardFilter(sheetsArray, FILTER_CLIMATE);
+  $(".checkedcapdev").hide();
+  var cdsheet = ccip.getWorkbook().getActiveSheet().getWorksheets().get(CLIMATE_SHEET);
   cdsheet.clearSelectedMarksAsync();
 };
 

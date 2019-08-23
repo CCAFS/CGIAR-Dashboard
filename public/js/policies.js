@@ -5,7 +5,7 @@ var FILTER_CRPS = "CRP";
 var FILTER_YEAR = "Year";
 var FILTER_PGEO = "Geographic Scope";
 var FILTER_PMAP = "Country Name";
-var FILTER_PSTAGE = "Stage in Process";
+var FILTER_PSTAGE = "Level of Maturity of Process";
 var FILTER_PITYPE = "Policy Investment Types";
 
 //Sheets
@@ -15,6 +15,7 @@ var GMAP_SHEET = "7.4 SH Policies Global";
 var PSTAGE_SHEET = "7.3 SH Policies by Stage Process";
 var PITYPE_SHEET = "7.2 SH Policies by Geo Scope & Investment Type";
 var PLIST_SHEET = "7.1 SH Policy Detail";
+var PSDG_SHEET = "7.6 SH Policies by SDG";
 
 
 $(document).ready(init);
@@ -32,8 +33,13 @@ function init() {
             policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
             policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
             policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET),
-            policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
+            policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET),
+            policiessdg.getWorkbook().getActiveSheet().getWorksheets().get(PSDG_SHEET)
         ];
+
+        var view = policiessdg.getWorkbook().getActiveSheet().getWorksheets();
+        worksheet = view[0];
+        console.log(worksheet);
 
         switch (filterType) {
             case "crps":
@@ -115,7 +121,7 @@ function init() {
         };
     policiesmap = new tableau.Viz(policiesmapdiv, policiesmapurl, policiesmapoptions);
 
-    //Policies by Stage in Process 
+    //Policies by Level of Maturity
     var policiesstagediv = document.getElementById("policies-stage"),
         policiesstageurl = appConfig.tableauView + "/7_3DBPoliciesbyStageinProcess",
         policiesstageoptions = {
@@ -160,9 +166,9 @@ function init() {
     policiesitype = new tableau.Viz(policiesitdiv, policiesiturl, policiesitoptions);
 
     // Contribution to SDGs
-    var policiesitdiv = document.getElementById("policies-sdgs"),
-        policiesiturl = appConfig.tableauView + "/7_6DBPoliciesSDG",
-        policiesitoptions = {
+    var sdgdiv = document.getElementById("policies-sdgs"),
+        sdgurl = appConfig.tableauView + "/7_6DBPoliciesSDG",
+        sdgoptions = {
             hideTabs: true,
             hideToolbar: true,
             width: '100%',
@@ -175,7 +181,7 @@ function init() {
 
             }
         };
-    policiesitype = new tableau.Viz(policiesitdiv, policiesiturl, policiesitoptions);
+    policiessdg = new tableau.Viz(sdgdiv, sdgurl, sdgoptions);
 
 
     //List of Policies
@@ -262,7 +268,8 @@ function selectedGeo(marks) {
         policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
         policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
         policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET),
-        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
+        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET),
+        policiessdg.getWorkbook().getActiveSheet().getWorksheets().get(PSDG_SHEET)
     ];
 
     clearDashboardFilter(sheetsArray, FILTER_PGEO);
@@ -293,7 +300,8 @@ function selectedMap(marks) {
         policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
         policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
         policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET),
-        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
+        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET),
+        policiessdg.getWorkbook().getActiveSheet().getWorksheets().get(PSDG_SHEET)
     ];
 
     clearDashboardFilter(sheetsArray, FILTER_PMAP);
@@ -328,7 +336,8 @@ function selectedStage(marks) {
         policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
         policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
         policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET),
-        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
+        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET),
+        policiessdg.getWorkbook().getActiveSheet().getWorksheets().get(PSDG_SHEET)
     ];
 
     clearDashboardFilter(sheetsArray, FILTER_PSTAGE);
@@ -338,11 +347,12 @@ function selectedStage(marks) {
         var pairs = marks[markIndex].getPairs();
         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
             var pair = pairs[pairIndex];
+            console.log(pair);
             if (pair.fieldName == FILTER_PSTAGE) {
                 stagevalue = pair.formattedValue;
                 if (stagevalue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_PSTAGE, stagevalue);
-                    $(".checkedstage").text("Stage in Process: " + stagevalue).addClass("closebutton");
+                    $(".checkedstage").text("Level of Maturity: " + stagevalue).addClass("closebutton");
                     $(".checkedstage").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedstage").show();
                     $(".checkedstage, .clearfilters").on('click', clearStage);
@@ -359,7 +369,8 @@ function selectedType(marks) {
         policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
         policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
         policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
-        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
+        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET),
+        policiessdg.getWorkbook().getActiveSheet().getWorksheets().get(PSDG_SHEET)
     ];
 
     clearDashboardFilter(sheetsArray, FILTER_PITYPE);
@@ -394,7 +405,8 @@ function clearCRPfilters() {
         policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
         policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
         policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET),
-        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
+        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET),
+        policiessdg.getWorkbook().getActiveSheet().getWorksheets().get(PSDG_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
@@ -410,7 +422,8 @@ function clearYearsfilters() {
         policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
         policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
         policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET),
-        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
+        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET),
+        policiessdg.getWorkbook().getActiveSheet().getWorksheets().get(PSDG_SHEET)
     ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
     $('.years').text('Years');
@@ -425,7 +438,8 @@ function clearGeoScope() {
         policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
         policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
         policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET),
-        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
+        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET),
+        policiessdg.getWorkbook().getActiveSheet().getWorksheets().get(PSDG_SHEET)
     ];
 
     $(".checkedgeo").hide();
@@ -443,7 +457,8 @@ function clearPMap() {
         policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
         policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
         policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET),
-        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
+        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET),
+        policiessdg.getWorkbook().getActiveSheet().getWorksheets().get(PSDG_SHEET)
     ];
 
     $(".checkedmap").hide();
@@ -463,7 +478,8 @@ function clearStage() {
         policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
         policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
         policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET),
-        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
+        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET),
+        policiessdg.getWorkbook().getActiveSheet().getWorksheets().get(PSDG_SHEET)
     ];
 
     $(".checkedstage").hide();
@@ -481,7 +497,8 @@ function cleariType() {
         policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
         policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
         policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
-        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
+        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET),
+        policiessdg.getWorkbook().getActiveSheet().getWorksheets().get(PSDG_SHEET)
     ];
 
     $(".checkeditype").hide();
