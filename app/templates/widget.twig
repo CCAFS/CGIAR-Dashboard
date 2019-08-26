@@ -32,7 +32,7 @@
     var widget = this;
     var section = widget.userOptions.currentSection || '';
     // Create Iframe
-    widget.createIframe(widget.baseUrl + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin);
+    widget.createIframe(widget.baseURL + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin);
     // Show navigation Menu
     widget.iframe.onload = function(){
       if(widget.userOptions.displayNav){
@@ -44,7 +44,7 @@
   // Change section
   ResultsDashboardWidget.prototype.changeSection = function changeSection (section) {
     var widget = this;
-    widget.iframe.setAttribute('src', widget.baseUrl + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin);
+    widget.iframe.setAttribute('src', widget.baseURL + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin);
   };
 
   // Display Navigation Menu
