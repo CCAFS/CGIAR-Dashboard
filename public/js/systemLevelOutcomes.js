@@ -74,7 +74,7 @@ function init() {
 
     //System Level Outcomes
     var slodiv = document.getElementById("slo-bar"),
-        slourl = appConfig.tableauView + "/8_2SHSLOHeatmap",
+        slourl = appConfig.tableauView + "/8_1DBSLOBarTop",
         slooptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -93,7 +93,7 @@ function init() {
 
     //SLO Targets
     var slotargetsdiv = document.getElementById("slo-targets"),
-        slotargetsurl = appConfig.tableauView + "/8_4SHSLOTarget1_1",
+        slotargetsurl = appConfig.tableauView + "/8_2DBSLOTargets",
         slotargetsoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -111,9 +111,9 @@ function init() {
     slotargets = new tableau.Viz(slotargetsdiv, slotargetsurl, slotargetsoptions);
 
 
-    //Participants women-men 
+    //Slo list
     var listdiv = document.getElementById("slo-list"),
-        listurl = appConfig.tableauView + "/8_1SHSLODetail",
+        listurl = appConfig.tableauView + "/8_3DBSLODetail",
         listoption = {
             hideTabs: true,
             hideToolbar: true,
