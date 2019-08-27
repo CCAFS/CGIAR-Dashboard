@@ -7,6 +7,7 @@ var FILTER_PGEO = "Geographic Scope";
 var FILTER_PMAP = "Country Name";
 var FILTER_PSTAGE = "Level of Maturity of Process";
 var FILTER_PITYPE = "Policy Investment Types";
+var FILTER_SDG = "Sdg Short Name";
 
 //Sheets
 var PGEO_SHEET = "7.5 SH Policies by Geo Scope";
@@ -179,6 +180,8 @@ function init() {
                 $('#policies-sdgs iframe').attr("scrolling", "no");
                 $('#policies-sdgs iframe').css('overflow', 'hidden');
 
+                policiessdg.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSdg);
+
             }
         };
     policiessdg = new tableau.Viz(sdgdiv, sdgurl, sdgoptions);
@@ -257,6 +260,10 @@ function selectMarksStage(marksEvent) {
 
 function selectMarksType(marksEvent) {
     return marksEvent.getMarksAsync().then(selectedType);
+}
+
+function selectMarksSdg(marksEvent) {
+    return marksEvent.getMarksAsync().then(selectedSDG);
 }
 
 /*** Selection Functions ***/
@@ -394,6 +401,38 @@ function selectedType(marks) {
     }
 }
 
+// //Top 5 Sustainable Development Goals Contribution by Policies filter
+function selectedSDG(marks) {
+
+    var sheetsArray = [
+        policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
+        policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
+        policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
+        policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET),
+        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
+    ];
+
+    clearDashboardFilter(sheetsArray, FILTER_SDG);
+    $('.checkedSDG').hide();
+
+    for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+        var pairs = marks[markIndex].getPairs();
+        for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+            var pair = pairs[pairIndex];
+            if (pair.fieldName == FILTER_SDG) {
+                var sdgValue = pair.formattedValue;
+                if (sdgValue != null) {
+                    appyDashboardFilter(sheetsArray, FILTER_SDG, sdgValue);
+                    $(".checkedSDG").text("Sustainable Development Goal: " + sdgValue).addClass("closebutton");
+                    $(".checkedSDG").css('margin-top', '3px').css('margin-bottom', '3px');
+                    $(".checkedSDG").show();
+                    $(".checkedSDG, .clearfilters").on('click', clearSDG);
+                }
+            }
+        }
+    }
+}
+
 
 
 /*** Clear Functions ***/
@@ -506,4 +545,23 @@ function cleariType() {
     var sheet = policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET);
     sheet.clearSelectedMarksAsync();
     clearDashboardFilter(sheetsArray, FILTER_PITYPE);
+};
+
+
+//   Clear SDG
+function clearSDG() {
+
+    var sheetsArray = [
+        policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
+        policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
+        policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
+        policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET),
+        policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET)
+    ];
+
+    $(".checkedSDG").hide();
+
+    var sdgsheet = policiessdg.getWorkbook().getActiveSheet().getWorksheets().get(PSDG_SHEET);
+    sdgsheet.clearSelectedMarksAsync();
+    clearDashboardFilter(sheetsArray, FILTER_SDG);
 };

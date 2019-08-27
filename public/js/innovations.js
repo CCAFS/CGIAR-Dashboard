@@ -475,7 +475,7 @@ function selectedLeadOrg(marks) {
                 var leadValue = pair.formattedValue;
                 if (leadValue != null) {
                     appyDashboardFilter(sheetsArray, FILTER_LEAD, leadValue);
-                    $(".checkedLeadOrg").text("Type: " + leadValue).addClass("closebutton");
+                    $(".checkedLeadOrg").text("Lead Organization: " + leadValue).addClass("closebutton");
                     $(".checkedLeadOrg").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedLeadOrg").show();
                     $(".checkedLeadOrg, .clearfilters").on('click', clearLeadfilter);
@@ -504,7 +504,7 @@ function selectedContributingOrg(marks) {
                  var contributingValue = pair.formattedValue;
                  if (contributingValue != null) {
                      appyDashboardFilter(sheetsArray, FILTER_CONTRIBUTING, contributingValue);
-                     $(".checkedContributing").text("Type: " + contributingValue).addClass("closebutton");
+                     $(".checkedContributing").text("Contributing Organization: " + contributingValue).addClass("closebutton");
                      $(".checkedContributing").css('margin-top', '3px').css('margin-bottom', '3px');
                      $(".checkedContributing").show();
                      $(".checkedContributing, .clearfilters").on('click', clearContributingfilters);
