@@ -9,6 +9,8 @@ var FILTER_MAP = "Country Name -To use";
 var FILTER_REGION = "Geographic Scope ";
 var FILTER_GLOBAL = "Geographic Scope ";
 var FILTER_DEGREE = "Degree of Innovation";
+var FILTER_LEAD = "Lead Partner Acronym";
+var FILTER_CONTRIBUTING = "Acronym (Dim Ext Partners1)";
 
 //Sheets
 var ITYPE_SHEET = "2.2 Innovation by Type -pie ";
@@ -258,6 +260,9 @@ function init() {
                 $('#itop5Lead-org iframe').attr("scrolling", "no");
                 $('#itop5Lead-org iframe').css('overflow', 'hidden');
 
+
+                top5lead.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectLead);
+
                 //    loaded();
             }
         };
@@ -276,6 +281,8 @@ function init() {
                 //Hide scrollbars - disable scroll 
                 $('#itop5Contributing-org iframe').attr("scrolling", "no");
                 $('#itop5Contributing-org iframe').css('overflow', 'hidden');
+
+                top5contributing.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectContributing);
 
                 //    loaded();
             }
@@ -324,6 +331,14 @@ function selectMarksType(marksEvent) {
 
 function selectMarksMap(marksEvent) {
     return marksEvent.getMarksAsync().then(selectedMarksMap);
+}
+
+function selectContributing(marksEvent) {
+    return marksEvent.getMarksAsync().then(selectedContributingOrg);
+}
+
+function selectLead(marksEvent) {
+    return marksEvent.getMarksAsync().then(selectedLeadOrg);
 }
 
 /*function searchTitle(value){
@@ -440,6 +455,66 @@ function selectedMarksMap(marks) {
     }
 }
 
+
+function selectedLeadOrg(marks) {
+    var sheetsArray = [
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
+        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET)  
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_LEAD);
+    $(".checkedLeadOrg").hide();
+    for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+        var pairs = marks[markIndex].getPairs();
+        for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+            var pair = pairs[pairIndex];
+            if (pair.fieldName == FILTER_LEAD) {
+                var leadValue = pair.formattedValue;
+                if (leadValue != null) {
+                    appyDashboardFilter(sheetsArray, FILTER_LEAD, leadValue);
+                    $(".checkedLeadOrg").text("Type: " + leadValue).addClass("closebutton");
+                    $(".checkedLeadOrg").css('margin-top', '3px').css('margin-bottom', '3px');
+                    $(".checkedLeadOrg").show();
+                    $(".checkedLeadOrg, .clearfilters").on('click', clearLeadfilter);
+                }
+            }
+        }
+    }
+}
+
+function selectedContributingOrg(marks) {
+    var sheetsArray = [
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
+        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET) 
+     ];
+     clearDashboardFilter(sheetsArray, FILTER_CONTRIBUTING);
+     $(".checkedContributing").hide();
+     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+         var pairs = marks[markIndex].getPairs();
+         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+             var pair = pairs[pairIndex];
+             if (pair.fieldName == FILTER_CONTRIBUTING) {
+                 var contributingValue = pair.formattedValue;
+                 if (contributingValue != null) {
+                     appyDashboardFilter(sheetsArray, FILTER_CONTRIBUTING, contributingValue);
+                     $(".checkedContributing").text("Type: " + contributingValue).addClass("closebutton");
+                     $(".checkedContributing").css('margin-top', '3px').css('margin-bottom', '3px');
+                     $(".checkedContributing").show();
+                     $(".checkedContributing, .clearfilters").on('click', clearContributingfilters);
+                 }
+             }
+         }
+     }
+ }
+
+
 function clearCRPfilters() {
     var sheetsArray = [
         istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
@@ -547,4 +622,36 @@ function clearGlobalfilters() {
     $(".checkedcountry").hide();
     var mapsheet = iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET);
     mapsheet.clearSelectedMarksAsync();
+};
+
+
+function clearLeadfilter() {
+    var sheetsArray = [
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
+        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET) 
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_LEAD);
+    $(".checkedLeadOrg").hide();
+    var leadSheet = top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET);
+    leadSheet.clearSelectedMarksAsync();
+};
+
+
+function clearContributingfilters() {
+    var sheetsArray = [
+        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
+        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET) 
+    ];
+    clearDashboardFilter(sheetsArray, FILTER_CONTRIBUTING);
+    $(".checkedContributing").hide();
+    var contributingSheet = top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET);
+    contributingSheet.clearSelectedMarksAsync();
 };
