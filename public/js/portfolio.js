@@ -15,6 +15,7 @@ var FILTER_CAPACITY = "Capdev Relev";
 var FILTER_CLIMATE = "CLIMATE_RELEV";
 var FILTER_MATURITY = "Stage of Maturity";
 var FILTER_SDG = "Sdg Short Name";
+var FILTER_PARTNERS = "Name (Dim Ext Partners)";
 
 //Sheets
 var GLOBAL_SHEET = "1.2.1 SH OICS Global Count";
@@ -261,10 +262,7 @@ function init() {
         $('#contributing-partners iframe').attr("scrolling", "no");
         $('#contributing-partners iframe').css('overflow', 'hidden');
 
-        //Get selections and apply filters
-        //sdgs.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSDGs);
-
-        //loaded();
+        loaded();
       }
     };
   totalpartners = new tableau.Viz(totalpartnersdiv, totalpartnersurl, totalpartnersoptions);
@@ -284,7 +282,7 @@ function init() {
         $('#top-partners iframe').css('overflow', 'hidden');
 
         //Get selections and apply filters
-        //sdgs.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksSDGs);
+        partners.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksPartners);
 
         // loaded();
       }
@@ -370,6 +368,10 @@ function selectMarksMaturity(marksEvent) {
 
 function selectMarksSDGs(marksEvent) {
   return marksEvent.getMarksAsync().then(selectedSDG);
+}
+
+function selectMarksPartners(marksEvent) {
+  return marksEvent.getMarksAsync().then(selectedPartners);
 }
 
 // MAP FILTER
@@ -617,7 +619,6 @@ function selectedCC(marks) {
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
-      console.log(pair);
       if (pair.fieldName == FILTER_CLIMATE) {
         capacityValue = pair.formattedValue;
         if (capacityValue != null) {
@@ -704,6 +705,43 @@ function selectedSDG(marks) {
     }
   }
 }
+
+
+//Selected Partners
+function selectedPartners(marks) {
+  var sheetsArray = [
+    map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET),
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CLIMATE_SHEET),
+    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
+    sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
+  ];
+  clearDashboardFilter(sheetsArray, FILTER_PARTNERS);
+  $(".checkedPartner").hide();
+  for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+    var pairs = marks[markIndex].getPairs();
+    for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+      var pair = pairs[pairIndex];
+      if (pair.fieldName == FILTER_PARTNERS) {
+        partnerValue = pair.formattedValue;
+        if (partnerValue != null) {
+          appyDashboardFilter(sheetsArray, FILTER_PARTNERS, partnerValue);
+          $(".checkedPartner").text("Contributing Partner: " + partnerValue).addClass("closebutton");
+          $(".checkedPartner").css('margin-top', '3px').css('margin-bottom', '3px');
+          $(".checkedPartner").show();
+          $(".checkedPartner, .clearfilters").on('click', clearPartnersfilters);
+        }
+      }
+    }
+  }
+}
+
 
 
 
@@ -977,4 +1015,25 @@ function clearSDGfilters() {
   $(".checkedsdg").hide();
   var sdgsheet = sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET);
   sdgsheet.clearSelectedMarksAsync();
+};
+
+
+function clearPartnersfilters() {
+  var sheetsArray = [
+    map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET),
+    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
+    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
+    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CLIMATE_SHEET),
+    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
+    sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET)
+  ];
+  clearDashboardFilter(sheetsArray, FILTER_PARTNERS);
+  $(".checkedPartner").hide();
+  var partnersheet = partners.getWorkbook().getActiveSheet().getWorksheets().get(TOPP_SHEET);
+  partnersheet.clearSelectedMarksAsync();
 };
