@@ -29,6 +29,25 @@ function init() {
         };
     slobar = new tableau.Viz(slodiv, slourl, slooptions);
 
+    //Outcome Impact Case Reports
+    var oicrdiv = document.getElementById("oicr-chart"),
+        oicrurl = appConfig.tableauView + "/HomeDB-OICRBarchartyear",
+        oicroptions = {
+            hideTabs: true,
+            hideToolbar: true,
+            width: '100%',
+            height: '100%',
+            onFirstInteractive: function () {
+
+                //Hide scrollbars - disable scroll
+                $('#oicr-chart iframe').attr("scrolling", "no");
+                $('#oicr-chart iframe').css('overflow', 'hidden');
+
+                loaded();
+            }
+        };
+    oicrchart = new tableau.Viz(oicrdiv, oicrurl, oicroptions);
+
     //Total Innovations
     var innovationsdiv = document.getElementById("total-innovations"),
         innovationsurl = appConfig.tableauView + "/HomeDB-InnovCount",
