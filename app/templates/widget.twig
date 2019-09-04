@@ -83,7 +83,7 @@
 
   // Update Element Height
   ResultsDashboardWidget.prototype.setIframeHeight = function setIframeHeight (height) {
-    this.element.style.height = height +"px";
+    this.element.style.height = (height - 7) +"px";
   };
 
   function sendIframeMessage(iframe, msg){
