@@ -7,8 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <ul class="navbar-nav mr-auto mt-lg-0 mb-2">
           {% for section in sections %}
-            {% set url %}{% if section.active %}./{{ section.action }}{% else %}#{% endif %}{% if queryParams %}?{{ queryParams }}{% endif %}
-            {% endset %}
+            {% set url %}{% if section.active %}./{{ section.action }}{% else %}#{% endif %}{% if queryParams %}?{{ queryParams }}{% endif %}{% endset %}
             <li class="{% if currentSection == section.action %}active{% endif %} nav-item mr-1">
               <a href="{{ url }}" class="active-{{section.active}} nav-link sectionAction-{{ section.action }}"> {{ section.name }} </a>
             </li>
