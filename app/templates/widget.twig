@@ -32,27 +32,22 @@
     var widget = this;
     var section = widget.userOptions.currentSection || '';
     // Create Iframe
-    widget.createIframe(widget.baseURL + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin);
-    // Show navigation Menu
-    widget.iframe.onload = function(){
-      if(widget.userOptions.displayNav){
-        widget.displayNav(true);
-      }
-    }
+    widget.createIframe(widget.baseURL + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin + '&displayNav=' + widget.userOptions.displayNav);
   };
 
   // Change section
   ResultsDashboardWidget.prototype.changeSection = function changeSection (section) {
     var widget = this;
-    widget.iframe.setAttribute('src', widget.baseURL + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin);
+    widget.iframe.setAttribute('src', widget.baseURL + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin + '&displayNav=' + widget.userOptions.displayNav);
   };
 
   // Display Navigation Menu
   ResultsDashboardWidget.prototype.displayNav = function displayNav (state) {
-    sendIframeMessage(this.iframe, {
+		sendIframeMessage(this.iframe, {
       eventName: "displayNav",
       data: state
     });
+		this.userOptions.displayNav = state;
   };
 
   // Create Iframe Item
@@ -60,9 +55,11 @@
     var widget = this;
     widget.iframe = document.createElement('iframe');
     widget.iframe.setAttribute('id', 'iframe-dashboardEmbed');
+		widget.iframe.setAttribute('scrolling', 'no');
     widget.iframe.setAttribute('src', url);
     widget.iframe.style.width = "100%";
     widget.iframe.style.height = "100%";
+		widget.iframe.style.overflow = "hidden"
     widget.iframe.frameBorder = 0;
     // Add iframe item
     widget.element.appendChild(widget.iframe);
@@ -72,6 +69,7 @@
       if(e.origin == widget.baseOrigin){
         var o = e.data;
         if (o.eventName == 'updateHeight'){
+					console.log(o.data);
           widget.setIframeHeight(o.data);
         }
       }

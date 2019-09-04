@@ -2,10 +2,7 @@
 
   $( document ).ready(function() {
 
-    sendParentMessage({
-      eventName: "updateHeight",
-      data: $('.dashboardBody').height()
-    });
+    updateHeight();
 
   });
 
@@ -28,10 +25,18 @@
   function displayNav(state){
     var $navMenu = $('nav.main-menu');
     if(state){
-      $navMenu.show();
+      $navMenu.slideDown(500, updateHeight);
     }else{
-      $navMenu.hide();
+      $navMenu.slideUp(500, updateHeight);
     }
+  }
+
+  function updateHeight(){
+    var offsetHeight = document.getElementsByTagName('body')[0].offsetHeight;
+    sendParentMessage({
+      eventName: "updateHeight",
+      data: offsetHeight
+    });
   }
 
   // addEventListener support for IE8

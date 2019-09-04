@@ -1,17 +1,19 @@
 <section>
   <div class="container">
-    <nav class="main-menu navbar-expand-lg" style="display:{{ embed ? 'none' : 'block' }}">
+    <nav class="main-menu navbar-expand-lg" style="display:{{ displayNav ? 'block' : 'none' }}">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <ul class="navbar-nav mr-auto mt-lg-0 mb-2">
-        {% for section in sections %}
-          <li class="{% if currentSection == section.action %}active{% endif %} nav-item mr-1">
-            <a href="{% if section.active %}./{{ section.action }}{% else %}#{% endif %}" class="active-{{section.active}} nav-link sectionAction-{{ section.action }}"> {{ section.name }} </a>
-          </li>
-        {% endfor %}
-      </ul>
+        <ul class="navbar-nav mr-auto mt-lg-0 mb-2">
+          {% for section in sections %}
+            {% set url %}{% if section.active %}./{{ section.action }}{% else %}#{% endif %}{% if queryParams %}?{{ queryParams }}{% endif %}
+            {% endset %}
+            <li class="{% if currentSection == section.action %}active{% endif %} nav-item mr-1">
+              <a href="{{ url }}" class="active-{{section.active}} nav-link sectionAction-{{ section.action }}"> {{ section.name }} </a>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
     </nav>
   </div>

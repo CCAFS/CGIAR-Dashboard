@@ -15,7 +15,12 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
   $currentSection = (isset($args['actionName'])? $args['actionName'] : $sections[0]['action']);
 
   // Embeding
-  $embed = ($request->getQueryParam('embed')? true : false);
+  $embed = (($request->getQueryParam('embed') == "true")? true : false);
+  $displayNav = true;
+  if ($embed){
+    $displayNav = (($request->getQueryParam('displayNav') == "true")? true : false);
+  }
+
 
   $this->view->render($response, $currentSection.'.twig', [
     'sections' => $sections,
@@ -24,8 +29,10 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     'messagesArray' => $controlList->getMessages(),
     'currentSection' => $currentSection,
     'embed' => $embed,
+    'displayNav' => $displayNav,
     'hostOrigin' => $request->getQueryParam('hostOrigin'),
-    'appConfig' => $settings['appConfig']
+    'appConfig' => $settings['appConfig'],
+    'queryParams' => $request->getUri()->getQuery()
   ]);
   return $response;
 })->setName('homepage');
@@ -49,18 +56,12 @@ $app->get('/widget/main.js', function ($request, $response, $args) {
   $baseOrigin = $requestScheme. "://". $httpHost;
   $baseURL = $baseOrigin . "" .$basePath;
 
-
-
-  // print_r($this->get('environment'));
-
   $this->view->render($response,  'widget.twig', [
     'sectionsJson' => json_encode($sections),
     'baseOrigin' => $baseOrigin,
     'baseURL' => $baseURL,
     'appConfig' => $settings->get('appConfig')
   ]);
-
-
 
   return $response->withHeader('Content-type', 'text/javascript');
 })->setName('widget');
