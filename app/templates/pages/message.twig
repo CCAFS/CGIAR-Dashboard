@@ -6,12 +6,12 @@
             <a href="https://www.google.com/chrome/" class="infotool" target="_blank" title="Google Chrome">
                 <img src="./images/browser_chrome.svg" width="30px" height="30px">
             </a>
-        </li> 
+        </li>
         <li>
             <a href="https://www.mozilla.org/en-US/firefox/new/" class="infotool" target="_blank" title="Firefox">
                 <img src="./images/browser_firefox.svg" width="30px" height="30px">
             </a>
-        </li> 
+        </li>
         <li>
             <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48126" class="infotool" target="_blank" title="Microsoft Edge">
                 <img src="./images/browser_edge.svg" width="30px" height="30px">
@@ -20,9 +20,15 @@
     </ul>
 </div>
 
+<!-- Filters -->
+{% if embed %}
+     
+{% endif %}
+
+<!-- Messages -->
 <div class="alert alert-info fade show animated zoomIn">
     <i class="fas fa-info-circle"></i>
-    This website is currently being updated. 
+    This website is currently being updated.
 </div>
 
 <div class="alert alert-info alert-dismissible page-disclaimer fade show animated zoomIn" style="display:none">
@@ -30,12 +36,11 @@
         <span aria-hidden="true">&times;</span>
     </button>
     <i class="fas fa-info-circle"></i>
-    Data has been extracted directly from Management Information System (MARLO) and Annual Reports for 2017. Some of the data
-    for the prototype has not undergone quality checks.
+    Data has been extracted directly from Management Information Systems (MARLO & MEL) and Annual Reports for 2017 and 2018. The data of 2017 was differently quality assured
 </div>
 
 {% for message in messagesArray %}
     {% if currentSection == message.indicator %}
         {{ messages.message(message.id, message.crp, message.year, message.indicator, message.message, message.level) }}
-    {% endif %}    
+    {% endif %}
 {% endfor %}

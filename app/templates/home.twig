@@ -28,7 +28,7 @@
 
 <div class="container">
   <div class="main-content">
-
+    {% include './pages/message.twig' with pageParams %}
     <div class="form-group row">
         <div class="col-md-4">
         <h6 class="subTitle">1. Contribution to <strong>System Level Outcomes</strong> (SLOs)</h6>
@@ -56,10 +56,10 @@
       <div class="form-group row">
         <div class="col">
               <h6 class="subTitle">4. <strong>Common Reporting Indicators</strong> (CRIs)</h6>
-              <p class="indicator-description">Quantitative indicators are used by all CGIAR programs to track progress towards impact. </p>   
-          <div class="from-group row ">       
+              <p class="indicator-description">Quantitative indicators are used by all CGIAR programs to track progress towards impact. </p>
+          <div class="from-group row ">
             	<div class="col justify-content-center">
-                <center><img src="./images/total_innovations.svg" width="50px"></center> 
+                <center><img src="./images/total_innovations.svg" width="50px"></center>
                 <h6 class="total-title">Total Innovations</h6>
                 <div class="numbers"><div id="total-innovations"></div></div>
               </div>
@@ -74,7 +74,7 @@
                 <div class="numbers"><div id="total-capDev"></div></div>
               </div>
           </div>
-          
+
           <div class="from-group row justify-content-center mt-1">
               <div class="col">
                 <center><img src="./images/papersicon.svg" width="50px"></center>
@@ -97,7 +97,7 @@
         <div class="col">
           <h6 class="subTitle">Insights</h6>
         </div>
-           
+
       </div>
 
   </div>
