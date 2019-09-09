@@ -91,7 +91,7 @@ function init() {
 
     //Top 10 Journals
     var topJournalsdiv = document.getElementById("top-journals"),
-        topJournalsurl = appConfig.tableauView + "/5_4SHPublicationsJournals",
+        topJournalsurl = appConfig.tableauView + "/5_7DBPapersTop10Journals",
         topJournalsoptions = {
             hideTabs: true,
             hideToolbar: true,
@@ -110,7 +110,7 @@ function init() {
     
     //OA - ISI
     var totaloaisidiv = document.getElementById("total-oaisi"),
-        totaloaisiurl = appConfig.tableauView + "/5_4SHPublicationsBar-ShapeOAandISI",
+        totaloaisiurl = appConfig.tableauView + "/5_6DBPapersISI-OABar",
         totaloaisioptions = {
             hideTabs: true,
             hideToolbar: true,

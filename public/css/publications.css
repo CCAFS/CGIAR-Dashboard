@@ -1,6 +1,5 @@
 .total-container {
   height: 60px;
-  margin-top: -20px;
 }
 
 .plist-container {
@@ -9,11 +8,11 @@
 }
 
 .topJournals-container{
-  height: 200px;
+  height: 330px;
 }
 
 .oaisi-container {
-  height: 190px;
+  height: 200px;
 }
 
 

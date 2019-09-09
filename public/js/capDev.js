@@ -72,25 +72,6 @@ function init() {
         }
     });
 
-    //Total participants 
-    var tparticipantsdiv = document.getElementById("total-participants"),
-        tparticipantsurl = appConfig.tableauView + "/4_2DBCapDevTotalParticipants",
-        tparticipantsoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll 
-                $('#total-participants iframe').attr("scrolling", "no");
-                $('#total-participants iframe').css('overflow', 'hidden');
-
-                loaded();
-            }
-        };
-    totalparticipants = new tableau.Viz(tparticipantsdiv, tparticipantsurl, tparticipantsoptions);
-
     //Total trainees 
     var totaltraineesdiv = document.getElementById("total-trainees"),
         totaltraineesurl = appConfig.tableauView + "/4_3DBCapDevTotalTrainees",
@@ -148,26 +129,6 @@ function init() {
         };
     totalmen = new tableau.Viz(totalmendiv, totalmenurl, totalmenoptions);
 
-
-    //Participants women-men 
-    var participantsdiv = document.getElementById("participants-user"),
-        participantsurl = appConfig.tableauView + "/4_0DBParticipantsDualAxischart",
-        participantsoption = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll 
-                $('#participants-user iframe').attr("scrolling", "no");
-                $('#participants-user iframe').css('overflow', 'hidden');
-
-                loaded();
-            }
-        };
-    participantsUser = new tableau.Viz(participantsdiv, participantsurl, participantsoption);
-
     //Trainees women-men 
     var traineesdiv = document.getElementById("trainees-term"),
         traineesurl = appConfig.tableauView + "/4_1DBTraineesDualAxischart",
@@ -193,7 +154,7 @@ function init() {
 //Hide "loading" when all charts have loaded 
 function loaded() {
     LOADED += 1;
-    if (LOADED == 6) {
+    if (LOADED == 4) {
         $("#loadingModal").modal('hide');
     }
 }
