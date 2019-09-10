@@ -5,8 +5,12 @@ var FILTER_CRPS = "CRP";
 var FILTER_YEAR = "Year";
 
 //Sheets
-var TOTALP_SHEET = "4.2 SH CapDev Total Participants";
-var TOTALT_SHEET = "4.3 SH CapDev Total Trainees ";
+var SLOBAR_SHEET = "8.2 SH SLO Heatmap";
+var SLOTARGET11_SHEET = "8.4 SH SLO Target 1.1";
+var SLOTARGET12_SHEET = "8.4 SH SLO Target 1.2";
+var SLOTARGET21_SHEET = "8.4 SH SLO Target 2.1";
+var SLOTARGET23_SHEET = "8.4 SH SLO Target 2.3";
+var SLOTARGET33_SHEET = "8.4 SH SLO Target 3.3";
 var TOTALW_SHEET = "4.4 SH Total Women Part & Trainees Total";
 var TOTALM_SHEET = "4.5 SH Total Men Part & Trainees Total";
 var PARTICIPANTS_SHEET = "4.0 SH Participants Dual Axis chart";
@@ -23,13 +27,17 @@ function init() {
         var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
         var checkedValues = $.map($checkedInputs, function (e) { return e.value });
 
+        var view = slotargets.getWorkbook().getActiveSheet().getWorksheets();
+        worksheet = view[0];
+        console.log(worksheet);
+
         var sheetsArray = [
-            totalparticipants.getWorkbook().getActiveSheet().getWorksheets().get(TOTALP_SHEET),
-            totaltrainees.getWorkbook().getActiveSheet().getWorksheets().get(TOTALT_SHEET),
-            totalwomen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALW_SHEET),
-            totalmen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALM_SHEET),
-            participantsUser.getWorkbook().getActiveSheet().getWorksheets().get(PARTICIPANTS_SHEET),
-            traineesTerm.getWorkbook().getActiveSheet().getWorksheets().get(TRAINEES_SHEET)
+            slobar.getWorkbook().getActiveSheet().getWorksheets().get(SLOBAR_SHEET),
+            slotargets.getWorkbook().getActiveSheet().getWorksheets().get(SLOTARGET11_SHEET),
+            slotargets.getWorkbook().getActiveSheet().getWorksheets().get(SLOTARGET12_SHEET),
+            slotargets.getWorkbook().getActiveSheet().getWorksheets().get(SLOTARGET21_SHEET),
+            slotargets.getWorkbook().getActiveSheet().getWorksheets().get(SLOTARGET23_SHEET),
+            slotargets.getWorkbook().getActiveSheet().getWorksheets().get(SLOTARGET33_SHEET),
         ];
 
         switch (filterType) {

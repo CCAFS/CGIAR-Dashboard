@@ -38,7 +38,10 @@ class ControlListService {
       array('acronym' => 'WLE',       'name' => 'WLE - Water, Land and Ecosystems')
     );
 
-    $this->years = array( '2018','2017' );
+    $this->years = array( 
+      array('year'=>  '2018', 'checked' => true  ), 
+      array('year'=>  '2017', 'checked' => false)
+    );
   }
 
   public function getSections(){

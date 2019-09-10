@@ -143,8 +143,21 @@ function init() {
                     clearDashboardFilter(sheetsArray, FILTER_YEAR);
                     $filterTitle.text(checkedValues);
                     $(".checkedyears").hide();
+                    top5lead.show();
+                    top5contributing.show();
+                    $('.noData').remove();
                 } else {
                     // Set filter to all sheets
+                    if(checkedValues == '2017'){
+                        console.log("test");
+                        top5lead.hide();
+                        top5contributing.hide();                        
+                        $("#itop5Lead-org, #itop5Contributing-org").append('<span class="noData d-flex justify-content-center">Not available for 2017</span>');
+                    } else {
+                        top5lead.show();
+                        top5contributing.show();
+                        $('.noData').remove();
+                    }
                     appyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValues);
                     $filterTitle.text(checkedValues);
                     // Add filter tag

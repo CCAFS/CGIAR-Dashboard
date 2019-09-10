@@ -5,7 +5,7 @@
     <ul class="filter-items items-years">
       <li> {{ forms.checkmark('years', 'All Years' , 'All Years', false) }} </li>
       {% for year in years %}
-        <li> {{ forms.checkmark('years', year, year, true) }} </li>
+        <li> {{ forms.checkmark('years', year.year, year.year, year.checked) }} </li>
       {% endfor %}
     </ul>
   </div>
