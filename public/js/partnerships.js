@@ -235,7 +235,7 @@ function init() {
 //Hide "loading" when all charts have loaded 
 function loaded() {
     LOADED += 1;
-    if (LOADED == 7) {
+    if (LOADED == 2) {
         $("#loadingModal").modal('hide');
     }
 }
