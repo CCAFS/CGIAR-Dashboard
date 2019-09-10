@@ -1,12 +1,12 @@
 .alt-total {
-  background-color: #f1f1f1;
-  height: 120px;
-  margin-bottom: 10px;
+  height: 60px;
+  margin-bottom: 5px;
+  margin-top: -10px;
 }
 
 .alt-mentions {
     background-color: #f1f1f1;
-    height: 330px;
+    height: 320px;
     margin-bottom: 10px;
 }
 
