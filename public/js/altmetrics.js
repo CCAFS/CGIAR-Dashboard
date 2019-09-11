@@ -85,7 +85,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#total-altmetrics iframe').attr("scrolling", "no");
                 $('#total-altmetrics iframe').css('overflow', 'hidden');
 
@@ -105,7 +105,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#altmetrics-mentions iframe').attr("scrolling", "no");
                 $('#altmetrics-mentions iframe').css('overflow', 'hidden');
 
@@ -124,7 +124,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#topten-alt iframe').attr("scrolling", "no");
                 $('#topten-alt iframe').css('overflow', 'hidden');
 
@@ -134,7 +134,7 @@ function init() {
     toptenalt = new tableau.Viz(tenaltdiv, tenalturl, tenaltoptions);
 
 
-    //All Publications with Altmetrics Attention Score 
+    //All Publications with Altmetrics Attention Score
     var allaltdiv = document.getElementById("all-altmetrics"),
         allalturl = appConfig.tableauView + "/6_1DBAltmetricDetail",
         allaltoptions = {
@@ -144,7 +144,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#all-altmetrics iframe').attr("scrolling", "no");
                 $('#all-altmetrics iframe').css('overflow', 'hidden');
 
@@ -155,7 +155,7 @@ function init() {
 
 }
 
-//Hide "loading" when all charts have loaded 
+//Hide "loading" when all charts have loaded
 function loaded() {
     LOADED += 1;
     if (LOADED == 4) {
@@ -172,7 +172,7 @@ function appyDashboardFilter(sheetsArray, filterName, filterValues) {
     });
 }
 
-//Clear filters 
+//Clear filters
 function clearDashboardFilter(sheetsArray, filterName) {
     $.each(sheetsArray, function (i, e) {
         e.clearFilterAsync(filterName);

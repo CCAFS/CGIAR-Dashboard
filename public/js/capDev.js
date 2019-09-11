@@ -72,7 +72,7 @@ function init() {
         }
     });
 
-    //Total trainees 
+    //Total trainees
     var totaltraineesdiv = document.getElementById("total-trainees"),
         totaltraineesurl = appConfig.tableauView + "/4_3DBCapDevTotalTrainees",
         totaltraineesoptions = {
@@ -82,7 +82,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#total-trainees iframe').attr("scrolling", "no");
                 $('#total-trainees iframe').css('overflow', 'hidden');
 
@@ -91,7 +91,7 @@ function init() {
         };
     totaltrainees = new tableau.Viz(totaltraineesdiv, totaltraineesurl, totaltraineesoptions);
 
-    //Total women 
+    //Total women
     var totalwomendiv = document.getElementById("total-women"),
         totalwomenurl = appConfig.tableauView + "/4_4DBCapDevTotalWomen",
         totalwomenoptions = {
@@ -101,7 +101,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#total-women iframe').attr("scrolling", "no");
                 $('#total-women iframe').css('overflow', 'hidden');
 
@@ -110,7 +110,7 @@ function init() {
         };
     totalwomen = new tableau.Viz(totalwomendiv, totalwomenurl, totalwomenoptions);
 
-    //Total men 
+    //Total men
     var totalmendiv = document.getElementById("total-men"),
         totalmenurl = appConfig.tableauView + "/4_5DBCapDevTotalMen",
         totalmenoptions = {
@@ -120,7 +120,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#total-men iframe').attr("scrolling", "no");
                 $('#total-men iframe').css('overflow', 'hidden');
 
@@ -129,7 +129,7 @@ function init() {
         };
     totalmen = new tableau.Viz(totalmendiv, totalmenurl, totalmenoptions);
 
-    //Trainees women-men 
+    //Trainees women-men
     var traineesdiv = document.getElementById("trainees-term"),
         traineesurl = appConfig.tableauView + "/4_1DBTraineesDualAxischart",
         traineesoptions = {
@@ -139,7 +139,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#trainees-term iframe').attr("scrolling", "no");
                 $('#trainees-term iframe').css('overflow', 'hidden');
 
@@ -151,7 +151,7 @@ function init() {
 }
 
 
-//Hide "loading" when all charts have loaded 
+//Hide "loading" when all charts have loaded
 function loaded() {
     LOADED += 1;
     if (LOADED == 4) {
@@ -199,7 +199,7 @@ function clearCRPfilters() {
 };
 
 
-// Clear Year 
+// Clear Year
 function clearYearsfilters() {
     var sheetsArray = [
         totalparticipants.getWorkbook().getActiveSheet().getWorksheets().get(TOTALP_SHEET),

@@ -4,8 +4,38 @@ $(document).ready(init);
 function init() {
   msieversion();
   isZoomed();
+
+  $('input[type="radio"]').on('change', updateUrlParameters);
 }
 
+
+function updateUrlParameters(){
+  var filterType = $(this).attr('name');
+  var $checkedInput = $("input[name='" + filterType + "']:checked");
+  var checkedValues = $checkedInput.val();
+  var u  = new Url;
+  var parameters = {
+    "crps": "entity",
+    "years": "year"
+  };
+
+  if(checkedValues){
+    u.query[parameters[filterType]] = checkedValues;
+  }else{
+    delete u.query[parameters[filterType]];
+  }
+  window.history.pushState("", "", u.toString());
+
+  $('.navbar-nav a').each(function(){
+    var navU  = new Url($(this).attr('href'));
+    if(checkedValues){
+      navU.query[parameters[filterType]] = checkedValues;
+    }else{
+      delete navU.query[parameters[filterType]];
+    }
+    $(this).attr('href', navU.toString());
+  });
+}
 
 $( window ).resize(function() {
   isZoomed();

@@ -31,7 +31,9 @@
       var appConfig = {
         production : {{ appConfig.production |json_encode() }},
         tableauView : '{{ appConfig.tableauView  }}',
-        hostOrigin: '{{ hostOrigin }}'
+        hostOrigin: '{{ hostOrigin }}',
+        entitySelected: '{{ entitySelected }}',
+        yearSelected: '{{ yearSelected }}'
       };
     </script>
   </head>

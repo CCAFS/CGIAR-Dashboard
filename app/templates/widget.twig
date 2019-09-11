@@ -38,7 +38,11 @@
   // Change section
   ResultsDashboardWidget.prototype.changeSection = function changeSection (section) {
     var widget = this;
-    widget.iframe.setAttribute('src', widget.baseURL + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin + '&displayNav=' + widget.userOptions.displayNav);
+    sendIframeMessage(this.iframe, {
+      eventName: "changeSection",
+      data: section
+    });
+		this.userOptions.currentSection = section;
   };
 
   // Display Navigation Menu

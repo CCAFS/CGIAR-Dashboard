@@ -22,6 +22,7 @@ class ControlListService {
     );
 
     $this->crps = array(
+      array('acronym' => '',          'name' => 'All'),
       array('acronym' => 'A4NH',      'name' => 'A4NH - Agriculture for Nutrition and Health'),
       array('acronym' => 'BigData',   'name' => 'BigData - Big Data in Agriculture'),
       array('acronym' => 'CCAFS',     'name' => 'CCAFS - Climate Change, Agriculture and Food Security'),
@@ -38,9 +39,10 @@ class ControlListService {
       array('acronym' => 'WLE',       'name' => 'WLE - Water, Land and Ecosystems')
     );
 
-    $this->years = array( 
-      array('year'=>  '2018', 'checked' => true  ), 
-      array('year'=>  '2017', 'checked' => false)
+    $this->years = array(
+      array('year'=>  '',     'name' => 'All Years',  'checked' => false ),
+      array('year'=>  2018,   'name' => '2018',       'checked' => false ),
+      array('year'=>  2017,   'name' => '2017',       'checked' => false )
     );
   }
 

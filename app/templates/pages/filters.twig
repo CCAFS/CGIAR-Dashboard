@@ -1,21 +1,20 @@
+{% import "./macros/forms.twig" as forms %}
 <div class="filters">
   <!-- Year -->
   <div class="filter-component fyear">
-    <p id="filtertitley" class="filter-title years">Years</p>
+    <p id="filtertitley" class="filter-title years">{{ yearSelected|default('Years') }}</p>
     <ul class="filter-items items-years">
-      <li> {{ forms.checkmark('years', 'All Years' , 'All Years', false) }} </li>
       {% for year in years %}
-        <li> {{ forms.checkmark('years', year.year, year.year, year.checked) }} </li>
+        <li> {{ forms.checkmark('years', year.year, year.name, (year.year == yearSelected) ) }} </li>
       {% endfor %}
     </ul>
   </div>
   <!-- CRPs -->
   <div class="filter-component fprogram">
-    <p id="filtertitlec" class="filter-title portfolio">Research Portfolio</p>
+    <p id="filtertitlec" class="filter-title portfolio">{{ entitySelected|default('Research Portfolio') }}</p>
     <ul class="filter-items items-programs">
-      <li> {{ forms.checkmark('crps', 'All' , 'All', true) }} </li>
       {% for crp in crps %}
-        <li> <small> {{ forms.checkmark('crps', crp.acronym , crp.name) }} </small>  </li>
+        <li> <small> {{ forms.checkmark('crps', crp.acronym , crp.name, (crp.acronym == entitySelected)) }} </small>  </li>
       {% endfor %}
     </ul>
   </div>

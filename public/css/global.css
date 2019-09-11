@@ -22,7 +22,7 @@ header .title {
 }
 
 .fprogram {
-  width: 191px;
+  width: 230px;
 }
 
 .filter-component .filter-title {
@@ -74,7 +74,7 @@ header .title {
   list-style: none;
   color: #565656;
   border-bottom: 1px solid #f7f7f7;
-  padding: 4px 28px;
+  padding: 4px 11px;
   width: 100%;
   background: #fff;
   opacity: 0.9;
@@ -102,7 +102,7 @@ nav.main-menu ul li a {
   text-decoration: none;
 }
 
-nav.main-menu ul li a.active-{
+nav.main-menu ul li a.active- {
   opacity: 0.7;
   cursor: not-allowed;
 }
@@ -264,6 +264,11 @@ nav.main-menu ul li.active:after {
   cursor: pointer;
 }
 
+.checkedfilters.closebutton {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
 .selection {
   overflow: hidden;
 }
@@ -314,7 +319,7 @@ nav.main-menu ul li.active:after {
   font-size: 14px;
 }
 
-.alert-info{
+.alert-info {
   color: #6c8fa7;
   background-color: #dceffc;
   border-color: #d0e2ee;
@@ -344,12 +349,12 @@ nav.main-menu ul li.active:after {
   display: none;
 }
 
-.browser-message ul li{
+.browser-message ul li {
   display: inline-block;
   position: relative;
   padding-left: 3px;
   padding-right: 3px;
-  left:-20;
+  left: -20;
   top: 8px;
 }
 
@@ -369,33 +374,34 @@ nav.main-menu ul li.active:after {
 }
 
 .scrolled-header img {
- width: 40px;
+  width: 40px;
 }
 
 .scrolled-header h3 {
   font-size: 1.2em !important;
 }
 
-.scrolled-header .filter-component{
+.scrolled-header .filter-component {
   margin-top: 5px;
 }
 
-@media (max-width:1199px) {
+@media (max-width: 1199px) {
   #pageheader h3 span {
     font-size: 0.8em;
   }
+
   nav.main-menu ul li {
     font-size: 0.7rem;
   }
 }
 
-@media (max-width:991px) {
+@media (max-width: 991px) {
   #pageheader h3 span {
     display: none;
   }
 }
 
-@media (max-width:456px) {
+@media (max-width: 456px) {
   h3 img {
     width:40px;
     position: fixed;
@@ -403,7 +409,7 @@ nav.main-menu ul li.active:after {
   }
 }
 
-@media (max-width:375px) {
+@media (max-width: 375px) {
   h3 img {
     display: none;
   }

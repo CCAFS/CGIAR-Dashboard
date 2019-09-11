@@ -90,7 +90,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#policies-geoscope iframe').attr("scrolling", "no");
                 $('#policies-geoscope iframe').css('overflow', 'hidden');
 
@@ -101,7 +101,7 @@ function init() {
         };
     policiesgeo = new tableau.Viz(policiesgeodiv, policiesgeourl, policiesgeodoptions);
 
-    //Policies on the Ground 
+    //Policies on the Ground
     var policiesmapdiv = document.getElementById("policies-ground"),
         policiesmapurl = appConfig.tableauView + "/7_4DBPoliciesMap",
         policiesmapoptions = {
@@ -111,7 +111,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#policies-ground iframe').attr("scrolling", "no");
                 $('#policies-ground iframe').css('overflow', 'hidden');
 
@@ -132,7 +132,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#policies-stage iframe').attr("scrolling", "no");
                 $('#policies-stage iframe').css('overflow', 'hidden');
 
@@ -155,7 +155,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#policies-investype iframe').attr("scrolling", "no");
                 $('#policies-investype iframe').css('overflow', 'hidden');
 
@@ -176,7 +176,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#policies-sdgs iframe').attr("scrolling", "no");
                 $('#policies-sdgs iframe').css('overflow', 'hidden');
 
@@ -197,7 +197,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#policies-list iframe').attr("scrolling", "no");
                 $('#policies-list iframe').css('overflow', 'hidden');
 
@@ -210,7 +210,7 @@ function init() {
 
 }
 
-//Hide "loading" when all charts have loaded 
+//Hide "loading" when all charts have loaded
 function loaded() {
     LOADED += 1;
     if (LOADED == 5) {
@@ -336,7 +336,7 @@ function selectedMap(marks) {
     }
 }
 
-// Policies by Stage in Process 
+// Policies by Stage in Process
 function selectedStage(marks) {
 
     var sheetsArray = [
@@ -454,7 +454,7 @@ function clearCRPfilters() {
 };
 
 
-//   Clear Year  
+//   Clear Year
 function clearYearsfilters() {
     var sheetsArray = [
         policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
@@ -470,7 +470,7 @@ function clearYearsfilters() {
     $('input[value="All Years"]').prop('checked', true);
 };
 
-//   Clear GeoScope  
+//   Clear GeoScope
 function clearGeoScope() {
 
     var sheetsArray = [

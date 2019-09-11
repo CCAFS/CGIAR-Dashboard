@@ -27,23 +27,29 @@
 
 {% include './pages/main-menu.twig' with pageParams %}
 <div class="container">
+  <!-- Filters -->
+  {% if embed %}
+    {% include './pages/filters.twig' with pageParams %}
+  {% endif %}
+
   <div class="main-content">
-  {% include './pages/message.twig' %}
-  <div class="alert alert-dark selection">
-  <div class="checkedfilters clearfilters">Clear all filters</div>
-  <div class="checkedfilters checkedyears"></div>
-  <div class="checkedfilters checkedcrps"></div>
-  <div class="checkedfilters checkedregion"></div>
-  <div class="checkedfilters checkedslo"></div>
-  <div class="checkedfilters checkedcci"></div>
-  <div class="checkedfilters checkedsdg"></div>
-  <div class="checkedfilters checkedgender"></div>
-  <div class="checkedfilters checkedyouth"></div>
-  <div class="checkedfilters checkedcapdev"></div>
-  <div class="checkedfilters checkedcrossc"></div>
-  <div class="checkedfilters chceckedmatstage"></div>
-  <div class="checkedfilters checkedPartner"></div>
-</div>
+    {% include './pages/message.twig' %}
+    <div class="alert alert-dark selection">
+      <div class="checkedfilters clearfilters">Clear all filters</div>
+      <div class="checkedfilters checkedyears"></div>
+      <div class="checkedfilters checkedcrps"></div>
+      <div class="checkedfilters checkedregion"></div>
+      <div class="checkedfilters checkedslo"></div>
+      <div class="checkedfilters checkedcci"></div>
+      <div class="checkedfilters checkedsdg"></div>
+      <div class="checkedfilters checkedgender"></div>
+      <div class="checkedfilters checkedyouth"></div>
+      <div class="checkedfilters checkedcapdev"></div>
+      <div class="checkedfilters checkedcrossc"></div>
+      <div class="checkedfilters chceckedmatstage"></div>
+      <div class="checkedfilters checkedPartner"></div>
+    </div>
+
     <div class="form-group row">
       <div class="col-md-7">
             <h6 class="subTitle">Outcome / Impact on the Ground</h6>

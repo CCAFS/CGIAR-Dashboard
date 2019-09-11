@@ -15,6 +15,9 @@
       if (e.data.eventName == 'displayNav'){
         displayNav(e.data.data);
       }
+      if (e.data.eventName == 'changeSection'){
+        changeSection(e.data.data);
+      }
     }
   }
 
@@ -30,6 +33,13 @@
       $navMenu.slideUp(500, updateHeight);
     }
   }
+
+  function changeSection(section){
+    console.log(section);
+    //$('.sectionAction-'+ section).trigger("click");
+    window.location.href = $('.sectionAction-'+ section).attr('href');
+
+  };
 
   function updateHeight(){
     var offsetHeight = document.getElementsByTagName('body')[0].offsetHeight;

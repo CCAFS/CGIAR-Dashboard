@@ -14,6 +14,14 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
   // Current section
   $currentSection = (isset($args['actionName'])? $args['actionName'] : $sections[0]['action']);
 
+  // CRP/Platform selected
+  $entitySelected = $request->getQueryParam('entity');
+  $entitySelected = (isset($entitySelected)? $entitySelected : "");
+
+  // Year Selected
+  $yearSelected = $request->getQueryParam('year');
+  $yearSelected = (isset($yearSelected)? $yearSelected : 2018 );
+
   // Embeding
   $embed = (($request->getQueryParam('embed') == "true")? true : false);
   $displayNav = true;
@@ -28,6 +36,8 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     'years' => $controlList->getYears(),
     'messagesArray' => $controlList->getMessages(),
     'currentSection' => $currentSection,
+    'entitySelected' => $entitySelected,
+    'yearSelected' => $yearSelected,
     'embed' => $embed,
     'displayNav' => $displayNav,
     'hostOrigin' => $request->getQueryParam('hostOrigin'),
