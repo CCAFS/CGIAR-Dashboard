@@ -100,67 +100,6 @@ $.getJSON("json/innovations.json", function (data) {
 
 function init() {
 
-    $('input[type="radio"]').on('change', function () {
-        var filterType = $(this).attr('name');
-        var $checkedInputs = $("input[name='" + filterType + "']:checked");
-        var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
-        var checkedValues = $.map($checkedInputs, function (e) { return e.value });
-
-        switch (filterType) {
-            case "crps":
-                if (checkedValues == 'All') {
-                    // Clear filter from all sheets
-                    clearDashboardFilter(sheetsArray, FILTER_CRPS);
-                    $filterTitle.text(checkedValues + " Portfolio");
-                    $(".checkedcrps").hide();
-                } else {
-                    // Set filter to all sheets
-                    appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValues);
-                    $filterTitle.text(checkedValues);
-                    // Add filter tag
-                    $(".checkedcrps").text("Research Portfolio: " + checkedValues).addClass("closebutton");
-                    $(".checkedcrps").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedcrps").show();
-                    $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);
-                }
-
-                break;
-            case "years":
-                if (checkedValues == 'All Years') {
-                    // Clear filter from all sheets
-                    clearDashboardFilter(sheetsArray, FILTER_YEAR);
-                    $filterTitle.text(checkedValues);
-                    $(".checkedyears").hide();
-                    top5lead.show();
-                    top5contributing.show();
-                    $('.noData').remove();
-                } else {
-                    // Set filter to all sheets
-                    if(checkedValues == '2017'){
-                        console.log("test");
-                        top5lead.hide();
-                        top5contributing.hide();
-                        $("#itop5Lead-org, #itop5Contributing-org").append('<span class="noData d-flex justify-content-center">Not available for 2017</span>');
-                    } else {
-                        top5lead.show();
-                        top5contributing.show();
-                        $('.noData').remove();
-                    }
-                    appyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValues);
-                    $filterTitle.text(checkedValues);
-                    // Add filter tag
-                    $(".checkedyears").text("Years: " + checkedValues).addClass("closebutton");
-                    $(".checkedyears").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedyears").show();
-                    $(".checkedyears, .clearfilters").on('click', clearYearsfilters);
-                }
-                break;
-            default:
-        }
-    });
-
-
-
     //Innovations by stage
     var istagediv = document.getElementById("innovations-stage"),
         stageurl = appConfig.tableauView + "/2_2DBInnovbyStage",
