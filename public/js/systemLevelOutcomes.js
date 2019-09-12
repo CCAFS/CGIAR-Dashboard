@@ -27,9 +27,9 @@ function init() {
 }
 
 function loadSheets(){
-  var view = slotargets.getWorkbook().getActiveSheet().getWorksheets();
-  worksheet = view[0];
-  console.log(worksheet);
+  // var view = slotargets.getWorkbook().getActiveSheet().getWorksheets();
+  // worksheet = view[0];
+  // console.log(worksheet);
 
   sheetsArray = [
     slobar.getWorkbook().getActiveSheet().getWorksheets().get(SLOBAR_SHEET),
@@ -43,26 +43,10 @@ function loadSheets(){
 
 //Hide "loading" when all charts have loaded
 function loaded() {
-    LOADED += 1;
-    if (LOADED == 3) {
-      $("#loadingModal").modal('hide');
-      // Load sheets
-      loadSheets();
-    }
+  LOADED += 1;
+  if (LOADED == 3) {
+    $("#loadingModal").modal('hide');
+    // Load sheets
+    loadSheets();
+  }
 }
-
-// Clear Program
-function clearCRPfilters() {
-    clearDashboardFilter(sheetsArray, FILTER_CRPS);
-    $(".checkedcrps").hide();
-    $('.portfolio').text('Research Portfolio');
-    $('input[value="All"]').prop('checked', true);
-};
-
-// Clear Year
-function clearYearsfilters() {
-    clearDashboardFilter(sheetsArray, FILTER_YEAR);
-    $('.years').text('Years');
-    $(".checkedyears").hide();
-    $('input[value="All Years"]').prop('checked', true);
-};

@@ -25,6 +25,72 @@ var TOPCONTRIBUTING_SHEET = "2.10 SH Innov Bar Top Cont-Org";
 
 $(document).ready(init);
 
+function init() {
+    //Innovations by stage
+    istage = createTableauViz('innovations-stage', '2_2DBInnovbyStage', [ onSelectWorkSheet ]);
+    //Innovations by type
+    itype = createTableauViz('innovations-type', '2_3DBInnovbyType', [ onSelectWorkSheet ]);
+    //Innovations on the ground
+    iground = createTableauViz('innovations-map', '2_6DBInnovMap', [ onSelectWorkSheet ]);
+    //Innovations list
+    ilist = createTableauViz('innovations-list', '2_5DBInnovDetail', [ onSelectWorkSheet ]);
+    // Top 5 non-CGIAR Lead Organizations
+    top5lead = createTableauViz('itop5Lead-org', '2_8DBInnovTop5Leadorg', [ onSelectWorkSheet ]);
+    // Top 5 non-CGIAR Contributing Organizations
+    top5contributing = createTableauViz('itop5Contributing-org', '2_9DBInnovTop5Controrg', [ onSelectWorkSheet ]);
+}
+
+function loadSheets(){
+  sheetsArray = [
+    istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+    itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
+    ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+    iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+    iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+    iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
+    top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
+    top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
+  ];
+}
+
+//Hide "loading" when all charts have loaded
+function loaded() {
+  LOADED += 1;
+  if (LOADED == 6) {
+    $("#loadingModal").modal('hide');
+    // Load sheets
+    loadSheets();
+  }
+}
+
+function onSelectWorkSheet(mEvent){
+  var selectedSheet = mEvent.getWorksheet();
+  var selectedSheetName = selectedSheet.getName();
+
+  return mEvent.getMarksAsync().then(function(marks){
+    var filterName, tagName, $tag, clearFunction;
+    switch(selectedSheetName) {
+      case ISTAGE_SHEET:
+        setFilterWorksheet(marks, FILTER_STAGE, sheetsArray, selectedSheet, selectedSheetName, 'Stage', '.checkedstage');
+        break;
+      case ITYPE_SHEET:
+        setFilterWorksheet(marks, FILTER_TYPE, sheetsArray, selectedSheet, selectedSheetName, 'Type', '.checkedtype');
+        break;
+      case IMAP_SHEET:
+        setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country', '.checkedcountry');
+        //setFilterWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, selectedSheetName, 'Region', '.checkedcountry');
+        //setFilterWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet, selectedSheetName, 'Global', '.checkedcountry');
+        break;
+      case TOPLEAD_SHEET:
+        setFilterWorksheet(marks, FILTER_LEAD, sheetsArray, selectedSheet, selectedSheetName, 'Lead Organization', '.checkedLeadOrg');
+        break;
+      case TOPCONTRIBUTING_SHEET:
+        setFilterWorksheet(marks, FILTER_CONTRIBUTING, sheetsArray, selectedSheet, selectedSheetName, 'Contributing Organization', '.checkedContributing');
+        break;
+    }
+  });
+}
+
 /*//jQuery.getJSON("json/innovations.json", handleJSON);
 var jsonfile;
 var labels = ["Stage 1: End of research phase (Discovery/Proof of Concept)", "Stage 2: End of piloting phase", "Stage 3: Available for uptake", "Stage 4: Uptake by next user"];
@@ -98,183 +164,6 @@ $.getJSON("json/innovations.json", function (data) {
 
 });*/
 
-function init() {
-
-    //Innovations by stage
-    var istagediv = document.getElementById("innovations-stage"),
-        stageurl = appConfig.tableauView + "/2_2DBInnovbyStage",
-        stageoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#innovations-stage iframe').attr("scrolling", "no");
-                $('#innovations-stage iframe').css('overflow', 'hidden');
-
-                //Get selections and apply filters
-                istage.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksStage);
-
-                loaded();
-            }
-        };
-    istage = new tableau.Viz(istagediv, stageurl, stageoptions);
-
-
-    //Innovations by type
-    var itypediv = document.getElementById("innovations-type"),
-        typeurl = appConfig.tableauView + "/2_3DBInnovbyType",
-        typeoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#innovations-type iframe').attr("scrolling", "no");
-                $('#innovations-type iframe').css('overflow', 'hidden');
-
-                //Get selections and apply filters
-                itype.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksType);
-
-                loaded();
-            }
-        };
-    itype = new tableau.Viz(itypediv, typeurl, typeoptions);
-
-    //Innovations on the ground
-    var igrounddiv = document.getElementById("innovations-map"),
-        groundurl = appConfig.tableauView + "/2_6DBInnovMap",
-        groundoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#innovations-map iframe').attr("scrolling", "no");
-                $('#innovations-map iframe').css('overflow', 'hidden');
-
-                //Get selections and apply filters
-                iground.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectMarksMap);
-
-                loaded();
-            }
-        };
-    iground = new tableau.Viz(igrounddiv, groundurl, groundoptions);
-
-    //Innovations list
-    var ilistdiv = document.getElementById("innovations-list"),
-        ilisturl = appConfig.tableauView + "/2_5DBInnovDetail",
-        ilistoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#innovations-list iframe').attr("scrolling", "no");
-                $('#innovations-list iframe').css('overflow', 'hidden');
-
-                loaded();
-            }
-        };
-    ilist = new tableau.Viz(ilistdiv, ilisturl, ilistoptions);
-
-    // Top 5 non-CGIAR Lead Organizations
-    var top5Leaddiv = document.getElementById("itop5Lead-org"),
-        top5Leadurl = appConfig.tableauView + "/2_8DBInnovTop5Leadorg",
-        top5Leadoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#itop5Lead-org iframe').attr("scrolling", "no");
-                $('#itop5Lead-org iframe').css('overflow', 'hidden');
-
-
-                top5lead.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectLead);
-
-                loaded();
-            }
-        };
-    top5lead = new tableau.Viz(top5Leaddiv, top5Leadurl, top5Leadoptions);
-
-    // Top 5 non-CGIAR Contributing Organizations
-    var top5Contdiv = document.getElementById("itop5Contributing-org"),
-        top5Conturl = appConfig.tableauView + "/2_9DBInnovTop5Controrg",
-        top5Contoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#itop5Contributing-org iframe').attr("scrolling", "no");
-                $('#itop5Contributing-org iframe').css('overflow', 'hidden');
-
-                top5contributing.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectContributing);
-
-                loaded();
-            }
-        };
-    top5contributing = new tableau.Viz(top5Contdiv, top5Conturl, top5Contoptions);
-
-}
-
-function loadSheets(){
-  sheetsArray = [
-    istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-    itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-    ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-    iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-    iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-    iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
-    top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
-    top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
-  ];
-}
-
-//Hide "loading" when all charts have loaded
-function loaded() {
-  LOADED += 1;
-  if (LOADED == 6) {
-    $("#loadingModal").modal('hide');
-    // Load sheets
-    loadSheets();
-  }
-}
-
-
-
-function selectMarksStage(marksEvent) {
-    return marksEvent.getMarksAsync().then(selectedMarksStage);
-}
-
-function selectMarksType(marksEvent) {
-    return marksEvent.getMarksAsync().then(selectedMarksType);
-}
-
-function selectMarksMap(marksEvent) {
-    return marksEvent.getMarksAsync().then(selectedMarksMap);
-}
-
-function selectContributing(marksEvent) {
-    return marksEvent.getMarksAsync().then(selectedContributingOrg);
-}
-
-function selectLead(marksEvent) {
-    return marksEvent.getMarksAsync().then(selectedLeadOrg);
-}
 
 /*function searchTitle(value){
     var v = value;
@@ -284,193 +173,3 @@ function selectLead(marksEvent) {
 
     appySearchFilter(sheetsArray, "Title of Innovation", v);
 }*/
-
-function selectedMarksStage(marks) {
-    clearDashboardFilter(sheetsArray, FILTER_STAGE);
-    $(".checkedstage").hide();
-    for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-        var pairs = marks[markIndex].getPairs();
-        for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
-            var pair = pairs[pairIndex];
-            if (pair.fieldName == FILTER_STAGE) {
-                stageValue = pair.formattedValue;
-                if (stageValue != null) {
-                    appyDashboardFilter(sheetsArray, FILTER_STAGE, stageValue);
-                    $(".checkedstage").text("Stage: " + stageValue).addClass("closebutton");
-                    $(".checkedstage").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedstage").show();
-                    $(".checkedstage, .clearfilters").on('click', clearStagefilters);
-                }
-            }
-        }
-    }
-}
-
-function selectedMarksType(marks) {
-    clearDashboardFilter(sheetsArray, FILTER_TYPE);
-    $(".checkedtype").hide();
-    for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-        var pairs = marks[markIndex].getPairs();
-        for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
-            var pair = pairs[pairIndex];
-            if (pair.fieldName == FILTER_TYPE) {
-                typeValue = pair.formattedValue;
-                if (typeValue != null) {
-                    appyDashboardFilter(sheetsArray, FILTER_TYPE, typeValue);
-                    $(".checkedtype").text("Type: " + typeValue).addClass("closebutton");
-                    $(".checkedtype").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedtype").show();
-                    $(".checkedtype, .clearfilters").on('click', clearTypefilters);
-                }
-            }
-        }
-    }
-}
-
-function selectedMarksMap(marks) {
-    clearDashboardFilter(sheetsArray, FILTER_MAP);
-    clearDashboardFilter(sheetsArray, FILTER_REGION);
-    clearDashboardFilter(sheetsArray, FILTER_GLOBAL);
-    $(".checkedcountry").hide();
-    for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-        var pairs = marks[markIndex].getPairs();
-        for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
-            var pair = pairs[pairIndex];
-            if (pair.fieldName == FILTER_MAP) {
-                mapValue = pair.formattedValue;
-                if (mapValue != null) {
-                    appyDashboardFilter(sheetsArray, FILTER_MAP, mapValue);
-                    $(".checkedcountry").text("Country: " + mapValue).addClass("closebutton");
-                    $(".checkedcountry").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedcountry").show();
-                    $(".checkedcountry, .clearfilters").on('click', clearMapfilters);
-                }
-            } else if (pair.fieldName == FILTER_REGION) {
-                mapValue = pair.formattedValue;
-                if (mapValue == "Regional") {
-                    appyDashboardFilter(sheetsArray, FILTER_REGION, mapValue);
-                    $(".checkedcountry").text("Scope: " + mapValue).addClass("closebutton");
-                    $(".checkedcountry").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedcountry").show();
-                    $(".checkedcountry, .clearfilters").on('click', clearRegionalfilter);
-                } else if (mapValue == "Global") {
-                    appyDashboardFilter(sheetsArray, FILTER_GLOBAL, mapValue);
-                    $(".checkedcountry").text("Scope: " + mapValue).addClass("closebutton");
-                    $(".checkedcountry").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedcountry").show();
-                    $(".checkedcountry, .clearfilters").on('click', clearGlobalfilters);
-                }
-            }
-        }
-    }
-}
-
-
-function selectedLeadOrg(marks) {
-    clearDashboardFilter(sheetsArray, FILTER_LEAD);
-    $(".checkedLeadOrg").hide();
-    for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-        var pairs = marks[markIndex].getPairs();
-        for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
-            var pair = pairs[pairIndex];
-            if (pair.fieldName == FILTER_LEAD) {
-                var leadValue = pair.formattedValue;
-                if (leadValue != null) {
-                    appyDashboardFilter(sheetsArray, FILTER_LEAD, leadValue);
-                    $(".checkedLeadOrg").text("Lead Organization: " + leadValue).addClass("closebutton");
-                    $(".checkedLeadOrg").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedLeadOrg").show();
-                    $(".checkedLeadOrg, .clearfilters").on('click', clearLeadfilter);
-                }
-            }
-        }
-    }
-}
-
-function selectedContributingOrg(marks) {
-     clearDashboardFilter(sheetsArray, FILTER_CONTRIBUTING);
-     $(".checkedContributing").hide();
-     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-         var pairs = marks[markIndex].getPairs();
-         for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
-             var pair = pairs[pairIndex];
-             if (pair.fieldName == FILTER_CONTRIBUTING) {
-                 var contributingValue = pair.formattedValue;
-                 if (contributingValue != null) {
-                     appyDashboardFilter(sheetsArray, FILTER_CONTRIBUTING, contributingValue);
-                     $(".checkedContributing").text("Contributing Organization: " + contributingValue).addClass("closebutton");
-                     $(".checkedContributing").css('margin-top', '3px').css('margin-bottom', '3px');
-                     $(".checkedContributing").show();
-                     $(".checkedContributing, .clearfilters").on('click', clearContributingfilters);
-                 }
-             }
-         }
-     }
- }
-
-
-function clearCRPfilters() {
-    clearDashboardFilter(sheetsArray, FILTER_CRPS);
-    $(".checkedcrps").hide();
-    $('.portfolio').text('Research Portfolio');
-    $('input[value="All"]').prop('checked', true);
-};
-
-function clearYearsfilters() {
-    clearDashboardFilter(sheetsArray, FILTER_YEAR);
-    $('.years').text('Years');
-    $(".checkedyears").hide();
-    $('input[value="All Years"]').prop('checked', true);
-};
-
-function clearStagefilters() {
-    clearDashboardFilter(sheetsArray, FILTER_STAGE);
-    $(".checkedstage").hide();
-    var stagesheet = istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET);
-    stagesheet.clearSelectedMarksAsync();
-};
-
-function clearTypefilters() {
-    clearDashboardFilter(sheetsArray, FILTER_TYPE);
-    $(".checkedtype").hide();
-    var typesheet = itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET);
-    typesheet.clearSelectedMarksAsync();
-};
-
-
-function clearMapfilters() {
-    clearDashboardFilter(sheetsArray, FILTER_MAP);
-    $(".checkedcountry").hide();
-    var mapsheet = iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET);
-    mapsheet.clearSelectedMarksAsync();
-};
-
-function clearRegionalfilter() {
-    clearDashboardFilter(sheetsArray, FILTER_REGION);
-    $(".checkedcountry").hide();
-    var mapsheet = iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET);
-    mapsheet.clearSelectedMarksAsync();
-};
-
-function clearGlobalfilters() {
-    clearDashboardFilter(sheetsArray, FILTER_GLOBAL);
-    $(".checkedcountry").hide();
-    var mapsheet = iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET);
-    mapsheet.clearSelectedMarksAsync();
-};
-
-
-function clearLeadfilter() {
-    clearDashboardFilter(sheetsArray, FILTER_LEAD);
-    $(".checkedLeadOrg").hide();
-    var leadSheet = top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET);
-    leadSheet.clearSelectedMarksAsync();
-};
-
-
-function clearContributingfilters() {
-    clearDashboardFilter(sheetsArray, FILTER_CONTRIBUTING);
-    $(".checkedContributing").hide();
-    var contributingSheet = top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET);
-    contributingSheet.clearSelectedMarksAsync();
-};
