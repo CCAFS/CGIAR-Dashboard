@@ -1,8 +1,7 @@
+var sheetsArray = [];
 var LOADED = 0;
 
 //Filters
-var FILTER_CRPS = "CRP";
-var FILTER_YEAR = "Year";
 var FILTER_TSTAGE = "Name (Dim Research Phases)";
 var FILTER_TSTAGEP = "CRP Type";
 var FILTER_KPHASE = "Name (Dim Research Phases)";
@@ -22,62 +21,6 @@ $(document).ready(init);
 
 function init() {
 
-    $('input[type="radio"]').on('change', function () {
-        var filterType = $(this).attr('name');
-        var $checkedInputs = $("input[name='" + filterType + "']:checked");
-        var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
-        var checkedValues = $.map($checkedInputs, function (e) { return e.value })
-
-        var sheetsArray = [
-            totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-            tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET),
-            totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
-            pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
-            keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
-            kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-            kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
-        ];
-
-        switch (filterType) {
-            case "crps":
-                if (checkedValues == 'All') {
-                    // Clear filter from all sheets
-                    clearDashboardFilter(sheetsArray, FILTER_CRPS);
-                    $filterTitle.text(checkedValues + " Portfolio");
-                    $(".checkedcrps").hide();
-                } else {
-                    // Set filter to all sheets
-                    appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValues);
-                    $filterTitle.text(checkedValues);
-                    $(".checkedcrps").text("Research Portfolio: " + checkedValues).addClass("closebutton");
-                    $(".checkedcrps").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedcrps").show();
-                    $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);
-                }
-
-                break;
-            case "years":
-                if (checkedValues == 'All Years') {
-                    // Clear filter from all sheets
-                    clearDashboardFilter(sheetsArray, FILTER_YEAR);
-                    $filterTitle.text(checkedValues);
-                    $(".checkedyears").hide();
-                } else {
-                    // Set filter to all sheets
-                    appyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValues);
-                    $filterTitle.text(checkedValues);
-                    $(".checkedyears").text("Years: " + checkedValues).addClass("closebutton");
-                    $(".checkedyears").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedyears").show();
-                    $(".checkedyears, .clearfilters").on('click', clearYearsfilters);
-                }
-                break;
-            default:
-        }
-    });
-
-
-
     //Total Partnerships
     var tpdiv = document.getElementById("total-partnerships"),
         tpurl = appConfig.tableauView + "/3_1DBTotalPartnerships_1",
@@ -88,7 +31,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#total-partnerships iframe').attr("scrolling", "no");
                 $('#total-partnerships iframe').css('overflow', 'hidden');
 
@@ -108,7 +51,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#tp-phase iframe').attr("scrolling", "no");
                 $('#tp-phase iframe').css('overflow', 'hidden');
 
@@ -130,7 +73,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#partnerships-map iframe').attr("scrolling", "no");
                 $('#partnerships-map iframe').css('overflow', 'hidden');
 
@@ -153,7 +96,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#total-keyp iframe').attr("scrolling", "no");
                 $('#total-keyp iframe').css('overflow', 'hidden');
 
@@ -173,7 +116,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#keyp-phase iframe').attr("scrolling", "no");
                 $('#keyp-phase iframe').css('overflow', 'hidden');
 
@@ -186,7 +129,7 @@ function init() {
     keypphase = new tableau.Viz(kppdiv, kppurl, kppoptions);
 
 
-    //Key Partnerships by type 
+    //Key Partnerships by type
     var kptdiv = document.getElementById("keyp-type"),
         kpturl = appConfig.tableauView + "/3_6DBKeyPartbyStageandProgramType2",
         kptoptions = {
@@ -196,7 +139,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#keyp-type iframe').attr("scrolling", "no");
                 $('#keyp-type iframe').css('overflow', 'hidden');
 
@@ -219,7 +162,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#keyp-list iframe').attr("scrolling", "no");
                 $('#keyp-list iframe').css('overflow', 'hidden');
 
@@ -232,26 +175,27 @@ function init() {
 
 }
 
-//Hide "loading" when all charts have loaded 
+function loadSheets(){
+  sheetsArray = [
+      totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
+      tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET),
+      totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
+      pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
+      keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
+      kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
+      kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
+  ];
+}
+
+//Hide "loading" when all charts have loaded
 function loaded() {
-    LOADED += 1;
-    if (LOADED == 2) {
-        $("#loadingModal").modal('hide');
-    }
-}
-
-/*************************** Tableau Functions *******************************/
-
-function appyDashboardFilter(sheetsArray, filterName, filterValues) {
-    $.each(sheetsArray, function (i, e) {
-        e.applyFilterAsync(filterName, filterValues, tableau.FilterUpdateType.REPLACE);
-    });
-}
-
-function clearDashboardFilter(sheetsArray, filterName) {
-    $.each(sheetsArray, function (i, e) {
-        e.clearFilterAsync(filterName);
-    });
+  LOADED += 1;
+  console.log(LOADED);
+  if (LOADED == 6) {
+    $("#loadingModal").modal('hide');
+    // Load sheets
+    loadSheets();
+  }
 }
 
 function selectMarksTphase(marksEvent) {
@@ -273,10 +217,6 @@ function selectMarksPmap(marksEvent) {
 
 //Total partnerships Phase filter
 function selectedTphase(marks) {
-
-    var sheetsArray = [
-        totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-    ];
     clearDashboardFilter(sheetsArray, FILTER_TSTAGE);
     $(".checkedtphase").hide();
 
@@ -301,13 +241,6 @@ function selectedTphase(marks) {
 
 //Key partnerships by phase filter
 function selectedKphase(marks) {
-
-    var sheetsArray = [
-        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
-        kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET), 
-        pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_KPHASE);
     $(".checkedkphase").hide();
 
@@ -331,13 +264,6 @@ function selectedKphase(marks) {
 
 //Key partnerships by type filter
 function selectedKtype(marks) {
-
-    var sheetsArray = [
-        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
-        keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
-        pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_KTYPE);
     $(".checkedktype").hide();
 
@@ -362,12 +288,6 @@ function selectedKtype(marks) {
 //Key partnerships on the ground
 function selectedPmap(marks) {
 
-    var sheetsArray = [
-        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
-        keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
-        kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_PMAP);
     $(".checkedkpground").hide();
 
@@ -390,37 +310,18 @@ function selectedPmap(marks) {
 }
 
 
-// Clear functions 
+// Clear functions
 
 //   Clear CRP
 function clearCRPfilters() {
-    var sheetsArray = [
-        totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-        tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET),
-        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
-        keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
-        kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
-        pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
     $('.portfolio').text('Research Portfolio');
     $('input[value="All"]').prop('checked', true);
 };
 
-
-//   Clear Year  
+//   Clear Year
 function clearYearsfilters() {
-    var sheetsArray = [
-        totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-        tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET),
-        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
-        keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
-        kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
-        pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
     $('.years').text('Years');
     $(".checkedyears").hide();
@@ -428,9 +329,6 @@ function clearYearsfilters() {
 };
 
 function clearTphase() {
-    var sheetsArray = [
-        totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-    ];
     var sheet = tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET);
     sheet.clearSelectedMarksAsync();
     clearDashboardFilter(sheetsArray, FILTER_TSTAGE);
@@ -438,12 +336,6 @@ function clearTphase() {
 };
 
 function clearKphase() {
-    var sheetsArray = [
-        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
-        kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
-        pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET)
-    ];
     var sheet = keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET);
     sheet.clearSelectedMarksAsync();
     clearDashboardFilter(sheetsArray, FILTER_KPHASE);
@@ -451,12 +343,6 @@ function clearKphase() {
 };
 
 function clearKtype() {
-    var sheetsArray = [
-        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
-        keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
-        pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET)
-    ];
     var sheet = kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET);
     sheet.clearSelectedMarksAsync();
     clearDashboardFilter(sheetsArray, FILTER_KTYPE);
@@ -464,12 +350,6 @@ function clearKtype() {
 };
 
 function clearPMap() {
-    var sheetsArray = [
-        totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
-        keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
-        kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-        kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET)
-    ];
     var sheet = pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET);
     sheet.clearSelectedMarksAsync();
     clearDashboardFilter(sheetsArray, FILTER_PMAP);

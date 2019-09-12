@@ -1,8 +1,7 @@
+var sheetsArray = [];
 var LOADED = 0;
 
 //Filters
-var FILTER_CRPS = "CRP";
-var FILTER_YEAR = "Year";
 
 //Sheets
 var TOTALP_SHEET = "4.2 SH CapDev Total Participants";
@@ -15,63 +14,6 @@ var TRAINEES_SHEET = "4.1 SH Trainees Dual Axis chart";
 $(document).ready(init);
 
 function init() {
-
-
-    $('input[type="radio"]').on('change', function () {
-        var filterType = $(this).attr('name');
-        var $checkedInputs = $("input[name='" + filterType + "']:checked");
-        var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
-        var checkedValues = $.map($checkedInputs, function (e) { return e.value });
-
-        var sheetsArray = [
-            totalparticipants.getWorkbook().getActiveSheet().getWorksheets().get(TOTALP_SHEET),
-            totaltrainees.getWorkbook().getActiveSheet().getWorksheets().get(TOTALT_SHEET),
-            totalwomen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALW_SHEET),
-            totalmen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALM_SHEET),
-            participantsUser.getWorkbook().getActiveSheet().getWorksheets().get(PARTICIPANTS_SHEET),
-            traineesTerm.getWorkbook().getActiveSheet().getWorksheets().get(TRAINEES_SHEET)
-        ];
-
-        switch (filterType) {
-            case "crps":
-                if (checkedValues == 'All') {
-                    // Clear filter from all sheets
-                    clearDashboardFilter(sheetsArray, FILTER_CRPS);
-                    $filterTitle.text(checkedValues + " Portfolio");
-                    $(".checkedcrps").hide();
-                } else {
-                    // Set filter to all sheets
-                    applyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValues);
-                    $filterTitle.text(checkedValues);
-                    // Add filter tag
-                    $(".checkedcrps").text("Research Portfolio: " + checkedValues).addClass("closebutton");
-                    $(".checkedcrps").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedcrps").show();
-                    $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);
-                }
-
-                break;
-            case "years":
-                if (checkedValues == 'All Years') {
-                    // Clear filter from all sheets
-                    clearDashboardFilter(sheetsArray, FILTER_YEAR);
-                    $filterTitle.text(checkedValues);
-                    $(".checkedyears").hide();
-                } else {
-                    // Set filter to all sheets
-                    applyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValues);
-                    $filterTitle.text(checkedValues);
-                    // Add filter tag
-                    $(".checkedyears").text("Years: " + checkedValues).addClass("closebutton");
-                    $(".checkedyears").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedyears").show();
-                    $(".checkedyears, .clearfilters").on('click', clearYearsfilters);
-                }
-                break;
-            default:
-        }
-    });
-
     //Total trainees
     var totaltraineesdiv = document.getElementById("total-trainees"),
         totaltraineesurl = appConfig.tableauView + "/4_3DBCapDevTotalTrainees",
@@ -150,65 +92,39 @@ function init() {
 
 }
 
+function loadSheets(){
+  sheetsArray = [
+    //totalparticipants.getWorkbook().getActiveSheet().getWorksheets().get(TOTALP_SHEET),
+    totaltrainees.getWorkbook().getActiveSheet().getWorksheets().get(TOTALT_SHEET),
+    totalwomen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALW_SHEET),
+    totalmen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALM_SHEET),
+    //participantsUser.getWorkbook().getActiveSheet().getWorksheets().get(PARTICIPANTS_SHEET),
+    traineesTerm.getWorkbook().getActiveSheet().getWorksheets().get(TRAINEES_SHEET)
+  ];
+}
 
 //Hide "loading" when all charts have loaded
 function loaded() {
-    LOADED += 1;
-    if (LOADED == 4) {
-        $("#loadingModal").modal('hide');
-    }
+  LOADED += 1;
+  if (LOADED == 4) {
+    $("#loadingModal").modal('hide');
+    // Load sheets
+    loadSheets();
+  }
 }
-
-
-/*************************** Tableau Functions *******************************/
-
-function applyDashboardFilter(sheetsArray, filterName, filterValues) {
-    $.each(sheetsArray, function (i, e) {
-        e.applyFilterAsync(filterName, filterValues, tableau.FilterUpdateType.REPLACE);
-    });
-}
-
-function clearDashboardFilter(sheetsArray, filterName) {
-    $.each(sheetsArray, function (i, e) {
-        e.clearFilterAsync(filterName);
-    });
-}
-
-function errback(e) {
-    console.log(e.tableauSoftwareErrorCode);
-}
-
-
 
 /**** Clear functions ****/
 
 // Clear Program
 function clearCRPfilters() {
-    var sheetsArray = [
-        totalparticipants.getWorkbook().getActiveSheet().getWorksheets().get(TOTALP_SHEET),
-        totaltrainees.getWorkbook().getActiveSheet().getWorksheets().get(TOTALT_SHEET),
-        totalwomen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALW_SHEET),
-        totalmen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALM_SHEET),
-        participantsUser.getWorkbook().getActiveSheet().getWorksheets().get(PARTICIPANTS_SHEET),
-        traineesTerm.getWorkbook().getActiveSheet().getWorksheets().get(TRAINEES_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
     $('.portfolio').text('Research Portfolio');
     $('input[value="All"]').prop('checked', true);
 };
 
-
 // Clear Year
 function clearYearsfilters() {
-    var sheetsArray = [
-        totalparticipants.getWorkbook().getActiveSheet().getWorksheets().get(TOTALP_SHEET),
-        totaltrainees.getWorkbook().getActiveSheet().getWorksheets().get(TOTALT_SHEET),
-        totalwomen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALW_SHEET),
-        totalmen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALM_SHEET),
-        participantsUser.getWorkbook().getActiveSheet().getWorksheets().get(PARTICIPANTS_SHEET),
-        traineesTerm.getWorkbook().getActiveSheet().getWorksheets().get(TRAINEES_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
     $('.years').text('Years');
     $(".checkedyears").hide();

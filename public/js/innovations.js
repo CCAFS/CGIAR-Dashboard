@@ -1,8 +1,7 @@
+var sheetsArray = [];
 var LOADED = 0;
 
 //Filters
-var FILTER_CRPS = "CRP";
-var FILTER_YEAR = "Year";
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
 var FILTER_MAP = "Country Name -To use";
@@ -107,17 +106,6 @@ function init() {
         var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
         var checkedValues = $.map($checkedInputs, function (e) { return e.value });
 
-        var sheetsArray = [
-            istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-            itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-            ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-            iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-            iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-            iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
-            top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
-            top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
-        ];
-
         switch (filterType) {
             case "crps":
                 if (checkedValues == 'All') {
@@ -151,7 +139,7 @@ function init() {
                     if(checkedValues == '2017'){
                         console.log("test");
                         top5lead.hide();
-                        top5contributing.hide();                        
+                        top5contributing.hide();
                         $("#itop5Lead-org, #itop5Contributing-org").append('<span class="noData d-flex justify-content-center">Not available for 2017</span>');
                     } else {
                         top5lead.show();
@@ -183,7 +171,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#innovations-stage iframe').attr("scrolling", "no");
                 $('#innovations-stage iframe').css('overflow', 'hidden');
 
@@ -206,7 +194,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#innovations-type iframe').attr("scrolling", "no");
                 $('#innovations-type iframe').css('overflow', 'hidden');
 
@@ -228,7 +216,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#innovations-map iframe').attr("scrolling", "no");
                 $('#innovations-map iframe').css('overflow', 'hidden');
 
@@ -250,7 +238,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#innovations-list iframe').attr("scrolling", "no");
                 $('#innovations-list iframe').css('overflow', 'hidden');
 
@@ -259,7 +247,7 @@ function init() {
         };
     ilist = new tableau.Viz(ilistdiv, ilisturl, ilistoptions);
 
-    // Top 5 non-CGIAR Lead Organizations 
+    // Top 5 non-CGIAR Lead Organizations
     var top5Leaddiv = document.getElementById("itop5Lead-org"),
         top5Leadurl = appConfig.tableauView + "/2_8DBInnovTop5Leadorg",
         top5Leadoptions = {
@@ -269,19 +257,19 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#itop5Lead-org iframe').attr("scrolling", "no");
                 $('#itop5Lead-org iframe').css('overflow', 'hidden');
 
 
                 top5lead.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectLead);
 
-                //    loaded();
+                loaded();
             }
         };
     top5lead = new tableau.Viz(top5Leaddiv, top5Leadurl, top5Leadoptions);
 
-    // Top 5 non-CGIAR Contributing Organizations 
+    // Top 5 non-CGIAR Contributing Organizations
     var top5Contdiv = document.getElementById("itop5Contributing-org"),
         top5Conturl = appConfig.tableauView + "/2_9DBInnovTop5Controrg",
         top5Contoptions = {
@@ -291,47 +279,42 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#itop5Contributing-org iframe').attr("scrolling", "no");
                 $('#itop5Contributing-org iframe').css('overflow', 'hidden');
 
                 top5contributing.addEventListener(tableau.TableauEventName.MARKS_SELECTION, selectContributing);
 
-                //    loaded();
+                loaded();
             }
         };
     top5contributing = new tableau.Viz(top5Contdiv, top5Conturl, top5Contoptions);
 
 }
 
-//Hide "loading" when all charts have loaded 
+function loadSheets(){
+  sheetsArray = [
+    istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
+    itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
+    ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
+    iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
+    iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
+    iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
+    top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
+    top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
+  ];
+}
+
+//Hide "loading" when all charts have loaded
 function loaded() {
-    LOADED += 1;
-    if (LOADED == 3) {
-        $("#loadingModal").modal('hide');
-    }
+  LOADED += 1;
+  if (LOADED == 6) {
+    $("#loadingModal").modal('hide');
+    // Load sheets
+    loadSheets();
+  }
 }
 
-/*************************** Tableau Functions *******************************/
-
-function appyDashboardFilter(sheetsArray, filterName, filterValues) {
-    $.each(sheetsArray, function (i, e) {
-        e.applyFilterAsync(filterName, filterValues, tableau.FilterUpdateType.REPLACE);
-    });
-}
-
-function appySearchFilter(sheetsArray, filterName, filterValues) {
-    $.each(sheetsArray, function (i, e) {
-        e.applyFilterAsync(filterName, filterValues, tableau.FilterUpdateType.REPLACE);
-    });
-}
-
-
-function clearDashboardFilter(sheetsArray, filterName) {
-    $.each(sheetsArray, function (i, e) {
-        e.clearFilterAsync(filterName);
-    });
-}
 
 
 function selectMarksStage(marksEvent) {
@@ -364,15 +347,6 @@ function selectLead(marksEvent) {
 }*/
 
 function selectedMarksStage(marks) {
-    var sheetsArray = [
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),        
-        top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
-        top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_STAGE);
     $(".checkedstage").hide();
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
@@ -394,15 +368,6 @@ function selectedMarksStage(marks) {
 }
 
 function selectedMarksType(marks) {
-    var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),        
-        top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
-        top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_TYPE);
     $(".checkedtype").hide();
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
@@ -424,13 +389,6 @@ function selectedMarksType(marks) {
 }
 
 function selectedMarksMap(marks) {
-    var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),        
-        top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
-        top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_MAP);
     clearDashboardFilter(sheetsArray, FILTER_REGION);
     clearDashboardFilter(sheetsArray, FILTER_GLOBAL);
@@ -470,14 +428,6 @@ function selectedMarksMap(marks) {
 
 
 function selectedLeadOrg(marks) {
-    var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET)  
-    ];
     clearDashboardFilter(sheetsArray, FILTER_LEAD);
     $(".checkedLeadOrg").hide();
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
@@ -499,14 +449,6 @@ function selectedLeadOrg(marks) {
 }
 
 function selectedContributingOrg(marks) {
-    var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET) 
-     ];
      clearDashboardFilter(sheetsArray, FILTER_CONTRIBUTING);
      $(".checkedContributing").hide();
      for (var markIndex = 0; markIndex < marks.length; markIndex++) {
@@ -529,16 +471,6 @@ function selectedContributingOrg(marks) {
 
 
 function clearCRPfilters() {
-    var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),        
-        top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
-        top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
     $('.portfolio').text('Research Portfolio');
@@ -546,16 +478,6 @@ function clearCRPfilters() {
 };
 
 function clearYearsfilters() {
-    var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),        
-        top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
-        top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
     $('.years').text('Years');
     $(".checkedyears").hide();
@@ -563,15 +485,6 @@ function clearYearsfilters() {
 };
 
 function clearStagefilters() {
-    var sheetsArray = [
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
-        top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
-        top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_STAGE);
     $(".checkedstage").hide();
     var stagesheet = istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET);
@@ -579,15 +492,6 @@ function clearStagefilters() {
 };
 
 function clearTypefilters() {
-    var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
-        top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
-        top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_TYPE);
     $(".checkedtype").hide();
     var typesheet = itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET);
@@ -596,13 +500,6 @@ function clearTypefilters() {
 
 
 function clearMapfilters() {
-    var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-        top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
-        top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_MAP);
     $(".checkedcountry").hide();
     var mapsheet = iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET);
@@ -610,13 +507,6 @@ function clearMapfilters() {
 };
 
 function clearRegionalfilter() {
-    var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-        top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
-        top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_REGION);
     $(".checkedcountry").hide();
     var mapsheet = iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET);
@@ -624,13 +514,6 @@ function clearRegionalfilter() {
 };
 
 function clearGlobalfilters() {
-    var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-        top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
-        top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_GLOBAL);
     $(".checkedcountry").hide();
     var mapsheet = iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET);
@@ -639,14 +522,6 @@ function clearGlobalfilters() {
 
 
 function clearLeadfilter() {
-    var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET) 
-    ];
     clearDashboardFilter(sheetsArray, FILTER_LEAD);
     $(".checkedLeadOrg").hide();
     var leadSheet = top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET);
@@ -655,14 +530,6 @@ function clearLeadfilter() {
 
 
 function clearContributingfilters() {
-    var sheetsArray = [
-        istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-        ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-        iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
-        itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET) 
-    ];
     clearDashboardFilter(sheetsArray, FILTER_CONTRIBUTING);
     $(".checkedContributing").hide();
     var contributingSheet = top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET);

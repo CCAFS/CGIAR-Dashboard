@@ -12,29 +12,59 @@ function init() {
 function updateUrlParameters(){
   var filterType = $(this).attr('name');
   var $checkedInput = $("input[name='" + filterType + "']:checked");
-  var checkedValues = $checkedInput.val();
+  var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
+  var checkedValue = $checkedInput.val();
   var u  = new Url;
   var parameters = {
     "crps": "entity",
     "years": "year"
   };
 
-  if(checkedValues){
-    u.query[parameters[filterType]] = checkedValues;
+  // Update host URL parameters
+  if(checkedValue){
+    u.query[parameters[filterType]] = checkedValue;
   }else{
     delete u.query[parameters[filterType]];
   }
   window.history.pushState("", "", u.toString());
 
+  // Update navigation URL parameters
   $('.navbar-nav a').each(function(){
     var navU  = new Url($(this).attr('href'));
-    if(checkedValues){
-      navU.query[parameters[filterType]] = checkedValues;
+    if(checkedValue){
+      navU.query[parameters[filterType]] = checkedValue;
     }else{
       delete navU.query[parameters[filterType]];
     }
     $(this).attr('href', navU.toString());
   });
+
+  // Update Filter selection Title
+  switch (filterType) {
+    case "crps":
+      if (checkedValue) {
+        $filterTitle.text(checkedValue);
+        // Set filter to all sheets
+        appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValue);
+      } else {
+        $filterTitle.text("Research Portfolio");
+        // Clear filter from all sheets
+        clearDashboardFilter(sheetsArray, FILTER_CRPS);
+      }
+      break;
+    case "years":
+      if (checkedValue) {
+        $filterTitle.text(checkedValue);
+        // Set filter to all sheets
+        appyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValue);
+      } else {
+        $filterTitle.text('All Years');
+        // Clear filter from all sheets
+        clearDashboardFilter(sheetsArray, FILTER_YEAR);
+      }
+      break;
+    default:
+  }
 }
 
 $( window ).resize(function() {
@@ -43,16 +73,13 @@ $( window ).resize(function() {
 
 $("#loadingModal").modal('show');
 
-
 // Close blue disclaimer in all sections after closing it once
 const showMsg = sessionStorage.getItem('showMsg');
-
 if (showMsg == 'false') {
   $('.page-disclaimer').hide();
 } else {
   $('.page-disclaimer').show();
 }
-
 $('.closem').on('click', function () {
   $('.page-disclaimer').fadeOut('slow');
   sessionStorage.setItem('showMsg', 'false');
@@ -62,16 +89,11 @@ $('.closem').on('click', function () {
 function msieversion() {
   var ua = window.navigator.userAgent;
   var msie = ua.indexOf("MSIE ");
-
-  if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  //Show message in IE
-  {
-    $('.browser-message').show();
+  if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
+    $('.browser-message').show(); //Show message in IE
+  } else {
+    $('.browser-message').hide(); //Hide message in other browsers
   }
-  else  //Hide message in other browsers
-  {
-    $('.browser-message').hide();
-  }
-
   return false;
 }
 

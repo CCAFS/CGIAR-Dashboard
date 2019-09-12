@@ -1,3 +1,7 @@
+// Global filters
+var FILTER_CRPS = "CRP";
+var FILTER_YEAR = "Year";
+
 /*************************** Tableau Functions *******************************/
 
 function appyDashboardFilter(sheetsArray, filterName, filterValues) {

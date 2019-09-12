@@ -1,9 +1,7 @@
-var chart1, map1, cci1, oicslist, chart2, sheetsArray;
+var sheetsArray = [];
 var LOADED = 0;
 
-//Filters
-var FILTER_CRPS = "CRP";
-var FILTER_YEAR = "Year";
+// Section Filters
 var FILTER_COUNTRY = "Country Name";
 var FILTER_REGION = "Name (Dim Geo Scopes)";
 var FILTER_GLOBAL = "Reg Un Name";
@@ -37,53 +35,6 @@ var TOPP_SHEET = "1.1.12 SH OICS Top Partners";
 $(document).ready(init);
 
 function init() {
-  $('input[type="radio"]').on('change', function () {
-    var filterType = $(this).attr('name');
-    var $checkedInput = $("input[name='" + filterType + "']:checked");
-    var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
-    var checkedValues = $checkedInput.val();
-
-    //Get sheets names
-    /* var view = oicslist.getWorkbook().getActiveSheet().getWorksheets();
-    worksheet = view[0];
-    console.log(worksheet);*/
-
-    switch (filterType) {
-      case "crps":
-        if (checkedValues) {
-          // Set filter to all sheets
-          appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValues);
-          $filterTitle.text(checkedValues);
-          // Add filter tag
-          // $(".checkedcrps").text("Portfolio: " + checkedValues).addClass("closebutton");
-          // $(".checkedcrps").show();
-          // $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);
-        } else {
-          // Clear filter from all sheets
-          clearDashboardFilter(sheetsArray, FILTER_CRPS);
-          $filterTitle.text("Research Portfolio");
-          // $(".checkedcrps").hide();
-        }
-        break;
-      case "years":
-        if (checkedValues) {
-          // Set filter to all sheets
-          appyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValues);
-          $filterTitle.text(checkedValues);
-          // Add filter tag
-          //$(".checkedyears").text("Year: " + checkedValues).addClass("closebutton");
-          //$(".checkedyears").show();
-          //$(".checkedyears, .clearfilters").on('click', clearYearsfilters);
-        } else {
-          // Clear filter from all sheets
-          clearDashboardFilter(sheetsArray, FILTER_YEAR);
-          $filterTitle.text('All Years');
-          //$(".checkedyears").hide();
-        }
-        break;
-      default:
-    }
-  });
 
   //Countries map
   map1 = createTableauViz('map-1', '1_1DBMap', [ selectMarks ]);
@@ -435,88 +386,60 @@ function selectedPartners(marks) {
 function clearCountryfilters() {
   clearDashboardFilter(sheetsArray, FILTER_COUNTRY);
   $(".checkedregion").hide();
-  //var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET);
-  //mapsheet.clearSelectedMarksAsync();
 };
 
 function clearGlobalfilters() {
   clearDashboardFilter(sheetsArray, FILTER_GLOBAL);
   $(".checkedregion").hide();
-  //var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET);
-  //mapsheet.clearSelectedMarksAsync();
 };
-
 
 function clearRegionalfilters() {
   clearDashboardFilter(sheetsArray, FILTER_REGION);
   $(".checkedregion").hide();
-  //var mapsheet = map1.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET);
-  //mapsheet.clearSelectedMarksAsync();
 };
-
 
 function clearSLOfilters() {
   clearDashboardFilter(sheetsArray, FILTER_SLO);
   $(".checkedslo").hide();
-  //var sheet = chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET);
-  //sheet.clearSelectedMarksAsync();
 };
 
 function clearCCIfilters() {
   clearDashboardFilter(sheetsArray, FILTER_CCI);
   $(".checkedcci").hide();
-  //var ccisheet = chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET);
-  //ccisheet.clearSelectedMarksAsync();
 };
-
 
 function clearGenderfilters() {
   clearDashboardFilter(sheetsArray, FILTER_GENDER);
   $(".checkedgender").hide();
-  //var gendersheet = ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET);
-  //gendersheet.clearSelectedMarksAsync();
 };
 
 function clearYouthfilters() {
   clearDashboardFilter(sheetsArray, FILTER_YOUTH);
   $(".checkedyouth").hide();
-  //var youthsheet = ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET);
-  //youthsheet.clearSelectedMarksAsync();
 };
-
 
 function clearCapdevfilters() {
   clearDashboardFilter(sheetsArray, FILTER_CAPACITY);
   $(".checkedcapdev").hide();
-  //var cdsheet = ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET);
-  //cdsheet.clearSelectedMarksAsync();
 };
 
 function clearClimateFilters() {
   clearDashboardFilter(sheetsArray, FILTER_CLIMATE);
   $(".checkedcapdev").hide();
-  //var cdsheet = ccip.getWorkbook().getActiveSheet().getWorksheets().get(CLIMATE_SHEET);
-  //cdsheet.clearSelectedMarksAsync();
 };
 
 function clearMStagefilters() {
   clearDashboardFilter(sheetsArray, FILTER_MATURITY);
   $(".chceckedmatstage").hide();
-  //var msheet = mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET);
-  //msheet.clearSelectedMarksAsync();
 };
 
 function clearSDGfilters() {
   clearDashboardFilter(sheetsArray, FILTER_SDG);
   $(".checkedsdg").hide();
-  //var sdgsheet = sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET);
-  //sdgsheet.clearSelectedMarksAsync();
 };
 
 
 function clearPartnersfilters() {
   clearDashboardFilter(sheetsArray, FILTER_PARTNERS);
   $(".checkedPartner").hide();
-  //var partnersheet = partners.getWorkbook().getActiveSheet().getWorksheets().get(TOPP_SHEET);
-  //partnersheet.clearSelectedMarksAsync();
 };

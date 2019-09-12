@@ -1,7 +1,6 @@
+var sheetsArray = [];
 var LOADED = 0;
 
-var FILTER_CRPS = "CRP";
-var FILTER_YEAR = "Year";
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
 var FILTER_MAP = "Country Name";
@@ -20,56 +19,6 @@ $(document).ready(init);
 
 function init() {
 
-    $('input[type="radio"]').on('change', function () {
-        var filterType = $(this).attr('name');
-        var $checkedInputs = $("input[name='" + filterType + "']:checked");
-        var $filterTitle = $(this).parents('.filter-component').find('.filter-title');
-        var checkedValues = $.map($checkedInputs, function (e) { return e.value });
-
-        var sheetsArray = [
-            totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-            plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
-        ];
-
-        switch (filterType) {
-            case "crps":
-                if (checkedValues == 'All') {
-                    // Clear filter from all sheets
-                    clearDashboardFilter(sheetsArray, FILTER_CRPS);
-                    $filterTitle.text(checkedValues + " Portfolio");
-                    $(".checkedcrps").hide();
-                } else {
-                    // Set filter to all sheets
-                    appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValues);
-                    $filterTitle.text(checkedValues);
-                    $(".checkedcrps").text("Research Portfolio: " + checkedValues).addClass("closebutton");
-                    $(".checkedcrps").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedcrps").show();
-                    $(".checkedcrps, .clearfilters").on('click', clearCRPfilters);
-                }
-
-                break;
-            case "years":
-                if (checkedValues == 'All Years') {
-                    // Clear filter from all sheets
-                    clearDashboardFilter(sheetsArray, FILTER_YEAR);
-                    $filterTitle.text(checkedValues);
-                    $(".checkedyears").hide();
-                } else {
-                    // Set filter to all sheets
-                    appyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValues);
-                    $filterTitle.text(checkedValues);
-                    $(".checkedyears").text("Years: " + checkedValues).addClass("closebutton");
-                    $(".checkedyears").css('margin-top', '3px').css('margin-bottom', '3px');
-                    $(".checkedyears").show();
-                    $(".checkedyears, .clearfilters").on('click', clearYearsfilters);
-                }
-                break;
-            default:
-        }
-    });
-
-
     //Total papers
     var papersdiv = document.getElementById("total-papers"),
         papersurl = appConfig.tableauView + "/5_1DBTotalPapers",
@@ -79,11 +28,11 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
-                
-                //Hide scrollbars - disable scroll 
+
+                //Hide scrollbars - disable scroll
                 $('#total-papers iframe').attr("scrolling", "no");
                 $('#total-papers iframe').css('overflow', 'hidden');
-                
+
                 loaded();
             }
         };
@@ -98,16 +47,16 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
-                
-                //Hide scrollbars - disable scroll 
+
+                //Hide scrollbars - disable scroll
                 $('#top-journals iframe').attr("scrolling", "no");
                 $('#top-journals iframe').css('overflow', 'hidden');
-                
+
                 loaded();
             }
         };
     topJournals = new tableau.Viz(topJournalsdiv, topJournalsurl, topJournalsoptions);
-    
+
     //OA - ISI
     var totaloaisidiv = document.getElementById("total-oaisi"),
         totaloaisiurl = appConfig.tableauView + "/5_6DBPapersISI-OABar",
@@ -117,11 +66,11 @@ function init() {
             width: '100%',
             height: '100%',
             onFirstInteractive: function () {
-                
-                //Hide scrollbars - disable scroll 
+
+                //Hide scrollbars - disable scroll
                 $('#total-oaisi iframe').attr("scrolling", "no");
                 $('#total-oaisi iframe').css('overflow', 'hidden');
-                
+
                 loaded();
             }
         };
@@ -137,7 +86,7 @@ function init() {
             height: '100%',
             onFirstInteractive: function () {
 
-                //Hide scrollbars - disable scroll 
+                //Hide scrollbars - disable scroll
                 $('#papers-list iframe').attr("scrolling", "no");
                 $('#papers-list iframe').css('overflow', 'hidden');
 
@@ -148,20 +97,27 @@ function init() {
 
 }
 
-
-//Hide "loading" when all charts have loaded 
-function loaded() {
-    LOADED += 1;
-    if (LOADED == 1) {
-        $("#loadingModal").modal('hide');
-    }
+function loadSheets(){
+  sheetsArray = [
+    totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
+    plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
+  ];
 }
 
+//Hide "loading" when all charts have loaded
+function loaded() {
+  LOADED += 1;
+  if (LOADED == 4) {
+    $("#loadingModal").modal('hide');
+    // Load sheets
+    loadSheets();
+  }
+}
 
 // Close yellow disclaimer in all sections after closing it once
 const showMsgP = sessionStorage.getItem('showMsgP');
 
-if(showMsgP == 'false'){        
+if(showMsgP == 'false'){
   $('.publications-disclaimer').hide();
 } else {
   $('.publications-disclaimer').show();
@@ -172,29 +128,8 @@ $('.closep').on('click', function(){
   sessionStorage.setItem('showMsgP', 'false');
 });
 
-
-/*************************** Tableau Functions *******************************/
-
-function appyDashboardFilter(sheetsArray, filterName, filterValues) {
-    $.each(sheetsArray, function (i, e) {
-        e.applyFilterAsync(filterName, filterValues, tableau.FilterUpdateType.REPLACE);
-    });
-}
-
-function clearDashboardFilter(sheetsArray, filterName) {
-    $.each(sheetsArray, function (i, e) {
-        e.clearFilterAsync(filterName);
-    });
-}
-
-
-
-//Select OA 
+//Select OA
 function selectedOA (marks) {
-    var sheetsArray = [
-        totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-        plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_OA);
     $(".checkedoa").hide();
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
@@ -208,19 +143,15 @@ function selectedOA (marks) {
                     $(".checkedoa").text("Open Acces Publications").addClass("closebutton");
                     $(".checkedoa").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedoa").show();
-                    $(".checkedoa, .clearfilters").on('click', clearOAfilters);                    
+                    $(".checkedoa, .clearfilters").on('click', clearOAfilters);
                 }
-            } 
+            }
         }
     }
 }
 
 //Select ISI
 function selectedISI (marks) {
-    var sheetsArray = [
-        totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-        plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_ISI);
     $(".checkedisi").hide();
     for (var markIndex = 0; markIndex < marks.length; markIndex++) {
@@ -234,9 +165,9 @@ function selectedISI (marks) {
                     $(".checkedisi").text("ISI Publications").addClass("closebutton");
                     $(".checkedisi").css('margin-top', '3px').css('margin-bottom', '3px');
                     $(".checkedisi").show();
-                    $(".checkedisi, .clearfilters").on('click', clearISIfilters);                    
+                    $(".checkedisi, .clearfilters").on('click', clearISIfilters);
                 }
-            } 
+            }
         }
     }
 }
@@ -245,23 +176,14 @@ function selectedISI (marks) {
 
 //   Clear CRP
 function clearCRPfilters() {
-    var sheetsArray = [
-        totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-        plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_CRPS);
     $(".checkedcrps").hide();
     $('.portfolio').text('Research Portfolio');
     $('input[value="All"]').prop('checked', true);
 };
 
-
-//   Clear Year  
+//   Clear Year
 function clearYearsfilters() {
-    var sheetsArray = [
-        totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-        plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
-    ];
     clearDashboardFilter(sheetsArray, FILTER_YEAR);
     $('.years').text('Years');
     $(".checkedyears").hide();
