@@ -80,9 +80,9 @@ header .title {
   opacity: 0.9;
 }
 
-nav.main-menu {
+/*nav.main-menu {
   margin-top: 0.2em;
-}
+}*/
 
 nav.main-menu ul {
   padding: 0;
@@ -117,7 +117,7 @@ nav.main-menu ul li.active a {
   font-weight: bold;
 }
 
-nav.main-menu ul li.active:after , nav.main-menu ul li.active:before {
+/*nav.main-menu ul li.active:after , nav.main-menu ul li.active:before {
   top: 77%;
   left: 50%;
   border: solid transparent;
@@ -131,12 +131,11 @@ nav.main-menu ul li.active:after {
   border-top-color: #ffa600;
   border-width: 17px 31px 0 35px;
   margin-left: -32px;
-}
+}*/
 
 .main-content {
   background: #f1f1f1;
   min-height: 550px;
-  margin-top: -7px;
   padding: 15px 27px;
 }
 

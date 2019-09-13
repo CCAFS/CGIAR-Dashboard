@@ -25,9 +25,12 @@
 {% include './pages/header.twig' with pageParams %}
 
 
-{% include './pages/side-menu.twig' with pageParams %}
-
-<div class="container">
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-auto">
+  {% include './pages/side-menu.twig' with pageParams %}
+  </div>
+  <div class="col-md-9">
   <div class="main-content">
     {% include './pages/message.twig' with pageParams %}
     <div class="form-group row">
@@ -88,7 +91,7 @@
                 <div class="numbers mt-3"><div id="total-policies"></div></div>
               </div>
               <div class="col">
-               <center><img src="./images/altmetricicon.svg" width="50px"></center>
+               <center><img src="./images/altmetric.svg" width="50px"></center>
                <h6 class="total-title">Total Publications with <br/>Altmetric Attention Score</h6>
                <div class="numbers"><div id="total-altmetric"></div></div>
               </div>
@@ -102,6 +105,8 @@
       </div>
 
   </div>
+  </div>
+</div>
 </div>
 
 {% include './pages/footer.twig'  with pageParams %}

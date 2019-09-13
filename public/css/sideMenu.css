@@ -1,4 +1,4 @@
-@media (max-width: 1560px) {
+/*@media (max-width: 1560px) {
     ul.sideBar{
         margin-left: 0px;
         width: 100%;
@@ -18,4 +18,8 @@ ul.sectionsExpanded{
 
 nav.main-menu ul li.active:after {
     display: none;
+}*/
+
+.main-menu {
+    max-width: 210px;
 }

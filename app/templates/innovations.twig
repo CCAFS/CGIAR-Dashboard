@@ -25,9 +25,12 @@
 
 {% include './pages/header.twig' with pageParams %}
 
-
-{% include './pages/side-menu.twig' with pageParams %}
-<div class="container">
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-auto">
+  {% include './pages/side-menu.twig' with pageParams %}
+  </div>
+  <div class="col-md-9">
   <div class="main-content">
       {% include './pages/message.twig' %}
       <div class="alert alert-dark selection">
@@ -83,6 +86,8 @@
             <div id="innovations-list"></div>
         </div>
     </div>
+    </div>
+</div>
 </div>
 </div>
 
