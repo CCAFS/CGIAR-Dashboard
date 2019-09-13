@@ -276,6 +276,7 @@ nav.main-menu ul li.active:after {
   color: #b4b4b4;
   background-color: #f7f7f7;
   border-color: #dedede;
+  padding: 6px;
 }
 
 .clearfilters {
@@ -435,4 +436,13 @@ nav.main-menu ul li.active:after {
 .testingMessage {
   background-color: #6c757d;
   padding: 5px 0;
+}
+
+
+#clearAllTag, .filterTag {
+  color: #ffffff;
+  margin: 2px 3px;
+  font-size: 0.88em;
+  font-weight: normal;
+  cursor: pointer;
 }

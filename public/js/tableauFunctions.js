@@ -48,11 +48,11 @@ function getMarksValues(marks, filterName){
 
 function setFilterWorksheet(marks, filterName, sheetsArray, selectedSheet, selectedSheetName, tagTitle, tagElement){
   var $tagsContainer = $('.alert.alert-dark.selection');
-  var filterID = (filterName + "_" + selectedSheetName).replace(/\W/g, '');
+  var tagID = (filterName + "_" + selectedSheetName).replace(/\W/g, '');
   // Create tag
-  var $tag = $('#'+filterID);
+  var $tag = $('#'+tagID);
   if (!$tag.length){
-    $tag = $('<div id="'+filterID+'" class="checkedfilters closebutton"></div>');
+    $tag = $('<span id="'+tagID+'" class="badge badge-pill badge-warning filterTag closebutton"></span>')
     // Add remove event
     $tag.on('click', function(){
       clearDashboardFilter(sheetsArray, filterName, selectedSheetName);
@@ -62,14 +62,36 @@ function setFilterWorksheet(marks, filterName, sheetsArray, selectedSheet, selec
   }
   // Append Tag
   $tagsContainer.append($tag);
+
+  // Fill/Remove filter information
   var selectedItems = getMarksValues(marks, filterName);
   if(selectedItems.length){
     appyDashboardFilter(sheetsArray, filterName, selectedItems, selectedSheetName);
-    $tag.text(tagTitle+": " + selectedItems.join(', ')).addClass("closebutton");
+    $tag.html("<strong>"+tagTitle+":</strong> " + selectedItems.join(', '));
     $tag.show();
   }else{
     clearDashboardFilter(sheetsArray, filterName, selectedSheetName);
     $tag.remove();
+  }
+
+  // Check Tags
+  var filtersCount = $('.alert.alert-dark.selection').find('.filterTag').length;
+  var $clearAlltag = $('#clearAllTag');
+  if(filtersCount){
+    $tagsContainer.slideDown();
+  }else{
+    $tagsContainer.slideUp();
+  }
+  if(filtersCount > 1){
+    if (!$clearAlltag.length){
+      $clearAlltag = $('<span id="clearAllTag" class="badge badge-pill badge-secondary closebutton">Clear All</span>');
+      $tagsContainer.prepend($clearAlltag);
+      $clearAlltag.on('click', function(){
+        $('.filterTag').trigger('click');
+      });
+    }
+  }else{
+    $clearAlltag.remove();
   }
 }
 
