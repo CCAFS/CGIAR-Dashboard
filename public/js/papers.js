@@ -4,16 +4,13 @@ var LOADED = 0;
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
 var FILTER_MAP = "Country Name";
-var FILTER_OA = "Open Access";
-var FILTER_ISI = "ISI Journal";
+var FILTER_OAISI = "Measure Names";
 var FILTER_TOTAL = "Total Publications";
+var FILTER_JOURNAL = "JOURNAL (copy) (group)";
 
 var TP_SHEET = "5.1 SH Total Papers";
-var OA_SHEET = "5.4 SH Percent of OA ";
-var ISI_SHEET = "5.5 SH Percent of ISI";
-var OABAR_SHEET = "5.4 SH Papers Bar OA and ISI";
-var OATOTAL_SHEET= "5.4 SH Papers Circle OA";
-var ISITOTAL_SHEET= "5.5 SH Papers Circle ISI";
+var OAISIBAR_SHEET = "5.4 SH Publications Bar-Shape OA and ISI";
+var JOURNALS_SHEET = "5.4 SH Publications Journals";
 var LIST_SHEET = "5.2 SH Papers Detail";
 
 $(document).ready(init);
@@ -32,7 +29,9 @@ function init() {
 function loadSheets(){
   sheetsArray = [
     totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-    plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
+    plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
+    totaloaisi.getWorkbook().getActiveSheet().getWorksheets().get(OAISIBAR_SHEET),
+    topJournals.getWorkbook().getActiveSheet().getWorksheets().get(JOURNALS_SHEET)
   ];
 }
 
@@ -52,12 +51,13 @@ function onSelectWorkSheet(mEvent){
   return mEvent.getMarksAsync().then(function(marks){
     var filterName, tagName, $tag, clearFunction;
     console.log(selectedSheetName);
+   // console.log(getMarkstest(marks));
     switch(selectedSheetName) {
-      case OA_SHEET:
-        setFilterWorksheet(marks, FILTER_OA, sheetsArray, selectedSheet, selectedSheetName, 'Open Acces Publications');
+      case JOURNALS_SHEET:
+        setFilterWorksheet(marks, FILTER_JOURNAL, sheetsArray, selectedSheet, selectedSheetName, 'Journal');
         break;
-      case ISI_SHEET:
-        setFilterWorksheet(marks, FILTER_ISI, sheetsArray, selectedSheet, selectedSheetName, 'ISI Publications');
+      case OAISIBAR_SHEET:
+        setFilterWorksheet(marks, FILTER_OAISI, sheetsArray, selectedSheet, selectedSheetName, 'Publications ISI/OA');
         break;
     }
   });

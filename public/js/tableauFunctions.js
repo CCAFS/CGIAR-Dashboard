@@ -46,6 +46,24 @@ function getMarksValues(marks, filterName){
   return outputs;
 }
 
+function getMarkstest(marks){
+  var outputs = [];
+  for (var markIndex = 0; markIndex < marks.length; markIndex++) {
+    var pairs = marks[markIndex].getPairs();
+    console.log(pairs);
+    for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
+      var pair = pairs[pairIndex];
+      if (pair.fieldName == filterName) {
+        var pairValue = pair.formattedValue;
+        if (pairValue != null) {
+          outputs.push(pairValue);
+        }
+      }
+    }
+  }
+  return outputs;
+}
+
 function setFilterWorksheet(marks, filterName, sheetsArray, selectedSheet, selectedSheetName, tagTitle, tagElement){
   var $tagsContainer = $('.alert.alert-dark.selection');
   var tagID = (filterName + "_" + selectedSheetName).replace(/\W/g, '');
