@@ -15,3 +15,7 @@ ul.sectionsExpanded{
     margin-left: 2%;
 }
 }
+
+nav.main-menu ul li.active:after {
+    display: none;
+}
