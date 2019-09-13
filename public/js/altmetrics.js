@@ -15,83 +15,13 @@ $(document).ready(init);
 
 function init() {
     //Total Publications with Altmetrics Attention Score
-    var taltdiv = document.getElementById("total-altmetrics"),
-        talturl = appConfig.tableauView + "/6_0DBAltmetricTotalPubs",
-        taltoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#total-altmetrics iframe').attr("scrolling", "no");
-                $('#total-altmetrics iframe').css('overflow', 'hidden');
-
-                loaded();
-            }
-        };
-    totalalt = new tableau.Viz(taltdiv, talturl, taltoptions);
-
-
+    totalalt = createTableauViz('total-altmetrics', '6_0DBAltmetricTotalPubs', [ onSelectWorkSheet ]);
     //Total Mentions / Readers Tracked by Altmetrics
-    var altmdiv = document.getElementById("altmetrics-mentions"),
-        altmurl = appConfig.tableauView + "/6_3DBAltmetricSocialMediatotals",
-        altmoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#altmetrics-mentions iframe').attr("scrolling", "no");
-                $('#altmetrics-mentions iframe').css('overflow', 'hidden');
-
-                loaded();
-            }
-        };
-    altmen = new tableau.Viz(altmdiv, altmurl, altmoptions);
-
+    altmen = createTableauViz('altmetrics-mentions', '6_3DBAltmetricSocialMediatotals', [ onSelectWorkSheet ]);
     //Top 10 Altmetric Attention Scores in the Portfolio Year
-    var tenaltdiv = document.getElementById("topten-alt"),
-        tenalturl = appConfig.tableauView + "/6_2DBAltmetricTop10",
-        tenaltoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#topten-alt iframe').attr("scrolling", "no");
-                $('#topten-alt iframe').css('overflow', 'hidden');
-
-                loaded();
-            }
-        };
-    toptenalt = new tableau.Viz(tenaltdiv, tenalturl, tenaltoptions);
-
-
+    toptenalt = createTableauViz('topten-alt', '6_2DBAltmetricTop10', [ onSelectWorkSheet ]);
     //All Publications with Altmetrics Attention Score
-    var allaltdiv = document.getElementById("all-altmetrics"),
-        allalturl = appConfig.tableauView + "/6_1DBAltmetricDetail",
-        allaltoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#all-altmetrics iframe').attr("scrolling", "no");
-                $('#all-altmetrics iframe').css('overflow', 'hidden');
-
-                loaded();
-            }
-        };
-    allaltmetrcis = new tableau.Viz(allaltdiv, allalturl, allaltoptions);
-
+    allaltmetrcis = createTableauViz('all-altmetrics', '6_1DBAltmetricDetail', [ onSelectWorkSheet ]);
 }
 
 function loadSheets(){
@@ -115,4 +45,15 @@ function loaded() {
     // Load sheets
     loadSheets();
   }
+}
+
+function onSelectWorkSheet(mEvent){
+  var selectedSheet = mEvent.getWorksheet();
+  var selectedSheetName = selectedSheet.getName();
+  return mEvent.getMarksAsync().then(function(marks){
+    var filterName, tagName, $tag, clearFunction;
+    switch(selectedSheetName) {
+      // Code here
+    }
+  });
 }

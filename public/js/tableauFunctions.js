@@ -75,7 +75,7 @@ function createTableauViz(elementID, view, events){
     height: '100%',
     [FILTER_CRPS]: appConfig.entitySelected,
     [FILTER_YEAR]: appConfig.yearSelected,
-    onFirstInteractive: function(data){
+    onFirstInteractive: function(tableauEvent){
       //Hide scrollbars - disable scroll
       var $iframe = $('#'+ elementID +' iframe');
       $iframe.attr("scrolling", "no");
@@ -86,11 +86,26 @@ function createTableauViz(elementID, view, events){
          viz.addEventListener(tableau.TableauEventName.MARKS_SELECTION, eventFunc);
       });
 
+
+      // Get Data
+      var s = tableauEvent.getViz().getWorkbook().getActiveSheet();
+      console.log(s);
+      // s.getUnderlyingDataAsync({
+      //   maxRows: 0,
+      //   ignoreAliases: false,
+      //   ignoreSelection: true,
+      //   includeAllColumns: false
+      // }).then(function (t) {
+      //   var data = t.getData();
+      //   console.log(elementID, data);
+      // });
+
       // Check loaded
       loaded();
     }
   };
   viz = new tableau.Viz(container, url, options);
+
   return viz;
 }
 

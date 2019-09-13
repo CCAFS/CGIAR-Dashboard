@@ -77,7 +77,6 @@ function onSelectWorkSheet(mEvent){
       case PMAP_SHEET:
         setFilterWorksheet(marks, FILTER_PMAP, sheetsArray, selectedSheet, selectedSheetName, 'Country', '.checkedkpground');
         break;
-
     }
   });
 }
