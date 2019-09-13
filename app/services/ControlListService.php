@@ -10,15 +10,17 @@ class ControlListService {
   public function __construct(){
 
     $this->sections = array(
-      array('name' => 'Home',                   'action' => 'home',         'active' => true ),
-      array('name' => 'System Level Outcomes',   'action' => 'systemLevelOutcomes',  'active' => true ),
-      array('name' => 'Outcome Case Reports',   'action' => 'caseReports',  'active' => true ),
-      array('name' => 'Innovations',            'action' => 'innovations',  'active' => true ),
-      array('name' => 'Partnerships',           'action' => 'partnerships', 'active' => true ),
-      array('name' => 'Capacity Development',   'action' => 'capDev',       'active' => true ),
-      array('name' => 'Publications',           'action' => 'publications', 'active' => true ),
-      array('name' => 'Policies',               'action' => 'policies',     'active' => true ),
-      array('name' => 'Altmetric',              'action' => 'altmetrics',   'active' => true )
+      array('name' => 'Home',                             'action' => 'home',                 'active' => true ),
+      array('name' => '1. System Level Outcomes (SLOs)',         'action' => 'systemLevelOutcomes',  'active' => true ),
+      array('name' => '2. Outcome Impact Case Reports (OICR)',          'action' => 'caseReports',          'active' => true ),
+      array('name' => '3. Progress Towards Milestones',   'action' => 'milestones',           'active' => false ),
+      array('name' => '4. Common Reporting Indicators',   'action' => 'milestones',           'active' => false ),
+      array('name' => 'Innovations',                      'action' => 'innovations',          'active' => true ),
+      array('name' => 'Partnerships',                     'action' => 'partnerships',         'active' => true ),
+      array('name' => 'Capacity Development',             'action' => 'capDev',               'active' => true ),
+      array('name' => 'Publications',                     'action' => 'publications',         'active' => true ),
+      array('name' => 'Policies',                         'action' => 'policies',             'active' => true ),
+      array('name' => 'Altmetric',                        'action' => 'altmetrics',           'active' => true )
     );
 
     $this->crps = array(

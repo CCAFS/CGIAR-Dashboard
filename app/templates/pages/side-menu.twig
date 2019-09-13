@@ -1,0 +1,15 @@
+<nav class="main-menu navbar-expand-xl" style="display:{{ displayNav ? 'block' : 'none' }}">
+      <button class="navbar-toggler buttonCollapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+<ul class="nav sideBar flex-column sectionsExpanded">
+    {% for section in sections %}
+            {% set url %}{% if section.active %}./{{ section.action }}{% else %}#{% endif %}{% if queryParams %}?{{ queryParams }}{% endif %}{% endset %}
+            <li class="{% if currentSection == section.action %}active{% endif %} nav-item mr-1">
+              <a href="{{ url }}" class="active-{{section.active}} nav-link sectionAction-{{ section.action }}"> {{ section.name }} </a>
+            </li>
+    {% endfor %}
+</ul>
+</div>
+</nav>

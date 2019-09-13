@@ -1,0 +1,21 @@
+@media (max-width: 1560px) {
+    ul.sideBar{
+        margin-left: 0px;
+        width: 100%;
+        z-index: 100;
+        margin-top:0%
+    }
+}
+
+@media (min-width: 1561px) {
+ul.sectionsExpanded{
+    width: 200px;
+    position: fixed;
+    margin-top:10%;
+    margin-left: 2%;
+}
+}
+
+nav.main-menu ul li.active:after {
+    display: none;
+}
