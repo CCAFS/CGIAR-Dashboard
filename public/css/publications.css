@@ -1,5 +1,6 @@
 .total-container {
   height: 60px;
+  max-width: 200px;
 }
 
 .plist-container {
