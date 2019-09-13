@@ -64,7 +64,6 @@ function onSelectWorkSheet(mEvent){
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function(marks){
     var filterName, tagName, $tag, clearFunction;
-    console.log(selectedSheetName);
     switch(selectedSheetName) {
       case TPPHASE_SHEET:
         setFilterWorksheet(marks, FILTER_TSTAGE, sheetsArray, selectedSheet, selectedSheetName, 'Total Partnerships - Research Phase', '.checkedtphase');

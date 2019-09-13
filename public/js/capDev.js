@@ -15,81 +15,13 @@ $(document).ready(init);
 
 function init() {
     //Total trainees
-    var totaltraineesdiv = document.getElementById("total-trainees"),
-        totaltraineesurl = appConfig.tableauView + "/4_3DBCapDevTotalTrainees",
-        totaltraineesoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#total-trainees iframe').attr("scrolling", "no");
-                $('#total-trainees iframe').css('overflow', 'hidden');
-
-                loaded();
-            }
-        };
-    totaltrainees = new tableau.Viz(totaltraineesdiv, totaltraineesurl, totaltraineesoptions);
-
+    totaltrainees = createTableauViz('total-trainees', '4_3DBCapDevTotalTrainees', [ onSelectWorkSheet ]);
     //Total women
-    var totalwomendiv = document.getElementById("total-women"),
-        totalwomenurl = appConfig.tableauView + "/4_4DBCapDevTotalWomen",
-        totalwomenoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#total-women iframe').attr("scrolling", "no");
-                $('#total-women iframe').css('overflow', 'hidden');
-
-                loaded();
-            }
-        };
-    totalwomen = new tableau.Viz(totalwomendiv, totalwomenurl, totalwomenoptions);
-
+    totalwomen = createTableauViz('total-women', '4_4DBCapDevTotalWomen', [ onSelectWorkSheet ]);
     //Total men
-    var totalmendiv = document.getElementById("total-men"),
-        totalmenurl = appConfig.tableauView + "/4_5DBCapDevTotalMen",
-        totalmenoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#total-men iframe').attr("scrolling", "no");
-                $('#total-men iframe').css('overflow', 'hidden');
-
-                loaded();
-            }
-        };
-    totalmen = new tableau.Viz(totalmendiv, totalmenurl, totalmenoptions);
-
+    totalmen = createTableauViz('total-men', '4_5DBCapDevTotalMen', [ onSelectWorkSheet ]);
     //Trainees women-men
-    var traineesdiv = document.getElementById("trainees-term"),
-        traineesurl = appConfig.tableauView + "/4_1DBTraineesDualAxischart",
-        traineesoptions = {
-            hideTabs: true,
-            hideToolbar: true,
-            width: '100%',
-            height: '100%',
-            onFirstInteractive: function () {
-
-                //Hide scrollbars - disable scroll
-                $('#trainees-term iframe').attr("scrolling", "no");
-                $('#trainees-term iframe').css('overflow', 'hidden');
-
-                loaded();
-            }
-        };
-    traineesTerm = new tableau.Viz(traineesdiv, traineesurl, traineesoptions);
-
+    traineesTerm = createTableauViz('trainees-term', '4_1DBTraineesDualAxischart', [ onSelectWorkSheet ]);
 }
 
 function loadSheets(){
@@ -113,20 +45,13 @@ function loaded() {
   }
 }
 
-/**** Clear functions ****/
-
-// Clear Program
-function clearCRPfilters() {
-    clearDashboardFilter(sheetsArray, FILTER_CRPS);
-    $(".checkedcrps").hide();
-    $('.portfolio').text('Research Portfolio');
-    $('input[value="All"]').prop('checked', true);
-};
-
-// Clear Year
-function clearYearsfilters() {
-    clearDashboardFilter(sheetsArray, FILTER_YEAR);
-    $('.years').text('Years');
-    $(".checkedyears").hide();
-    $('input[value="All Years"]').prop('checked', true);
-};
+function onSelectWorkSheet(mEvent){
+  var selectedSheet = mEvent.getWorksheet();
+  var selectedSheetName = selectedSheet.getName();
+  return mEvent.getMarksAsync().then(function(marks){
+    var filterName, tagName, $tag, clearFunction;
+    switch(selectedSheetName) {
+      //  Code here
+    }
+  });
+}
