@@ -6,14 +6,6 @@ $app->get('/action', App\Action\BaseAction::class)->setName('action');
 
 $app->get('/[{actionName}]', function ($request, $response, $args) {
   global $settings;
-
-  // Managers
-  $controlList = new \services\ControlListService();
-  $sections = $controlList->getSections();
-
-  // Current section
-  $currentSection = (isset($args['actionName'])? $args['actionName'] : $sections[0]['action']);
-
   // CRP/Platform selected
   $entitySelected = $request->getQueryParam('entity');
   $entitySelected = (isset($entitySelected)? $entitySelected : "");
@@ -22,6 +14,17 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
   $yearSelected = $request->getQueryParam('year');
   $yearSelected = (isset($yearSelected)? $yearSelected : 2018 );
 
+  // Managers
+  $controlList = new \services\ControlListService();
+  $sections = $controlList->getSections();
+
+  // Current section/view
+  $currentSection = (isset($args['actionName'])? $args['actionName'] : $sections[0]['action']);
+  $currentView = $currentSection;
+  if(($currentSection == "partnerships") && ($yearSelected > 2017)){
+    $currentView = $currentSection. "-2018";
+  }
+
   // Embeding
   $embed = (($request->getQueryParam('embed') == "true")? true : false);
   $displayNav = true;
@@ -29,8 +32,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     $displayNav = (($request->getQueryParam('displayNav') == "true")? true : false);
   }
 
-
-  $this->view->render($response, $currentSection.'.twig', [
+  $this->view->render($response, $currentView.'.twig', [
     'sections' => $sections,
     'crps' => $controlList->getCrps(),
     'years' => $controlList->getYears(),

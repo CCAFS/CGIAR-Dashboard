@@ -1,0 +1,39 @@
+{% set pageParams = {
+    'title': 'Partnerships | CGIAR Program Results Dashboard',
+    'customCSS': [
+      'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
+      'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
+      './css/customInputsFlat.css',
+      './css/sideMenu.css',
+      './css/global.css',
+      './css/partnerships.css'
+    ],
+    'customJS': [
+      'https://code.jquery.com/jquery-3.3.1.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js',
+      'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js',
+      'https://www.amcharts.com/lib/3/amcharts.js',
+      'https://www.amcharts.com/lib/3/pie.js',
+      'https://www.amcharts.com/lib/3/themes/light.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js',
+      "./js/libs/tableau/tableau-2.2.2.min.js",
+      "./js/libs/sly/sly.min.js",
+      "./js/partnerships-2018.js?220419"
+    ]
+  }
+%}
+
+{% include './pages/header.twig' with pageParams %}
+
+
+{% include './pages/side-menu.twig' with pageParams %}
+<div class="container">
+  <div class="main-content">
+  {% include './pages/message.twig' %}
+
+  <p>Working in progress</p>
+
+  </div>
+</div>
+
+{% include './pages/footer.twig'  with pageParams %}

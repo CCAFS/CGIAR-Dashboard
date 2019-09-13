@@ -1,12 +1,9 @@
-$(document).ready(init);
-
-
-function init() {
+$(document).ready(function(){
   msieversion();
   isZoomed();
-
   $('input[type="radio"]').on('change', updateUrlParameters);
-}
+});
+
 
 
 function updateUrlParameters(){
@@ -29,7 +26,7 @@ function updateUrlParameters(){
   window.history.pushState("", "", u.toString());
 
   // Update navigation URL parameters
-  $('.navbar-nav a').each(function(){
+  $('.navbar-nav a, .nav.sideBar a').each(function(){
     var navU  = new Url($(this).attr('href'));
     if(checkedValue){
       navU.query[parameters[filterType]] = checkedValue;
@@ -53,15 +50,16 @@ function updateUrlParameters(){
       }
       break;
     case "years":
-      if (checkedValue) {
-        $filterTitle.text(checkedValue);
-        // Set filter to all sheets
-        appyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValue);
-      } else {
-        $filterTitle.text('All Years');
-        // Clear filter from all sheets
-        clearDashboardFilter(sheetsArray, FILTER_YEAR);
-      }
+      window.location.href = u.toString();
+      // if (checkedValue) {
+      //   $filterTitle.text(checkedValue);
+      //   // Set filter to all sheets
+      //   appyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValue);
+      // } else {
+      //   $filterTitle.text('All Years');
+      //   // Clear filter from all sheets
+      //   clearDashboardFilter(sheetsArray, FILTER_YEAR);
+      // }
       break;
     default:
   }

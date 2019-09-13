@@ -86,18 +86,14 @@ function createTableauViz(elementID, view, events){
          viz.addEventListener(tableau.TableauEventName.MARKS_SELECTION, eventFunc);
       });
 
+      viz.addEventListener(tableau.TableauEventName.CUSTOM_VIEW_LOAD, function (){
+        console.log("CustomViewEvent");
+      });
+
 
       // Get Data
-      var s = tableauEvent.getViz().getWorkbook().getActiveSheet();
-      console.log(s);
-      // s.getUnderlyingDataAsync({
-      //   maxRows: 0,
-      //   ignoreAliases: false,
-      //   ignoreSelection: true,
-      //   includeAllColumns: false
-      // }).then(function (t) {
-      //   var data = t.getData();
-      //   console.log(elementID, data);
+      // var data = getTableauDataAsync(tableauEvent.getViz(), function(t){
+      //   console.log(t.getTotalRowCount());
       // });
 
       // Check loaded
@@ -107,6 +103,18 @@ function createTableauViz(elementID, view, events){
   viz = new tableau.Viz(container, url, options);
 
   return viz;
+}
+
+function getTableauDataAsync(viz, callback){
+  var sheetsList = viz.getWorkbook().getActiveSheet().getWorksheets();
+  $.each(sheetsList, function(i, s){
+    s.getUnderlyingDataAsync({
+      maxRows: 0,
+      ignoreAliases: false,
+      ignoreSelection: true,
+      includeAllColumns: false
+    }).then(callback);
+  });
 }
 
 function errback(e) {
