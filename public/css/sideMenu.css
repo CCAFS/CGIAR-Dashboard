@@ -1,5 +1,8 @@
+@media (min-width: 1513px){
     .expanded-menu {
-        max-width: 220px;
-        position: fixed;
-        margin-left: 2%;
+            max-width: 220px;
+            position: fixed;
+            margin-left: 2%;
     }
+}
+

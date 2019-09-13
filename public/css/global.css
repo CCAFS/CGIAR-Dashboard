@@ -446,3 +446,7 @@ nav.main-menu ul li.active:after {
   font-weight: normal;
   cursor: pointer;
 }
+
+.col-md-9 {
+  max-width: 1120px;
+}
