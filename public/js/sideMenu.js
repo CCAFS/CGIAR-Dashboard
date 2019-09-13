@@ -1,11 +1,11 @@
 
-/*$(window).bind("resize", function () {
+$(window).bind("resize", function () {
     if ($(this).width() < 815) {
-        $('#sections').removeClass('expanded-menu').addClass('collapsed-menu');
+        $('#sections').removeClass('expanded-menu');
         $('.navbar-toggler').show();
         $('#sections').hide();
     } else {
-        $('#sections').removeClass('collapsed-menu').addClass('expanded-menu');
+        $('#sections').addClass('expanded-menu');
         $('.navbar-toggler').hide();
         $('#sections').show();
     }
@@ -13,6 +13,4 @@
 
 $('.navbar-toggler').on('click', function(){
     $('#sections').toggle();
-});*/
-
-$('.navbar-toggler').hide();
+});
