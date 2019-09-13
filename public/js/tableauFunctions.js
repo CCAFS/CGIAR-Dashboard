@@ -73,8 +73,8 @@ function createTableauViz(elementID, view, events){
     hideToolbar: true,
     width: '100%',
     height: '100%',
-    //[FILTER_CRPS]: appConfig.entitySelected,
-    //[FILTER_YEAR]: appConfig.yearSelected,
+    [FILTER_CRPS]: appConfig.entitySelected,
+    [FILTER_YEAR]: appConfig.yearSelected,
     onFirstInteractive: function(data){
       //Hide scrollbars - disable scroll
       var $iframe = $('#'+ elementID +' iframe');
