@@ -1,4 +1,4 @@
-@media (max-width: 816px){
+@media (min-width: 1513px){
     .expanded-menu {
             max-width: 220px;
             position: fixed;
