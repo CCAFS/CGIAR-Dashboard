@@ -1,25 +1,11 @@
-/*@media (max-width: 1560px) {
-    ul.sideBar{
-        margin-left: 0px;
-        width: 100%;
-        z-index: 100;
-        margin-top:0%
+@media (min-width: 1545px) {
+    .expanded-menu {
+        max-width: 220px;
+        position: fixed;
+        margin-left: 2%;
     }
 }
 
-@media (min-width: 1561px) {
-ul.sectionsExpanded{
-    width: 200px;
-    position: fixed;
-    margin-top:10%;
-    margin-left: 2%;
-}
-}
-
-nav.main-menu ul li.active:after {
-    display: none;
-}*/
-
-.main-menu {
-    max-width: 210px;
+.collapsed-menu {
+    position: relative;
 }
