@@ -92,36 +92,36 @@ function onSelectWorkSheet(mEvent){
     var filterName, tagName, $tag, clearFunction;
     switch(selectedSheetName) {
       case SLO_SHEET:
-        setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO', '.checkedslo');
+        setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
         break;
       case CCI_SHEET:
-        setFilterWorksheet(marks, FILTER_CCI, sheetsArray, selectedSheet, selectedSheetName, 'Cross Cutting', '.checkedcci');
+        setFilterWorksheet(marks, FILTER_CCI, sheetsArray, selectedSheet, selectedSheetName, 'Cross Cutting');
         break;
       case CMAP_SHEET:
-        setFilterWorksheet(marks, FILTER_COUNTRY, sheetsArray, selectedSheet, selectedSheetName, 'Country', '.checkedregion');
-        //setFilterWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, selectedSheetName, 'Region', '.checkedregion');
-        //setFilterWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet, selectedSheetName, 'Global', '.checkedregion');
+        setFilterWorksheet(marks, FILTER_COUNTRY, sheetsArray, selectedSheet, selectedSheetName, 'Country');
+        //setFilterWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, selectedSheetName, 'Region');
+        //setFilterWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet, selectedSheetName, 'Global');
       break;
       case GENDER_SHEET:
-        setFilterWorksheet(marks, FILTER_GENDER, sheetsArray, selectedSheet, selectedSheetName, 'Gender Relevance', '.checkedgender');
+        setFilterWorksheet(marks, FILTER_GENDER, sheetsArray, selectedSheet, selectedSheetName, 'Gender Relevance');
         break;
       case YOUTH_SHEET:
-        setFilterWorksheet(marks, FILTER_YOUTH, sheetsArray, selectedSheet, selectedSheetName, 'Youth Relevance', '.checkedyouth');
+        setFilterWorksheet(marks, FILTER_YOUTH, sheetsArray, selectedSheet, selectedSheetName, 'Youth Relevance');
         break;
       case CAPDEV_SHEET:
-        setFilterWorksheet(marks, FILTER_CAPACITY, sheetsArray, selectedSheet, selectedSheetName, 'CapDev Relevance', '.checkedcapdev');
+        setFilterWorksheet(marks, FILTER_CAPACITY, sheetsArray, selectedSheet, selectedSheetName, 'CapDev Relevance');
         break;
       case CLIMATE_SHEET:
-        setFilterWorksheet(marks, FILTER_CLIMATE, sheetsArray, selectedSheet, selectedSheetName, 'Climate Change Relevance', '.checkedClimate');
+        setFilterWorksheet(marks, FILTER_CLIMATE, sheetsArray, selectedSheet, selectedSheetName, 'Climate Change Relevance');
         break;
       case MATURITY_SHEET:
-        setFilterWorksheet(marks, FILTER_MATURITY, sheetsArray, selectedSheet, selectedSheetName, 'Level of Maturity', '.chceckedmatstage');
+        setFilterWorksheet(marks, FILTER_MATURITY, sheetsArray, selectedSheet, selectedSheetName, 'Level of Maturity');
         break;
       case SDGS_SHEET:
-        setFilterWorksheet(marks, FILTER_SDG, sheetsArray, selectedSheet, selectedSheetName, 'SDG', '.checkedsdg');
+        setFilterWorksheet(marks, FILTER_SDG, sheetsArray, selectedSheet, selectedSheetName, 'SDG');
         break;
       case TOPP_SHEET:
-        setFilterWorksheet(marks, FILTER_PARTNERS, sheetsArray, selectedSheet, selectedSheetName, 'Contributing Partner', '.checkedPartner');
+        setFilterWorksheet(marks, FILTER_PARTNERS, sheetsArray, selectedSheet, selectedSheetName, 'Contributing Partner');
         break;
     }
   });

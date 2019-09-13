@@ -12,7 +12,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
 
   // Year Selected
   $yearSelected = $request->getQueryParam('year');
-  $yearSelected = (isset($yearSelected)? $yearSelected : 2018 );
+  $yearSelected = (isset($yearSelected)? $yearSelected : 2018);
 
   // Managers
   $controlList = new \services\ControlListService();
@@ -21,8 +21,12 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
   // Current section/view
   $currentSection = (isset($args['actionName'])? $args['actionName'] : $sections[0]['action']);
   $currentView = $currentSection;
-  if(($currentSection == "partnerships") && ($yearSelected > 2017)){
-    $currentView = $currentSection. "-2018";
+  $forceRefresh = false;
+  if($currentSection == "partnerships"){
+    if($yearSelected > 2017){
+      $currentView = $currentSection. "-2018";
+    }
+    $forceRefresh = true;
   }
 
   // Embeding
@@ -40,6 +44,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     'currentSection' => $currentSection,
     'entitySelected' => $entitySelected,
     'yearSelected' => $yearSelected,
+    'forceRefresh' => $forceRefresh,
     'embed' => $embed,
     'displayNav' => $displayNav,
     'hostOrigin' => $request->getQueryParam('hostOrigin'),

@@ -2,7 +2,7 @@
 <div class="filters">
   <!-- Year -->
   <div class="filter-component fyear">
-    <p id="filtertitley" class="filter-title years">{{ yearSelected|default('Years') }}</p>
+    <p id="filtertitley" class="filter-title years">{{ yearSelected|default('All Years') }}</p>
     <ul class="filter-items items-years">
       {% for year in years %}
         <li> {{ forms.checkmark('years', year.year, year.name, (year.year == yearSelected) ) }} </li>

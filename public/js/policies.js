@@ -66,19 +66,19 @@ function onSelectWorkSheet(mEvent){
     var filterName, tagName, $tag, clearFunction;
     switch(selectedSheetName) {
       case PGEO_SHEET:
-        setFilterWorksheet(marks, FILTER_PGEO, sheetsArray, selectedSheet, selectedSheetName, 'Geographic Scope', '.checkedgeo');
+        setFilterWorksheet(marks, FILTER_PGEO, sheetsArray, selectedSheet, selectedSheetName, 'Geographic Scope');
         break;
       case PMAP_SHEET:
-        setFilterWorksheet(marks, FILTER_PMAP, sheetsArray, selectedSheet, selectedSheetName, 'Country', '.checkedmap');
+        setFilterWorksheet(marks, FILTER_PMAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         break;
       case PSTAGE_SHEET:
-        setFilterWorksheet(marks, FILTER_PSTAGE, sheetsArray, selectedSheet, selectedSheetName, 'Level of Maturity', '.checkedstage');
+        setFilterWorksheet(marks, FILTER_PSTAGE, sheetsArray, selectedSheet, selectedSheetName, 'Level of Maturity');
         break;
       case PITYPE_SHEET:
-        setFilterWorksheet(marks, FILTER_PITYPE, sheetsArray, selectedSheet, selectedSheetName, 'Investment Type', '.checkeditype');
+        setFilterWorksheet(marks, FILTER_PITYPE, sheetsArray, selectedSheet, selectedSheetName, 'Investment Type');
         break;
       case PSDG_SHEET:
-        setFilterWorksheet(marks, FILTER_SDG, sheetsArray, selectedSheet, selectedSheetName, 'SDG', '.checkedSDG');
+        setFilterWorksheet(marks, FILTER_SDG, sheetsArray, selectedSheet, selectedSheetName, 'SDG');
         break;
     }
   });

@@ -33,7 +33,8 @@
         tableauView : '{{ appConfig.tableauView  }}',
         hostOrigin: '{{ hostOrigin }}',
         entitySelected: '{{ entitySelected }}',
-        yearSelected: '{{ yearSelected }}'
+        yearSelected: '{{ yearSelected }}',
+        forceRefresh: {{ forceRefresh |json_encode() }}
       };
     </script>
   </head>

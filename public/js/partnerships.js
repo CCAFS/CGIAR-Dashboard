@@ -66,16 +66,16 @@ function onSelectWorkSheet(mEvent){
     var filterName, tagName, $tag, clearFunction;
     switch(selectedSheetName) {
       case TPPHASE_SHEET:
-        setFilterWorksheet(marks, FILTER_TSTAGE, sheetsArray, selectedSheet, selectedSheetName, 'Total Partnerships - Research Phase', '.checkedtphase');
+        setFilterWorksheet(marks, FILTER_TSTAGE, sheetsArray, selectedSheet, selectedSheetName, 'Total Partnerships - Research Phase');
         break;
       case KPPHASE_SHEET:
-        setFilterWorksheet(marks, FILTER_KPHASE, sheetsArray, selectedSheet, selectedSheetName, 'Key Partnerships - Research Phase', '.checkedkphase');
+        setFilterWorksheet(marks, FILTER_KPHASE, sheetsArray, selectedSheet, selectedSheetName, 'Key Partnerships - Research Phase');
         break;
       case KPTYPE_SHEET:
-        setFilterWorksheet(marks, FILTER_KTYPE, sheetsArray, selectedSheet, selectedSheetName, 'Partner Type', '.checkedktype');
+        setFilterWorksheet(marks, FILTER_KTYPE, sheetsArray, selectedSheet, selectedSheetName, 'Partner Type');
         break;
       case PMAP_SHEET:
-        setFilterWorksheet(marks, FILTER_PMAP, sheetsArray, selectedSheet, selectedSheetName, 'Country', '.checkedkpground');
+        setFilterWorksheet(marks, FILTER_PMAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         break;
     }
   });

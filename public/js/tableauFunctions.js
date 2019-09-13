@@ -46,21 +46,30 @@ function getMarksValues(marks, filterName){
   return outputs;
 }
 
-function setFilterWorksheet(marks, filterName, sheetsArray, selectedSheet, selectedSheetName, tagName, tagElement){
-  var $tag = $(tagElement);
-  var selectedItems = getMarksValues(marks, filterName);
-  if(selectedItems.length){
-    appyDashboardFilter(sheetsArray, filterName, selectedItems, selectedSheetName);
-    $tag.text(tagName+": " + selectedItems.join(', ')).addClass("closebutton");
+function setFilterWorksheet(marks, filterName, sheetsArray, selectedSheet, selectedSheetName, tagTitle, tagElement){
+  var $tagsContainer = $('.alert.alert-dark.selection');
+  var filterID = (filterName + "_" + selectedSheetName).replace(/\W/g, '');
+  // Create tag
+  var $tag = $('#'+filterID);
+  if (!$tag.length){
+    $tag = $('<div id="'+filterID+'" class="checkedfilters closebutton"></div>');
+    // Add remove event
     $tag.on('click', function(){
       clearDashboardFilter(sheetsArray, filterName, selectedSheetName);
       selectedSheet.clearSelectedMarksAsync();
-      $tag.hide();
+      $tag.remove();
     });
+  }
+  // Append Tag
+  $tagsContainer.append($tag);
+  var selectedItems = getMarksValues(marks, filterName);
+  if(selectedItems.length){
+    appyDashboardFilter(sheetsArray, filterName, selectedItems, selectedSheetName);
+    $tag.text(tagTitle+": " + selectedItems.join(', ')).addClass("closebutton");
     $tag.show();
   }else{
     clearDashboardFilter(sheetsArray, filterName, selectedSheetName);
-    $tag.hide();
+    $tag.remove();
   }
 }
 
@@ -89,7 +98,6 @@ function createTableauViz(elementID, view, events){
       viz.addEventListener(tableau.TableauEventName.CUSTOM_VIEW_LOAD, function (){
         console.log("CustomViewEvent");
       });
-
 
       // Get Data
       // var data = getTableauDataAsync(tableauEvent.getViz(), function(t){

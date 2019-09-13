@@ -18,12 +18,7 @@ function updateUrlParameters(){
   };
 
   // Update host URL parameters
-  if(checkedValue){
-    u.query[parameters[filterType]] = checkedValue;
-  }else{
-    delete u.query[parameters[filterType]];
-  }
-  window.history.pushState("", "", u.toString());
+  setHostUrlParameters(parameters[filterType], checkedValue);
 
   // Update navigation URL parameters
   $('.navbar-nav a, .nav.sideBar a').each(function(){
@@ -50,19 +45,38 @@ function updateUrlParameters(){
       }
       break;
     case "years":
-      window.location.href = u.toString();
-      // if (checkedValue) {
-      //   $filterTitle.text(checkedValue);
-      //   // Set filter to all sheets
-      //   appyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValue);
-      // } else {
-      //   $filterTitle.text('All Years');
-      //   // Clear filter from all sheets
-      //   clearDashboardFilter(sheetsArray, FILTER_YEAR);
-      // }
+      if (checkedValue) {
+        $filterTitle.text(checkedValue);
+        if(appConfig.forceRefresh){
+          // Reload the page with the new year parameter
+          // window.location.href = u.toString();
+          window.location.reload();
+        }else{
+          // Set filter to all sheets
+          appyDashboardFilter(sheetsArray, FILTER_YEAR, checkedValue);
+        }
+      } else {
+        $filterTitle.text('All Years');
+        // Clear filter from all sheets
+        clearDashboardFilter(sheetsArray, FILTER_YEAR);
+      }
       break;
     default:
   }
+}
+
+setHostUrlParameters('entity', appConfig.entitySelected);
+setHostUrlParameters('year', appConfig.yearSelected);
+
+// Update host URL parameters
+function setHostUrlParameters(key, value){
+  var u  = new Url;
+  if(value){
+    u.query[key] = value;
+  }else{
+    delete u.query[key];
+  }
+  window.history.pushState("", "", u.toString());
 }
 
 $( window ).resize(function() {

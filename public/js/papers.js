@@ -54,10 +54,10 @@ function onSelectWorkSheet(mEvent){
     console.log(selectedSheetName);
     switch(selectedSheetName) {
       case OA_SHEET:
-        setFilterWorksheet(marks, FILTER_OA, sheetsArray, selectedSheet, selectedSheetName, 'Open Acces Publications', '.checkedoa');
+        setFilterWorksheet(marks, FILTER_OA, sheetsArray, selectedSheet, selectedSheetName, 'Open Acces Publications');
         break;
       case ISI_SHEET:
-        setFilterWorksheet(marks, FILTER_ISI, sheetsArray, selectedSheet, selectedSheetName, 'ISI Publications', '.checkedisi');
+        setFilterWorksheet(marks, FILTER_ISI, sheetsArray, selectedSheet, selectedSheetName, 'ISI Publications');
         break;
     }
   });
