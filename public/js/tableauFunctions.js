@@ -121,6 +121,20 @@ function createTableauViz(elementID, view, events){
         console.log("CustomViewEvent");
       });
 
+      window
+
+      // setFrameSize(width: int, height: int)
+      var loop;
+      $( window ).resize(function() {
+        if(loop){
+          clearTimeout(loop);
+        }
+        loop = setTimeout(function(){
+          //console.log('resize', elementID, $(container).width() +' x '+ $(container).height());
+          //viz.setFrameSize($(container).width(), $(container).height());
+        }, 1000);
+      });
+
       // Get Data
       // var data = getTableauDataAsync(tableauEvent.getViz(), function(t){
       //   console.log(t.getTotalRowCount());
