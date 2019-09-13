@@ -29,28 +29,10 @@ function clearDashboardFilter(sheets, filterName, excludedSheetName) {
   });
 }
 
-function getMarksValues(marks, filterName){
+function getMarksValuesByFilter(marks, filterName){
   var outputs = [];
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {
     var pairs = marks[markIndex].getPairs();
-    for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
-      var pair = pairs[pairIndex];
-      if (pair.fieldName == filterName) {
-        var pairValue = pair.formattedValue;
-        if (pairValue != null) {
-          outputs.push(pairValue);
-        }
-      }
-    }
-  }
-  return outputs;
-}
-
-function getMarkstest(marks){
-  var outputs = [];
-  for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-    var pairs = marks[markIndex].getPairs();
-    console.log(pairs);
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
       if (pair.fieldName == filterName) {
@@ -82,14 +64,14 @@ function setFilterWorksheet(marks, filterName, sheetsArray, selectedSheet, selec
   $tagsContainer.append($tag);
 
   // Fill/Remove filter information
-  var selectedItems = getMarksValues(marks, filterName);
+  var selectedItems = getMarksValuesByFilter(marks, filterName);
   if(selectedItems.length){
-    appyDashboardFilter(sheetsArray, filterName, selectedItems, selectedSheetName);
     $tag.html("<strong>"+tagTitle+":</strong> " + selectedItems.join(', '));
     $tag.show();
+    appyDashboardFilter(sheetsArray, filterName, selectedItems, selectedSheetName);
   }else{
-    clearDashboardFilter(sheetsArray, filterName, selectedSheetName);
     $tag.remove();
+    clearDashboardFilter(sheetsArray, filterName, selectedSheetName);
   }
 
   // Check Tags
@@ -154,8 +136,10 @@ function createTableauViz(elementID, view, events){
       });
 
       // Get Data
-      // var data = getTableauDataAsync(tableauEvent.getViz(), function(t){
-      //   console.log(t.getTotalRowCount());
+      // $.each(sheetsList, function(i, s){
+      //   getTableauDataAsync(viz, function(t){
+      //      console.log(t.getTotalRowCount());
+      //   })
       // });
 
       // Check loaded
@@ -167,16 +151,13 @@ function createTableauViz(elementID, view, events){
   return viz;
 }
 
-function getTableauDataAsync(viz, callback){
-  var sheetsList = viz.getWorkbook().getActiveSheet().getWorksheets();
-  $.each(sheetsList, function(i, s){
-    s.getUnderlyingDataAsync({
-      maxRows: 0,
-      ignoreAliases: false,
-      ignoreSelection: true,
-      includeAllColumns: false
-    }).then(callback);
-  });
+function getTableauDataAsync(sheet, callback){
+  sheet.getUnderlyingDataAsync({
+    maxRows: 0,
+    ignoreAliases: false,
+    ignoreSelection: true,
+    includeAllColumns: false
+  }).then(callback);
 }
 
 function errback(e) {

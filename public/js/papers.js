@@ -16,23 +16,26 @@ var LIST_SHEET = "5.2 SH Papers Detail";
 $(document).ready(init);
 
 function init() {
-    //Total papers
-    totalpapers = createTableauViz('total-papers', '5_1DBTotalPapers', [ onSelectWorkSheet ]);
-    //Top 10 Journals
-    topJournals = createTableauViz('top-journals', '5_7DBPapersTop10Journals', [ onSelectWorkSheet ]);
-    //OA - ISI
-    totaloaisi = createTableauViz('total-oaisi', '5_6DBPapersISI-OABar', [ onSelectWorkSheet ]);
-    //Papers List
-    plist = createTableauViz('papers-list', '5_5DBPapersDetail', [ onSelectWorkSheet ]);
+    vizDataArray = [
+      { elementID: 'total-papers', view: '5_1DBTotalPapers' },
+      { elementID: 'papers-list', view: '5_5DBPapersDetail' },
+      { elementID: 'top-journals', view: '5_7DBPapersTop10Journals' },
+      { elementID: 'total-oaisi', view: '5_6DBPapersISI-OABar' },
+    ];
+
+    vizInitialited = [];
+    $.each(vizDataArray, function(i, data){
+      vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
+    });
 }
 
 function loadSheets(){
-  sheetsArray = [
-    totalpapers.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-    plist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
-    totaloaisi.getWorkbook().getActiveSheet().getWorksheets().get(OAISIBAR_SHEET),
-    topJournals.getWorkbook().getActiveSheet().getWorksheets().get(JOURNALS_SHEET)
-  ];
+  $.each(vizInitialited, function(i, viz){
+    var sheetsList = viz.getWorkbook().getActiveSheet().getWorksheets();
+    $.each(sheetsList, function(i, s){
+      sheetsArray.push(s);
+    });
+  });
 }
 
 //Hide "loading" when all charts have loaded
@@ -49,9 +52,6 @@ function onSelectWorkSheet(mEvent){
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function(marks){
-    var filterName, tagName, $tag, clearFunction;
-    console.log(selectedSheetName);
-   // console.log(getMarkstest(marks));
     switch(selectedSheetName) {
       case JOURNALS_SHEET:
         setFilterWorksheet(marks, FILTER_JOURNAL, sheetsArray, selectedSheet, selectedSheetName, 'Journal');
