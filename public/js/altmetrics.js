@@ -116,18 +116,3 @@ function loaded() {
     loadSheets();
   }
 }
-
-
-function clearCRPfilters() {
-  clearDashboardFilter(sheetsArray, FILTER_CRPS);
-  $(".checkedcrps").hide();
-  $('.portfolio').text('Research Portfolio');
-  $('input[value="All"]').prop('checked', true);
-};
-
-function clearYearsfilters() {
-  clearDashboardFilter(sheetsArray, FILTER_YEAR);
-  $('.years').text('Years');
-  $(".checkedyears").hide();
-  $('input[value="All Years"]').prop('checked', true);
-};
