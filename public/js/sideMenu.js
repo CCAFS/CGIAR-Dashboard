@@ -1,4 +1,5 @@
-$(window).bind("resize", function () {
+
+/*$(window).bind("resize", function () {
     if ($(this).width() < 815) {
         $('#sections').removeClass('expanded-menu').addClass('collapsed-menu');
         $('.navbar-toggler').show();
@@ -12,4 +13,6 @@ $(window).bind("resize", function () {
 
 $('.navbar-toggler').on('click', function(){
     $('#sections').toggle();
-});
+});*/
+
+$('.navbar-toggler').hide();

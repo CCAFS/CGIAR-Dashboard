@@ -1,10 +1,8 @@
-@media (min-width: 1545px) {
     .expanded-menu {
         max-width: 220px;
         position: fixed;
         margin-left: 2%;
     }
-}
 
 .collapsed-menu {
     position: relative;
