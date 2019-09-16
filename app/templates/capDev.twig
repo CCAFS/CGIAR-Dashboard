@@ -23,11 +23,16 @@
 {% include './pages/header.twig' with pageParams %}
 
 <div class="container-fluid">
-<div class="row">
+<div class="row justify-content-center">
   <div class="col-md-2">
     {% include './pages/side-menu.twig' with pageParams %}
   </div>
   <div class="col-md-9">
+    <!-- Filters -->
+    {% if embed %}
+    {% include './pages/filters.twig' with pageParams %}
+    {% endif %}
+
   <div class="main-content">
 
       <button class="navbar-toggler" type="button">
