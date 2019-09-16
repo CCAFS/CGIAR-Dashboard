@@ -19,6 +19,7 @@
     this.element = element;
     this.iframe;
     this.userOptions = userOptions;
+		this.userOptions.displayNav = userOptions.displayNav || true;
     this.hostOrigin = document.location.origin;
 		this.baseURL = '{{ baseURL }}';
 		this.baseOrigin = '{{ baseOrigin  }}';
@@ -87,7 +88,7 @@
 
   // Update Element Height
   ResultsDashboardWidget.prototype.setIframeHeight = function setIframeHeight (height) {
-    this.element.style.height = (height - 7) +"px";
+    this.iframe.style.height = (height - 7) +"px";
   };
 
   function sendIframeMessage(iframe, msg){
