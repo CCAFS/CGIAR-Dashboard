@@ -69,6 +69,14 @@
     // Add iframe item
     widget.element.appendChild(widget.iframe);
 
+		// Add iframe onload Functions
+		widget.iframe.onload = function(){
+			// Remove Wordpress wrapping div
+      var iframeWrap = widget.element.querySelectorAll('.iframe-wrapper');
+      iframeWrap.setAttribute('class', '');
+      iframeWrap.setAttribute('style', '');
+		};
+
     // Listen to message from embed iframe window
     bindEvent(window, 'message', function (e){
       if(e.origin == widget.baseOrigin){
