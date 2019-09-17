@@ -74,7 +74,7 @@
 			// Remove Wordpress wrapping div
       var iframeWrap = document.querySelectorAll('.iframe-wrapper');
       console.log(iframeWrap);
-      if(iframeWrap){
+      if(iframeWrap.length){
         iframeWrap[0].setAttribute('class', '');
         iframeWrap[0].setAttribute('style', '');
       }
