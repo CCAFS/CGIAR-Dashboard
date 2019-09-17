@@ -4,7 +4,7 @@ var LOADED = 0;
 //Filters
 var FILTER_PGEO = "Geographic Scope";
 var FILTER_PMAP = "Country Name";
-var FILTER_PSTAGE = "Level of Maturity of Process";
+var FILTER_PSTAGE = "Level of Maturity";
 var FILTER_PITYPE = "Policy Investment Types";
 var FILTER_SDG = "Sdg Short Name";
 
@@ -22,31 +22,31 @@ $(document).ready(init);
 
 function init() {
 
-    //Total Policies by Geographic Scope
-    policiesgeo = createTableauViz('policies-geoscope', '7_5DBPoliciesDonut', [ onSelectWorkSheet ]);
-    //Policies on the Ground
-    policiesmap = createTableauViz('policies-ground', '7_4DBPoliciesMap', [ onSelectWorkSheet ]);
-    //Policies by Level of Maturity
-    policiesstage = createTableauViz('policies-stage', '7_3DBPoliciesbyStageinProcess', [ onSelectWorkSheet ]);
-    //Policies by Geographic Scope and Investment Type
-    policiesitype = createTableauViz('policies-investype', '7_2DBPoliciesbyGeoandInvType', [ onSelectWorkSheet ]);
-    // Contribution to SDGs
-    policiessdg = createTableauViz('policies-sdgs', '7_6DBPoliciesSDG', [ onSelectWorkSheet ]);
-    //List of Policies
-    policieslist = createTableauViz('policies-list', '7_1DBPoliciesdetail', [ onSelectWorkSheet ]);
+  vizDataArray = [
+    { elementID: 'policies-geoscope', view: '7_5DBPoliciesDonut' },
+    { elementID: 'policies-ground', view: '7_4DBPoliciesMap' },
+    { elementID: 'policies-stage', view: '7_3DBPoliciesbyStageinProcess' },
+    { elementID: 'policies-investype', view: '7_2DBPoliciesbyGeoandInvType' },
+    { elementID: 'policies-sdgs', view: '7_6DBPoliciesSDG' },
+    { elementID: 'policies-list', view: '7_1DBPoliciesdetail' }
+  ];
+
+  vizInitialited = [];
+    $.each(vizDataArray, function(i, data){
+      vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
+  });  
 
 }
 
 function loadSheets(){
-  sheetsArray = [
-    policiesgeo.getWorkbook().getActiveSheet().getWorksheets().get(PGEO_SHEET),
-    policiesmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
-    policiesstage.getWorkbook().getActiveSheet().getWorksheets().get(PSTAGE_SHEET),
-    policiesitype.getWorkbook().getActiveSheet().getWorksheets().get(PITYPE_SHEET),
-    policieslist.getWorkbook().getActiveSheet().getWorksheets().get(PLIST_SHEET),
-    policiessdg.getWorkbook().getActiveSheet().getWorksheets().get(PSDG_SHEET)
-  ];
+  $.each(vizInitialited, function(i, viz){
+    var sheetsList = viz.getWorkbook().getActiveSheet().getWorksheets();
+    $.each(sheetsList, function(i, s){
+      sheetsArray.push(s);
+    });
+  });
 }
+
 
 //Hide "loading" when all charts have loaded
 function loaded() {
@@ -63,7 +63,6 @@ function onSelectWorkSheet(mEvent){
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function(marks){
-    var filterName, tagName, $tag, clearFunction;
     switch(selectedSheetName) {
       case PGEO_SHEET:
         setFilterWorksheet(marks, FILTER_PGEO, sheetsArray, selectedSheet, selectedSheetName, 'Geographic Scope');

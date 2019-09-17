@@ -26,31 +26,29 @@ var TOPCONTRIBUTING_SHEET = "2.10 SH Innov Bar Top Cont-Org";
 $(document).ready(init);
 
 function init() {
-    //Innovations by stage
-    istage = createTableauViz('innovations-stage', '2_2DBInnovbyStage', [ onSelectWorkSheet ]);
-    //Innovations by type
-    itype = createTableauViz('innovations-type', '2_3DBInnovbyType', [ onSelectWorkSheet ]);
-    //Innovations on the ground
-    iground = createTableauViz('innovations-map', '2_6DBInnovMap', [ onSelectWorkSheet ]);
-    //Innovations list
-    ilist = createTableauViz('innovations-list', '2_5DBInnovDetail', [ onSelectWorkSheet ]);
-    // Top 5 non-CGIAR Lead Organizations
-    top5lead = createTableauViz('itop5Lead-org', '2_8DBInnovTop5Leadorg', [ onSelectWorkSheet ]);
-    // Top 5 non-CGIAR Contributing Organizations
-    top5contributing = createTableauViz('itop5Contributing-org', '2_9DBInnovTop5Controrg', [ onSelectWorkSheet ]);
+    vizDataArray = [
+      {elementID: 'innovations-stage', view: '2_2DBInnovbyStage'},
+      {elementID: 'innovations-type', view: '2_3DBInnovbyType'},
+      {elementID: 'innovations-map', view: '2_6DBInnovMap'},
+      {elementID: 'innovations-list', view: '2_5DBInnovDetail'},
+      {elementID: 'itop5Lead-org', view: '2_8DBInnovTop5Leadorg'},
+      {elementID: 'itop5Contributing-org', view: '2_9DBInnovTop5Controrg'}
+    ];
+
+    vizInitialited = [];
+    $.each(vizDataArray, function(i, data){
+      vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
+    });
+
 }
 
 function loadSheets(){
-  sheetsArray = [
-    istage.getWorkbook().getActiveSheet().getWorksheets().get(ISTAGE_SHEET),
-    itype.getWorkbook().getActiveSheet().getWorksheets().get(ITYPE_SHEET),
-    ilist.getWorkbook().getActiveSheet().getWorksheets().get(ILIST_SHEET),
-    iground.getWorkbook().getActiveSheet().getWorksheets().get(IMAP_SHEET),
-    iground.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-    iground.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
-    top5lead.getWorkbook().getActiveSheet().getWorksheets().get(TOPLEAD_SHEET),
-    top5contributing.getWorkbook().getActiveSheet().getWorksheets().get(TOPCONTRIBUTING_SHEET)
-  ];
+  $.each(vizInitialited, function(i, viz){
+    var sheetsList = viz.getWorkbook().getActiveSheet().getWorksheets();
+    $.each(sheetsList, function(i, s){
+      sheetsArray.push(s);
+    });
+  });
 }
 
 //Hide "loading" when all charts have loaded
@@ -66,9 +64,7 @@ function loaded() {
 function onSelectWorkSheet(mEvent){
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
-
   return mEvent.getMarksAsync().then(function(marks){
-    var filterName, tagName, $tag, clearFunction;
     switch(selectedSheetName) {
       case ISTAGE_SHEET:
         setFilterWorksheet(marks, FILTER_STAGE, sheetsArray, selectedSheet, selectedSheetName, 'Stage');

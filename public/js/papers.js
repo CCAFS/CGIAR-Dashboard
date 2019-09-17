@@ -20,7 +20,7 @@ function init() {
       { elementID: 'total-papers', view: '5_1DBTotalPapers' },
       { elementID: 'papers-list', view: '5_5DBPapersDetail' },
       { elementID: 'top-journals', view: '5_7DBPapersTop10Journals' },
-      { elementID: 'total-oaisi', view: '5_6DBPapersISI-OABar' },
+      { elementID: 'total-oaisi', view: '5_6DBPapersISI-OABar' }
     ];
 
     vizInitialited = [];

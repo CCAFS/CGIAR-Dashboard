@@ -18,27 +18,26 @@ var TRAINEES_SHEET = "4.1 SH Trainees Dual Axis chart";
 $(document).ready(init);
 
 function init() {
-    //System Level Outcomes
-    slobar =  createTableauViz('slo-bar', '8_1DBSLOBarTop', [ ]);
-    //SLO Targets
-    slotargets = createTableauViz('slo-targets', '8_2DBSLOTargets', [ ]);
-    //Slo list
-    slolist = createTableauViz('slo-list', '8_3DBSLODetail', [ ]);
+  vizDataArray = [
+    { elementID: 'slo-bar', view: '8_1DBSLOBarTop' },
+    { elementID: 'slo-targets', view: '8_2DBSLOTargets' },
+    { elementID: 'slo-list', view: '8_3DBSLODetail' }
+  ];
+
+  vizInitialited = [];
+    $.each(vizDataArray, function(i, data){
+      vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
+    });
+
 }
 
 function loadSheets(){
-  // var view = slotargets.getWorkbook().getActiveSheet().getWorksheets();
-  // worksheet = view[0];
-  // console.log(worksheet);
-
-  sheetsArray = [
-    slobar.getWorkbook().getActiveSheet().getWorksheets().get(SLOBAR_SHEET),
-    slotargets.getWorkbook().getActiveSheet().getWorksheets().get(SLOTARGET11_SHEET),
-    slotargets.getWorkbook().getActiveSheet().getWorksheets().get(SLOTARGET12_SHEET),
-    slotargets.getWorkbook().getActiveSheet().getWorksheets().get(SLOTARGET21_SHEET),
-    slotargets.getWorkbook().getActiveSheet().getWorksheets().get(SLOTARGET23_SHEET),
-    slotargets.getWorkbook().getActiveSheet().getWorksheets().get(SLOTARGET33_SHEET)
-  ];
+  $.each(vizInitialited, function(i, viz){
+    var sheetsList = viz.getWorkbook().getActiveSheet().getWorksheets();
+    $.each(sheetsList, function(i, s){
+      sheetsArray.push(s);
+    });
+  });
 }
 
 //Hide "loading" when all charts have loaded
@@ -49,4 +48,12 @@ function loaded() {
     // Load sheets
     loadSheets();
   }
+}
+
+function onSelectWorkSheet(mEvent){
+  var selectedSheet = mEvent.getWorksheet();
+  var selectedSheetName = selectedSheet.getName();
+  return mEvent.getMarksAsync().then(function(marks){
+    //Filters
+  });
 }

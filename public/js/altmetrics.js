@@ -14,27 +14,28 @@ var LIST_SHEET = "6.1 SH Altmetric Detail";
 $(document).ready(init);
 
 function init() {
-    //Total Publications with Altmetrics Attention Score
-    totalalt = createTableauViz('total-altmetrics', '6_0DBAltmetricTotalPubs', [ onSelectWorkSheet ]);
-    //Total Mentions / Readers Tracked by Altmetrics
-    altmen = createTableauViz('altmetrics-mentions', '6_3DBAltmetricSocialMediatotals', [ onSelectWorkSheet ]);
-    //Top 10 Altmetric Attention Scores in the Portfolio Year
-    toptenalt = createTableauViz('topten-alt', '6_2DBAltmetricTop10', [ onSelectWorkSheet ]);
-    //All Publications with Altmetrics Attention Score
-    allaltmetrcis = createTableauViz('all-altmetrics', '6_1DBAltmetricDetail', [ onSelectWorkSheet ]);
+
+  vizDataArray = [
+    { elementID: 'total-altmetrics', view: '6_0DBAltmetricTotalPubs' },
+    { elementID: 'altmetrics-mentions', view: '6_3DBAltmetricSocialMediatotals' },
+    { elementID: 'topten-alt', view: '6_2DBAltmetricTop10' },
+    { elementID: 'all-altmetrics', view: '6_1DBAltmetricDetail' }
+  ];
+
+  vizInitialited = [];
+    $.each(vizDataArray, function(i, data){
+      vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
+  });
+
 }
 
 function loadSheets(){
-  sheetsArray = [
-    totalalt.getWorkbook().getActiveSheet().getWorksheets().get(TOTAL_SHEET),
-    altmen.getWorkbook().getActiveSheet().getWorksheets().get(MENDELEY_SHEET),
-    altmen.getWorkbook().getActiveSheet().getWorksheets().get(TWITTER_SHEET),
-    altmen.getWorkbook().getActiveSheet().getWorksheets().get(FACEBOOK_SHEET),
-    altmen.getWorkbook().getActiveSheet().getWorksheets().get(BLOG_SHEET),
-    altmen.getWorkbook().getActiveSheet().getWorksheets().get(NEWS_SHEET),
-    altmen.getWorkbook().getActiveSheet().getWorksheets().get(POLICIES_SHEET),
-    allaltmetrcis.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET)
-  ];
+  $.each(vizInitialited, function(i, viz){
+    var sheetsList = viz.getWorkbook().getActiveSheet().getWorksheets();
+    $.each(sheetsList, function(i, s){
+      sheetsArray.push(s);
+    });
+  });
 }
 
 //Hide "loading" when all charts have loaded
@@ -47,12 +48,11 @@ function loaded() {
   }
 }
 
-function onSelectWorkSheet(mEvent){
+function onSelectWorkSheet(mEvent) {
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
-  return mEvent.getMarksAsync().then(function(marks){
-    var filterName, tagName, $tag, clearFunction;
-    switch(selectedSheetName) {
+  return mEvent.getMarksAsync().then(function (marks) {
+    switch (selectedSheetName) {
       // Code here
     }
   });

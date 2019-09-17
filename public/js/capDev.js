@@ -2,6 +2,7 @@ var sheetsArray = [];
 var LOADED = 0;
 
 //Filters
+var FILTER_TRAINEES = "";
 
 //Sheets
 var TOTALP_SHEET = "4.2 SH CapDev Total Participants";
@@ -14,31 +15,32 @@ var TRAINEES_SHEET = "4.1 SH Trainees Dual Axis chart";
 $(document).ready(init);
 
 function init() {
-    //Total trainees
-    totaltrainees = createTableauViz('total-trainees', '4_3DBCapDevTotalTrainees', [ onSelectWorkSheet ]);
-    //Total women
-    totalwomen = createTableauViz('total-women', '4_4DBCapDevTotalWomen', [ onSelectWorkSheet ]);
-    //Total men
-    totalmen = createTableauViz('total-men', '4_5DBCapDevTotalMen', [ onSelectWorkSheet ]);
-    //Trainees women-men
-    traineesTerm = createTableauViz('trainees-term', '4_1DBTraineesDualAxischart', [ onSelectWorkSheet ]);
+
+  vizDataArray = [
+    { elementID: 'total-trainees', view: '4_0DBTraineesNumbers' },
+    { elementID: 'trainees-term', view: '4_1DBTraineesDualAxischart' }
+  ]; 
+
+  vizInitialited = [];
+    $.each(vizDataArray, function(i, data){
+      vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
+  });
+
 }
 
 function loadSheets(){
-  sheetsArray = [
-    //totalparticipants.getWorkbook().getActiveSheet().getWorksheets().get(TOTALP_SHEET),
-    totaltrainees.getWorkbook().getActiveSheet().getWorksheets().get(TOTALT_SHEET),
-    totalwomen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALW_SHEET),
-    totalmen.getWorkbook().getActiveSheet().getWorksheets().get(TOTALM_SHEET),
-    //participantsUser.getWorkbook().getActiveSheet().getWorksheets().get(PARTICIPANTS_SHEET),
-    traineesTerm.getWorkbook().getActiveSheet().getWorksheets().get(TRAINEES_SHEET)
-  ];
+  $.each(vizInitialited, function(i, viz){
+    var sheetsList = viz.getWorkbook().getActiveSheet().getWorksheets();
+    $.each(sheetsList, function(i, s){
+      sheetsArray.push(s);
+    });
+  });
 }
 
 //Hide "loading" when all charts have loaded
 function loaded() {
   LOADED += 1;
-  if (LOADED == 4) {
+  if (LOADED == 2) {
     $("#loadingModal").modal('hide');
     // Load sheets
     loadSheets();
@@ -49,9 +51,10 @@ function onSelectWorkSheet(mEvent){
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function(marks){
-    var filterName, tagName, $tag, clearFunction;
     switch(selectedSheetName) {
-      //  Code here
+      case TRAINEES_SHEET:
+        setFilterWorksheet(marks, FILTER_TRAINEES, sheetsArray, selectedSheet, selectedSheetName, 'Journal');
+        break;
     }
   });
 }

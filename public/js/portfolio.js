@@ -35,42 +35,32 @@ var TOPP_SHEET = "1.1.12 SH OICS Top Partners";
 $(document).ready(init);
 
 function init() {
-  //Countries map
-  map1 = createTableauViz('map-1', '1_1DBMap', [ onSelectWorkSheet ]);
-  //OICs list
-  oicslist = createTableauViz('list-test', '1_4DBSLO-CCIDetail', [ ]);
-  //SLO + Cross-Cutting
-  chart2 = createTableauViz('chart-2', '1_2DBSLO-CCIBars', [ onSelectWorkSheet ]);
-  //Cross-Cutting %
-  ccip = createTableauViz('cci-p', '1_3DBCross-CuttingPercent-Final', [ onSelectWorkSheet ]);
-  //Maturity Stage
-  mstage = createTableauViz('m-stage', '1_10DBOICSbyStageofMaturity', [ onSelectWorkSheet ]);
-  //SDGs
-  sdgs = createTableauViz('sdg-s', '1_11DBOICSSDGPerc', [ onSelectWorkSheet ]);
-  //Total contributing partners
-  totalpartners = createTableauViz('contributing-partners', '1_12DBOICRTotalContributingPartners', [ ]);
-  //Number of contributing partners
-  partners = createTableauViz('top-partners', '1_11DBOICRTopContributingPartners', [ onSelectWorkSheet ]);
+
+  vizDataArray = [
+    { elementID: 'map-1', view: '1_1DBMap' },
+    { elementID: 'list-test', view: '1_4DBSLO-CCIDetail' },
+    { elementID: 'chart-2', view: '1_2DBSLO-CCIBars' },
+    { elementID: 'cci-p', view: '1_3DBCross-CuttingPercent-Final' },
+    { elementID: 'm-stage', view: '1_10DBOICSbyStageofMaturity' },
+    { elementID: 'sdg-s', view: '1_11DBOICSSDGPerc' },
+    { elementID: 'contributing-partners', view: '1_12DBOICRTotalContributingPartners' },
+    { elementID: 'top-partners', view: '1_11DBOICRTopContributingPartners' }
+  ];
+
+  vizInitialited = [];
+  $.each(vizDataArray, function (i, data) {
+    vizInitialited.push(createTableauViz(data.elementID, data.view, [onSelectWorkSheet]))
+  });
+
 }
 
-function loadSheets(){
-  sheetsArray = [
-    map1.getWorkbook().getActiveSheet().getWorksheets().get(CMAP_SHEET),
-    map1.getWorkbook().getActiveSheet().getWorksheets().get(GLOBAL_SHEET),
-    map1.getWorkbook().getActiveSheet().getWorksheets().get(REGIONAL_SHEET),
-    oicslist.getWorkbook().getActiveSheet().getWorksheets().get(LIST_SHEET),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(SLO_SHEET),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(CCI_SHEET),
-    chart2.getWorkbook().getActiveSheet().getWorksheets().get(COUNT_SHEET),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get(GENDER_SHEET),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get(YOUTH_SHEET),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CAPDEV_SHEET),
-    ccip.getWorkbook().getActiveSheet().getWorksheets().get(CLIMATE_SHEET),
-    mstage.getWorkbook().getActiveSheet().getWorksheets().get(MATURITY_SHEET),
-    sdgs.getWorkbook().getActiveSheet().getWorksheets().get(SDGS_SHEET),
-    totalpartners.getWorkbook().getActiveSheet().getWorksheets().get(TOTALP_SHEET),
-    partners.getWorkbook().getActiveSheet().getWorksheets().get(TOPP_SHEET)
-  ];
+function loadSheets() {
+  $.each(vizInitialited, function (i, viz) {
+    var sheetsList = viz.getWorkbook().getActiveSheet().getWorksheets();
+    $.each(sheetsList, function (i, s) {
+      sheetsArray.push(s);
+    });
+  });
 }
 
 //Hide "loading" when all charts have loaded
@@ -84,13 +74,12 @@ function loaded() {
 }
 
 /**** Selection functions ****/
-function onSelectWorkSheet(mEvent){
+function onSelectWorkSheet(mEvent) {
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
 
-  return mEvent.getMarksAsync().then(function(marks){
-    var filterName, tagName, $tag, clearFunction;
-    switch(selectedSheetName) {
+  return mEvent.getMarksAsync().then(function (marks) {
+    switch (selectedSheetName) {
       case SLO_SHEET:
         setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
         break;
@@ -101,7 +90,7 @@ function onSelectWorkSheet(mEvent){
         setFilterWorksheet(marks, FILTER_COUNTRY, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         //setFilterWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, selectedSheetName, 'Region');
         //setFilterWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet, selectedSheetName, 'Global');
-      break;
+        break;
       case GENDER_SHEET:
         setFilterWorksheet(marks, FILTER_GENDER, sheetsArray, selectedSheet, selectedSheetName, 'Gender Relevance');
         break;
