@@ -72,7 +72,7 @@
 		// Add iframe onload Functions
 		widget.iframe.onload = function(){
 			// Remove Wordpress wrapping div
-      var iframeWrap = document.querySelectorAll('.iframe-wrapper');
+      var iframeWrap = widget.element.querySelectorAll('.iframe-wrapper');
       console.log(iframeWrap);
       if(iframeWrap.length){
         iframeWrap[0].setAttribute('class', '');
