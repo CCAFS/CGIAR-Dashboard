@@ -20,32 +20,31 @@ var PMAP_SHEET = "3.4 SH Key Partnerships map "
 $(document).ready(init);
 
 function init() {
-    //Total Partnerships
-    // totalp = createTableauViz('total-partnerships', '3_1DBTotalPartnerships_1', [ onSelectWorkSheet ]);
-    //Total Partnerships by phase
-    tpphase = createTableauViz('tp-phase', '3_2DBTotalPartbyStage', [ onSelectWorkSheet ]);
-    //Key Partnerships on the Ground
-    pmap = createTableauViz('partnerships-map', '3_4DBKeyPartnershipsmap', [ onSelectWorkSheet ]);
-    //Total Key Partnerships
-    totalkp = createTableauViz('total-keyp', '3_4DBKeyPartnerships', [ onSelectWorkSheet ]);
-    //Key Partnerships by phase
-    keypphase = createTableauViz('keyp-phase', '3_5DBKeyPartbyStage', [ onSelectWorkSheet ]);
-    //Key Partnerships by type
-    kptype = createTableauViz('keyp-type', '3_6DBKeyPartbyStageandProgramType2', [ onSelectWorkSheet ]);
-    //List of key partnerships
-    kplist = createTableauViz('keyp-list', '3_7DBKeyPartnersDetails', [ onSelectWorkSheet ]);
+
+  vizDataArray = [
+   // { elementID: 'total-partnerships', view: '3_1DBTotalPartnerships_1' },
+    { elementID: 'tp-phase', view: '3_2DBTotalPartbyStage' },
+    { elementID: 'partnerships-map', view: '3_4DBKeyPartnershipsmap' },
+    { elementID: 'total-keyp', view: '3_4DBKeyPartnerships' },
+    { elementID: 'keyp-phase', view: '3_5DBKeyPartbyStage' },
+    { elementID: 'keyp-type', view: '3_6DBKeyPartbyStageandProgramType2' },
+    { elementID: 'keyp-list', view: '3_7DBKeyPartnersDetails' }
+  ];
+
+  vizInitialited = [];
+  $.each(vizDataArray, function(i, data){
+    vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
+  });
+
 }
 
 function loadSheets(){
-  sheetsArray = [
-      //totalp.getWorkbook().getActiveSheet().getWorksheets().get(TP_SHEET),
-      tpphase.getWorkbook().getActiveSheet().getWorksheets().get(TPPHASE_SHEET),
-      totalkp.getWorkbook().getActiveSheet().getWorksheets().get(TKP_SHEET),
-      pmap.getWorkbook().getActiveSheet().getWorksheets().get(PMAP_SHEET),
-      keypphase.getWorkbook().getActiveSheet().getWorksheets().get(KPPHASE_SHEET),
-      kptype.getWorkbook().getActiveSheet().getWorksheets().get(KPTYPE_SHEET),
-      kplist.getWorkbook().getActiveSheet().getWorksheets().get(KPLIST_SHEET),
-  ];
+  $.each(vizInitialited, function(i, viz){
+    var sheetsList = viz.getWorkbook().getActiveSheet().getWorksheets();
+    $.each(sheetsList, function(i, s){
+      sheetsArray.push(s);
+    });
+  });
 }
 
 //Hide "loading" when all charts have loaded
@@ -59,12 +58,11 @@ function loaded() {
   }
 }
 
-function onSelectWorkSheet(mEvent){
+function onSelectWorkSheet(mEvent) {
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
-  return mEvent.getMarksAsync().then(function(marks){
-    var filterName, tagName, $tag, clearFunction;
-    switch(selectedSheetName) {
+  return mEvent.getMarksAsync().then(function (marks) {
+    switch (selectedSheetName) {
       case TPPHASE_SHEET:
         setFilterWorksheet(marks, FILTER_TSTAGE, sheetsArray, selectedSheet, selectedSheetName, 'Total Partnerships - Research Phase');
         break;

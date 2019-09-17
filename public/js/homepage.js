@@ -4,37 +4,48 @@ var LOADED = 0;
 $(document).ready(init);
 
 function init() {
-    //Contribution to SLO bar
-    var slobar = createTableauViz('slo-bar', 'HomeDB-SLOBarTop', [ ]);
-    //Outcome Impact Case Reports
-    var oicrchart = createTableauViz('oicr-chart', 'HomeDB-OICRBarchartyear', [ ]);
-    //Total Innovations
-    var totalInnovations = createTableauViz('total-innovations', 'HomeDB-InnovCount', [ ]);
-    //Total Partnerships
-    var totalPartnerships = createTableauViz('total-partnerships', 'HomeDB-PartnershipCount', [ ]);
-    //Total Trainees
-    var totalCapDev = createTableauViz('total-capDev', 'HomeDB-CapDevCount', [ ]);
-    //Total Publications
-    var totalPublications = createTableauViz('total-publications', 'HomeDB-PublicationsCount', [ ]);
-    //Total Policies
-    var totalPolicies = createTableauViz('total-policies', 'HomeDB-PoliciesCount', [ ]);
-    //Total Altmetric
-    var totalAltmetric = createTableauViz('total-altmetric', 'HomeDB-AltmetricCount', [ ]);
+
+  vizDataArray = [
+    { elementID: 'slo-bar', view: 'HomeDB-SLOBarTop' },
+    { elementID: 'oicr-chart', view: 'HomeDB-OICRBarchartyear' },
+    { elementID: 'total-innovations', view: 'HomeDB-InnovCount' },
+    { elementID: 'total-partnerships', view: 'HomeDB-PartnershipCount' },
+    { elementID: 'total-capDev', view: 'HomeDB-CapDevCount' },
+    { elementID: 'total-publications', view: 'HomeDB-PublicationsCount' },
+    { elementID: 'total-policies', view: 'HomeDB-PoliciesCount' },
+    { elementID: 'total-altmetric', view: 'HomeDB-AltmetricCount' }
+  ];
+
+  vizInitialited = [];
+  $.each(vizDataArray, function (i, data) {
+    vizInitialited.push(createTableauViz(data.elementID, data.view, [onSelectWorkSheet]))
+  });
+
 }
 
-
-function loadSheets(){
-  sheetsArray = [
-
-  ];
+function loadSheets() {
+  $.each(vizInitialited, function (i, viz) {
+    var sheetsList = viz.getWorkbook().getActiveSheet().getWorksheets();
+    $.each(sheetsList, function (i, s) {
+      sheetsArray.push(s);
+    });
+  });
 }
 
 //Hide "loading" when all charts have loaded
 function loaded() {
   LOADED += 1;
-  if (LOADED == 8) {
+  if (LOADED == vizDataArray.length) {
     $("#loadingModal").modal('hide');
     // Load sheets
     loadSheets();
   }
+}
+
+function onSelectWorkSheet(mEvent){
+  var selectedSheet = mEvent.getWorksheet();
+  var selectedSheetName = selectedSheet.getName();
+  return mEvent.getMarksAsync().then(function(marks){
+    //filters
+  });
 }
