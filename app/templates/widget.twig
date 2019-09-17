@@ -72,9 +72,13 @@
 		// Add iframe onload Functions
 		widget.iframe.onload = function(){
 			// Remove Wordpress wrapping div
-      var iframeWrap = widget.element.querySelectorAll('.iframe-wrapper');
-      iframeWrap.setAttribute('class', '');
-      iframeWrap.setAttribute('style', '');
+      var iframeWrap = document.querySelectorAll('.iframe-wrapper');
+      console.log(iframeWrap);
+      if(iframeWrap){
+        iframeWrap[0].setAttribute('class', '');
+        iframeWrap[0].setAttribute('style', '');
+      }
+
 		};
 
     // Listen to message from embed iframe window
