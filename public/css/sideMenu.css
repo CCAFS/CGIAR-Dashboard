@@ -6,3 +6,19 @@
     }
 }
 
+.menu-section, .menu-title {
+    font-weight: 600;
+}
+
+svg {
+    width: 25px;
+    height: 25px;
+    fill: #FFA600;
+    vertical-align: text-top;
+    display: inline-block;
+    margin-left: 10px
+}
+
+li.active svg {
+    fill: #ffffff;
+}

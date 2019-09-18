@@ -10,35 +10,17 @@ class ControlListService {
   public function __construct(){
 
     $this->sections = array(
-      array('name' => 'Home',                                     'action' => 'home',                 'active' => true ),
-      array('name' => '1. System Level Outcomes (SLOs)',          'action' => 'systemLevelOutcomes',  'active' => true ),
-      array('name' => '2. Outcome Impact Case Reports (OICR)',    'action' => 'caseReports',          'active' => true ),
-      array('name' => '3. Progress Towards Milestones',           'action' => 'milestones',           'active' => false ),
-      array('name' => '4. Common Reporting Indicators',           'action' => 'milestones',           'active' => false ),
-      array('name' => 'Innovations',                              'action' => 'innovations',          'active' => true ),
-      array('name' => 'Partnerships',                             'action' => 'partnerships',         'active' => true ),
-      array('name' => 'Capacity Development',                     'action' => 'capDev',               'active' => true ),
-      array('name' => 'Publications',                             'action' => 'publications',         'active' => true ),
-      array('name' => 'Policies',                                 'action' => 'policies',             'active' => true ),
-      array('name' => 'Altmetric',                                'action' => 'altmetrics',           'active' => true )
-    );
-
-    $this->crps = array(
-      array('acronym' => '',          'name' => 'All'),
-      array('acronym' => 'A4NH',      'name' => 'A4NH - Agriculture for Nutrition and Health'),
-      array('acronym' => 'BigData',   'name' => 'BigData - Big Data in Agriculture'),
-      array('acronym' => 'CCAFS',     'name' => 'CCAFS - Climate Change, Agriculture and Food Security'),
-      array('acronym' => 'EiB',       'name' => 'EiB - Excellence in Breeding'),
-      array('acronym' => 'Fish',      'name' => 'Fish'),
-      array('acronym' => 'FTA',       'name' => 'FTA - Forests, Trees and Agroforestry'),
-      array('acronym' => 'Genebank',  'name' => 'Genebank'),
-      array('acronym' => 'Livestock', 'name' => 'Livestock'),
-      array('acronym' => 'Maize',     'name' => 'Maize'),
-      array('acronym' => 'PIM',       'name' => 'PIM - Policies, Institutions, and Markets'),
-      array('acronym' => 'Rice',      'name' => 'Rice'),
-      array('acronym' => 'RTB',       'name' => 'RTB - Roots, Tubers and Bananas'),
-      array('acronym' => 'Wheat',     'name' => 'Wheat'),
-      array('acronym' => 'WLE',       'name' => 'WLE - Water, Land and Ecosystems')
+      array('name' => 'Home',                                     'action' => 'home',                 'type' => 'section',      'active' => true ),
+      array('name' => '1. System Level Outcomes (SLOs)',          'action' => 'systemLevelOutcomes',  'type' => 'section',      'active' => true ),
+      array('name' => '2. Outcome Impact Case Reports (OICR)',    'action' => 'caseReports',          'type' => 'section',      'active' => true ),
+      array('name' => '3. Progress Towards Milestones',           'action' => 'milestones',           'type' => 'section',      'active' => false ),
+      array('name' => '4. Common Reporting Indicators',           'action' => 'innovations',          'type' => 'title',        'active' => true ),
+      array('name' => 'Innovations',                              'action' => 'innovations',          'type' => 'subsection',   'active' => true ),
+      array('name' => 'Partnerships',                             'action' => 'partnerships',         'type' => 'subsection',   'active' => true ),
+      array('name' => 'Policies',                                 'action' => 'policies',             'type' => 'subsection',   'active' => true ),
+      array('name' => 'Capacity Development',                     'action' => 'capDev',               'type' => 'subsection',   'active' => true ),
+      array('name' => 'Publications',                             'action' => 'publications',         'type' => 'subsection',   'active' => true ),
+      array('name' => 'Altmetric',                                'action' => 'altmetric',            'type' => 'subsection',   'active' => true )
     );
 
     $this->years = array(
