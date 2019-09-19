@@ -1,6 +1,6 @@
 .indicator-description {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
+    font-size: 12px;
+    text-align: justify;
 }
 
 .chart-container{ 
@@ -19,12 +19,12 @@
     height: 260px;
 }
 
-.total-title { 
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    text-align: center;
-}
-
 .numbers {
     height:340px;
+}
+
+.top-line {
+    width: 100%;
+    border-top: #373a3b solid 1px;
+    margin-bottom: 5px;
 }
