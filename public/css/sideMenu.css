@@ -9,6 +9,11 @@
 .menu-section, .menu-title {
     font-weight: 600;
 }
+.construction {
+    float: right;
+    position: relative;
+    vertical-align: middle;
+}
 
 svg {
     width: 25px;
