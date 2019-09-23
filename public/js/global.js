@@ -86,7 +86,7 @@ $( window ).resize(function() {
 $("#loadingModal").modal('show');
 
 // Close blue disclaimer in all sections after closing it once
-const showMsg = sessionStorage.getItem('showMsg');
+var showMsg = sessionStorage.getItem('showMsg');
 if (showMsg == 'false') {
   $('.page-disclaimer').hide();
 } else {
