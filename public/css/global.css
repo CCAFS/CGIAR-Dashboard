@@ -487,3 +487,9 @@ nav.main-menu ul li.active:after {
   z-index: 10;
   background-color: #ffffff;
 }
+
+.top-line {
+  width: 100%;
+  border-top: #373a3b solid 1px;
+  margin-bottom: 5px;
+}
