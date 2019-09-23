@@ -1,5 +1,5 @@
 var sheetsArray = [];
-var LOADED = 0;
+var loadedCount = 0;
 
 //Filters
 
@@ -9,12 +9,14 @@ var LOADED = 0;
 $(document).ready(init);
 
 function init() {
-  console.log('init partnerships 2018');
-  // TO REMOVE THIS LINE
-  setTimeout(function(){
-    $("#loadingModal").modal('hide');
-  }, 1000);
+  vizDataArray = [
 
+  ];
+
+  vizInitialited = [];
+  $.each(vizDataArray, function(i, data){
+    vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
+  });
 }
 
 function loadSheets(){
@@ -25,10 +27,10 @@ function loadSheets(){
 
 //Hide "loading" when all charts have loaded
 function loaded() {
-  LOADED += 1;
-  console.log(LOADED);
-  if (LOADED == 1) {
-    $("#loadingModal").modal('hide');
+  loadedCount += 1;
+  if (loadedCount == vizDataArray.length) {
+    //$("#loadingModal").modal('hide');
+    $(".loadingBlock").fadeOut();
     // Load sheets
     loadSheets();
   }

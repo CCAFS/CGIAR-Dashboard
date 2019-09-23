@@ -1,5 +1,5 @@
 var sheetsArray = [];
-var LOADED = 0;
+var loadedCount = 0;
 
 //Filters
 var FILTER_PGEO = "Geographic Scope";
@@ -34,7 +34,7 @@ function init() {
   vizInitialited = [];
     $.each(vizDataArray, function(i, data){
       vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
-  });  
+  });
 
 }
 
@@ -50,9 +50,10 @@ function loadSheets(){
 
 //Hide "loading" when all charts have loaded
 function loaded() {
-  LOADED += 1;
-  if (LOADED == 6) {
-    $("#loadingModal").modal('hide');
+  loadedCount += 1;
+  if (loadedCount == vizDataArray.length) {
+    //$("#loadingModal").modal('hide');
+    $(".loadingBlock").fadeOut();
     // Load sheets
     loadSheets();
   }

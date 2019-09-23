@@ -1,22 +1,26 @@
-    <div class="data-info">Data has been extracted directly from Management Information Systems (MARLO & MEL)</div>
+            <div class="data-info">Data has been extracted directly from Management Information Systems (MARLO & MEL)</div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
-    </div>
+
+    <!-- Other Libraries -->
+    <script type="text/javascript" src="./js/libs/jquery/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/libs/bootstrap/popper.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/libs/bootstrap/bootstrap.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/libs/URL/url.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/libs/tableau/tableau-2.2.2.min.js" charset="utf-8"></script>
+
+    <!-- Tableau custom functions-->
+    <script type="text/javascript" src="./js/tableauFunctions.js?20190923" charset="utf-8"></script>
+
+    <!-- Global Javascript -->
+    <script type="text/javascript" src="./js/global.js?20190923" charset="utf-8"></script>
 
     <!-- Custom Javascript -->
     {% for element in pageParams.customJS %}
-      <script type="text/javascript" src="{{ element }}"></script>
+      <script type="text/javascript" src="{{ element }}?20190923"></script>
     {% endfor %}
-
-    <!-- Other Libraries -->
-    <script type="text/javascript" src="./js/libs/URL/url.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="./js/tableauFunctions.js" charset="utf-8"></script>
-
-    <!-- Global Javascript -->
-    <script type="text/javascript" src="./js/global.js?20190912" charset="utf-8"></script>
-
-
 
     <!-- Embeding Javascript -->
     {% if embed %}

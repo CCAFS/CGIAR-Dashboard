@@ -97,8 +97,13 @@ function setFilterWorksheet(marks, filterName, sheetsArray, selectedSheet, selec
 
 function createTableauViz(elementID, view, events){
   var viz;
-  var container = document.getElementById(elementID)
+  var container = document.getElementById(elementID);
+  var $element = $('#'+ elementID);
   var url = appConfig.tableauView + "/" + view;
+
+  $element.css('position','relative');
+  $element.append('<div class="loadingBlock singleLoadingBlock"></div>')
+
   var options = {
     hideTabs: true,
     hideToolbar: true,
@@ -108,9 +113,12 @@ function createTableauViz(elementID, view, events){
     [FILTER_YEAR]: appConfig.yearSelected,
     onFirstInteractive: function(tableauEvent){
       //Hide scrollbars - disable scroll
-      var $iframe = $('#'+ elementID +' iframe');
+      var $iframe = $element.find('iframe');
       $iframe.attr("scrolling", "no");
       $iframe.css('overflow', 'hidden');
+
+      // Remove single element
+      $element.find(".singleLoadingBlock").removeClass('singleLoadingBlock');
 
       // Attach Events
       $.each(events, function(i, eventFunc){
@@ -121,17 +129,17 @@ function createTableauViz(elementID, view, events){
         console.log("CustomViewEvent");
       });
 
-      window
-
-      // setFrameSize(width: int, height: int)
+      // Resize a visualization to a size calculated
       var loop;
       $( window ).resize(function() {
         if(loop){
           clearTimeout(loop);
         }
         loop = setTimeout(function(){
-          //console.log('resize', elementID, $(container).width() +' x '+ $(container).height());
-          //viz.setFrameSize($(container).width(), $(container).height());
+          var width = parseInt($(container).width(), 10) ;
+          var height = parseInt($(container).height(), 10) ;
+          //console.log('resize', elementID, width +' x '+ height);
+          //viz.setFrameSize( width, height);
         }, 1000);
       });
 

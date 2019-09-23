@@ -1,5 +1,5 @@
 var sheetsArray = [];
-var LOADED = 0;
+var loadedCount = 0;
 
 //Filters
 var FILTER_TRAINEES = "";
@@ -19,7 +19,7 @@ function init() {
   vizDataArray = [
     { elementID: 'total-trainees', view: '4_0DBTraineesNumbers' },
     { elementID: 'trainees-term', view: '4_1DBTraineesDualAxischart' }
-  ]; 
+  ];
 
   vizInitialited = [];
     $.each(vizDataArray, function(i, data){
@@ -39,9 +39,10 @@ function loadSheets(){
 
 //Hide "loading" when all charts have loaded
 function loaded() {
-  LOADED += 1;
-  if (LOADED == 2) {
-    $("#loadingModal").modal('hide');
+  loadedCount += 1;
+  if (loadedCount == vizDataArray.length) {
+    //$("#loadingModal").modal('hide');
+    $(".loadingBlock").fadeOut();
     // Load sheets
     loadSheets();
   }

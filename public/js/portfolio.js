@@ -66,8 +66,9 @@ function loadSheets() {
 //Hide "loading" when all charts have loaded
 function loaded() {
   loadedCount += 1;
-  if (loadedCount == 8) {
-    $("#loadingModal").modal('hide');
+  if (loadedCount == vizDataArray.length) {
+    //$("#loadingModal").modal('hide');
+    $(".loadingBlock").fadeOut();
     // Load sheets
     loadSheets();
   }

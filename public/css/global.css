@@ -1,4 +1,4 @@
-body {  
+body {
   color: #2d2d2d;
   font-family: 'Open Sans', sans-serif;
 }
@@ -31,7 +31,7 @@ header .title {
 }
 
 .filter-component .filter-title {
-  padding: 7px 24px 7px 0;
+  padding: 7px 20px 7px 0;
   margin: 0;
   cursor: pointer;
   background-color: #00a0b0;
@@ -464,4 +464,26 @@ nav.main-menu ul li.active:after {
   font-family: 'Open Sans', sans-serif;
   color: #909090;
   text-align: center;
+}
+
+.loadingBlock {
+  background-color: #f6f6f6;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 0.7;
+}
+
+.loadingBlock.singleLoadingBlock {
+  background-color: #f6f6f6;
+  opacity: 1;
+  background-image: url('../images/loaders/three-dots.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 4em;
+}
+
+.filters .loadingBlock{
+  z-index: 10;
+  background-color: #ffffff;
 }

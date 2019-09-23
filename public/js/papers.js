@@ -1,5 +1,5 @@
 var sheetsArray = [];
-var LOADED = 0;
+var loadedCount = 0;
 
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
@@ -40,9 +40,10 @@ function loadSheets(){
 
 //Hide "loading" when all charts have loaded
 function loaded() {
-  LOADED += 1;
-  if (LOADED == 4) {
-    $("#loadingModal").modal('hide');
+  loadedCount += 1;
+  if (loadedCount == vizDataArray.length) {
+    //$("#loadingModal").modal('hide');
+    $(".loadingBlock").fadeOut();
     // Load sheets
     loadSheets();
   }
