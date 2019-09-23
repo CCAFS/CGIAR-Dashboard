@@ -465,3 +465,9 @@ nav.main-menu ul li.active:after {
   color: #909090;
   text-align: center;
 }
+
+.top-line {
+  width: 100%;
+  border-top: #373a3b solid 1px;
+  margin-bottom: 5px;
+}
