@@ -29,3 +29,24 @@
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
 }
+
+.charts {
+    margin-top: -3%;
+}
+
+.coming-soon { 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.section-link {
+    font-size: 9px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: #00a0b0;
+}
+
+.slo-description {
+    margin-bottom: 0;
+}

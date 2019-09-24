@@ -13,7 +13,7 @@ class ControlListService {
       array('name' => 'Home',                                     'action' => 'home',                 'type' => 'section',      'active' => true ),
       array('name' => '1. System Level Outcomes (SLOs)',          'action' => 'systemLevelOutcomes',  'type' => 'section',      'active' => true ),
       array('name' => '2. Outcome Impact Case Reports (OICR)',    'action' => 'caseReports',          'type' => 'section',      'active' => true ),
-      array('name' => '3. Progress Towards Milestones',           'action' => 'milestones',           'type' => 'section',      'active' => false ),
+      array('name' => '3. Progress Towards Milestones',           'action' => 'milestones',           'type' => 'section',      'active' => true ),
       array('name' => '4. Common Reporting Indicators',           'action' => 'innovations',          'type' => 'title',        'active' => true ),
       array('name' => 'Innovations',                              'action' => 'innovations',          'type' => 'subsection',   'active' => true ),
       array('name' => 'Partnerships',                             'action' => 'partnerships',         'type' => 'subsection',   'active' => true ),

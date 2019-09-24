@@ -1,10 +1,9 @@
 .map-container {
-    padding: 0.5em;
-    height: 390px;
+    height: 370px;
 }
   
 .donut-container {
-    height: 390px;
+    height: 370px;
 }
   
 .maturity-container {
@@ -23,14 +22,6 @@
     height: 400px;
 }
 
-.sdglogo {
-    height: 40px;
-    width: 306px;
-    float: right;
-    margin-top: -9px;
-    margin-right: -45px;
-}
-
 .sdg-title {
     font-size: 10px;
     margin-top: -10px;
@@ -43,4 +34,10 @@
 
 .topPartners-container {
     height: 222px;
+}
+
+@media (max-width: 985px){
+    .sdg-logo {
+        display: none;
+    }
 }
