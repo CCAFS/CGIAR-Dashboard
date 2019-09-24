@@ -46,7 +46,7 @@
     text-transform: uppercase;
 }
 
-.view-enabled {
+a {
     color: #00a0b0;
 }
 
@@ -55,7 +55,7 @@
     cursor: not-allowed;
 }
 
-.view-enabled:hover {
+a:hover {
     color: #247982;
 }
 
