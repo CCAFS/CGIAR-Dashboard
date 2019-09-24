@@ -460,8 +460,9 @@ nav.main-menu ul li.active:after {
 }
 
 .data-info {
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
   color: #909090;
   text-align: center;
 }
