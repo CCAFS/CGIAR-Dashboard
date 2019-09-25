@@ -28,12 +28,14 @@
     {% if embed %}
       {% include './pages/filters.twig' with pageParams %}
     {% endif %}
+    
 
   <div class="main-content">
 
     <button class="navbar-toggler" type="button">
         <span class="navbar-toggler-icon"></span>
     </button>
+    {% include './pages/message.twig' %}
 
     <div class="about-dashboard mb-4">
       <h6 class="cgiar-title">Welcome to the CGIAR results dashboard</h6>
@@ -48,7 +50,7 @@
 
     <div class="form-group row">
         <div class="col-md-4">
-        <div class="d-flex justify-content-end"><a href="./systemLevelOutcomes" class="section-link">View dashboard</a></div>
+        <div class="d-flex justify-content-end"><a href="./systemLevelOutcomes" class="section-link view-enabled">View dashboard</a></div>
         <div class="top-line"></div>
         <h6 class="subTitle">1. Contribution to System Level Outcomes (SLOs)</h6>
         <div class="form-group row slo-description">
@@ -60,7 +62,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="d-flex justify-content-end"><a href="./caseReports" class="section-link">View dashboard</a></div>
+          <div class="d-flex justify-content-end"><a href="./caseReports" class="section-link view-enabled">View dashboard</a></div>
           <div class="top-line"></div>
           <h6 class="subTitle">2. Outcome Impact Case Reports (OICRs)</h6>
           <div class="form-group">
@@ -71,7 +73,7 @@
           </div>
         </div>
         <div class="col-md-4">
-        <div class="d-flex justify-content-end"><a href="./milestones" class="section-link">View dashboard</a></div>
+        <div class="d-flex justify-content-end"><a href="./milestones" class="section-link view-enabled">View dashboard</a></div>
         <div class="top-line"></div>
         <h6 class="subTitle">3. Progress Towards Milestones</h6>
         <p class="indicator-description">Milestones are a specific point of progress, expected to be reached in the coming year.</p>
@@ -83,7 +85,7 @@
 
       <div class="form-group row">
         <div class="col-md-6">
-          <div class="d-flex justify-content-end"><a href="./innovations" class="section-link">View dashboard</a></div>
+          <div class="d-flex justify-content-end"><a href="./innovations" class="section-link view-enabled">View dashboard</a></div>
           <div class="top-line"></div>
           <h6 class="subTitle">4. Common Reporting Indicators (CRIs)</h6>
           <p class="indicator-description">Quantitative indicators are used by all CGIAR programs to track progress towards impact. </p>
@@ -91,9 +93,10 @@
         </div>
 
         <div class="col-md-6">
-          <div class="d-flex justify-content-end"><a class="section-link">View dashboard</a></div>
+          <div class="d-flex justify-content-end"><a class="section-link view-disabled">View dashboard</a></div>
           <div class="top-line"></div>
           <h6 class="subTitle">Insights</h6>
+           <div class="d-flex justify-content-center align-items-center"><div class="coming-soon mt-5"></div></div>
         </div>
 
       </div>

@@ -23,18 +23,6 @@
 
 
 <!-- Messages -->
-<div class="alert alert-info fade show animated zoomIn">
-    <i class="fas fa-info-circle"></i>
-    This website is currently being updated.
-</div>
-
-<div class="alert alert-info alert-dismissible page-disclaimer fade show animated zoomIn" style="display:none">
-    <button type="button" class="close closem" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    <i class="fas fa-info-circle"></i>
-    Data has been extracted directly from Management Information Systems (MARLO & MEL) and Annual Reports for 2017 and 2018. Note that different quality assurance processes were used in 2017 and 2018.
-</div>
 
 {% for message in messagesArray %}
     {% if currentSection == message.indicator %}

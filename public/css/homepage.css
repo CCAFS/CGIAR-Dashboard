@@ -34,9 +34,9 @@
     margin-top: -3%;
 }
 
-.coming-soon { 
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+.coming-soon:before {
+ content:url('../images/coming-soon.png');
+ opacity: 0.2;
 }
 
 .section-link {
@@ -44,8 +44,24 @@
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
+}
+
+a {
     color: #00a0b0;
 }
+
+.view-disabled {
+    color: #717171;
+    cursor: not-allowed;
+}
+
+a:hover {
+    color: #247982;
+}
+
+.view-enabled:after {
+    content:url('../images/redirect.png');
+   }
 
 .slo-description {
     margin-bottom: 0;
