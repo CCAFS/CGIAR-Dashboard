@@ -2,18 +2,18 @@ var sheetsArray = [];
 var loadedCount = 0;
 
 //Filters
+FILTER_STATUS = "Milestone Status ";
+FILTER_GENDER = "";
+FILTER_FP = "";
 
 //Sheets
-var SLOBAR_SHEET = "8.2 SH SLO Heatmap";
-var SLOTARGET11_SHEET = "8.4 SH SLO Target 1.1";
-var SLOTARGET12_SHEET = "8.4 SH SLO Target 1.2";
-var SLOTARGET21_SHEET = "8.4 SH SLO Target 2.1";
-var SLOTARGET23_SHEET = "8.4 SH SLO Target 2.3";
-var SLOTARGET33_SHEET = "8.4 SH SLO Target 3.3";
-var TOTALW_SHEET = "4.4 SH Total Women Part & Trainees Total";
-var TOTALM_SHEET = "4.5 SH Total Men Part & Trainees Total";
-var PARTICIPANTS_SHEET = "4.0 SH Participants Dual Axis chart";
-var TRAINEES_SHEET = "4.1 SH Trainees Dual Axis chart";
+var STATUS_SHEET = "8.1 SH Milestones Pie";
+var CCCAPDEV_SHEET = "8.2 SH Milestone cross-cutting CapDev ";
+var CCGENDER_SHEET = "8.2 SH Milestone cross-cutting Gender";
+var CCCLIMATE_SHEET = "8.2 SH Milestone cross- Climate"
+var CCYOUTH_SHEET = "8.2 SH Milestone cross-cutting Youth";
+var FLAGSHIPS_SHEET = "Milestones - Flagship ";
+var LIST_SHEET = "8.0 SH Milestones Details "
 
 $(document).ready(init);
 
@@ -26,16 +26,16 @@ function init() {
   ];
 
   vizInitialited = [];
-    $.each(vizDataArray, function(i, data){
-      vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
-    });
+  $.each(vizDataArray, function (i, data) {
+    vizInitialited.push(createTableauViz(data.elementID, data.view, [onSelectWorkSheet]))
+  });
 
 }
 
-function loadSheets(){
-  $.each(vizInitialited, function(i, viz){
+function loadSheets() {
+  $.each(vizInitialited, function (i, viz) {
     var sheetsList = viz.getWorkbook().getActiveSheet().getWorksheets();
-    $.each(sheetsList, function(i, s){
+    $.each(sheetsList, function (i, s) {
       sheetsArray.push(s);
     });
   });
@@ -52,10 +52,20 @@ function loaded() {
   }
 }
 
-function onSelectWorkSheet(mEvent){
+function onSelectWorkSheet(mEvent) {
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
-  return mEvent.getMarksAsync().then(function(marks){
-    //Filters
+  return mEvent.getMarksAsync().then(function (marks) {
+    switch (selectedSheetName) {
+      case STATUS_SHEET:
+        setFilterWorksheet(marks, FILTER_STATUS, sheetsArray, selectedSheet, selectedSheetName, 'Status');
+        break;
+      case GENDER_SHEET:
+        setFilterWorksheet(marks, FILTER_GENDER, sheetsArray, selectedSheet, selectedSheetName, 'Cross-Cutting Dimension');
+        break;
+      case FLAGSHIPS_SHEET:
+        setFilterWorksheet(marks, FILTER_FP, sheetsArray, selectedSheet, selectedSheetName, 'Flagship/Module');
+        break;
+    };
   });
 }

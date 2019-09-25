@@ -2,6 +2,8 @@ var sheetsArray = [];
 var loadedCount = 0;
 
 //Filters
+FILTER_SLO = "SLO";
+FILTER_TARGET = "ATTR(SLO)";
 
 //Sheets
 var SLOBAR_SHEET = "8.2 SH SLO Heatmap";
@@ -10,10 +12,6 @@ var SLOTARGET12_SHEET = "8.4 SH SLO Target 1.2";
 var SLOTARGET21_SHEET = "8.4 SH SLO Target 2.1";
 var SLOTARGET23_SHEET = "8.4 SH SLO Target 2.3";
 var SLOTARGET33_SHEET = "8.4 SH SLO Target 3.3";
-var TOTALW_SHEET = "4.4 SH Total Women Part & Trainees Total";
-var TOTALM_SHEET = "4.5 SH Total Men Part & Trainees Total";
-var PARTICIPANTS_SHEET = "4.0 SH Participants Dual Axis chart";
-var TRAINEES_SHEET = "4.1 SH Trainees Dual Axis chart";
 
 $(document).ready(init);
 
@@ -25,16 +23,16 @@ function init() {
   ];
 
   vizInitialited = [];
-    $.each(vizDataArray, function(i, data){
-      vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
-    });
+  $.each(vizDataArray, function (i, data) {
+    vizInitialited.push(createTableauViz(data.elementID, data.view, [onSelectWorkSheet]))
+  });
 
 }
 
-function loadSheets(){
-  $.each(vizInitialited, function(i, viz){
+function loadSheets() {
+  $.each(vizInitialited, function (i, viz) {
     var sheetsList = viz.getWorkbook().getActiveSheet().getWorksheets();
-    $.each(sheetsList, function(i, s){
+    $.each(sheetsList, function (i, s) {
       sheetsArray.push(s);
     });
   });
@@ -51,10 +49,29 @@ function loaded() {
   }
 }
 
-function onSelectWorkSheet(mEvent){
+function onSelectWorkSheet(mEvent) {
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
-  return mEvent.getMarksAsync().then(function(marks){
-    //Filters
+  return mEvent.getMarksAsync().then(function (marks) {
+    switch (selectedSheetName) {
+      case SLOBAR_SHEET:
+        setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
+        break;
+      case SLOTARGET11_SHEET:
+        setFilterWorksheet(marks, FILTER_TARGET, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
+        break;
+      case SLOTARGET12_SHEET:
+        setFilterWorksheet(marks, FILTER_TARGET, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
+        break;
+      case SLOTARGET21_SHEET:
+        setFilterWorksheet(marks, FILTER_TARGET, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
+        break;
+      case SLOTARGET23_SHEET:
+        setFilterWorksheet(marks, FILTER_TARGET, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
+        break;
+      case SLOTARGET33_SHEET:
+        setFilterWorksheet(marks, FILTER_TARGET, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
+        break;
+    };
   });
 }

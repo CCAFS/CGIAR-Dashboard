@@ -63,3 +63,11 @@
   color: #797979;
   margin-bottom: 5px; 
 }
+
+.partnerships-chart {
+  height: 450px;
+}
+
+.partnerships-detail {
+  height: 400px;
+}
