@@ -35,7 +35,6 @@ function getMarksValuesByFilter(marks, filterName){
     var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
-      console.log(pair);
       if (pair.fieldName == filterName) {
         var pairValue = pair.formattedValue;
         if (pairValue != null) {
