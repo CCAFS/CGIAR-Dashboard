@@ -128,7 +128,7 @@ $('.fprogram').change(function () {
 //Change header when scrolling.
 
 function scrollFunction() {
-  const distanceY = window.pageYOffset || document.body.scrollTop,
+  var distanceY = window.pageYOffset || document.body.scrollTop,
     shrinkOn = 50;
 
   if (distanceY > shrinkOn) {
