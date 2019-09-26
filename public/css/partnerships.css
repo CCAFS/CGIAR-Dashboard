@@ -64,10 +64,18 @@
   margin-bottom: 5px; 
 }
 
+.partnerships-mainarea {
+  height: 390px;
+}
+
 .partnerships-chart {
   height: 450px;
 }
 
 .partnerships-detail {
   height: 400px;
+}
+
+.partnerships-map {
+  height: 390px;
 }
