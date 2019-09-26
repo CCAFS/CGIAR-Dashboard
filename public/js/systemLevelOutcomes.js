@@ -3,7 +3,6 @@ var loadedCount = 0;
 
 //Filters
 FILTER_SLO = "SLO";
-FILTER_TARGET = "ATTR(SLO)";
 
 //Sheets
 var SLO1_SHEET = "8.2 SH SLO Numbers Top";
@@ -57,21 +56,6 @@ function onSelectWorkSheet(mEvent) {
     switch (selectedSheetName) {
       case SLO1_SHEET:
         setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
-        break;
-      case SLOTARGET11_SHEET:
-        setFilterWorksheet(marks, FILTER_TARGET, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
-        break;
-      case SLOTARGET12_SHEET:
-        setFilterWorksheet(marks, FILTER_TARGET, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
-        break;
-      case SLOTARGET21_SHEET:
-        setFilterWorksheet(marks, FILTER_TARGET, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
-        break;
-      case SLOTARGET23_SHEET:
-        setFilterWorksheet(marks, FILTER_TARGET, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
-        break;
-      case SLOTARGET33_SHEET:
-        setFilterWorksheet(marks, FILTER_TARGET, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
         break;
     };
   });
