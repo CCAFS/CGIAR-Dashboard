@@ -2,15 +2,13 @@ var sheetsArray = [];
 var loadedCount = 0;
 
 //Filters
-var FILTER_TRAINEES = "";
+var FILTER_TRAINEES = "Training Term";
 
 //Sheets
-var TOTALP_SHEET = "4.2 SH CapDev Total Participants";
-var TOTALT_SHEET = "4.3 SH CapDev Total Trainees ";
-var TOTALW_SHEET = "4.4 SH Total Women Part & Trainees Total";
-var TOTALM_SHEET = "4.5 SH Total Men Part & Trainees Total";
-var PARTICIPANTS_SHEET = "4.0 SH Participants Dual Axis chart";
-var TRAINEES_SHEET = "4.1 SH Trainees Dual Axis chart";
+var TOTALT_SHEET = "4.1 SH Trainees 2018  - Total";
+var TOTALW_SHEET = "4.1 SH Trainees 2018  - Women";
+var TOTALM_SHEET = "4.1 SH Trainees 2018  - Men";
+var TRAINEESBAR_SHEET = "4.1 SH Trainees 2018 Bar";
 
 $(document).ready(init);
 
@@ -53,8 +51,8 @@ function onSelectWorkSheet(mEvent){
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function(marks){
     switch(selectedSheetName) {
-      case TRAINEES_SHEET:
-        setFilterWorksheet(marks, FILTER_TRAINEES, sheetsArray, selectedSheet, selectedSheetName, 'Journal');
+      case TRAINEESBAR_SHEET:
+        setFilterWorksheet(marks, FILTER_TRAINEES, sheetsArray, selectedSheet, selectedSheetName, 'Training Term');
         break;
     }
   });
