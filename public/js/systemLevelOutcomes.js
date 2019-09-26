@@ -2,11 +2,13 @@ var sheetsArray = [];
 var loadedCount = 0;
 
 //Filters
-FILTER_SLO = "SLO";
+FILTER_SLO = "ATTR(SLO)";
 FILTER_TARGET = "ATTR(SLO)";
 
 //Sheets
-var SLOBAR_SHEET = "8.2 SH SLO Heatmap";
+var SLO1_SHEET = "8.3 SH SLO 1 Total-Link";
+var SLO2_SHEET = "8.3 SH SLO 2 Total-Link ";
+var SLO3_SHEET = "8.3 SH SLO 3 Total-Link";
 var SLOTARGET11_SHEET = "8.4 SH SLO Target 1.1";
 var SLOTARGET12_SHEET = "8.4 SH SLO Target 1.2";
 var SLOTARGET21_SHEET = "8.4 SH SLO Target 2.1";
@@ -54,7 +56,13 @@ function onSelectWorkSheet(mEvent) {
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function (marks) {
     switch (selectedSheetName) {
-      case SLOBAR_SHEET:
+      case SLO1_SHEET:
+        setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
+        break;
+      case SLO2_SHEET:
+        setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
+        break;
+      case SLO3_SHEET:
         setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
         break;
       case SLOTARGET11_SHEET:
