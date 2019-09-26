@@ -2,17 +2,14 @@ var sheetsArray = [];
 var loadedCount = 0;
 
 //Filters
-FILTER_STATUS = "Milestone Status ";
-FILTER_GENDER = "";
-FILTER_FP = "";
+FILTER_STATUS = "Milestone Status";
+FILTER_GENDER = "POWB_NAME (DIM_CROSS_CUTTING_LEVELS2)";
+FILTER_FP = "Milestone Status";
 
 //Sheets
 var STATUS_SHEET = "8.1 SH Milestones Pie";
-var CCCAPDEV_SHEET = "8.2 SH Milestone cross-cutting CapDev ";
 var CCGENDER_SHEET = "8.2 SH Milestone cross-cutting Gender";
-var CCCLIMATE_SHEET = "8.2 SH Milestone cross- Climate"
-var CCYOUTH_SHEET = "8.2 SH Milestone cross-cutting Youth";
-var FLAGSHIPS_SHEET = "Milestones - Flagship ";
+var FLAGSHIP_SHEET = "Milestones - Flagship ";
 var LIST_SHEET = "8.0 SH Milestones Details "
 
 $(document).ready(init);
@@ -60,10 +57,10 @@ function onSelectWorkSheet(mEvent) {
       case STATUS_SHEET:
         setFilterWorksheet(marks, FILTER_STATUS, sheetsArray, selectedSheet, selectedSheetName, 'Status');
         break;
-      case GENDER_SHEET:
+      case CCGENDER_SHEET:
         setFilterWorksheet(marks, FILTER_GENDER, sheetsArray, selectedSheet, selectedSheetName, 'Cross-Cutting Dimension');
         break;
-      case FLAGSHIPS_SHEET:
+      case FLAGSHIP_SHEET:
         setFilterWorksheet(marks, FILTER_FP, sheetsArray, selectedSheet, selectedSheetName, 'Flagship/Module');
         break;
     };
