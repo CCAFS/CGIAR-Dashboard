@@ -61,7 +61,7 @@ function onSelectWorkSheet(mEvent) {
         setFilterWorksheet(marks, FILTER_GENDER, sheetsArray, selectedSheet, selectedSheetName, 'Cross-Cutting Dimension');
         break;
       case FLAGSHIP_SHEET:
-        setFilterWorksheet(marks, FILTER_FP, sheetsArray, selectedSheet, selectedSheetName, 'Flagship/Module');
+        setFilterWorksheet(marks, FILTER_FP, sheetsArray, selectedSheet, selectedSheetName, 'Status');
         break;
     };
   });
