@@ -19,17 +19,6 @@
     height:340px;
 }
 
-.about-dashboard {
-    text-align: justify;
-    font-size: 14px;
-}
-
-.cgiar-title {
-    font-weight: 700;
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-}
-
 .charts {
     margin-top: -3%;
 }
@@ -40,23 +29,15 @@
 }
 
 .section-link {
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
 }
 
-a {
-    color: #00a0b0;
-}
-
 .view-disabled {
     color: #717171;
     cursor: not-allowed;
-}
-
-a:hover {
-    color: #247982;
 }
 
 .view-enabled:after {

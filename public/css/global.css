@@ -494,3 +494,21 @@ nav.main-menu ul li.active:after {
   border-top: #373a3b solid 1px;
   margin-bottom: 5px;
 }
+
+.section-title {
+  font-weight: 700;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+.section-description {
+  text-align: justify;
+  font-size: 14px;
+}
+
+a {
+  color: #00a0b0;
+}
+
+a:hover {
+    color: #247982;
+}

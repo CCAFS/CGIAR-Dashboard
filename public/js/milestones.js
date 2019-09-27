@@ -4,7 +4,7 @@ var loadedCount = 0;
 //Filters
 FILTER_STATUS = "Milestone Status";
 FILTER_GENDER = "POWB_NAME (DIM_CROSS_CUTTING_LEVELS2)";
-FILTER_FP = "Milestone Status";
+FILTER_FP = "Flagship - Module Title ";
 
 //Sheets
 var STATUS_SHEET = "8.1 SH Milestones Pie";
@@ -61,7 +61,7 @@ function onSelectWorkSheet(mEvent) {
         setFilterWorksheet(marks, FILTER_GENDER, sheetsArray, selectedSheet, selectedSheetName, 'Cross-Cutting Dimension');
         break;
       case FLAGSHIP_SHEET:
-        setFilterWorksheet(marks, FILTER_FP, sheetsArray, selectedSheet, selectedSheetName, 'Status');
+        setFilterWorksheet(marks, FILTER_FP, sheetsArray, selectedSheet, selectedSheetName, 'Flagship');
         break;
     };
   });
