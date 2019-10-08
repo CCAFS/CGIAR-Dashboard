@@ -16,7 +16,7 @@
 }
 
 .numbers {
-    height:340px;
+    height:90px;
 }
 
 .charts {
@@ -50,4 +50,8 @@
 
 .indicators-top {
     height: 16px;
+}
+
+.insights { 
+    height:340px;
 }
