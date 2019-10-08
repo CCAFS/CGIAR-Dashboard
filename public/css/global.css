@@ -513,6 +513,11 @@ a:hover {
     color: #247982;
 }
 
+a.internalLink:hover {
+  text-decoration: none;
+  text-shadow: #2d2d2d;
+}
+
 .indicator-icon{
   font-size: 60px;
 }

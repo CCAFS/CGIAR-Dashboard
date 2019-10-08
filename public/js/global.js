@@ -21,7 +21,7 @@ function updateUrlParameters(){
   setHostUrlParameters(parameters[filterType], checkedValue);
 
   // Update navigation URL parameters
-  $('.navbar-nav a, .nav.sideBar a').each(function(){
+  $('.navbar-nav a, .nav.sideBar a, a.internalLink').each(function(){
     var navU  = new Url($(this).attr('href'));
     if(checkedValue){
       navU.query[parameters[filterType]] = checkedValue;
