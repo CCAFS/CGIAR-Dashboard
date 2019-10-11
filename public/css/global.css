@@ -453,6 +453,7 @@ nav.main-menu ul li.active:after {
   font-size: 0.88em;
   font-weight: normal;
   cursor: pointer;
+  white-space:initial;
 }
 
 .col-md-9 {
