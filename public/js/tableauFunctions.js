@@ -32,7 +32,7 @@ function clearDashboardFilter(sheets, filterName, excludedSheetName) {
 function getMarksValuesByFilter(marks, filterName){
   var outputs = [];
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-    var pairs = marks[markIndex].getPairs();
+    var pairs = marks[markIndex].getPairs(); 
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
       if (pair.fieldName == filterName) {
