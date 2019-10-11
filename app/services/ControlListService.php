@@ -21,7 +21,8 @@ class ControlListService {
       array('name' => 'Capacity Development',                     'action' => 'capDev',               'type' => 'subsection',   'active' => true ),
       array('name' => 'Publications',                             'action' => 'publications',         'type' => 'subsection',   'active' => true ),
       array('name' => 'Altmetric',                                'action' => 'altmetric',            'type' => 'subsection',   'active' => true ),
-      array('name' => '5. Insights',                              'action' => 'insights',             'type' => 'section',      'active' => true )
+      array('name' => '5. Insights',                              'action' => 'insights',             'type' => 'section',      'active' => true ),
+      array('name' => 'OICR Test',                                'action' => 'oicr',                 'type' => 'section',      'active' => true )
     );
 
 
