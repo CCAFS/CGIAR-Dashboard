@@ -614,6 +614,6 @@ a.internalLink:hover {
   color: #ffa600;
 }
 
-.sectionAction-oicr {
+.sectionAction-oicr, .sectionAction-innovationsTest, .sectionAction-milestonesTest {
   display: none;
 }
