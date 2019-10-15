@@ -40,6 +40,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     'sections' => $sections,
     'crps' => $controlList->getCrps(),
     'years' => $controlList->getYears(),
+    'chartsInfo' => $controlList->getChartsInfo(),
     'messagesArray' => $controlList->getMessages(),
     'currentSection' => $currentSection,
     'entitySelected' => $entitySelected,

@@ -35,6 +35,8 @@
 
     {% include './pages/message.twig' %}
 
+    {% import './macros/tooltips.twig' as tooltips %}
+
     <div class="mb-4">
       <h6 class="section-title">Policies</h6>
       <p class="section-description">Policies, legal instruments or investments modified in design or implementation, informed by CGIAR research.</p>
@@ -74,7 +76,11 @@
            </div>
           <div class="col-md-6">
             <div class="top-line"></div>
-            <h6 class="subTitle">Policies by Type</h6>
+            <h6 class="subTitle">
+            {% for chartInfo in chartsInfo %}
+              {{ tooltips.tooltipInfo('Policies by Type', chartInfo.title, chartInfo.info) }}
+            {% endfor %} 
+            Policies by Type</h6>
             <div class="investment-type">
               <div id="policies-investype"></div>
             </div>

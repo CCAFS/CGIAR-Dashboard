@@ -35,6 +35,8 @@
 
       {% include './pages/message.twig' %}
 
+      {% import './macros/tooltips.twig' as tooltips %}
+
       <div class="mb-4">
       <h6 class="section-title">Innovations</h6>
       <p class="section-description">Innovations are new or significantly improved outputs or groups of outputs - including management practices, knowledge or technologies.</p>
@@ -53,7 +55,11 @@
         </div>
         <div class="col-md-5">
          <div class="top-line"></div>
-          <h6 class="subTitle">Innovations by Type</h6>
+          <h6 class="subTitle">
+          {% for chartInfo in chartsInfo %}
+            {{ tooltips.tooltipInfo('Innovations by Type', chartInfo.title, chartInfo.info) }}
+          {% endfor %}
+          Innovations by Type<h6>
           <div class="itype-container">
           <div id="innovations-type"></div>
           </div>

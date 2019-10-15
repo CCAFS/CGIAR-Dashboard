@@ -35,6 +35,8 @@
 
       {% include './pages/message.twig' %}
 
+      {% import './macros/tooltips.twig' as tooltips %}
+
       <div class="mb-4">
         <h6 class="section-title">Publications</h6>
         <p class="section-description">CGIAR research papers published in peer reviewed journals.</p>
@@ -51,7 +53,11 @@
             <div id="total-papers"></div>
           </div>
           </center>
-          <h6 class="subTitle">Number of Publications</h6>
+          <h6 class="subTitle">
+          {% for chartInfo in chartsInfo %}
+            {{ tooltips.tooltipInfo('Number of Publications', chartInfo.title, chartInfo.info) }}
+          {% endfor %}
+          Number of Publications</h6>
           <div class="oaisi-container">
             <div id="total-oaisi"></div>
           </div>

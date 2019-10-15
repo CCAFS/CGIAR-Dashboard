@@ -8,8 +8,8 @@ var FILTER_MAP = "Country Name -To use";
 var FILTER_REGION = "Geographic Scope ";
 var FILTER_GLOBAL = "Geographic Scope ";
 var FILTER_DEGREE = "Degree of Innovation";
-var FILTER_LEAD = "Lead Partner Acronym";
-var FILTER_CONTRIBUTING = "Acronym (Dim Ext Partners1)";
+var FILTER_LEAD = "Lead Partner";
+var FILTER_CONTRIBUTING = "External Contributing Partner";
 
 //Sheets
 var ITYPE_SHEET = "2.2 Innovation by Type -pie ";

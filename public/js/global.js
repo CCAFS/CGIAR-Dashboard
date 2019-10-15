@@ -2,6 +2,7 @@ $(document).ready(function(){
   msieversion();
   isZoomed();
   $('input[type="radio"]').on('change', updateUrlParameters);
+  $('[data-toggle="tooltip"]').tooltip();
 });
 
 

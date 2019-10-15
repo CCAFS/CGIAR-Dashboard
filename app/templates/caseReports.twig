@@ -38,6 +38,8 @@
 
     {% include './pages/message.twig' %}
 
+    {% import './macros/tooltips.twig' as tooltips %}
+
     <div class="mb-4">
       <h6 class="section-title">Outcome Impact Case Reports (OICR)</h6>
       <p class="section-description">Short reports describing the contribution of CGIAR research to development outcomes and impact.</p>
@@ -81,7 +83,11 @@
      <div class="form-group row">
         <div class="col-md-4">
         <div class="top-line"></div>
-        <h6 class="subTitle">Cross-cutting Topics</h6>
+        <h6 class="subTitle">
+        {% for chartInfo in chartsInfo %}
+            {{ tooltips.tooltipInfo('Cross-Cutting Topics', chartInfo.title, chartInfo.info) }}
+          {% endfor %}
+        Cross-cutting Topics</h6>
           <div class="cross-container">
             <div id="cci-p"></div>
           </div>

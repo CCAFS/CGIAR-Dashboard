@@ -617,3 +617,20 @@ a.internalLink:hover {
 .sectionAction-oicr, .sectionAction-innovationsTest, .sectionAction-milestonesTest {
   display: none;
 }
+
+.chart-tooltip { 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding: 1px 4px 1px 4px;
+  border-radius: 100%;
+  font-size: 11px;
+  background-color: #ffa600;
+  color: #ffffff;
+  float: right;
+}
+
+.tooltip-inner {
+  font-family: 'Open Sans', sans-serif;
+  text-align: justify;
+  max-width: 400px;
+}

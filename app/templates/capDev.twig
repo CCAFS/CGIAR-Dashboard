@@ -35,6 +35,8 @@
       </button>
 
       {% include './pages/message.twig' %}
+      
+      {% import './macros/tooltips.twig' as tooltips %}
 
       <div class="mb-4">
         <h6 class="section-title">Capacity Development</h6>
@@ -53,7 +55,11 @@
 
         <div class="col-md-6">
         <div class="top-line"></div>
-          <h6 class="subTitle">Trainees: Total Women and Men by Training Term</h6>
+          <h6 class="subTitle">
+          {% for chartInfo in chartsInfo %}
+            {{ tooltips.tooltipInfo('Training Terms', chartInfo.title, chartInfo.info) }}
+          {% endfor %}
+          Trainees: Total Women and Men by Training Term</h6>
           <div class="trainees-container">
             <div id="trainees-term"></div>
           </div>
