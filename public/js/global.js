@@ -2,7 +2,9 @@ $(document).ready(function(){
   msieversion();
   isZoomed();
   $('input[type="radio"]').on('change', updateUrlParameters);
-  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="tooltip"]').tooltip({
+    delay: {show: 0, hide: 2000}
+  });
 });
 
 
