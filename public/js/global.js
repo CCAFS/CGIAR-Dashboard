@@ -5,6 +5,26 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip({
     delay: {show: 0, hide: 2000}
   });
+
+  $('[data-toggle="popover"]').popover({
+    trigger: 'manual',
+  	animate: false,
+    html: true,
+    placement: 'auto'
+  }).on('mouseenter', function () {
+    var _this = this;
+    $(this).popover('show');
+    $('.popover').on('mouseleave', function () {
+        $(_this).popover('hide');
+    });
+}).on('mouseleave', function () {
+    var _this = this;
+    setTimeout(function () {
+        if (!$('.popover:hover').length) {
+            $(_this).popover('hide');
+        }
+    }, 500);
+});
 });
 
 

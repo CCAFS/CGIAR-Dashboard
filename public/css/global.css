@@ -629,8 +629,30 @@ a.internalLink:hover {
   float: right;
 }
 
-.tooltip-inner {
+.popover {
   font-family: 'Open Sans', sans-serif;
   text-align: justify;
   max-width: 400px;
+  background-color: rgba(0,0,0,.92);
+  border: 0px;
+}
+
+.popover-body {
+  color: #FFFFFF;
+}
+
+.bs-popover-auto[x-placement^=bottom] .arrow::after, .bs-popover-bottom .arrow::after {
+  border-bottom-color: rgba(0,0,0,.92);
+}
+
+.bs-popover-auto[x-placement^=left] .arrow::after, .bs-popover-left .arrow::after {
+  border-left-color: rgba(0,0,0,.92);
+}
+
+.bs-popover-auto[x-placement^=right] .arrow::after, .bs-popover-right .arrow::after {
+  border-right-color: rgba(0,0,0,.92);
+}
+
+.bs-popover-auto[x-placement^=top] .arrow::after, .bs-popover-top .arrow::after {
+  border-top-color: rgba(0,0,0,.92);
 }
