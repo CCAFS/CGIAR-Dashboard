@@ -618,6 +618,12 @@ a.internalLink:hover {
   display: none;
 }
 
+.contact-info {
+  text-transform: none;
+  font-size: 10px;
+  margin-top: -9px;
+}
+
 .chart-tooltip { 
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
