@@ -58,7 +58,7 @@ function onSelectWorkSheet(mEvent) {
         setFilterWorksheet(marks, FILTER_STATUS, sheetsArray, selectedSheet, selectedSheetName, 'Status');
         break;
       case CCGENDER_SHEET:
-        setFilterWorksheet(marks, FILTER_GENDER, sheetsArray, selectedSheet, selectedSheetName, 'Cross-Cutting Dimension');
+        setFilterWorksheet(marks, FILTER_GENDER, sheetsArray, selectedSheet, selectedSheetName, 'Gender Relevance');
         break;
       case FLAGSHIP_SHEET:
         setFilterWorksheet(marks, FILTER_FP, sheetsArray, selectedSheet, selectedSheetName, 'Flagship');

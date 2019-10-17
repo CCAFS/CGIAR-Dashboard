@@ -129,6 +129,11 @@ function createTableauViz(elementID, view, events){
         console.log("CustomViewEvent");
       });
 
+      window.setInterval(RefreshViz, 100000);
+      function RefreshViz(){
+        viz.refreshDataAsync();  
+      }
+
       // Resize a visualization to a size calculated
       var loop;
       $( window ).resize(function() {
@@ -156,7 +161,7 @@ function createTableauViz(elementID, view, events){
   };
   viz = new tableau.Viz(container, url, options);
 
-  return viz;
+  return viz; 
 }
 
 function getTableauDataAsync(sheet, callback){
