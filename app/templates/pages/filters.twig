@@ -11,7 +11,7 @@
   </div>
   <!-- CRPs -->
   <div class="filter-component fprogram">
-    <p id="filtertitlec" class="filter-title portfolio">{{ entitySelected|default('Research Portfolio') }}</p>
+    <p id="filtertitlec" class="filter-title portfolio">{{ entitySelected|default('Research Programs') }}</p>
     <ul class="filter-items items-programs">
       {% for crp in crps %}
         <li> <small> {{ forms.checkmark('crps', crp.acronym , crp.name, (crp.acronym == entitySelected)) }} </small>  </li>
