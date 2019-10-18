@@ -3,7 +3,7 @@ var loadedCount = 0;
 
 // Section Filters
 var FILTER_COUNTRY = "Country Name";
-var FILTER_REGION = "Name (Dim Geo Scopes)";
+var FILTER_REGION = "";
 var FILTER_GLOBAL = "Reg Un Name";
 var FILTER_SLO = "SLO";
 var FILTER_CCI = "CCI";
@@ -90,7 +90,7 @@ function onSelectWorkSheet(mEvent) {
       case CMAP_SHEET:
         setFilterWorksheet(marks, FILTER_COUNTRY, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         //setFilterWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, selectedSheetName, 'Region');
-        //setFilterWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet, selectedSheetName, 'Global');
+        setFilterWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet, selectedSheetName, 'Global');
         break;
       case GENDER_SHEET:
         setFilterWorksheet(marks, FILTER_GENDER, sheetsArray, selectedSheet, selectedSheetName, 'Gender Relevance');

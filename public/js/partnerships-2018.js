@@ -3,7 +3,7 @@ var loadedCount = 0;
 
 //Filters
 var FILTER_MAP = "Country Name";
-var FILTER_AREA = "Partnership Main Areas";
+var FILTER_AREA = "Partnership Main Areas (group)";
 var FILTER_TYPE = "Type";
 var FILTER_TOP = "Partner Name";
 
