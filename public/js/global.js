@@ -62,7 +62,7 @@ function updateUrlParameters(){
         // Set filter to all sheets
         appyDashboardFilter(sheetsArray, FILTER_CRPS, checkedValue);
       } else {
-        $filterTitle.text("Research Portfolio");
+        $filterTitle.text("Research Program");
         // Clear filter from all sheets
         clearDashboardFilter(sheetsArray, FILTER_CRPS);
       }
