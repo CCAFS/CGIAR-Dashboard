@@ -4,7 +4,7 @@ var loadedCount = 0;
 //Filters
 FILTER_STATUS = "Milestone Status";
 FILTER_GENDER = "POWB_NAME (DIM_CROSS_CUTTING_LEVELS2)";
-FILTER_FP = "Flagship - Module Title ";
+FILTER_FP = "Flagship Title";
 
 //Sheets
 var STATUS_SHEET = "8.1 SH Milestones Pie";
@@ -62,6 +62,7 @@ function onSelectWorkSheet(mEvent) {
         break;
       case FLAGSHIP_SHEET:
         setFilterWorksheet(marks, FILTER_FP, sheetsArray, selectedSheet, selectedSheetName, 'Flagship');
+        setFilterWorksheet(marks, FILTER_STATUS, sheetsArray, selectedSheet, selectedSheetName, 'Flagship');
         break;
     };
   });
