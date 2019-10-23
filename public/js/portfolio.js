@@ -95,7 +95,7 @@ function onSelectWorkSheet(mEvent) {
         setFilterExcludeWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, excludeSheetsGlobal, 'Geographic Scope');
         break;
       case CMAP_SHEET:
-        setFilterWorksheet(marks, FILTER_COUNTRY, sheetsArray, selectedSheet, selectedSheetName, 'Country');
+        setFilterExcludeWorksheet(marks, FILTER_COUNTRY, sheetsArray, selectedSheet, excludeSheetsGlobal, 'Country');
         break;
       case GENDER_SHEET:
         setFilterWorksheet(marks, FILTER_GENDER, sheetsArray, selectedSheet, selectedSheetName, 'Gender Relevance');

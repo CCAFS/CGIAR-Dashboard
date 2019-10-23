@@ -6,7 +6,7 @@ var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
 var FILTER_MAP = "Country Name -To use";
 var FILTER_REGION = "Geographic Scope ";
-var FILTER_GLOBAL = "Geographic Scope ";
+var FILTER_GLOBAL = "Reg Un Name";
 var FILTER_DEGREE = "Degree of Innovation";
 var FILTER_LEAD = "Lead Partner";
 var FILTER_CONTRIBUTING = "External Contributing Partner";
@@ -65,6 +65,8 @@ function loaded() {
 function onSelectWorkSheet(mEvent){
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
+  excludedSheetGlobal = [GLOBAL_SHEET, REGIONAL_SHEET, IMAP_SHEET];
+
   return mEvent.getMarksAsync().then(function(marks){
     switch(selectedSheetName) {
       case ISTAGE_SHEET:
@@ -74,13 +76,13 @@ function onSelectWorkSheet(mEvent){
         setFilterWorksheet(marks, FILTER_TYPE, sheetsArray, selectedSheet, selectedSheetName, 'Type');
         break;
       case REGIONAL_SHEET:
-        setFilterWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, selectedSheetName, 'Geographic Scope');
+        setFilterExcludeWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, excludedSheetGlobal, 'Geographic Scope');
         break;
       case GLOBAL_SHEET:
-        setFilterWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet, selectedSheetName, 'Geographic Scope');
+        setFilterExcludeWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet, excludedSheetGlobal, 'Geographic Scope');
         break;  
       case IMAP_SHEET:
-        setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
+        setFilterExcludeWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, excludedSheetGlobal, 'Country');
         break;
       case TOPLEAD_SHEET:
         setFilterWorksheet(marks, FILTER_LEAD, sheetsArray, selectedSheet, selectedSheetName, 'Lead Organization');
