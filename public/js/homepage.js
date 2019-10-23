@@ -7,7 +7,7 @@ function init() {
 
   vizDataArray = [
     { elementID: 'slo-bar', view: 'HomeDB-SLOBarTop' },
-    { elementID: 'oicr-chart', view: 'HomeDB-OICRBarchartyear' },
+    { elementID: 'oicr-chart', view: 'HomeDB-OICRStageofMaturity' },
     { elementID: 'milestones', view: 'HomeDB-Milestonesdonut' },
     { elementID: 'indicators-top', view: 'HomeDBIndicatorNumbers-Top' },
     { elementID: 'indicators-bottom', view: 'HomeDBIndicatorNumbers-Down' },
@@ -17,6 +17,15 @@ function init() {
   vizInitialited = [];
   $.each(vizDataArray, function (i, data) {
     vizInitialited.push(createTableauViz(data.elementID, data.view, [onSelectWorkSheet]))
+  });
+
+  $("input[name='years']").change(function(){
+    var yearValue =  $(this).val();
+    if (yearValue == "2018" || yearValue == "2017") {
+      $('.year-tag').hide(500);
+    } else {
+      $('.year-tag').show(500);
+    }
   });
 
 }
