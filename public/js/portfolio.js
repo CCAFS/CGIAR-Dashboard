@@ -78,6 +78,7 @@ function loaded() {
 function onSelectWorkSheet(mEvent) {
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
+  excludeSheetsGlobal = [GLOBAL_SHEET, REGIONAL_SHEET, CMAP_SHEET];
 
   return mEvent.getMarksAsync().then(function (marks) {
     switch (selectedSheetName) {
@@ -88,10 +89,10 @@ function onSelectWorkSheet(mEvent) {
         setFilterWorksheet(marks, FILTER_CCI, sheetsArray, selectedSheet, selectedSheetName, 'Cross Cutting');
         break;
       case GLOBAL_SHEET:
-        setFilterWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet, selectedSheetName, 'Geographic Scope');
+        setFilterExcludeWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet,   excludeSheetsGlobal, 'Geographic Scope');
         break;
       case REGIONAL_SHEET:
-        setFilterWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, selectedSheetName, 'Geographic Scope');
+        setFilterExcludeWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, excludeSheetsGlobal, 'Geographic Scope');
         break;
       case CMAP_SHEET:
         setFilterWorksheet(marks, FILTER_COUNTRY, sheetsArray, selectedSheet, selectedSheetName, 'Country');
