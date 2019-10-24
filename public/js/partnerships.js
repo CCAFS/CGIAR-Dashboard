@@ -24,7 +24,7 @@ function init() {
   vizDataArray = [
    // { elementID: 'total-partnerships', view: '3_1DBTotalPartnerships_1' },
     { elementID: 'tp-phase', view: '3_2DBTotalPartbyStage' },
-    { elementID: 'partnerships-map', view: '3_4DBKeyPartnershipsmap' },
+    { elementID: 'partnerships-map', view: 'DBKeyPartnershipsMap' },
     { elementID: 'total-keyp', view: '3_4DBKeyPartnerships' },
     { elementID: 'keyp-phase', view: '3_5DBKeyPartbyStage' },
     { elementID: 'keyp-type', view: '3_6DBKeyPartbyStageandProgramType2' },
