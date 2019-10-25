@@ -51,7 +51,7 @@ header .title {
   background-color: #c3c3c3;
 }
 
-.filter-component .filter-title::before {
+.filter-loaded .filter-title::before {
   content: '';
   background-color: #fff;
   padding: 9px 18px;
@@ -61,7 +61,18 @@ header .title {
   background-repeat: no-repeat;
 }
 
-.filter-component:hover .filter-items {
+.filter-loading .filter-title::before {
+  content: '';
+  background-color: #fff;
+  padding: 9px 18px;
+  margin-right: 15px;
+  background-position: 50%;
+  background-image: url(../images/loaders/oval.svg);
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+
+.filter-component.filter-loaded:hover .filter-items {
   display: block !important;
 }
 
@@ -624,7 +635,7 @@ a.internalLink:hover {
   margin-top: -9px;
 }
 
-.chart-tooltip { 
+.chart-tooltip {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   padding: 1px 4px 1px 4px;

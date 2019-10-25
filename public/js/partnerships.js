@@ -22,7 +22,7 @@ $(document).ready(init);
 function init() {
 
   vizDataArray = [
-   // { elementID: 'total-partnerships', view: '3_1DBTotalPartnerships_1' },
+    { elementID: 'total-partnerships', view: '3_1DBTotalPartnerships' },
     { elementID: 'tp-phase', view: '3_2DBTotalPartbyStage' },
     { elementID: 'partnerships-map', view: 'DBKeyPartnershipsMap' },
     { elementID: 'total-keyp', view: '3_4DBKeyPartnerships' },

@@ -41,6 +41,7 @@ function loaded() {
   if (loadedCount == vizDataArray.length) {
     //$("#loadingModal").modal('hide');
     $(".loadingBlock").fadeOut();
+    $(".filter-component").removeClass("filter-loading").addClass("filter-loaded");
     // Load sheets
     loadSheets();
   }
