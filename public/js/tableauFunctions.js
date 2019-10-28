@@ -20,23 +20,6 @@ function applyDoubleFilter(sheets, filterName, filterValues, excludedSheetName) 
   });
 }
 
-function applyFilterExclude(sheets, filterName, filterValues, excludedSheetName) {
-  $.each(sheets, function (i, sheet) {
-    if( !(excludedSheetName.includes(sheet.getName()))){
-      sheet.applyFilterAsync(filterName, filterValues, tableau.FilterUpdateType.ADD);
-    }
-  });
-}
-
-function clearFilterExclude(sheets, filterName, excludedSheetName) {
-  $.each(sheets, function (i, sheet) {
-    if(!(excludedSheetName.includes(sheet.getName()))){
-      sheet.clearFilterAsync(filterName);
-      //sheet.applyFilterAsync(filterName, "", tableau.FilterUpdateType.ALL);
-    }
-  });
-}
-
 function clearDashboardFilter(sheets, filterName, excludedSheetName) {
   $.each(sheets, function (i, sheet) {
     if(sheet.getName() !=  excludedSheetName){
@@ -49,7 +32,7 @@ function clearDashboardFilter(sheets, filterName, excludedSheetName) {
 function getMarksValuesByFilter(marks, filterName){
   var outputs = [];
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {
-    var pairs = marks[markIndex].getPairs(); 
+    var pairs = marks[markIndex].getPairs();
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
       if (pair.fieldName == filterName) {
@@ -112,55 +95,6 @@ function setFilterWorksheet(marks, filterName, sheetsArray, selectedSheet, selec
   }
 }
 
-function setFilterExcludeWorksheet(marks, filterName, sheetsArray, selectedSheet, selectedSheetName, tagTitle, tagElement){
-  var $tagsContainer = $('.alert.alert-dark.selection');
-  var tagID = (filterName + "_" + selectedSheetName).replace(/\W/g, '');
-  // Create tag
-  var $tag = $('#'+tagID);
-  if (!$tag.length){
-    $tag = $('<span id="'+tagID+'" class="badge badge-pill badge-warning filterTag closebutton"></span>')
-    // Add remove event
-    $tag.on('click', function(){
-      clearFilterExclude(sheetsArray, filterName, selectedSheetName);
-      selectedSheet.clearSelectedMarksAsync();
-      $tag.remove();
-    });
-  }
-  // Append Tag
-  $tagsContainer.append($tag);
-
-  // Fill/Remove filter information
-  var selectedItems = getMarksValuesByFilter(marks, filterName);
-  if(selectedItems.length){
-    $tag.html("<strong>"+tagTitle+":</strong> " + selectedItems.join(', '));
-    $tag.show();
-    applyFilterExclude(sheetsArray, filterName, selectedItems, selectedSheetName);
-  }else{
-    $tag.remove();
-    clearFilterExclude(sheetsArray, filterName, selectedSheetName);
-  }
-
-  // Check Tags
-  var filtersCount = $('.alert.alert-dark.selection').find('.filterTag').length;
-  var $clearAlltag = $('#clearAllTag');
-  if(filtersCount){
-    $tagsContainer.slideDown();
-  }else{
-    $tagsContainer.slideUp();
-  }
-  if(filtersCount > 1){
-    if (!$clearAlltag.length){
-      $clearAlltag = $('<span id="clearAllTag" class="badge badge-pill badge-secondary closebutton">Clear All</span>');
-      $tagsContainer.prepend($clearAlltag);
-      $clearAlltag.on('click', function(){
-        $('.filterTag').trigger('click');
-      });
-    }
-  }else{
-    $clearAlltag.remove();
-  }
-}
-
 function createTableauViz(elementID, view, events){
   var viz;
   var container = document.getElementById(elementID);
@@ -197,7 +131,7 @@ function createTableauViz(elementID, view, events){
 
       window.setInterval(RefreshViz, 100000);
       function RefreshViz(){
-        viz.refreshDataAsync();  
+        viz.refreshDataAsync();
       }
 
       // Resize a visualization to a size calculated
@@ -225,9 +159,9 @@ function createTableauViz(elementID, view, events){
       loaded();
     }
   };
-  viz = new tableau.Viz(container, url, options);
+    viz = new tableau.Viz(container, url, options);
 
-  return viz; 
+  return viz;
 }
 
 function getTableauDataAsync(sheet, callback){
@@ -241,6 +175,7 @@ function getTableauDataAsync(sheet, callback){
 
 function errback(e) {
   console.log(e.tableauSoftwareErrorCode);
+  console.log("s");
 }
 
 /************************** End Tableau Functions *****************************/
