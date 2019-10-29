@@ -711,7 +711,8 @@ a.internalLink:hover {
     font-style: italic;
     font-size: 10px;
     color: #6e6d6d;
+    margin-top:2px;
 }
 h6 {
-  margin-bottom: 0px;
+  margin-bottom: 1px;
 }

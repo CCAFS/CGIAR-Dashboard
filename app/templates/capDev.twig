@@ -35,7 +35,7 @@
       </button>
 
       {% include './pages/message.twig' %}
-      
+
       {% import './macros/tooltips.twig' as tooltips %}
 
       <div class="mb-4">
@@ -60,6 +60,7 @@
             {{ tooltips.tooltipInfo('Training Terms', chartInfo.title, chartInfo.info) }}
           {% endfor %}
           Trainees: Total Women and Men by Training Term</h6>
+          <span class="filter-description">Click on bars to filter.</span>
           <div class="trainees-container">
             <div id="trainees-term"></div>
           </div>

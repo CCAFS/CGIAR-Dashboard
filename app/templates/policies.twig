@@ -49,6 +49,7 @@
           <div class="col-md-7">
             <div class="top-line"></div>
             <h6 class="subTitle">Policy Location</h6>
+            <span class="filter-description">Select one or more countries (press ctrl) to filter.</span>
             <div class="policies-map">
               <div id="policies-ground"></div>
             </div>
@@ -56,10 +57,12 @@
           <div class="col-md-5">
             <div class="top-line"></div>
             <h6 class="subTitle">Total Policies by Geographic Scope</h6>
+            <span class="filter-description">Click on donut to filter.</span>
             <div class="policies-scope">
               <div id="policies-geoscope"></div>
             </div>
             <h6 class="subTitle mt-3"> Top 5 SDGs Policy Link</h6>
+            <span class="filter-description">Click on SDGs to filter.</span>
             <div class="topsdgs-container">
               <div id="policies-sdgs"></div>
             </div>
@@ -70,6 +73,7 @@
           <div class="col-md-6">
             <div class="top-line"></div>
             <h6 class="subTitle">Policies by Level of Maturity </h6>
+            <span class="filter-description">Click on bars to filter.</span>
             <div class="maturity-level justify-content-center">
               <div id="policies-stage"></div>
             </div>
@@ -79,8 +83,9 @@
             <h6 class="subTitle">
             {% for chartInfo in chartsInfo %}
               {{ tooltips.tooltipInfo('Policies by Type', chartInfo.title, chartInfo.info) }}
-            {% endfor %} 
+            {% endfor %}
             Policies by Type</h6>
+            <span class="filter-description">Click on bars to filter.</span>
             <div class="investment-type">
               <div id="policies-investype"></div>
             </div>
