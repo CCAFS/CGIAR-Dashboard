@@ -77,13 +77,13 @@ function onSelectWorkSheet(mEvent){
         setFilterWorksheet(marks, FILTER_TYPE, sheetsArray, selectedSheet, selectedSheetName, 'Type');
         break;
       case REGIONAL_SHEET:
-        setFilterExcludeWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, excludedSheetGlobal, 'Geographic Scope');
+        setFilterWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, selectedSheetName, 'Geographic Scope');
         break;
       case GLOBAL_SHEET:
-        setFilterExcludeWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet, excludedSheetGlobal, 'Geographic Scope');
-        break;  
+        setFilterWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet, selectedSheetName, 'Geographic Scope');
+        break;
       case IMAP_SHEET:
-        setFilterExcludeWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, excludedSheetGlobal, 'Country');
+        setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         break;
       case TOPLEAD_SHEET:
         setFilterWorksheet(marks, FILTER_LEAD, sheetsArray, selectedSheet, selectedSheetName, 'Lead Organization');

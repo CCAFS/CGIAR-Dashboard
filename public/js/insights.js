@@ -2,14 +2,21 @@ var sheetsArray = [];
 var loadedCount = 0;
 
 //Filters
+var FILTER_MAP = "Country Name";
+var FILTER_INSTITUTION = "Name (Dim Ext Partners)";
 
 //Sheets
+var MAP_SHEET = "10.1 SH Insight1 - Papers Country";
+var INSTITUTIONS_SHEET = "10.1 SH Insight1 - Research Institutes -FULL list";
+var LIST_SHEET = "5.2 SH Papers Detail";
 
 $(document).ready(init);
 
 function init() {
   vizDataArray = [
-    { elementID: 'all-insights', view: 'Insights1DB' }
+    { elementID: 'insights-map', view: '10_1DBInsights1Map' },
+    { elementID: 'insights-heatmap', view: '10_2DBInsights1Heatmap' },
+    { elementID: 'insights-list', view: '10_3DBInsights1Detail' }
   ];
 
   vizInitialited = [];
@@ -44,6 +51,13 @@ function onSelectWorkSheet(mEvent) {
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function (marks) {
-
+    switch(selectedSheetName) {
+      case MAP_SHEET:
+        setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
+        break;
+      case INSTITUTIONS_SHEET:
+        setFilterWorksheet(marks, FILTER_INSTITUTION, sheetsArray, selectedSheet, selectedSheetName, 'Institution');
+        break;
+    }
   });
 }

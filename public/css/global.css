@@ -712,3 +712,6 @@ a.internalLink:hover {
     font-size: 10px;
     color: #6e6d6d;
 }
+h6 {
+  margin-bottom: 0px;
+}
