@@ -716,3 +716,20 @@ a.internalLink:hover {
 h6 {
   margin-bottom: 1px;
 }
+
+/* Indicators tooltip style */
+
+.tooltip > .tooltip-inner {
+    background-color: #FFFFFF;
+    color: #909090;
+    border: 1px solid #909090;
+    border-radius: 0px;
+    padding: 4px;
+    text-align: justify;
+    margin-top: -20px;
+    min-width: 260px;
+  }
+
+.tooltip .arrow:before {
+    display:none;
+}
