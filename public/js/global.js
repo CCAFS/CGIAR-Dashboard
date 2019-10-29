@@ -7,6 +7,8 @@ $(document).ready(function(){
     delay: 0
   });
 
+  $("input[name='years']").on('change', addYearsTag);
+
   $('[data-toggle="popover"]').popover({
     trigger: 'manual',
   	animate: false,
@@ -172,5 +174,14 @@ function isZoomed() {
     $('.items-programs').addClass( "zoomedSize" );
   } else {
     $('.items-programs').removeClass( "zoomedSize" );
+  }
+}
+
+function addYearsTag(){
+  var yearValue =  $(this).val();
+  if (yearValue == "2018" || yearValue == "2017") {
+    $('.year-tag').hide(500);
+  } else {
+    $('.year-tag').show(500);
   }
 }

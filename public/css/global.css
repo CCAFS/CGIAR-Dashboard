@@ -733,3 +733,11 @@ h6 {
 .tooltip .arrow:before {
     display:none;
 }
+
+.year-tag.badge {
+    background-color: #00a0b0;
+    border-radius: 5px;
+    margin: 2px;
+    margin-top: -2px;
+    color: #f1f1f1;
+}

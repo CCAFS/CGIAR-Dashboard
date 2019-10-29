@@ -19,15 +19,6 @@ function init() {
     vizInitialited.push(createTableauViz(data.elementID, data.view, [onSelectWorkSheet]))
   });
 
-  $("input[name='years']").change(function(){
-    var yearValue =  $(this).val();
-    if (yearValue == "2018" || yearValue == "2017") {
-      $('.year-tag').hide(500);
-    } else {
-      $('.year-tag').show(500);
-    }
-  });
-
 }
 
 function loadSheets() {
