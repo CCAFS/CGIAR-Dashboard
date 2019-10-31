@@ -56,3 +56,8 @@
 .insights {
     height:340px;
 }
+
+.sdg-wheel {
+  float: left;
+  padding: 15px;
+}
