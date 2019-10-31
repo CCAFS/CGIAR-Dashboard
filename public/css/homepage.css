@@ -3,20 +3,21 @@
     text-align: justify;
 }
 
-.slo-contribution { 
+.slo-contribution {
     height: 260px;
 }
 
-.oicr-contribution { 
+.oicr-contribution {
     height: 270px;
 }
 
-.milestones-contribution { 
+.milestones-contribution {
     height: 270px;
 }
 
-.numbers {
+.number-container {
     height:90px;
+    max-width: 130px;
 }
 
 .charts {
@@ -52,6 +53,6 @@
     height: 16px;
 }
 
-.insights { 
+.insights {
     height:340px;
 }

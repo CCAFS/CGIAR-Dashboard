@@ -7,10 +7,14 @@ function init() {
 
   vizDataArray = [
     { elementID: 'slo-bar', view: 'HomeDB-SLOBarTop' },
-    { elementID: 'oicr-chart', view: 'HomeDB-OICRStageofMaturity' },
+    { elementID: 'oicr-chart', view: 'HomeDB-OICRStageofMaturity2' },
     { elementID: 'milestones', view: 'HomeDB-Milestonesdonut' },
-    { elementID: 'indicators-top', view: 'HomeDBIndicatorNumbers-Top' },
-    { elementID: 'indicators-bottom', view: 'HomeDBIndicatorNumbers-Down' },
+    { elementID: 'innovations-number', view: 'HomeDBIndicatorNumbers-Innovations' },
+    { elementID: 'partnerships-number', view: 'HomeDBIndicatorNumbers-Partnerships' },
+    { elementID: 'policies-number', view: 'HomeDBIndicatorNumbers-Policies' },
+    { elementID: 'capDev-number', view: 'HomeDBIndicatorNumbers-Trainees' },
+    { elementID: 'publications-number', view: 'HomeDBIndicatorNumbers-Publications' },
+    { elementID: 'altmetric-number', view: 'HomeDBIndicatorNumbers-Altmetric' },
     { elementID: 'insights-chart', view: 'HomeDB-Insights'}
   ];
 
