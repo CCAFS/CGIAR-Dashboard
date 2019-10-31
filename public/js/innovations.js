@@ -66,7 +66,6 @@ function loaded() {
 function onSelectWorkSheet(mEvent){
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
-  excludedSheetGlobal = [GLOBAL_SHEET, REGIONAL_SHEET, IMAP_SHEET];
 
   return mEvent.getMarksAsync().then(function(marks){
     switch(selectedSheetName) {
@@ -75,12 +74,6 @@ function onSelectWorkSheet(mEvent){
         break;
       case ITYPE_SHEET:
         setFilterWorksheet(marks, FILTER_TYPE, sheetsArray, selectedSheet, selectedSheetName, 'Type');
-        break;
-      case REGIONAL_SHEET:
-        setFilterWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, selectedSheetName, 'Geographic Scope');
-        break;
-      case GLOBAL_SHEET:
-        setFilterWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet, selectedSheetName, 'Geographic Scope');
         break;
       case IMAP_SHEET:
         setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');

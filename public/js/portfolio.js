@@ -88,12 +88,6 @@ function onSelectWorkSheet(mEvent) {
       case CCI_SHEET:
         setFilterWorksheet(marks, FILTER_CCI, sheetsArray, selectedSheet, selectedSheetName, 'Cross Cutting');
         break;
-      case GLOBAL_SHEET:
-        setFilterWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet,   selectedSheetName, 'Geographic Scope');
-        break;
-      case REGIONAL_SHEET:
-        setFilterWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, selectedSheetName, 'Geographic Scope');
-        break;
       case CMAP_SHEET:
         setFilterWorksheet(marks, FILTER_COUNTRY, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         break;
