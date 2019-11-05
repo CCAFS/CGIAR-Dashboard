@@ -109,7 +109,7 @@ function createTableauViz(elementID, view, events){
     hideToolbar: true,
     width: '100%',
     height: '100%',
-    "CRP": appConfig.entitySelected,
+    //"CRP": appConfig.entitySelected,
     "Year": appConfig.yearSelected,
     onFirstInteractive: function(tableauEvent){
       //Hide scrollbars - disable scroll

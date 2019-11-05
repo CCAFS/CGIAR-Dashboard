@@ -39,23 +39,12 @@ function updateUrlParameters(){
   var checkedValue = $checkedInput.val();
   var u  = new Url;
   var parameters = {
-    "crps": "entity",
     "years": "year"
   };
 
-  // Update host URL parameters
-  setHostUrlParameters(parameters[filterType], checkedValue);
 
-  // Update navigation URL parameters
-  $('.navbar-nav a, .nav.sideBar a, a.internalLink').each(function(){
-    var navU  = new Url($(this).attr('href'));
-    if(checkedValue){
-      navU.query[parameters[filterType]] = checkedValue;
-    }else{
-      delete navU.query[parameters[filterType]];
-    }
-    $(this).attr('href', navU.toString());
-  });
+
+
 
   // Update Filter selection Title
   switch (filterType) {
@@ -71,6 +60,18 @@ function updateUrlParameters(){
       }
       break;
     case "years":
+    // Update navigation URL parameters
+    $('.navbar-nav a, .nav.sideBar a, a.internalLink').each(function(){
+      var navU  = new Url($(this).attr('href'));
+      if(checkedValue){
+        navU.query[parameters[filterType]] = checkedValue;
+      }else{
+        delete navU.query[parameters[filterType]];
+      }
+      $(this).attr('href', navU.toString());
+    });
+      // Update host URL parameters
+      setHostUrlParameters(parameters[filterType], checkedValue);
       if (checkedValue) {
         $filterTitle.text(checkedValue);
         if(appConfig.forceRefresh){
@@ -91,7 +92,7 @@ function updateUrlParameters(){
   }
 }
 
-setHostUrlParameters('entity', appConfig.entitySelected);
+//setHostUrlParameters('entity', appConfig.entitySelected);
 setHostUrlParameters('year', appConfig.yearSelected);
 
 // Update host URL parameters

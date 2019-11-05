@@ -6,20 +6,24 @@
     color: #585858;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    margin-top: -5;  
+    margin-top: -5;
 }
 
 .totalCapDev {
-    height: 80px;    
+    height: 80px;
     max-width: 240px;
 }
 
 .participants-container {
     height: 390px;
 }
-  
+
 .trainees-container {
     height: 390px;
+}
+
+.trainingTerms-container {
+    height: 200px;
 }
 
 .capDevTitles {
