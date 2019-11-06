@@ -40,6 +40,16 @@ header .title {
     }
 }
 
+@media (max-width: 600px) {
+    .filters1{
+      padding:0px 50px 0px 0px;
+    }
+
+    .filter-position1 {
+      margin-top: 0;
+    }
+}
+
 
 .fyear {
     width: 130px;
