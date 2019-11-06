@@ -10,7 +10,7 @@ function init() {
     { elementID: 'oicr-chart', view: 'HomeDB-OICRStageofMaturity2' },
     { elementID: 'milestones', view: 'HomeDB-Milestonesdonut' },
     { elementID: 'innovations-number', view: 'HomeDBIndicatorNumbers-Innovations' },
-    { elementID: 'partnerships-number', view: 'HomeDBIndicatorNumbers-Partnerships2017' },
+    { elementID: 'partnerships-number', view: 'HomeDBIndicatorNumbers-Partnerships' },
     { elementID: 'policies-number', view: 'HomeDBIndicatorNumbers-Policies' },
     { elementID: 'capDev-number', view: 'HomeDBIndicatorNumbers-Trainees' },
     { elementID: 'publications-number', view: 'HomeDBIndicatorNumbers-Publications' },

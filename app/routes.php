@@ -22,7 +22,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
   $currentSection = (isset($args['actionName'])? $args['actionName'] : $sections[0]['action']);
   $currentView = $currentSection;
   $forceRefresh = false;
-  if($currentSection == "partnerships"){
+  if(($currentSection == "partnerships") || ($currentSection == "home")){
     if($yearSelected > 2017){
       $currentView = $currentSection. "-2018";
     }

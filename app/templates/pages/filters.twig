@@ -1,7 +1,7 @@
 {% import "./macros/forms.twig" as forms %}
-<div class="filters">
+<div class="filters{{ embed }}">
   <!-- Year -->
-  <div class="filter-component filter-loading fyear">
+  <div class="filter-component filter-position{{ embed }} filter-loading fyear">
     <p id="filtertitley" class="filter-title years">{{ yearSelected|default('All Years') }}</p>
     <ul class="filter-items items-years">
       {% for year in years %}
@@ -10,7 +10,7 @@
     </ul>
   </div>
   <!-- CRPs -->
-  <div class="filter-component filter-loading fprogram">
+  <div class="filter-component filter-position{{ embed }} filter-loading fprogram">
     <p id="filtertitlec" class="filter-title portfolio">{{ entitySelected|default('Research Programs') }}</p>
     <ul class="filter-items items-programs">
       {% for crp in crps %}
