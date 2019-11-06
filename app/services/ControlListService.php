@@ -32,9 +32,9 @@ class ControlListService {
     $this->crps = array (
       array('acronym' => '',            'name' => 'All'),
       array('acronym' => 'A4NH',        'name' => 'A4NH - Agriculture for Nutrition and Health'),
-      array('acronym' => 'BIGDATA',     'name' => 'BIGDATA - Big Data in Agriculture'),
+      array('acronym' => 'BIG DATA',     'name' => 'BIG DATA - Big Data in Agriculture'),
       array('acronym' => 'CCAFS',       'name' => 'CCAFS - Climate Change, Agriculture and Food Security'),
-      array('acronym' => 'EIB',         'name' => 'EiB - Excellence in Breeding'),
+      array('acronym' => 'EiB',         'name' => 'EiB - Excellence in Breeding'),
       array('acronym' => 'FISH',        'name' => 'FISH'),
       array('acronym' => 'FTA',         'name' => 'FTA - Forests, Trees and Agroforestry'),
       array('acronym' => 'GENEBANK',    'name' => 'GENEBANK'),
