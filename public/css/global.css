@@ -14,12 +14,23 @@ header .title {
     font-weight: lighter;
 }
 
+.filters1{
+  height: 50px;
+}
+
 .filter-component {
     float: right;
-    margin-top: 25px;
     margin-left: 7px;
-    position: relative;
     z-index: 4;
+}
+
+.filter-position {
+  position: relative;
+  margin-top: 25px;
+}
+
+.filter-position1 {
+  margin-top: 5px;
 }
 
 .fyear {
