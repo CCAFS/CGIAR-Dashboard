@@ -16,6 +16,7 @@ header .title {
 
 .filters1{
   height: 50px;
+  padding:0px 240px 0px 0px;
 }
 
 .filter-component {
@@ -32,6 +33,19 @@ header .title {
 .filter-position1 {
   margin-top: 5px;
 }
+
+@media (max-width: 1285px) {
+    .filters1{
+      padding:0px 100px 0px 0px;
+    }
+}
+
+@media (max-width: 600px) {
+    .filters1{
+      padding:0px 50px 0px 0px;
+    }
+}
+
 
 .fyear {
     width: 130px;
@@ -440,6 +454,7 @@ nav.main-menu ul li.active:after {
     nav.main-menu ul li {
         font-size: 0.7rem;
     }
+
 }
 
 @media (max-width: 991px) {
