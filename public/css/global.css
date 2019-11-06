@@ -32,6 +32,7 @@ header .title {
 
 .filter-position1 {
   margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 1285px) {
@@ -43,10 +44,6 @@ header .title {
 @media (max-width: 600px) {
     .filters1{
       padding:0px 50px 0px 0px;
-    }
-
-    .filter-position1 {
-      margin-top: 0;
     }
 }
 
