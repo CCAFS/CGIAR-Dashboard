@@ -34,6 +34,7 @@
     var section = widget.userOptions.currentSection || '';
     // Create Iframe
     widget.createIframe(widget.baseURL + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin + '&displayNav=' + widget.userOptions.displayNav);
+		$(".wysiwyg--left-content page__wysiwyg").hide();
   };
 
   // Change section
