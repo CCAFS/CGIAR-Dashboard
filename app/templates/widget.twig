@@ -34,6 +34,10 @@
     var section = widget.userOptions.currentSection || '';
     // Create Iframe
     widget.createIframe(widget.baseURL + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin + '&displayNav=' + widget.userOptions.displayNav);
+		var hiddenDiv = document.getElementsByClassName("wysiwyg--left-content");
+		for (var i = 0; i < hiddenDiv.length; i++) {
+	    hiddenDiv[i].style.visibility = 'hidden';
+  	}
   };
 
   // Change section
