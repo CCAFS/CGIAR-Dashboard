@@ -19,7 +19,11 @@
     this.element = element;
     this.iframe;
     this.userOptions = userOptions;
-		this.userOptions.displayNav = userOptions.displayNav;
+		if (typeof userOptions.displayNav === 'undefined') {
+		  this.userOptions.displayNav = true;
+		}else {
+			this.userOptions.displayNav = userOptions.displayNav;
+		}
     this.hostOrigin = document.location.origin;
 		this.baseURL = '{{ baseURL }}';
 		this.baseOrigin = '{{ baseOrigin  }}';
