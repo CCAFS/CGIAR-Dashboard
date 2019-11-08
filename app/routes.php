@@ -42,6 +42,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     'years' => $controlList->getYears(),
     'chartsInfo' => $controlList->getChartsInfo(),
     'messagesArray' => $controlList->getMessages(),
+    'dataUrl' => $controlList->getDataUrl(),
     'currentSection' => $currentSection,
     'entitySelected' => $entitySelected,
     'yearSelected' => $yearSelected,

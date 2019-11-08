@@ -7,6 +7,7 @@ class ControlListService {
   private $crps;
   private $years;
   private $chartsInfo;
+  private $dataUrl;
 
   public function __construct(){
 
@@ -61,6 +62,15 @@ class ControlListService {
       array('title'=> 'Training Terms',               'info'=>'<p><strong>Short-term:</strong> Includes all other types of training.</p> <p><strong>Long-term:</strong> Includes academic degree training.</p>'),
       array('title'=> 'Number of Publications',       'info'=>'<p><strong>Open Access</strong> means the immediate, irrevocable, unrestricted and free online access by any user worldwide to information products, and unrestricted re-use of content (which could be restricted to non-commercial use and/or granted subject to appropriate licences in line with the CGIAR IA Principles), subject to proper attribution. See <a href="https://cgspace.cgiar.org/bitstream/handle/10947/2875/CGIAR%20OA%20Policy%20-%20October%202%202013%20-%20Approved%20by%20Consortium%20Board.pdf?sequence=4" target="_blank">CGIAR Open Access and Data Management Policy</a> for further information.</p> <p><strong>ISI</strong> provides indexing of major international journals and proceedings (<a href="https://isindexing.com" target="_blank">https://isindexing.com</a>).</p>')
     );
+
+    $this->dataUrl = (object) [
+    'home'=>  'https://dataverse.harvard.edu/dataverse/CGIAR-Results-Dashboard/',
+    'systemLeveloutcomes'=>  'https://dataverse.harvard.edu/dataverse/CGIAR-Results-Dashboard/',
+    'caseReports'=>  'https://dataverse.harvard.edu/dataverse/CGIAR-Results-Dashboard/',
+    'milestones'=>  'https://dataverse.harvard.edu/dataverse/CGIAR-Results-Dashboard/',
+    'innovations'=>  'https://dataverse.harvard.edu/dataverse/CGIAR-Results-Dashboard/'
+    ];
+
   }
 
   public function getSections(){
@@ -77,6 +87,10 @@ class ControlListService {
 
   public function getChartsInfo(){
     return $this->chartsInfo;
+  }
+
+  public function getDataUrl(){
+    return $this->dataUrl;
   }
 
   public function getMessages(){
