@@ -16,7 +16,8 @@ function init() {
 
   vizDataArray = [
     { elementID: 'total-trainees', view: '4_0DBTraineesNumbers' },
-    { elementID: 'trainees-term', view: '4_1DBTraineesDualAxischart' }
+    { elementID: 'trainees-shortTerm', view: '4_1DBTraineesShort-Term1' },
+    { elementID: 'trainees-longTerm', view: '4_1DBTraineesLong-Term1' }
   ];
 
   vizInitialited = [];

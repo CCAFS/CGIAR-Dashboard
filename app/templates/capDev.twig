@@ -65,11 +65,18 @@
           {% for chartInfo in chartsInfo %}
             {{ tooltips.tooltipInfo('Training Terms', chartInfo.title, chartInfo.info) }}
           {% endfor %}
-          Trainees: Total Women and Men by Training Term</h6>
+          Short-Term Trainees: Total Women and Men</h6>
           <span class="filter-description">Click on bars to filter.</span>
-          <div class="trainees-container">
-            <div id="trainees-term"></div>
+          <div class="trainingTerms-container">
+            <div id="trainees-shortTerm"></div>
           </div>
+          <div class="top-line"></div>
+            <h6 class="subTitle">
+            Long-Term Trainees: Total Women and Men</h6>
+            <span class="filter-description">Click on bars to filter.</span>
+            <div class="trainingTerms-container">
+              <div id="trainees-longTerm"></div>
+            </div>
         </div>
       </div>
 
