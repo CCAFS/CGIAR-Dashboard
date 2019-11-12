@@ -42,7 +42,7 @@ class ControlListService {
       array('acronym' => 'GLDC',        'name' => 'GLDC - Grain Legumes and Dryland Cereals'),
       array('acronym' => 'LIVESTOCK',   'name' => 'LIVESTOCK'),
       array('acronym' => 'MAIZE',       'name' => 'MAIZE'),
-      array('acronym' => 'PIM',         'name' => 'PIM - Policies, Institutions and Markets'),
+      array('acronym' => 'PIM',         'name' => 'PIM - Policies, Institutions, and Markets'),
       array('acronym' => 'RICE',        'name' => 'RICE'),
       array('acronym' => 'RTB',         'name' => 'RTB - Roots, Tubers and Bananas'),
       array('acronym' => 'WHEAT',       'name' => 'WHEAT'),
