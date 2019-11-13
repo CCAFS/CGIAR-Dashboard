@@ -8,8 +8,8 @@ var FILTER_MAP = "Country Name -To use";
 var FILTER_REGION = "Geographic Scope ";
 var FILTER_GLOBAL = "Reg Un Name";
 var FILTER_DEGREE = "Degree of Innovation";
-var FILTER_LEAD = "Lead Partner";
-var FILTER_CONTRIBUTING = "External Contributing Partner";
+var FILTER_CGIAR = "Name (Dim Ext Partners) #1";
+var FILTER_NONCGIAR = "Name (Dim Ext Partners) #1";
 
 //Sheets
 var ITYPE_SHEET = "2.2 Innovation by Type -pie ";
@@ -20,8 +20,8 @@ var TI_SHEET = "2.3 SH Innov Count";
 var TAI_SHEET = "2.7 SH Innov Count Percentage ";
 var GLOBAL_SHEET = "2.7 SH Innovations Map Global";
 var REGIONAL_SHEET = "2.8 SH Innovations Map Regional";
-var TOPLEAD_SHEET = "2.9 SH Innov Bar Top Lead-Org";
-var TOPCONTRIBUTING_SHEET = "2.10 SH Innov Bar Top Cont-Org";
+var CGIARORGS_SHEET = "2.10 SH Innovations CGIAR Contributing Orgs";
+var NONCGIARORGS_SHEET = "2.10 SH Innovations nonCGIAR Contributing Orgs";
 
 $(document).ready(init);
 
@@ -31,8 +31,8 @@ function init() {
       {elementID: 'innovations-type', view: '2_3DBInnovbyType'},
       {elementID: 'innovations-map', view: '2_6DBInnovMap'},
       {elementID: 'innovations-list', view: '2_5DBInnovDetail'},
-      {elementID: 'itop5Lead-org', view: '2_8DBInnovTop5Leadorg'},
-      {elementID: 'itop5Contributing-org', view: '2_9DBInnovTop5Controrg'}
+      {elementID: 'cgiar-orgs', view: '2_10DBInnovCGIARcontributingorgs'},
+      {elementID: 'noncgiar-orgs', view: '2_10DBInnovnonCGIARcontributingorgs'}
     ];
 
     vizInitialited = [];
@@ -78,11 +78,11 @@ function onSelectWorkSheet(mEvent){
       case IMAP_SHEET:
         setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         break;
-      case TOPLEAD_SHEET:
-        setFilterWorksheet(marks, FILTER_LEAD, sheetsArray, selectedSheet, selectedSheetName, 'Lead Organization');
+      case CGIARORGS_SHEET:
+        setFilterWorksheet(marks, FILTER_CGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Lead Organization');
         break;
-      case TOPCONTRIBUTING_SHEET:
-        setFilterWorksheet(marks, FILTER_CONTRIBUTING, sheetsArray, selectedSheet, selectedSheetName, 'Contributing Organization');
+      case NONCGIARORGS_SHEET:
+        setFilterWorksheet(marks, FILTER_NONCGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing Organization');
         break;
     }
   });
