@@ -8,7 +8,6 @@ function init() {
   vizDataArray = [
     { elementID: 'slo-bar', view: 'HomeDB-SLOBarTop' },
     { elementID: 'oicr-chart', view: 'HomeDB-OICRStageofMaturity2' },
-    { elementID: 'milestones', view: 'HomeDB-Milestonesdonut' },
     { elementID: 'innovations-number', view: 'HomeDBIndicatorNumbers-Innovations' },
     { elementID: 'partnerships-number', view: 'HomeDBIndicatorNumbers-Partnerships2017' },
     { elementID: 'policies-number', view: 'HomeDBIndicatorNumbers-Policies' },
