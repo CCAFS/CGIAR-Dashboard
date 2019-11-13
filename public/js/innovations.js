@@ -40,6 +40,8 @@ function init() {
       vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
     });
 
+    $("input[name='years']").on('change', showNoData);
+
 }
 
 function loadSheets(){
@@ -86,6 +88,19 @@ function onSelectWorkSheet(mEvent){
         break;
     }
   });
+}
+
+function showNoData() {
+  var yearValue =  $(this).val();
+  if (yearValue == "2018" || yearValue == "") {
+    $('.no-data').hide();
+    $('#cgiar-orgs').show();
+    $('#noncgiar-orgs').show();
+  } else {
+    $('.no-data').show();
+    $('#cgiar-orgs').hide();
+    $('#noncgiar-orgs').hide();
+  }
 }
 
 /*//jQuery.getJSON("json/innovations.json", handleJSON);

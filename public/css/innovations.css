@@ -14,9 +14,11 @@
   height: 500px;
 }
 
-.noData { 
+.no-data {
   font-size: 1.05em;
   font-family: 'Montserrat', sans-serif;
   color: #716f6f;
   padding-top: 30%;
+  position: relative;
+  text-align: center;
 }
