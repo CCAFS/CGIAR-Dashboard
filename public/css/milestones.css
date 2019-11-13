@@ -5,3 +5,9 @@
 .milestones-list {
     height: 700px;
 }
+
+.coming-soon {
+  opacity: .2;
+  max-width: 350px;
+  height: 100%;
+}
