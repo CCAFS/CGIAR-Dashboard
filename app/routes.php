@@ -51,7 +51,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     'displayNav' => $displayNav,
     'hostOrigin' => $request->getQueryParam('hostOrigin'),
     'appConfig' => $settings['appConfig'],
-    'queryParams' => "" //$request->getUri()->getQuery() // This used to persist the parameters in the links but was decided to leave always 2018 as default
+    'queryParams' => $request->getUri()->getQuery()
   ]);
   return $response;
 })->setName('homepage');
