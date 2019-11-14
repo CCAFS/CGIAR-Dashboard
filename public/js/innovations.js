@@ -8,7 +8,7 @@ var FILTER_MAP = "Country Name -To use";
 var FILTER_REGION = "Geographic Scope ";
 var FILTER_GLOBAL = "Reg Un Name";
 var FILTER_DEGREE = "Degree of Innovation";
-var FILTER_CGIAR = "Name (Dim Ext Partners) #1";
+var FILTER_CGIAR = "Acronym (Dim Ext Partners) #1";
 var FILTER_NONCGIAR = "Name (Dim Ext Partners) #1";
 
 //Sheets
