@@ -31,9 +31,12 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
 
   // Embeding
   $embed = (($request->getQueryParam('embed') == "true")? true : false);
+  $hostOrigin = $request->getQueryParam('hostOrigin');
+  $queryParams = ""; //$request->getUri()->getQuery();
   $displayNav = true;
   if ($embed){
     $displayNav = (($request->getQueryParam('displayNav') == "true")? true : false);
+    $queryParams = "embed=true&hostOrigin=".$hostOrigin."&displayNav=".($displayNav?'true':'false');
   }
 
   $this->view->render($response, $currentView.'.twig', [
@@ -49,9 +52,9 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     'forceRefresh' => $forceRefresh,
     'embed' => $embed,
     'displayNav' => $displayNav,
-    'hostOrigin' => $request->getQueryParam('hostOrigin'),
+    'hostOrigin' => $hostOrigin,
     'appConfig' => $settings['appConfig'],
-    'queryParams' => $request->getUri()->getQuery()
+    'queryParams' => $queryParams
   ]);
   return $response;
 })->setName('homepage');

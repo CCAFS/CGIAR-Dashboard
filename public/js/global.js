@@ -60,16 +60,18 @@ function updateUrlParameters(){
       }
       break;
     case "years":
-    // Update navigation URL parameters
-    $('.navbar-nav a, .nav.sideBar a, a.internalLink').each(function(){
-      var navU  = new Url($(this).attr('href'));
-      if(checkedValue){
-        navU.query[parameters[filterType]] = checkedValue;
-      }else{
-        delete navU.query[parameters[filterType]];
-      }
-      $(this).attr('href', navU.toString());
-    });
+      // Update navigation URL parameters
+      /*
+      $('.navbar-nav a, .nav.sideBar a, a.internalLink').each(function(){
+        var navU  = new Url($(this).attr('href'));
+        if(checkedValue){
+          navU.query[parameters[filterType]] = checkedValue;
+        }else{
+          delete navU.query[parameters[filterType]];
+        }
+        $(this).attr('href', navU.toString());
+      });
+      */
       // Update host URL parameters
       setHostUrlParameters(parameters[filterType], checkedValue);
       if (checkedValue) {
