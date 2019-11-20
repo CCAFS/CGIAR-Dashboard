@@ -7,7 +7,7 @@ var FILTER_MAP = "Country Name";
 var FILTER_OA = "Is Open Access-Pie";
 var FILTER_ISI= "Is Isi Journal -Pie";
 var FILTER_TOTAL = "Total Publications";
-var FILTER_JOURNAL = "Journal Title";
+var FILTER_JOURNAL = "JOURNAL (copy) (group)";
 
 var TP_SHEET = "5.1 SH Total Papers";
 var OA_SHEET = "Paper OA Dount chart";
