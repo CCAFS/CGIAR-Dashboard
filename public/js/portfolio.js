@@ -40,7 +40,7 @@ function init() {
     { elementID: 'map-1', view: '1_1DBMap' },
     { elementID: 'list-test', view: '1_4DBSLO-CCIDetail' },
     { elementID: 'chart-2', view: '1_2DBSLO-CCIBars' },
-    { elementID: 'cci-p', view: '1_3DBCross-CuttingPercent-Final' },
+    { elementID: 'cci-p', view: '1_3DBCross-CuttingPercentHorizontal' },
     { elementID: 'm-stage', view: '1_10DBOICSbyStageofMaturity' },
     { elementID: 'sdg-s', view: '1_11DBOICSSDGPerc' },
     { elementID: 'contributing-partners', view: '1_12DBOICRTotalContributingPartners' },
