@@ -99,7 +99,11 @@ function createTableauViz(elementID, view, events){
   var viz;
   var container = document.getElementById(elementID);
   var $element = $('#'+ elementID);
-  var url = appConfig.tableauView + "/" + view;
+  if(view=='2_1DBInnovations-Jules-Feb20_1'){
+    var url = 'https://public.tableau.com/views/Innovations-DB-Feb2020' + "/" + view;
+  } else {
+    var url = appConfig.tableauView + "/" + view;
+  }
 
   $element.css('position','relative');
   $element.append('<div class="loadingBlock singleLoadingBlock"></div>')

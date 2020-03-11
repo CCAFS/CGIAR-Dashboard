@@ -10,24 +10,20 @@ var FILTER_GLOBAL = "Geographic Scope ";
 var FILTER_DEGREE = "Degree of Innovation";
 var FILTER_LEAD = "Lead Partner";
 var FILTER_CONTRIBUTING = "External Contributing Partner";
+var FILTER_PROGRAM = "CRP";
 
 //Sheets
-var ITYPE_SHEET = "2.2 Innovation by Type -pie ";
+var ITYPE_SHEET = "2.2 Innovation by Stage -and Type NEW";
 var ISTAGE_SHEET = "2.2 Innovation by Stage - pie";
 var ILIST_SHEET = "2.5 Innov Detail ";
-var IMAP_SHEET = "2.6 SH Innovations Map";
-var TI_SHEET = "2.3 SH Innov Count";
-var TAI_SHEET = "2.7 SH Innov Count Percentage ";
-var GLOBAL_SHEET = "2.7 SH Innovations Map Global";
-var REGIONAL_SHEET = "2.8 SH Innovations Map Regional";
-var TOPLEAD_SHEET = "2.9 SH Innov Bar Top Lead-Org";
-var TOPCONTRIBUTING_SHEET = "2.10 SH Innov Bar Top Cont-Org";
+var IMAP_SHEET = "2.6 SH Innovations Map -STAGE YEAR";
+var PROGRAM_SHEET = "Innov- by center and year JULES";
 
 $(document).ready(init);
 
 function init() {
   vizDataArray = [
-    { elementID: 'all-oicr', view: '2_1DBInnovations' }
+    { elementID: 'all-oicr', view: '2_1DBInnovations-Jules-Feb20_1' }
   ];
 
   vizInitialited = [];
@@ -73,11 +69,8 @@ function onSelectWorkSheet(mEvent) {
         //setFilterWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, selectedSheetName, 'Region');
         //setFilterWorksheet(marks, FILTER_GLOBAL, sheetsArray, selectedSheet, selectedSheetName, 'Global');
         break;
-      case TOPLEAD_SHEET:
-        setFilterWorksheet(marks, FILTER_LEAD, sheetsArray, selectedSheet, selectedSheetName, 'Lead Organization');
-        break;
-      case TOPCONTRIBUTING_SHEET:
-        setFilterWorksheet(marks, FILTER_CONTRIBUTING, sheetsArray, selectedSheet, selectedSheetName, 'Contributing Organization');
+      case PROGRAM_SHEET:
+        setFilterWorksheet(marks, FILTER_PROGRAM, sheetsArray, selectedSheet, selectedSheetName, 'Program');
         break;
     }
   });
