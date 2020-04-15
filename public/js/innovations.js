@@ -1,5 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
+var SECTION = "Results-TEST";
 
 //Filters
 var FILTER_STAGE = "Stage of Innovation";
@@ -37,7 +38,7 @@ function init() {
 
     vizInitialited = [];
     $.each(vizDataArray, function(i, data){
-      vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
+      vizInitialited.push(createTableauViz( data.elementID, data.view, SECTION, [ onSelectWorkSheet ]))
     });
 
     $("input[name='years']").on('change', showNoData);

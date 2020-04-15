@@ -1,5 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
+var SECTION = "Results-TEST";
 
 // Section Filters
 var FILTER_COUNTRY = "Country Name";
@@ -49,7 +50,7 @@ function init() {
 
   vizInitialited = [];
   $.each(vizDataArray, function (i, data) {
-    vizInitialited.push(createTableauViz(data.elementID, data.view, [onSelectWorkSheet]))
+    vizInitialited.push(createTableauViz(data.elementID, data.view, SECTION, [onSelectWorkSheet]))
   });
 
 }
