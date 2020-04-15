@@ -1,6 +1,5 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "Results-TEST";
 
 $(document).ready(init);
 
