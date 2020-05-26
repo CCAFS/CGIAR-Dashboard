@@ -82,10 +82,10 @@ function onSelectWorkSheet(mEvent){
         setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         break;
       case CGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_CGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Lead Organization');
+        setFilterWorksheet(marks, FILTER_CGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing CGIAR Organization');
         break;
       case NONCGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_NONCGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing Organization');
+        setFilterWorksheet(marks, FILTER_NONCGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing non-CGIAR Organization');
         break;
     }
   });
