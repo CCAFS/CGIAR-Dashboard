@@ -53,6 +53,7 @@ class ControlListService {
 
     $this->years = array(
       array('year'=>  '',     'name' => 'All Years',  'checked' => false ),
+      array('year'=>  2019,   'name' => '2019',       'checked' => false ),
       array('year'=>  2018,   'name' => '2018',       'checked' => false ),
       array('year'=>  2017,   'name' => '2017',       'checked' => false )
     );
