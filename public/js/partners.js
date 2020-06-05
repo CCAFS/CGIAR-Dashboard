@@ -2,6 +2,22 @@ var sheetsArray = [];
 var loadedCount = 0;
 var SECTION = "AR-Home-DB";
 
+// Filters
+var FILTER_COUNTRY = "";
+var FILTER_REGION = "";
+var FILTER_POLICIES = "Policy or Strategy";
+var FILTER_OICR = "Stage of Maturity";
+var FILTER_INNOVATIONS = "Innovation Type";
+var FILTER_PARTNERSHIPS = "";
+
+// Sheets
+var MAP_SHEET = "Partner View - Map";
+var REGION_SHEET = "Partner View - Rank sample";
+var POLICIES_SHEET = "Partner View - Policy by Type";
+var OICR_SHEET = "Partner view -OICR by Stage of Maturity";
+var INNOVATIONS_SHEET = "Partner view - Innov by Type and Stage";
+var PARTNERSHIPS_SHEET = "Partner view -Partnership by Partners";
+
 $(document).ready(init);
 
 function init() {
@@ -41,20 +57,20 @@ function onSelectWorkSheet(mEvent) {
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function (marks) {
     switch(selectedSheetName) {
-      case ISTAGE_SHEET:
-        setFilterWorksheet(marks, FILTER_STAGE, sheetsArray, selectedSheet, selectedSheetName, 'Stage');
+      case MAP_SHEET:
+        setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Stage');
         break;
-      case ITYPE_SHEET:
-        setFilterWorksheet(marks, FILTER_TYPE, sheetsArray, selectedSheet, selectedSheetName, 'Type');
+      case POLICIES_SHEET:
+        setFilterWorksheet(marks, FILTER_POLICIES, sheetsArray, selectedSheet, selectedSheetName, 'Type');
         break;
-      case IMAP_SHEET:
-        setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
+      case OICR_SHEET:
+        setFilterWorksheet(marks, OICR_SHEET, sheetsArray, selectedSheet, selectedSheetName, 'OICR Stage of Maturity');
         break;
-      case CGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_CGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Lead Organization');
+      case INNOVATIONS_SHEET:
+        setFilterWorksheet(marks, INNOVATIONS_SHEET, sheetsArray, selectedSheet, selectedSheetName, 'Innovation Type');
         break;
-      case NONCGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_NONCGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing Organization');
+      case PARTNERSHIPS_SHEET:
+        setFilterWorksheet(marks, PARTNERSHIPS_SHEET, sheetsArray, selectedSheet, selectedSheetName, 'Contributing Organization');
         break;
     }
   });
