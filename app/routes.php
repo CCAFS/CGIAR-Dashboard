@@ -12,7 +12,7 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
 
   // Year Selected
   $yearSelected = $request->getQueryParam('year');
-  $yearSelected = (isset($yearSelected)? $yearSelected : 2018);
+  $yearSelected = (isset($yearSelected)? $yearSelected : 2019);
 
   // Managers
   $controlList = new \services\ControlListService();
