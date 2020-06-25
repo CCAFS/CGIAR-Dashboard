@@ -14,7 +14,8 @@ class ControlListService {
     $this->sections = array(
       array('name' => 'Home',                                     'action' => 'home',                 'type' => 'section',      'active' => true ),
       array('name' => 'Countries',          'action' => 'geographicScope',  'type' => 'section',      'active' => true ),
-      array('name' => 'Partners',          'action' => 'partners',  'type' => 'section',      'active' => true ),
+      array('name' => 'Partners',           'action' => 'partners',  'type' => 'section',      'active' => true ),
+      array('name' => 'SRF/SDG',            'action' => 'srf',  'type' => 'section',      'active' => true ),
       array('name' => '1. Contribution to System Level Outcomes (SLOs)',          'action' => 'systemLevelOutcomes',  'type' => 'section',      'active' => true ),
       array('name' => '2. Outcome Impact Case Reports (OICR)',    'action' => 'caseReports',          'type' => 'section',      'active' => true ),
       array('name' => '3. Progress Towards Milestones',           'action' => 'milestones',           'type' => 'section',      'active' => true ),
