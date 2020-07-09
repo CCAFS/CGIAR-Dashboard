@@ -24,7 +24,7 @@ function clearDashboardFilter(sheets, filterName, excludedSheetName) {
   $.each(sheets, function (i, sheet) {
     if(sheet.getName() !=  excludedSheetName){
       sheet.clearFilterAsync(filterName);
-      //sheet.applyFilterAsync(filterName, "", tableau.FilterUpdateType.ALL);
+      sheet.applyFilterAsync(filterName, "", tableau.FilterUpdateType.ALL);
     }
   });
 }

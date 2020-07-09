@@ -27,10 +27,7 @@ class ControlListService {
       array('name' => 'Publications',                             'action' => 'publications',         'type' => 'subsection',   'active' => true ),
       array('name' => 'Altmetric',                                'action' => 'altmetric',            'type' => 'subsection',   'active' => true ),
       array('name' => '5. Insights',                              'action' => 'insights',             'type' => 'section',      'active' => true ),
-      array('name' => 'Innov Test',                                'action' => 'innovTest',                 'type' => 'section',      'active' => true ),
-      array('name' => 'Innovations Test',                         'action' => 'innovationsTest',      'type' => 'section',      'active' => true ),
-      array('name' => 'Milestones Test',                          'action' => 'milestonesTest',       'type' => 'section',      'active' => true ),
-    );
+      );
 
 
     $this->crps = array (
