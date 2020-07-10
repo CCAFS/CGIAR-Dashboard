@@ -24,7 +24,7 @@ $(document).ready(init);
 
 function init() {
   vizDataArray = [
-    { elementID: 'all-oicr', view: 'AR-SLODashboard' }
+    { elementID: 'all-oicr', view: 'SLO-DB-Full' }
   ];
 
   vizInitialited = [];
