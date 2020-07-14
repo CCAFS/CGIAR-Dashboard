@@ -22,7 +22,7 @@ $(document).ready(init);
 
 function init() {
   vizDataArray = [
-    { elementID: 'all-oicr', view: 'SDGSRFSEARCHDB' }
+    { elementID: 'all-oicr', view: 'SDGSearch-DB-Full' }
   ];
 
   vizInitialited = [];

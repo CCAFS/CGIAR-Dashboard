@@ -22,7 +22,7 @@ $(document).ready(init);
 
 function init() {
   vizDataArray = [
-    { elementID: 'all-oicr', view: 'COUNTRYSEARCH-PROD' }
+    { elementID: 'all-oicr', view: 'CountrySearch-DB-Full' }
   ];
 
   vizInitialited = [];

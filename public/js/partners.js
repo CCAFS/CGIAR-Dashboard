@@ -24,7 +24,7 @@ $(document).ready(init);
 
 function init() {
   vizDataArray = [
-    { elementID: 'all-oicr', view: 'PARTNERSEARCHDB_1' }
+    { elementID: 'all-oicr', view: 'PartnerSearch-DB-Full' }
   ];
 
   vizInitialited = [];
