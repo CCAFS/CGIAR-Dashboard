@@ -182,9 +182,10 @@ function isZoomed() {
 
 function addYearsTag(){
   var yearValue =  $(this).val();
-  if (yearValue == "2018" || yearValue == "2017") {
-    $('.year-tag').hide(500);
-  } else {
+  console.log(yearValue);
+  if (yearValue == "") {
     $('.year-tag').show(500);
+  } else {
+    $('.year-tag').hide(500);
   }
 }

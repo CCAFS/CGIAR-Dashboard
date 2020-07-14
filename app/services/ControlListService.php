@@ -13,6 +13,9 @@ class ControlListService {
 
     $this->sections = array(
       array('name' => 'Home',                                     'action' => 'home',                 'type' => 'section',      'active' => true ),
+      array('name' => 'Countries',          'action' => 'geographicScope',  'type' => 'section',      'active' => true ),
+      array('name' => 'Partners',           'action' => 'partners',  'type' => 'section',      'active' => true ),
+      array('name' => 'SRF/SDG',            'action' => 'SRF',  'type' => 'section',      'active' => true ),
       array('name' => '1. Contribution to System Level Outcomes (SLOs)',          'action' => 'systemLevelOutcomes',  'type' => 'section',      'active' => true ),
       array('name' => '2. Outcome Impact Case Reports (OICR)',    'action' => 'caseReports',          'type' => 'section',      'active' => true ),
       array('name' => '3. Progress Towards Milestones',           'action' => 'milestones',           'type' => 'section',      'active' => true ),
@@ -24,10 +27,7 @@ class ControlListService {
       array('name' => 'Publications',                             'action' => 'publications',         'type' => 'subsection',   'active' => true ),
       array('name' => 'Altmetric',                                'action' => 'altmetric',            'type' => 'subsection',   'active' => true ),
       array('name' => '5. Insights',                              'action' => 'insights',             'type' => 'section',      'active' => true ),
-      array('name' => 'Innov Test',                                'action' => 'innovTest',                 'type' => 'section',      'active' => true ),
-      array('name' => 'Innovations Test',                         'action' => 'innovationsTest',      'type' => 'section',      'active' => true ),
-      array('name' => 'Milestones Test',                          'action' => 'milestonesTest',       'type' => 'section',      'active' => true ),
-    );
+      );
 
 
     $this->crps = array (
@@ -51,6 +51,7 @@ class ControlListService {
 
     $this->years = array(
       array('year'=>  '',     'name' => 'All Years',  'checked' => false ),
+      array('year'=>  2019,   'name' => '2019',       'checked' => false ),
       array('year'=>  2018,   'name' => '2018',       'checked' => false ),
       array('year'=>  2017,   'name' => '2017',       'checked' => false )
     );

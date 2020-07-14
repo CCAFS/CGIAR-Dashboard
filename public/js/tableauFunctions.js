@@ -24,7 +24,7 @@ function clearDashboardFilter(sheets, filterName, excludedSheetName) {
   $.each(sheets, function (i, sheet) {
     if(sheet.getName() !=  excludedSheetName){
       sheet.clearFilterAsync(filterName);
-      //sheet.applyFilterAsync(filterName, "", tableau.FilterUpdateType.ALL);
+      sheet.applyFilterAsync(filterName, "", tableau.FilterUpdateType.ALL);
     }
   });
 }
@@ -33,6 +33,7 @@ function getMarksValuesByFilter(marks, filterName){
   var outputs = [];
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {
     var pairs = marks[markIndex].getPairs();
+    console.log(pairs);
     for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
       var pair = pairs[pairIndex];
       if (pair.fieldName == filterName) {
@@ -95,15 +96,11 @@ function setFilterWorksheet(marks, filterName, sheetsArray, selectedSheet, selec
   }
 }
 
-function createTableauViz(elementID, view, events){
+function createTableauViz(elementID, view, section, events){
   var viz;
   var container = document.getElementById(elementID);
   var $element = $('#'+ elementID);
-  if(view=='2_1DBInnovations-Jules-Feb20_1'){
-    var url = 'https://public.tableau.com/views/Innovations-DB-Feb2020' + "/" + view;
-  } else {
-    var url = appConfig.tableauView + "/" + view;
-  }
+  var url = appConfig.tableauView + section + "/" + view;
 
   $element.css('position','relative');
   $element.append('<div class="loadingBlock singleLoadingBlock"></div>')

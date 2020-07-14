@@ -1,23 +1,17 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "Results-TEST";
+var SECTION = "AR-Policies";
 
 //Filters
-FILTER_SLO = "SLO";
-FILTER_SDG = "SDG";
+
 
 //Sheets
-var SLO1_SHEET = "8.2 SH SLO Numbers Top";
-var SLO3_SHEET = "8.3 SH SLO 3 Total-Link";
-var SLOTARGET11_SHEET = "8.4 SH SLO Target 1.1 (2)";
 
 $(document).ready(init);
 
 function init() {
   vizDataArray = [
-    { elementID: 'slo-bar', view: '8_1DBSLOBarTop' },
-    { elementID: 'slo-targets', view: '8_2DBSLOTargets2' },
-    { elementID: 'slo-list', view: '8_3DBSLODetail' }
+    { elementID: 'all-oicr', view: 'Policies-DB-Full' }
   ];
 
   vizInitialited = [];
@@ -52,13 +46,22 @@ function onSelectWorkSheet(mEvent) {
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function (marks) {
-    switch (selectedSheetName) {
-      case SLO1_SHEET:
-        setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
+    /* switch(selectedSheetName) {
+     case ISTAGE_SHEET:
+        setFilterWorksheet(marks, FILTER_STAGE, sheetsArray, selectedSheet, selectedSheetName, 'Stage');
         break;
-      case SLOTARGET11_SHEET:
-        setFilterWorksheet(marks, FILTER_SDG, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
+      case ITYPE_SHEET:
+        setFilterWorksheet(marks, FILTER_TYPE, sheetsArray, selectedSheet, selectedSheetName, 'Type');
         break;
-    };
+      case IMAP_SHEET:
+        setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
+        break;
+      case CGIARORGS_SHEET:
+        setFilterWorksheet(marks, FILTER_CGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing CGIAR Organization');
+        break;
+      case NONCGIARORGS_SHEET:
+        setFilterWorksheet(marks, FILTER_NONCGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing non-CGIAR Organization');
+        break;
+    }*/
   });
 }

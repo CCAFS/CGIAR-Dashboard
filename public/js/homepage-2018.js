@@ -1,5 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
+var SECTION = "Results-TEST";
 
 $(document).ready(init);
 
@@ -20,7 +21,7 @@ function init() {
 
   vizInitialited = [];
   $.each(vizDataArray, function (i, data) {
-    vizInitialited.push(createTableauViz(data.elementID, data.view, [onSelectWorkSheet]))
+    vizInitialited.push(createTableauViz(data.elementID, data.view, SECTION, [onSelectWorkSheet]))
   });
 
 }

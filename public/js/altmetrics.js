@@ -10,6 +10,7 @@ var NEWS_SHEET = "6.3 SH Altm News";
 var POLICIES_SHEET = "6.3 SH Altm Policy";
 var TOPTEN_SHEET = "6.2 SH Altmetric Detail - Top10";
 var LIST_SHEET = "6.1 SH Altmetric Detail";
+var SECTION = "Results-TEST";
 
 $(document).ready(init);
 
@@ -24,7 +25,7 @@ function init() {
 
   vizInitialited = [];
     $.each(vizDataArray, function(i, data){
-      vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
+      vizInitialited.push(createTableauViz( data.elementID, data.view, SECTION, [ onSelectWorkSheet ]))
   });
 
 }

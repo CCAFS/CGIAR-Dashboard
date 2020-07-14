@@ -1,5 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
+var SECTION = "Results-TEST";
 
 //Filters
 var FILTER_STAGE = "Stage of Innovation";
@@ -37,7 +38,7 @@ function init() {
 
     vizInitialited = [];
     $.each(vizDataArray, function(i, data){
-      vizInitialited.push(createTableauViz( data.elementID, data.view, [ onSelectWorkSheet ]))
+      vizInitialited.push(createTableauViz( data.elementID, data.view, SECTION, [ onSelectWorkSheet ]))
     });
 
     $("input[name='years']").on('change', showNoData);
@@ -81,10 +82,10 @@ function onSelectWorkSheet(mEvent){
         setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         break;
       case CGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_CGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Lead Organization');
+        setFilterWorksheet(marks, FILTER_CGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing CGIAR Organization');
         break;
       case NONCGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_NONCGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing Organization');
+        setFilterWorksheet(marks, FILTER_NONCGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing non-CGIAR Organization');
         break;
     }
   });

@@ -9,3 +9,31 @@
 .milestones-charts {
     height: 900px;
 }
+
+.geoScope-charts {
+    height:2200px;
+}
+
+.partners-charts {
+  height: 1955px;
+}
+
+.partnersFilter-charts {
+  height: 1455px;
+}
+
+.slo-charts {
+  height: 1400px;
+}
+
+.srf-charts {
+  height: 1950px;
+}
+
+.innovations-V2-charts {
+  height: 1800px;
+}
+
+.policies-V2-charts{
+  height: 1200px;
+}

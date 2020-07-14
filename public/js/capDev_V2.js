@@ -1,21 +1,17 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "Results-TEST";
+var SECTION = "AR-CAPDEV";
+
+//Filters
+
+//Sheets
+
 
 $(document).ready(init);
 
 function init() {
-
   vizDataArray = [
-    { elementID: 'slo-bar', view: 'HomeDB-SLOBarTop' },
-    { elementID: 'oicr-chart', view: 'HomeDB-OICRStageofMaturity2' },
-    { elementID: 'innovations-number', view: 'HomeDBIndicatorNumbers-Innovations' },
-    { elementID: 'partnerships-number', view: 'HomeDBIndicatorNumbers-Partnerships2017' },
-    { elementID: 'policies-number', view: 'HomeDBIndicatorNumbers-Policies' },
-    { elementID: 'capDev-number', view: 'HomeDBIndicatorNumbers-Trainees' },
-    { elementID: 'publications-number', view: 'HomeDBIndicatorNumbers-Publications' },
-    { elementID: 'altmetric-number', view: 'HomeDBIndicatorNumbers-Altmetric' },
-    { elementID: 'insights-chart', view: 'HomeDB-Insights'}
+    { elementID: 'all-capDev', view: 'CapDev-DB-Full' }
   ];
 
   vizInitialited = [];
@@ -46,10 +42,12 @@ function loaded() {
   }
 }
 
-function onSelectWorkSheet(mEvent){
+function onSelectWorkSheet(mEvent) {
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
-  return mEvent.getMarksAsync().then(function(marks){
-    //filters
+  return mEvent.getMarksAsync().then(function (marks) {
+    switch(selectedSheetName) {
+
+    }
   });
 }
