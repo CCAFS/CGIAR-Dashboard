@@ -42,6 +42,14 @@ svg {
     margin-left: 10px
 }
 
+.svg-interactive{
+    fill: black !important;
+    width: 80%;
+    height: auto;
+    margin: 2% 10%;
+}
+
+
 li.active svg {
     fill: #ffffff;
 }
