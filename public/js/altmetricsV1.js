@@ -1,6 +1,5 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-Altmetric";
 
 var TOTAL_SHEET = "6.0 SH Altmetrics Total Titles";
 var MENDELEY_SHEET = "6.3 SH Altm Mendeley";
@@ -11,13 +10,17 @@ var NEWS_SHEET = "6.3 SH Altm News";
 var POLICIES_SHEET = "6.3 SH Altm Policy";
 var TOPTEN_SHEET = "6.2 SH Altmetric Detail - Top10";
 var LIST_SHEET = "6.1 SH Altmetric Detail";
+var SECTION = "Results-TEST";
 
 $(document).ready(init);
 
 function init() {
 
   vizDataArray = [
-    { elementID: 'all-altmetric', view: 'Altmetrics-DB-Full' }
+    { elementID: 'total-altmetrics', view: '6_0DBAltmetricTotalPubs' },
+    { elementID: 'altmetrics-mentions', view: '6_3DBAltmetricSocialMediatotals' },
+    { elementID: 'topten-alt', view: '6_2DBAltmetricTop10' },
+    { elementID: 'all-altmetrics', view: '6_1DBAltmetricDetail' }
   ];
 
   vizInitialited = [];
