@@ -20,7 +20,7 @@ $(document).ready(init);
 
 function init() {
     vizDataArray = [
-      { elementID: 'all-publications', view: 'Publications-DB-Full2' }
+      { elementID: 'all-publications', view: 'Publications-DB-Full' }
     ];
 
     vizInitialited = [];
