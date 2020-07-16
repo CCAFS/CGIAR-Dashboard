@@ -24,7 +24,6 @@ function clearDashboardFilter(sheets, filterName, excludedSheetName) {
   $.each(sheets, function (i, sheet) {
     if(sheet.getName() !=  excludedSheetName){
       sheet.clearFilterAsync(filterName);
-      sheet.applyFilterAsync(filterName, "", tableau.FilterUpdateType.ALL);
     }
   });
 }
@@ -69,7 +68,7 @@ function setFilterWorksheet(marks, filterName, sheetsArray, selectedSheet, selec
   if(selectedItems.length){
     $tag.html("<strong>"+tagTitle+":</strong> " + selectedItems.join(', '));
     $tag.show();
-    appyDashboardFilter(sheetsArray, filterName, selectedItems, selectedSheetName);
+  //  appyDashboardFilter(sheetsArray, filterName, selectedItems, selectedSheetName);
   }else{
     $tag.remove();
     clearDashboardFilter(sheetsArray, filterName, selectedSheetName);

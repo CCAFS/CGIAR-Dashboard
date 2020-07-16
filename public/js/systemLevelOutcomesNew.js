@@ -3,22 +3,14 @@ var loadedCount = 0;
 var SECTION = "AR-SLO";
 
 // Filters
-var FILTER_COUNTRY = "HEADQUARTER";
-var FILTER_TOPPARTNER = "Partner Name";
-var FILTER_OICR = "Stage of Maturity";
-var FILTER_POLICIES = "Policy Investment Type";
-var FILTER_INNOVATIONS = "Innovation Type";
-var FILTER_JOURNALS = "JOURNAL_TITLE";
-var FILTER_PARTNERSHIPS = "Partner Name";
+var FILTER_COUNTRY = "Country Name";
+var FILTER_SLO = "Sdg Short Name";
+var FILTER_SLOTARGETS = "SLO";
 
 // Sheets
-var MAP_SHEET = "Partner View - Map";
-var TOPPARTNERS_SHEET = "Partner View - Partner name list";
-var POLICIES_SHEET = "Partner View - Policy by Type";
-var OICR_SHEET = "Partner view -OICR by Stage of Maturity";
-var INNOVATIONS_SHEET = "Partner view - Innov by Type and Stage";
-var JOURNALS_SHEET = "Partner view - Publications by Top Journals";
-var PARTNERSHIPS_SHEET = "Partner view -Partnership by Partners";
+var MAP_SHEET = "AR-SLO Map Icons";
+var SLO_SHEET = "SLO-DB-SDG";
+var SLOTARGETS_SHEET = "SLO - SLO Target Bar Chart ";
 
 $(document).ready(init);
 
@@ -63,23 +55,12 @@ function onSelectWorkSheet(mEvent) {
       case MAP_SHEET:
         setFilterWorksheet(marks, FILTER_COUNTRY, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         break;
-      case TOPPARTNERS_SHEET:
-        setFilterWorksheet(marks, FILTER_TOPPARTNER, sheetsArray, selectedSheet, selectedSheetName, 'Partner');
+      case SLO_SHEET:
+        setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'Sustainable Development Goal');
         break;
-      case OICR_SHEET:
-        setFilterWorksheet(marks, FILTER_OICR, sheetsArray, selectedSheet, selectedSheetName, 'OICR Stage of Maturity');
+      case SLOTARGETS_SHEET:
+        setFilterWorksheet(marks, FILTER_SLOTARGETS, sheetsArray, selectedSheet, selectedSheetName, 'System Level Outcome');
         break;
-      case POLICIES_SHEET:
-        setFilterWorksheet(marks, FILTER_POLICIES, sheetsArray, selectedSheet, selectedSheetName, 'Policy Type');
-        break;
-      case INNOVATIONS_SHEET:
-        setFilterWorksheet(marks, FILTER_INNOVATIONS, sheetsArray, selectedSheet, selectedSheetName, 'Innovation Type');
-        break;
-      case JOURNALS_SHEET:
-        setFilterWorksheet(marks, FILTER_JOURNALS, sheetsArray, selectedSheet, selectedSheetName, 'Journal Title');
-        break;
-      case PARTNERSHIPS_SHEET:
-        setFilterWorksheet(marks, FILTER_PARTNERSHIPS, sheetsArray, selectedSheet, selectedSheetName, 'Main Area of the Partnership');
-        break;    }
+      }
   });
 }
