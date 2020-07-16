@@ -1,16 +1,18 @@
-var sheetsArray = [];
+/* var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-Milestones";
+var SECTION = "";
 
 //Filters
 
+
 //Sheets
+
 
 $(document).ready(init);
 
 function init() {
   vizDataArray = [
-    { elementID: 'all-milestones', view: 'Milestones-DB-Full' }
+    { elementID: 'all-melia', view: '' }
   ];
 
   vizInitialited = [];
@@ -63,4 +65,4 @@ function onSelectWorkSheet(mEvent) {
         break;
     }
   });
-}
+}*/

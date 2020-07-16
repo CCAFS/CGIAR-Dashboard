@@ -23,10 +23,12 @@ class ControlListService {
       array('name' => 'Innovations',                              'action' => 'innovations',          'type' => 'subsection',   'active' => true ),
       array('name' => 'Partnerships',                             'action' => 'partnerships',         'type' => 'subsection',   'active' => true ),
       array('name' => 'Policies',                                 'action' => 'policies',             'type' => 'subsection',   'active' => true ),
+      array('name' => 'MELIA',                                    'action' => 'MELIA',                'type' => 'subsection',   'active' => true ),
       array('name' => 'Capacity Development',                     'action' => 'capDev',               'type' => 'subsection',   'active' => true ),
       array('name' => 'Publications',                             'action' => 'publications',         'type' => 'subsection',   'active' => true ),
       array('name' => 'Altmetric',                                'action' => 'altmetric',            'type' => 'subsection',   'active' => true ),
-      array('name' => '5. Insights',                              'action' => 'insights',             'type' => 'section',      'active' => true ),
+      array('name' => '5. Genebank',                              'action' => 'genebank',             'type' => 'section',      'active' => true ),
+      array('name' => '6. Insights',                              'action' => 'insights',             'type' => 'section',      'active' => true ),
       );
 
 

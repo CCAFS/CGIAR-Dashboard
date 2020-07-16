@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-Partnerships_15943965482270";
+var SECTION = "Results-TEST";
 
 //Filters
 var FILTER_MAP = "Country Name";
@@ -22,7 +22,11 @@ $(document).ready(init);
 
 function init() {
   vizDataArray = [
-    { elementID: 'all-partnerships', view: 'Partnerships-DB-Full' }
+    { elementID: 'partnerships-map', view: '3_6DBPartnership2018-Map' },
+    { elementID: 'partnerships-main', view: '3_1DBPartnership2018-Donut-Larger' },
+    { elementID: 'partnerships-type', view: '3_2DBPartnership2018-byPartnerType-Larger' },
+    { elementID: 'top-partnerships', view: '3_3DBPartnership2018-TopPartners-Larger' },
+    { elementID: 'partnerships-list', view: '3_4DBPartnership2018Detail' }
   ];
 
   vizInitialited = [];

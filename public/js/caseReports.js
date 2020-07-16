@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-Milestones";
+var SECTION = "AR-OICR";
 
 //Filters
 
@@ -10,7 +10,7 @@ $(document).ready(init);
 
 function init() {
   vizDataArray = [
-    { elementID: 'all-milestones', view: 'Milestones-DB-Full' }
+    { elementID: 'all-oicr', view: 'OCIR-DB-Full' }
   ];
 
   vizInitialited = [];

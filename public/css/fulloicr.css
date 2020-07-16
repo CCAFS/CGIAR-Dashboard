@@ -1,5 +1,5 @@
 .oicr-charts {
-    height: 1326px;
+    height: 1700px;
 }
 
 .innovations-charts {
@@ -7,7 +7,7 @@
 }
 
 .milestones-charts {
-    height: 900px;
+    height: 11000px;
 }
 
 .geoScope-charts {
@@ -36,4 +36,24 @@
 
 .policies-V2-charts{
   height: 1200px;
+}
+
+.MELIA-charts {
+  height: 300px;
+}
+
+.genebank-charts {
+  height: 2000px;
+}
+
+.publications-charts {
+  height: 1400px;
+}
+
+.altmetric-charts {
+  height:1100px;
+}
+
+.partnerships-charts {
+  height: 1450px;
 }
