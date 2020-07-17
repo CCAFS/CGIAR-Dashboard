@@ -1,6 +1,6 @@
-/* var sheetsArray = [];
+var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "";
+var SECTION = "AR-MELIA";
 
 //Filters
 
@@ -12,7 +12,7 @@ $(document).ready(init);
 
 function init() {
   vizDataArray = [
-    { elementID: 'all-melia', view: '' }
+    { elementID: 'all-melia', view: 'MELIA-DB-Full' }
   ];
 
   vizInitialited = [];
@@ -65,4 +65,4 @@ function onSelectWorkSheet(mEvent) {
         break;
     }
   });
-}*/
+}

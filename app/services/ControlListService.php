@@ -29,7 +29,6 @@ class ControlListService {
       array('name' => 'Altmetric',                                'action' => 'altmetric',            'type' => 'subsection',   'active' => true ),
       array('name' => 'M&E Studies',                                    'action' => 'MELIA',                'type' => 'section',   'active' => true ),
       array('name' => 'Genebank',                              'action' => 'genebank',             'type' => 'section',      'active' => true ),
-      array('name' => 'Insights',                              'action' => 'insights',             'type' => 'section',      'active' => true ),
       );
 
 
