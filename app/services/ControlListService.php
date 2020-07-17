@@ -13,22 +13,23 @@ class ControlListService {
 
     $this->sections = array(
       array('name' => 'Home',                                     'action' => 'home',                 'type' => 'section',      'active' => true ),
-      array('name' => 'Countries',          'action' => 'geographicScope',  'type' => 'section',      'active' => true ),
-      array('name' => 'Partners',           'action' => 'partners',  'type' => 'section',      'active' => true ),
-      array('name' => 'SRF/SDG',            'action' => 'SRF',  'type' => 'section',      'active' => true ),
-      array('name' => '1. Contribution to System Level Outcomes (SLOs)',          'action' => 'systemLevelOutcomes',  'type' => 'section',      'active' => true ),
-      array('name' => '2. Outcome Impact Case Reports (OICR)',    'action' => 'caseReports',          'type' => 'section',      'active' => true ),
-      array('name' => '3. Progress Towards Milestones',           'action' => 'milestones',           'type' => 'section',      'active' => true ),
-      array('name' => '4. Common Results Reporting Indicators',           'action' => 'innovations',          'type' => 'title',        'active' => true ),
+      array('name' => 'Search by',          'action' => 'geographicScope',  'type' => 'section',      'active' => true ),
+      array('name' => 'Location',          'action' => 'geographicScope',  'type' => 'subsection',      'active' => true ),
+      array('name' => 'Partners',           'action' => 'partners',  'type' => 'subsection',      'active' => true ),
+      array('name' => 'SDG',                'action' => 'SDG',  'type' => 'subsection',      'active' => true ),
+      array('name' => 'Common Results Reporting Indicators',           'action' => 'systemLevelOutcomes',          'type' => 'title',        'active' => true ),
+      array('name' => 'Contribution to System Level Outcomes (SLOs)',          'action' => 'systemLevelOutcomes',  'type' => 'subsection',      'active' => true ),
+      array('name' => 'Outcome Impact Case Reports (OICR)',    'action' => 'caseReports',          'type' => 'subsection',      'active' => true ),
+      array('name' => 'Progress Towards Milestones',           'action' => 'milestones',           'type' => 'subsection',      'active' => true ),
       array('name' => 'Innovations',                              'action' => 'innovations',          'type' => 'subsection',   'active' => true ),
       array('name' => 'Partnerships',                             'action' => 'partnerships',         'type' => 'subsection',   'active' => true ),
       array('name' => 'Policies',                                 'action' => 'policies',             'type' => 'subsection',   'active' => true ),
-      array('name' => 'MELIA',                                    'action' => 'MELIA',                'type' => 'subsection',   'active' => true ),
       array('name' => 'Capacity Development',                     'action' => 'capDev',               'type' => 'subsection',   'active' => true ),
       array('name' => 'Publications',                             'action' => 'publications',         'type' => 'subsection',   'active' => true ),
       array('name' => 'Altmetric',                                'action' => 'altmetric',            'type' => 'subsection',   'active' => true ),
-      array('name' => '5. Genebank',                              'action' => 'genebank',             'type' => 'section',      'active' => true ),
-      array('name' => '6. Insights',                              'action' => 'insights',             'type' => 'section',      'active' => true ),
+      array('name' => 'M&E Studies',                                    'action' => 'MELIA',                'type' => 'section',   'active' => true ),
+      array('name' => 'Genebank',                              'action' => 'genebank',             'type' => 'section',      'active' => true ),
+      array('name' => 'Insights',                              'action' => 'insights',             'type' => 'section',      'active' => true ),
       );
 
 

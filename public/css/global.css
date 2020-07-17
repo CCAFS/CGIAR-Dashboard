@@ -594,8 +594,8 @@ a.internalLink:hover {
 }
 
 .icon-partnerships:before {
-    content: "\e90a";
-    color: #ffa600;
+  content: "\e90e";
+  color: #ffa600;
 }
 
 .icon-altmetrics .path1:before {
@@ -646,23 +646,168 @@ a.internalLink:hover {
 }
 
 .icon-capDev:before {
-    content: "\e908";
-    color: #ffa600;
+  content: "\e908";
+  color: #ffa600;
 }
 
 .icon-innovations:before {
-    content: "\e909";
-    color: #ffa600;
+  content: "\e909";
+  color: #ffa600;
 }
 
 .icon-policies:before {
-    content: "\e90b";
-    color: #ffa600;
+  content: "\e90f";
+  color: #ffa600;
 }
 
 .icon-publications:before {
-    content: "\e90c";
-    color: #ffa600;
+  content: "\e910";
+  color: #ffa600;
+}
+
+.icon-altmetric .path1:before {
+  content: "\e900";
+  color: #ffc928;
+}
+.icon-altmetric .path2:before {
+  content: "\e901";
+  color: #2d58a4;
+  margin-left: -1em;
+}
+.icon-altmetric .path3:before {
+  content: "\e902";
+  color: #26baec;
+  margin-left: -1em;
+}
+.icon-altmetric .path4:before {
+  content: "\e903";
+  color: #98ca3d;
+  margin-left: -1em;
+}
+.icon-altmetric .path5:before {
+  content: "\e904";
+  color: #8e2378;
+  margin-left: -1em;
+}
+.icon-altmetric .path6:before {
+  content: "\e905";
+  color: #272660;
+  margin-left: -1em;
+}
+.icon-altmetric .path7:before {
+  content: "\e906";
+  color: #f38b22;
+  margin-left: -1em;
+}
+.icon-altmetric .path8:before {
+  content: "\e907";
+  color: #ec362e;
+  margin-left: -1em;
+}
+
+.icon-MELIA:before {
+  content: "\e90a";
+  color: #ffa600;
+}
+
+.icon-milestones:before {
+  content: "\e90b";
+  color: #ffa600;
+}
+
+.icon-OICR:before {
+  content: "\e90c";
+  color: #ffa600;
+}
+
+.icon-partners:before {
+  content: "\e90d";
+  color: #ffa600;
+}
+
+.icon-sdg .path1:before {
+  content: "\e911";
+  color: #cf8d2a;
+}
+.icon-sdg .path2:before {
+  content: "\e912";
+  color: #48773e;
+  margin-left: -1em;
+}
+.icon-sdg .path3:before {
+  content: "\e913";
+  color: #f26d26;
+  margin-left: -1em;
+}
+.icon-sdg .path4:before {
+  content: "\e914";
+  color: #e11484;
+  margin-left: -1em;
+}
+.icon-sdg .path5:before {
+  content: "\e915";
+  color: #007dbc;
+  margin-left: -1em;
+}
+.icon-sdg .path6:before {
+  content: "\e916";
+  color: #d3a029;
+  margin-left: -1em;
+}
+.icon-sdg .path7:before {
+  content: "\e917";
+  color: #f99d26;
+  margin-left: -1em;
+}
+.icon-sdg .path8:before {
+  content: "\e918";
+  color: #5dbb46;
+  margin-left: -1em;
+}
+.icon-sdg .path9:before {
+  content: "\e919";
+  color: #fdb713;
+  margin-left: -1em;
+}
+.icon-sdg .path10:before {
+  content: "\e91a";
+  color: #183668;
+  margin-left: -1em;
+}
+.icon-sdg .path11:before {
+  content: "\e91b";
+  color: #8f1939;
+  margin-left: -1em;
+}
+.icon-sdg .path12:before {
+  content: "\e91c";
+  color: #279b48;
+  margin-left: -1em;
+}
+.icon-sdg .path13:before {
+  content: "\e91d";
+  color: #c31f33;
+  margin-left: -1em;
+}
+.icon-sdg .path14:before {
+  content: "\e91e";
+  color: #eb1c2d;
+  margin-left: -1em;
+}
+.icon-sdg .path15:before {
+  content: "\e91f";
+  color: #ef402b;
+  margin-left: -1em;
+}
+.icon-sdg .path16:before {
+  content: "\e920";
+  color: #02558b;
+  margin-left: -1em;
+}
+.icon-sdg .path17:before {
+  content: "\e921";
+  color: #00aed9;
+  margin-left: -1em;
 }
 
 .sectionAction-innovTest,

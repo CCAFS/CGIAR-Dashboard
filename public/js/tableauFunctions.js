@@ -28,6 +28,15 @@ function clearDashboardFilter(sheets, filterName, excludedSheetName) {
   });
 }
 
+function clearSeparatedDashboardFilter(sheets, filterName, excludedSheetName) {
+  $.each(sheets, function (i, sheet) {
+    if(sheet.getName() !=  excludedSheetName){
+      sheet.clearFilterAsync(filterName);
+      sheet.applyFilterAsync(filtername, "", tableau.FilterUpdateType.ALL);
+    }
+  });
+}
+
 function getMarksValuesByFilter(marks, filterName){
   var outputs = [];
   for (var markIndex = 0; markIndex < marks.length; markIndex++) {

@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "Results-TEST";
+var SECTION = "AR-Home-DB";
 
 $(document).ready(init);
 
@@ -8,15 +8,14 @@ function init() {
 
   vizDataArray = [
     { elementID: 'slo-bar', view: 'HomeDB-SLOBarTop' },
-    { elementID: 'oicr-chart', view: 'HomeDB-OICRStageofMaturity2' },
-    { elementID: 'milestones', view: 'HomeDB-Milestonesdonut' },
-    { elementID: 'innovations-number', view: 'HomeDBIndicatorNumbers-Innovations' },
-    { elementID: 'partnerships-number', view: 'HomeDBIndicatorNumbers-Partnerships' },
-    { elementID: 'policies-number', view: 'HomeDBIndicatorNumbers-Policies' },
-    { elementID: 'capDev-number', view: 'HomeDBIndicatorNumbers-Trainees' },
-    { elementID: 'publications-number', view: 'HomeDBIndicatorNumbers-Publications' },
-    { elementID: 'altmetric-number', view: 'HomeDBIndicatorNumbers-Altmetric' },
-    { elementID: 'insights-chart', view: 'HomeDB-Insights'}
+    { elementID: 'oicr-chart', view: 'HomeDB-OICRDB' },
+    { elementID: 'milestones', view: 'HomeDB-MilestoneDB' },
+    { elementID: 'innovations-number', view: 'HomeDB-TotalInnovationsDB' },
+    { elementID: 'partnerships-number', view: 'HomeDB-TotalPartnershipsDB' },
+    { elementID: 'policies-number', view: 'HomeDB-TotalPoliciesDB' },
+    { elementID: 'capDev-number', view: 'HomeDB-TotalTraineesDB' },
+    { elementID: 'publications-number', view: 'HomeDB-TotalPublicationsDB' },
+    { elementID: 'altmetric-number', view: 'HomeDB-AlmetricDB' }
   ];
 
   vizInitialited = [];
