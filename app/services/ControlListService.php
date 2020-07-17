@@ -17,7 +17,7 @@ class ControlListService {
       array('name' => 'Location',          'action' => 'geographicScope',  'type' => 'subsection',      'active' => true ),
       array('name' => 'Partners',           'action' => 'partners',  'type' => 'subsection',      'active' => true ),
       array('name' => 'SDG',                'action' => 'SDG',  'type' => 'subsection',      'active' => true ),
-      array('name' => 'Common Results Reporting Indicators',           'action' => 'systemLevelOutcomes',          'type' => 'title',        'active' => true ),
+      array('name' => 'Results',           'action' => 'systemLevelOutcomes',          'type' => 'title',        'active' => true ),
       array('name' => 'Contribution to System Level Outcomes (SLOs)',          'action' => 'systemLevelOutcomes',  'type' => 'subsection',      'active' => true ),
       array('name' => 'Outcome Impact Case Reports (OICR)',    'action' => 'caseReports',          'type' => 'subsection',      'active' => true ),
       array('name' => 'Progress Towards Milestones',           'action' => 'milestones',           'type' => 'subsection',      'active' => true ),
