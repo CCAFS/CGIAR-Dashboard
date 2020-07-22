@@ -27,8 +27,8 @@ class ControlListService {
       array('name' => 'Capacity Development',                     'action' => 'capDev',               'type' => 'subsection',   'active' => true ),
       array('name' => 'Altmetric',                                'action' => 'altmetric',            'type' => 'subsection',   'active' => true ),
       array('name' => 'Publications',                             'action' => 'publications',         'type' => 'subsection',   'active' => true ),
-      array('name' => 'M&E Studies',                                    'action' => 'MELIA',                'type' => 'section',   'active' => true ),
-      array('name' => 'Genebank',                              'action' => 'genebank',             'type' => 'section',      'active' => true ),
+      array('name' => 'MELIA Studies',                                    'action' => 'MELIA',                'type' => 'section',   'active' => true ),
+      array('name' => 'Genebanks',                              'action' => 'genebank',             'type' => 'section',      'active' => true ),
       );
 
 
