@@ -28,7 +28,7 @@ class ControlListService {
       array('name' => 'Altmetric',                                'action' => 'altmetric',            'type' => 'subsection',   'active' => true ),
       array('name' => 'Peer Reviewed Papers',                             'action' => 'publications',         'type' => 'subsection',   'active' => true ),
       array('name' => 'MELIA Studies',                                    'action' => 'MELIA',                'type' => 'section',   'active' => true ),
-      array('name' => 'Genebanks',                              'action' => 'genebank',             'type' => 'section',      'active' => true ),
+      array('name' => 'Genebanks',                              'action' => 'genebanks',             'type' => 'section',      'active' => true ),
       );
 
 
