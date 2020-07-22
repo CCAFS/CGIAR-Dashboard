@@ -13,7 +13,7 @@ class ControlListService {
 
     $this->sections = array(
       array('name' => 'Home',                                     'action' => 'home',                 'type' => 'section',      'active' => true ),
-      array('name' => 'Search by',          'action' => 'geographicScope',  'type' => 'section',      'active' => true ),
+      array('name' => 'Search by',          'action' => 'geographicScope',  'type' => 'title',      'active' => true ),
       array('name' => 'Location',          'action' => 'geographicScope',  'type' => 'subsection',      'active' => true ),
       array('name' => 'Partners',           'action' => 'partners',  'type' => 'subsection',      'active' => true ),
       array('name' => 'SDG',                'action' => 'SDG',  'type' => 'subsection',      'active' => true ),
