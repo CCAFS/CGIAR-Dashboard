@@ -32,7 +32,7 @@
   {% include './pages/side-menu.twig' with pageParams %}
   </div>
 
-  <div class="col-md-10">
+  <div class="col-md-10" {% if displayNav==false %}style="padding-left: 0!important"{% endif %}>
 
   <div class="main-content">
 
