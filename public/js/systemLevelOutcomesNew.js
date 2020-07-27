@@ -8,9 +8,9 @@ var FILTER_SLO = "Sdg Short Name";
 var FILTER_SLOTARGETS = "SLO";
 
 // Sheets
-var MAP_SHEET = "AR-SLO Map Icons";
-var SLO_SHEET = "SLO-DB-SDG";
-var SLOTARGETS_SHEET = "SLO - SLO Target Bar Chart ";
+var MAP_SHEET = "SLO-Map";
+var SLO_SHEET = "SLO-SDG";
+var SLOTARGETS_SHEET = "SLO-Target Bar Chart ";
 
 $(document).ready(init);
 
