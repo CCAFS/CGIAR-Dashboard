@@ -1,495 +1,526 @@
 window.onload = function () {
     console.log('Snap')
     var snp = Snap('#svg-interactive');
-    /**
-     * background 
-     */
 
-    var trainees_bg_1 = snp.select('#trainees_bg_1');
-    var trainees_bg_2 = snp.select('#trainees_bg_2');
-    var trainees_1 = snp.select('#trainees_1');
-    var trainees_2 = snp.select('#trainees_2');
+    // <script xlink:href="js/snap.svg-min.js" />
+    // <script xlink:href="js/main.js" />
 
-    var trainees_group = snp.group(trainees_bg_1, trainees_bg_2, trainees_1, trainees_2);
+    //     /**** spheres *****/
+
+    //     var sphere_red_bg = snp.select('#sphere_red_bg');
+        var sphere_yellow_bg = snp.select('#sphere_yellow_bg');
+    var sphere_white_bg = snp.select('#sphere_white_bg');
+
+    var trainees_group = snp.select('#ly_ppl_trained');
     trainees_group.attr({ style: 'cursor: default' });
 
+    //     var publications_group = snp.select('#ly_publications');
+    //     publications_group.attr({ style: 'cursor: default' });
 
-    var innovations_stg1_bg_1 = snp.select('#innovations_stg1_bg_1');
-    var innovations_stg1_bg_2 = snp.select('#innovations_stg1_bg_2');
-    var innovations_stg1_1 = snp.select('#innovations_stg1_1');
-    var innovations_stg1_2 = snp.select('#innovations_stg1_2');
+    //     var almetrics_bg = snp.select('#ly_almetric');
 
-    var innovations_stg1_group = snp.group(innovations_stg1_bg_1, innovations_stg1_bg_2, innovations_stg1_1, innovations_stg1_2);
-    innovations_stg1_group.attr({ style: 'cursor: default' });
+    //     var milestones_group = snp.select('#ly_milestones');
+    //     milestones_group.attr({ style: 'cursor: default' });
+
+    //     var ly_policies = snp.select('#ly_policies');
+    //     var ly_innovations = snp.select('#ly_innovations');
+    //     var ly_slo = snp.select('#ly_slo');
+    //     var ly_oicr = snp.select('#ly_oicr');
+    //     var ly_pjts_benfs = snp.select('#ly_pjts_benfs');
 
 
-    var innovations_stg2_bg_1 = snp.select('#innovations_stg2_bg_1');
-    var innovations_stg2_bg_2 = snp.select('#innovations_stg2_bg_2');
-    var innovations_stg2_1 = snp.select('#innovations_stg2_1');
-    var innovations_stg2_2 = snp.select('#innovations_stg2_2');
+    //     var bg_level1_policies = snp.select('#bg_level1_policies');
+    //     var tl_level1_policies = snp.select('#tl_level1_policies');
+    //     var policies_lvl1_group = snp.group(bg_level1_policies, tl_level1_policies);
+    //     policies_lvl1_group.attr({ style: 'cursor: default' });
 
-    var innovations_stg2_group = snp.group(innovations_stg2_bg_1, innovations_stg2_bg_2, innovations_stg2_1, innovations_stg2_2);
-    innovations_stg2_group.attr({ style: 'cursor: default' });
+    //     var policies_level1_text_g = snp.select('#policies_level1_text_g');
 
-    var innovations_stg3_bg_1 = snp.select('#innovations_stg3_bg_1');
-    var innovations_stg3_bg_2 = snp.select('#innovations_stg3_bg_2');
-    var innovations_stg3_1 = snp.select('#innovations_stg3_1');
-    var innovations_stg3_2 = snp.select('#innovations_stg3_2');
 
-    var innovations_stg3_group = snp.group(innovations_stg3_bg_1, innovations_stg3_bg_2, innovations_stg3_1, innovations_stg3_2);
-    innovations_stg3_group.attr({ style: 'cursor: default' });
+    //     var bg_level2_policies = snp.select('#bg_level2_policies');
+    //     var tl_level2_policies = snp.select('#tl_level2_policies');
+    //     var policies_lvl2_group = snp.group(bg_level2_policies, tl_level2_policies);
+    //     policies_lvl2_group.attr({ style: 'cursor: default' });
 
-    var innovations_stg4_bg_1 = snp.select('#innovations_stg4_bg_1');
-    var innovations_stg4_bg_2 = snp.select('#innovations_stg4_bg_2');
-    var innovations_stg4_1 = snp.select('#innovations_stg4_1');
-    var innovations_stg4_2 = snp.select('#innovations_stg4_2');
-
-    var innovations_stg4_group = snp.group(innovations_stg4_bg_1, innovations_stg4_bg_2, innovations_stg4_1, innovations_stg4_2);
-    innovations_stg4_group.attr({ style: 'cursor: default' });
+    //     var policies_level2_text_g = snp.select('#policies_level2_text_g');
 
 
 
+    //     var bg_level3_policies = snp.select('#bg_level3_policies');
+    //     var tl_level3_policies = snp.select('#tl_level3_policies');
+    //     var policies_lvl3_group = snp.group(bg_level3_policies, tl_level3_policies);
+    //     policies_lvl3_group.attr({ style: 'cursor: default' });
+
+    //     var policies_level3_text_g = snp.select('#policies_level3_text_g');
+
+    //     var bg_oicr = snp.select('#bg_oicr');
 
 
-    var publications_bg_1 = snp.select('#publications_bg_1');
-    var publications_bg_2 = snp.select('#publications_bg_2');
-    var publications_1 = snp.select('#publications_1');
-    var publications_2 = snp.select('#publications_2');
-    var publications_3 = snp.select('#publications_3');
+    //     var bg_level1_oicr = snp.select('#bg_level1_oicr');
+    //     var tl_level1_oicr = snp.select('#tl_level1_oicr');
+    //     var oicr_lvl1_group = snp.group(bg_level1_oicr, tl_level1_oicr);
+    //     oicr_lvl1_group.attr({ style: 'cursor: default' });
 
-    var publications_group = snp.group(publications_bg_1, publications_bg_2, publications_1, publications_2, publications_3);
-    publications_group.attr({ style: 'cursor: default' });
+    //     // var oicr_text_bg = snp.select('#oicr_text_bg');
+    //     // var oicr_txt1_ln = snp.select('#oicr_txt1_ln');
+    //     var oicr_level1_text_g = snp.select('#oicr_level1_text_g');
 
-    var milestones_bg_1 = snp.select('#milestones_bg_1');
-    var milestones_bg_2 = snp.select('#milestones_bg_2');
-    var milestones_1 = snp.select('#milestones_1');
+    //     var bg_level2_oicr = snp.select('#bg_level2_oicr');
+    //     var tl_level2_oicr = snp.select('#tl_level2_oicr');
+    //     var oicr_lvl2_group = snp.group(bg_level2_oicr, tl_level2_oicr);
+    //     oicr_lvl2_group.attr({ style: 'cursor: default' });
 
-    var milestones_group = snp.group(milestones_bg_2, milestones_bg_1, milestones_1);
-    milestones_group.attr({ style: 'cursor: default' });
+    //     // var oicr_text_bg = snp.select('#oicr_text_bg');
+    //     // var oicr_txt1_ln = snp.select('#oicr_txt1_ln');  
+    //     var oicr_level2_text_g = snp.select('#oicr_level2_text_g');
 
+    //     var bg_level3_oicr = snp.select('#bg_level3_oicr');
+    //     var tl_level3_oicr = snp.select('#tl_level3_oicr');
+    //     var oicr_lvl3_group = snp.group(bg_level3_oicr, tl_level3_oicr);
+    //     oicr_lvl3_group.attr({ style: 'cursor: default' });
 
-    var oicr_bg_1 = snp.select('#oicr_bg_1');
-    var oicr_bg_2 = snp.select('#oicr_bg_2');
-    // var oicr_bg = snp.group(oicr_bg_1, oicr_bg_2);
-
-    var oicr_level1_bg = snp.select('#oicr_level1_bg');
-    var oicr_level1_1 = snp.select('#oicr_level1_1');
-    var oicr_level1_2 = snp.select('#oicr_level1_2');
-    var oicr_level1_3 = snp.select('#oicr_level1_3');
-
-    var oicr_level1_group = snp.group(oicr_level1_bg, oicr_level1_1, oicr_level1_2, oicr_level1_3);
-    oicr_level1_group.attr({ style: 'cursor: default' });
-
-    var oicr_level2_bg = snp.select('#oicr_level2_bg');
-    var oicr_level2_1 = snp.select('#oicr_level2_1');
-    var oicr_level2_2 = snp.select('#oicr_level2_2');
-    var oicr_level2_3 = snp.select('#oicr_level2_3');
-
-    var oicr_level2_group = snp.group(oicr_level2_bg, oicr_level2_1, oicr_level2_2, oicr_level2_3);
-    oicr_level2_group.attr({ style: 'cursor: default' });
-
-    var oicr_level3 = snp.select('#oicr_level3');
-    var oicr_title_1 = snp.select('#oicr_title_1');
-    var oicr_title_2 = snp.select('#oicr_title_2');
-    var oicr_title_3 = snp.select('#oicr_title_3');
-
-    var oicr_level3_group = snp.group(oicr_level3, oicr_title_1, oicr_title_2, oicr_title_3);
-    oicr_level3_group.attr({ style: 'cursor: default' });
+    //     // var oicr_text_bg = snp.select('#oicr_text_bg');
+    //     // var oicr_txt1_ln = snp.select('#oicr_txt1_ln');  
+    //     var oicr_level3_text_g = snp.select('#oicr_level3_text_g');
 
 
+    //     /***
+    //      * Innovations
+    //      */
 
-    var pjs_ben_bg = snp.select('#pjs_ben');
-    var pjs_ben_ellp = snp.select('#pjs_ben_ellp');
-    var pjs_ben_1 = snp.select('#pjs_ben_1');
-    var pjs_ben_2 = snp.select('#pjs_ben_2');
-    var pjs_ben_3 = snp.select('#pjs_ben_3');
+    //     var container_innovations = snp.select('#container_innovations');
+    //     var innovations_tl = snp.select('#innovations_tl');
 
-    var pjs_ben_group = snp.group(pjs_ben_bg, pjs_ben_ellp, pjs_ben_1, pjs_ben_2, pjs_ben_3);
-    pjs_ben_group.attr({ style: 'cursor: default; opacity: .7' });
-
-
-
-    var policies_lvl3_bg = snp.select('#policies_lvl3_bg');
-    var policies_lvl3_1 = snp.select('#policies_lvl3_1');
-    var policies_lvl3_2 = snp.select('#policies_lvl3_2');
-
-    var policies_lvl3_group = snp.group(policies_lvl3_bg, policies_lvl3_1, policies_lvl3_2);
-    policies_lvl3_group.attr({ style: 'cursor: default;' });
+    //     var bg_stage1_innovations = snp.select('#bg_stage1_innovations');
+    //     var tl_stage1_innovations = snp.select('#tl_stage1_innovations');
+    //     var stage1_innovations_group = snp.group(bg_stage1_innovations, tl_stage1_innovations);
+    //     stage1_innovations_group.attr({ style: 'cursor: default' });
 
 
-    var policies_lvl2_bg = snp.select('#policies_lvl2_bg');
-    var policies_lvl2_1 = snp.select('#policies_lvl2_1');
-    var policies_lvl2_2 = snp.select('#policies_lvl2_2');
-
-    var policies_lvl2_group = snp.group(policies_lvl2_bg, policies_lvl2_1, policies_lvl2_2);
-    policies_lvl2_group.attr({ style: 'cursor: default;' });
-
-    var policies_lvl1_bg = snp.select('#policies_lvl1_bg');
-    var policies_lvl1_1 = snp.select('#policies_lvl1_1');
-    var policies_lvl1_2 = snp.select('#policies_lvl1_2');
-
-    var policies_lvl1_group = snp.group(policies_lvl1_bg, policies_lvl1_1, policies_lvl1_2);
-    policies_lvl1_group.attr({ style: 'cursor: default;' });
+    //     var txt_stage1_innovations = snp.select('#txt_stage1_innovations');
 
 
+    //     var bg_stage2_innovations = snp.select('#bg_stage2_innovations');
+    //     var tl_stage2_innovations = snp.select('#tl_stage2_innovations');
+    //     var stage2_innovations_group = snp.group(bg_stage2_innovations, tl_stage2_innovations);
+    //     stage2_innovations_group.attr({ style: 'cursor: default' });
 
-    var almetrics_bg = snp.select('#almetrics_bg_1');
-    var almetrics_bg_2 = snp.select('#almetrics_bg_2');
-    // var almetrics_bg = snp.group(almetrics_bg_2, almetrics_bg_1);
+    //     var txt_stage2_innovations = snp.select('#txt_stage2_innovations');
+
+
+    //     var bg_stage3_innovations = snp.select('#bg_stage3_innovations');
+    //     var tl_stage3_innovations = snp.select('#tl_stage3_innovations');
+    //     var stage3_innovations_group = snp.group(bg_stage3_innovations, tl_stage3_innovations);
+    //     stage3_innovations_group.attr({ style: 'cursor: default' });
+
+    //     var txt_stage3_innovations = snp.select('#txt_stage3_innovations');
+
+    //     var bg_stage4_innovations = snp.select('#bg_stage4_innovations');
+    //     var tl_stage4_innovations = snp.select('#tl_stage4_innovations');
+    //     var stage4_innovations_group = snp.group(bg_stage4_innovations, tl_stage4_innovations);
+    //     stage4_innovations_group.attr({ style: 'cursor: default' });
+
+    //     var txt_stage4_innovations = snp.select('#txt_stage4_innovations');
 
 
 
 
 
-    var slo_bg = snp.select('#slo_bg_1');
-    var slo_bg_2 = snp.select('#slo_bg_2');
+    //     /**
+    //     * arrows 
+    //     */
+    //     // var arrow_head_oicr_slo = snp.select('#arrow_head_oicr_slo');
+    //     // var arrow_pjs_ben_slo = snp.select('#arrow_pjs_ben_slo');
+    //     // var arrow_head_pjs_ben_slo = snp.select('#arrow_head_pjs_ben_slo');
 
-    var policies_bg = snp.select('#policies_bg');
-    var policies_bg_1 = snp.select('#policies_bg_1');
-
-    var innovations_bg = snp.select('#innovations_bg');
-    var innovations_bg_1 = snp.select('#innovations_bg_1');
-    // var innovations_group = snp.group(innovations_bg, innovations_bg_1);
-
-
-    var red_circle_bg = snp.select('#red_circle_bg');
-    var red_yellow_bg = snp.select('#red_yellow_bg');
-    var red_white_bg = snp.select('#red_white_bg');
+    //     // var arrow_head_policies2_oicr = snp.select('#arrow_head_policies2_oicr');
+    //     // var arrow_policies3_oicr = snp.select('#arrow_policies3_oicr');
+    //     // var arrow_head_policies3_oicr = snp.select('#arrow_head_policies3_oicr');
 
 
-    /**
-     * arrows 
-     */
-    var arrow_oicr_slo = snp.select('#arrow_oicr_slo');
-    var arrow_head_oicr_slo = snp.select('#arrow_head_oicr_slo');
-    var arrow_pjs_ben_slo = snp.select('#arrow_pjs_ben_slo');
-    var arrow_head_pjs_ben_slo = snp.select('#arrow_head_pjs_ben_slo');
-    var arrow_policies_slo = snp.select('#arrow_policies_slo');
-    var arrow_policies2_oicr = snp.select('#arrow_policies2_oicr');
-    var arrow_head_policies2_oicr = snp.select('#arrow_head_policies2_oicr');
-    var arrow_policies3_oicr = snp.select('#arrow_policies3_oicr');
-    var arrow_head_policies3_oicr = snp.select('#arrow_head_policies3_oicr');
+    //     // var arrow_milestones = snp.select('#LR_Edit_lines');
+    //     // var arrow_milestones_1 = snp.select('#LR_Edit_lines_1');
+    //     // // var arrow_milestones_group = snp.group(arrow_milestones, arrow_milestones_1)
+    //     // var arrow_innovations_pjs = snp.select('#arrow_innovations_pjs');
+    //     // var arrow_head_innovations_pjs = snp.select('#arrow_head_innovations_pjs');
+    //     // var arrow_innovations_lvl4_oicr = snp.select('#arrow_innovations_lvl4_oicr');
+    //     // var arrow_head_innovations_lvl4_oicr = snp.select('#arrow_head_innovations_lvl4_oicr');
+    //     // var arrow_head_milestones_policies = snp.select('#arrow_head_milestones_policies');
+    //     // var arrow_head_almetrics = snp.select('#arrow_head_almetrics');
+    //     // var arrow_body_almetrics = snp.select('#arrow_body_almetrics');
+
+    //     // var arrow_body_milestones_policies = snp.select('#arrow_body_milestones_policies');
+    //     // var arrow_head_milestones_policies = snp.select('#arrow_head_milestones_policies');
+    //     // var arrow_body_milestones_innovations = snp.select('#arrow_body_milestones_innovations');
+    //     // var arrow_head_milestones_innovations = snp.select('#arrow_head_milestones_innovations');
+
+    //     // var arrow_line_policies_slo = snp.select('#arrow_line_policies_slo');
+    //     // var arrow_curve_policies_slo = snp.select('#arrow_curve_policies_slo');
 
 
-    var arrow_milestones = snp.select('#LR_Edit_lines');
-    var arrow_milestones_1 = snp.select('#LR_Edit_lines_1');
-    // var arrow_milestones_group = snp.group(arrow_milestones, arrow_milestones_1)
-
-    var arrow_head_milestones = snp.select('#LR_Edit_Heads');
-    var arrow_publications_almetrics = snp.select('#arrow_publications_almetrics');
-    var arrow_innovations_pjs = snp.select('#arrow_innovations_pjs');
-    var arrow_head_innovations_pjs = snp.select('#arrow_head_innovations_pjs');
-    var arrow_innovations_lvl4_oicr = snp.select('#arrow_innovations_lvl4_oicr');
-    var arrow_head_innovations_lvl4_oicr = snp.select('#arrow_head_innovations_lvl4_oicr');
-    var arrow_head_almetrics = snp.select('#arrow_head_almetrics');
-
-    /**
-     * titles
-     */
-    var partners_title = snp.select('#partners_title')
+    //     var arrow_innovations_ptjs_benfs = snp.select('#arrow_innovations_ptjs_benfs');
+    //     var arrow_ptjs_benfs_slo = snp.select('#arrow_ptjs_benfs_slo');
+    //     var arrow_publications_almetrics = snp.select('#arrow_publications_almetrics');
+    //     var arrow_milestones_policies = snp.select('#arrow_milestones_policies');
+    //     var arrow_milestones_innovations = snp.select('#arrow_milestones_innovations');
+    //     var arrow_policies_slo = snp.select('#arrow_policies_slo');
+    //     var arrow_oicr_slo = snp.select('#arrow_oicr_slo');
+    //     var arrow_slo = snp.select('#arrow_slo');
+    //     var arrow_innovations_oicr = snp.select('#arrow_innovations_oicr');
 
 
+    //     var arrow_policies2_oicr = snp.select('#arrow_policies2_oicr');
+    //     var arrow_policies3_oicr = snp.select('#arrow_policies3_oicr');
 
-
-    /***
-     * 
-     * PhD trainees
-     */
+    //     /***
+    //     * 
+    //     * PhD trainees
+    //     */
 
     trainees_group.hover(function () {
-        overElem([this, red_white_bg]);
+        overElem([this]);
+        sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        
     }, function () {
-        outElem([this, red_white_bg]);
+        outElem([this]);
+        sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
     });
 
+    //     /**
+    //     * 
+    //     * Publicaitions
+    //     * 
+    //     */
+
+    //     publications_group.hover(function () {
+    //         overElem([this, sphere_white_bg, almetrics_bg]);
+    //         chnStroke(arrow_publications_almetrics, { width: '3px' });
+    //         arrow_publications_almetrics.animate({ transform: 's.5,.9' }, 700, mina.bounce);
+    //     }, function () {
+    //         outElem([this, sphere_white_bg, almetrics_bg]);
+    //         chnStroke(arrow_publications_almetrics, { width: '1px' });
+    //         arrow_publications_almetrics.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //     });
+
+    //     /**
+    //     * 
+    //     * Almetrics
+    //     * 
+    //     */
 
 
-    /**
-     * 
-     * Innovations
-     * 
-     */
+    //     almetrics_bg.hover(function () {
+    //         overElem([this, sphere_yellow_bg]);
+    //         arrow_publications_almetrics.animate({ transform: 's.1,.95' }, 700, mina.bounce);
+    //     }, function () {
+    //         outElem([this, sphere_yellow_bg]);
+    //         arrow_publications_almetrics.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //     });
 
-    innovations_stg4_group.hover(function () {
-        innovations_path([this, oicr_bg_1, oicr_bg_2, partners_title], 'hover');
-        chnStroke(arrow_innovations_lvl4_oicr, { width: '4px' });
-    }, function () {
-        innovations_path([this, oicr_bg_1, oicr_bg_2, partners_title], 'unhover')
-        chnStroke(arrow_innovations_lvl4_oicr, { width: '1px' });
-    });
+    //     /**
+    //     * 
+    //     * Milestones
+    //     * 
+    //     */
 
-    [innovations_stg3_group, innovations_stg2_group, innovations_stg1_group].forEach(function (inn, i) {
-        inn.hover(function () {
-            innovations_path([this, partners_title], 'hover');
-            overElem([red_white_bg]);
-            // if (i != 0) {
+    //     milestones_group.hover(function () {
+    //         overElem([this, sphere_white_bg, sphere_yellow_bg, ly_policies, ly_innovations]);
+    //         arrow_milestones_policies.animate({ transform: 's1,.7' }, 700, mina.bounce);
+    //         arrow_milestones_innovations.animate({ transform: 's1,.7' }, 700, mina.bounce);
 
-            // }
-        }, function () {
-            innovations_path([this, partners_title], 'unhover')
-            outElem([red_white_bg]);
-            if (i != 0) {
-            }
-        });
-    })
+    //     }, function () {
+    //         outElem([this, sphere_white_bg, sphere_yellow_bg, ly_policies, ly_innovations]);
+    //         arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //         arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //     });
 
-
-    /**
-     * 
-     * Publicaitions
-     * 
-     */
-
-    publications_group.hover(function () {
-        overElem([this, red_white_bg, almetrics_bg, almetrics_bg_2]);
-        chnStroke(arrow_publications_almetrics, { width: '4px' });
-        arrow_head_almetrics.attr({ style: 'opacity: 0' }, mina.bounce);
-        arrow_publications_almetrics.attr({ y2: '830' }, mina.bounce);
-    }, function () {
-        outElem([this, red_white_bg, almetrics_bg, almetrics_bg_2]);
-        chnStroke(arrow_publications_almetrics, { width: '1px' });
-        arrow_head_almetrics.attr({ style: 'opacity: 1' }, mina.bounce);
-        arrow_publications_almetrics.attr({ y2: '834.2' }, mina.bounce);
-    });
-
-    /**
-     * 
-     * Milestones
-     * 
-     */
-
-    milestones_group.hover(function () {
-        milestones_path([this, red_yellow_bg, red_white_bg, policies_bg, policies_bg_1, innovations_bg, innovations_bg_1], 'hover');
-    }, function () {
-        milestones_path([this, red_yellow_bg, red_white_bg, policies_bg, policies_bg_1, innovations_bg, innovations_bg_1], 'unhover');
-    });
+    //     /**
+    //     **
+    //     * Policies
+    //     **
+    //     **/
+    //     policies_lvl1_group.hover(function () {
+    //         overElem([ly_slo, sphere_yellow_bg]);
+    //         animateCircles(this, this);
+    //         this.paper.append(policies_level1_text_g);
+    //         policies_level1_text_g.animate({ opacity: '1' }, 700, mina.easeinout);
+    //         chnStroke([arrow_policies_slo, arrow_slo], { stroke: 'white', width: '3px' });
+    //         arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+    //     }, function () {
+    //         outElem([ly_slo, sphere_yellow_bg]);
+    //         unanimateCircles(this)
+    //         this.paper.prepend(policies_level1_text_g)
+    //         policies_level1_text_g.animate({ opacity: '0' }, 700, mina.easeinout);
+    //         chnStroke([arrow_policies_slo, arrow_slo], { stroke: '#353535' })
+    //         arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+    //     });
 
 
-    /**
-     * 
-     * OICR
-     * 
-     */
-
-    oicr_level1_group.hover(function () {
-        oicr_lvl3_path([this, red_yellow_bg, slo_bg, slo_bg_2,partners_title], 'hover');
-    }, function () {
-        oicr_lvl3_path([this, red_yellow_bg, slo_bg, slo_bg_2,partners_title], 'unhover');
-    });
-    oicr_level2_group.hover(function () {
-        oicr_lvl3_path([this, red_yellow_bg, slo_bg, slo_bg_2,partners_title], 'hover');
-    }, function () {
-        oicr_lvl3_path([this, red_yellow_bg, slo_bg, slo_bg_2,partners_title], 'unhover');
-    });
-    oicr_level3_group.hover(function () {
-        oicr_lvl3_path([this, red_circle_bg, slo_bg, slo_bg_2,partners_title], 'hover');
-    }, function () {
-        oicr_lvl3_path([this, red_circle_bg, slo_bg, slo_bg_2,partners_title], 'unhover');
-    });
-
-    /**
-     * 
-     * Project benefits
-     */
-
-    pjs_ben_group.hover(function () {
-        pjs_ben_path(this, 'hover');
-    }, function () {
-        pjs_ben_path(this, 'unhover');
-    });
-
-    /**
-     * 
-     * Policies
-     * 
-     */
-
-    policies_lvl3_group.hover(function () {
-        policies_lvl3_path([this, red_circle_bg, slo_bg, slo_bg_2, oicr_bg_1, oicr_bg_2, partners_title], 'hover');
-        chnStroke(arrow_policies3_oicr, { width: '4px' });
-        oicrContainerAnimations(null, 'hover');
-    }, function () {
-        policies_lvl3_path([this, red_circle_bg, slo_bg, slo_bg_2, oicr_bg_1, oicr_bg_2, partners_title], 'unhover');
-        chnStroke(arrow_policies3_oicr, { width: '1px' });
-        oicrContainerAnimations(null, 'unhover');
-    });
-
-    policies_lvl2_group.hover(function () {
-        policies_lvl3_path([this, red_circle_bg, slo_bg, slo_bg_2, oicr_bg_1, oicr_bg_2, partners_title], 'hover');
-        chnStroke(arrow_policies2_oicr, { width: '4px' });
-        oicrContainerAnimations(null, 'hover');
-    }, function () {
-        policies_lvl3_path([this, red_circle_bg, slo_bg, slo_bg_2, oicr_bg_1, oicr_bg_2, partners_title], 'unhover');
-        chnStroke(arrow_policies2_oicr, { width: '1px' })
-        oicrContainerAnimations(null, 'unhover');
-    });
-
-    policies_lvl1_group.hover(function () {
-        policies_lvl3_path([this, red_yellow_bg, slo_bg, slo_bg_2, partners_title], 'hover');
-    }, function () {
-        policies_lvl3_path([this, red_yellow_bg, slo_bg, slo_bg_2, partners_title], 'unhover');
-    });
-
-    /**
-     * 
-     * Almetrics
-     * 
-     */
+    //     policies_lvl2_group.hover(function () {
+    //         overElem([ly_slo, sphere_red_bg, ly_oicr]);
+    //         animateCircles(this, this);
+    //         this.paper.append(policies_level2_text_g);
+    //         policies_level2_text_g.animate({ opacity: '1' }, 700, mina.easeinout);
+    //         chnStroke([arrow_policies_slo, arrow_slo, arrow_policies2_oicr], { stroke: 'white', width: '3px' });
+    //         arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+    //         arrow_policies2_oicr.animate({ transform: 's1,.8' }, 700, mina.bounce);
+    //         arrow_policies3_oicr.animate({ transform: 's1,.8' }, 700, mina.bounce);
+    //     }, function () {
+    //         outElem([ly_slo, sphere_red_bg, ly_oicr]);
+    //         unanimateCircles(this);
+    //         this.paper.prepend(policies_level2_text_g);
+    //         policies_level2_text_g.animate({ opacity: '0' }, 700, mina.easeinout);
+    //         chnStroke([arrow_policies_slo, arrow_slo], { stroke: '#353535' });
+    //         chnStroke([arrow_policies2_oicr], { width: '1px' });
+    //         arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+    //         arrow_policies2_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //         arrow_policies3_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //     });
 
 
-    almetrics_bg.hover(function () {
-        overElem([this, red_yellow_bg, almetrics_bg_2]);
-    }, function () {
-        outElem([this, red_yellow_bg, almetrics_bg_2]);
-    });
 
-    /**
-     * functions
-     */
+    //     policies_lvl3_group.hover(function () {
+    //         overElem([ly_slo, sphere_red_bg, ly_oicr]);
+    //         animateCircles(this, this);
+    //         this.paper.append(policies_level3_text_g);
+    //         policies_level3_text_g.animate({ opacity: '1' }, 700, mina.easeinout);
+    //         chnStroke([arrow_policies_slo, arrow_slo, arrow_policies3_oicr], { stroke: 'white', width: '3px' });
+    //         arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+    //         arrow_policies2_oicr.animate({ transform: 's1,.8' }, 700, mina.bounce);
+    //         arrow_policies3_oicr.animate({ transform: 's1,.8' }, 700, mina.bounce);
+    //     }, function () {
+    //         outElem([ly_slo, sphere_red_bg, ly_oicr]);
+    //         unanimateCircles(this);
+    //         this.paper.prepend(policies_level3_text_g);
+    //         policies_level3_text_g.animate({ opacity: '0' }, 700, mina.easeinout);
+    //         chnStroke([arrow_policies_slo, arrow_slo,], { stroke: '#353535' });
+    //         chnStroke([arrow_policies3_oicr], { width: '1px' });
+    //         arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+    //         arrow_policies2_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //         arrow_policies3_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //     });
 
-    function oicr_lvl3_path(arr, type) {
-        switch (type) {
-            case 'hover':
-                overElem(arr);
-                chnStroke(arrow_oicr_slo, { stroke: 'white', width: '4px' })
-                arrow_head_oicr_slo.attr({ style: 'fill: none' })
-                arrow_head_pjs_ben_slo.attr({ style: 'opacity: 0' });
-                arrow_pjs_ben_slo.attr({ x2: '1310' });
-                break;
-            case 'unhover':
-                outElem(arr)
-                chnStroke(arrow_oicr_slo, { stroke: 'black' })
-                arrow_head_oicr_slo.attr({ style: 'fill: black' })
-                arrow_head_pjs_ben_slo.attr({ style: 'opacity: 1' })
-                arrow_pjs_ben_slo.attr({ x2: '1322' }, mina.bounce);
-                break;
-            default:
-                break;
-        }
+    //     /**
+    //      * OICR
+    //      **/
+
+    //     oicr_lvl1_group.hover(function () {
+    //         animateCircles(this, this);
+    //         overElem([ly_slo, sphere_yellow_bg]);
+    //         chnStroke([arrow_oicr_slo, arrow_slo], { stroke: 'white', width: '3px' })
+    //         this.paper.append(oicr_level1_text_g, arrow_oicr_slo);
+    //         arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+    //         arrow_policies_slo.animate({ transform: 't0,9' }, 700, mina.bounce);
+
+    //         arrow_policies2_oicr.animate({ opacity: '0' }, 700, mina.bounce);
+    //         oicr_level1_text_g.animate({ opacity: '1' }, 700, mina.bounce);
+
+
+    //     }, function () {
+    //         unanimateCircles(this);
+    //         outElem([ly_slo, sphere_yellow_bg]);
+    //         chnStroke([arrow_oicr_slo, arrow_slo], { stroke: '#353535', width: '1px' })
+    //         this.paper.prepend(oicr_level1_text_g);
+    //         arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+    //         arrow_policies_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+
+    //         arrow_policies2_oicr.animate({ opacity: '1' }, 700, mina.bounce);
+    //         oicr_level1_text_g.animate({ opacity: '0', transform: 's1,1' }, 700, mina.bounce);
+    //     });
+
+    //     oicr_lvl2_group.hover(function () {
+    //         animateCircles(this, this);
+    //         overElem([ly_slo, sphere_yellow_bg]);
+    //         chnStroke([arrow_oicr_slo, arrow_slo], { stroke: 'white', width: '3px' });
+    //         this.paper.append(oicr_level2_text_g);
+    //         arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+    //         arrow_policies_slo.animate({ transform: 't0,9' }, 700, mina.bounce);
+
+    //         arrow_policies2_oicr.animate({ opacity: '0' }, 700, mina.bounce);
+    //         arrow_policies3_oicr.animate({ opacity: '0' }, 700, mina.bounce);
+    //         oicr_level2_text_g.animate({ opacity: '1' }, 700, mina.bounce);
+    //     }, function () {
+    //         unanimateCircles(this);
+    //         outElem([ly_slo, sphere_yellow_bg]);
+    //         chnStroke([arrow_oicr_slo, arrow_slo], { stroke: '#353535', width: '1px' })
+    //         this.paper.prepend(oicr_level2_text_g);
+    //         arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+    //         arrow_policies_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+
+    //         arrow_policies2_oicr.animate({ opacity: '1' }, 700, mina.bounce);
+    //         arrow_policies3_oicr.animate({ opacity: '1' }, 700, mina.bounce);
+    //         oicr_level2_text_g.animate({ opacity: '0', transform: 's1,1' }, 700, mina.bounce);
+    //     });
+
+    //     oicr_lvl3_group.hover(function () {
+    //         animateCircles(this, this);
+    //         overElem([ly_slo, sphere_yellow_bg]);
+    //         chnStroke([arrow_oicr_slo, arrow_slo], { stroke: 'white', width: '3px' });
+    //         this.paper.append(oicr_level3_text_g);
+    //         arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+    //         arrow_policies_slo.animate({ transform: 't0,9' }, 700, mina.bounce);
+
+    //         oicr_level3_text_g.animate({ opacity: '1' }, 700, mina.bounce);
+    //     }, function () {
+    //         unanimateCircles(this);
+    //         outElem([ly_slo, sphere_yellow_bg]);
+    //         chnStroke([arrow_oicr_slo, arrow_slo], { stroke: '#353535', width: '1px' });
+    //         this.paper.prepend(oicr_level3_text_g);
+    //         arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+    //         arrow_policies_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+
+    //         oicr_level3_text_g.animate({ opacity: '0', transform: 's1,1' }, 700, mina.bounce);
+    //     });
+
+
+
+    //     /**
+    //     * 
+    //     * Innovations
+    //     * 
+    //     */
+
+
+    //     stage1_innovations_group.hover(function () {
+    //         overElem([sphere_white_bg, container_innovations]);
+    //         animateCircles(this, this);
+    //         overOpacity([stage2_innovations_group, stage3_innovations_group, stage4_innovations_group, innovations_tl]);
+    //         outOpacity([txt_stage1_innovations]);
+    //         container_innovations.attr({ style: 'fill-opacity:1' });
+    //     }, function () {
+    //         outElem([sphere_white_bg, container_innovations]);
+    //         outOpacity([stage2_innovations_group, stage3_innovations_group, stage4_innovations_group, innovations_tl])
+    //         overOpacity([txt_stage1_innovations]);
+    //         unanimateCircles(this);
+    //         container_innovations.attr({ style: 'fill-opacity:0.2' });
+    //     });
+
+    //     stage2_innovations_group.hover(function () {
+    //         overElem([sphere_white_bg, container_innovations]);
+    //         animateCircles(this, this);
+    //         overOpacity([stage1_innovations_group, stage3_innovations_group, stage4_innovations_group, innovations_tl]);
+    //         outOpacity([txt_stage2_innovations]);
+    //         container_innovations.attr({ style: 'fill-opacity:1' });
+    //     }, function () {
+    //         outElem([sphere_white_bg, container_innovations]);
+    //         outOpacity([stage1_innovations_group, stage3_innovations_group, stage4_innovations_group, innovations_tl])
+    //         overOpacity([txt_stage2_innovations]);
+    //         unanimateCircles(this);
+    //         container_innovations.attr({ style: 'fill-opacity:0.2' });
+    //     });
+
+    //     stage3_innovations_group.hover(function () {
+    //         overElem([sphere_yellow_bg, container_innovations]);
+    //         animateCircles(this, this);
+    //         overOpacity([stage1_innovations_group, stage2_innovations_group, stage4_innovations_group, innovations_tl]);
+    //         outOpacity([txt_stage3_innovations]);
+    //         container_innovations.attr({ style: 'fill-opacity:1' });
+
+
+    //         chnStroke([bg_stage3_innovations], { stroke: '#F79421' });
+
+    //     }, function () {
+    //         outElem([sphere_yellow_bg, container_innovations]);
+    //         outOpacity([stage1_innovations_group, stage2_innovations_group, stage4_innovations_group, innovations_tl])
+    //         overOpacity([txt_stage3_innovations]);
+    //         unanimateCircles(this);
+    //         container_innovations.attr({ style: 'fill-opacity:0.2' });
+    //         chnStroke([bg_stage3_innovations], { stroke: 'white' });
+    //     });
+
+    //     stage4_innovations_group.hover(function () {
+    //         overElem([sphere_yellow_bg, container_innovations, bg_oicr, ly_pjts_benfs]);
+    //         animateCircles(this, this);
+    //         overOpacity([stage1_innovations_group, stage2_innovations_group, stage3_innovations_group, innovations_tl]);
+    //         outOpacity([txt_stage4_innovations]);
+    //         container_innovations.attr({ style: 'fill-opacity:1' });
+
+    //         chnStroke([arrow_innovations_ptjs_benfs, arrow_innovations_oicr], { width: '3px' });
+    //         chnStroke([bg_stage4_innovations], { stroke: '#F79421' });
+
+    //         // arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+    //         arrow_innovations_ptjs_benfs.animate({ transform: 's1,.8' }, 700, mina.bounce);
+    //         arrow_innovations_oicr.animate({ transform: 's1,.8' }, 700, mina.bounce);
+    //         arrow_policies2_oicr.animate({ transform: 's1,.8' }, 700, mina.bounce);
+    //         arrow_policies3_oicr.animate({ transform: 's1,.8' }, 700, mina.bounce);
+
+
+    //     }, function () {
+    //         outElem([sphere_yellow_bg, container_innovations, bg_oicr, ly_pjts_benfs]);
+    //         outOpacity([stage1_innovations_group, stage2_innovations_group, stage3_innovations_group, innovations_tl])
+    //         overOpacity([txt_stage4_innovations]);
+    //         unanimateCircles(this);
+    //         container_innovations.attr({ style: 'fill-opacity:0.2' });
+
+    //         chnStroke([arrow_innovations_ptjs_benfs, arrow_innovations_oicr], { width: '1px' });
+    //         chnStroke([bg_stage4_innovations], { stroke: 'white' });
+
+    //         // arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+    //         arrow_innovations_ptjs_benfs.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //         arrow_innovations_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //         arrow_policies2_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //         arrow_policies3_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //     });
+
+    //     /****
+    //      * Project benefits
+    //      */
+
+    //     ly_pjts_benfs.hover(function () {
+    //         overElem([sphere_yellow_bg, sphere_red_bg, this, ly_slo]);
+    //         // overElem([sphere_white_bg, container_innovations, bg_oicr]);
+    //         // overOpacity([stage1_innovations_group, stage2_innovations_group, stage3_innovations_group, innovations_tl]);
+    //         // outOpacity([txt_stage4_innovations]);
+    //         // container_innovations.attr({ style: 'fill-opacity:1' });
+
+    //         chnStroke([arrow_ptjs_benfs_slo], { stroke: 'white', width: '3px' });
+
+    //         // // arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+    //         arrow_ptjs_benfs_slo.animate({ transform: 's.5,1' }, 700, mina.bounce);
+    //         // arrow_innovations_oicr.animate({ transform: 's1,.8' }, 700, mina.bounce);
+    //         // arrow_policies2_oicr.animate({ transform: 's1,.8' }, 700, mina.bounce);
+    //         // arrow_policies3_oicr.animate({ transform: 's1,.8' }, 700, mina.bounce);
+
+
+    //     }, function () {
+    //         outElem([sphere_yellow_bg, sphere_red_bg, this, ly_slo]);
+    //         // outElem([sphere_white_bg, container_innovations, bg_oicr]);
+    //         // outOpacity([stage1_innovations_group, stage2_innovations_group, stage3_innovations_group, innovations_tl])
+    //         // overOpacity([txt_stage4_innovations]);
+    //         // container_innovations.attr({ style: 'fill-opacity:0.2' });
+
+    //         chnStroke([arrow_ptjs_benfs_slo], { stroke: '#353635', width: '1px' });
+
+    //         // // arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+    //         arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //         // arrow_innovations_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //         // arrow_policies2_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //         // arrow_policies3_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function animateCircles(el, bg) {
+        el.paper.append(el);
+        bg.animate({ transform: 's2,2' }, 700, mina.bounce);
+    };
+
+    function unanimateCircles(bg) {
+        bg.animate({ transform: 's1,1' }, 700, mina.bounce);
     }
-
-    function pjs_ben_path(ev, type) {
-        switch (type) {
-            case 'hover':
-                overElem([ev, red_circle_bg, red_yellow_bg, slo_bg, slo_bg_2]);
-                chnStroke(arrow_pjs_ben_slo, { stroke: 'white', width: '4px' })
-                pjs_ben_group.attr({ style: 'opacity: 1' })
-                arrow_head_pjs_ben_slo.attr({ style: 'opacity: 0' })
-                arrow_head_oicr_slo.attr({ style: 'fill: none' })
-                arrow_pjs_ben_slo.attr({ x2: '1310' });
-                break;
-            case 'unhover':
-                outElem([ev, red_circle_bg, red_yellow_bg, slo_bg, slo_bg_2])
-                chnStroke(arrow_pjs_ben_slo, { stroke: 'black' })
-                arrow_head_oicr_slo.attr({ style: 'fill: black' })
-                pjs_ben_group.attr({ style: 'opacity: .7' })
-                arrow_head_pjs_ben_slo.attr({ style: 'opacity: 1' })
-                arrow_pjs_ben_slo.attr({ x2: '1322' }, mina.bounce);
-                break;
-            default:
-                break;
-        }
-
-    }
-
-    function policies_lvl3_path(arr, type) {
-        switch (type) {
-            case 'hover':
-                overElem(arr);
-                arrow_head_oicr_slo.attr({ style: 'fill: none' })
-                chnStroke(arrow_policies_slo, { stroke: 'white', width: '4px' })
-                break;
-            case 'unhover':
-                outElem(arr)
-                arrow_head_oicr_slo.attr({ style: 'fill: black' })
-                chnStroke(arrow_policies_slo, { stroke: 'black' })
-                break;
-            default:
-                break;
-        }
-
-    }
-
-    function milestones_path(arr, type) {
-        switch (type) {
-            case 'hover':
-                overElem(arr);
-                chnStroke([arrow_milestones, arrow_milestones_1], { width: '4px' });
-                arrow_head_milestones.attr({ style: 'opacity: 0;' })
-                arrow_milestones_1.attr({ y2: '458', x2: '888.7' });
-                arrow_milestones.attr({ y1: '813.6' });
-                break;
-            case 'unhover':
-                outElem(arr)
-                chnStroke([arrow_milestones, arrow_milestones_1, arrow_head_milestones], { stroke: 'black' });
-                arrow_milestones_1.attr({ y2: '453', x2: '908.7' });
-                arrow_milestones.attr({ y1: '818.6' });
-                break;
-            default:
-                break;
-        }
-
-    }
-
-    function innovations_path(arr, type) {
-        pjs_ben_path(pjs_ben_group, type)
-        oicrContainerAnimations(null, type)
-        switch (type) {
-            case 'hover':
-                overElem(arr);
-                chnStroke(arrow_innovations_pjs, { stroke: 'white', width: '4px' });
-                arrow_head_innovations_pjs.attr({ style: 'opacity: 0' }, mina.bounce);
-                break;
-            case 'unhover':
-                outElem(arr)
-                chnStroke(arrow_innovations_pjs, { stroke: 'black' });
-                arrow_head_innovations_pjs.attr({ style: 'opacity: 1' }, mina.bounce);
-
-                break;
-            default:
-                break;
-        }
-
-    }
-
-    function oicrContainerAnimations(params, key) {
-        switch (key) {
-            case 'hover':
-                arrow_head_policies2_oicr.attr({ style: 'opacity: 0' }, mina.bounce);
-                arrow_head_policies3_oicr.attr({ style: 'opacity: 0' }, mina.bounce);
-
-                arrow_policies2_oicr.attr({ y2: '725.5' }, mina.bounce);
-                arrow_policies3_oicr.attr({ y2: '725.5' }, mina.bounce);
-
-                arrow_head_innovations_lvl4_oicr.attr({ style: 'opacity: 0' });
-
-                arrow_innovations_lvl4_oicr.attr({ y2: '550.5' });
-                // arrow_oicr_slo.attr({ x2: '725.5' }, mina.bounce);
-                break;
-            case 'unhover':
-                arrow_head_policies2_oicr.attr({ style: 'opacity: 1' }, mina.bounce);
-                arrow_head_policies3_oicr.attr({ style: 'opacity: 1' }, mina.bounce);
-
-                arrow_policies2_oicr.attr({ y2: '718.5' }, mina.bounce);
-                arrow_policies3_oicr.attr({ y2: '718.5' }, mina.bounce);
-
-                arrow_head_innovations_lvl4_oicr.attr({ style: 'opacity: 1' });
-
-                arrow_innovations_lvl4_oicr.attr({ y2: '555.5' })
-                break;
-
-            default:
-                break;
-        }
-    }
-
-
-
 
 
     function outElem(arr) {
-        // clearTimeout(timer);
-
         if (arr && arr.length > 0) {
             arr.forEach(el => {
                 el.animate({ transform: 's1,1' }, 700, mina.bounce);
@@ -497,22 +528,39 @@ window.onload = function () {
         }
     }
 
-    function overElem(arr) {
-        // clearTimeout(timer);
+    function overElem(arr,) {
         arr.forEach(el => {
             el.animate({ transform: 's1.1,1.1' }, 700, mina.bounce);
         });
     }
 
+    function outOpacity(arr) {
+        if (arr && arr.length > 0) {
+            arr.forEach(el => {
+                el.animate({ opacity: '1' }, 700, mina.bounce);
+            });
+        }
+    }
+
+    function overOpacity(arr) {
+        arr.forEach(el => {
+            el.animate({ opacity: '0' }, 700, mina.bounce);
+        });
+    }
+
     function chnStroke(el, params) {
         if (el.length == undefined) {
-            el.attr({ style: `stroke: ${params.stroke}; stroke-width:  ${params.width}` }, mina.bounce);
+            el.selectAll("line").forEach(function (e, i) {
+                e.attr({ style: `stroke: ${params.stroke}; stroke-width:  ${params.width}` }, mina.bounce);
+            });
+            //  el.attr({ style: `stroke: ${params.stroke}; stroke-width:  ${params.width}` }, mina.bounce);
         } else {
             el.forEach(element => {
                 element.attr({ style: `stroke: ${params.stroke}; stroke-width:  ${params.width}` }, mina.bounce);
             });
         }
     }
-    timer = setTimeout(outElem, 50)
+
+
 
 }

@@ -2,3 +2,4 @@ vendor/
 log/*
 cache/*
 app/settings.php
+public/images/svg/Spheres-of-influence-collected_copy.svg
