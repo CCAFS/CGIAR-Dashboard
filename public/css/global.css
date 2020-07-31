@@ -916,3 +916,7 @@ h6 {
 .fyear {
   z-index: 100;
 }
+
+.btn.disabled, .btn:disabled {
+    background: #ccc;
+}
