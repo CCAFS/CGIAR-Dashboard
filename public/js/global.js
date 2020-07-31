@@ -130,6 +130,7 @@ $('.closem').on('click', function () {
 function msieversion() {
   var ua = window.navigator.userAgent;
   var msie = ua.indexOf("MSIE ");
+  // console.log('msievrsion', msie, ua, navigator.userAgent.match(/Trident.*rv\:7\./))
   if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
     $('.browser-message').show(); //Show message in IE
   } else {
