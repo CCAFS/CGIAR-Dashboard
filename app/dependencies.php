@@ -12,9 +12,20 @@ $container['view'] = function ($c) {
     $settings = $c->get('settings');
     $view = new Slim\Views\Twig($settings['view']['template_path'], $settings['view']['twig']);
 
-    // Add extensions
-    $view->addExtension(new Slim\Views\TwigExtension($c->get('router'), $c->get('request')->getUri()));
+    // $function = new Twig_SimpleFunction('auto_version', function ($file) {
+    //     dump($file);
+    //     // echo '</script>';
+    //     if (strpos($file, '/') !== 0 || !file_exists($_SERVER['DOCUMENT_ROOT'] . $file))
+    //         return $file;
+
+    //     $mtime = filemtime($_SERVER['DOCUMENT_ROOT'] . $file);
+    //     return preg_replace('{\\.([^./]+)$}', ".$mtime.\$1", $file);
+    // });
+    
     $view->addExtension(new Twig_Extension_Debug());
+    $view->addExtension(new Slim\Views\TwigExtension($c->get('router'), $c->get('request')->getUri()));
+    // $view->getEnvironment()->addFunction($function);
+    // $view->addExtension(new Twig_Extension_Debug());
 
     return $view;
 };

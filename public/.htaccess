@@ -15,3 +15,4 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . index.php [L]
+RewriteRule ^(.*)\.[\d]{10}\.(css|js)$ $1.$2 [L]
