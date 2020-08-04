@@ -937,950 +937,953 @@
 		<![CDATA[
 
 		window.onload = function () {
-			console.log('Snap')
-			var snp = Snap('#svg-interactive');
-		
-			//     /**** spheres *****/
-		
-			var sphere_red_bg = snp.select('#sphere_red_bg');
-			var sphere_yellow_bg = snp.select('#sphere_yellow_bg');
-			var sphere_white_bg = snp.select('#sphere_white_bg');
-		
-			var trainees_group = snp.select('#ly_ppl_trained');
-			trainees_group.attr({ style: 'cursor: default' });
-		
-			var publications_group = snp.select('#ly_publications');
-			publications_group.attr({ style: 'cursor: default' });
-		
-			var almetrics_bg = snp.select('#ly_almetric');
-			var tl_partnertships = snp.select('#tl_partnertships');
-		
-			var milestones_group = snp.select('#ly_milestones');
-			milestones_group.attr({ style: 'cursor: default' });
-		
-			var ly_policies = snp.select('#ly_policies');
-			ly_policies.attr({ style: 'cursor: default' });
-			var ly_innovations = snp.select('#ly_innovations');
-			ly_innovations.attr({ style: 'cursor: default' });
-			var ly_slo = snp.select('#ly_slo');
-			var ly_oicr = snp.select('#ly_oicr');
-			var ly_pjts_benfs = snp.select('#ly_ptjs_benfs');
-			ly_pjts_benfs.attr({ style: 'cursor: default' });
-		
-			var txt_levels_bg = snp.select('#txt_levels_bg');
-		
-			var bg_innovations = snp.select('#bg_innovations');
-			var icon_innovations = snp.select('#icon_innovations');
-			var ic_innovations = snp.select('#ic_innovations');
-			var ic_innovations_bg = snp.select('#ic_innovations_bg');
-		
-			var bg_stage1_innovations = snp.select('#bg_stage1_innovations');
-			var tl_stage1_innovations = snp.select('#tl_stage1_innovations');
-			var stage1_innovations_group = snp.group(bg_stage1_innovations, tl_stage1_innovations);
-			stage1_innovations_group.attr({ style: 'cursor: pointer' });
-		
-			var txt_stage1_innovations = snp.select('#txt_stage1_innovations');
-		
-			var bg_stage2_innovations = snp.select('#bg_stage2_innovations');
-			var tl_stage2_innovations = snp.select('#tl_stage2_innovations');
-			var stage2_innovations_group = snp.group(bg_stage2_innovations, tl_stage2_innovations);
-			stage2_innovations_group.attr({ style: 'cursor: pointer' });
-		
-			var txt_stage2_innovations = snp.select('#txt_stage2_innovations');
-		
-			var bg_stage3_innovations = snp.select('#bg_stage3_innovations');
-			var tl_stage3_innovations = snp.select('#tl_stage3_innovations');
-			var stage3_innovations_group = snp.group(bg_stage3_innovations, tl_stage3_innovations);
-			stage3_innovations_group.attr({ style: 'cursor: pointer' });
-		
-			var txt_stage3_innovations = snp.select('#txt_stage3_innovations');
-		
-		
-			var bg_stage4_innovations = snp.select('#bg_stage4_innovations');
-			var tl_stage4_innovations = snp.select('#tl_stage4_innovations');
-			var stage4_innovations_group = snp.group(bg_stage4_innovations, tl_stage4_innovations);
-			stage4_innovations_group.attr({ style: 'cursor: pointer' });
-		
-			var txt_stage4_innovations = snp.select('#txt_stage4_innovations');
-		
-		
-		
-			var bg_oicr = snp.select('#bg_oicr');
-			var icon_oicr = snp.select('#icon_oicr');
-			var ic_oicr = snp.select('#ic_oicr');
-			var ic_oicr_bg = snp.select('#ic_oicr_bg');
-		
-			var bg_level1_oicr = snp.select('#bg_level1_oicr');
-			var tl_level1_oicr = snp.select('#tl_level1_oicr');
-			var level1_oicr_group = snp.group(bg_level1_oicr, tl_level1_oicr);
-			level1_oicr_group.attr({ style: 'cursor: pointer' });
-		
-			var txt_level1_oicr = snp.select('#txt_level1_oicr');
-		
-		
-			var bg_level2_oicr = snp.select('#bg_level2_oicr');
-			var tl_level2_oicr = snp.select('#tl_level2_oicr');
-			var level2_oicr_group = snp.group(bg_level2_oicr, tl_level2_oicr);
-			level2_oicr_group.attr({ style: 'cursor: pointer' });
-		
-			var txt_level2_oicr = snp.select('#txt_level2_oicr');
-		
-			var bg_level3_oicr = snp.select('#bg_level3_oicr');
-			var tl_level3_oicr = snp.select('#tl_level3_oicr');
-			var level3_oicr_group = snp.group(bg_level3_oicr, tl_level3_oicr);
-			level3_oicr_group.attr({ style: 'cursor: pointer' });
-		
-			var txt_level3_oicr = snp.select('#txt_level3_oicr');
-		
-			var bg_policies = snp.select('#bg_policies');
-			var icon_policies = snp.select('#icon_policies');
-			var ic_policies = snp.select('#ic_policies');
-			var ic_policies_bg = snp.select('#ic_policies_bg');
-		
-		
-			var bg_level1_policies = snp.select('#bg_level1_policies');
-			var tl_level1_policies = snp.select('#tl_level1_policies');
-			var level1_policies_group = snp.group(bg_level1_policies, tl_level1_policies);
-			level1_policies_group.attr({ style: 'cursor: pointer' });
-		
-			var txt_level1_policies = snp.select('#txt_level1_policies');
-			
-			var bg_level2_policies = snp.select('#bg_level2_policies');
-			var tl_level2_policies = snp.select('#tl_level2_policies');
-			var level2_policies_group = snp.group(bg_level2_policies, tl_level2_policies);
-			level2_policies_group.attr({ style: 'cursor: pointer' });
-		
-			var txt_level2_policies = snp.select('#txt_level2_policies');
-			
-			var bg_level3_policies = snp.select('#bg_level3_policies');
-			var tl_level3_policies = snp.select('#tl_level3_policies');
-			var level3_policies_group = snp.group(bg_level3_policies, tl_level3_policies);
-			level3_policies_group.attr({ style: 'cursor: pointer' });
-		
-			var txt_level3_policies = snp.select('#txt_level3_policies');
-		
-		
-		
-			/**
-			* arrows 
-			*/
-		
-		
-			var arrow_innovations_pjts = snp.select('#arrow_innovations_pjts');
-			var arrow_ptjs_benfs_slo = snp.select('#arrow_pjts_slo');
-			var arrow_publications_almetrics = snp.select('#arrow_publications_almetric');
-			var arrow_milestones_policies = snp.select('#arrow_milestones_policies');
-			var arrow_milestones_innovations = snp.select('#arrow_milestones_innovations');
-			var arrow_slo = snp.select('#arrow_slo');
-			var arrow_innovations_stage4_oicr = snp.select('#arrow_innovations_stage4_oicr');
-			var arrow_policies_level2_oicr = snp.select('#arrow_policies_level2_oicr');
-			var arrow_policies_level3_oicr = snp.select('#arrow_policies_level3_oicr');
-			var arrow_policies_slo = snp.select('#arrow_policies_slo');
-			var arrow_oicr_slo = snp.select('#arrow_oicr_slo');
-		
-		
-			/***
-			* 
-			* PhD trainees
-			*/
-		
-			trainees_group.hover(function () {
-				overElem([this, tl_partnertships]);
-				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-		
-			}, function () {
-				outElem([this, tl_partnertships]);
-				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-			});
-		
-			/**
-			* 
-			* Publicaitions
-			* 
-			*/
-		
-			publications_group.hover(function () {
-				overElem([this, almetrics_bg, tl_partnertships]);
-				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				chnStroke(arrow_publications_almetrics, { width: '3px' });
-				arrow_publications_almetrics.animate({ transform: 's.5,.9' }, 700, mina.bounce);
-			}, function () {
-				outElem([this, almetrics_bg, tl_partnertships]);
-				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-				chnStroke(arrow_publications_almetrics, { width: '1px' });
-				arrow_publications_almetrics.animate({ transform: 's1,1' }, 700, mina.bounce);
-			});
-		
-			/**
-			* 
-			* Almetrics
-			* 
-			*/
-		
-		
-			almetrics_bg.hover(function () {
-				overElem([this, tl_partnertships]);
-				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				arrow_publications_almetrics.animate({ transform: 's1.1,.95' }, 700, mina.bounce);
-			}, function () {
-				outElem([this, tl_partnertships]);
-				sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_publications_almetrics.animate({ transform: 's1,1' }, 700, mina.bounce);
-			});
-		
-			/**
-			* 
-			* Milestones
-			* 
-			*/
-		
-			milestones_group.hover(function () {
-				overElem([this, ly_policies, ly_innovations, tl_partnertships]);
-				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				arrow_milestones_policies.animate({ transform: 's1,.85' }, 700, mina.bounce);
-				arrow_milestones_innovations.animate({ transform: 's1,.83' }, 700, mina.bounce);
-				arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
-		
-			}, function () {
-				outElem([this, ly_policies, ly_innovations, tl_partnertships]);
-				sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-			});
-		
-		
-			/****
-			* Project benefits
-			*/
-		
-			ly_pjts_benfs.hover(function () {
-				overElem([this, ly_slo]);
-				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				chnStroke(arrow_ptjs_benfs_slo, { stroke: 'white', width: '3px', opacity: '1' });
-		
-				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1' }, 700, mina.bounce);
-				arrow_innovations_pjts.animate({ transform: 's.9,1' }, 700, mina.bounce);
-				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
-			}, function () {
-				outElem([this, ly_slo]);
-				sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-				sphere_red_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				chnStroke(arrow_ptjs_benfs_slo, { stroke: '#353635', width: '2px', opacity: '0.2' });
-		
-				arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
-			});
-		
-			/**
-			* 
-			* Innovations
-			* 
-			*/
-		
-			ly_innovations.hover(function () {
-				overElem([this, ly_slo, ly_pjts_benfs]);
-				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-		
-				chnStroke(arrow_ptjs_benfs_slo, { stroke: 'white', width: '3px', opacity: '1' });
-				chnStroke(arrow_innovations_pjts, { stroke: 'white', width: '3px', opacity: '1' });
-		
-				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1' }, 700, mina.bounce);
-				arrow_innovations_pjts.animate({ transform: 's.9,1,t-3' }, 700, mina.bounce);
-				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
-				arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
-			}, function () {
-				outElem([this, ly_slo, ly_pjts_benfs]);
-				sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-		
-				chnStroke(arrow_ptjs_benfs_slo, { stroke: '#353635', width: '2px', opacity: '0.2' });
-				chnStroke(arrow_innovations_pjts, { stroke: '#353635', width: '1px', opacity: '0.2' });
-		
-				arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
-		
-				// reduce stage circles
-				stage1Out();
-				stage2Out();
-				stage3Out();
-				stage4Out();
-			});
-		
-			icon_innovations.hover(function () {
-				this.attr({ style: 'cursor: pointer' });
-				ic_innovations_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
-				ic_innovations.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
-			}, function () {
-				this.attr({ style: 'cursor: default' });
-				ic_innovations.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
-				unanimateCircles(ic_innovations_bg);
-			});
-		
-			icon_innovations.click(function () {
-				window.open('https://results.cgiar.org/innovations');
-			});
-		
-			stage1_innovations_group.click(function () {
-				overElem([ly_innovations]);
-				arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
-				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				txt_stage1_innovations.animate({ opacity: '1' }, 700, mina.bounce);
-				overOpacity([stage2_innovations_group, stage3_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
-				bg_innovations.attr({ style: 'fill-opacity:1' });
-				animateCircles(stage1_innovations_group, stage1_innovations_group);
-			});
-		
-			stage1_innovations_group.dblclick(stage1Out);
-		
-			stage2_innovations_group.click(function () {
-				overElem([ly_innovations]);
-				arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
-				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				txt_stage2_innovations.animate({ opacity: '1' }, 700, mina.bounce);
-				overOpacity([stage1_innovations_group, stage3_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
-				bg_innovations.attr({ style: 'fill-opacity:1' });
-				stage2_innovations_group.animate({ transform: 's1.6,1.6,t-38' }, 700, mina.bounce);
-			});
-		
-			stage2_innovations_group.dblclick(stage2Out)
-		
-			stage3_innovations_group.click(function () {
-				overElem([ly_innovations]);
-				arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
-				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				txt_stage3_innovations.animate({ opacity: '1' }, 700, mina.bounce);
-				overOpacity([stage1_innovations_group, stage2_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
-				bg_innovations.attr({ style: 'fill-opacity:1' });
-				stage3_innovations_group.animate({ transform: 's1.6,1.6,t-88' }, 700, mina.bounce);
-			});
-		
-			stage3_innovations_group.dblclick(stage3Out)
-		
-			stage4_innovations_group.click(function () {
-				overElem([ly_innovations, ly_oicr]);
-				arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
-				arrow_innovations_pjts.animate({ transform: 's.9,1,t-3' }, 700, mina.bounce);
-				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				txt_stage4_innovations.animate({ opacity: '1' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
-		
-				overOpacity([stage1_innovations_group, stage2_innovations_group, stage3_innovations_group])
-				bg_innovations.attr({ style: 'fill-opacity:1' });
-				stage4_innovations_group.animate({ transform: 's1.6,1.6,t-128' }, 700, mina.bounce);
-			});
-		
-			stage4_innovations_group.hover(function () {
-				overElem([ly_slo, ly_pjts_benfs, ly_oicr]);
-				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1' }, 700, mina.bounce);
-				arrow_innovations_pjts.animate({ transform: 's.9,1,t-3' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
-				arrow_policies_level2_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
-				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
-		
-				chnStroke(arrow_ptjs_benfs_slo, { stroke: 'white', width: '3px', opacity: '1' });
-				chnStroke(arrow_innovations_pjts, { stroke: 'white', width: '3px', opacity: '1' });
-				chnStroke(arrow_innovations_stage4_oicr, { stroke: 'white', width: '3px', opacity: '1' });
-			}, function () {
-				outElem([ly_slo, ly_pjts_benfs, ly_oicr]);
-				arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-		
-				chnStroke(arrow_innovations_stage4_oicr, { stroke: 'white', width: '2px', opacity: '1' });
-			});
-		
-		
-		
-		
-			stage4_innovations_group.dblclick(stage4Out)
-		
-		
-			/**
-			 * 
-			 * OICR 
-			 *  */
-		
-			ly_oicr.hover(function () {
-				overElem([this, ly_slo]);
-				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-		
-				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-				arrow_slo.selectAll("line").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-		
-		
-				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
-				arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
-				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
-				arrow_policies_level2_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
-		
-		
-			}, function () {
-				outElem([this, ly_slo]);
-				sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-				sphere_red_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-		
-				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
-				chnStroke(arrow_oicr_slo, { stroke: '#000000', width: '2px', opacity: '1' });
-				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
-				});
-		
-				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
-				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-		
-				//
-				oicr_level1Out();
-				oicr_level2Out();
-				oicr_level3Out();
-		
-			});
-		
-			icon_oicr.hover(function () {
-				this.attr({ style: 'cursor: pointer' });
-				ic_oicr_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
-				ic_oicr.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
-			}, function () {
-				this.attr({ style: 'cursor: default' });
-				ic_oicr.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
-				unanimateCircles(ic_oicr_bg);
-			});
-		
-			icon_oicr.click(function () {
-				window.open('https://results.cgiar.org/policies');
-			});
-		
-		
-			level1_oicr_group.click(function () {
-				overElem([ly_oicr, ly_slo]);
-				txt_level1_oicr.animate({ opacity: '1' }, 700, mina.bounce);
-				overOpacity([level2_oicr_group, level3_oicr_group]);
-				outOpacity([txt_levels_bg]);
-		
-				bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:1' }); })
-		
-				txt_levels_bg.animate({ transform: 't0,0', opacity: 1 }, 700, mina.bounce);
-				level1_oicr_group.animate({ transform: 't-8,104' }, 700, mina.bounce);
-		
-				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-				arrow_slo.selectAll("line").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-				bg_oicr.selectAll(".st55").forEach(function (e, i) {
-					e.attr({ style: `opacity:1` }, mina.bounce);
-				});
-		
-		
-				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
-				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-		
-				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
-				arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
-		
-				arrow_policies_level2_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
-			});
-		
-			level1_oicr_group.dblclick(oicr_level1Out)
-		
-			level2_oicr_group.click(function () {
-				overElem([ly_oicr, ly_slo]);
-				txt_level2_oicr.animate({ opacity: '1' }, 700, mina.bounce);
-				overOpacity([level1_oicr_group, level3_oicr_group])
-		
-				txt_levels_bg.animate({ transform: 't80,0', opacity: 1 }, 700, mina.bounce);
-				level2_oicr_group.animate({ transform: 't0,104' }, 700, mina.bounce);
-		
-				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-				arrow_slo.selectAll("line").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-				bg_oicr.selectAll(".st55").forEach(function (e, i) {
-					e.attr({ style: `opacity:1` }, mina.bounce);
-				});
-		
-		
-				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
-				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-		
-				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
-				arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
-		
-				arrow_policies_level2_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
-			});
-		
-			level2_oicr_group.dblclick(oicr_level2Out)
-		
-			level3_oicr_group.click(function () {
-				overElem([ly_oicr, ly_slo]);
-				txt_level3_oicr.animate({ opacity: '1' }, 700, mina.bounce);
-				overOpacity([level1_oicr_group, level2_oicr_group]);
-		
-				txt_levels_bg.animate({ transform: 't150,0', opacity: 1 }, 700, mina.bounce);
-				level3_oicr_group.animate({ transform: 't0,104' }, 700, mina.bounce);
-		
-				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-				arrow_slo.selectAll("line").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-				bg_oicr.selectAll(".st55").forEach(function (e, i) {
-					e.attr({ style: `opacity:1` }, mina.bounce);
-				});
-		
-		
-				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
-				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-		
-				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
-				arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
-		
-				arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
-			});
-		
-			level3_oicr_group.dblclick(oicr_level3Out)
-		
-		
-			/**
-			 * 
-			 * Policies 
-			 *  */
-		
-			icon_policies.hover(function () {
-				this.attr({ style: 'cursor: pointer' });
-				ic_policies_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
-				ic_policies.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
-			}, function () {
-				this.attr({ style: 'cursor: default' });
-				ic_policies.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
-				unanimateCircles(ic_policies_bg);
-			});
-		
-			icon_policies.click(function () {
-				window.open('https://results.cgiar.org/caseReports');
-			});
-		
-			ly_policies.hover(function () {
-				overElem([this, ly_slo, ly_oicr]);
-				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-		
-				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-				arrow_slo.selectAll("line").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-		
-		
-				arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
-				arrow_milestones_policies.animate({ transform: 's1,.85,t15,0' }, 700, mina.bounce);
-				arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
-				arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
-				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
-				arrow_policies_level2_oicr.animate({ transform: 's1,.95,t0' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,.95,t0' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
-		
-			}, function () {
-				outElem([this, ly_slo, ly_oicr]);
-				sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-				sphere_red_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-		
-				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
-				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
-				});
-		
-				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
-				arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-		
-				//
-				policies_level1Out();
-				policies_level2Out();
-				policies_level3Out();
-		
-			});
-		
-		
-			level1_policies_group.click(function () {
-				overElem([ly_policies, ly_slo]);
-				overOpacity([level2_policies_group, level3_policies_group]);
-				animateCircles(level1_policies_group, level1_policies_group);
-		
-				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-				arrow_slo.selectAll("line").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-		
-				arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
-				arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
-				arrow_milestones_policies.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
-				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
-		
-				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				txt_level1_policies.animate({ opacity: '1' }, 700, mina.bounce);
-				bg_policies.attr({ style: 'fill-opacity:1' });
-			});
-		
-			level1_policies_group.dblclick(policies_level1Out);
-			
-			
-			level2_policies_group.click(function () {
-				overElem([ly_policies, ly_slo]);
-				overOpacity([level1_policies_group, level3_policies_group]);
-		
-				level2_policies_group.animate({ transform: 's1.6,1.6,t-58' }, 700, mina.bounce);
-		
-				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-				arrow_slo.selectAll("line").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-		
-				arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
-				arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
-				arrow_milestones_policies.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
-				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
-		
-				sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				txt_level2_policies.animate({ opacity: '1' }, 700, mina.bounce);
-				bg_policies.attr({ style: 'fill-opacity:1' });
-			});
-		
-			level2_policies_group.dblclick(policies_level2Out);
-			
-		
-			level3_policies_group.click(function () {
-				overElem([ly_policies, ly_slo]);
-				overOpacity([level1_policies_group, level2_policies_group]);
-		
-				level3_policies_group.animate({ transform: 's1.6,1.6,t-114' }, 700, mina.bounce);
-		
-				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-				arrow_slo.selectAll("line").forEach(function (e, i) {
-					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
-				});
-		
-				arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
-				arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
-				arrow_milestones_policies.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
-				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
-		
-				sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-				txt_level3_policies.animate({ opacity: '1' }, 700, mina.bounce);
-				bg_policies.attr({ style: 'fill-opacity:1' });
-			});
-		
-			level3_policies_group.dblclick(policies_level3Out);   
-			
-			
-			
-			
-			
-			
-			function policies_level1Out() {
-		
-				outElem([sphere_yellow_bg, ly_policies, ly_slo]);
-				outOpacity([level2_policies_group, level3_policies_group]);
-				unanimateCircles(level1_policies_group);
-		
-				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
-				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
-				});
-		
-				txt_level1_policies.animate({ opacity: '0' }, 700, mina.bounce);
-				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
-				arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				bg_policies.attr({ style: 'fill-opacity:0.2' });
-				
-			}
-			function policies_level2Out() {
-		
-				outElem([sphere_red_bg, ly_policies, ly_slo]);
-				outOpacity([level1_policies_group, level3_policies_group]);
-				unanimateCircles(level2_policies_group);
-		
-				level2_policies_group.animate({ transform: 's1,1,t0' }, 700, mina.bounce);
-		
-				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
-				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
-				});
-		
-				txt_level2_policies.animate({ opacity: '0' }, 700, mina.bounce);
-				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
-				arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				bg_policies.attr({ style: 'fill-opacity:0.2' });
-				
-			}
-			function policies_level3Out() {
-		
-				outElem([sphere_red_bg, ly_policies, ly_slo]);
-				outOpacity([level1_policies_group, level2_policies_group]);
-				unanimateCircles(level3_policies_group);
-		
-				level3_policies_group.animate({ transform: 's1,1,t0' }, 700, mina.bounce);
-		
-				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
-				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
-				});
-		
-				txt_level3_policies.animate({ opacity: '0' }, 700, mina.bounce);
-				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
-				arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				bg_policies.attr({ style: 'fill-opacity:0.2' });
-				
-			}
-			function oicr_level1Out() {
-				outElem([sphere_yellow_bg, ly_oicr, ly_slo]);
-				outOpacity([level2_oicr_group, level3_oicr_group]);
-				overOpacity([txt_levels_bg]);
-		
-				txt_level1_oicr.animate({ opacity: '0' }, 700, mina.bounce);
-				unanimateCircles(level1_oicr_group);
-		
-				bg_oicr.selectAll(".st55").forEach(function (e, i) {
-					e.attr({ style: `opacity:0.2` }, mina.bounce);
-				});
-		
-				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
-				chnStroke(arrow_oicr_slo, { stroke: '#000000', width: '2px', opacity: '1' });
-				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
-				});
-				
-				bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:0.2' }); })
-		
-				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
-				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
-				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-			}
-		
-			function oicr_level2Out() {
-				outElem([sphere_yellow_bg, ly_oicr, ly_slo]);
-				outOpacity([level1_oicr_group, level3_oicr_group]);
-		
-				txt_level2_oicr.animate({ opacity: '0' }, 700, mina.bounce);
-				unanimateCircles(level2_oicr_group);
-		
-				bg_oicr.selectAll(".st55").forEach(function (e, i) {
-					e.attr({ style: `opacity:0.2` }, mina.bounce);
-				});
-		
-				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
-				chnStroke(arrow_oicr_slo, { stroke: '#000000', width: '2px', opacity: '1' });
-				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
-				});
-				bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:0.2' }); })
-		
-		
-				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
-				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
-				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-			}
-		
-			function oicr_level3Out() {
-				outElem([sphere_yellow_bg, ly_oicr, ly_slo]);
-				outOpacity([level1_oicr_group, level2_oicr_group]);
-		
-				txt_level3_oicr.animate({ opacity: '0' }, 700, mina.bounce);
-				unanimateCircles(level3_oicr_group);
-		
-				bg_oicr.selectAll(".st55").forEach(function (e, i) {
-					e.attr({ style: `opacity:0.2` }, mina.bounce);
-				});
-		
-				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
-				chnStroke(arrow_oicr_slo, { stroke: '#000000', width: '2px', opacity: '1' });
-				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
-					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
-				});
-				bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:0.2' }); })
-		
-		
-				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
-				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
-				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
-			}
-		
-			function stage1Out() {
-				outElem([sphere_white_bg, ly_innovations]);
-				outOpacity([stage2_innovations_group, stage3_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
-				arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
-				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-				txt_stage1_innovations.animate({ opacity: '0' }, 700, mina.bounce);
-				bg_innovations.attr({ style: 'fill-opacity:0.2' });
-				unanimateCircles(stage1_innovations_group);
-			}
-		
-			function stage2Out() {
-				outElem([sphere_white_bg, ly_innovations]);
-				outOpacity([stage1_innovations_group, stage3_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
-				arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
-				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-				txt_stage2_innovations.animate({ opacity: '0' }, 700, mina.bounce);
-				bg_innovations.attr({ style: 'fill-opacity:0.2' });
-				unanimateCircles(stage2_innovations_group);
-			}
-		
-			function stage3Out() {
-				outElem([sphere_white_bg, ly_innovations]);
-				outOpacity([stage1_innovations_group, stage2_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
-				arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
-				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-				txt_stage3_innovations.animate({ opacity: '0' }, 700, mina.bounce);
-				bg_innovations.attr({ style: 'fill-opacity:0.2' });
-				unanimateCircles(stage3_innovations_group);
-			}
-		
-			function stage4Out() {
-				outElem([sphere_white_bg, ly_innovations]);
-				outOpacity([stage1_innovations_group, stage2_innovations_group, stage3_innovations_group, arrow_innovations_pjts]);
-				arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
-				arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
-				txt_stage4_innovations.animate({ opacity: '0' }, 700, mina.bounce);
-				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-				bg_innovations.attr({ style: 'fill-opacity:0.2' });
-				unanimateCircles(stage4_innovations_group);
-			}
-		
-		
-		
-		
-		
-		
-			function animateCircles(el, bg) {
-				el.paper.append(el);
-				bg.animate({ transform: 's1.6,1.6' }, 700, mina.bounce);
-			};
-		
-			function unanimateCircles(bg) {
-				bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-			}
-		
-		
-			function outElem(arr) {
-				if (arr && arr.length > 0) {
-					arr.forEach(el => {
-						el.animate({ transform: 's1,1' }, 700, mina.bounce);
-					});
-				}
-			}
-		
-			function overElem(arr,) {
-				arr.forEach(el => {
-					el.animate({ transform: 's1.1,1.1' }, 700, mina.bounce);
-				});
-			}
-		
-			function outOpacity(arr) {
-				if (arr && arr.length > 0) {
-					arr.forEach(el => {
-						el.animate({ opacity: '1' }, 700, mina.bounce);
-					});
-				}
-			}
-		
-			function overOpacity(arr) {
-				arr.forEach(el => {
-					el.animate({ opacity: '0' }, 700, mina.bounce);
-				});
-			}
-		
-			function chnStroke(el, params) {
-				if (el.length == undefined) {
-					if (params.opacity)
-						el.attr({ opacity: params.opacity });
-					el.selectAll("line").forEach(function (e, i) {
-						e.attr({ style: `stroke: ${params.stroke}; stroke-width:  ${params.width}` }, mina.bounce);
-					});
-					//  el.attr({ style: `stroke: ${params.stroke}; stroke-width:  ${params.width}` }, mina.bounce);
-				} else {
-					el.forEach(element => {
-						element.attr({ style: `stroke: ${params.stroke}; stroke-width:  ${params.width}` }, mina.bounce);
-					});
-				}
-			}
-		
-		
-		
-		}
+    console.log('Snap')
+    var snp = Snap('#svg-interactive');
 
+    //     /**** spheres *****/
+
+    var sphere_red_bg = snp.select('#sphere_red_bg');
+    var sphere_yellow_bg = snp.select('#sphere_yellow_bg');
+    var sphere_white_bg = snp.select('#sphere_white_bg');
+
+    var trainees_group = snp.select('#ly_ppl_trained');
+    trainees_group.attr({ style: 'cursor: default' });
+
+    var publications_group = snp.select('#ly_publications');
+    publications_group.attr({ style: 'cursor: default' });
+
+    var almetrics_bg = snp.select('#ly_almetric');
+    var tl_partnertships = snp.select('#tl_partnertships');
+
+    var milestones_group = snp.select('#ly_milestones');
+    milestones_group.attr({ style: 'cursor: default' });
+
+    var ly_policies = snp.select('#ly_policies');
+    ly_policies.attr({ style: 'cursor: default' });
+    var ly_innovations = snp.select('#ly_innovations');
+    ly_innovations.attr({ style: 'cursor: default' });
+    var ly_slo = snp.select('#ly_slo');
+    var ly_oicr = snp.select('#ly_oicr');
+    var ly_pjts_benfs = snp.select('#ly_ptjs_benfs');
+    ly_pjts_benfs.attr({ style: 'cursor: default' });
+
+    var txt_levels_bg = snp.select('#txt_levels_bg');
+
+    var bg_innovations = snp.select('#bg_innovations');
+    var icon_innovations = snp.select('#icon_innovations');
+    var ic_innovations = snp.select('#ic_innovations');
+    var ic_innovations_bg = snp.select('#ic_innovations_bg');
+
+    var bg_stage1_innovations = snp.select('#bg_stage1_innovations');
+    var tl_stage1_innovations = snp.select('#tl_stage1_innovations');
+    var stage1_innovations_group = snp.group(bg_stage1_innovations, tl_stage1_innovations);
+    stage1_innovations_group.attr({ style: 'cursor: pointer' });
+
+    var txt_stage1_innovations = snp.select('#txt_stage1_innovations');
+
+    var bg_stage2_innovations = snp.select('#bg_stage2_innovations');
+    var tl_stage2_innovations = snp.select('#tl_stage2_innovations');
+    var stage2_innovations_group = snp.group(bg_stage2_innovations, tl_stage2_innovations);
+    stage2_innovations_group.attr({ style: 'cursor: pointer' });
+
+    var txt_stage2_innovations = snp.select('#txt_stage2_innovations');
+
+    var bg_stage3_innovations = snp.select('#bg_stage3_innovations');
+    var tl_stage3_innovations = snp.select('#tl_stage3_innovations');
+    var stage3_innovations_group = snp.group(bg_stage3_innovations, tl_stage3_innovations);
+    stage3_innovations_group.attr({ style: 'cursor: pointer' });
+
+    var txt_stage3_innovations = snp.select('#txt_stage3_innovations');
+
+
+    var bg_stage4_innovations = snp.select('#bg_stage4_innovations');
+    var tl_stage4_innovations = snp.select('#tl_stage4_innovations');
+    var stage4_innovations_group = snp.group(bg_stage4_innovations, tl_stage4_innovations);
+    stage4_innovations_group.attr({ style: 'cursor: pointer' });
+
+    var txt_stage4_innovations = snp.select('#txt_stage4_innovations');
+
+
+
+    var bg_oicr = snp.select('#bg_oicr');
+    var icon_oicr = snp.select('#icon_oicr');
+    var ic_oicr = snp.select('#ic_oicr');
+    var ic_oicr_bg = snp.select('#ic_oicr_bg');
+
+    var bg_level1_oicr = snp.select('#bg_level1_oicr');
+    var tl_level1_oicr = snp.select('#tl_level1_oicr');
+    var level1_oicr_group = snp.group(bg_level1_oicr, tl_level1_oicr);
+    level1_oicr_group.attr({ style: 'cursor: pointer' });
+
+    var txt_level1_oicr = snp.select('#txt_level1_oicr');
+
+
+    var bg_level2_oicr = snp.select('#bg_level2_oicr');
+    var tl_level2_oicr = snp.select('#tl_level2_oicr');
+    var level2_oicr_group = snp.group(bg_level2_oicr, tl_level2_oicr);
+    level2_oicr_group.attr({ style: 'cursor: pointer' });
+
+    var txt_level2_oicr = snp.select('#txt_level2_oicr');
+
+    var bg_level3_oicr = snp.select('#bg_level3_oicr');
+    var tl_level3_oicr = snp.select('#tl_level3_oicr');
+    var level3_oicr_group = snp.group(bg_level3_oicr, tl_level3_oicr);
+    level3_oicr_group.attr({ style: 'cursor: pointer' });
+
+    var txt_level3_oicr = snp.select('#txt_level3_oicr');
+
+    var bg_policies = snp.select('#bg_policies');
+    var icon_policies = snp.select('#icon_policies');
+    var ic_policies = snp.select('#ic_policies');
+    var ic_policies_bg = snp.select('#ic_policies_bg');
+
+
+    var bg_level1_policies = snp.select('#bg_level1_policies');
+    var tl_level1_policies = snp.select('#tl_level1_policies');
+    var level1_policies_group = snp.group(bg_level1_policies, tl_level1_policies);
+    level1_policies_group.attr({ style: 'cursor: pointer' });
+
+    var txt_level1_policies = snp.select('#txt_level1_policies');
+    
+    var bg_level2_policies = snp.select('#bg_level2_policies');
+    var tl_level2_policies = snp.select('#tl_level2_policies');
+    var level2_policies_group = snp.group(bg_level2_policies, tl_level2_policies);
+    level2_policies_group.attr({ style: 'cursor: pointer' });
+
+    var txt_level2_policies = snp.select('#txt_level2_policies');
+    
+    var bg_level3_policies = snp.select('#bg_level3_policies');
+    var tl_level3_policies = snp.select('#tl_level3_policies');
+    var level3_policies_group = snp.group(bg_level3_policies, tl_level3_policies);
+    level3_policies_group.attr({ style: 'cursor: pointer' });
+
+    var txt_level3_policies = snp.select('#txt_level3_policies');
+
+
+
+    /**
+    * arrows 
+    */
+
+
+    var arrow_innovations_pjts = snp.select('#arrow_innovations_pjts');
+    var arrow_ptjs_benfs_slo = snp.select('#arrow_pjts_slo');
+    var arrow_publications_almetrics = snp.select('#arrow_publications_almetric');
+    var arrow_milestones_policies = snp.select('#arrow_milestones_policies');
+    var arrow_milestones_innovations = snp.select('#arrow_milestones_innovations');
+    var arrow_slo = snp.select('#arrow_slo');
+    var arrow_innovations_stage4_oicr = snp.select('#arrow_innovations_stage4_oicr');
+    var arrow_policies_level2_oicr = snp.select('#arrow_policies_level2_oicr');
+    var arrow_policies_level3_oicr = snp.select('#arrow_policies_level3_oicr');
+    var arrow_policies_slo = snp.select('#arrow_policies_slo');
+    var arrow_oicr_slo = snp.select('#arrow_oicr_slo');
+
+
+    /***
+    * 
+    * PhD trainees
+    */
+
+    trainees_group.hover(function () {
+        overElem([this, tl_partnertships]);
+        sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+
+    }, function () {
+        outElem([this, tl_partnertships]);
+        sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+    });
+
+    /**
+    * 
+    * Publicaitions
+    * 
+    */
+
+    publications_group.hover(function () {
+        overElem([this, almetrics_bg, tl_partnertships]);
+        sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        chnStroke(arrow_publications_almetrics, { width: '3px' });
+        arrow_publications_almetrics.animate({ transform: 's.5,.9' }, 700, mina.bounce);
+    }, function () {
+        outElem([this, almetrics_bg, tl_partnertships]);
+        sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+        chnStroke(arrow_publications_almetrics, { width: '1px' });
+        arrow_publications_almetrics.animate({ transform: 's1,1' }, 700, mina.bounce);
+    });
+
+    /**
+    * 
+    * Almetrics
+    * 
+    */
+
+
+    almetrics_bg.hover(function () {
+        overElem([this, tl_partnertships]);
+        sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        arrow_publications_almetrics.animate({ transform: 's1.1,.95' }, 700, mina.bounce);
+    }, function () {
+        outElem([this, tl_partnertships]);
+        sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_publications_almetrics.animate({ transform: 's1,1' }, 700, mina.bounce);
+    });
+
+    /**
+    * 
+    * Milestones
+    * 
+    */
+
+    milestones_group.hover(function () {
+        overElem([this, ly_policies, ly_innovations, tl_partnertships]);
+        sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        arrow_milestones_policies.animate({ transform: 's1,.85' }, 700, mina.bounce);
+        arrow_milestones_innovations.animate({ transform: 's1,.83' }, 700, mina.bounce);
+        arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
+
+    }, function () {
+        outElem([this, ly_policies, ly_innovations, tl_partnertships]);
+        sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+        sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+    });
+
+
+    /****
+    * Project benefits
+    */
+
+    ly_pjts_benfs.hover(function () {
+        overElem([this, ly_slo]);
+        sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        chnStroke(arrow_ptjs_benfs_slo, { stroke: 'white', width: '3px', opacity: '1' });
+
+        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1' }, 700, mina.bounce);
+        arrow_innovations_pjts.animate({ transform: 's.9,1' }, 700, mina.bounce);
+        arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+    }, function () {
+        outElem([this, ly_slo]);
+        sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+        sphere_red_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        chnStroke(arrow_ptjs_benfs_slo, { stroke: '#353635', width: '2px', opacity: '0.2' });
+
+        arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
+    });
+
+    /**
+    * 
+    * Innovations
+    * 
+    */
+
+    ly_innovations.hover(function () {
+        overElem([this, ly_slo, ly_pjts_benfs]);
+        sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+
+        chnStroke(arrow_ptjs_benfs_slo, { stroke: 'white', width: '3px', opacity: '1' });
+        chnStroke(arrow_innovations_pjts, { stroke: 'white', width: '3px', opacity: '1' });
+
+        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1' }, 700, mina.bounce);
+        arrow_innovations_pjts.animate({ transform: 's.9,1,t-3' }, 700, mina.bounce);
+        arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+        arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+    }, function () {
+        outElem([this, ly_slo, ly_pjts_benfs]);
+        sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+        sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+
+        chnStroke(arrow_ptjs_benfs_slo, { stroke: '#353635', width: '2px', opacity: '0.2' });
+        chnStroke(arrow_innovations_pjts, { stroke: '#353635', width: '1px', opacity: '0.2' });
+
+        arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
+
+        // reduce stage circles
+        stage1Out();
+        stage2Out();
+        stage3Out();
+        stage4Out();
+    });
+
+    icon_innovations.hover(function () {
+        this.attr({ style: 'cursor: pointer' });
+        ic_innovations_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
+        ic_innovations.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
+    }, function () {
+        this.attr({ style: 'cursor: default' });
+        ic_innovations.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
+        unanimateCircles(ic_innovations_bg);
+    });
+
+    icon_innovations.click(function () {
+        window.open('https://results.cgiar.org/innovations');
+    });
+
+    stage1_innovations_group.click(function () {
+        overElem([ly_innovations]);
+        arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+        sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        txt_stage1_innovations.animate({ opacity: '1' }, 700, mina.bounce);
+        overOpacity([stage2_innovations_group, stage3_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
+        bg_innovations.attr({ style: 'fill-opacity:1' });
+        animateCircles(stage1_innovations_group, stage1_innovations_group);
+    });
+
+    stage1_innovations_group.dblclick(stage1Out);
+
+    stage2_innovations_group.click(function () {
+        overElem([ly_innovations]);
+        arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+        sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        txt_stage2_innovations.animate({ opacity: '1' }, 700, mina.bounce);
+        overOpacity([stage1_innovations_group, stage3_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
+        bg_innovations.attr({ style: 'fill-opacity:1' });
+        stage2_innovations_group.animate({ transform: 's1.6,1.6,t-38' }, 700, mina.bounce);
+    });
+
+    stage2_innovations_group.dblclick(stage2Out)
+
+    stage3_innovations_group.click(function () {
+        overElem([ly_innovations]);
+        arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+        sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        txt_stage3_innovations.animate({ opacity: '1' }, 700, mina.bounce);
+        overOpacity([stage1_innovations_group, stage2_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
+        bg_innovations.attr({ style: 'fill-opacity:1' });
+        stage3_innovations_group.animate({ transform: 's1.6,1.6,t-88' }, 700, mina.bounce);
+    });
+
+    stage3_innovations_group.dblclick(stage3Out)
+
+    stage4_innovations_group.click(function () {
+        overElem([ly_innovations, ly_oicr]);
+        arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+        arrow_innovations_pjts.animate({ transform: 's.9,1,t-3' }, 700, mina.bounce);
+        sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        txt_stage4_innovations.animate({ opacity: '1' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+
+        overOpacity([stage1_innovations_group, stage2_innovations_group, stage3_innovations_group])
+        bg_innovations.attr({ style: 'fill-opacity:1' });
+        stage4_innovations_group.animate({ transform: 's1.6,1.6,t-128' }, 700, mina.bounce);
+    });
+
+    stage4_innovations_group.hover(function () {
+        overElem([ly_slo, ly_pjts_benfs, ly_oicr]);
+        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1' }, 700, mina.bounce);
+        arrow_innovations_pjts.animate({ transform: 's.9,1,t-3' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+        arrow_policies_level2_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+        arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+
+        chnStroke(arrow_ptjs_benfs_slo, { stroke: 'white', width: '3px', opacity: '1' });
+        chnStroke(arrow_innovations_pjts, { stroke: 'white', width: '3px', opacity: '1' });
+        chnStroke(arrow_innovations_stage4_oicr, { stroke: 'white', width: '3px', opacity: '1' });
+    }, function () {
+        outElem([ly_slo, ly_pjts_benfs, ly_oicr]);
+        arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+
+        chnStroke(arrow_innovations_stage4_oicr, { stroke: 'white', width: '2px', opacity: '1' });
+    });
+
+
+
+
+    stage4_innovations_group.dblclick(stage4Out)
+
+
+    /**
+     * 
+     * OICR 
+     *  */
+
+    ly_oicr.hover(function () {
+        overElem([this, ly_slo]);
+        sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+
+        arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+        arrow_slo.selectAll("line").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+
+
+        arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+        arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
+        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+        arrow_policies_level2_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+
+
+    }, function () {
+        outElem([this, ly_slo]);
+        sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+        sphere_red_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+
+        chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+        chnStroke(arrow_oicr_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+        arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+        });
+
+        arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+        arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+
+        //
+        oicr_level1Out();
+        oicr_level2Out();
+        oicr_level3Out();
+
+    });
+
+    icon_oicr.hover(function () {
+        this.attr({ style: 'cursor: pointer' });
+        ic_oicr_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
+        ic_oicr.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
+    }, function () {
+        this.attr({ style: 'cursor: default' });
+        ic_oicr.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
+        unanimateCircles(ic_oicr_bg);
+    });
+
+    icon_oicr.click(function () {
+        window.open('https://results.cgiar.org/policies');
+    });
+
+
+    level1_oicr_group.click(function () {
+        overElem([ly_oicr, ly_slo]);
+        txt_level1_oicr.animate({ opacity: '1' }, 700, mina.bounce);
+        overOpacity([level2_oicr_group, level3_oicr_group]);
+        outOpacity([txt_levels_bg]);
+
+        bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:1' }); })
+
+        txt_levels_bg.animate({ transform: 't0,0', opacity: 1 }, 700, mina.bounce);
+        level1_oicr_group.animate({ transform: 't-8,104' }, 700, mina.bounce);
+
+        arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+        arrow_slo.selectAll("line").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+        bg_oicr.selectAll(".st55").forEach(function (e, i) {
+            e.attr({ style: `opacity:1` }, mina.bounce);
+        });
+
+
+        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+        sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+
+        arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+        arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
+
+        arrow_policies_level2_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+    });
+
+    level1_oicr_group.dblclick(oicr_level1Out)
+
+    level2_oicr_group.click(function () {
+        overElem([ly_oicr, ly_slo]);
+        txt_level2_oicr.animate({ opacity: '1' }, 700, mina.bounce);
+        overOpacity([level1_oicr_group, level3_oicr_group])
+
+        txt_levels_bg.animate({ transform: 't80,0', opacity: 1 }, 700, mina.bounce);
+        level2_oicr_group.animate({ transform: 't0,104' }, 700, mina.bounce);
+
+        bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:1' }); })
+
+        arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+        arrow_slo.selectAll("line").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+        bg_oicr.selectAll(".st55").forEach(function (e, i) {
+            e.attr({ style: `opacity:1` }, mina.bounce);
+        });
+
+
+        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+        sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+
+        arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+        arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
+
+        arrow_policies_level2_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+    });
+
+    level2_oicr_group.dblclick(oicr_level2Out)
+
+    level3_oicr_group.click(function () {
+        overElem([ly_oicr, ly_slo]);
+        txt_level3_oicr.animate({ opacity: '1' }, 700, mina.bounce);
+        overOpacity([level1_oicr_group, level2_oicr_group]);
+
+        txt_levels_bg.animate({ transform: 't150,0', opacity: 1 }, 700, mina.bounce);
+        level3_oicr_group.animate({ transform: 't0,104' }, 700, mina.bounce);
+
+        arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+        arrow_slo.selectAll("line").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+        bg_oicr.selectAll(".st55").forEach(function (e, i) {
+            e.attr({ style: `opacity:1` }, mina.bounce);
+        });
+
+        bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:1' }); })
+
+
+        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+        sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+
+        arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+        arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
+
+        arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+    });
+
+    level3_oicr_group.dblclick(oicr_level3Out)
+
+
+    /**
+     * 
+     * Policies 
+     *  */
+
+    icon_policies.hover(function () {
+        this.attr({ style: 'cursor: pointer' });
+        ic_policies_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
+        ic_policies.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
+    }, function () {
+        this.attr({ style: 'cursor: default' });
+        ic_policies.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
+        unanimateCircles(ic_policies_bg);
+    });
+
+    icon_policies.click(function () {
+        window.open('https://results.cgiar.org/caseReports');
+    });
+
+    ly_policies.hover(function () {
+        overElem([this, ly_slo, ly_oicr]);
+        sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+
+        arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+        arrow_slo.selectAll("line").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+
+
+        arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
+        arrow_milestones_policies.animate({ transform: 's1,.85,t15,0' }, 700, mina.bounce);
+        arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
+        arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
+        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+        arrow_policies_level2_oicr.animate({ transform: 's1,.95,t0' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,.95,t0' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+
+    }, function () {
+        outElem([this, ly_slo, ly_oicr]);
+        sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+        sphere_red_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+
+        chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+        arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+        });
+
+        arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+        arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+
+        //
+        policies_level1Out();
+        policies_level2Out();
+        policies_level3Out();
+
+    });
+
+
+    level1_policies_group.click(function () {
+        overElem([ly_policies, ly_slo]);
+        overOpacity([level2_policies_group, level3_policies_group]);
+        animateCircles(level1_policies_group, level1_policies_group);
+
+        arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+        arrow_slo.selectAll("line").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+
+        arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
+        arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
+        arrow_milestones_policies.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+
+        sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        txt_level1_policies.animate({ opacity: '1' }, 700, mina.bounce);
+        bg_policies.attr({ style: 'fill-opacity:1' });
+    });
+
+    level1_policies_group.dblclick(policies_level1Out);
+    
+    
+    level2_policies_group.click(function () {
+        overElem([ly_policies, ly_slo]);
+        overOpacity([level1_policies_group, level3_policies_group]);
+
+        level2_policies_group.animate({ transform: 's1.6,1.6,t-58' }, 700, mina.bounce);
+
+        arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+        arrow_slo.selectAll("line").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+
+        arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
+        arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
+        arrow_milestones_policies.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+
+        sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        txt_level2_policies.animate({ opacity: '1' }, 700, mina.bounce);
+        bg_policies.attr({ style: 'fill-opacity:1' });
+    });
+
+    level2_policies_group.dblclick(policies_level2Out);
+    
+
+    level3_policies_group.click(function () {
+        overElem([ly_policies, ly_slo]);
+        overOpacity([level1_policies_group, level2_policies_group]);
+
+        level3_policies_group.animate({ transform: 's1.6,1.6,t-114' }, 700, mina.bounce);
+
+        arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+        arrow_slo.selectAll("line").forEach(function (e, i) {
+            e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+        });
+
+        arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
+        arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
+        arrow_milestones_policies.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+
+        sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+        txt_level3_policies.animate({ opacity: '1' }, 700, mina.bounce);
+        bg_policies.attr({ style: 'fill-opacity:1' });
+    });
+
+    level3_policies_group.dblclick(policies_level3Out);   
+    
+    
+    
+    
+    
+    
+    function policies_level1Out() {
+
+        outElem([sphere_yellow_bg, ly_policies, ly_slo]);
+        outOpacity([level2_policies_group, level3_policies_group]);
+        unanimateCircles(level1_policies_group);
+
+        chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+        arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+        });
+
+        txt_level1_policies.animate({ opacity: '0' }, 700, mina.bounce);
+        arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+        arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        bg_policies.attr({ style: 'fill-opacity:0.2' });
+        
+    }
+    function policies_level2Out() {
+
+        outElem([sphere_red_bg, ly_policies, ly_slo]);
+        outOpacity([level1_policies_group, level3_policies_group]);
+        unanimateCircles(level2_policies_group);
+
+        level2_policies_group.animate({ transform: 's1,1,t0' }, 700, mina.bounce);
+
+        chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+        arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+        });
+
+        txt_level2_policies.animate({ opacity: '0' }, 700, mina.bounce);
+        arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+        arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        bg_policies.attr({ style: 'fill-opacity:0.2' });
+        
+    }
+    function policies_level3Out() {
+
+        outElem([sphere_red_bg, ly_policies, ly_slo]);
+        outOpacity([level1_policies_group, level2_policies_group]);
+        unanimateCircles(level3_policies_group);
+
+        level3_policies_group.animate({ transform: 's1,1,t0' }, 700, mina.bounce);
+
+        chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+        arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+        });
+
+        txt_level3_policies.animate({ opacity: '0' }, 700, mina.bounce);
+        arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+        arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        bg_policies.attr({ style: 'fill-opacity:0.2' });
+        
+    }
+    function oicr_level1Out() {
+        outElem([sphere_yellow_bg, ly_oicr, ly_slo]);
+        outOpacity([level2_oicr_group, level3_oicr_group]);
+        overOpacity([txt_levels_bg]);
+
+        txt_level1_oicr.animate({ opacity: '0' }, 700, mina.bounce);
+        unanimateCircles(level1_oicr_group);
+
+        bg_oicr.selectAll(".st55").forEach(function (e, i) {
+            e.attr({ style: `opacity:0.2` }, mina.bounce);
+        });
+
+        chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+        chnStroke(arrow_oicr_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+        arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+        });
+        
+        bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:0.2' }); })
+
+        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+        arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+    }
+
+    function oicr_level2Out() {
+        outElem([sphere_yellow_bg, ly_oicr, ly_slo]);
+        outOpacity([level1_oicr_group, level3_oicr_group]);
+
+        txt_level2_oicr.animate({ opacity: '0' }, 700, mina.bounce);
+        unanimateCircles(level2_oicr_group);
+
+        bg_oicr.selectAll(".st55").forEach(function (e, i) {
+            e.attr({ style: `opacity:0.2` }, mina.bounce);
+        });
+
+        chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+        chnStroke(arrow_oicr_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+        arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+        });
+        bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:0.2' }); })
+
+
+        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+        arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+    }
+
+    function oicr_level3Out() {
+        outElem([sphere_yellow_bg, ly_oicr, ly_slo]);
+        outOpacity([level1_oicr_group, level2_oicr_group]);
+
+        txt_level3_oicr.animate({ opacity: '0' }, 700, mina.bounce);
+        unanimateCircles(level3_oicr_group);
+
+        bg_oicr.selectAll(".st55").forEach(function (e, i) {
+            e.attr({ style: `opacity:0.2` }, mina.bounce);
+        });
+
+        chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+        chnStroke(arrow_oicr_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+        arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+            e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+        });
+        bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:0.2' }); })
+
+
+        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+        arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+        arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+    }
+
+    function stage1Out() {
+        outElem([sphere_white_bg, ly_innovations]);
+        outOpacity([stage2_innovations_group, stage3_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
+        arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
+        sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+        txt_stage1_innovations.animate({ opacity: '0' }, 700, mina.bounce);
+        bg_innovations.attr({ style: 'fill-opacity:0.2' });
+        unanimateCircles(stage1_innovations_group);
+    }
+
+    function stage2Out() {
+        outElem([sphere_white_bg, ly_innovations]);
+        outOpacity([stage1_innovations_group, stage3_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
+        arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
+        sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+        txt_stage2_innovations.animate({ opacity: '0' }, 700, mina.bounce);
+        bg_innovations.attr({ style: 'fill-opacity:0.2' });
+        unanimateCircles(stage2_innovations_group);
+    }
+
+    function stage3Out() {
+        outElem([sphere_white_bg, ly_innovations]);
+        outOpacity([stage1_innovations_group, stage2_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
+        arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
+        sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+        txt_stage3_innovations.animate({ opacity: '0' }, 700, mina.bounce);
+        bg_innovations.attr({ style: 'fill-opacity:0.2' });
+        unanimateCircles(stage3_innovations_group);
+    }
+
+    function stage4Out() {
+        outElem([sphere_white_bg, ly_innovations]);
+        outOpacity([stage1_innovations_group, stage2_innovations_group, stage3_innovations_group, arrow_innovations_pjts]);
+        arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
+        arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
+        txt_stage4_innovations.animate({ opacity: '0' }, 700, mina.bounce);
+        sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+        bg_innovations.attr({ style: 'fill-opacity:0.2' });
+        unanimateCircles(stage4_innovations_group);
+    }
+
+
+
+
+
+
+    function animateCircles(el, bg) {
+        el.paper.append(el);
+        bg.animate({ transform: 's1.6,1.6' }, 700, mina.bounce);
+    };
+
+    function unanimateCircles(bg) {
+        bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+    }
+
+
+    function outElem(arr) {
+        if (arr && arr.length > 0) {
+            arr.forEach(el => {
+                el.animate({ transform: 's1,1' }, 700, mina.bounce);
+            });
+        }
+    }
+
+    function overElem(arr,) {
+        arr.forEach(el => {
+            el.animate({ transform: 's1.1,1.1' }, 700, mina.bounce);
+        });
+    }
+
+    function outOpacity(arr) {
+        if (arr && arr.length > 0) {
+            arr.forEach(el => {
+                el.animate({ opacity: '1' }, 700, mina.bounce);
+            });
+        }
+    }
+
+    function overOpacity(arr) {
+        arr.forEach(el => {
+            el.animate({ opacity: '0' }, 700, mina.bounce);
+        });
+    }
+
+    function chnStroke(el, params) {
+        if (el.length == undefined) {
+            if (params.opacity)
+                el.attr({ opacity: params.opacity });
+            el.selectAll("line").forEach(function (e, i) {
+                e.attr({ style: `stroke: ${params.stroke}; stroke-width:  ${params.width}` }, mina.bounce);
+            });
+            //  el.attr({ style: `stroke: ${params.stroke}; stroke-width:  ${params.width}` }, mina.bounce);
+        } else {
+            el.forEach(element => {
+                element.attr({ style: `stroke: ${params.stroke}; stroke-width:  ${params.width}` }, mina.bounce);
+            });
+        }
+    }
+
+
+
+}
 
 
 
