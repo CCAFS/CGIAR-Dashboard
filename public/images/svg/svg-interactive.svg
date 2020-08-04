@@ -1,0 +1,1892 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="svg-interactive" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1677 920" style="enable-background:new 0 0 1677 920;" xml:space="preserve">
+	<script xlink:href="js/snap.svg-min.js" />
+	<!-- <script xlink:href="js/main.js" /> -->
+	<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);fill:#C13B3E;}
+	.st1{clip-path:url(#SVGID_4_);fill:#C13B3E;}
+	.st2{clip-path:url(#SVGID_6_);fill:url(#SVGID_7_);}
+	.st3{clip-path:url(#SVGID_9_);fill:#C13B3E;}
+	.st4{clip-path:url(#SVGID_11_);fill:#F79421;}
+	.st5{clip-path:url(#SVGID_13_);fill:#FFFFFF;}
+	.st6{clip-path:url(#SVGID_15_);fill:#C13B3E;}
+	.st7{clip-path:url(#SVGID_17_);fill:#F79421;}
+	.st8{clip-path:url(#SVGID_19_);fill:#FFFFFF;}
+	.st9{clip-path:url(#SVGID_21_);fill:#FFFFFF;}
+	.st10{clip-path:url(#SVGID_23_);fill:#FFFFFF;}
+	.st11{clip-path:url(#SVGID_25_);fill:#FFFFFF;}
+	.st12{clip-path:url(#SVGID_27_);fill:#FFFFFF;}
+	.st13{clip-path:url(#SVGID_29_);fill:#FFFFFF;}
+	.st14{clip-path:url(#SVGID_31_);fill:#FFFFFF;}
+	.st15{clip-path:url(#SVGID_33_);fill:#FFFFFF;}
+	.st16{fill:#010101;}
+	.st17{font-family:'ProximaNova-Regular';}
+	.st18{font-size:30px;}
+	.st19{opacity:0.2;fill:#010101;enable-background:new    ;}
+	.st20{font-size:25.2238px;}
+	.st21{font-size:18px;}
+	.st22{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st23{fill:none;stroke:#293247;stroke-width:1.016;stroke-miterlimit:10;}
+	.st24{font-size:14.4617px;}
+	.st25{fill:#FDE4BC;}
+	.st26{fill:none;stroke:#293247;stroke-miterlimit:10;}
+	.st27{fill:#161613;}
+	.st28{fill:none;stroke:#181815;stroke-width:0.396;stroke-miterlimit:10;}
+	.st29{clip-path:url(#SVGID_35_);fill:none;stroke:#181815;stroke-width:0.396;stroke-miterlimit:10;}
+	.st30{fill:#EDD338;}
+	.st31{fill:#444C9F;}
+	.st32{fill:#84BBEA;}
+	.st33{fill:#B1CC36;}
+	.st34{fill:#831377;}
+	.st35{fill:#291D5E;}
+	.st36{fill:#D69328;}
+	.st37{fill:#C4312D;}
+	.st38{fill:#FFFFFF;fill-opacity:0.2;stroke:#293247;stroke-miterlimit:10;}
+	.st39{font-size:15.6316px;}
+	.st40{fill:#FFFFFF;stroke:#F79421;stroke-miterlimit:10;stroke-opacity:0.8;}
+	.st41{font-size:8.7025px;}
+	.st42{font-size:18.3855px;}
+	.st43{fill:#F79421;fill-opacity:0.2;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st44{font-size:20px;}
+	.st45{opacity:0;}
+	.st46{font-family:'MyriadPro-Regular';}
+	.st47{font-size:12px;}
+	.st48{font-size:10.8878px;}
+	.st49{fill:#FFFFFF;fill-opacity:0.7;stroke:#FFA600;stroke-miterlimit:10;}
+	.st50{fill:#FFA600;}
+	.st51{font-size:10.3846px;}
+	.st52{font-size:12.6172px;}
+	.st53{font-size:24.9734px;}
+	.st54{fill:#C13B3E;fill-opacity:0.8;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st55{fill:#FFFFFF;}
+	.st56{opacity:0.2;fill:#FFFFFF;enable-background:new    ;}
+	.st57{fill:none;stroke:#293247;stroke-miterlimit:10;stroke-dasharray:11.8761,11.8761;}
+	.st58{fill:#E5E5E5;}
+	.st59{font-size:6.7604px;}
+	.st60{font-size:6.3399px;}
+	.st61{fill:#FCFBFA;}
+	.st62{fill:#FCFCFB;fill-opacity:0.5;stroke:#293247;stroke-width:1.016;stroke-miterlimit:10;}
+	.st63{font-size:13.2357px;}
+	.st64{fill:#FCFCFB;fill-opacity:0.7;stroke:#293247;stroke-width:1.016;stroke-miterlimit:10;}
+	.st65{fill:#07A1E2;}
+	.st66{fill:#7A96D0;}
+	.st67{fill:#73AF41;}
+	.st68{fill:#CAAC2A;}
+	.st69{fill:#A91D30;}
+	.st70{fill:#619D40;}
+	.st71{fill:#60803B;}
+	.st72{fill:#E8C323;}
+	.st73{fill:#C73E2B;}
+	.st74{fill:#DFA830;}
+	.st75{fill:#3479BB;}
+	.st76{fill:#831634;}
+	.st77{fill:#5CABD8;}
+	.st78{fill:#D07129;}
+	.st79{fill:#C3152B;}
+	.st80{fill:#C00682;}
+	.st81{fill:#272E68;}
+	.st82{fill:#C3982A;}
+	.st83{fill:#2D4D89;}
+	.st84{fill:#DBAF51;}
+	.st85{fill:#903F2F;}
+	.st86{fill:#344961;}
+	.st87{font-size:21.1524px;}
+	.st88{fill:none;stroke:#C1272D;stroke-width:1.134;stroke-miterlimit:10;}
+	.st89{opacity:0.2;}
+	.st90{opacity:0.9;}
+	.st91{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st92{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:0.2;}
+</style>
+	<script></script>
+	<script></script>
+	<g>
+		<g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<defs>
+									<rect id="SVGID_1_" y="38.9" width="1497.4" height="842.3" />
+								</defs>
+								<clipPath id="SVGID_2_">
+									<use xlink:href="#SVGID_1_" style="overflow:visible;" />
+								</clipPath>
+								<path class="st0" d="M404.9-348.1c-389.4,0-720.4,324.9-739.1,725.6c-18.8,400.7,255.6,723.7,645.1,723.7" />
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<defs>
+									<rect id="SVGID_3_" y="38.9" width="1497.4" height="842.3" />
+								</defs>
+								<clipPath id="SVGID_4_">
+									<use xlink:href="#SVGID_3_" style="overflow:visible;" />
+								</clipPath>
+								<path class="st1" d="M1271.9,352.6c0-476.7-386.4-863-863-863c-476.7,0-863,386.4-863,863s386.4,863,863,863
+								C885.4,1215.6,1271.9,829.3,1271.9,352.6" />
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g id="ly_backgroud">
+		<g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g>
+									<defs>
+										<path id="SVGID_5_" d="M0,38.9v842.3h1091.2c113.2-146,180.7-329.4,180.7-528.5c0-110.7-20.8-216.5-58.8-313.8L0,38.9
+										L0,38.9z" />
+									</defs>
+									<clipPath id="SVGID_6_">
+										<use xlink:href="#SVGID_5_" style="overflow:visible;" />
+									</clipPath>
+
+									<radialGradient id="SVGID_7_" cx="1710.0132" cy="928.8549" r="1.1688" gradientTransform="matrix(435.8838 -1143.7294 -1143.7294 -435.8838 316800.375 2361498.25)" gradientUnits="userSpaceOnUse">
+										<stop offset="0" style="stop-color:#5A282E" />
+										<stop offset="0.1441" style="stop-color:#5A282E" />
+										<stop offset="0.6626" style="stop-color:#E34832" />
+										<stop offset="1" style="stop-color:#F2AFA6" />
+									</radialGradient>
+									<polygon class="st2" points="-280.3,774.3 161.3,-384.4 1552.2,145.7 1110.6,1304.4 								" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g id="sphere_red_bg">
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<defs>
+									<rect id="SVGID_8_" y="38.9" width="1497.4" height="842.3" />
+								</defs>
+								<clipPath id="SVGID_9_">
+									<use xlink:href="#SVGID_8_" style="overflow:visible;" />
+								</clipPath>
+								<path class="st3" d="M408.8,1215.6c476.7,0,863-386.4,863-863s-386.4-863-863-863" />
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g id="sphere_yellow_bg">
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<defs>
+									<rect id="SVGID_10_" y="38.9" width="1497.4" height="842.3" />
+								</defs>
+								<clipPath id="SVGID_11_">
+									<use xlink:href="#SVGID_10_" style="overflow:visible;" />
+								</clipPath>
+								<path class="st4" d="M408,881.1c294.2,0,532.7-238.5,532.7-532.7S702.2-184.3,408-184.3" />
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g id="sphere_white_bg">
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<defs>
+									<rect id="SVGID_12_" y="38.9" width="1497.4" height="842.3" />
+								</defs>
+								<clipPath id="SVGID_13_">
+									<use xlink:href="#SVGID_12_" style="overflow:visible;" />
+								</clipPath>
+								<path class="st5" d="M407.2,659.2c169.2,0,306.5-137.2,306.5-306.5c0-169.2-137.2-306.5-306.5-306.5" />
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g id="left_side">
+		<g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<defs>
+									<rect id="SVGID_14_" y="38.9" width="1497.4" height="842.3" />
+								</defs>
+								<clipPath id="SVGID_15_">
+									<use xlink:href="#SVGID_14_" style="overflow:visible;" />
+								</clipPath>
+								<path class="st6" d="M408.8-510.4C212.8-349.9,53.7,166.5,53.7,643.1s158.9,732.9,355.1,572.5" />
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<defs>
+									<rect id="SVGID_16_" y="38.9" width="1497.4" height="842.3" />
+								</defs>
+								<clipPath id="SVGID_17_">
+									<use xlink:href="#SVGID_16_" style="overflow:visible;" />
+								</clipPath>
+								<path class="st7" d="M408.8-184.2c-121,99-219.1,417.8-219.1,712s98.1,452.4,219.1,353.4" />
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<defs>
+									<rect id="SVGID_18_" y="38.9" width="1497.4" height="842.3" />
+								</defs>
+								<clipPath id="SVGID_19_">
+									<use xlink:href="#SVGID_18_" style="overflow:visible;" />
+								</clipPath>
+								<path class="st8" d="M409,46.5c-80.7,51.2-126.3,237.1-126.3,406.4c0,169.2,56.3,263.4,126,206.4" />
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g id="bg_partnerships">
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g>
+									<defs>
+										<path id="SVGID_20_" d="M131.3,38.9C82.4,226.7,53.1,438.6,53.1,643.1c0,87.1,5.3,166.8,15.2,238h339.9V38.9H131.3z" />
+									</defs>
+									<clipPath id="SVGID_21_">
+										<use xlink:href="#SVGID_20_" style="overflow:visible;" />
+									</clipPath>
+									<polygon class="st9" points="374.5,469.4 27.4,699 27.4,635.9 374.5,406.3 								" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g>
+									<defs>
+										<path id="SVGID_22_" d="M131.3,38.9C82.4,226.7,53.1,438.6,53.1,643.1c0,87.1,5.3,166.8,15.2,238h339.9V38.9H131.3z" />
+									</defs>
+									<clipPath id="SVGID_23_">
+										<use xlink:href="#SVGID_22_" style="overflow:visible;" />
+									</clipPath>
+									<path class="st10" d="M267,540.5c12.9-8.5,22.3,6.9,24.5,18c2.1,11.1,17-22.9,17-22.9l-8.5-16.9L267,540.5z" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g>
+									<defs>
+										<path id="SVGID_24_" d="M131.3,38.9C82.4,226.7,53.1,438.6,53.1,643.1c0,87.1,5.3,166.8,15.2,238h339.9V38.9H131.3z" />
+									</defs>
+									<clipPath id="SVGID_25_">
+										<use xlink:href="#SVGID_24_" style="overflow:visible;" />
+									</clipPath>
+									<polygon class="st11" points="114.1,582.6 121.8,561.8 129.9,572.2 								" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g>
+									<defs>
+										<path id="SVGID_26_" d="M131.3,38.9C82.4,226.7,53.1,438.6,53.1,643.1c0,87.1,5.3,166.8,15.2,238h339.9V38.9H131.3z" />
+									</defs>
+									<clipPath id="SVGID_27_">
+										<use xlink:href="#SVGID_26_" style="overflow:visible;" />
+									</clipPath>
+									<polygon class="st12" points="129.9,629 122.2,651.4 114.1,640.9 								" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g>
+									<defs>
+										<path id="SVGID_28_" d="M131.3,38.9C82.4,226.7,53.1,438.6,53.1,643.1c0,87.1,5.3,166.8,15.2,238h339.9V38.9H131.3z" />
+									</defs>
+									<clipPath id="SVGID_29_">
+										<use xlink:href="#SVGID_28_" style="overflow:visible;" />
+									</clipPath>
+									<polygon class="st13" points="243.3,554.8 235.7,577.1 227.5,566.7 								" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g>
+									<defs>
+										<path id="SVGID_30_" d="M131.3,38.9C82.4,226.7,53.1,438.6,53.1,643.1c0,87.1,5.3,166.8,15.2,238h339.9V38.9H131.3z" />
+									</defs>
+									<clipPath id="SVGID_31_">
+										<use xlink:href="#SVGID_30_" style="overflow:visible;" />
+									</clipPath>
+									<polygon class="st14" points="220.4,510.9 228,490.1 236.1,500.5 								" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g>
+									<defs>
+										<path id="SVGID_32_" d="M133.5,37.4C84.6,225.3,55.3,437.2,55.3,641.7c0,87.1,5.3,166.8,15.2,238h339.9V37.4H133.5z" />
+									</defs>
+									<clipPath id="SVGID_33_">
+										<use xlink:href="#SVGID_32_" style="overflow:visible;" />
+									</clipPath>
+									<path class="st15" d="M282.8,441c0,0,2.6,21.7-20.9,39.9c-23.6,18.3,30.3-5.5,30.3-5.5v-35.7L282.8,441z" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g id="tl_partnertships">
+			<text transform="matrix(0.8848 -0.5837 0 1 85.4079 641.1581)" class="st16 st17 st18">P</text>
+			<text transform="matrix(0.8848 -0.5837 0 1 101.7976 630.6848)" class="st16 st17 st18">A</text>
+			<text transform="matrix(0.8848 -0.5837 0 1 121.1202 618.6184)" class="st16 st17 st18">R</text>
+			<text transform="matrix(0.8848 -0.5837 0 1 137.9932 608.5088)" class="st16 st17 st18">TNERSHIP</text>
+			<text transform="matrix(0.8848 -0.5837 0 1 265.5978 525.8137)" class="st16 st17 st18">S</text>
+		</g>
+		<path class="st19" d="M409.1,38.5v842.6H70.3c0,0-69.1-358.4,62.1-842.6H409.1z" />
+	</g>
+	<g id="ly_title">
+		<g id="tl_1">
+			<text transform="matrix(0.9981 0 0 1 448.5 144.0811)" class="st17 st20">1.</text>
+			<text transform="matrix(0.9981 0 0 1 448.5 168.0811)" class="st17 st20">SPHERE </text>
+			<text transform="matrix(0.9981 0 0 1 448.5 192.0811)" class="st17 st20">OF CONTROL</text>
+			<text id="sub_1_1_" transform="matrix(0.9981 0 0 1 448.5 226.5771)" class="st17 st21">Outputs, reporting</text>
+			<line class="st22" x1="449.5" y1="205.1" x2="651.7" y2="205.1" />
+		</g>
+		<g id="tl_2">
+			<text transform="matrix(0.9981 0 0 1 703.4873 144.0811)" class="st17 st20">2.</text>
+			<text transform="matrix(0.9981 0 0 1 703.4873 168.0811)" class="st17 st20">SPHERE </text>
+			<text transform="matrix(0.9981 0 0 1 703.4873 192.0811)" class="st17 st20">OF INFLUENCE</text>
+			<text id="sub_2" transform="matrix(0.9981 0 0 1 703.4873 226.5771)" class="st17 st21">Outcomes, evaluations</text>
+			<line class="st22" x1="704.5" y1="205.1" x2="905" y2="205.1" />
+		</g>
+		<g id="tl_3">
+			<text transform="matrix(0.9981 0 0 1 953.9746 144.0811)" class="st17 st20">2.</text>
+			<text transform="matrix(0.9981 0 0 1 953.9746 168.0811)" class="st17 st20">SPHERE </text>
+			<text transform="matrix(0.9981 0 0 1 953.9746 192.0811)" class="st17 st20">OF INTEREST</text>
+			<text id="sub_3" transform="matrix(0.9981 0 0 1 953.9746 226.5771)" class="st17 st21">Impact, IAs</text>
+			<line class="st22" x1="955" y1="205.1" x2="1129.1" y2="205.1" />
+		</g>
+	</g>
+	<g id="ly_ppl_trained">
+		<ellipse id="bg_ppl_trained" class="st23" cx="477.3" cy="325.5" rx="45.5" ry="45.5" />
+		<text transform="matrix(1 0 0 1 454.6245 320.8467)" class="st17 st24">People</text>
+		<text transform="matrix(1 0 0 1 437.9106 338.2012)" class="st17 st24">trained, PhD</text>
+	</g>
+	<g id="ly_publications">
+		<ellipse id="bg_publications" class="st23" cx="477.3" cy="525.8" rx="45.5" ry="45.5" />
+		<text transform="matrix(1 0 0 1 462.1343 512.8467)" class="st17 st24">Peer </text>
+		<text transform="matrix(1 0 0 1 447.6792 530.2012)" class="st17 st24">reviewed </text>
+		<text transform="matrix(1 0 0 1 455.0024 547.5547)" class="st17 st24">papers</text>
+	</g>
+	<g id="ly_almetric">
+		<path class="st25" d="M534.4,736.4c0-31.7-25.7-57.5-57.5-57.5c-31.7,0-57.5,25.7-57.5,57.5c0,31.7,25.7,57.5,57.5,57.5
+		C508.6,793.9,534.4,768.2,534.4,736.4" />
+		<path class="st26" d="M534.4,736.4c0-31.7-25.7-57.5-57.5-57.5c-31.7,0-57.5,25.7-57.5,57.5c0,31.7,25.7,57.5,57.5,57.5
+		C508.6,793.9,534.4,768.2,534.4,736.4z" />
+		<path class="st27" d="M468.6,737.6l-1.1,3.2h-1.3l3.5-10.1h1.6l3.5,10.1h-1.4l-1.1-3.2H468.6 M471.8,736.6l-1-2.9
+		c-0.2-0.7-0.4-1.3-0.5-1.9l0,0c-0.1,0.6-0.3,1.2-0.5,1.9l-1,2.9H471.8z" />
+		<path class="st28" d="M468.6,737.6l-1.1,3.2h-1.3l3.5-10.1h1.6l3.5,10.1h-1.4l-1.1-3.2H468.6z M471.8,736.6l-1-2.9
+		c-0.2-0.7-0.4-1.3-0.5-1.9l0,0c-0.1,0.6-0.3,1.2-0.5,1.9l-1,2.9H471.8z" />
+		<rect x="475.9" y="730" class="st27" width="1.3" height="10.7" />
+		<rect x="475.9" y="730" class="st28" width="1.3" height="10.7" />
+		<path class="st27" d="M480.9,731.4v2.1h1.9v1h-1.9v3.9c0,0.9,0.3,1.4,1,1.4c0.3,0,0.6-0.1,0.8-0.1l0.1,1c-0.3,0.1-0.7,0.2-1.2,0.2
+		c-0.6,0-1.1-0.2-1.4-0.5c-0.4-0.4-0.5-1.1-0.5-1.9v-4h-1.1v-1h1.1v-1.7L480.9,731.4" />
+		<path class="st28" d="M480.9,731.4v2.1h1.9v1h-1.9v3.9c0,0.9,0.3,1.4,1,1.4c0.3,0,0.6-0.1,0.8-0.1l0.1,1c-0.3,0.1-0.7,0.2-1.2,0.2
+		c-0.6,0-1.1-0.2-1.4-0.5c-0.4-0.4-0.5-1.1-0.5-1.9v-4h-1.1v-1h1.1v-1.7L480.9,731.4z" />
+		<path class="st27" d="M484.1,735.4c0-0.7,0-1.4-0.1-2h1.1l0.1,1.2h0.1c0.4-0.7,1.1-1.3,2.3-1.3c1,0,1.7,0.6,2.1,1.5l0,0
+		c0.2-0.4,0.5-0.7,0.8-0.9c0.5-0.3,0.9-0.5,1.6-0.5c0.9,0,2.4,0.6,2.4,3.1v4.3h-1.3v-4.1c0-1.4-0.5-2.3-1.6-2.3
+		c-0.7,0-1.3,0.5-1.5,1.2c-0.1,0.2-0.1,0.4-0.1,0.7v4.5h-1.3v-4.4c0-1.1-0.5-2-1.5-2c-0.8,0-1.4,0.7-1.7,1.3
+		c-0.1,0.2-0.1,0.4-0.1,0.7v4.4h-1.2L484.1,735.4" />
+		<path class="st28" d="M484.1,735.4c0-0.7,0-1.4-0.1-2h1.1l0.1,1.2h0.1c0.4-0.7,1.1-1.3,2.3-1.3c1,0,1.7,0.6,2.1,1.5l0,0
+		c0.2-0.4,0.5-0.7,0.8-0.9c0.5-0.3,0.9-0.5,1.6-0.5c0.9,0,2.4,0.6,2.4,3.1v4.3h-1.3v-4.1c0-1.4-0.5-2.3-1.6-2.3
+		c-0.7,0-1.3,0.5-1.5,1.2c-0.1,0.2-0.1,0.4-0.1,0.7v4.5h-1.3v-4.4c0-1.1-0.5-2-1.5-2c-0.8,0-1.4,0.7-1.7,1.3
+		c-0.1,0.2-0.1,0.4-0.1,0.7v4.4h-1.2L484.1,735.4L484.1,735.4z" />
+		<path class="st27" d="M497.2,737.4c0,1.8,1.2,2.5,2.5,2.5c0.9,0,1.5-0.1,2-0.4l0.2,0.9c-0.5,0.2-1.3,0.5-2.4,0.5
+		c-2.3,0-3.6-1.5-3.6-3.7s1.3-3.9,3.4-3.9c2.4,0,3,2.1,3,3.5c0,0.3,0,0.5-0.1,0.6L497.2,737.4 M501.2,736.4c0-0.9-0.3-2.1-1.9-2.1
+		c-1.3,0-1.9,1.3-2,2.1H501.2z" />
+		<path class="st28" d="M497.2,737.4c0,1.8,1.2,2.5,2.5,2.5c0.9,0,1.5-0.1,2-0.4l0.2,0.9c-0.5,0.2-1.3,0.5-2.4,0.5
+		c-2.3,0-3.6-1.5-3.6-3.7s1.3-3.9,3.4-3.9c2.4,0,3,2.1,3,3.5c0,0.3,0,0.5-0.1,0.6L497.2,737.4L497.2,737.4z M501.2,736.4
+		c0-0.9-0.3-2.1-1.9-2.1c-1.3,0-1.9,1.3-2,2.1H501.2z" />
+		<path class="st27" d="M505.5,731.4v2.1h1.9v1h-1.9v3.9c0,0.9,0.3,1.4,1,1.4c0.3,0,0.6-0.1,0.8-0.1l0.1,1c-0.3,0.1-0.7,0.2-1.2,0.2
+		c-0.6,0-1.1-0.2-1.4-0.5c-0.4-0.4-0.5-1.1-0.5-1.9v-4h-1.1v-1h1.1v-1.7L505.5,731.4" />
+		<path class="st28" d="M505.5,731.4v2.1h1.9v1h-1.9v3.9c0,0.9,0.3,1.4,1,1.4c0.3,0,0.6-0.1,0.8-0.1l0.1,1c-0.3,0.1-0.7,0.2-1.2,0.2
+		c-0.6,0-1.1-0.2-1.4-0.5c-0.4-0.4-0.5-1.1-0.5-1.9v-4h-1.1v-1h1.1v-1.7L505.5,731.4z" />
+		<path class="st27" d="M508.8,735.8c0-0.9,0-1.6-0.1-2.3h1.1l0.1,1.4h0.1c0.3-1,1.1-1.6,2-1.6c0.1,0,0.3,0,0.4,0.1v1.3
+		c-0.1,0-0.3-0.1-0.5-0.1c-0.9,0-1.6,0.7-1.8,1.7c0,0.2-0.1,0.4-0.1,0.6v3.9h-1.3L508.8,735.8" />
+		<path class="st28" d="M508.8,735.8c0-0.9,0-1.6-0.1-2.3h1.1l0.1,1.4h0.1c0.3-1,1.1-1.6,2-1.6c0.1,0,0.3,0,0.4,0.1v1.3
+		c-0.1,0-0.3-0.1-0.5-0.1c-0.9,0-1.6,0.7-1.8,1.7c0,0.2-0.1,0.4-0.1,0.6v3.9h-1.3L508.8,735.8L508.8,735.8L508.8,735.8z" />
+		<path class="st27" d="M515,731.4c0,0.5-0.3,0.8-0.9,0.8c-0.5,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8C514.8,730.6,515,731,515,731.4
+		 M513.6,733.5h1.3v7.3h-1.3V733.5z" />
+		<path class="st28" d="M515,731.4c0,0.5-0.3,0.8-0.9,0.8c-0.5,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8C514.8,730.6,515,731,515,731.4z
+		 M513.6,733.5h1.3v7.3h-1.3V733.5z" />
+		<path class="st27" d="M522.2,740.5c-0.3,0.2-1.1,0.4-2.1,0.4c-2.2,0-3.6-1.5-3.6-3.7c0-2.3,1.5-3.9,3.9-3.9c0.8,0,1.5,0.2,1.9,0.4
+		l-0.3,1c-0.3-0.2-0.8-0.3-1.5-0.3c-1.7,0-2.6,1.3-2.6,2.7c0,1.7,1.1,2.7,2.5,2.7c0.7,0,1.3-0.2,1.6-0.3L522.2,740.5" />
+		<g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<defs>
+								<rect id="SVGID_34_" x="431.4" y="720.8" width="90.9" height="31.2" />
+							</defs>
+							<clipPath id="SVGID_35_">
+								<use xlink:href="#SVGID_34_" style="overflow:visible;" />
+							</clipPath>
+							<path class="st29" d="M522.2,740.5c-0.3,0.2-1.1,0.4-2.1,0.4c-2.2,0-3.6-1.5-3.6-3.7c0-2.3,1.5-3.9,3.9-3.9
+							c0.8,0,1.5,0.2,1.9,0.4l-0.3,1c-0.3-0.2-0.8-0.3-1.5-0.3c-1.7,0-2.6,1.3-2.6,2.7c0,1.7,1.1,2.7,2.5,2.7c0.7,0,1.3-0.2,1.6-0.3
+							L522.2,740.5z" />
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+		<path class="st30" d="M452.7,745.8c0.6-1.1,1-2.2,1.2-3.5c-1.5,1.7-3.7,2.9-6.2,3.1l0,0c-1,0.7-2.1,1.3-3.3,1.6
+		c-3.6,1.1-7.7,0.1-10.5-2.7c-0.3-0.3-0.5-0.6-0.8-0.9c0,0.1,0.1,0.1,0.1,0.2c1.9,3.6,5.1,6.3,8.9,7.7c0.4,0.1,0.8,0.1,1.2,0.1
+		C447.4,751.3,450.8,749.1,452.7,745.8" />
+		<path class="st31" d="M438,737c0-0.2,0-0.4,0-0.6c0-2.3,0.9-4.3,2.2-5.9l0,0v-0.1c0-0.1,0-0.1,0-0.2c0,0,0,0,0-0.1s0-0.1,0.1-0.2
+		l0,0c0.9-4.1,4.1-7.5,8.3-8.3c1.1-0.2,2.1-0.2,3.2-0.1c-1.5-0.5-3.1-0.7-4.8-0.7c-2.5,0-4.9,0.6-7,1.7c-0.3,0.3-0.6,0.5-0.9,0.8
+		C435.4,727,435,732.8,438,737" />
+		<path class="st32" d="M437.7,742c1.1,0.6,2.2,1,3.5,1.2c-1.7-1.5-2.9-3.7-3.1-6.2c-3-4.2-2.7-10,1.1-13.8c0.3-0.3,0.6-0.5,0.9-0.8
+		c-0.1,0-0.1,0.1-0.1,0.1c-3.6,1.9-6.4,5.1-7.7,9c-0.1,0.4-0.1,0.8-0.1,1.2C432.2,736.7,434.4,740.2,437.7,742" />
+		<path class="st33" d="M444.4,747c1.1-0.3,2.3-0.9,3.3-1.6l0,0c-0.2,0-0.4,0-0.6,0c-2.3,0-4.3-0.9-5.9-2.2c-1.2-0.2-2.4-0.6-3.5-1.2
+		c-3.3-1.8-5.5-5.3-5.5-9.3c0-0.4,0-0.8,0.1-1.2c0,0.1-0.1,0.1-0.1,0.2c-0.5,1.5-0.7,3.1-0.7,4.7c0,2.5,0.6,4.9,1.7,7
+		c0.3,0.3,0.5,0.6,0.8,0.9C436.8,747.2,440.8,748,444.4,747" />
+		<path class="st34" d="M461,729.4c-0.3-0.3-0.5-0.6-0.8-0.9c-2.9-2.9-6.9-3.7-10.5-2.7c-1.1,0.3-2.3,0.9-3.3,1.6c0.2,0,0.4,0,0.6,0
+		c2.3,0,4.3,0.9,5.9,2.2c1.2,0.2,2.4,0.6,3.5,1.2c3.3,1.8,5.5,5.3,5.5,9.3c0,0.4,0,0.8-0.1,1.2c0-0.1,0.1-0.1,0.1-0.2
+		c0.5-1.5,0.7-3.1,0.7-4.7C462.7,733.9,462.1,731.5,461,729.4" />
+		<path class="st35" d="M448.7,721.7c-4.2,0.8-7.5,4.1-8.3,8.3l0,0c0,0.1,0,0.1-0.1,0.2c0,0,0,0,0,0.1s0,0.1,0,0.2v0.1l0,0
+		c1.5-1.7,3.7-2.9,6.2-3.1c1-0.7,2.1-1.3,3.3-1.6c3.6-1.1,7.7-0.1,10.5,2.7c0.3,0.3,0.5,0.6,0.8,0.9c-0.1-0.1-0.1-0.1-0.1-0.2
+		c-1.9-3.5-5.1-6.3-8.9-7.6c-0.1,0-0.1,0-0.1,0C450.8,721.4,449.8,721.5,448.7,721.7" />
+		<path class="st36" d="M457.6,739c-0.3-1.1-0.9-2.3-1.6-3.3c0,0.2,0,0.4,0,0.6c0,2.3-0.9,4.3-2.2,5.9c-0.2,1.2-0.6,2.4-1.2,3.5
+		c-1.8,3.3-5.3,5.5-9.3,5.5c-0.4,0-0.8,0-1.2-0.1c0.1,0,0.1,0.1,0.2,0.1c1.5,0.5,3.1,0.7,4.8,0.7c2.5,0,4.9-0.6,7-1.7
+		c0.3-0.3,0.6-0.5,0.9-0.8C457.8,746.7,458.7,742.7,457.6,739" />
+		<path class="st37" d="M456.4,730.8c-1.1-0.6-2.2-1-3.5-1.2c1.7,1.5,2.9,3.7,3.1,6.2c0.7,1,1.3,2.1,1.6,3.3
+		c1.1,3.6,0.1,7.7-2.7,10.5c-0.3,0.3-0.6,0.5-0.9,0.8c0.1-0.1,0.2-0.1,0.3-0.1c3.5-1.9,6.2-5.1,7.5-8.9c0.1-0.4,0.1-0.8,0.1-1.2
+		C462,736.1,459.7,732.6,456.4,730.8" />
+	</g>
+	<g id="ly_milestones">
+		<circle id="bg_milestone" class="st38" cx="624.8" cy="524.9" r="62.7" />
+		<text id="tl_milestones" transform="matrix(1 0 0 1 588.8452 529.8145)" class="st17 st39">Milestones</text>
+	</g>
+	<g id="ly_innovations">
+		<path id="bg_innovations" class="st38" d="M865.1,373.2c0,6.6-5.8,12-12.9,12H575c-7.1,0-12.9-5.4-12.9-12v-98.7
+		c0-6.6,5.8-12,12.9-12h277.1c7.1,0,12.9,5.4,12.9,12L865.1,373.2L865.1,373.2z" />
+		<circle id="bg_stage1_innovations" class="st40" cx="613.3" cy="342.8" r="28.2" />
+		<g id="tl_stage1_innovations">
+			<text transform="matrix(1 0 0 1 599.8467 338.6162)" class="st17 st41">STAGE</text>
+			<text transform="matrix(1 0 0 1 610.1992 357.0215)" class="st17 st42">1</text>
+		</g>
+		<circle id="bg_stage2_innovations" class="st40" cx="682.8" cy="342.8" r="28.2" />
+		<g id="tl_stage2_innovations">
+			<g>
+				<g>
+					<text transform="matrix(1 0 0 1 669.3159 340.5)" class="st17 st41">STAGE</text>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 677.3804 356.833)" class="st17 st42">2</text>
+				</g>
+			</g>
+		</g>
+		<circle id="bg_stage3_innovations" class="st43" cx="752.1" cy="342.8" r="28.2" />
+		<g id="tl_stage3_innovations">
+			<g>
+				<text transform="matrix(1 0 0 1 738.6143 340.5)" class="st17 st41">STAGE</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 746.9658 356.833)" class="st17 st42">3</text>
+			</g>
+		</g>
+		<circle id="bg_stage4_innovations" class="st43" cx="822.8" cy="342.8" r="28.2" />
+		<g id="tl_stage4_innovations">
+			<g>
+				<text transform="matrix(1 0 0 1 809.2813 340.5)" class="st17 st41">STAGE</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 817.624 356.833)" class="st17 st42">4</text>
+			</g>
+		</g>
+		<text id="tl_innovations" transform="matrix(1 0 0 1 582.1143 290.666)" class="st17 st44">Innovations</text>
+		<g id="txt_stage2_innovations" class="st45">
+			<text id="end_of_piloting_phase__x28_if_relevant_x29_" transform="matrix(1 0 0 1 690.2031 339.8467)" class="st46 st47">End of piloting phase (if relevant)</text>
+		</g>
+		<g id="txt_stage1_innovations" class="st45">
+			<text transform="matrix(1 0 0 1 721.1743 334.0977)" class="st46 st47">End of research phase</text>
+			<text transform="matrix(1 0 0 1 704.9383 348.4977)" class="st46 st47">(discovery/proof of concept)</text>
+		</g>
+		<g id="txt_stage3_innovations" class="st45">
+			<text transform="matrix(1 0 0 1 713.9741 338.6162)" class="st46 st47">Available for uptake</text>
+		</g>
+		<g id="txt_stage4_innovations" class="st45">
+			<text transform="matrix(1 0 0 1 718.6323 321.8472)" class="st46 st48">Uptake by next user  </text>
+			<text transform="matrix(1 0 0 1 678.8113 334.9122)" class="st46 st48">(specify next user organizational type)</text>
+		</g>
+		<g id="icon_innovations">
+			<circle id="ic_innovations_bg" class="st49" cx="837.5" cy="282.2" r="10.4" />
+			<g id="ic_innovations">
+				<path class="st50" d="M837.4,275.3c-2.5,0.1-4.5,2.1-4.7,4.6c-0.1,1.5,0.5,3,1.6,4c0.5,0.4,0.7,1,0.7,1.6v2c0,1,0.8,1.8,1.8,1.8
+				h1.5c1,0,1.8-0.8,1.8-1.8v-2.1c0-0.6,0.3-1.2,0.7-1.6c1-0.9,1.6-2.3,1.6-3.7c0-1.3-0.5-2.6-1.5-3.5
+				C840,275.7,838.8,275.3,837.4,275.3z M839.6,285.5v0.8H839v-1.1h-0.5v-3.5h-0.2H838v3.5h-0.9v-3.5h-0.2h-0.2v3.5h-0.4v1.1h-0.6
+				v-0.8c0-0.8-0.3-1.5-0.9-2c-1-0.9-1.5-2.2-1.5-3.6c0.1-2.3,2-4.1,4.2-4.2c0.1,0,0.1,0,0.2,0c1.1,0,2.2,0.4,3,1.2
+				c0.9,0.8,1.3,2,1.3,3.2c0,1.3-0.5,2.5-1.5,3.3C840,284,839.6,284.7,839.6,285.5z M839.5,288.1h-3.9c0-0.1-0.1-0.3-0.1-0.4h4.1
+				C839.6,287.8,839.6,288,839.5,288.1z M839.2,288.6c-0.2,0.2-0.5,0.3-0.8,0.3h-1.5c-0.3,0-0.6-0.1-0.8-0.3H839.2z M835.6,287.2
+				v-0.4h0.6h2.8h0.7v0.4H835.6z M836.6,286.3h1.9v-0.6h-1.9V286.3z" />
+				<path class="st50" d="M837.1,279c-0.4,0.3-0.4,0.8-0.2,1.1c0.2,0.2,0.4,0.3,0.7,0.3c0.2,0,0.3-0.1,0.5-0.2
+				c0.4-0.3,0.4-0.8,0.2-1.1C838,278.8,837.5,278.8,837.1,279 M837.8,279.9c-0.1,0.1-0.4,0.1-0.5-0.1c-0.1-0.1-0.1-0.4,0.1-0.5
+				c0.1,0,0.1-0.1,0.2-0.1c0.1,0,0.2,0,0.3,0.1C838,279.6,837.9,279.8,837.8,279.9" />
+				<path class="st50" d="M839.2,279.5l-0.3-0.1c0-0.1,0-0.2-0.1-0.2l0.2-0.2c0.1-0.1,0.1-0.2,0.1-0.3c0-0.1-0.1-0.2-0.1-0.2
+				l-0.6-0.4c-0.2-0.1-0.4-0.1-0.5,0.1l-0.2,0.2c-0.1,0-0.2,0-0.3,0l-0.2-0.2c-0.1-0.2-0.3-0.2-0.5-0.1l-0.6,0.4
+				c-0.1,0.1-0.1,0.1-0.1,0.2s0,0.2,0.1,0.3l0.2,0.2c0,0.1-0.1,0.2-0.1,0.2l-0.3,0.1c-0.1,0-0.2,0.1-0.2,0.2s0,0.2,0,0.3l0.2,0.7
+				c0,0.1,0.1,0.2,0.2,0.2c0.1,0,0.2,0,0.3,0l0.3-0.1c0.1,0.1,0.1,0.1,0.2,0.2v0.3c0,0.2,0.2,0.3,0.3,0.3h0.7c0.2,0,0.3-0.2,0.3-0.3
+				V281c0,0,0.1,0,0.1-0.1s0.1-0.1,0.1-0.1l0.3,0.1c0.1,0,0.2,0,0.3,0s0.1-0.1,0.2-0.2l0.2-0.7c0-0.1,0-0.2,0-0.3
+				C839.4,279.5,839.3,279.5,839.2,279.5z M838.6,280.2c-0.1,0-0.3,0-0.4,0.1l-0.1,0.1l-0.1,0.1c-0.1,0.1-0.2,0.2-0.2,0.3v0.2h-0.5
+				v-0.2c0-0.1-0.1-0.2-0.2-0.3c-0.1,0-0.2-0.1-0.2-0.2c-0.1-0.1-0.2-0.1-0.4-0.1l-0.2,0.1l-0.1-0.4l0.2-0.1c0.1,0,0.2-0.1,0.2-0.3
+				c0-0.1,0-0.2,0.1-0.3c0.1-0.1,0-0.3,0-0.4l-0.1-0.2l0.4-0.3l0.1,0.2c0.1,0.1,0.2,0.2,0.3,0.1c0.1,0,0.2,0,0.3,0s0.3,0,0.3-0.1
+				l0.1-0.2l0.4,0.3l-0.1,0.2c-0.1,0.1-0.1,0.2,0,0.4c0,0.1,0.1,0.2,0.1,0.3c0,0.1,0.1,0.2,0.2,0.3l0.2,0.1l-0.1,0.4L838.6,280.2z" />
+			</g>
+		</g>
+	</g>
+	<g id="ly_policies">
+		<path id="bg_policies" class="st38" d="M927,801.4c0,6.6-5.6,12-12.5,12H646.2c-6.9,0-12.5-5.4-12.5-12v-98.7c0-6.6,5.6-12,12.5-12
+		h268.4c6.9,0,12.5,5.4,12.5,12L927,801.4L927,801.4z" />
+		<circle id="bg_level1_policies" class="st43" cx="694.1" cy="760.7" r="29" />
+		<g id="txt_level1_policies" class="st45">
+			<text transform="matrix(1 0 0 1 751.645 754)">
+				<tspan x="0" y="0" class="st46 st51">Research taken up by next user</tspan>
+				<tspan x="0" y="10.5" class="st46 st51">(decision maker or intermediary)</tspan>
+				<tspan x="0" y="20.9" class="st46 st51">Level 1 of outcome/impact case</tspan>
+			</text>
+		</g>
+		<g id="tl_level1_policies">
+			<text transform="matrix(1 0 0 1 676.1548 756.3574)" class="st17 st52">LEVEL</text>
+			<text transform="matrix(1 0 0 1 689.4658 777.2598)" class="st17 st53">1</text>
+		</g>
+		<circle id="bg_level2_policies" class="st54" cx="779.9" cy="761.1" r="28.2" />
+		<g id="txt_level2_policies" class="st45">
+			<text transform="matrix(1 0 0 1 745.736 759.8127)">
+				<tspan x="0" y="0" class="st46 st51">Policy/Law etc. Enacted = Level 2 of</tspan>
+				<tspan x="0" y="10.5" class="st46 st51">Outcome/Impact Case</tspan>
+			</text>
+		</g>
+		<g id="tl_level2_policies">
+			<text transform="matrix(1 0 0 1 761.4033 756.3574)" class="st55 st17 st52">LEVEL</text>
+			<text transform="matrix(1 0 0 1 772.605 777.2598)" class="st55 st17 st53">2</text>
+		</g>
+		<circle id="bg_level3_policies" class="st54" cx="867.1" cy="761.1" r="28.2" />
+		<g id="txt_level3_policies" class="st45">
+			<text transform="matrix(1 0 0 1 745.736 742.7997)">
+				<tspan x="0" y="0" class="st46 st51">Evidence of impact on people</tspan>
+				<tspan x="0" y="10.5" class="st46 st51">and/or natural environment of the</tspan>
+				<tspan x="0" y="20.9" class="st46 st51">changed policy or investment =</tspan>
+				<tspan x="0" y="31.4" class="st46 st51">Level 3 of Outcome/Impact Case</tspan>
+			</text>
+		</g>
+		<g id="tl_level3_policies">
+			<text transform="matrix(1 0 0 1 848.5469 756.3574)" class="st55 st17 st52">LEVEL</text>
+			<text transform="matrix(1 0 0 1 860.1387 777.2598)" class="st55 st17 st53">3</text>
+		</g>
+		<g id="tl_policies">
+			<text transform="matrix(1 0 0 1 656.7935 714.4395)" class="st17 st44">Policies</text>
+		</g>
+		<g id="icon_policies">
+			<circle id="ic_policies_bg" class="st49" cx="905.9" cy="710.4" r="10.4" />
+			<g id="ic_policies">
+				<path class="st50" d="M902.7,704.3v6.3l0.2-0.1l0.3,0.1v-5.9h5.6v1.9h1.9v8.9h-5.6c-0.1,0.2-0.3,0.3-0.4,0.5h6.5v-9.7l-2.1-2
+				H902.7z M909.3,705.1l1.1,1.1h-1.1V705.1L909.3,705.1z" />
+				<rect x="903.7" y="705.4" class="st50" width="4.8" height="0.6" />
+				<rect x="903.7" y="709.5" class="st50" width="6.6" height="0.6" />
+				<path class="st50" d="M910.3,710.6h-6.6v0.3c0.2,0.1,0.3,0.2,0.5,0.2h6.2V710.6L910.3,710.6z" />
+				<rect x="903.7" y="708.2" class="st50" width="6.6" height="0.6" />
+				<path class="st50" d="M910.3,711.8h-4.4c0,0.1,0,0.1,0,0.2l0,0c0,0.1,0,0.2,0,0.3h4.4V711.8z" />
+				<path class="st50" d="M910.3,713h-4.4c0,0.2,0,0.4,0,0.6h4.4V713z" />
+				<path class="st50" d="M910.3,714.2h-4.5c0,0.2-0.1,0.4-0.1,0.6h4.6V714.2L910.3,714.2z" />
+				<path class="st50" d="M905.5,713.6c0-0.4,0-0.8,0-1.2c0-0.1,0-0.2,0-0.3v0c0-0.2-0.1-0.3-0.3-0.3h0c-0.2,0-0.5,0-0.7-0.1
+				c-0.3-0.1-1-0.4-1.2-0.5l-0.1-0.1l-0.1,0.1c-0.2,0.1-0.7,0.4-0.9,0.4c-0.3,0.1-0.6,0.1-1.1,0.1c-0.3,0-0.4,0.2-0.4,0.3
+				c0,0.2,0,0.5,0,0.7l0,0.3l0,0c0,0.2,0,0.4,0,0.5c0,0.1,0,0.1,0,0.2c0.2,1.3,0.9,2.2,2.3,2.6c0.1,0,0.1,0,0.2,0c0.1,0,0.1,0,0.2,0
+				C904.5,716,905.4,714.9,905.5,713.6 M903,716c-1.1-0.4-1.8-1.1-1.9-2.3c0-0.1,0-0.1,0-0.2c0-0.2,0-0.3,0-0.5l0-0.3
+				c0-0.2,0-0.4,0-0.6c0.4,0,0.8-0.1,1.1-0.2c0.2-0.1,0.6-0.3,0.8-0.4c0.3,0.1,0.9,0.4,1.3,0.5c0.2,0,0.5,0.1,0.7,0.1
+				c0,0.1,0,0.1,0,0.2c0,0.4,0,0.7,0,1.1C904.9,714.7,904.2,715.6,903,716C903,716,903,716,903,716" />
+				<polygon class="st50" points="904.2,713.1 903.9,712.8 902.8,713.9 902.4,713.4 902,713.7 902.8,714.6 			" />
+			</g>
+		</g>
+	</g>
+	<g id="ly_oicr">
+		<g id="bg_oicr">
+			<path class="st56" d="M1002.7,578.7c0,6.5-4.9,11.9-10.8,11.9H760.8c-5.9,0-10.8-5.3-10.8-11.9V481c0-6.5,4.9-11.9,10.8-11.9
+			h231.2c5.9,0,10.8,5.3,10.8,11.9V578.7L1002.7,578.7z" />
+			<path class="st57" d="M1002.7,578.7c0,6.5-4.9,11.9-10.8,11.9H760.8c-5.9,0-10.8-5.3-10.8-11.9V481c0-6.5,4.9-11.9,10.8-11.9
+			h231.2c5.9,0,10.8,5.3,10.8,11.9V578.7L1002.7,578.7z" />
+		</g>
+		<g id="txt_levels_bg" class="st45">
+			<g>
+				<circle class="st58" cx="797.2" cy="638.6" r="29.1" />
+				<polygon class="st58" points="771.1,626.3 824,627.2 796.7,590.6 			" />
+			</g>
+			<g>
+				<circle class="st55" cx="797.2" cy="638.7" r="27.9" />
+				<polygon class="st55" points="772.2,627 822.9,627.7 796.7,594.4 			" />
+			</g>
+		</g>
+		<circle id="bg_level1_oicr" class="st43" cx="797.2" cy="541.1" r="28.2" />
+		<g id="txt_level1_oicr" class="st45">
+			<text transform="matrix(1 0 0 1 797.5406 528.066)">
+				<tspan x="0" y="0" class="st46 st51">CGIAR research (and related activities)  </tspan>
+				<tspan x="0" y="10.5" class="st46 st51">has contributed to documented  </tspan>
+				<tspan x="0" y="20.9" class="st46 st51">policy 1 change and/or a change in  </tspan>
+				<tspan x="0" y="31.4" class="st46 st51">practice by end users.</tspan>
+			</text>
+		</g>
+		<g id="tl_level1_oicr">
+			<text transform="matrix(1 0 0 1 781.0264 527.4824)" class="st17 st59">MATURITY </text>
+			<text transform="matrix(1 0 0 1 787.7852 535.5947)" class="st17 st59">LEVEL</text>
+			<text transform="matrix(1 0 0 1 791.9526 557.2666)" class="st17 st53">1</text>
+		</g>
+		<circle id="bg_level2_oicr" class="st43" cx="877.7" cy="541.1" r="28.2" />
+		<g id="tl_level2_oicr">
+			<text transform="matrix(1 0 0 1 861.5068 529.8145)" class="st17 st60">MATURITY </text>
+			<text transform="matrix(1 0 0 1 867.8457 537.4229)" class="st17 st60">LEVEL</text>
+			<text transform="matrix(1 0 0 1 871.3184 557.2666)" class="st17 st53">2</text>
+		</g>
+		<g id="txt_level2_oicr" class="st45">
+			<text transform="matrix(1 0 0 1 804.2998 526.0664)">
+				<tspan x="0" y="0" class="st46 st51">CGIAR research (and related activities) </tspan>
+				<tspan x="0" y="10.5" class="st46 st51">has contributed to documented</tspan>
+				<tspan x="0" y="20.9" class="st46 st51">policy 1 change and/or a change </tspan>
+				<tspan x="0" y="31.4" class="st46 st51"> in practice by end users.</tspan>
+			</text>
+		</g>
+		<circle id="bg_level3_oicr" class="st54" cx="955" cy="541.1" r="28.2" />
+		<g id="tl_level3_oicr">
+			<g>
+				<text transform="matrix(1 0 0 1 938.8213 527.4824)" class="st61 st17 st60">MATURITY </text>
+				<text transform="matrix(1 0 0 1 945.1592 535.0908)" class="st61 st17 st60">LEVEL</text>
+			</g>
+			<text transform="matrix(1 0 0 1 948.0293 557.2666)" class="st55 st17 st53">3</text>
+		</g>
+		<g id="txt_level3_oicr" class="st45">
+			<text transform="matrix(1 0 0 1 798.6892 519.0661)">
+				<tspan x="0" y="0" class="st46 st51">Policy and/or practice changes  </tspan>
+				<tspan x="0" y="10.5" class="st46 st51">influenced by CGIAR research  </tspan>
+				<tspan x="0" y="20.9" class="st46 st51">(and related activities) has led to  </tspan>
+				<tspan x="0" y="31.4" class="st46 st51">adoption or impacts at scale or beyond  </tspan>
+				<tspan x="0" y="41.8" class="st46 st51">the direct CGIAR sphere of influence  </tspan>
+				<tspan x="0" y="52.3" class="st46 st51">(i.e. not in a development project).</tspan>
+			</text>
+		</g>
+		<g id="tl_oicr">
+			<text transform="matrix(1 0 0 1 761.3032 494.4395)" class="st17 st44">OICR</text>
+		</g>
+		<g id="icon_oicr">
+			<circle id="ic_oicr_bg" class="st49" cx="982.1" cy="486.6" r="10.4" />
+			<g id="ic_oicr">
+				<path class="st50" d="M987,492.5h-11.4c-0.2,0-0.4-0.1-0.5-0.2c-0.1-0.1-0.1-0.3-0.1-0.5l1.5-5.7c0.1-0.3,0.4-0.6,0.8-0.6h6
+				c0.1,0,0.2-0.1,0.3-0.2l0-0.2c0.1-0.3,0.4-0.6,0.8-0.6h4.4c0.2,0,0.4,0.1,0.5,0.2c0.1,0.1,0.1,0.3,0.1,0.5l-1.6,6.7
+				C987.7,492.2,987.4,492.5,987,492.5z M977.3,485.9c-0.1,0-0.2,0.1-0.3,0.2l-1.5,5.7c0,0,0,0,0,0c0,0,0,0,0,0H987
+				c0.1,0,0.2-0.1,0.2-0.2l1.6-6.7c0,0,0,0,0-0.1c0,0,0,0-0.1,0h-4.4c-0.1,0-0.2,0.1-0.3,0.2l0,0.2c-0.1,0.3-0.4,0.6-0.8,0.6
+				L977.3,485.9L977.3,485.9L977.3,485.9z" />
+				<path class="st50" d="M987.5,484.6v-1.3c0-0.1-0.1-0.1-0.1-0.1h-1.6v-0.5h1.6c0.4,0,0.7,0.3,0.7,0.7v1.3L987.5,484.6L987.5,484.6
+				z" />
+				<path class="st50" d="M975.1,492.1l-0.4-7.7c0-0.2,0.1-0.3,0.2-0.5c0.1-0.1,0.3-0.2,0.5-0.2h0.8v0.5h-0.8c-0.1,0-0.1,0-0.1,0
+				c0,0,0,0,0,0.1l0.2,7.8L975.1,492.1z" />
+				<path class="st50" d="M976.5,488.4h-0.5v-7c0-0.4,0.3-0.7,0.7-0.7h8.8c0.4,0,0.7,0.3,0.7,0.7l0,3.3l-0.5,0l0-3.3
+				c0-0.1-0.1-0.1-0.1-0.1h-8.8c-0.1,0-0.1,0.1-0.1,0.1L976.5,488.4L976.5,488.4z" />
+				<rect x="977.9" y="482.4" class="st50" width="6.5" height="0.5" />
+				<rect x="977.9" y="483.5" class="st50" width="6.5" height="0.5" />
+			</g>
+		</g>
+	</g>
+	<g id="ly_ptjs_benfs">
+		<ellipse id="bg_ptjs_benfs" class="st62" cx="953.3" cy="343.5" rx="45.5" ry="45.5" />
+		<text transform="matrix(1 0 0 1 925.5186 330.8691)" class="st17 st63">Projected</text>
+		<text transform="matrix(1 0 0 1 930.0391 346.752)" class="st17 st63">benefits</text>
+		<text transform="matrix(1 0 0 1 919.1426 362.6348)" class="st17 st63">assessment</text>
+	</g>
+	<g id="ly_slo">
+		<ellipse id="bg_slo" class="st64" cx="1142.7" cy="342.2" rx="82.9" ry="82.9" />
+		<g id="tl_slo">
+			<path class="st65" d="M1098.4,355.5h3.4c3,0,5,2.1,5,5.1v0.1c0,3.1-2,5.1-5,5.1h-3.4V355.5z M1100.5,357.4v6.5h1.2
+			c1.6,0,2.7-1.2,2.7-3.2v-0.1c0-2.1-1.1-3.2-2.7-3.2L1100.5,357.4L1100.5,357.4z" />
+			<polygon class="st65" points="1107.8,355.5 1114.6,355.5 1114.6,357.4 1110,357.4 1110,359.7 1114,359.7 1114,361.7 1110,361.7 
+			1110,364 1114.6,364 1114.6,365.9 1107.8,365.9 		" />
+			<polygon class="st65" points="1115,355.5 1117.3,355.5 1119.6,362.7 1121.7,355.5 1124,355.5 1120.5,366 1118.5,366 		" />
+			<polygon class="st65" points="1124.8,355.5 1131.5,355.5 1131.5,357.4 1126.9,357.4 1126.9,359.7 1131,359.7 1131,361.7 
+			1126.9,361.7 1126.9,364 1131.6,364 1131.6,365.9 1124.8,365.9 		" />
+			<polygon class="st65" points="1132.7,355.5 1134.9,355.5 1134.9,364 1139.1,364 1139.1,365.9 1132.7,365.9 		" />
+			<path class="st65" d="M1139.1,360.9v-0.2c0-3.1,2-5.3,4.8-5.3s4.7,2.2,4.7,5.3v0.2c0,3.1-2,5.3-4.8,5.3
+			C1141,366.1,1139.1,364,1139.1,360.9 M1146.3,360.8v-0.1c0-2.1-1.1-3.4-2.5-3.4s-2.5,1.3-2.5,3.4v0.1c0,2.1,1.1,3.4,2.5,3.4
+			S1146.3,362.9,1146.3,360.8" />
+			<path class="st65" d="M1149.7,355.5h3.5c2.3,0,3.8,1.3,3.8,3.6v0.1c0,2.4-1.7,3.6-3.9,3.6h-1.2v3.2h-2.2L1149.7,355.5
+			L1149.7,355.5L1149.7,355.5z M1153,360.9c1.1,0,1.7-0.7,1.7-1.7l0,0c0-1.1-0.6-1.7-1.8-1.7h-1.2v3.4L1153,360.9L1153,360.9z" />
+			<polygon class="st65" points="1157.8,355.5 1160.1,355.5 1162.4,359.7 1164.7,355.5 1167,355.5 1167,365.9 1164.9,365.9 
+			1164.9,359.3 1162.4,363.6 1162.4,363.6 1159.9,359.3 1159.9,365.9 1157.8,365.9 		" />
+			<polygon class="st65" points="1168.5,355.5 1175.2,355.5 1175.2,357.4 1170.7,357.4 1170.7,359.7 1174.7,359.7 1174.7,361.7 
+			1170.7,361.7 1170.7,364 1175.3,364 1175.3,365.9 1168.5,365.9 		" />
+			<polygon class="st65" points="1176.5,355.5 1178.4,355.5 1182.4,361.6 1182.4,355.5 1184.6,355.5 1184.6,365.9 1182.7,365.9 
+			1178.6,359.6 1178.6,365.9 1176.5,365.9 		" />
+			<polygon class="st65" points="1188.1,357.5 1185.5,357.5 1185.5,355.5 1192.8,355.5 1192.8,357.5 1190.3,357.5 1190.3,365.9 
+			1188.1,365.9 		" />
+			<path class="st65" d="M1097.9,350.6l1.4-1.7c0.8,0.7,1.7,1.3,2.9,1.3c0.9,0,1.5-0.4,1.5-1.1l0,0c0-0.6-0.3-1-2-1.6
+			c-2-0.8-3.3-1.6-3.3-3.5v-0.1c0-2,1.5-3.4,3.7-3.4c1.3,0,2.6,0.4,3.7,1.4l-1.3,1.8c-0.7-0.6-1.6-1.1-2.5-1.1c-0.8,0-1.3,0.4-1.3,1
+			l0,0c0,0.7,0.4,1,2.2,1.7c2,0.8,3.1,1.6,3.1,3.4v0.1c0,2.1-1.6,3.4-3.9,3.4C1100.7,352.3,1099.1,351.8,1097.9,350.6" />
+			<path class="st65" d="M1107,347.7v-7h2.3v7c0,1.6,0.8,2.4,2,2.4s2-0.8,2-2.3v-7h2.3v6.9c0,3.1-1.7,4.7-4.4,4.7
+			C1108.7,352.3,1107,350.8,1107,347.7" />
+			<path class="st65" d="M1116.4,350.6l1.4-1.7c0.8,0.7,1.7,1.3,2.9,1.3c0.9,0,1.5-0.4,1.5-1.1l0,0c0-0.6-0.3-1-2-1.6
+			c-2-0.8-3.3-1.6-3.3-3.5v-0.1c0-2,1.6-3.4,3.7-3.4c1.3,0,2.6,0.4,3.7,1.4l-1.3,1.8c-0.7-0.6-1.6-1.1-2.5-1.1c-0.8,0-1.3,0.4-1.3,1
+			l0,0c0,0.7,0.4,1,2.2,1.7c2,0.8,3.1,1.6,3.1,3.4v0.1c0,2.1-1.6,3.4-3.9,3.4C1119.2,352.3,1117.6,351.8,1116.4,350.6" />
+			<polygon class="st65" points="1127.6,342.9 1124.7,342.9 1124.7,340.7 1132.8,340.7 1132.8,342.9 1129.9,342.9 1129.9,352.1 
+			1127.6,352.1 		" />
+			<path class="st65" d="M1135.9,340.6h2.2l4.1,11.5h-2.5l-0.8-2.5h-4l-0.8,2.5h-2.4L1135.9,340.6z M1138.2,347.5l-1.2-3.7l-1.3,3.7
+			H1138.2z" />
+			<rect x="1143.1" y="340.7" class="st65" width="2.3" height="11.5" />
+			<polygon class="st65" points="1147.3,340.7 1149.5,340.7 1153.8,347.4 1153.8,340.7 1156.2,340.7 1156.2,352.1 1154.1,352.1 
+			1149.6,345.2 1149.6,352.1 1147.3,352.1 		" />
+			<path class="st65" d="M1161.1,340.6h2.2l4.1,11.5h-2.5l-0.8-2.5h-4l-0.8,2.5h-2.4L1161.1,340.6z M1163.4,347.5l-1.2-3.7l-1.3,3.7
+			H1163.4z" />
+			<path class="st65" d="M1168.2,340.7h4.3c1.3,0,2.3,0.3,3,1c0.5,0.5,0.8,1.1,0.8,2v0.1c0,1.3-0.7,2.1-1.6,2.5
+			c1.2,0.4,2.1,1.2,2.1,2.7v0.1c0,2.1-1.7,3.1-4.1,3.1h-4.4L1168.2,340.7L1168.2,340.7L1168.2,340.7z M1173.9,344
+			c0-0.8-0.6-1.3-1.6-1.3h-1.8v2.6h1.7C1173.3,345.4,1173.9,344.9,1173.9,344L1173.9,344z M1172.7,347.4h-2.1v2.7h2.1
+			c1.1,0,1.7-0.4,1.7-1.3l0,0C1174.4,347.9,1173.8,347.4,1172.7,347.4" />
+			<polygon class="st65" points="1177.9,340.7 1180.3,340.7 1180.3,350 1184.8,350 1184.8,352.1 1177.9,352.1 		" />
+			<polygon class="st65" points="1185.9,340.7 1193.2,340.7 1193.2,342.8 1188.2,342.8 1188.2,345.3 1192.6,345.3 1192.6,347.4 
+			1188.2,347.4 1188.2,350 1193.3,350 1193.3,352.1 1185.9,352.1 		" />
+			<path class="st66" d="M1109.6,379.1h10.1c-0.2,8.2-4.6,12.2-10.7,12.2c-6.5,0-10.7-5.5-10.7-11.3s4.2-11.4,10.7-11.4
+			c7.2,0,9.2,4.5,10,6.8l-4.6,0.3c-0.8-1.9-2.3-3.2-5.4-3.2c-3.5,0-6.2,2.8-6.2,7.5c0,3.9,2.5,7.5,6.4,7.5c3.5,0,5.1-2.5,5.5-4.6
+			h-5.3L1109.6,379.1L1109.6,379.1z" />
+			<polygon class="st66" points="1163,369.1 1167.4,369.1 1167.4,386.9 1175.8,386.9 1175.8,390.9 1163,390.9 		" />
+			<path class="st66" d="M1188,374.8c0-1.5-1.5-2.5-3.2-2.5c-2.2,0-3.5,1-3.5,2.4c0,1.5,1.5,2.2,2.5,2.6l4,1.3c2.9,1,5,2.6,5,6
+			c0,2.7-1.9,6.7-8,6.7c-7.6,0-8.3-4.9-8.3-6.9l4.4-0.1c0,2.3,1.8,3.2,4,3.2c1.5,0,3.6-0.7,3.6-2.4c0-1.2-0.5-1.8-2.6-2.6l-4.8-1.7
+			c-2.4-0.9-4.1-3-4.1-5.5c0-2.8,1.9-6.8,7.6-6.8c6.8,0,7.8,4.5,7.8,6.1L1188,374.8z" />
+			<path class="st67" d="M1126.7,377.3c0.3-0.4,0.6-0.9,1-1.2l-3.2-3.5c-0.8,0.8-1.5,1.6-2,2.6L1126.7,377.3z" />
+			<path class="st68" d="M1134.5,374.8c0.5,0.2,1,0.5,1.3,0.8l3.2-3.5c-0.8-0.7-1.8-1.3-2.8-1.7L1134.5,374.8z" />
+			<path class="st69" d="M1141.8,375.8l-4.2,2.1c0.2,0.4,0.3,1,0.4,1.5l4.7-0.4C1142.5,377.9,1142.2,376.8,1141.8,375.8" />
+			<path class="st70" d="M1137.3,377.3l4.2-2.1c-0.5-1-1.2-1.8-2-2.6l-3.2,3.5C1136.7,376.5,1137,376.9,1137.3,377.3" />
+			<path class="st71" d="M1125.9,380.4c0-0.1,0-0.2,0-0.3l-4.7-0.4c0,0.2,0,0.4,0,0.7c0,0.9,0.1,1.8,0.3,2.6l4.5-1.3
+			C1125.9,381.3,1125.9,380.8,1125.9,380.4" />
+			<path class="st72" d="M1136.7,384.2c-0.3,0.4-0.7,0.8-1.1,1.1l2.5,4c0.9-0.6,1.7-1.4,2.4-2.2L1136.7,384.2z" />
+			<path class="st73" d="M1138.1,380.4c0,0.4-0.1,0.9-0.1,1.3l4.5,1.3c0.2-0.8,0.3-1.7,0.3-2.6c0-0.2,0-0.4,0-0.7l-4.7,0.4
+			C1138.1,380.2,1138.1,380.3,1138.1,380.4" />
+			<path class="st74" d="M1127.3,384.3l-3.7,2.9c0.7,0.8,1.5,1.6,2.5,2.2l2.5-4C1128.1,385.1,1127.7,384.7,1127.3,384.3" />
+			<path class="st75" d="M1126,379.4c0.1-0.5,0.2-1.1,0.4-1.5l-4.2-2.1c-0.4,1-0.8,2.1-0.9,3.2L1126,379.4z" />
+			<path class="st76" d="M1137.4,389.6l-2.5-4c-0.4,0.3-0.9,0.4-1.5,0.6l0.9,4.6C1135.5,390.7,1136.5,390.2,1137.4,389.6" />
+			<path class="st77" d="M1137.7,382.3c-0.2,0.5-0.4,1-0.7,1.3l3.7,2.9c0.6-0.9,1.1-1.8,1.4-2.9L1137.7,382.3z" />
+			<path class="st78" d="M1132.9,386.4c-0.3,0.1-0.6,0.1-0.9,0.1c-0.2,0-0.5,0-0.7-0.1l-0.9,4.6c0.5,0.1,1.1,0.1,1.6,0.1
+			c0.6,0,1.2-0.1,1.7-0.2L1132.9,386.4z" />
+			<path class="st79" d="M1132.4,374.3c0.5,0.1,1,0.1,1.5,0.3l1.7-4.4c-1-0.3-2.1-0.6-3.2-0.6V374.3z" />
+			<path class="st80" d="M1130.6,386.3c-0.5-0.1-1-0.3-1.5-0.6l-2.5,4c0.9,0.6,2,1,3.1,1.2L1130.6,386.3z" />
+			<path class="st81" d="M1130.1,374.5c0.5-0.2,1-0.2,1.6-0.3v-4.7c-1.1,0.1-2.2,0.2-3.2,0.6L1130.1,374.5z" />
+			<path class="st82" d="M1126.9,383.8c-0.3-0.4-0.6-1-0.7-1.5l-4.5,1.3c0.3,1.1,0.8,2.1,1.5,3L1126.9,383.8z" />
+			<path class="st83" d="M1128.2,375.6c0.4-0.3,0.8-0.6,1.3-0.8l-1.7-4.4c-1,0.4-2,1-2.8,1.7L1128.2,375.6z" />
+			<path class="st66" d="M1155.8,386.3h-8.1l-1.5,4.6h-4.8l8.1-22.2h4.6l7.9,22.2h-4.9L1155.8,386.3z M1151.8,374.1L1151.8,374.1
+			l-2.9,8.6h5.7L1151.8,374.1z" />
+			<path class="st84" d="M1133.2,316.5c0-3.4-2.8-6.2-6.2-6.2s-6.2,2.8-6.2,6.2c0,3.4,2.8,6.2,6.2,6.2S1133.2,319.9,1133.2,316.5" />
+			<path class="st85" d="M1150.6,316.5c0-3.4-2.8-6.2-6.2-6.2c-3.4,0-6.2,2.8-6.2,6.2c0,3.4,2.8,6.2,6.2,6.2
+			C1147.8,322.7,1150.6,319.9,1150.6,316.5" />
+			<path class="st86" d="M1167.9,316.5c0-3.4-2.8-6.2-6.2-6.2c-3.4,0-6.2,2.8-6.2,6.2c0,3.4,2.8,6.2,6.2,6.2
+			S1167.9,319.9,1167.9,316.5" />
+			<g>
+				<text transform="matrix(0.9981 0 0 1 1121.6309 305.2393)" class="st17 st87">S</text>
+				<text transform="matrix(0.9981 0 0 1 1133.1475 305.2393)" class="st17 st87">L</text>
+				<text transform="matrix(0.9981 0 0 1 1141.8682 305.2393)" class="st17 st87">Os</text>
+			</g>
+			<line class="st88" x1="1095.5" y1="329.9" x2="1193.3" y2="329.9" />
+		</g>
+	</g>
+	<g id="ly_arrows">
+		<g id="arrow_publications_almetric" class="st89">
+			<line class="st22" x1="476.9" y1="677.1" x2="472.1" y2="671.7" />
+			<line class="st22" x1="476.9" y1="677.8" x2="481.7" y2="671.7" />
+			<line class="st22" x1="477.2" y1="676.6" x2="477.2" y2="571.3" />
+		</g>
+		<g id="arrow_innovations_stage4_oicr" class="st90">
+			<line class="st91" x1="822.4" y1="467.1" x2="818.7" y2="462.9" />
+			<line class="st91" x1="822.4" y1="467.6" x2="826.2" y2="462.9" />
+			<line class="st91" x1="822.6" y1="466.7" x2="822.6" y2="371" />
+		</g>
+		<g id="arrow_policies_level2_oicr" class="st90">
+			<line class="st91" x1="779.9" y1="590.8" x2="775.8" y2="595.4" />
+			<line class="st91" x1="779.9" y1="590.3" x2="784.1" y2="595.4" />
+			<line class="st91" x1="780.2" y1="591.2" x2="780.2" y2="732.8" />
+		</g>
+		<g id="arrow_policies_level3_oicr" class="st90">
+			<line class="st91" x1="867.1" y1="590.8" x2="863" y2="595.4" />
+			<line class="st91" x1="867.1" y1="590.3" x2="871.2" y2="595.4" />
+			<line class="st91" x1="867.3" y1="591.2" x2="867.3" y2="732.8" />
+		</g>
+		<g id="arrow_milestones_innovations" class="st89">
+			<line class="st22" x1="697" y1="389.1" x2="694.2" y2="397.3" />
+			<line class="st22" x1="697.6" y1="388.6" x2="688.4" y2="389.8" />
+			<line class="st22" x1="696.3" y1="389.4" x2="585.7" y2="476.2" />
+		</g>
+		<g id="arrow_milestones_policies" class="st89">
+			<line class="st22" x1="678.9" y1="689.5" x2="670.7" y2="686.8" />
+			<line class="st22" x1="679.4" y1="690.1" x2="678.2" y2="680.9" />
+			<line class="st22" x1="678.7" y1="688.8" x2="591.9" y2="578.2" />
+		</g>
+		<g id="arrow_innovations_pjts" class="st89">
+			<line class="st22" x1="907.3" y1="344.4" x2="904.4" y2="347.8" />
+			<line class="st22" x1="907.6" y1="344.4" x2="904.4" y2="341" />
+			<line class="st22" x1="907" y1="344.2" x2="851" y2="344.1" />
+		</g>
+		<g id="arrow_pjts_slo" class="st89">
+			<line class="st22" x1="1059.5" y1="343.4" x2="1056.4" y2="346.9" />
+			<line class="st22" x1="1059.8" y1="343.4" x2="1056.3" y2="340" />
+			<line class="st22" x1="1059.2" y1="343.2" x2="998.9" y2="343.2" />
+		</g>
+		<g id="arrow_slo">
+			<g>
+				<line class="st92" x1="1145.5" y1="425.1" x2="1150.3" y2="430.5" />
+				<line class="st92" x1="1145.5" y1="424.5" x2="1140.7" y2="430.5" />
+				<line class="st92" x1="1145.2" y1="425.3" x2="1145.2" y2="502.9" />
+			</g>
+		</g>
+		<g id="arrow_oicr_slo">
+			<path class="st92" d="M1145.2,502.9c0,0,0,26.9-25.7,26.9H1004" />
+		</g>
+		<g id="arrow_policies_slo">
+			<path class="st92" d="M1145.2,502.9c0,0-15.6,258.2-218.2,258.2" />
+		</g>
+	</g>
+
+	<script type="text/javascript">
+		<![CDATA[
+
+		window.onload = function () {
+			console.log('Snap')
+			var snp = Snap('#svg-interactive');
+		
+			//     /**** spheres *****/
+		
+			var sphere_red_bg = snp.select('#sphere_red_bg');
+			var sphere_yellow_bg = snp.select('#sphere_yellow_bg');
+			var sphere_white_bg = snp.select('#sphere_white_bg');
+		
+			var trainees_group = snp.select('#ly_ppl_trained');
+			trainees_group.attr({ style: 'cursor: default' });
+		
+			var publications_group = snp.select('#ly_publications');
+			publications_group.attr({ style: 'cursor: default' });
+		
+			var almetrics_bg = snp.select('#ly_almetric');
+			var tl_partnertships = snp.select('#tl_partnertships');
+		
+			var milestones_group = snp.select('#ly_milestones');
+			milestones_group.attr({ style: 'cursor: default' });
+		
+			var ly_policies = snp.select('#ly_policies');
+			ly_policies.attr({ style: 'cursor: default' });
+			var ly_innovations = snp.select('#ly_innovations');
+			ly_innovations.attr({ style: 'cursor: default' });
+			var ly_slo = snp.select('#ly_slo');
+			var ly_oicr = snp.select('#ly_oicr');
+			var ly_pjts_benfs = snp.select('#ly_ptjs_benfs');
+			ly_pjts_benfs.attr({ style: 'cursor: default' });
+		
+			var txt_levels_bg = snp.select('#txt_levels_bg');
+		
+			var bg_innovations = snp.select('#bg_innovations');
+			var icon_innovations = snp.select('#icon_innovations');
+			var ic_innovations = snp.select('#ic_innovations');
+			var ic_innovations_bg = snp.select('#ic_innovations_bg');
+		
+			var bg_stage1_innovations = snp.select('#bg_stage1_innovations');
+			var tl_stage1_innovations = snp.select('#tl_stage1_innovations');
+			var stage1_innovations_group = snp.group(bg_stage1_innovations, tl_stage1_innovations);
+			stage1_innovations_group.attr({ style: 'cursor: pointer' });
+		
+			var txt_stage1_innovations = snp.select('#txt_stage1_innovations');
+		
+			var bg_stage2_innovations = snp.select('#bg_stage2_innovations');
+			var tl_stage2_innovations = snp.select('#tl_stage2_innovations');
+			var stage2_innovations_group = snp.group(bg_stage2_innovations, tl_stage2_innovations);
+			stage2_innovations_group.attr({ style: 'cursor: pointer' });
+		
+			var txt_stage2_innovations = snp.select('#txt_stage2_innovations');
+		
+			var bg_stage3_innovations = snp.select('#bg_stage3_innovations');
+			var tl_stage3_innovations = snp.select('#tl_stage3_innovations');
+			var stage3_innovations_group = snp.group(bg_stage3_innovations, tl_stage3_innovations);
+			stage3_innovations_group.attr({ style: 'cursor: pointer' });
+		
+			var txt_stage3_innovations = snp.select('#txt_stage3_innovations');
+		
+		
+			var bg_stage4_innovations = snp.select('#bg_stage4_innovations');
+			var tl_stage4_innovations = snp.select('#tl_stage4_innovations');
+			var stage4_innovations_group = snp.group(bg_stage4_innovations, tl_stage4_innovations);
+			stage4_innovations_group.attr({ style: 'cursor: pointer' });
+		
+			var txt_stage4_innovations = snp.select('#txt_stage4_innovations');
+		
+		
+		
+			var bg_oicr = snp.select('#bg_oicr');
+			var icon_oicr = snp.select('#icon_oicr');
+			var ic_oicr = snp.select('#ic_oicr');
+			var ic_oicr_bg = snp.select('#ic_oicr_bg');
+		
+			var bg_level1_oicr = snp.select('#bg_level1_oicr');
+			var tl_level1_oicr = snp.select('#tl_level1_oicr');
+			var level1_oicr_group = snp.group(bg_level1_oicr, tl_level1_oicr);
+			level1_oicr_group.attr({ style: 'cursor: pointer' });
+		
+			var txt_level1_oicr = snp.select('#txt_level1_oicr');
+		
+		
+			var bg_level2_oicr = snp.select('#bg_level2_oicr');
+			var tl_level2_oicr = snp.select('#tl_level2_oicr');
+			var level2_oicr_group = snp.group(bg_level2_oicr, tl_level2_oicr);
+			level2_oicr_group.attr({ style: 'cursor: pointer' });
+		
+			var txt_level2_oicr = snp.select('#txt_level2_oicr');
+		
+			var bg_level3_oicr = snp.select('#bg_level3_oicr');
+			var tl_level3_oicr = snp.select('#tl_level3_oicr');
+			var level3_oicr_group = snp.group(bg_level3_oicr, tl_level3_oicr);
+			level3_oicr_group.attr({ style: 'cursor: pointer' });
+		
+			var txt_level3_oicr = snp.select('#txt_level3_oicr');
+		
+			var bg_policies = snp.select('#bg_policies');
+			var icon_policies = snp.select('#icon_policies');
+			var ic_policies = snp.select('#ic_policies');
+			var ic_policies_bg = snp.select('#ic_policies_bg');
+		
+		
+			var bg_level1_policies = snp.select('#bg_level1_policies');
+			var tl_level1_policies = snp.select('#tl_level1_policies');
+			var level1_policies_group = snp.group(bg_level1_policies, tl_level1_policies);
+			level1_policies_group.attr({ style: 'cursor: pointer' });
+		
+			var txt_level1_policies = snp.select('#txt_level1_policies');
+			
+			var bg_level2_policies = snp.select('#bg_level2_policies');
+			var tl_level2_policies = snp.select('#tl_level2_policies');
+			var level2_policies_group = snp.group(bg_level2_policies, tl_level2_policies);
+			level2_policies_group.attr({ style: 'cursor: pointer' });
+		
+			var txt_level2_policies = snp.select('#txt_level2_policies');
+			
+			var bg_level3_policies = snp.select('#bg_level3_policies');
+			var tl_level3_policies = snp.select('#tl_level3_policies');
+			var level3_policies_group = snp.group(bg_level3_policies, tl_level3_policies);
+			level3_policies_group.attr({ style: 'cursor: pointer' });
+		
+			var txt_level3_policies = snp.select('#txt_level3_policies');
+		
+		
+		
+			/**
+			* arrows 
+			*/
+		
+		
+			var arrow_innovations_pjts = snp.select('#arrow_innovations_pjts');
+			var arrow_ptjs_benfs_slo = snp.select('#arrow_pjts_slo');
+			var arrow_publications_almetrics = snp.select('#arrow_publications_almetric');
+			var arrow_milestones_policies = snp.select('#arrow_milestones_policies');
+			var arrow_milestones_innovations = snp.select('#arrow_milestones_innovations');
+			var arrow_slo = snp.select('#arrow_slo');
+			var arrow_innovations_stage4_oicr = snp.select('#arrow_innovations_stage4_oicr');
+			var arrow_policies_level2_oicr = snp.select('#arrow_policies_level2_oicr');
+			var arrow_policies_level3_oicr = snp.select('#arrow_policies_level3_oicr');
+			var arrow_policies_slo = snp.select('#arrow_policies_slo');
+			var arrow_oicr_slo = snp.select('#arrow_oicr_slo');
+		
+		
+			/***
+			* 
+			* PhD trainees
+			*/
+		
+			trainees_group.hover(function () {
+				overElem([this, tl_partnertships]);
+				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+		
+			}, function () {
+				outElem([this, tl_partnertships]);
+				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+			});
+		
+			/**
+			* 
+			* Publicaitions
+			* 
+			*/
+		
+			publications_group.hover(function () {
+				overElem([this, almetrics_bg, tl_partnertships]);
+				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				chnStroke(arrow_publications_almetrics, { width: '3px' });
+				arrow_publications_almetrics.animate({ transform: 's.5,.9' }, 700, mina.bounce);
+			}, function () {
+				outElem([this, almetrics_bg, tl_partnertships]);
+				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+				chnStroke(arrow_publications_almetrics, { width: '1px' });
+				arrow_publications_almetrics.animate({ transform: 's1,1' }, 700, mina.bounce);
+			});
+		
+			/**
+			* 
+			* Almetrics
+			* 
+			*/
+		
+		
+			almetrics_bg.hover(function () {
+				overElem([this, tl_partnertships]);
+				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				arrow_publications_almetrics.animate({ transform: 's1.1,.95' }, 700, mina.bounce);
+			}, function () {
+				outElem([this, tl_partnertships]);
+				sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_publications_almetrics.animate({ transform: 's1,1' }, 700, mina.bounce);
+			});
+		
+			/**
+			* 
+			* Milestones
+			* 
+			*/
+		
+			milestones_group.hover(function () {
+				overElem([this, ly_policies, ly_innovations, tl_partnertships]);
+				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				arrow_milestones_policies.animate({ transform: 's1,.85' }, 700, mina.bounce);
+				arrow_milestones_innovations.animate({ transform: 's1,.83' }, 700, mina.bounce);
+				arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
+		
+			}, function () {
+				outElem([this, ly_policies, ly_innovations, tl_partnertships]);
+				sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+			});
+		
+		
+			/****
+			* Project benefits
+			*/
+		
+			ly_pjts_benfs.hover(function () {
+				overElem([this, ly_slo]);
+				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				chnStroke(arrow_ptjs_benfs_slo, { stroke: 'white', width: '3px', opacity: '1' });
+		
+				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1' }, 700, mina.bounce);
+				arrow_innovations_pjts.animate({ transform: 's.9,1' }, 700, mina.bounce);
+				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+			}, function () {
+				outElem([this, ly_slo]);
+				sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+				sphere_red_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				chnStroke(arrow_ptjs_benfs_slo, { stroke: '#353635', width: '2px', opacity: '0.2' });
+		
+				arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
+			});
+		
+			/**
+			* 
+			* Innovations
+			* 
+			*/
+		
+			ly_innovations.hover(function () {
+				overElem([this, ly_slo, ly_pjts_benfs]);
+				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+		
+				chnStroke(arrow_ptjs_benfs_slo, { stroke: 'white', width: '3px', opacity: '1' });
+				chnStroke(arrow_innovations_pjts, { stroke: 'white', width: '3px', opacity: '1' });
+		
+				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1' }, 700, mina.bounce);
+				arrow_innovations_pjts.animate({ transform: 's.9,1,t-3' }, 700, mina.bounce);
+				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+				arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+			}, function () {
+				outElem([this, ly_slo, ly_pjts_benfs]);
+				sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+		
+				chnStroke(arrow_ptjs_benfs_slo, { stroke: '#353635', width: '2px', opacity: '0.2' });
+				chnStroke(arrow_innovations_pjts, { stroke: '#353635', width: '1px', opacity: '0.2' });
+		
+				arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
+		
+				// reduce stage circles
+				stage1Out();
+				stage2Out();
+				stage3Out();
+				stage4Out();
+			});
+		
+			icon_innovations.hover(function () {
+				this.attr({ style: 'cursor: pointer' });
+				ic_innovations_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
+				ic_innovations.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
+			}, function () {
+				this.attr({ style: 'cursor: default' });
+				ic_innovations.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
+				unanimateCircles(ic_innovations_bg);
+			});
+		
+			icon_innovations.click(function () {
+				window.open('https://results.cgiar.org/innovations');
+			});
+		
+			stage1_innovations_group.click(function () {
+				overElem([ly_innovations]);
+				arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				txt_stage1_innovations.animate({ opacity: '1' }, 700, mina.bounce);
+				overOpacity([stage2_innovations_group, stage3_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
+				bg_innovations.attr({ style: 'fill-opacity:1' });
+				animateCircles(stage1_innovations_group, stage1_innovations_group);
+			});
+		
+			stage1_innovations_group.dblclick(stage1Out);
+		
+			stage2_innovations_group.click(function () {
+				overElem([ly_innovations]);
+				arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				txt_stage2_innovations.animate({ opacity: '1' }, 700, mina.bounce);
+				overOpacity([stage1_innovations_group, stage3_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
+				bg_innovations.attr({ style: 'fill-opacity:1' });
+				stage2_innovations_group.animate({ transform: 's1.6,1.6,t-38' }, 700, mina.bounce);
+			});
+		
+			stage2_innovations_group.dblclick(stage2Out)
+		
+			stage3_innovations_group.click(function () {
+				overElem([ly_innovations]);
+				arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				txt_stage3_innovations.animate({ opacity: '1' }, 700, mina.bounce);
+				overOpacity([stage1_innovations_group, stage2_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
+				bg_innovations.attr({ style: 'fill-opacity:1' });
+				stage3_innovations_group.animate({ transform: 's1.6,1.6,t-88' }, 700, mina.bounce);
+			});
+		
+			stage3_innovations_group.dblclick(stage3Out)
+		
+			stage4_innovations_group.click(function () {
+				overElem([ly_innovations, ly_oicr]);
+				arrow_milestones_innovations.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+				arrow_innovations_pjts.animate({ transform: 's.9,1,t-3' }, 700, mina.bounce);
+				sphere_white_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				txt_stage4_innovations.animate({ opacity: '1' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+		
+				overOpacity([stage1_innovations_group, stage2_innovations_group, stage3_innovations_group])
+				bg_innovations.attr({ style: 'fill-opacity:1' });
+				stage4_innovations_group.animate({ transform: 's1.6,1.6,t-128' }, 700, mina.bounce);
+			});
+		
+			stage4_innovations_group.hover(function () {
+				overElem([ly_slo, ly_pjts_benfs, ly_oicr]);
+				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1' }, 700, mina.bounce);
+				arrow_innovations_pjts.animate({ transform: 's.9,1,t-3' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+				arrow_policies_level2_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+		
+				chnStroke(arrow_ptjs_benfs_slo, { stroke: 'white', width: '3px', opacity: '1' });
+				chnStroke(arrow_innovations_pjts, { stroke: 'white', width: '3px', opacity: '1' });
+				chnStroke(arrow_innovations_stage4_oicr, { stroke: 'white', width: '3px', opacity: '1' });
+			}, function () {
+				outElem([ly_slo, ly_pjts_benfs, ly_oicr]);
+				arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+		
+				chnStroke(arrow_innovations_stage4_oicr, { stroke: 'white', width: '2px', opacity: '1' });
+			});
+		
+		
+		
+		
+			stage4_innovations_group.dblclick(stage4Out)
+		
+		
+			/**
+			 * 
+			 * OICR 
+			 *  */
+		
+			ly_oicr.hover(function () {
+				overElem([this, ly_slo]);
+				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+		
+				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+				arrow_slo.selectAll("line").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+		
+		
+				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+				arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
+				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+				arrow_policies_level2_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+		
+		
+			}, function () {
+				outElem([this, ly_slo]);
+				sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+				sphere_red_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+		
+				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+				chnStroke(arrow_oicr_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+				});
+		
+				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+		
+				//
+				oicr_level1Out();
+				oicr_level2Out();
+				oicr_level3Out();
+		
+			});
+		
+			icon_oicr.hover(function () {
+				this.attr({ style: 'cursor: pointer' });
+				ic_oicr_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
+				ic_oicr.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
+			}, function () {
+				this.attr({ style: 'cursor: default' });
+				ic_oicr.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
+				unanimateCircles(ic_oicr_bg);
+			});
+		
+			icon_oicr.click(function () {
+				window.open('https://results.cgiar.org/policies');
+			});
+		
+		
+			level1_oicr_group.click(function () {
+				overElem([ly_oicr, ly_slo]);
+				txt_level1_oicr.animate({ opacity: '1' }, 700, mina.bounce);
+				overOpacity([level2_oicr_group, level3_oicr_group]);
+				outOpacity([txt_levels_bg]);
+		
+				bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:1' }); })
+		
+				txt_levels_bg.animate({ transform: 't0,0', opacity: 1 }, 700, mina.bounce);
+				level1_oicr_group.animate({ transform: 't-8,104' }, 700, mina.bounce);
+		
+				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+				arrow_slo.selectAll("line").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+				bg_oicr.selectAll(".st55").forEach(function (e, i) {
+					e.attr({ style: `opacity:1` }, mina.bounce);
+				});
+		
+		
+				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+		
+				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+				arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
+		
+				arrow_policies_level2_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+			});
+		
+			level1_oicr_group.dblclick(oicr_level1Out)
+		
+			level2_oicr_group.click(function () {
+				overElem([ly_oicr, ly_slo]);
+				txt_level2_oicr.animate({ opacity: '1' }, 700, mina.bounce);
+				overOpacity([level1_oicr_group, level3_oicr_group])
+		
+				txt_levels_bg.animate({ transform: 't80,0', opacity: 1 }, 700, mina.bounce);
+				level2_oicr_group.animate({ transform: 't0,104' }, 700, mina.bounce);
+		
+				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+				arrow_slo.selectAll("line").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+				bg_oicr.selectAll(".st55").forEach(function (e, i) {
+					e.attr({ style: `opacity:1` }, mina.bounce);
+				});
+		
+		
+				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+		
+				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+				arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
+		
+				arrow_policies_level2_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+			});
+		
+			level2_oicr_group.dblclick(oicr_level2Out)
+		
+			level3_oicr_group.click(function () {
+				overElem([ly_oicr, ly_slo]);
+				txt_level3_oicr.animate({ opacity: '1' }, 700, mina.bounce);
+				overOpacity([level1_oicr_group, level2_oicr_group]);
+		
+				txt_levels_bg.animate({ transform: 't150,0', opacity: 1 }, 700, mina.bounce);
+				level3_oicr_group.animate({ transform: 't0,104' }, 700, mina.bounce);
+		
+				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+				arrow_slo.selectAll("line").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+				bg_oicr.selectAll(".st55").forEach(function (e, i) {
+					e.attr({ style: `opacity:1` }, mina.bounce);
+				});
+		
+		
+				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+		
+				arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+				arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
+		
+				arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,.9,t0,4' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+			});
+		
+			level3_oicr_group.dblclick(oicr_level3Out)
+		
+		
+			/**
+			 * 
+			 * Policies 
+			 *  */
+		
+			icon_policies.hover(function () {
+				this.attr({ style: 'cursor: pointer' });
+				ic_policies_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
+				ic_policies.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
+			}, function () {
+				this.attr({ style: 'cursor: default' });
+				ic_policies.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
+				unanimateCircles(ic_policies_bg);
+			});
+		
+			icon_policies.click(function () {
+				window.open('https://results.cgiar.org/caseReports');
+			});
+		
+			ly_policies.hover(function () {
+				overElem([this, ly_slo, ly_oicr]);
+				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+		
+				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+				arrow_slo.selectAll("line").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+		
+		
+				arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
+				arrow_milestones_policies.animate({ transform: 's1,.85,t15,0' }, 700, mina.bounce);
+				arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
+				arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
+				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+				arrow_policies_level2_oicr.animate({ transform: 's1,.95,t0' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,.95,t0' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
+		
+			}, function () {
+				outElem([this, ly_slo, ly_oicr]);
+				sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+				sphere_red_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+		
+				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+				});
+		
+				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+				arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+		
+				//
+				policies_level1Out();
+				policies_level2Out();
+				policies_level3Out();
+		
+			});
+		
+		
+			level1_policies_group.click(function () {
+				overElem([ly_policies, ly_slo]);
+				overOpacity([level2_policies_group, level3_policies_group]);
+				animateCircles(level1_policies_group, level1_policies_group);
+		
+				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+				arrow_slo.selectAll("line").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+		
+				arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
+				arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
+				arrow_milestones_policies.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+		
+				sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				txt_level1_policies.animate({ opacity: '1' }, 700, mina.bounce);
+				bg_policies.attr({ style: 'fill-opacity:1' });
+			});
+		
+			level1_policies_group.dblclick(policies_level1Out);
+			
+			
+			level2_policies_group.click(function () {
+				overElem([ly_policies, ly_slo]);
+				overOpacity([level1_policies_group, level3_policies_group]);
+		
+				level2_policies_group.animate({ transform: 's1.6,1.6,t-58' }, 700, mina.bounce);
+		
+				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+				arrow_slo.selectAll("line").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+		
+				arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
+				arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
+				arrow_milestones_policies.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+		
+				sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				txt_level2_policies.animate({ opacity: '1' }, 700, mina.bounce);
+				bg_policies.attr({ style: 'fill-opacity:1' });
+			});
+		
+			level2_policies_group.dblclick(policies_level2Out);
+			
+		
+			level3_policies_group.click(function () {
+				overElem([ly_policies, ly_slo]);
+				overOpacity([level1_policies_group, level2_policies_group]);
+		
+				level3_policies_group.animate({ transform: 's1.6,1.6,t-114' }, 700, mina.bounce);
+		
+				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+				arrow_slo.selectAll("line").forEach(function (e, i) {
+					e.attr({ style: `stroke: white; stroke-width: 3px; stroke-opacity:1` }, mina.bounce);
+				});
+		
+				arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
+				arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
+				arrow_milestones_policies.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
+				arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+		
+				sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+				txt_level3_policies.animate({ opacity: '1' }, 700, mina.bounce);
+				bg_policies.attr({ style: 'fill-opacity:1' });
+			});
+		
+			level3_policies_group.dblclick(policies_level3Out);   
+			
+			
+			
+			
+			
+			
+			function policies_level1Out() {
+		
+				outElem([sphere_yellow_bg, ly_policies, ly_slo]);
+				outOpacity([level2_policies_group, level3_policies_group]);
+				unanimateCircles(level1_policies_group);
+		
+				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+				});
+		
+				txt_level1_policies.animate({ opacity: '0' }, 700, mina.bounce);
+				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+				arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				bg_policies.attr({ style: 'fill-opacity:0.2' });
+				
+			}
+			function policies_level2Out() {
+		
+				outElem([sphere_red_bg, ly_policies, ly_slo]);
+				outOpacity([level1_policies_group, level3_policies_group]);
+				unanimateCircles(level2_policies_group);
+		
+				level2_policies_group.animate({ transform: 's1,1,t0' }, 700, mina.bounce);
+		
+				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+				});
+		
+				txt_level2_policies.animate({ opacity: '0' }, 700, mina.bounce);
+				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+				arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				bg_policies.attr({ style: 'fill-opacity:0.2' });
+				
+			}
+			function policies_level3Out() {
+		
+				outElem([sphere_red_bg, ly_policies, ly_slo]);
+				outOpacity([level1_policies_group, level2_policies_group]);
+				unanimateCircles(level3_policies_group);
+		
+				level3_policies_group.animate({ transform: 's1,1,t0' }, 700, mina.bounce);
+		
+				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+				arrow_policies_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+				});
+		
+				txt_level3_policies.animate({ opacity: '0' }, 700, mina.bounce);
+				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+				arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				bg_policies.attr({ style: 'fill-opacity:0.2' });
+				
+			}
+			function oicr_level1Out() {
+				outElem([sphere_yellow_bg, ly_oicr, ly_slo]);
+				outOpacity([level2_oicr_group, level3_oicr_group]);
+				overOpacity([txt_levels_bg]);
+		
+				txt_level1_oicr.animate({ opacity: '0' }, 700, mina.bounce);
+				unanimateCircles(level1_oicr_group);
+		
+				bg_oicr.selectAll(".st55").forEach(function (e, i) {
+					e.attr({ style: `opacity:0.2` }, mina.bounce);
+				});
+		
+				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+				chnStroke(arrow_oicr_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+				});
+				
+				bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:0.2' }); })
+		
+				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+			}
+		
+			function oicr_level2Out() {
+				outElem([sphere_yellow_bg, ly_oicr, ly_slo]);
+				outOpacity([level1_oicr_group, level3_oicr_group]);
+		
+				txt_level2_oicr.animate({ opacity: '0' }, 700, mina.bounce);
+				unanimateCircles(level2_oicr_group);
+		
+				bg_oicr.selectAll(".st55").forEach(function (e, i) {
+					e.attr({ style: `opacity:0.2` }, mina.bounce);
+				});
+		
+				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+				chnStroke(arrow_oicr_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+				});
+				bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:0.2' }); })
+		
+		
+				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+			}
+		
+			function oicr_level3Out() {
+				outElem([sphere_yellow_bg, ly_oicr, ly_slo]);
+				outOpacity([level1_oicr_group, level2_oicr_group]);
+		
+				txt_level3_oicr.animate({ opacity: '0' }, 700, mina.bounce);
+				unanimateCircles(level3_oicr_group);
+		
+				bg_oicr.selectAll(".st55").forEach(function (e, i) {
+					e.attr({ style: `opacity:0.2` }, mina.bounce);
+				});
+		
+				chnStroke(arrow_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+				chnStroke(arrow_oicr_slo, { stroke: '#000000', width: '2px', opacity: '1' });
+				arrow_oicr_slo.selectAll("path").forEach(function (e, i) {
+					e.attr({ style: `stroke: #000000; stroke-width: 2px; opacity:1` }, mina.bounce);
+				});
+				bg_oicr.selectAll(".st56").forEach(function (e, i) { e.attr({ style: 'opacity:0.2' }); })
+		
+		
+				arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+				arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
+				arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+				arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
+			}
+		
+			function stage1Out() {
+				outElem([sphere_white_bg, ly_innovations]);
+				outOpacity([stage2_innovations_group, stage3_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
+				arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
+				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+				txt_stage1_innovations.animate({ opacity: '0' }, 700, mina.bounce);
+				bg_innovations.attr({ style: 'fill-opacity:0.2' });
+				unanimateCircles(stage1_innovations_group);
+			}
+		
+			function stage2Out() {
+				outElem([sphere_white_bg, ly_innovations]);
+				outOpacity([stage1_innovations_group, stage3_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
+				arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
+				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+				txt_stage2_innovations.animate({ opacity: '0' }, 700, mina.bounce);
+				bg_innovations.attr({ style: 'fill-opacity:0.2' });
+				unanimateCircles(stage2_innovations_group);
+			}
+		
+			function stage3Out() {
+				outElem([sphere_white_bg, ly_innovations]);
+				outOpacity([stage1_innovations_group, stage2_innovations_group, stage4_innovations_group, arrow_innovations_pjts])
+				arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
+				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+				txt_stage3_innovations.animate({ opacity: '0' }, 700, mina.bounce);
+				bg_innovations.attr({ style: 'fill-opacity:0.2' });
+				unanimateCircles(stage3_innovations_group);
+			}
+		
+			function stage4Out() {
+				outElem([sphere_white_bg, ly_innovations]);
+				outOpacity([stage1_innovations_group, stage2_innovations_group, stage3_innovations_group, arrow_innovations_pjts]);
+				arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
+				arrow_milestones_innovations.animate({ transform: 's1,1' }, 700, mina.bounce);
+				txt_stage4_innovations.animate({ opacity: '0' }, 700, mina.bounce);
+				sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+				bg_innovations.attr({ style: 'fill-opacity:0.2' });
+				unanimateCircles(stage4_innovations_group);
+			}
+		
+		
+		
+		
+		
+		
+			function animateCircles(el, bg) {
+				el.paper.append(el);
+				bg.animate({ transform: 's1.6,1.6' }, 700, mina.bounce);
+			};
+		
+			function unanimateCircles(bg) {
+				bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+			}
+		
+		
+			function outElem(arr) {
+				if (arr && arr.length > 0) {
+					arr.forEach(el => {
+						el.animate({ transform: 's1,1' }, 700, mina.bounce);
+					});
+				}
+			}
+		
+			function overElem(arr,) {
+				arr.forEach(el => {
+					el.animate({ transform: 's1.1,1.1' }, 700, mina.bounce);
+				});
+			}
+		
+			function outOpacity(arr) {
+				if (arr && arr.length > 0) {
+					arr.forEach(el => {
+						el.animate({ opacity: '1' }, 700, mina.bounce);
+					});
+				}
+			}
+		
+			function overOpacity(arr) {
+				arr.forEach(el => {
+					el.animate({ opacity: '0' }, 700, mina.bounce);
+				});
+			}
+		
+			function chnStroke(el, params) {
+				if (el.length == undefined) {
+					if (params.opacity)
+						el.attr({ opacity: params.opacity });
+					el.selectAll("line").forEach(function (e, i) {
+						e.attr({ style: `stroke: ${params.stroke}; stroke-width:  ${params.width}` }, mina.bounce);
+					});
+					//  el.attr({ style: `stroke: ${params.stroke}; stroke-width:  ${params.width}` }, mina.bounce);
+				} else {
+					el.forEach(element => {
+						element.attr({ style: `stroke: ${params.stroke}; stroke-width:  ${params.width}` }, mina.bounce);
+					});
+				}
+			}
+		
+		
+		
+		}
+
+
+
+
+
+
+
+		]]>
+	</script>
+</svg>
