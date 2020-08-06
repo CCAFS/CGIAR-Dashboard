@@ -1,6 +1,6 @@
 .dashboard-container {
-  max-width: 1050px;
-  margin: auto; 
+    max-width: 1050px;
+    margin: auto;
 }
 
 .oicr-charts {
@@ -16,53 +16,53 @@
 }
 
 .geoScope-charts {
-    height:2200px;
+    height: 2200px;
 }
 
 .partners-charts {
-  height: 2150px;
+    height: 2150px;
 }
 
 .partnersFilter-charts {
-  height: 1455px;
+    height: 1455px;
 }
 
 .slo-charts {
-  height: 1400px;
+    height: 1400px;
 }
 
 .srf-charts {
-  height: 1950px;
+    height: 2280px;
 }
 
 .innovations-V2-charts {
-  height: 1800px;
+    height: 1800px;
 }
 
-.policies-V2-charts{
-  height: 1200px;
+.policies-V2-charts {
+    height: 1200px;
 }
 
 .MELIA-charts {
-  height: 1500px;
+    height: 1500px;
 }
 
 .genebank-charts {
-  height: 1300px;
+    height: 1300px;
 }
 
 .publications-charts {
-  height: 1400px;
+    height: 1400px;
 }
 
 .altmetric-charts {
-  height:1100px;
+    height: 1100px;
 }
 
 .partnerships-charts {
-  height: 1450px;
+    height: 1450px;
 }
 
 .home-V2-charts {
-  height: 770px;
+    height: 770px;
 }
