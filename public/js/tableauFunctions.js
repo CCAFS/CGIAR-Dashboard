@@ -105,6 +105,7 @@ function setFilterWorksheet(marks, filterName, sheetsArray, selectedSheet, selec
 }
 
 function createTableauViz(elementID, view, section, events){
+  
   var viz;
   var container = document.getElementById(elementID);
   var $element = $('#'+ elementID);
@@ -172,7 +173,75 @@ function createTableauViz(elementID, view, section, events){
 
   return viz;
 }
+function createTableauVizNew(elementID, view, section, events){
 
+  var viz;
+  var container = document.getElementById(elementID);
+  var $element = $('#'+ elementID);
+  var url = appConfig.tableauViewNew + section + "/" + view;
+
+  $element.css('position','relative');
+  $element.append('<div class="loadingBlock singleLoadingBlock"></div>')
+
+  var options = {
+    hideTabs: true,
+    hideToolbar: true,
+    width: '100%',
+    height: '100%',
+    //"CRP": appConfig.entitySelected,
+    "Year": appConfig.yearSelected,
+    onFirstInteractive: function(tableauEvent){
+      //Hide scrollbars - disable scroll
+      var $iframe = $element.find('iframe');
+      $iframe.attr("scrolling", "no");
+      $iframe.css('overflow', 'hidden');
+
+      // Remove single element
+      $element.find(".singleLoadingBlock").removeClass('singleLoadingBlock');
+
+      // Attach Events
+      $.each(events, function(i, eventFunc){
+         viz.addEventListener(tableau.TableauEventName.MARKS_SELECTION, eventFunc);
+      });
+
+      viz.addEventListener(tableau.TableauEventName.CUSTOM_VIEW_LOAD, function (){
+        console.log("CustomViewEvent");
+      });
+
+      window.setInterval(RefreshViz, 100000);
+      function RefreshViz(){
+        viz.refreshDataAsync();
+      }
+
+      // Resize a visualization to a size calculated
+      var loop;
+      $( window ).resize(function() {
+        if(loop){
+          clearTimeout(loop);
+        }
+        loop = setTimeout(function(){
+          var width = parseInt($(container).width(), 10) ;
+          var height = parseInt($(container).height(), 10) ;
+          //console.log('resize', elementID, width +' x '+ height);
+          //viz.setFrameSize( width, height);
+        }, 1000);
+      });
+
+      // Get Data
+      // $.each(sheetsList, function(i, s){
+      //   getTableauDataAsync(viz, function(t){
+      //      console.log(t.getTotalRowCount());
+      //   })
+      // });
+
+      // Check loaded
+      loaded();
+    }
+  };
+    viz = new tableau.Viz(container, url, options);
+
+  return viz;
+}
 function getTableauDataAsync(sheet, callback){
   sheet.getUnderlyingDataAsync({
     maxRows: 0,

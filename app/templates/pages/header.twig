@@ -39,13 +39,14 @@ gtag('config', 'UA-128966130-1');
 		<!-- Application config parameters -->
 		<script type="text/javascript">
 			var appConfig = {
-production: {{ appConfig.production |json_encode() }},
-tableauView: '{{ appConfig.tableauView }}',
-hostOrigin: '{{ hostOrigin }}',
-entitySelected: '{{ entitySelected }}',
-yearSelected: '{{ yearSelected }}',
-forceRefresh: {{ forceRefresh |json_encode() }}
-};
+                 production: {{ appConfig.production |json_encode() }},
+                 tableauView: '{{ appConfig.tableauView }}',
+                 tableauViewNew: '{{ appConfig.tableauViewNew }}',
+                 hostOrigin: '{{ hostOrigin }}',
+                 entitySelected: '{{ entitySelected }}',
+                 yearSelected: '{{ yearSelected }}',
+                 forceRefresh: {{ forceRefresh |json_encode() }}
+			};
 		</script>
 	</head>
 	<body class="dashboardBody">
