@@ -21,7 +21,7 @@ function init() {
 
   vizInitialited = [];
   $.each(vizDataArray, function (i, data) {
-    vizInitialited.push(createTableauViz(data.elementID, data.view, SECTION, [onSelectWorkSheet]))
+    vizInitialited.push(createTableauVizNew(data.elementID, data.view, SECTION, [onSelectWorkSheet]))
   });
 
 }

@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-Home-DB";
+var SECTION = "AR-HOME-DB";
 
 // Filters
 var FILTER_COUNTRY = "Country Name -To use";
@@ -27,7 +27,7 @@ function init() {
 
   vizInitialited = [];
   $.each(vizDataArray, function (i, data) {
-    vizInitialited.push(createTableauViz(data.elementID, data.view, SECTION, [onSelectWorkSheet]))
+    vizInitialited.push(createTableauVizNew(data.elementID, data.view, SECTION, [onSelectWorkSheet]))
   });
 
 }
