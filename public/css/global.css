@@ -450,6 +450,16 @@ nav.main-menu ul li.active:after {
     }
 }
 
+@media (max-width: 667px){
+    body .scrolled-header h3 img {
+        display: none;
+    }
+
+    body .scrolled-header {
+        padding-top: 0 !important;
+    }
+}
+
 @media (max-width: 456px) {
     h3 img {
         width: 40px;
