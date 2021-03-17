@@ -104,7 +104,13 @@
     }
 }
 
-@media (max-width: 667px){
+@media (max-width: 811px) and (min-width: 460px){
+    body .filter-position {
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 812px){
     body {
         overflow-x: hidden !important;
     }
