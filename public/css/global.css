@@ -414,11 +414,11 @@ nav.main-menu ul li.active:after {
 }
 
 .scrolled-header {
-    height: 50px;
+    height: 60px;
     position: fixed;
     z-index: 1;
-    top: -1px;
-    padding-top: 4px;
+    top: 0px;
+    padding-top: 8px;
     border-bottom: 1px solid rgba(131, 131, 131, 0.075);
 }
 

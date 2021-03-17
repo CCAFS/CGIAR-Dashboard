@@ -66,3 +66,40 @@
 .home-V2-charts {
     height: 770px;
 }
+
+@media (max-width: 1024px) {
+    body {
+        overflow-x: hidden !important;
+    }
+
+    body .badge {
+        font-size: 0.875rem;
+    }
+
+    body .col-md-2 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    body .col-md-10 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    body nav.main-menu ul li {
+        font-size: 0.875rem !important;
+    }
+
+    body nav.main-menu ul li a {
+        padding: 7px 27px !important;
+    }
+
+    body svg { 
+        width: 25px !important;
+        height: 25px !important;
+    }
+}
