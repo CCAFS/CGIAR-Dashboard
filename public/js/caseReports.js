@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-OICR";
+var SECTION = "AR-OICR-mobileview";
 
 //Filters
 

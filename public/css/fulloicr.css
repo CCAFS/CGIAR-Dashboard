@@ -104,12 +104,6 @@
     }
 }
 
-@media (max-width: 811px) and (min-width: 460px){
-    body .filter-position {
-        margin-top: 0 !important;
-    }
-}
-
 @media (max-width: 812px){
     body {
         overflow-x: hidden !important;
@@ -146,5 +140,29 @@
 
     body .filter-component .filter-title {
         margin-left: 5px;
+    }
+}
+
+@media (max-width: 811px) and (min-width: 460px){
+    body .filter-position {
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 667px){
+    body .filter-position {
+        margin-top: 70px !important;
+    }
+
+    body h3 img{
+        width: 50px !important;
+        margin-top: 20px;
+        right: 42%;
+    }
+}
+
+@media (min-width: 500px) and (min-width: 600px){
+    body .pageheader-wrapper {
+        height: 38% !important;
     }
 }

@@ -431,7 +431,7 @@ nav.main-menu ul li.active:after {
 }
 
 .scrolled-header .filter-component {
-    margin-top: 5px;
+    margin-top: 5px !important;
 }
 
 @media (max-width: 1199px) {
@@ -442,6 +442,16 @@ nav.main-menu ul li.active:after {
         font-size: 0.7rem;
     }
 
+}
+
+@media (max-width: 1024px) {
+    body .scrolled-header h3 img {
+        display: none;
+    }
+
+    body .scrolled-header {
+        padding-top: 4px !important;
+    }
 }
 
 @media (max-width: 991px) {
