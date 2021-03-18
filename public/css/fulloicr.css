@@ -161,7 +161,7 @@
     }
 }
 
-@media (min-width: 500px) and (min-width: 600px){
+@media (min-width: 500px) and (min-width: 740px){
     body .pageheader-wrapper {
         height: 38% !important;
     }
