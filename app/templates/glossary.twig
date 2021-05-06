@@ -1,0 +1,67 @@
+{% set pageParams = {
+    'title': 'Capacity Development | CGIAR Program Results Dashboard',
+    'customCSS': [
+      'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
+      'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
+      './css/customInputsFlat.css?20210506a',
+      './css/sideMenu.css?20210506a',
+      './css/global.css?20210506a',
+      './css/glossary.css?20210506a'
+    ],
+    'customJS': [
+      "./js/glossary.js?20210506a",
+      "./js/sideMenu.js?20210506a"
+    ]
+  }
+%}
+
+{% include './pages/header.twig' with pageParams %}
+
+<div class="container-fluid">
+    <!-- Filters -->
+    {% if embed %}
+      <div class="row justify-content-center">
+      hola
+        <div class="col-auto" style="display:{{ displayNav ? 'block' : 'none' }}"></div>
+        <div class="col-auto">{% include './pages/filters.twig' with pageParams %}</div>
+      </div>
+    {% endif %}
+    <div class="row justify-content-center">
+        <div class="col-md-2" style="display:{{ displayNav ? 'block' : 'none' }}">
+        {% include './pages/side-menu.twig' with pageParams %}
+    </div>
+    <div class="col-md-10" {% if displayNav==false %}style="padding-left: 0!important"{% endif %}>
+    <div class="main-content">
+    <button class="navbar-toggler" type="button" style="display:none">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    {% include './pages/message.twig' %}
+
+    <div class="mb-4">
+      <h6 class="section-title">Glossary</h6>
+      <p class="section-description">Use this glossary to understand some terms.</p>
+      <iframe width="100%" height="100%"  frameBorder="0" src="images/svg-interactive.svg"></iframe>
+      <div class="tableWrapper">
+          <table>
+            <tr>
+                <th class="termColumn">Term</th>
+                <th>Definition</th>
+            </tr>
+            <tr>
+                <td class="termColumn">The Sphere of Control</td>
+                <td>The direct products of CGIAR research.</td>
+            </tr>
+            <tr>
+                <td class="termColumn">Outcomes</td>
+                <td>A change in knowledge, skills, attitudes and/or relationships, manifest as a change in behavior, to which research outputs and related activities have contributed.</td>
+            </tr>
+            <tr>
+                <td class="termColumn">Evaluation</td>
+                <td>The systematic and objective assessment of an on‐going or completed project, program or policy, its design, implementation and results. In the CGIAR evaluation refers to an external, completely (IEA commissioned) or largely (CRP commissioned) independent and systematic study of an in‐depth nature that uses clear evaluation criteria. In addition to research, it applies also to central CGIAR institutions, support programs and themes, and the System as a whole. An evaluation should provide information that is credible and useful, enabling the incorporation of lessons learned into the decision‐making processes of major stakeholders.</td>
+            </tr>
+          </table>
+      </div>
+    </div>
+    
+{% include './pages/footer.twig'  with pageParams %}

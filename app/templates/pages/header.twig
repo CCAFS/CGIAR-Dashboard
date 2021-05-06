@@ -71,9 +71,11 @@ gtag('config', 'UA-128966130-1');
 										<span>CGIAR Program Results Dashboard</span>
 									</h3>
 								</div>
-								<div class="col-auto">
-									{% include './pages/filters.twig' with pageParams %}
-								</div>
+								{% if not glossarySection %}
+									<div class="col-auto">
+										{% include './pages/filters.twig' with pageParams %}
+									</div>
+								{% endif %}
 							</div>
 						</div>
 					</div>
