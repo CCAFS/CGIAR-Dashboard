@@ -1,11 +1,10 @@
-// <script xlink:href="js/snap.svg-min.js" />
-// <script xlink:href="js/main.js" />
 window.onload = function () {
     console.log('Snap')
     var snp = Snap('#svg-interactive');
 
     //     /**** spheres *****/
 
+    var sphere_title_1 = snp.select('#tl_1');
     var sphere_red_bg = snp.select('#sphere_red_bg');
     var sphere_yellow_bg = snp.select('#sphere_yellow_bg');
     var sphere_white_bg = snp.select('#sphere_white_bg');
@@ -175,6 +174,10 @@ window.onload = function () {
     * 
     * PhD trainees
     */
+
+    sphere_title_1.hover(function () {
+        this.attr({ style: 'cursor: pointer' });
+    });
 
     trainees_group.hover(function () {
         this.attr({ style: 'cursor: pointer' });

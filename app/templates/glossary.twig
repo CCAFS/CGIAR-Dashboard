@@ -6,11 +6,12 @@
       './css/customInputsFlat.css?20210506a',
       './css/sideMenu.css?20210506a',
       './css/global.css?20210506a',
-      './css/glossary.css?20210506a'
+      './css/glossary.css?20210511a'
     ],
     'customJS': [
-      "./js/glossary.js?20210506a",
-      "./js/sideMenu.js?20210506a"
+      'https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.3/jquery.csv.min.js',
+      './js/glossary.js?20210511a',
+      './js/sideMenu.js?20210506a',
     ]
   }
 %}
@@ -41,25 +42,15 @@
     <div class="mb-4">
       <h6 class="section-title">Glossary</h6>
       <p class="section-description">Use this glossary to understand some terms.</p>
-      <iframe width="100%" height="100%"  frameBorder="0" src="images/svg-interactive.svg"></iframe>
+      <iframe id="svg-iframe" width="100%" height="100%"  frameBorder="0" src="images/svg-interactive.svg"></iframe>
       <div class="tableWrapper">
           <table>
-            <tr>
-                <th class="termColumn">Term</th>
-                <th>Definition</th>
-            </tr>
-            <tr>
-                <td class="termColumn">The Sphere of Control</td>
-                <td>The direct products of CGIAR research.</td>
-            </tr>
-            <tr>
-                <td class="termColumn">Outcomes</td>
-                <td>A change in knowledge, skills, attitudes and/or relationships, manifest as a change in behavior, to which research outputs and related activities have contributed.</td>
-            </tr>
-            <tr>
-                <td class="termColumn">Evaluation</td>
-                <td>The systematic and objective assessment of an on‐going or completed project, program or policy, its design, implementation and results. In the CGIAR evaluation refers to an external, completely (IEA commissioned) or largely (CRP commissioned) independent and systematic study of an in‐depth nature that uses clear evaluation criteria. In addition to research, it applies also to central CGIAR institutions, support programs and themes, and the System as a whole. An evaluation should provide information that is credible and useful, enabling the incorporation of lessons learned into the decision‐making processes of major stakeholders.</td>
-            </tr>
+            <tbody id="termsDefinitionsTable">
+                <tr>
+                    <th class="cellTerm">Term</th>
+                    <th class="cellDef">Definition</th>
+                </tr>
+            </tbody>
           </table>
       </div>
     </div>
