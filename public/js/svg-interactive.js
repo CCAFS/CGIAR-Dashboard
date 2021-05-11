@@ -5,6 +5,8 @@ window.onload = function () {
     //     /**** spheres *****/
 
     var sphere_title_1 = snp.select('#tl_1');
+    var sphere_title_2 = snp.select('#tl_2');
+    var sphere_title_3 = snp.select('#tl_3');
     var sphere_red_bg = snp.select('#sphere_red_bg');
     var sphere_yellow_bg = snp.select('#sphere_yellow_bg');
     var sphere_white_bg = snp.select('#sphere_white_bg');
@@ -166,9 +168,9 @@ window.onload = function () {
         this.attr({ style: 'cursor: default' });
     });
 
-    ly_slo.click(function () {
-        window.open('https://www.cgiar.org/annual-report/performance-report-2019/our-contribution-to-sustainable-development/');
-    });
+    // ly_slo.click(function () {
+    //     window.open('https://www.cgiar.org/annual-report/performance-report-2019/our-contribution-to-sustainable-development/');
+    // });
 
     /***
     * 
@@ -176,6 +178,14 @@ window.onload = function () {
     */
 
     sphere_title_1.hover(function () {
+        this.attr({ style: 'cursor: pointer' });
+    });
+
+    sphere_title_2.hover(function () {
+        this.attr({ style: 'cursor: pointer' });
+    });
+    
+    sphere_title_3.hover(function () {
         this.attr({ style: 'cursor: pointer' });
     });
 
@@ -190,9 +200,9 @@ window.onload = function () {
     });
 
 
-    trainees_group.click(function () {
-        window.open('https://www.cgiar.org/annual-report/performance-report-2019/capacity-development/');
-    });
+    // trainees_group.click(function () {
+    //     window.open('https://www.cgiar.org/annual-report/performance-report-2019/capacity-development/');
+    // });
 
     /**
     * 
@@ -234,9 +244,9 @@ window.onload = function () {
         arrow_publications_almetrics.animate({ transform: 's1,1' }, 700, mina.bounce);
         this.attr({ style: 'cursor: default' });
     });
-    publications_group.click(function () {
-        window.open('https://www.cgiar.org/annual-report/performance-report-2019/peer-reviewed-publications/');
-    })
+    // publications_group.click(function () {
+    //     window.open('https://www.cgiar.org/annual-report/performance-report-2019/peer-reviewed-publications/');
+    // });
 
     /**
     * 
@@ -259,9 +269,9 @@ window.onload = function () {
         this.attr({ style: 'cursor: default' });
     });
 
-    almetrics_bg.click(function () {
-        window.open('https://www.cgiar.org/annual-report/performance-report-2019/altmetric-attention-scores/');
-    })
+    // almetrics_bg.click(function () {
+    //     window.open('https://www.cgiar.org/annual-report/performance-report-2019/altmetric-attention-scores/');
+    // });
 
 
     /**
@@ -294,9 +304,9 @@ window.onload = function () {
 
     });
 
-    milestones_group.click(function () {
-        window.open('https://www.cgiar.org/annual-report/performance-report-2019/milestone-achievements/');
-    })
+    // milestones_group.click(function () {
+    //     window.open('https://www.cgiar.org/annual-report/performance-report-2019/milestone-achievements/');
+    // });
 
 
     /****

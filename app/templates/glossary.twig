@@ -9,8 +9,9 @@
       './css/glossary.css?20210511a'
     ],
     'customJS': [
+      './js/libs/jquery/jquery-3.4.1.min.js',
       'https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.3/jquery.csv.min.js',
-      './js/glossary.js?20210511a',
+      './js/glossary.js?20210511b',
       './js/sideMenu.js?20210506a',
     ]
   }
@@ -46,7 +47,7 @@
       <div class="tableWrapper">
           <table>
             <tbody id="termsDefinitionsTable">
-                <tr>
+                <tr class="headTitles">
                     <th class="cellTerm">Term</th>
                     <th class="cellDef">Definition</th>
                 </tr>
