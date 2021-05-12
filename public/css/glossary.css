@@ -1,0 +1,30 @@
+p {
+    margin: 0;
+}
+
+iframe {
+    display: block;
+    margin: 0 auto 0 12%;
+}
+
+.tableWrapper {
+    width: 100%;
+    /* height: 30%;
+    overflow-y: scroll; */
+}
+table {
+    width: 100%;
+    font-size: 14px;
+    border-collapse: collapse;
+    background-color: white;
+}
+  
+td, th {
+    border: 2px solid #dddddd;
+    text-align: justify;
+    padding: 8px;
+}
+
+.cellTerm {
+    width: 20%;
+}

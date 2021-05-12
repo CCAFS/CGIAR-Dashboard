@@ -28,6 +28,12 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     }
     $forceRefresh = true;
   }
+  $glossarySection = false;
+  if ($currentSection == 'glossary') {
+    $glossarySection = true;
+  } else {
+    $glossarySection = false;
+  }
 
   // Embeding
   $embed = (($request->getQueryParam('embed') == "true")? true : false);
@@ -54,7 +60,8 @@ $app->get('/[{actionName}]', function ($request, $response, $args) {
     'displayNav' => $displayNav,
     'hostOrigin' => $hostOrigin,
     'appConfig' => $settings['appConfig'],
-    'queryParams' => $queryParams
+    'queryParams' => $queryParams,
+    'glossarySection' =>   $glossarySection,
   ]);
   return $response;
 })->setName('homepage');
@@ -70,6 +77,7 @@ $app->get('/widget/main.js', function ($request, $response, $args) {
     if($section['active']){
       $sections[] = $section['action'];
     }
+    
   }
 
   $requestScheme = $this->get('environment')['REQUEST_SCHEME'];

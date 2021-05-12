@@ -29,6 +29,7 @@ class ControlListService {
       array('name' => 'Peer Reviewed Papers',                             'action' => 'publications',         'type' => 'subsection',   'active' => true ),
       array('name' => 'MELIA Studies',                                    'action' => 'MELIA',                'type' => 'section',   'active' => true ),
       array('name' => 'Genebanks',                              'action' => 'genebanks',             'type' => 'section',      'active' => true ),
+      array('name' => 'Glossary',                              'action' => 'glossary',             'type' => 'section',      'active' => true ),
       );
 
 

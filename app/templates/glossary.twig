@@ -1,0 +1,63 @@
+{% set pageParams = {
+    'title': 'Capacity Development | CGIAR Program Results Dashboard',
+    'customCSS': [
+      'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
+      'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
+      './css/customInputsFlat.css?20210506a',
+      './css/sideMenu.css?20210506a',
+      './css/global.css?20210506a',
+      './css/glossary.css?20210512a'
+    ],
+    'customJS': [
+      './js/libs/jquery/jquery-3.4.1.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.3/jquery.csv.min.js',
+      './js/glossary.js?20210512a',
+      './js/sideMenu.js?20210506a',
+    ]
+  }
+%}
+
+{% include './pages/header.twig' with pageParams %}
+
+<div class="container-fluid">
+    <!-- Filters -->
+    {% if embed %}
+      <div class="row justify-content-center">
+      hola
+        <div class="col-auto" style="display:{{ displayNav ? 'block' : 'none' }}"></div>
+        <div class="col-auto">{% include './pages/filters.twig' with pageParams %}</div>
+      </div>
+    {% endif %}
+    <div class="row justify-content-center">
+        <div class="col-md-2" style="display:{{ displayNav ? 'block' : 'none' }}">
+        {% include './pages/side-menu.twig' with pageParams %}
+    </div>
+    <div class="col-md-10" {% if displayNav==false %}style="padding-left: 0!important"{% endif %}>
+    <div class="main-content">
+    <button class="navbar-toggler" type="button" style="display:none">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    {% include './pages/message.twig' %}
+
+    <div class="mb-4">
+      <h6 class="section-title">Glossary</h6>
+      <p class="section-description">Use this glossary to understand some terms.</p>
+      <iframe id="svg-iframe" width="100%" height="600"  frameBorder="0" src="images/svg-interactive.svg"></iframe>
+      <div class="tableWrapper">
+          <table>
+            <tbody id="termsDefinitionsTable">
+                <tr class="headTitles">
+                    <th class="cellTerm">Term</th>
+                    <th class="cellDef">Definition</th>
+                </tr>
+                <tr class="headTitles">
+                  <td class="cellTerm">Term</td>
+                  <td class="cellDef">Definition</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+    
+{% include './pages/footer.twig'  with pageParams %}
