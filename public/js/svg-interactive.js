@@ -20,22 +20,25 @@ window.onload = function () {
 
     var almetrics_bg = snp.select('#ly_almetric');
     var tl_partnertships = snp.select('#tl_partnertships');
+    tl_partnertships.attr({ style: 'cursor: pointer' });
 
     var milestones_group = snp.select('#ly_milestones');
     milestones_group.attr({ style: 'cursor: default' });
 
     var ly_policies = snp.select('#ly_policies');
-    ly_policies.attr({ style: 'cursor: default' });
+    ly_policies.attr({ style: 'cursor: pointer' });
     var ly_innovations = snp.select('#ly_innovations');
-    ly_innovations.attr({ style: 'cursor: default' });
+    ly_innovations.attr({ style: 'cursor: pointer' });
 
     var ly_slo = snp.select('#ly_slo');
+    ly_slo.attr({ style: 'cursor: pointer' });
     var tl_slo = snp.select('#tl_slo');
 
 
     var ly_oicr = snp.select('#ly_oicr');
+    ly_oicr.attr({ style: 'cursor: pointer' });
     var ly_pjts_benfs = snp.select('#ly_ptjs_benfs');
-    ly_pjts_benfs.attr({ style: 'cursor: default' });
+    ly_pjts_benfs.attr({ style: 'cursor: pointer' });
 
     var txt_levels_bg = snp.select('#txt_levels_bg');
 
