@@ -84,7 +84,7 @@
 </style>
 <script xlink:href="../js/libs/snap/snap.svg-min.js"></script>
 <script xlink:href="../js/svg-interactive.js"></script>
-<script></script>
+<script xlink:href="../js/libs/jquery/jquery-3.4.1.min.js"></script>
 <script></script>
 <script></script>
 <script></script>
