@@ -2,6 +2,7 @@ window.onload = function () {
     init();
 }
 
+let count = 0;
 function init() {
     addEvents();
     loadTerms('0');
@@ -22,7 +23,6 @@ function addEvents() {
     const milestones_group = iframeWindow.querySelector('#ly_milestones');
     const ly_oicr = iframeWindow.querySelector('#ly_oicr');
     const almetrics_bg = iframeWindow.querySelector('#ly_almetric');
-    ;
     const ly_policies = iframeWindow.querySelector('#ly_policies');
 
     sphere_title_1.onclick = function () {
@@ -79,6 +79,12 @@ function addEvents() {
 }
 
 function loadTerms(triggerValue) {
+    if (count == 0) {
+        count += 1;
+    } else {
+        // window.location = '#termsDefinitionsTable';
+        window.scrollBy(0, 260);
+    }
     const csv_file_API = './csv/CGIAR Results Dashboard - Glossary - Project Management - Terms and Definitions List.csv';
     const tableWrapper = document.querySelector("#termsDefinitionsTable");
     tableWrapper.innerHTML = "";

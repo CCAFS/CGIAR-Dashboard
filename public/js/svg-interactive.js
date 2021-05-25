@@ -1,8 +1,12 @@
 window.onload = function () {
-    console.log('Snap')
+    // console.log('Snap');
     var snp = Snap('#svg-interactive');
 
     //     /**** spheres *****/
+    var allTerms = snp.selectAll('g');
+    var parent = window.parent.document;
+    var clearFilterButton = parent.querySelector('.clearFilterBtn');
+    $(clearFilterButton).attr({ style: 'cursor: pointer' });
 
     var sphere_title_1 = snp.select('#tl_1');
     var sphere_title_2 = snp.select('#tl_2');
@@ -179,17 +183,35 @@ window.onload = function () {
     * 
     * PhD trainees
     */
+    $(clearFilterButton).click(function () {
+        allTerms.attr({ fill: '' });
+    });
 
     sphere_title_1.hover(function () {
         this.attr({ style: 'cursor: pointer' });
     });
 
+    sphere_title_1.click(function () {
+        allTerms.attr({ fill: '' });
+        this.attr({ fill: 'red' });
+    });
+
     sphere_title_2.hover(function () {
         this.attr({ style: 'cursor: pointer' });
+    });
+
+    sphere_title_2.click(function () {
+        allTerms.attr({ fill: '' });
+        this.attr({ fill: 'white' });
     });
     
     sphere_title_3.hover(function () {
         this.attr({ style: 'cursor: pointer' });
+    });
+
+    sphere_title_3.click(function () {
+        allTerms.attr({ fill: '' });
+        this.attr({ fill: 'white' });
     });
 
     trainees_group.hover(function () {
@@ -202,6 +224,55 @@ window.onload = function () {
         sphere_white_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
     });
 
+    trainees_group.click(function () {
+        allTerms.attr({ fill: '' });
+        this.attr({ fill: 'red' });
+    });
+
+    ly_innovations.click(function () {
+        allTerms.attr({ fill: '' });
+        this.attr({ fill: 'red' });
+    });
+
+    ly_pjts_benfs.click(function () {
+        allTerms.attr({ fill: '' });
+        this.attr({ fill: 'red' });
+    });
+
+    ly_slo.click(function () {
+        allTerms.attr({ fill: '' });
+        this.attr({ fill: 'red' });
+    });
+
+    tl_partnertships.click(function () {
+        allTerms.attr({ fill: '' });
+        this.attr({ fill: 'red' });
+    });
+
+    publications_group.click(function () {
+        allTerms.attr({ fill: '' });
+        this.attr({ fill: 'red' });
+    });
+
+    milestones_group.click(function () {
+        allTerms.attr({ fill: '' });
+        this.attr({ fill: 'red' });
+    });
+
+    ly_oicr.click(function () {
+        allTerms.attr({ fill: '' });
+        this.attr({ fill: 'white' });
+    });
+
+    almetrics_bg.click(function () {
+        allTerms.attr({ fill: '' });
+        this.attr({ fill: 'red' });
+    });
+
+    ly_policies.click(function () {
+        allTerms.attr({ fill: '' });
+        this.attr({ fill: 'white' });
+    });
 
     // trainees_group.click(function () {
     //     window.open('https://www.cgiar.org/annual-report/performance-report-2019/capacity-development/');
