@@ -30,6 +30,7 @@ iframe {
     /* height: 30%;
     overflow-y: scroll; */
 }
+
 table {
     width: 100%;
     font-size: 14px;
@@ -45,4 +46,12 @@ td, th {
 
 .cellTerm {
     width: 20%;
+}
+
+.tableCaption {
+    width: 100%;
+    caption-side: top;
+    font-size: 14px;
+    font-weight: bold;
+    color: #00a0b0;
 }
