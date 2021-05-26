@@ -5,7 +5,7 @@ window.onload = function () {
 let count = 0;
 function init() {
     addEvents();
-    loadTerms('0');
+    loadTerms('0', 'All terms');
 }
 
 function addEvents() {
@@ -26,69 +26,79 @@ function addEvents() {
     const ly_policies = iframeWindow.querySelector('#ly_policies');
 
     sphere_title_1.onclick = function () {
-        loadTerms('1');
+        loadTerms('1', 'Sphere of control');
     };
 
     sphere_title_2.onclick = function () {
-        loadTerms('2');
+        loadTerms('2', 'Sphere of influence');
     };
 
     sphere_title_3.onclick = function () {
-        loadTerms('3');
+        loadTerms('3', 'Sphere of interest');
     };
 
     trainees_group.onclick = function () {
-        loadTerms('4');
+        loadTerms('4', 'People trained, PhD');
     };
 
     ly_innovations.onclick = function () {
-        loadTerms('5');
+        loadTerms('5', 'Innovations');
     };
 
     ly_pjts_benfs.onclick = function () {
-        loadTerms('6');
+        loadTerms('6', 'Projected benefits assessment');
     };
 
     ly_slo.onclick = function () {
-        loadTerms('7');
+        loadTerms('7', 'SLOs');
     };
 
     tl_partnertships.onclick = function () {
-        loadTerms('8');
+        loadTerms('8', 'Partnerships');
     };
 
     publications_group.onclick = function () {
-        loadTerms('9');
+        loadTerms('9', 'Peer reviewed papers');
     };
 
     milestones_group.onclick = function () {
-        loadTerms('10');
+        loadTerms('10', 'Milestones');
     };
 
     ly_oicr.onclick = function () {
-        loadTerms('11');
+        loadTerms('11', 'OICR');
     };
 
     almetrics_bg.onclick = function () {
-        loadTerms('12');
+        loadTerms('12', 'Altmetric');
     };
 
     ly_policies.onclick = function () {
-        loadTerms('13');
+        loadTerms('13', 'Policies');
     };
 }
 
-function loadTerms(triggerValue) {
+function loadTerms(triggerValue, triggerName) {
     if (count == 0) {
         count += 1;
     } else {
         // window.location = '#termsDefinitionsTable';
         window.scrollBy(0, 260);
     }
+
     const csv_file_API = './csv/CGIAR Results Dashboard - Glossary - Project Management - Terms and Definitions List.csv';
+    const table = document.querySelector("table");
     const tableWrapper = document.querySelector("#termsDefinitionsTable");
+    table.innerHTML = "";
     tableWrapper.innerHTML = "";
+    const tableCaption = triggerName;
+    const tableCapEl = document.createElement("caption");
+    tableCapEl.classList.add("tableCaption");
+    tableCapEl.innerHTML = tableCaption;
     tableWrapper.innerHTML = "<tr class='headTitles'><th class='cellTerm'>Term</th><th class='cellDef'>Definition</th></tr>";
+    table.appendChild(tableCapEl);
+    table.appendChild(tableWrapper);
+
     $.ajax({
         type: 'GET',
         url: csv_file_API,

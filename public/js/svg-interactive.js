@@ -193,7 +193,7 @@ window.onload = function () {
 
     sphere_title_1.click(function () {
         allTerms.attr({ fill: '' });
-        this.attr({ fill: 'red' });
+        this.attr({ fill: '#00a0b0' });
     });
 
     sphere_title_2.hover(function () {
@@ -226,37 +226,37 @@ window.onload = function () {
 
     trainees_group.click(function () {
         allTerms.attr({ fill: '' });
-        this.attr({ fill: 'red' });
+        this.attr({ fill: '#00a0b0' });
     });
 
     ly_innovations.click(function () {
         allTerms.attr({ fill: '' });
-        this.attr({ fill: 'red' });
+        this.attr({ fill: '#00a0b0' });
     });
 
     ly_pjts_benfs.click(function () {
         allTerms.attr({ fill: '' });
-        this.attr({ fill: 'red' });
+        this.attr({ fill: '#00a0b0' });
     });
 
     ly_slo.click(function () {
         allTerms.attr({ fill: '' });
-        this.attr({ fill: 'red' });
+        this.attr({ fill: '#00a0b0' });
     });
 
     tl_partnertships.click(function () {
         allTerms.attr({ fill: '' });
-        this.attr({ fill: 'red' });
+        this.attr({ fill: '#00a0b0' });
     });
 
     publications_group.click(function () {
         allTerms.attr({ fill: '' });
-        this.attr({ fill: 'red' });
+        this.attr({ fill: '#00a0b0' });
     });
 
     milestones_group.click(function () {
         allTerms.attr({ fill: '' });
-        this.attr({ fill: 'red' });
+        this.attr({ fill: '#00a0b0' });
     });
 
     ly_oicr.click(function () {
@@ -266,7 +266,7 @@ window.onload = function () {
 
     almetrics_bg.click(function () {
         allTerms.attr({ fill: '' });
-        this.attr({ fill: 'red' });
+        this.attr({ fill: '#00a0b0' });
     });
 
     ly_policies.click(function () {

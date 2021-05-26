@@ -6,12 +6,12 @@
       './css/customInputsFlat.css?20210506a',
       './css/sideMenu.css?20210506a',
       './css/global.css?20210525a',
-      './css/glossary.css?20210520a'
+      './css/glossary.css?20210526b'
     ],
     'customJS': [
       './js/libs/jquery/jquery-3.4.1.min.js',
       'https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.3/jquery.csv.min.js',
-      './js/glossary.js?20210525a',
+      './js/glossary.js?20210526a',
       './js/sideMenu.js?20210506a',
     ]
   }
@@ -43,7 +43,7 @@
       <h6 class="section-title">Glossary</h6>
       <p class="section-description">Use this glossary to understand some terms.</p>
       <iframe id="svg-iframe" width="100%" height="600"  frameBorder="0" src="images/svg-interactive.svg"></iframe>
-      <div class="clearFilterBtn" onclick="loadTerms('0')">CLEAR FILTER</div>
+      <div class="clearFilterBtn" onclick="loadTerms('0', 'All terms')">CLEAR FILTER</div>
       <div class="tableWrapper">
           <table>
             <tbody id="termsDefinitionsTable">
