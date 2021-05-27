@@ -82,8 +82,7 @@ function loadTerms(triggerValue, triggerName) {
     if (count == 0) {
         count += 1;
     } else {
-        // window.location = '#termsDefinitionsTable';
-        window.scrollBy(0, 260);
+        window.location = '#termsDefinitionsTable';
     }
 
     const csv_file_API = './csv/CGIAR Results Dashboard - Glossary - Project Management - Terms and Definitions List.csv';
