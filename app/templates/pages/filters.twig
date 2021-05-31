@@ -14,7 +14,7 @@
     <p id="filtertitlec" class="filter-title portfolio">{{ entitySelected|default('Research Programs') }}</p>
     <ul class="filter-items items-programs">
       {% for crp in crps %}
-        <li> <small> {{ forms.checkmark('crps', crp.acronym , crp.name, (crp.acronym == entitySelected)) }} </small>  </li>
+        <li> {{ forms.checkmark('crps', crp.acronym , crp.name, (crp.acronym == entitySelected)) }}  </li>
       {% endfor %}
     </ul>
   </div>

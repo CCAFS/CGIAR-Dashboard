@@ -20,13 +20,25 @@ window.onload = function () {
 
     var bg_publications = snp.select('#bg_publications');
     var publications_group = snp.select('#ly_publications');
+    var icon_publications = snp.select('#icon_publications');
+    var ic_publications = snp.select('#ic_publications');
+    var ic_publications_bg = snp.select('#ic_publications_bg');
     publications_group.attr({ style: 'cursor: default' });
 
     var almetrics_bg = snp.select('#ly_almetric');
+    var icon_altmetric = snp.select('#icon_altmetric');
+    var ic_altmetric = snp.select('#ic_altmetric');
+    var ic_altmetric_bg = snp.select('#ic_altmetric_bg');
     var tl_partnertships = snp.select('#tl_partnertships');
+    var icon_partnerships = snp.select('#icon_partnerships');
+    var ic_partnerships = snp.select('#ic_partnerships_1_');
+    var ic_partnerships_bg = snp.select('#ic_partnerships_bg_1_');
     tl_partnertships.attr({ style: 'cursor: pointer' });
 
     var milestones_group = snp.select('#ly_milestones');
+    var icon_milestones = snp.select('#icon_milestones');
+    var ic_milestones = snp.select('#ic_milestones');
+    var ic_milestones_bg = snp.select('#ic_milestones_bg');
     milestones_group.attr({ style: 'cursor: default' });
 
     var ly_policies = snp.select('#ly_policies');
@@ -37,7 +49,9 @@ window.onload = function () {
     var ly_slo = snp.select('#ly_slo');
     ly_slo.attr({ style: 'cursor: pointer' });
     var tl_slo = snp.select('#tl_slo');
-
+    var icon_slo = snp.select('#icon_slo');
+    var ic_slo = snp.select('#ic_slo');
+    var ic_slo_bg = snp.select('#ic_slo_bg');
 
     var ly_oicr = snp.select('#ly_oicr');
     ly_oicr.attr({ style: 'cursor: pointer' });
@@ -468,11 +482,84 @@ window.onload = function () {
     });
 
     icon_innovations.click(function () {
-        window.open('https://www.cgiar.org/annual-report/performance-report-2019/innovations/');
+        window.open("../innovations");
+        // window.open('https://www.cgiar.org/annual-report/performance-report-2019/innovations/');
     });
 
+    icon_slo.hover(function () {
+        allCirclesClose();
+        this.attr({ style: 'cursor: pointer' });
+        ic_slo_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
+        ic_slo.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
+    }, function () {
+        this.attr({ style: 'cursor: default' });
+        ic_slo.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
+        unanimateCircles(ic_slo_bg);
+    });
 
+    icon_slo.click(function () {
+        window.open("../systemLevelOutcomes");
+    });
 
+    icon_altmetric.hover(function () {
+        allCirclesClose();
+        this.attr({ style: 'cursor: pointer' });
+        ic_altmetric_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
+        ic_altmetric.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
+    }, function () {
+        this.attr({ style: 'cursor: default' });
+        ic_altmetric.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
+        unanimateCircles(ic_altmetric_bg);
+    });
+
+    icon_altmetric.click(function () {
+        window.open("../altmetric");
+    });
+
+    icon_milestones.hover(function () {
+        allCirclesClose();
+        this.attr({ style: 'cursor: pointer' });
+        ic_milestones_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
+        ic_milestones.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
+    }, function () {
+        this.attr({ style: 'cursor: default' });
+        ic_milestones.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
+        unanimateCircles(ic_milestones_bg);
+    });
+
+    icon_milestones.click(function () {
+        window.open("../milestones");
+    });
+
+    icon_publications.hover(function () {
+        allCirclesClose();
+        this.attr({ style: 'cursor: pointer' });
+        ic_publications_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
+        ic_publications.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
+    }, function () {
+        this.attr({ style: 'cursor: default' });
+        ic_publications.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
+        unanimateCircles(ic_publications_bg);
+    });
+
+    icon_publications.click(function () {
+        window.open("../publications");
+    });
+
+    icon_partnerships.hover(function () {
+        allCirclesClose();
+        this.attr({ style: 'cursor: pointer' });
+        ic_partnerships_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
+        ic_partnerships.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
+    }, function () {
+        this.attr({ style: 'cursor: default' });
+        ic_partnerships.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
+        unanimateCircles(ic_partnerships_bg);
+    });
+
+    icon_partnerships.click(function () {
+        window.open("../partnerships");
+    });
 
     stage1_innovations_group.hover(function () {
         chnStroke([bg_stage1_innovations], { width: '3' })
@@ -684,7 +771,8 @@ window.onload = function () {
     });
 
     icon_oicr.click(function () {
-        window.open('https://www.cgiar.org/annual-report/performance-report-2019/outcome-impact-case-reports/');
+        window.open("../caseReports");
+        // window.open('https://www.cgiar.org/annual-report/performance-report-2019/outcome-impact-case-reports/');
     });
 
 
@@ -881,7 +969,8 @@ window.onload = function () {
     });
 
     icon_policies.click(function () {
-        window.open('https://www.cgiar.org/annual-report/performance-report-2019/policies/');
+        window.open("../policies");
+        // window.open('https://www.cgiar.org/annual-report/performance-report-2019/policies/');
     });
 
     ly_policies.hover(function () {

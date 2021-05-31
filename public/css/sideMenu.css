@@ -22,6 +22,18 @@
       margin-left: 2px !important;
   }
 
+  .mr-1 {
+    margin-right: 0!important;
+  }
+
+  .sectionAction-home {
+    border-radius: 0;
+  }
+
+  .sectionAction-glossary {
+    border-radius: 0;
+  }
+
 }
 
 .menu-section, .menu-title {
@@ -36,10 +48,18 @@
 svg {
     width: 25px;
     height: 25px;
-    fill: #FFA600;
+    fill: #00a0b0;
     vertical-align: text-top;
     display: inline-block;
-    margin-left: 10px
+    margin-left: 5px;
+}
+
+.sectionAction-home {
+    border-radius: 5px 5px 0 0;
+}
+
+.sectionAction-glossary {
+    border-radius: 0 0 5px 5px;
 }
 
 /*.svg-interactive{
