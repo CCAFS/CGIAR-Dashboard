@@ -102,6 +102,14 @@
         width: 25px !important;
         height: 25px !important;
     }
+
+    .sectionAction-home {
+        border-radius: 0;
+      }
+    
+    .sectionAction-glossary {
+        border-radius: 0;
+    }
 }
 
 @media (max-width: 667px){
