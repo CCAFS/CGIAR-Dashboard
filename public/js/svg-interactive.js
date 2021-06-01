@@ -21,24 +21,24 @@ window.onload = function () {
     var bg_publications = snp.select('#bg_publications');
     var publications_group = snp.select('#ly_publications');
     var icon_publications = snp.select('#icon_publications');
-    var ic_publications = snp.select('#ic_publications');
+    var ic_publications = snp.select('#ic_publications_1_');
     var ic_publications_bg = snp.select('#ic_publications_bg');
     publications_group.attr({ style: 'cursor: default' });
 
     var almetrics_bg = snp.select('#ly_almetric');
-    var icon_altmetric = snp.select('#icon_altmetric');
-    var ic_altmetric = snp.select('#ic_altmetric');
-    var ic_altmetric_bg = snp.select('#ic_altmetric_bg');
+    var icon_altmetric = snp.select('#icon_altmetric_1_');
+    var ic_altmetric = snp.select('#ic_altmetric_1_');
+    var ic_altmetric_bg = snp.select('#ic_altmetric_bg_1_');
     var tl_partnertships = snp.select('#tl_partnertships');
     var icon_partnerships = snp.select('#icon_partnerships');
-    var ic_partnerships = snp.select('#ic_partnerships_1_');
+    var ic_partnerships = snp.select('#ic_partnerships');
     var ic_partnerships_bg = snp.select('#ic_partnerships_bg_1_');
     tl_partnertships.attr({ style: 'cursor: pointer' });
 
     var milestones_group = snp.select('#ly_milestones');
-    var icon_milestones = snp.select('#icon_milestones');
-    var ic_milestones = snp.select('#ic_milestones');
-    var ic_milestones_bg = snp.select('#ic_milestones_bg');
+    var icon_milestones = snp.select('#icon_milestones_1_');
+    var ic_milestones = snp.select('#ic_milestones_1_');
+    var ic_milestones_bg = snp.select('#ic_milestones_bg_1_');
     milestones_group.attr({ style: 'cursor: default' });
 
     var ly_policies = snp.select('#ly_policies');
@@ -49,9 +49,9 @@ window.onload = function () {
     var ly_slo = snp.select('#ly_slo');
     ly_slo.attr({ style: 'cursor: pointer' });
     var tl_slo = snp.select('#tl_slo');
-    var icon_slo = snp.select('#icon_slo');
-    var ic_slo = snp.select('#ic_slo');
-    var ic_slo_bg = snp.select('#ic_slo_bg');
+    var icon_slo = snp.select('#icon_slo_1_');
+    var ic_slo = snp.select('#ic_slo_1_');
+    var ic_slo_bg = snp.select('#ic_slo_bg_1_');
 
     var ly_oicr = snp.select('#ly_oicr');
     ly_oicr.attr({ style: 'cursor: pointer' });
@@ -63,9 +63,9 @@ window.onload = function () {
     var ly_innovations_txts = snp.select('#ly_innovations_txts');
     var bg_innovations_txts = snp.select('#bg_innovations_txts');
     var bg_innovations = snp.select('#bg_innovations');
-    var icon_innovations = snp.select('#icon_innovations');
-    var ic_innovations = snp.select('#ic_innovations');
-    var ic_innovations_bg = snp.select('#ic_innovations_bg');
+    var icon_innovations = snp.select('#icon_innovations_1_');
+    var ic_innovations = snp.select('#ic_innovations_1_');
+    var ic_innovations_bg = snp.select('#ic_innovations_bg_1_');
 
     var bg_stage1_innovations = snp.select('#bg_stage1_innovations');
     var tl_stage1_innovations = snp.select('#tl_stage1_innovations');
@@ -99,9 +99,9 @@ window.onload = function () {
 
 
     var bg_oicr = snp.select('#bg_oicr');
-    var icon_oicr = snp.select('#icon_oicr');
-    var ic_oicr = snp.select('#ic_oicr');
-    var ic_oicr_bg = snp.select('#ic_oicr_bg');
+    var icon_oicr = snp.select('#icon_oicr_1_');
+    var ic_oicr = snp.select('#ic_oicr_1_');
+    var ic_oicr_bg = snp.select('#ic_oicr_bg_1_');
     var ly_oicr_txts = snp.select('#ly_oicr_txts');
     var bg_oicr_txts = snp.select('#bg_oicr_txts');
 
@@ -129,9 +129,9 @@ window.onload = function () {
     var txt_level3_oicr = snp.select('#txt_level3_oicr');
 
     var bg_policies = snp.select('#bg_policies');
-    var icon_policies = snp.select('#icon_policies');
-    var ic_policies = snp.select('#ic_policies');
-    var ic_policies_bg = snp.select('#ic_policies_bg');
+    var icon_policies = snp.select('#icon_policies_1_');
+    var ic_policies = snp.select('#ic_policies_1_');
+    var ic_policies_bg = snp.select('#ic_policies_bg_1_');
     var ly_policies_txts = snp.select('#ly_policies_txts');
     var bg_policies_txts = snp.select('#bg_policies_txts');
 

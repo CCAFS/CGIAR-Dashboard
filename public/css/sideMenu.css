@@ -8,7 +8,7 @@
 
 @media (max-width: 1320px){
   nav.main-menu ul li {
-      font-size: 0.56rem !important;
+      font-size: 0.7rem !important;
   }
 
   nav.main-menu ul li a {
@@ -17,23 +17,17 @@
   }
 
   svg {
-      width: 15px !important;
-      height: 15px !important;
-      margin-left: 2px !important;
+      width: 20px !important;
+      height: 20px !important;
   }
+}
 
-  .mr-1 {
-    margin-right: 0!important;
-  }
-
-  .sectionAction-home {
-    border-radius: 0;
-  }
-
-  .sectionAction-glossary {
-    border-radius: 0;
-  }
-
+.nav.sideBar {
+    display: flex;
+    align-items: center;
+    background: #f1f1f1;
+    padding: 10px 0;
+    border-radius: 5px;
 }
 
 .menu-section, .menu-title {
@@ -51,24 +45,7 @@ svg {
     fill: #00a0b0;
     vertical-align: text-top;
     display: inline-block;
-    margin-left: 5px;
 }
-
-.sectionAction-home {
-    border-radius: 5px 5px 0 0;
-}
-
-.sectionAction-glossary {
-    border-radius: 0 0 5px 5px;
-}
-
-/*.svg-interactive{
-    fill: black !important;
-    width: 80%;
-    height: auto;
-    margin: 2% 10%;
-}*/
-
 
 li.active svg {
     fill: #ffffff;
