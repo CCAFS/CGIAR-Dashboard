@@ -3,7 +3,7 @@
   <ul class="nav sideBar flex-column" id="sections">
       {% for section in sections %}
               {% set url %}{% if section.active %}./{{ section.action }}{% else %}#{% endif %}{% if queryParams %}?{{ queryParams }}{% endif %}{% endset %}
-              <li class="{% if currentSection == section.action and section.type != 'title' %}active{% endif %} menu-{{section.type}} nav-item mr-1">
+              <li class="{% if currentSection == section.action and section.type != 'title' %}active{% endif %} menu-{{section.type}} nav-item">
                 <a href="{{ url }}" class="active-{{section.active}} nav-link sectionAction-{{ section.action }}"> 
                   {% if section.type == 'subsection' %}
                     <svg viewBox="0 0 450 360" width="10" height="10">
