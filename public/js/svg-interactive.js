@@ -16,6 +16,9 @@ window.onload = function () {
     var sphere_white_bg = snp.select('#sphere_white_bg');
 
     var trainees_group = snp.select('#ly_ppl_trained');
+    var icon_trainees = snp.select('#icon_ppl');
+    var ic_trainees = snp.select('#ic_ppl');
+    var ic_trainees_bg = snp.select('#ic_ppl_bg');
     trainees_group.attr({ style: 'cursor: default' });
 
     var bg_publications = snp.select('#bg_publications');
@@ -559,6 +562,21 @@ window.onload = function () {
 
     icon_partnerships.click(function () {
         window.open("../partnerships");
+    });
+
+    icon_trainees.hover(function () {
+        allCirclesClose();
+        this.attr({ style: 'cursor: pointer' });
+        ic_trainees_bg.animate({ transform: 's1.5,1.5' }, 700, mina.bounce);
+        ic_trainees.animate({ transform: 't0,0 r360' }, 1000, mina.bounce);
+    }, function () {
+        this.attr({ style: 'cursor: default' });
+        ic_trainees.animate({ transform: 't0,0 r0' }, 1000, mina.bounce);
+        unanimateCircles(ic_trainees_bg);
+    });
+
+    icon_trainees.click(function () {
+        window.open("../capDev");
     });
 
     stage1_innovations_group.hover(function () {
