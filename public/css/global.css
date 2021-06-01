@@ -933,7 +933,22 @@ h6 {
 }
 
 .btn-data:hover{
-  color: #ffffff;
+    color: white;
+    background: #f09c02 url(../images/icons/download-data.png) no-repeat 5px center;
+}
+
+.btn-data2 {
+    float: right;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    background: #ffa600;
+    color: #ffffff;
+}
+
+.btn-data2:hover{
+    color: white;
+    background: #f09c02;
 }
 
 .fyear {
