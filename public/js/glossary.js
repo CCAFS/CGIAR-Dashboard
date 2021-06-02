@@ -85,6 +85,12 @@ function loadTerms(triggerValue, triggerName) {
         window.location = '#termsDefinitionsTable';
     }
 
+    if (triggerValue != '0') {
+        $('.clearFilterBtn').css('display', 'flex');
+    } else {
+        $('.clearFilterBtn').css('display', 'none');
+    }
+
     const csv_file_API = './csv/CGIAR Results Dashboard - Glossary - Project Management - Terms and Definitions List.csv';
     const table = document.querySelector("table");
     const tableWrapper = document.querySelector("#termsDefinitionsTable");
