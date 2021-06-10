@@ -38,7 +38,7 @@ function addEvents() {
     };
 
     trainees_group.onclick = function () {
-        loadTerms('4', 'People trained, PhD');
+        loadTerms('4', 'Capacity Development');
     };
 
     ly_innovations.onclick = function () {
@@ -91,7 +91,7 @@ function loadTerms(triggerValue, triggerName) {
         $('.clearFilterBtn').css('display', 'none');
     }
 
-    const csv_file_API = './csv/CGIAR Results Dashboard - Glossary - Project Management - Terms and Definitions List.csv';
+    const csv_file_API = './csv/CGIAR Results Dashboard 2020 data - Project Management - Terms and Definitions List.csv';
     const table = document.querySelector("table");
     const tableWrapper = document.querySelector("#termsDefinitionsTable");
     table.innerHTML = "";
