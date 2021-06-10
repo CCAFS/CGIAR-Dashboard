@@ -5,7 +5,6 @@
 iframe {
     display: block;
     margin: 0 auto;
-    /* margin: 0 auto 0 12%; */
 }
 
 .clearFilterBtn {
@@ -23,8 +22,6 @@ iframe {
 
 .tableWrapper {
     width: 100%;
-    /* height: 5%;
-    overflow-y: scroll; */
 }
 
 table {
@@ -38,6 +35,7 @@ td, th {
     border: 2px solid #dddddd;
     text-align: justify;
     padding: 8px;
+    /* table-layout: fixed; */
 }
 
 .cellTerm {
@@ -51,3 +49,9 @@ td, th {
     font-weight: bold;
     color: #00a0b0;
 }
+
+/* #termsDefinitionsTable {
+    display: block;
+    height: 500px;
+    overflow-y: scroll;
+} */
