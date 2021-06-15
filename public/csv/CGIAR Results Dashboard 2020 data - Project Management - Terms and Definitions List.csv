@@ -2,11 +2,14 @@ Term,Definition,1,2,3,4,5,6,7,8,9,10,11,12,13
 Partnerships,"Recognized relationships between CGIAR Research Programs (CRPs) and Platforms and other institutions external to CGIAR. In partnerships, partners jointly undertake activities that contribute to each institution’s mandate. A partnership can include multiple partners.",,,,,,,,x,,,,,
 Sphere of control,"Refers to actions under direct control of CGIAR that result in outputs. The sphere of control covers CGIAR research, innovations, services and output delivery.",x,,,,,,,,,,,,
 Outputs,"Knowledge, technical or institutional advancements produced by CGIAR research, engagement and/or capacity development activities. Examples include new research methods, policy analyses, gene maps, new crop varieties and breeds, institutional innovations or other products resulting from research work.",x,,,,,,,,,,,,
+Reporting,"The documentation and communication of CGIAR research, activities and results.",x,,,,,,,,,,,,
 Sphere of influence,"Refers to actions that can be directly influenced by CGIAR, defined as outcomes. The sphere of influence covers outcome research and sub-intermediate development outcomes (sub-IDOs), as defined by the Strategy and Results Framework 2016-2030.",,x,,,,,,,,,,,
 Outcomes,"Changes in knowledge, skills, attitudes and/or relationships, which manifests as a change in behavior, to which research outputs and related activities have contributed.",,x,,,,,,,,,,,
+Evaluations,"Systematic and objective assessments of an on‐going or completed project, program or policy, its design, implementation and results. In CGIAR, evaluation refers to an external, independent and systematic study that uses clear evaluation criteria.",,x,,,,,,,,,,,
 Sphere of interest,"Refers to outcomes and impacts that can only be influenced indirectly by CGIAR. The sphere of interest covers selected intermediate development outcomes (IDOs) and sub-intermediate development outcomes (sub-IDOs), as defined by the Strategy and Results Framework 2016-2030.",,,x,,,,,,,,,,
 Impact,"A durable change in the condition of people and their environment brought about by a chain of events or change in how a system functions to which research, innovations and related activities have contributed. Impacts can be of various types (economic, social, environmental, political, etc.). Impacts are what persist even after a project has ended.",,,,,,x,,,,,,,
-Capacity development,"Activities that develop the know-how and capacity to design, test, validate and use innovations. Examples include training-of-trainers programs at the farmer level; training programs with public and private sector partners; connecting public-private networks; integrating Masters and PhD students into research activities; ongoing institutional support to national partners, particularly NARES; and decision support for policymakers.  ",,,,x,,,,,,,,,
+Impact assessments,Studies that estimate the causal effects of research outputs and related activities and assess the cost of the intervention with the magnitude of impact achieved. They are conducted long after a development intervention has been completed and often measure benefits to a large number of people/large areas of land.,,,,,,x,,,,,,,
+Capacity development,"Activities that develop the know-how and capacity to design, test, validate and use innovations. Examples include training-of-trainers programs at the farmer level; training programs with public and private sector partners; connecting public-private networks; educating PhD students; ongoing institutional support to national partners, particularly NARES; and decision support for policymakers.",,,,x,,,,,,,,,
 Innovations (stages 1-4),"New ideas, products, services or solutions capable of facilitating impact through innovation systems involving multiple partners and enablers. Examples of innovations are new seed varieties, new knowledge frameworks for integrated landscape management, or new training program. There are four stages for innovations.
   
  Stage 1 (end of research): The completion of an initial research stage for an innovation.
@@ -16,8 +19,9 @@ Innovations (stages 1-4),"New ideas, products, services or solutions capable of 
  Stage 3 (available for uptake): An innovation is available to users.
   
  Stage 4 (uptake by next users): An innovation has been adopted and is being used.",,,,,x,,,,,,,,
+Projected benefits assessments,Estimates of the probable impact of streams of CGIAR research.,,,,,,x,,,,,,,
 SLOs,CGIAR’s Strategy and Results Framework 2016-2030 sets out three System Level Outcomes (SLOs): reducing poverty; ensuring food and nutrition security; and improving natural resources and ecosystem services. These are aligned to all 17 United Nations Sustainable Development Goals (SDGs).,,,,,,,x,,,,,,
-Peer-reviewed papers,Research articles which have undergone a process of review involving qualified individuals within a relevant field. Peer review methods are employed to maintain standards of relevance and quality to improve performance and provide credibility. ,x,,,,,,,,x,,,,
+Peer-reviewed papers,Research articles which have undergone a process of review involving qualified individuals within a relevant field. Peer review methods are employed to maintain standards of relevance and quality to improve performance and provide credibility. A peer review process can also include input into an evaluation.,x,,,,,,,,x,,,,
 Milestones,"Time-bound targets that reflect progress towards a planned result. They include outputs and outcomes along impact pathways, as appropriate to the scale and maturity of the work.",,,,,,,,,,x,,,
 OICR (maturity levels 1-3),"Evidence-based reports describing the contribution of CGIAR research to outcomes and impact. Outcome Impact Case Reports (OICRs) can be at three stages of maturity.
   
@@ -27,7 +31,7 @@ OICR (maturity levels 1-3),"Evidence-based reports describing the contribution o
   
  Level 3: An OICR evidenced by robust evidence that shows how the related outcome has been adopted or is having impact at scale. It illustrates how policy and/or practice changes influenced by CGIAR research have led to impacts at scale.",,,,,,,,,,,x,,
 Altmetric Attention Scores,"Reveal the attention given to published research. These scores involve metrics and qualitative data that complement traditional, citation-based metrics.",,,,,,,,,,,,x,
-Policies (levels 1-3),"Policies, legal instruments, investments or curriculum modified in design or implementation, informed by CGIAR research.
+Policies (levels 1-3),"CGIAR research can inform policies, legal instruments, investments or curricula. There are three levels for these.
   
  Level 1: CGIAR research is taken up by next users. For example, a policy, legal instrument, investment or curriculum is under preparation or there are strong indications of a change on the way.
   
