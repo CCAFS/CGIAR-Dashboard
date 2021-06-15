@@ -130,6 +130,7 @@ function loadTerms(triggerValue, triggerName) {
                     rowEl.appendChild(cellTermEl);
                     rowEl.appendChild(cellDefEl);
                     tableWrapper.appendChild(rowEl);
+                    tableWrapper.style.height = '1%';
                 } else if (triggerValue == '0') {
                     term = value['Term'];
                     definition = value['Definition'];
@@ -143,6 +144,7 @@ function loadTerms(triggerValue, triggerName) {
                     rowEl.appendChild(cellTermEl);
                     rowEl.appendChild(cellDefEl);
                     tableWrapper.appendChild(rowEl);
+                    tableWrapper.style.height = '500px';
                 }
             });
         } // end: Ajax success API call
