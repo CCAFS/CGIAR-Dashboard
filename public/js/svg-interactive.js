@@ -58,8 +58,8 @@ window.onload = function () {
 
     var ly_oicr = snp.select('#ly_oicr');
     ly_oicr.attr({ style: 'cursor: pointer' });
-    var ly_pjts_benfs = snp.select('#ly_ptjs_benfs');
-    ly_pjts_benfs.attr({ style: 'cursor: pointer' });
+    // var ly_pjts_benfs = snp.select('#ly_ptjs_benfs');
+    // ly_pjts_benfs.attr({ style: 'cursor: pointer' });
 
     var txt_levels_bg = snp.select('#txt_levels_bg');
 
@@ -167,7 +167,7 @@ window.onload = function () {
 
 
     var arrow_innovations_pjts = snp.select('#arrow_innovations_pjts');
-    var arrow_ptjs_benfs_slo = snp.select('#arrow_pjts_slo');
+    // var arrow_ptjs_benfs_slo = snp.select('#arrow_pjts_slo');
     var arrow_publications_almetrics = snp.select('#arrow_publications_almetric');
     var arrow_milestones_policies = snp.select('#arrow_milestones_policies');
     var arrow_milestones_innovations = snp.select('#arrow_milestones_innovations');
@@ -251,10 +251,10 @@ window.onload = function () {
         this.attr({ fill: '#00a0b0' });
     });
 
-    ly_pjts_benfs.click(function () {
-        allTerms.attr({ fill: '' });
-        this.attr({ fill: '#00a0b0' });
-    });
+    // ly_pjts_benfs.click(function () {
+    //     allTerms.attr({ fill: '' });
+    //     this.attr({ fill: '#00a0b0' });
+    // });
 
     ly_slo.click(function () {
         allTerms.attr({ fill: '' });
@@ -404,25 +404,25 @@ window.onload = function () {
     * Project benefits
     */
 
-    ly_pjts_benfs.hover(function () {
-        overElem([this, ly_slo, tl_partnertships]);
-        sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-        sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
-        chnStroke(arrow_ptjs_benfs_slo, { stroke: 'white', width: '3px', opacity: '1' });
+    // ly_pjts_benfs.hover(function () {
+    //     overElem([this, ly_slo, tl_partnertships]);
+    //     sphere_yellow_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+    //     sphere_red_bg.animate({ transform: 's1.1,1' }, 700, mina.bounce);
+    //     chnStroke(arrow_ptjs_benfs_slo, { stroke: 'white', width: '3px', opacity: '1' });
 
-        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1' }, 700, mina.bounce);
-        arrow_innovations_pjts.animate({ transform: 's.9,1' }, 700, mina.bounce);
-        arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
-    }, function () {
-        outElem([this, ly_slo, tl_partnertships]);
-        sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-        sphere_red_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
-        arrow_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-        chnStroke(arrow_ptjs_benfs_slo, { stroke: '#353635', width: '2px', opacity: '0.2' });
+    //     arrow_ptjs_benfs_slo.animate({ transform: 's.8,1' }, 700, mina.bounce);
+    //     arrow_innovations_pjts.animate({ transform: 's.9,1' }, 700, mina.bounce);
+    //     arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
+    // }, function () {
+    //     outElem([this, ly_slo, tl_partnertships]);
+    //     sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //     sphere_red_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //     arrow_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //     chnStroke(arrow_ptjs_benfs_slo, { stroke: '#353635', width: '2px', opacity: '0.2' });
 
-        arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-        arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
-    });
+    //     arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+    //     arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
+    // });
 
     // ly_pjts_benfs.click(function () {
     //     window.open('https://www.cgiar.org/annual-report/performance-report-2019/milestone-achievements/');
@@ -458,7 +458,7 @@ window.onload = function () {
         allCirclesClose();
 
         overElem([this, tl_partnertships]);
-        chnStroke(arrow_ptjs_benfs_slo, { stroke: '#353635', width: '2px', opacity: '0.2' });
+        chnStroke(/*arrow_ptjs_benfs_slo,*/ { stroke: '#353635', width: '2px', opacity: '0.2' });
         chnStroke(arrow_innovations_pjts, { stroke: '#353635', width: '2px', opacity: '0.2' });
 
 
@@ -689,21 +689,21 @@ window.onload = function () {
     });
 
     stage4_innovations_group.hover(function () {
-        overElem([ly_slo, ly_pjts_benfs, ly_oicr]);
-        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1' }, 700, mina.bounce);
+        overElem([ly_slo, /*ly_pjts_benfs,*/ ly_oicr]);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's.8,1' }, 700, mina.bounce);
         arrow_innovations_pjts.animate({ transform: 's.9,1,t-3' }, 700, mina.bounce);
         arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
         arrow_policies_level2_oicr.animate({ transform: 's1,.95,t0,3' }, 700, mina.bounce);
         arrow_policies_level3_oicr.animate({ transform: 's1,.95,t0,3' }, 700, mina.bounce);
         arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
 
-        chnStroke(arrow_ptjs_benfs_slo, { stroke: 'white', width: '3px', opacity: '1' });
+        // chnStroke(arrow_ptjs_benfs_slo, { stroke: 'white', width: '3px', opacity: '1' });
         chnStroke(arrow_innovations_pjts, { stroke: 'white', width: '3px', opacity: '1' });
         chnStroke(arrow_innovations_stage4_oicr, { stroke: 'white', width: '3px', opacity: '1' });
         chnStroke([bg_stage4_innovations], { width: '3' })
     }, function () {
-        outElem([ly_slo, ly_pjts_benfs, ly_oicr]);
-        arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
+        outElem([ly_slo, /*ly_pjts_benfs,*/ ly_oicr]);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
         arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
         // arrow_innovations_pjts.animate({ transform: 's1,1' }, 700, mina.bounce);
         arrow_innovations_stage4_oicr.animate({ transform: 's1,1' }, 700, mina.bounce);
@@ -711,7 +711,7 @@ window.onload = function () {
         arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
         arrow_policies_level3_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
         arrow_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-
+        chnStroke(arrow_innovations_pjts, { stroke: '#353635', width: '2px', opacity: '0.2' });
         chnStroke(arrow_innovations_stage4_oicr, { stroke: 'white', width: '2px', opacity: '1' });
         chnStroke([bg_stage4_innovations], { stroke: 'white', width: '1' })
     });
@@ -748,7 +748,7 @@ window.onload = function () {
 
         arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
         arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
-        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
         arrow_policies_level2_oicr.animate({ transform: 's1,.95,t0,4' }, 700, mina.bounce);
         arrow_policies_level3_oicr.animate({ transform: 's1,.95,t0,3' }, 700, mina.bounce);
         arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
@@ -823,7 +823,7 @@ window.onload = function () {
         });
 
 
-        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
 
         arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
         arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
@@ -843,7 +843,7 @@ window.onload = function () {
         txt_level1_oicr.animate({ opacity: '0' }, 700, mina.bounce);
         sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
 
-        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
         arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
         arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
         arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
@@ -882,7 +882,7 @@ window.onload = function () {
         });
 
 
-        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
 
         arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
         arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
@@ -903,7 +903,7 @@ window.onload = function () {
         txt_level2_oicr.animate({ opacity: '0' }, 700, mina.bounce);
         sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
 
-        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
         arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
         arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
         arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
@@ -942,7 +942,7 @@ window.onload = function () {
         });
 
 
-        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
 
         arrow_slo.animate({ transform: 't0,7' }, 700, mina.bounce);
         arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
@@ -962,7 +962,7 @@ window.onload = function () {
         txt_level3_oicr.animate({ opacity: '0' }, 700, mina.bounce);
         sphere_yellow_bg.animate({ transform: 's1,1' }, 700, mina.bounce);
 
-        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
         arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
         arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
         arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
@@ -1008,7 +1008,7 @@ window.onload = function () {
         arrow_milestones_policies.animate({ transform: 's1,.85,t15,0' }, 700, mina.bounce);
         arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
         arrow_oicr_slo.animate({ transform: 's.91,1t7,0' }, 700, mina.bounce);
-        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
         arrow_policies_level2_oicr.animate({ transform: 's1,.95,t0,4' }, 700, mina.bounce);
         arrow_policies_level3_oicr.animate({ transform: 's1,.95,t0,4' }, 700, mina.bounce);
         arrow_innovations_stage4_oicr.animate({ transform: 's.9,.9,t0,-5' }, 700, mina.bounce);
@@ -1026,7 +1026,7 @@ window.onload = function () {
         arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
         arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
         arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
         arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
         arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
         arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
@@ -1066,7 +1066,7 @@ window.onload = function () {
         arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
         arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
         arrow_milestones_policies.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
-        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
     });
 
     function policies_level1Out() {
@@ -1088,7 +1088,7 @@ window.onload = function () {
         arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
         arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
         arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
         arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
         arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
         arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
@@ -1126,7 +1126,7 @@ window.onload = function () {
         arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
         arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
         arrow_milestones_policies.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
-        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
     });
 
     function policies_level2Out() {
@@ -1148,7 +1148,7 @@ window.onload = function () {
         arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
         arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
         arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
         arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
         arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
         arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
@@ -1187,7 +1187,7 @@ window.onload = function () {
         arrow_slo.animate({ transform: 't-2,7' }, 700, mina.bounce);
         arrow_policies_slo.animate({ transform: 's.92,1t8' }, 700, mina.bounce);
         arrow_milestones_policies.animate({ transform: 's1,.9t5' }, 700, mina.bounce);
-        arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's.8,1t-5,0' }, 700, mina.bounce);
     });
 
     function policies_level3Out() {
@@ -1209,7 +1209,7 @@ window.onload = function () {
         arrow_slo.animate({ transform: 't0,0' }, 700, mina.bounce);
         arrow_milestones_policies.animate({ transform: 's1,1' }, 700, mina.bounce);
         arrow_policies_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
-        arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
+        // arrow_ptjs_benfs_slo.animate({ transform: 's1,1t0,0' }, 700, mina.bounce);
         arrow_innovations_stage4_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
         arrow_oicr_slo.animate({ transform: 's1,1' }, 700, mina.bounce);
         arrow_policies_level2_oicr.animate({ transform: 's1,1,t0,0' }, 700, mina.bounce);
