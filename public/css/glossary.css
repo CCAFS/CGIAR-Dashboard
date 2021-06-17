@@ -16,8 +16,12 @@ iframe {
     justify-content: center;
     border-radius: 5px;
     color: white;
-    background: #FFA600;
+    background: #2F0C39;
     font-size: 10px;
+}
+
+.clearFilterBtn:hover {
+    background: #501563;
 }
 
 .tableWrapper {
