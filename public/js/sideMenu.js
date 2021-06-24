@@ -1,6 +1,6 @@
 
 $(window).bind("resize", function () {
-    if ($(this).width() < 815) {
+    if ($(this).width() < 1023) {
         $('#sections').removeClass('expanded-menu');
         $('.navbar-toggler').show();
         $('#sections').hide();
