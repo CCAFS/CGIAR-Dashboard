@@ -1,0 +1,85 @@
+.main-menu {
+    width: 55%;
+    height: 806px;
+    background: #2F0C39;
+    border-radius: 50px;
+    transform-style: preserve-3d;
+    z-index: 2;
+}
+
+.nav.sideBar {
+    padding: 25px 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 5px 9.5px;
+}
+
+.side-menu {
+    display: flex;
+    flex-flow: row;
+}
+
+.optionSelected {
+    display: none;
+    height: 41.98px;;
+    width: 5px;
+    position: absolute;
+    right: 0;
+    background: #F1F1F1;
+}
+
+.optionSelected.active {
+    display: block;
+}
+
+svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+    fill: #00a0b0;
+}
+
+.drop-down-menu {
+    display: none;
+    position: absolute;
+    left: 25px;
+    width: auto;
+    background: #F1F1F1;
+    border-radius: 20px;
+    box-shadow: 6px 5px 10px 0px rgb(0 0 0 / 20%);
+    transition: all ease .5s;
+    opacity: 0;
+    transform: translateZ(-10px);
+    z-index: 1;
+}
+
+.drop-nav-link {
+    display: block;
+    height: 41.98px;
+    padding: 9px 15px 9.5px 45px;
+    font-size: 14px;
+    color: black;
+    white-space: nowrap;
+    text-decoration: none !important;
+}
+
+.drop-nav-link:hover {
+    color: black;
+    background: #E4E4E4;
+}
+
+.main-menu:hover .drop-down-menu, .main-menu:hover ~ .drop-down-menu {
+    display: block !important;
+    opacity: 1;
+}
+
+.subsection-name {
+    margin-left: 20px;
+}
+
+.tile-section-name {
+    font-weight: bold;
+}

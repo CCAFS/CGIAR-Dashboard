@@ -1,0 +1,34 @@
+{% include './pages/menu-icons.twig' with pageParams %}
+<div class="main-menu" style="display:{{ displayNav ? 'flex' : 'none' }}; justify-content: center;">
+  <ul class="nav sideBar flex-column" id="sections">
+    {% for section in sections %}
+      {% set url %}{% if section.active %}./{{ section.action }}{% else %}#{% endif %}{% if queryParams %}?{{ queryParams }}{% endif %}{% endset %}
+        <li class="side-menu{% if currentSection == section.action and section.type != 'title' %} active{% endif %} menu-{{section.type}} nav-item">
+          <a href="{{ url }}" class="active-{{section.active}} nav-link sectionAction-{{ section.action }}"> 
+            {% if section.type == 'subsection' %}
+              <svg x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                <use href="#icon-{{section.action}}"></use>
+              </svg> 
+            {% else %}
+              <svg x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                <use href="#icon-title"></use>
+              </svg> 
+            {% endif %} 
+          </a>
+          <div class="optionSelected{% if currentSection == section.action and section.type != 'title' %} active{% endif %}"></div>
+        </li>
+      {% endfor %}
+  </ul>
+  <div class="drop-down-menu">
+  <ul class="nav sideBar flex-column" id="sections">
+    {% for section in sections %}
+      {% set url %}{% if section.active %}./{{ section.action }}{% else %}#{% endif %}{% if queryParams %}?{{ queryParams }}{% endif %}{% endset %}
+        <li class="{% if currentSection == section.action and section.type != 'title' %}drop-active{% endif %} menu-{{section.type}} nav-item">
+          <a href="{{ url }}" class="active-{{section.active}} drop-nav-link sectionAction-{{ section.action }} {% if section.type == 'subsection' %} subsection-name{% else %} tile-section-name{% endif %}"> 
+            {{ section.name }}
+          </a>
+        </li>
+      {% endfor %}
+  </ul>
+</div>
+</div>
