@@ -127,6 +127,7 @@ function loadTerms(triggerValue, triggerName) {
                     cellDefEl.classList.add("cellDef");
                     cellTermEl.innerHTML = term;
                     cellDefEl.innerHTML = definition;
+                    cellTermEl.style.fontWeight = 'bold';
                     rowEl.appendChild(cellTermEl);
                     rowEl.appendChild(cellDefEl);
                     tableWrapper.appendChild(rowEl);
@@ -141,6 +142,7 @@ function loadTerms(triggerValue, triggerName) {
                     cellDefEl.classList.add("cellDef");
                     cellTermEl.innerHTML = term;
                     cellDefEl.innerHTML = definition;
+                    cellTermEl.style.fontWeight = 'bold';
                     rowEl.appendChild(cellTermEl);
                     rowEl.appendChild(cellDefEl);
                     tableWrapper.appendChild(rowEl);
