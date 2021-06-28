@@ -16,7 +16,7 @@ function addEvents() {
     const sphere_title_3 = iframeWindow.querySelector('#tl_3');
     const trainees_group = iframeWindow.querySelector('#ly_ppl_trained');
     const ly_innovations = iframeWindow.querySelector('#ly_innovations');
-    // const ly_pjts_benfs = iframeWindow.querySelector('#ly_ptjs_benfs');
+    const ly_pjts_benfs = iframeWindow.querySelector('#ly_ptjs_benfs');
     const ly_slo = iframeWindow.querySelector('#ly_slo');
     const tl_partnertships = iframeWindow.querySelector('#tl_partnertships');
     const publications_group = iframeWindow.querySelector('#ly_publications');
@@ -45,9 +45,9 @@ function addEvents() {
         loadTerms('5', 'Innovations');
     };
 
-    // ly_pjts_benfs.onclick = function () {
-    //     loadTerms('6', 'Projected benefits assessment');
-    // };
+    ly_pjts_benfs.onclick = function () {
+        loadTerms('6', 'Projected benefits assessment');
+    };
 
     ly_slo.onclick = function () {
         loadTerms('7', 'SLOs');
