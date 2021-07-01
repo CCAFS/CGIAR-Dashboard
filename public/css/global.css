@@ -131,7 +131,7 @@ nav.main-menu ul li {
 
 nav.main-menu ul li a {
     padding: 7px 10px !important;
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -141,7 +141,7 @@ nav.main-menu ul li a.active- {
 }
 
 nav.main-menu ul li:hover a {
-    background: #e4e4e4;
+    background: #501563;
     border-radius: 5px;
 }
 
@@ -173,6 +173,7 @@ nav.main-menu ul li.active:after {
     background: #f1f1f1;
     min-height: 550px;
     padding: 15px 27px;
+    border-radius: 5px;
     font-family: 'Open Sans', sans-serif;
 }
 

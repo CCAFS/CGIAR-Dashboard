@@ -1,7 +1,7 @@
 @media (min-width: 1513px){
     .expanded-menu {
             max-width: 220px;
-            position: fixed;
+            /* position: fixed; */
             margin-left: 2%;
     }
 }
@@ -25,7 +25,7 @@
 .nav.sideBar {
     display: flex;
     align-items: center;
-    background: #f1f1f1;
+    background: #2F0C39;
     padding: 10px 0;
     border-radius: 5px;
 }
@@ -43,10 +43,9 @@ svg {
     width: 25px;
     height: 25px;
     fill: #00a0b0;
+    margin-right: 15px;
+    background: white;
+    border-radius: 50%;
     vertical-align: text-top;
     display: inline-block;
-}
-
-li.active svg {
-    fill: #ffffff;
 }
