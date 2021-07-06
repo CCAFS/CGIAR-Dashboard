@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-Publications";
+var SECTION = "AR-Publications-TEST";
 
 var FILTER_STAGE = "Stage of Innovation";
 var FILTER_TYPE = "Innovation Types";
