@@ -9,12 +9,13 @@ var FILTER_OA = "Is Open Access-Pie";
 var FILTER_ISI= "Is Isi Journal -Pie";
 var FILTER_TOTAL = "Total Publications";
 var FILTER_JOURNAL = "JOURNAL (copy) (group)";
+var FILTER_LIST = "Name (Dim Ext Partners)";
 
-var TP_SHEET = "5.1 SH Total Papers";
-var OA_SHEET = "Paper OA Dount chart";
-var ISI_SHEET = "Paper ISI Dount chart ";
-var JOURNALS_SHEET = "5.4 SH Publications Journals";
-var LIST_SHEET = "5.2 SH Papers Detail";
+var MAP_SHEET = "Publications-Papers Country";
+var OA_SHEET = "Publications-Paper OA Dount";
+var ISI_SHEET = "Publications-Paper ISI Dount";
+var JOURNALS_SHEET = "Publications-Publications Journals";
+var LIST_SHEET = "Publications-Top 25 Research Institutes";
 
 $(document).ready(init);
 
@@ -63,6 +64,12 @@ function onSelectWorkSheet(mEvent){
         break;
       case ISI_SHEET:
         setFilterWorksheet(marks, FILTER_ISI, sheetsArray, selectedSheet, selectedSheetName, 'ISI Publications');
+        break;
+      case MAP_SHEET:
+        setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
+        break;
+      case LIST_SHEET:
+        setFilterWorksheet(marks, FILTER_LIST, sheetsArray, selectedSheet, selectedSheetName, 'Name');
         break;
     }
   });

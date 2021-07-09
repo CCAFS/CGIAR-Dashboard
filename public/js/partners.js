@@ -3,7 +3,7 @@ var loadedCount = 0;
 var SECTION = "AR-HOME-DB-TEST";
 
 // Filters
-var FILTER_COUNTRY = "HEADQUARTER";
+var FILTER_COUNTRY = "Country Name -To use";
 var FILTER_TOPPARTNER = "Partner Name";
 var FILTER_OICR = "Stage of Maturity";
 var FILTER_POLICIES = "Policy Investment Type";
@@ -12,12 +12,12 @@ var FILTER_JOURNALS = "JOURNAL_TITLE";
 var FILTER_PARTNERSHIPS = "Partner Name";
 
 // Sheets
-var MAP_SHEET = "Partner View - Map";
-var TOPPARTNERS_SHEET = "Partner View - Partner name list";
-var POLICIES_SHEET = "Partner View - Policy by Type";
-var OICR_SHEET = "Partner view -OICR by Stage of Maturity";
-var INNOVATIONS_SHEET = "Partner view - Innov by Type and Stage";
-var JOURNALS_SHEET = "Partner view - Publications by Top Journals";
+var MAP_SHEET = "Partner Search-Country Benefit Map";
+var TOPPARTNERS_SHEET = "Partner Search-Top Partners";
+var POLICIES_SHEET = "Partner Search-Policy by Type";
+var OICR_SHEET = "Partner Search-OICR by Stage of Maturity";
+var INNOVATIONS_SHEET = "Partner Search-Innovation by Type and Stage";
+var JOURNALS_SHEET = "Partner Search-Publications by Top Journals";
 var PARTNERSHIPS_SHEET = "Partner view -Partnership by Partners";
 
 $(document).ready(init);
@@ -67,7 +67,7 @@ function onSelectWorkSheet(mEvent) {
         setFilterWorksheet(marks, FILTER_TOPPARTNER, sheetsArray, selectedSheet, selectedSheetName, 'Partner');
         break;
       case OICR_SHEET:
-        setFilterWorksheet(marks, FILTER_OICR, sheetsArray, selectedSheet, selectedSheetName, 'OICR Stage of Maturity');
+        setFilterWorksheet(marks, FILTER_OICR, sheetsArray, selectedSheet, selectedSheetName, 'Stage of Maturity');
         break;
       case POLICIES_SHEET:
         setFilterWorksheet(marks, FILTER_POLICIES, sheetsArray, selectedSheet, selectedSheetName, 'Policy Type');

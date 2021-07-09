@@ -9,10 +9,10 @@ var FILTER_TYPE = "Type";
 var FILTER_TOP = "Partner Name";
 
 //Sheets
-var MAP_SHEET = "3.6 SH Partnership 2018 - Map";
-var AREA_SHEET = "3.2 SH Partner 2018 -Pie by Main Area";
-var TYPE_SHEET = "3.3 SH Partners 2018 - Bar by Type";
-var TOP_SHEET = "3.4 SH Partners 2018 - Top Partners";
+var MAP_SHEET = "Partnerships-Map";
+var AREA_SHEET = "Partnerships-Main Area";
+var TYPE_SHEET = "Partnerships-Bar by Type";
+var TOP_SHEET = "Partnerships-Top Partners";
 var LIST_SHEET = "3.5 SH Partners 2018 - Detail";
 
 
@@ -58,7 +58,7 @@ function onSelectWorkSheet(mEvent) {
   return mEvent.getMarksAsync().then(function (marks) {
     switch (selectedSheetName) {
       case MAP_SHEET:
-        setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Headquarter Location');
+        setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         break;
       case AREA_SHEET:
         setFilterWorksheet(marks, FILTER_AREA, sheetsArray, selectedSheet, selectedSheetName, 'Main Area');

@@ -3,8 +3,18 @@ var loadedCount = 0;
 var SECTION = "AR-Milestones-TEST";
 
 //Filters
+var FILTER_SLO = "SLO";
+var FILTER_SDG = "Sdg Short Name";
+var FILTER_STATUS = "Milestone Status";
+var FILTER_GENDER = "POWB_NAME (DIM_CROSS_CUTTING_LEVELS2)";
+var FILTER_FP = "Flagship Title";
 
 //Sheets
+var SLO_SHEET = "8.7 SH Milestones SLO";
+var SDG_SHEET = "8.6 SH Milestones SDG";
+var STATUS_SHEET = "8.1 SH Milestones Pie";
+var GENDER_SHEET = "8.2 SH Milestone cross-cutting Gender";
+var FP_SHEET = "Milestones - Flagship ";
 
 $(document).ready(init);
 
@@ -46,20 +56,20 @@ function onSelectWorkSheet(mEvent) {
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function (marks) {
     switch(selectedSheetName) {
-      case ISTAGE_SHEET:
-        setFilterWorksheet(marks, FILTER_STAGE, sheetsArray, selectedSheet, selectedSheetName, 'Stage');
+      case SLO_SHEET:
+        setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
         break;
-      case ITYPE_SHEET:
-        setFilterWorksheet(marks, FILTER_TYPE, sheetsArray, selectedSheet, selectedSheetName, 'Type');
+      case SDG_SHEET:
+        setFilterWorksheet(marks, FILTER_SDG, sheetsArray, selectedSheet, selectedSheetName, 'SDG');
         break;
-      case IMAP_SHEET:
-        setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
+      case STATUS_SHEET:
+        setFilterWorksheet(marks, FILTER_STATUS, sheetsArray, selectedSheet, selectedSheetName, 'Milestone Status');
         break;
-      case CGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_CGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing CGIAR Organization');
+      case GENDER_SHEET:
+        setFilterWorksheet(marks, FILTER_GENDER, sheetsArray, selectedSheet, selectedSheetName, 'Gender Relevance');
         break;
-      case NONCGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_NONCGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing non-CGIAR Organization');
+      case FP_SHEET:
+        setFilterWorksheet(marks, FILTER_FP, sheetsArray, selectedSheet, selectedSheetName, 'Flagship Title');
         break;
     }
   });

@@ -3,9 +3,10 @@ var loadedCount = 0;
 var SECTION = "AR-CAPDEV-TEST";
 
 //Filters
+var FILTER_TRAINEES = "Training Term";
 
 //Sheets
-
+var TRAINEES_SHEET = "CapDev-TraineesShortTerm";
 
 $(document).ready(init);
 
@@ -47,7 +48,9 @@ function onSelectWorkSheet(mEvent) {
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function (marks) {
     switch(selectedSheetName) {
-
+      case TRAINEES_SHEET:
+        setFilterWorksheet(marks, FILTER_TRAINEES, sheetsArray, selectedSheet, selectedSheetName, 'Training Term');
+        break;
     }
   });
 }

@@ -3,9 +3,18 @@ var loadedCount = 0;
 var SECTION = "AR-Policies-TEST";
 
 //Filters
-
+var FILTER_MAP = "Country Name";
+var FILTER_SDG = "Sdg Short Name";
+var FILTER_STAGE = "Level of Maturity";
+var FILTER_GEO = "Geographic Scope";
+var FILTER_INV = "Policy Investment Types";
 
 //Sheets
+var MAP_SHEET = "Policies-Map";
+var SDG_SHEET = "Policies-SDG";
+var STAGE_SHEET = "Policies-Stage Process";
+var GEO_SHEET = "Policies-Geo Scope";
+var INV_SHEET = "Policies-Investment Type";
 
 $(document).ready(init);
 
@@ -46,22 +55,22 @@ function onSelectWorkSheet(mEvent) {
   var selectedSheet = mEvent.getWorksheet();
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function (marks) {
-    /* switch(selectedSheetName) {
-     case ISTAGE_SHEET:
-        setFilterWorksheet(marks, FILTER_STAGE, sheetsArray, selectedSheet, selectedSheetName, 'Stage');
-        break;
-      case ITYPE_SHEET:
-        setFilterWorksheet(marks, FILTER_TYPE, sheetsArray, selectedSheet, selectedSheetName, 'Type');
-        break;
-      case IMAP_SHEET:
+    switch(selectedSheetName) {
+     case MAP_SHEET:
         setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         break;
-      case CGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_CGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing CGIAR Organization');
+      case SDG_SHEET:
+        setFilterWorksheet(marks, FILTER_SDG, sheetsArray, selectedSheet, selectedSheetName, 'SDG');
         break;
-      case NONCGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_NONCGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing non-CGIAR Organization');
+      case STAGE_SHEET:
+        setFilterWorksheet(marks, FILTER_STAGE, sheetsArray, selectedSheet, selectedSheetName, 'Level of Maturity');
         break;
-    }*/
+      case GEO_SHEET:
+        setFilterWorksheet(marks, FILTER_GEO, sheetsArray, selectedSheet, selectedSheetName, 'Geographic Scope');
+        break;
+      case INV_SHEET:
+        setFilterWorksheet(marks, FILTER_INV, sheetsArray, selectedSheet, selectedSheetName, 'Investment Types');
+        break;
+    }
   });
 }

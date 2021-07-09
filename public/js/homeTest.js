@@ -3,8 +3,12 @@ var loadedCount = 0;
 var SECTION = "AR-HOME-DB-TEST";
 
 //Filters
+var FILTER_STAGE = "Stage of Maturity";
+var FILTER_STATUS = "REASON_FOR_STATUS";
 
 //Sheets
+var SMPIECHART_SHEET = "Country Search-OICR by Stage of Maturity";
+var MSBARCHART_SHEET = "Home DB - Milestones Status Bar Chart";
 
 $(document).ready(init);
 
@@ -46,6 +50,12 @@ function onSelectWorkSheet(mEvent) {
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function (marks) {
     switch(selectedSheetName) {
+      case SMPIECHART_SHEET:
+        setFilterWorksheet(marks, FILTER_STAGE, sheetsArray, selectedSheet, selectedSheetName, 'Stage of Maturity');
+       break;
+      case MSBARCHART_SHEET:
+        setFilterWorksheet(marks, FILTER_STATUS, sheetsArray, selectedSheet, selectedSheetName, 'Status');
+        break;
     }
   });
 }

@@ -3,7 +3,9 @@ var loadedCount = 0;
 var SECTION = "AR-HOME-DB-TEST";
 
 // Filters
+var FILTER_SDG = "SDG Short Name";
 var FILTER_COUNTRY = "Country Name -To use";
+var FILTER_SLO = "SLO";
 var FILTER_REGION = "Partner Region Grouped";
 var FILTER_POLICIES = "Policy Investment Type";
 var FILTER_OICR = "Stage of Maturity";
@@ -11,11 +13,13 @@ var FILTER_INNOVATIONS = "Innovation Type";
 var FILTER_PARTNERS = "Partnership Main Areas";
 
 // Sheets
-var MAP_SHEET = "Country View - Map TOP";
+var SDG_SHEET = "SDG Search-SDG Chart";
+var MAP_SHEET = "SDG Search-Map";
+var SLO_SHEET = "SDG Search-Targets";
 var REGION_SHEET = "Country View - Rank sample";
-var POLICIES_SHEET = "Country View - Policy by Type";
-var OICR_SHEET = "Country view -OICR by Stage of Maturity";
-var INNOVATIONS_SHEET = "Country view - Innov by Type and Stage";
+var POLICIES_SHEET = "SDG Search-Policy by Type and Level";
+var OICR_SHEET = "SDG Search-OICR by Stage of Maturity";
+var INNOVATIONS_SHEET = "SDG Search-Innovation by Type and Stage";
 var PARTNERS_SHEET = "Country view -Partnership by Partners";
 
 $(document).ready(init);
@@ -58,8 +62,14 @@ function onSelectWorkSheet(mEvent) {
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function (marks) {
     switch(selectedSheetName) {
+      case SDG_SHEET:
+        setFilterWorksheet(marks, FILTER_SDG, sheetsArray, selectedSheet, selectedSheetName, 'SDG Name');
+        break;
       case MAP_SHEET:
         setFilterWorksheet(marks, FILTER_COUNTRY, sheetsArray, selectedSheet, selectedSheetName, 'Country');
+        break;
+      case SLO_SHEET:
+        setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
         break;
       case REGION_SHEET:
         setFilterWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, selectedSheetName, 'Region');

@@ -3,8 +3,20 @@ var loadedCount = 0;
 var SECTION = "AR-OICR-TEST";
 
 //Filters
+var FILTER_COUNTRY = "Country Name";
+var FILTER_SDG = "Sdg Short Name";
+var FILTER_OICR = "Stage of Maturity";
+var FILTER_SLO = "SLO";
+var FILTER_CC = "'CapDev'";
+var FILTER_TOPPARTNERS = "Name (Dim Ext Partners)";
 
 //Sheets
+var MAP_SHEET = "OICR-Map";
+var SDG_SHEET = "OICR-SDGs";
+var OICR_SHEET = "OICR-OICS by Maturity";
+var SLO_SHEET = "OICR-SLO Bar1";
+var CC_SHEET = "OICR-CapDev Relevance OICS Count";
+var TOPPARTNERS_SHEET = "OICR-OICS Top Partners";
 
 $(document).ready(init);
 
@@ -46,20 +58,23 @@ function onSelectWorkSheet(mEvent) {
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function (marks) {
     switch(selectedSheetName) {
-      case ISTAGE_SHEET:
-        setFilterWorksheet(marks, FILTER_STAGE, sheetsArray, selectedSheet, selectedSheetName, 'Stage');
+      case MAP_SHEET:
+        setFilterWorksheet(marks, FILTER_COUNTRY, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         break;
-      case ITYPE_SHEET:
-        setFilterWorksheet(marks, FILTER_TYPE, sheetsArray, selectedSheet, selectedSheetName, 'Type');
+      case SDG_SHEET:
+        setFilterWorksheet(marks, FILTER_SDG, sheetsArray, selectedSheet, selectedSheetName, 'SDG');
         break;
-      case IMAP_SHEET:
-        setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
+      case OICR_SHEET:
+        setFilterWorksheet(marks, FILTER_OICR, sheetsArray, selectedSheet, selectedSheetName, 'Stage of Maturity');
         break;
-      case CGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_CGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing CGIAR Organization');
+      case SLO_SHEET:
+        setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
         break;
-      case NONCGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_NONCGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing non-CGIAR Organization');
+      case CC_SHEET:
+        setFilterWorksheet(marks, FILTER_CC, sheetsArray, selectedSheet, selectedSheetName, 'Cross-cutting');
+        break;
+      case TOPPARTNERS_SHEET:
+        setFilterWorksheet(marks, FILTER_TOPPARTNERS, sheetsArray, selectedSheet, selectedSheetName, 'Partners');
         break;
     }
   });

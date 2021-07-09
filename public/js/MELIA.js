@@ -3,10 +3,16 @@ var loadedCount = 0;
 var SECTION = "AR-MELIA-TEST";
 
 //Filters
-
+var FILTER_MAP = "Country Name";
+var FILTER_CRP = "CRP";
+var FILTER_TYPE = "Name (Dim Study Types)";
+var FILTER_STATUS = "Name (Dim General Statuses)";
 
 //Sheets
-
+var MAP_SHEET = "MELIA-Map";
+var CRP_SHEET = "MELIA-CRP";
+var TYPE_SHEET = "MELIA-Type of study/activity";
+var STATUS_SHEET = "MELIA-Type and Status";
 
 $(document).ready(init);
 
@@ -48,20 +54,17 @@ function onSelectWorkSheet(mEvent) {
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function (marks) {
     switch(selectedSheetName) {
-      case ISTAGE_SHEET:
-        setFilterWorksheet(marks, FILTER_STAGE, sheetsArray, selectedSheet, selectedSheetName, 'Stage');
-        break;
-      case ITYPE_SHEET:
-        setFilterWorksheet(marks, FILTER_TYPE, sheetsArray, selectedSheet, selectedSheetName, 'Type');
-        break;
-      case IMAP_SHEET:
+      case MAP_SHEET:
         setFilterWorksheet(marks, FILTER_MAP, sheetsArray, selectedSheet, selectedSheetName, 'Country');
         break;
-      case CGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_CGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing CGIAR Organization');
+      case CRP_SHEET:
+        setFilterWorksheet(marks, FILTER_CRP, sheetsArray, selectedSheet, selectedSheetName, 'CRP');
         break;
-      case NONCGIARORGS_SHEET:
-        setFilterWorksheet(marks, FILTER_NONCGIAR, sheetsArray, selectedSheet, selectedSheetName, 'Contributing non-CGIAR Organization');
+      case TYPE_SHEET:
+        setFilterWorksheet(marks, FILTER_TYPE, sheetsArray, selectedSheet, selectedSheetName, 'Name');
+        break;
+      case STATUS_SHEET:
+        setFilterWorksheet(marks, FILTER_STATUS, sheetsArray, selectedSheet, selectedSheetName, 'Status');
         break;
     }
   });

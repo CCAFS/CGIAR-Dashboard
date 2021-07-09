@@ -4,19 +4,21 @@ var SECTION = "AR-HOME-DB-TEST";
 
 // Filters
 var FILTER_COUNTRY = "Country Name -To use";
-var FILTER_REGION = "Partner Region Grouped";
+var FILTER_REGION = "Country Region group  (2030)";
+var FILTER_SLO = "SLO";
 var FILTER_POLICIES = "Policy Investment Type";
 var FILTER_OICR = "Stage of Maturity";
 var FILTER_INNOVATIONS = "Innovation Type";
-var FILTER_PARTNERS = "Partnership Main Areas";
+var FILTER_PARTNERS = "Partner Name";
 
 // Sheets
-var MAP_SHEET = "Country View - Map TOP";
-var REGION_SHEET = "Country View - Rank sample";
-var POLICIES_SHEET = "Country View - Policy by Type";
-var OICR_SHEET = "Country view -OICR by Stage of Maturity";
-var INNOVATIONS_SHEET = "Country view - Innov by Type and Stage";
-var PARTNERS_SHEET = "Country view -Partnership by Partners";
+var MAP_SHEET = "Country Search-Map";
+var REGION_SHEET = "Country Search-Region Heatmap";
+var POLICIES_SHEET = "Country Search-Policy by Type";
+var SDG_SLO_SHEET = "Country Search-SLO Chart";
+var OICR_SHEET = "Country Search-OICR by Stage of Maturity";
+var INNOVATIONS_SHEET = "Country Search-Innovation by Type and Stage";
+var PARTNERS_SHEET = "Country Search-Partnership by Partners";
 
 $(document).ready(init);
 
@@ -64,6 +66,9 @@ function onSelectWorkSheet(mEvent) {
       case REGION_SHEET:
         setFilterWorksheet(marks, FILTER_REGION, sheetsArray, selectedSheet, selectedSheetName, 'Region');
         break;
+      case SDG_SLO_SHEET:
+        setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
+        break;
       case POLICIES_SHEET:
         setFilterWorksheet(marks, FILTER_POLICIES, sheetsArray, selectedSheet, selectedSheetName, 'Policy Type');
         break;
@@ -74,7 +79,7 @@ function onSelectWorkSheet(mEvent) {
         setFilterWorksheet(marks, FILTER_OICR, sheetsArray, selectedSheet, selectedSheetName, 'Stage of Maturity');
         break;
       case PARTNERS_SHEET:
-        setFilterWorksheet(marks, FILTER_OICR, sheetsArray, selectedSheet, selectedSheetName, 'Stage of Maturity');
+        setFilterWorksheet(marks, FILTER_PARTNERS, sheetsArray, selectedSheet, selectedSheetName, 'Partner Name');
         break;
     }
   });
