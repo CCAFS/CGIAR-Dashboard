@@ -8,6 +8,9 @@ var FILTER_SDG = "Sdg Short Name";
 var FILTER_OICR = "Stage of Maturity";
 var FILTER_SLO = "SLO";
 var FILTER_CC = "'CapDev'";
+var FILTER_CC1 = "'Gender'";
+var FILTER_CC2 = "'Youth'";
+var FILTER_CC3 = "'Climate'";
 var FILTER_TOPPARTNERS = "Name (Dim Ext Partners)";
 
 //Sheets
@@ -16,6 +19,9 @@ var SDG_SHEET = "OICR-SDGs";
 var OICR_SHEET = "OICR-OICS by Maturity";
 var SLO_SHEET = "OICR-SLO Bar1";
 var CC_SHEET = "OICR-CapDev Relevance OICS Count";
+var CC1_SHEET = "OICR-Gender Relevance OICS Count";
+var CC2_SHEET = "OICR-Youth Relevance OICS Count";
+var CC3_SHEET = "OICR-Climate Relevance OICS Count";
 var TOPPARTNERS_SHEET = "OICR-OICS Top Partners";
 
 $(document).ready(init);
@@ -72,6 +78,15 @@ function onSelectWorkSheet(mEvent) {
         break;
       case CC_SHEET:
         setFilterWorksheet(marks, FILTER_CC, sheetsArray, selectedSheet, selectedSheetName, 'Cross-cutting');
+        break;
+      case CC1_SHEET:
+        setFilterWorksheet(marks, FILTER_CC1, sheetsArray, selectedSheet, selectedSheetName, 'Cross-cutting');
+        break;
+      case CC2_SHEET:
+        setFilterWorksheet(marks, FILTER_CC2, sheetsArray, selectedSheet, selectedSheetName, 'Cross-cutting');
+        break;
+      case CC3_SHEET:
+        setFilterWorksheet(marks, FILTER_CC3, sheetsArray, selectedSheet, selectedSheetName, 'Cross-cutting');
         break;
       case TOPPARTNERS_SHEET:
         setFilterWorksheet(marks, FILTER_TOPPARTNERS, sheetsArray, selectedSheet, selectedSheetName, 'Partners');

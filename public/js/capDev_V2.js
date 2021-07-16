@@ -6,6 +6,8 @@ var SECTION = "AR-CAPDEV-TEST";
 var FILTER_TRAINEES = "Training Term";
 
 //Sheets
+var TRAINEESL_SHEET = "CapDev-TraineesLongTerm";
+var TRAINEESP_SHEET = "CapDev-TraineesPhD";
 var TRAINEES_SHEET = "CapDev-TraineesShortTerm";
 
 $(document).ready(init);
@@ -48,6 +50,12 @@ function onSelectWorkSheet(mEvent) {
   var selectedSheetName = selectedSheet.getName();
   return mEvent.getMarksAsync().then(function (marks) {
     switch(selectedSheetName) {
+      case TRAINEESL_SHEET:
+        setFilterWorksheet(marks, FILTER_TRAINEES, sheetsArray, selectedSheet, selectedSheetName, 'Training Term');
+        break;
+      case TRAINEESP_SHEET:
+        setFilterWorksheet(marks, FILTER_TRAINEES, sheetsArray, selectedSheet, selectedSheetName, 'Training Term');
+        break;
       case TRAINEES_SHEET:
         setFilterWorksheet(marks, FILTER_TRAINEES, sheetsArray, selectedSheet, selectedSheetName, 'Training Term');
         break;
