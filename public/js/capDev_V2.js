@@ -3,7 +3,7 @@ var loadedCount = 0;
 var SECTION = "AR-CAPDEV-TEST";
 
 //Filters
-var FILTER_TRAINEES = "Training Term";
+var FILTER_TRAINEES = "Gender";
 
 //Sheets
 var TRAINEESL_SHEET = "CapDev-TraineesLongTerm";
@@ -51,13 +51,13 @@ function onSelectWorkSheet(mEvent) {
   return mEvent.getMarksAsync().then(function (marks) {
     switch(selectedSheetName) {
       case TRAINEESL_SHEET:
-        setFilterWorksheet(marks, FILTER_TRAINEES, sheetsArray, selectedSheet, selectedSheetName, 'Training Term');
+        setFilterWorksheet(marks, FILTER_TRAINEES, sheetsArray, selectedSheet, selectedSheetName, 'Long Term');
         break;
       case TRAINEESP_SHEET:
-        setFilterWorksheet(marks, FILTER_TRAINEES, sheetsArray, selectedSheet, selectedSheetName, 'Training Term');
+        setFilterWorksheet(marks, FILTER_TRAINEES, sheetsArray, selectedSheet, selectedSheetName, 'PhD');
         break;
       case TRAINEES_SHEET:
-        setFilterWorksheet(marks, FILTER_TRAINEES, sheetsArray, selectedSheet, selectedSheetName, 'Training Term');
+        setFilterWorksheet(marks, FILTER_TRAINEES, sheetsArray, selectedSheet, selectedSheetName, 'Short Term');
         break;
     }
   });

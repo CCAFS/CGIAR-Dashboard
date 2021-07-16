@@ -7,10 +7,10 @@ var FILTER_COUNTRY = "Country Name";
 var FILTER_SDG = "Sdg Short Name";
 var FILTER_OICR = "Stage of Maturity";
 var FILTER_SLO = "SLO";
-var FILTER_CC = "'CapDev'";
-var FILTER_CC1 = "'Gender'";
-var FILTER_CC2 = "'Youth'";
-var FILTER_CC3 = "'Climate'";
+var FILTER_CC = "Capdev Relev";
+var FILTER_CC1 = "Gender Relevance";
+var FILTER_CC2 = "Youth Relevance";
+var FILTER_CC3 = "CLIMATE_RELEV";
 var FILTER_TOPPARTNERS = "Name (Dim Ext Partners)";
 
 //Sheets
@@ -77,16 +77,16 @@ function onSelectWorkSheet(mEvent) {
         setFilterWorksheet(marks, FILTER_SLO, sheetsArray, selectedSheet, selectedSheetName, 'SLO');
         break;
       case CC_SHEET:
-        setFilterWorksheet(marks, FILTER_CC, sheetsArray, selectedSheet, selectedSheetName, 'Cross-cutting');
+        setFilterWorksheet(marks, FILTER_CC, sheetsArray, selectedSheet, selectedSheetName, 'CapDev');
         break;
       case CC1_SHEET:
-        setFilterWorksheet(marks, FILTER_CC1, sheetsArray, selectedSheet, selectedSheetName, 'Cross-cutting');
+        setFilterWorksheet(marks, FILTER_CC1, sheetsArray, selectedSheet, selectedSheetName, 'Gender');
         break;
       case CC2_SHEET:
-        setFilterWorksheet(marks, FILTER_CC2, sheetsArray, selectedSheet, selectedSheetName, 'Cross-cutting');
+        setFilterWorksheet(marks, FILTER_CC2, sheetsArray, selectedSheet, selectedSheetName, 'Youth');
         break;
       case CC3_SHEET:
-        setFilterWorksheet(marks, FILTER_CC3, sheetsArray, selectedSheet, selectedSheetName, 'Cross-cutting');
+        setFilterWorksheet(marks, FILTER_CC3, sheetsArray, selectedSheet, selectedSheetName, 'Climate');
         break;
       case TOPPARTNERS_SHEET:
         setFilterWorksheet(marks, FILTER_TOPPARTNERS, sheetsArray, selectedSheet, selectedSheetName, 'Partners');
