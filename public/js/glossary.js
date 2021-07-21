@@ -14,8 +14,15 @@ if ((chromeAgent) && (safariAgent)) safariAgent = false;
 
 function init() {
     console.log("Chrome:", chromeAgent, "Safari:", safariAgent);
-    addEvents();
-    loadTerms('0', 'All terms');
+    if (safariAgent == true) {
+        $(".browser-message").css("display", "block");
+        $("#svg-iframe").css("display", "none");
+        $(".clearFilterBtn").css("display", "none");
+        $(".tableWrapper").css("display", "none");
+    } else {
+        addEvents();
+        loadTerms('0', 'All terms');
+    }
 }
 
 function addEvents() {

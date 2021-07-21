@@ -11,7 +11,7 @@
     'customJS': [
       './js/libs/jquery/jquery-3.4.1.min.js',
       'https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.3/jquery.csv.min.js',
-      './js/glossary.js?20210721a',
+      './js/glossary.js?20210721b',
       './js/sideMenu.js?20210506a',
     ]
   }
@@ -37,7 +37,20 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    {% include './pages/message.twig' %}
+    <div class="browser-message" style="display:none">This Dashboard works best with
+    <ul>
+        <li>
+            <a href="https://www.google.com/chrome/" class="infotool" target="_blank" title="Google Chrome">
+                <img src="./images/browser_chrome.svg" width="30px" height="30px">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.mozilla.org/en-US/firefox/new/" class="infotool" target="_blank" title="Firefox">
+                <img src="./images/browser_firefox.svg" width="30px" height="30px">
+            </a>
+        </li>
+    </ul>
+</div>
 
     <div class="mb-4">
       <h6 class="section-title">Glossary</h6>
