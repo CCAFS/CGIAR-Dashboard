@@ -3,7 +3,17 @@ window.onload = function () {
 }
 
 let count = 0;
+// Get the user-agent string
+let userAgentString = navigator.userAgent;
+// Detect Chrome
+let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+// Detect Safari
+let safariAgent = userAgentString.indexOf("Safari") > -1;
+// Discard Safari since it also matches Chrome
+if ((chromeAgent) && (safariAgent)) safariAgent = false;
+
 function init() {
+    console.log("Chrome:", chromeAgent, "Safari:", safariAgent);
     addEvents();
     loadTerms('0', 'All terms');
 }
