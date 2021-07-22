@@ -14,11 +14,18 @@ if ((chromeAgent) && (safariAgent)) safariAgent = false;
 
 function init() {
     console.log("Chrome:", chromeAgent, "Safari:", safariAgent);
-    if (safariAgent == true) {
+    if (safariAgent != false) {
         $(".browser-message").css("display", "block");
         $("#svg-iframe").css("display", "none");
         $(".clearFilterBtn").css("display", "none");
-        $(".tableWrapper").css("display", "none");
+        const mb4 = document.querySelector(".mb-4");
+        const svg = document.querySelector("#svg-iframe");
+        const image = document.createElement("img");
+        image.setAttribute('width', '100%');
+        image.setAttribute('height', '600');
+        image.setAttribute('src', 'images/svg-interactive.svg?20210630a');
+        svg.parentNode.insertBefore(image, svg.nextSibling);
+        loadTerms('0', 'All terms');
     } else {
         addEvents();
         loadTerms('0', 'All terms');
