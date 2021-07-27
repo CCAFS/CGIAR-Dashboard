@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-Policies-TEST";
+var SECTION = "AR-Policies";
 
 //Filters
 var FILTER_MAP = "Country Name";

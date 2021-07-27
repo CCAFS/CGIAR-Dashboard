@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-CAPDEV-TEST";
+var SECTION = "AR-CAPDEV";
 
 //Filters
 var FILTER_TRAINEES = "Gender";

@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-Altmetric-TEST";
+var SECTION = "AR-Altmetric";
 
 var TOTAL_SHEET = "6.0 SH Altmetrics Total Titles";
 var MENDELEY_SHEET = "6.3 SH Altm Mendeley";
