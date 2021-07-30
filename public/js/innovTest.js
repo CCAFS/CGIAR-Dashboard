@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-Innovations";
+var SECTION = "AR-Innovations-TEST";
 
 //Filters
 var FILTER_STAGE = "Stage of Innovation";
