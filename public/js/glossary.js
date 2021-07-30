@@ -23,7 +23,7 @@ function init() {
         const image = document.createElement("img");
         image.setAttribute('width', '100%');
         image.setAttribute('height', '600');
-        image.setAttribute('src', 'images/svg-interactive.svg?20210630a');
+        image.setAttribute('src', 'images/svg-interactive.svg?20210730a');
         svg.parentNode.insertBefore(image, svg.nextSibling);
         loadTerms('0', 'All terms');
     } else {
