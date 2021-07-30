@@ -74,7 +74,7 @@ function addEvents() {
     // };
 
     ly_slo.onclick = function () {
-        loadTerms('7', 'SLOs');
+        loadTerms('7', 'System Level Outcomes (SLOs)');
     };
 
     tl_partnertships.onclick = function () {
@@ -90,7 +90,7 @@ function addEvents() {
     };
 
     ly_oicr.onclick = function () {
-        loadTerms('11', 'OICR');
+        loadTerms('11', 'Outcome/Impact Case Reports (OICRs)');
     };
 
     almetrics_bg.onclick = function () {
