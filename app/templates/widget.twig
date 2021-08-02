@@ -63,6 +63,15 @@
 		this.userOptions.displayNav = state;
   };
 
+  // Set filter year
+  ResultsDashboardWidget.prototype.setFilterYear = function setFilterYear (year) {
+		sendIframeMessage(this.iframe, {
+      eventName: "setFilterYear",
+      data: year
+    });
+		this.userOptions.yearSelected = year;
+  };
+
   // Create Iframe Item
   ResultsDashboardWidget.prototype.createIframe = function createIframe (url) {
     var widget = this;
