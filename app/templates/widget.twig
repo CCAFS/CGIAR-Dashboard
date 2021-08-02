@@ -36,7 +36,7 @@
   ResultsDashboardWidget.prototype.init = function init () {
     var widget = this;
     var section = widget.userOptions.currentSection || '';
-    var year = widget.userOptions.yearSelected || null;
+    var year = widget.userOptions.yearSelected || '';
     // Create Iframe
     widget.createIframe(widget.baseURL + '/'+ section +'?year='+year+'&embed=true&hostOrigin='+ widget.hostOrigin + '&displayNav=' + widget.userOptions.displayNav);
 		var hiddenDiv = document.getElementsByClassName("wysiwyg--left-content");
