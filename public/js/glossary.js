@@ -23,7 +23,7 @@ function init() {
         const image = document.createElement("img");
         image.setAttribute('width', '100%');
         image.setAttribute('height', '600');
-        image.setAttribute('src', 'images/svg-interactive.svg?20210630a');
+        image.setAttribute('src', 'images/svg-interactive.svg?20210730a');
         svg.parentNode.insertBefore(image, svg.nextSibling);
         loadTerms('0', 'All terms');
     } else {
@@ -74,7 +74,7 @@ function addEvents() {
     // };
 
     ly_slo.onclick = function () {
-        loadTerms('7', 'SLOs');
+        loadTerms('7', 'System Level Outcomes (SLOs)');
     };
 
     tl_partnertships.onclick = function () {
@@ -90,7 +90,7 @@ function addEvents() {
     };
 
     ly_oicr.onclick = function () {
-        loadTerms('11', 'OICR');
+        loadTerms('11', 'Outcome/Impact Case Reports (OICRs)');
     };
 
     almetrics_bg.onclick = function () {

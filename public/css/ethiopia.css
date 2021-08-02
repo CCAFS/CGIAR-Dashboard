@@ -1,0 +1,176 @@
+.dashboard-container {
+    max-width: 1300px;
+    margin: auto;
+}
+
+.oicr-charts {
+    height: 1700px;
+}
+
+.innovations-charts {
+    height: 1150px;
+}
+
+.milestones-charts {
+    height: 1300px;
+}
+
+.geoScope-charts {
+    height: 2200px;
+}
+
+.partners-charts {
+    height: 2150px;
+}
+
+.partnersFilter-charts {
+    height: 1455px;
+}
+
+.slo-charts {
+    height: 1400px;
+}
+
+.srf-charts {
+    height: 2220px;
+}
+
+.innovations-V2-charts {
+    height: 1900px;
+}
+
+.policies-V2-charts {
+    height: 1200px;
+}
+
+.MELIA-charts {
+    height: 1500px;
+}
+
+.genebank-charts {
+    height: 1400px;
+}
+
+.publications-charts {
+    height: 1400px;
+}
+
+.altmetric-charts {
+    height: 1400px;
+}
+
+.partnerships-charts {
+    height: 1450px;
+}
+
+.home-V2-charts {
+    height: 800px;
+}
+
+@media (max-width: 1024px) {
+    body {
+        overflow-x: hidden !important;
+    }
+
+    body .badge {
+        font-size: 0.875rem;
+    }
+
+    body .col-md-2 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    body .col-md-10 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    body nav.main-menu ul li {
+        font-size: 0.875rem !important;
+    }
+
+    body nav.main-menu ul li a {
+        padding: 7px 27px !important;
+    }
+
+    body svg { 
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    .sectionAction-home {
+        border-radius: 0;
+      }
+    
+    .sectionAction-glossary {
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 812px){
+    body {
+        overflow-x: hidden !important;
+    }
+
+    body .pageheader-wrapper {
+        height: 18% !important;
+    }
+
+    body .justify-content-between {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    body .col-auto {
+        padding-left: 0;
+        padding-right: 5px;
+    }
+
+    body h3 img{
+        width: 65px;
+        margin-top: 20px;
+        right: 42%;
+    }
+
+    body .filter-position {
+        margin-top: 90px;
+    }
+
+    body .filter-component {
+        margin-left: 0 !important;
+    }
+
+    body .filter-component .filter-title {
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 811px) and (min-width: 460px){
+    body .filter-position {
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 667px){
+    body .filter-position {
+        margin-top: 70px !important;
+    }
+
+    body h3 img{
+        width: 50px !important;
+        margin-top: 20px;
+        right: 42%;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 740px){
+    body .pageheader-wrapper {
+        height: 38% !important;
+    }
+}
