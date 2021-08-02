@@ -36,9 +36,9 @@
   ResultsDashboardWidget.prototype.init = function init () {
     var widget = this;
     var section = widget.userOptions.currentSection || '';
-    var year = widget.userOptions.yearSelected || '';
+    var year = widget.userOptions.yearSelected || null;
     // Create Iframe
-    widget.createIframe(widget.baseURL + '/'+ section +'?embed=true&hostOrigin='+ widget.hostOrigin + '&displayNav=' + widget.userOptions.displayNav + year);
+    widget.createIframe(widget.baseURL + '/'+ section +'?year='+year+'&embed=true&hostOrigin='+ widget.hostOrigin + '&displayNav=' + widget.userOptions.displayNav);
 		var hiddenDiv = document.getElementsByClassName("wysiwyg--left-content");
 		for (var i = 0; i < hiddenDiv.length; i++) {
 	    hiddenDiv[i].style.visibility = 'hidden';
