@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-Genebank-TEST";
+var SECTION = "AR-Genebank";
 
 //Filters
 var FILTER_MAP = "Country1";
