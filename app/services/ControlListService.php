@@ -42,6 +42,7 @@ class ControlListService {
       array('acronym' => 'EiB',         'name' => 'EiB - Excellence in Breeding'),
       array('acronym' => 'FISH',        'name' => 'FISH'),
       array('acronym' => 'FTA',         'name' => 'FTA - Forests, Trees and Agroforestry'),
+      array('acronym' => 'GENDER',    'name' => 'GENDER - Gender Platform'),
       array('acronym' => 'GENEBANK',    'name' => 'GENEBANK'),
       array('acronym' => 'GLDC',        'name' => 'GLDC - Grain Legumes and Dryland Cereals'),
       array('acronym' => 'LIVESTOCK',   'name' => 'LIVESTOCK'),
