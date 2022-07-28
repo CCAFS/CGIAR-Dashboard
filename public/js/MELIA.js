@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-MELIA-TEST";
+var SECTION = "AR-MELIA";
 
 //Filters
 var FILTER_MAP = "Country Name";

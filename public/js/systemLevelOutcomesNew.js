@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-SLO-TEST";
+var SECTION = "AR-SLO";
 
 // Filters
 var FILTER_COUNTRY = "Country Name";

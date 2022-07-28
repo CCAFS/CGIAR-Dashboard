@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-Milestones-TEST";
+var SECTION = "AR-Milestones";
 
 //Filters
 var FILTER_SLO = "SLO";

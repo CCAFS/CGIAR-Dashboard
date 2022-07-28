@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "Results-TEST";
+var SECTION = "Results";
 
 //Filters
 FILTER_SLO = "SLO";
