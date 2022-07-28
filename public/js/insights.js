@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "Results-TEST";
+var SECTION = "Results";
 
 //Filters
 var FILTER_MAP = "Country Name";

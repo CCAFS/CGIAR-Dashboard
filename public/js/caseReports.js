@@ -1,6 +1,6 @@
 var sheetsArray = [];
 var loadedCount = 0;
-var SECTION = "AR-OICR-TEST";
+var SECTION = "AR-OICR";
 
 //Filters
 var FILTER_COUNTRY = "Country Name";
